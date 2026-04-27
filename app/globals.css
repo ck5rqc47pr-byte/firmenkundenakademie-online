@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(224, 91, 0, 0.08), transparent 32%),
+    linear-gradient(180deg, #ffffff 0%, #f8f9fb 48%, #eef3ff 100%);
+  color: #1a1a2e;
+  font-family: "Inter", Arial, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.prose-academy {
+  @apply prose prose-lg prose-slate max-w-none prose-headings:font-semibold prose-p:text-ink prose-li:text-ink prose-strong:text-ink;
+}
+
+.prose-academy :where(h2) {
+  @apply text-primary;
+}
+
+.prose-academy :where(h3) {
+  @apply text-accent;
+}
+
+.prose-academy :where(table) {
+  @apply block max-w-full overflow-x-auto rounded-2xl border border-slate-200 shadow-sm;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.prose-academy :where(thead) {
+  @apply bg-primary text-white;
+}
+
+.prose-academy :where(thead th) {
+  @apply border-primary/70 px-5 py-4 text-white;
+  color: #ffffff !important;
+}
+
+.prose-academy :where(thead th *) {
+  color: #ffffff !important;
+}
+
+.prose-academy :where(tbody td) {
+  @apply px-5 py-4;
+}
+
+.prose-academy :where(tbody tr:nth-child(even)) {
+  @apply bg-slate-50;
+}
+
+.prose-academy :where(blockquote) {
+  @apply rounded-r-2xl border-l-4 border-accent bg-orange-50 px-5 py-3 text-ink not-italic;
+}
+
+.prose-academy :where(code):not(:where(pre code)) {
+  @apply rounded bg-slate-100 px-1.5 py-0.5 text-sm text-primary;
+}
+
+.prose-academy :where(pre) {
+  @apply max-w-full overflow-x-auto rounded-2xl border border-slate-200 border-l-4 border-l-primary bg-slate-50 px-6 py-5 text-ink shadow-sm;
+}
+
+.prose-academy :where(pre code) {
+  @apply whitespace-pre text-[0.95em] leading-8 text-ink;
+  color: #1a1a2e !important;
+}
+
+.handout-chapter {
+  @apply mt-14 rounded-[1.75rem] border-t-4 border-primary bg-slate-50 px-6 py-5;
+}
+
+.handout-kicker {
+  @apply text-xs font-semibold uppercase tracking-[0.22em] text-accent;
+}
+
+@media print {
+  header,
+  footer {
+    display: none;
+  }
+
+  body {
+    background: #ffffff;
+  }
+
+  main {
+    max-width: none;
+    padding: 0;
+  }
+
+  .prose-academy {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .prose-academy :where(h2, h3) {
+    break-after: avoid;
+  }
+
+  .prose-academy :where(table, pre, blockquote) {
+    break-inside: avoid;
+  }
+
+  .handout-chapter {
+    break-after: avoid;
+  }
+}
