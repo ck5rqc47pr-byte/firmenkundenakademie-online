@@ -4,6 +4,7 @@ const navigation = [
   { href: "/", label: "Start" },
   { href: "/module", label: "Module" },
   { href: "/kompetenzmodell", label: "Kompetenzmodell" },
+  { href: "/quellen", label: "Quellen" },
 ];
 
 export function NavBar() {
