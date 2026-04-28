@@ -1,6 +1,6 @@
 import fs from "fs";
 import path from "path";
-import { MarkdownRenderer } from "@/components/MarkdownRenderer";
+import { QuellenRenderer } from "@/components/QuellenRenderer";
 
 export const metadata = {
   title: "Quellenverzeichnis – Firmenkundenakademie",
@@ -32,7 +32,7 @@ export default function QuellenPage() {
 
       {/* Content */}
       <div className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-card lg:p-10">
-        <MarkdownRenderer content={content} />
+        <QuellenRenderer content={content} />
       </div>
     </div>
   );
