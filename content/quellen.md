@@ -170,7 +170,6 @@ Curricula und Kompetenzrahmen für Firmenkundenberater.
 
 ## Restrukturierung, Risikomanagement & Kreditrisiko
 
-*Extrahiert aus: EuroFH-Modul 19 „Restructuring und Risikomanagement" (Studienbriefe 01–07).*
 
 [Q-073] Altman, E.I. (1968). Financial ratios, discriminant analysis and the prediction of corporate bankruptcy. *The Journal of Finance, 23*(4), 589–609.
 
@@ -262,7 +261,6 @@ Curricula und Kompetenzrahmen für Firmenkundenberater.
 
 ## Kommunikation & Gesprächsführung
 
-*Extrahiert aus: EuroFH-Modul 07/11 „Kommunikation und Konfliktmanagement" (Prof. Dr. Bernd Banke, Hochschule Reutlingen).*
 
 [Q-119] Schulz von Thun, F. (1981). *Miteinander Reden: Störungen und Klärungen – Allgemeine Psychologie der Kommunikation*. Rowohlt.
 

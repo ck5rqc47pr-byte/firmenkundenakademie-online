@@ -3,7 +3,7 @@ import path from "path";
 import { QuellenRenderer } from "@/components/QuellenRenderer";
 
 export const metadata = {
-  title: "Quellenverzeichnis – Firmenkundenakademie",
+  title: "Quellenverzeichnis – FKB Campus",
 };
 
 function getQuellenContent(): string {
@@ -15,25 +15,20 @@ export default function QuellenPage() {
   const content = getQuellenContent();
 
   return (
-    <div className="space-y-8">
-      {/* Header */}
-      <div className="overflow-hidden rounded-[2.5rem] border border-primary/10 bg-white px-8 py-10 shadow-card lg:px-12">
-        <p className="text-sm font-semibold uppercase tracking-[0.15em] text-accent sm:tracking-[0.25em]">
+    <div className="mx-auto max-w-content px-6 lg:px-14 py-16 lg:py-24">
+      <div className="mb-12 border-b border-ink pb-8">
+        <div className="font-mono text-[11px] uppercase tracking-[0.08em] text-ink-3 mb-4">
           Wissenschaftliche Grundlagen
-        </p>
-        <h1 className="mt-3 text-4xl font-semibold tracking-tight text-primary">
-          {"Quellen\u00ADverzeichnis"}
+        </div>
+        <h1 className="font-serif text-5xl lg:text-6xl font-normal leading-[0.95] tracking-[-0.03em] text-ink">
+          Quellenverzeichnis
         </h1>
-        <p className="mt-4 max-w-2xl text-lg leading-8 text-slate-600">
-          Alle in der Firmenkundenakademie zitierten wissenschaftlichen Quellen, Fachliteratur
-          und Branchenstudien – zusammengeführt im zentralen Literaturverzeichnis.
+        <p className="mt-6 font-serif text-xl leading-relaxed text-ink-2 max-w-2xl">
+          Alle in der Firmenkundenakademie zitierten wissenschaftlichen Quellen,
+          Fachliteratur und Branchenstudien – zusammengeführt im zentralen Literaturverzeichnis.
         </p>
       </div>
-
-      {/* Content */}
-      <div className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-card lg:p-10">
-        <QuellenRenderer content={content} />
-      </div>
+      <QuellenRenderer content={content} />
     </div>
   );
 }
