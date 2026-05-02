@@ -11,85 +11,82 @@ import {
   getParticipantHandoutPdfUrl,
 } from "@/lib/modules";
 
-type Props = {
-  params: {
-    id: string;
-  };
-};
-
 export function generateStaticParams() {
-  return getAllModules().map((module) => ({ id: module.id }));
+  return getAllModules().map((m) => ({ id: m.id }));
 }
 
-export default function ModuleDetailPage({ params }: Props) {
+export default function ModuleDetailPage({ params }: { params: { id: string } }) {
   const module = getModuleById(params.id);
-  if (!module) {
-    notFound();
-  }
-
+  if (!module) notFound();
   const adjacent = getAdjacentModules(module.id);
-  const participantHandoutPdfUrl = getParticipantHandoutPdfUrl(module.id);
+  const pdfUrl = getParticipantHandoutPdfUrl(module.id);
 
   return (
-    <div className="space-y-8">
+    <div>
       <ModuleHeader module={module} />
-      <section className="grid min-w-0 gap-8 lg:grid-cols-[0.9fr_1.5fr]">
-        <MetaBox module={module} className="order-2 min-w-0 lg:order-1" />
-        <div className="order-1 min-w-0 space-y-8 lg:order-2">
-          <VideoEmbed youtubeId={module.youtube_id} title={module.title} />
-          <div className="min-w-0 overflow-hidden rounded-[2rem] border border-slate-200 bg-white p-6 shadow-card lg:p-10">
-            <MarkdownRenderer content={module.content} />
-          </div>
-          <section className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-card">
-            <h2 className="text-2xl font-semibold text-primary">Downloads</h2>
-            <div className="mt-6 flex flex-col gap-3 md:flex-row">
-              {participantHandoutPdfUrl ? (
+      <div className="mx-auto max-w-content px-6 lg:px-14">
+        <div className="grid gap-16 py-12 lg:grid-cols-[260px_1fr] lg:py-20 min-w-0">
+          <MetaBox
+            module={module}
+            className="order-2 min-w-0 lg:order-1 lg:sticky lg:top-28 lg:self-start"
+          />
+          <div className="order-1 min-w-0 space-y-12 lg:order-2">
+            <VideoEmbed youtubeId={module.youtube_id} title={module.title} />
+            <div className="min-w-0 overflow-hidden">
+              <MarkdownRenderer content={module.content} />
+            </div>
+            {pdfUrl && (
+              <div className="border-t border-ink pt-8">
+                <div className="font-mono text-[10px] uppercase tracking-[0.08em] text-ink-3 mb-4">
+                  Downloads
+                </div>
                 <a
-                  href={participantHandoutPdfUrl}
+                  href={pdfUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="rounded-full bg-primary px-5 py-3 text-center text-sm font-semibold text-white transition hover:bg-primary/90"
+                  className="inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.08em] text-primary border border-primary px-4 py-2 hover:bg-primary hover:text-primary-ink transition"
                 >
-                  Teilnehmerunterlagen (PDF)
+                  Teilnehmerunterlagen (PDF) →
                 </a>
-              ) : (
-                <span className="rounded-full bg-slate-100 px-5 py-3 text-center text-sm font-semibold text-slate-500">
-                  Teilnehmerunterlagen noch nicht hinterlegt
-                </span>
-              )}
-              <a
-                href="/downloads/selbstcheck-bogen.pdf"
-                className="rounded-full border border-slate-300 px-5 py-3 text-center text-sm font-semibold text-slate-700 transition hover:border-primary hover:text-primary"
-              >
-                Selbstcheck-Bogen (PDF)
-              </a>
-            </div>
-          </section>
-        </div>
-      </section>
-      <nav className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-card">
-        <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-          <div className="flex flex-col gap-2 md:flex-row md:items-center md:gap-6">
-            {adjacent.previous ? (
-              <Link href={`/module/${adjacent.previous.id}`} className="text-sm font-semibold text-primary">
-                ← Voriges Modul
-              </Link>
-            ) : (
-              <span className="text-sm text-slate-400">← Voriges Modul</span>
-            )}
-            {adjacent.next ? (
-              <Link href={`/module/${adjacent.next.id}`} className="text-sm font-semibold text-primary">
-                Nächstes Modul →
-              </Link>
-            ) : (
-              <span className="text-sm text-slate-400">Nächstes Modul →</span>
+              </div>
             )}
           </div>
-          <Link href="/module" className="text-sm font-semibold text-accent">
-            Zurück zur Modulübersicht
-          </Link>
         </div>
-      </nav>
+        <nav className="border-t border-ink py-8 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+          <div className="flex gap-8">
+            {adjacent.previous ? (
+              <Link
+                href={`/module/${adjacent.previous.id}`}
+                className="font-mono text-[11px] uppercase tracking-[0.08em] text-ink-2 hover:text-ink transition"
+              >
+                ← {adjacent.previous.id}
+              </Link>
+            ) : (
+              <span className="font-mono text-[11px] uppercase tracking-[0.08em] text-ink-3">
+                ← Voriges
+              </span>
+            )}
+            {adjacent.next ? (
+              <Link
+                href={`/module/${adjacent.next.id}`}
+                className="font-mono text-[11px] uppercase tracking-[0.08em] text-ink-2 hover:text-ink transition"
+              >
+                {adjacent.next.id} →
+              </Link>
+            ) : (
+              <span className="font-mono text-[11px] uppercase tracking-[0.08em] text-ink-3">
+                Nächstes →
+              </span>
+            )}
+          </div>
+          <Link
+            href="/module"
+            className="font-mono text-[11px] uppercase tracking-[0.08em] text-ink-3 hover:text-ink transition"
+          >
+            Alle Module
+          </Link>
+        </nav>
+      </div>
     </div>
   );
 }

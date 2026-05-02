@@ -9,15 +9,22 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        primary: "#003DA5",
-        accent: "#E05B00",
-        surface: "#F8F9FB",
-        ink: "#1A1A2E",
-        success: "#1F8F4E",
-        muted: "#8A8FA3",
+        primary: "oklch(0.32 0.08 250)",
+        accent: "oklch(0.78 0.05 75)",
+        "accent-ink": "oklch(0.22 0.03 75)",
+        bg: "oklch(0.985 0.003 240)",
+        "bg-2": "oklch(0.965 0.005 240)",
+        ink: "oklch(0.18 0.02 250)",
+        "ink-2": "oklch(0.38 0.02 250)",
+        "ink-3": "oklch(0.56 0.02 250)",
+        line: "oklch(0.90 0.01 240)",
+        "line-2": "oklch(0.82 0.015 240)",
+        "primary-ink": "oklch(0.98 0.003 240)",
       },
-      boxShadow: {
-        card: "0 18px 50px -30px rgba(0, 61, 165, 0.35)",
+      fontFamily: {
+        serif: ["Source Serif 4", "Iowan Old Style", "Georgia", "serif"],
+        sans: ["Inter Tight", "system-ui", "-apple-system", "Segoe UI", "sans-serif"],
+        mono: ["JetBrains Mono", "ui-monospace", "SFMono-Regular", "Menlo", "monospace"],
       },
       maxWidth: {
         content: "82rem",

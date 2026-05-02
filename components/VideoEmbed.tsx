@@ -6,14 +6,14 @@ type Props = {
 export function VideoEmbed({ youtubeId, title }: Props) {
   if (!youtubeId) {
     return (
-      <div className="flex aspect-video items-center justify-center rounded-[2rem] bg-primary px-6 text-center text-white shadow-card">
+      <div className="flex aspect-video items-center justify-center border border-line bg-bg-2 px-6 text-center">
         <div className="max-w-md">
-          <div className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-full border border-white/30 bg-white/10 text-2xl">
-            ▶
+          <div className="font-mono text-[11px] uppercase tracking-[0.08em] text-ink-3 mb-4">
+            ▶ Video
           </div>
-          <h3 className="text-2xl font-semibold">Video in Produktion</h3>
-          <p className="mt-3 text-sm text-white/80">
-            Dieses Modul wird derzeit als Lernvideo aufbereitet und bald verfügbar sein.
+          <h3 className="font-serif text-2xl font-normal text-ink">Video in Produktion</h3>
+          <p className="mt-3 font-mono text-[11px] uppercase tracking-[0.06em] text-ink-3">
+            Dieses Modul wird als Lernvideo aufbereitet.
           </p>
         </div>
       </div>
@@ -21,7 +21,7 @@ export function VideoEmbed({ youtubeId, title }: Props) {
   }
 
   return (
-    <div className="overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-card">
+    <div className="overflow-hidden border border-line">
       <div className="aspect-video">
         <iframe
           className="h-full w-full"

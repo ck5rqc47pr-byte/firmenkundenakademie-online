@@ -1,21 +1,31 @@
 import type { ReactNode } from "react";
 import { renderMarkdown } from "@/lib/markdown";
 
-type Props = {
-  content: string;
-};
+type Props = { content: string };
 
 const components = {
   h2: (props: { children: ReactNode }) => (
-    <div className="handout-chapter">
-      <span className="handout-kicker">Kapitel</span>
-      <h2 className="mt-3 scroll-mt-24 text-3xl font-semibold" {...props} />
+    <div className="chapter-break">
+      <div className="chapter-eyebrow">Abschnitt</div>
+      <h2
+        className="font-serif text-2xl font-normal leading-tight tracking-[-0.02em] text-ink mt-2"
+        {...props}
+      />
     </div>
   ),
-  h3: (props: { children: ReactNode }) => <h3 className="mt-8 text-2xl font-semibold" {...props} />,
+  h3: ({ children }: { children: ReactNode }) => (
+    <h3 className="font-serif text-xl font-[500] leading-tight tracking-[-0.01em] text-ink mt-8 mb-3">
+      {children}
+    </h3>
+  ),
+  h4: ({ children }: { children: ReactNode }) => (
+    <h4 className="font-mono text-[11px] uppercase tracking-[0.08em] text-ink-3 mt-6 mb-2">
+      {children}
+    </h4>
+  ),
   sup: (props: { children: ReactNode; title?: string }) => (
     <sup
-      className="cursor-help rounded bg-slate-100 px-1 py-0.5 text-[10px] font-bold uppercase tracking-[0.08em] text-primary"
+      className="font-mono text-[0.65em] text-primary cursor-help font-[500] px-px"
       title={props.title}
     >
       {props.children}
@@ -25,6 +35,5 @@ const components = {
 
 export async function MarkdownRenderer({ content }: Props) {
   const rendered = await renderMarkdown(content, components);
-
   return <div className="prose-academy">{rendered}</div>;
 }

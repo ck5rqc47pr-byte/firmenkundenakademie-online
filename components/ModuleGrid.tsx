@@ -18,25 +18,21 @@ export function ModuleGrid({ modules }: Props) {
     const fieldMatch = !kompetenzfeld || module.kompetenzfeld_slug === kompetenzfeld;
     const levelMatch = !stufe || stufe === "Alle" || module.stufe === stufe;
     const statusMatch = !status || status === "alle" || module.status === status;
-
     return fieldMatch && levelMatch && statusMatch;
   });
 
   return (
-    <section className="space-y-4">
-      <p className="text-sm font-medium text-slate-600">
-        {filteredModules.length} Modul{filteredModules.length === 1 ? "" : "e"} gefunden
-      </p>
-      <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+    <section>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
         {filteredModules.map((module) => (
           <ModuleCard key={module.id} module={module} />
         ))}
       </div>
-      {!filteredModules.length ? (
-        <div className="rounded-[2rem] border border-dashed border-slate-300 bg-white p-10 text-center text-slate-600">
-          Für diese Filterkombination wurden aktuell keine Module gefunden.
+      {!filteredModules.length && (
+        <div className="border-b border-r border-line p-10 text-center font-mono text-[11px] uppercase tracking-[0.08em] text-ink-3">
+          Keine Module für diese Filterauswahl gefunden.
         </div>
-      ) : null}
+      )}
     </section>
   );
 }

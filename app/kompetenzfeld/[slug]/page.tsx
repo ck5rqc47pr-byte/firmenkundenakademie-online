@@ -1,5 +1,4 @@
 import { notFound } from "next/navigation";
-import { LernpfadVisualisierung } from "@/components/LernpfadVisualisierung";
 import { ModuleCard } from "@/components/ModuleCard";
 import { getAllModules, getModulesByKompetenzfeld } from "@/lib/modules";
 
@@ -10,9 +9,9 @@ type Props = {
 };
 
 export function generateStaticParams() {
-  return Array.from(new Set(getAllModules().map((module) => module.kompetenzfeld_slug))).map(
-    (slug) => ({ slug }),
-  );
+  return Array.from(
+    new Set(getAllModules().map((module) => module.kompetenzfeld_slug)),
+  ).map((slug) => ({ slug }));
 }
 
 export default function KompetenzfeldPage({ params }: Props) {
@@ -21,24 +20,46 @@ export default function KompetenzfeldPage({ params }: Props) {
     notFound();
   }
 
+  const stufen = ["Berater", "Sparringspartner", "Stratege"];
+
   return (
-    <div className="space-y-8">
-      <section className="rounded-[2.5rem] bg-white p-6 shadow-card lg:p-10">
-        <p className="text-sm font-semibold uppercase tracking-[0.2em] text-accent">Kompetenzfeld</p>
-        <h1 className="mt-3 text-4xl font-semibold text-primary">{modules[0].kompetenzfeld}</h1>
-        <p className="mt-4 max-w-3xl text-lg text-slate-700">
-          Alle zugeordneten Module im Feld {modules[0].kompetenzfeld} mit klarer
-          Entwicklungslogik vom Einstieg bis zur strategischen Beratung.
-        </p>
+    <div>
+      {/* Header */}
+      <section className="border-b border-ink">
+        <div className="mx-auto max-w-content px-6 lg:px-14 py-16 lg:py-20">
+          <div className="font-mono text-[11px] uppercase tracking-[0.08em] text-ink-3 mb-6">
+            § Kompetenzfeld
+          </div>
+          <h1 className="font-serif text-5xl lg:text-7xl font-normal leading-[0.93] tracking-[-0.035em] text-ink">
+            {modules[0].kompetenzfeld}
+          </h1>
+          <p className="mt-6 font-serif text-xl leading-relaxed text-ink-2 max-w-2xl">
+            {modules.length} Module mit klarer Entwicklungslogik vom Einstieg bis zur
+            strategischen Beratung.
+          </p>
+        </div>
+        {/* Stufen badges */}
+        <div className="border-t border-line bg-bg-2">
+          <div className="mx-auto max-w-content px-6 lg:px-14 py-4 flex gap-6">
+            {stufen.map((s) => (
+              <div key={s} className="flex items-center gap-2">
+                <span className="font-mono text-[10px] uppercase tracking-[0.06em] text-ink-3">
+                  {s}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
       </section>
 
-      <LernpfadVisualisierung current={modules[0].stufe} />
-
-      <section className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-        {modules.map((module) => (
-          <ModuleCard key={module.id} module={module} />
-        ))}
-      </section>
+      {/* Module grid */}
+      <div className="mx-auto max-w-content">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-t border-l border-ink">
+          {modules.map((module) => (
+            <ModuleCard key={module.id} module={module} />
+          ))}
+        </div>
+      </div>
     </div>
   );
 }

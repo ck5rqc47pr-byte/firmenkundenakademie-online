@@ -23,8 +23,8 @@ const KOMPETENZFELDER: Kompetenzfeld[] = [
   {
     id: "K-01",
     name: "Finanzanalyse & Kreditexpertise",
-    color: "#003DA5",
-    textColor: "#fff",
+    color: "var(--primary)",
+    textColor: "var(--primary-ink)",
     kompetenzen: [
       {
         name: "Bilanz- & GuV-Analyse",
@@ -55,8 +55,8 @@ const KOMPETENZFELDER: Kompetenzfeld[] = [
   {
     id: "K-02",
     name: "Branchenwissen",
-    color: "#4c3bb5",
-    textColor: "#fff",
+    color: "oklch(0.38 0.10 280)",
+    textColor: "var(--primary-ink)",
     kompetenzen: [
       {
         name: "KMU / Mittelstand",
@@ -95,8 +95,8 @@ const KOMPETENZFELDER: Kompetenzfeld[] = [
   {
     id: "K-03",
     name: "Gesprächsführung & Beratung",
-    color: "#E05B00",
-    textColor: "#fff",
+    color: "var(--accent-ink)",
+    textColor: "var(--primary-ink)",
     kompetenzen: [
       {
         name: "Bedarfsanalyse & Gesprächsstruktur",
@@ -127,8 +127,8 @@ const KOMPETENZFELDER: Kompetenzfeld[] = [
   {
     id: "K-04",
     name: "Vertrieb & Ertragsmanagement",
-    color: "#c0392b",
-    textColor: "#fff",
+    color: "oklch(0.40 0.12 20)",
+    textColor: "var(--primary-ink)",
     kompetenzen: [
       {
         name: "Cross-Selling & Verbundgeschäft",
@@ -159,8 +159,8 @@ const KOMPETENZFELDER: Kompetenzfeld[] = [
   {
     id: "K-05",
     name: "Digitale Kompetenz",
-    color: "#00845a",
-    textColor: "#fff",
+    color: "oklch(0.38 0.10 160)",
+    textColor: "var(--primary-ink)",
     kompetenzen: [
       {
         name: "Atruvia / agree-Systeme",
@@ -183,8 +183,8 @@ const KOMPETENZFELDER: Kompetenzfeld[] = [
   {
     id: "K-06",
     name: "Führung & Zusammenarbeit",
-    color: "#7d5a00",
-    textColor: "#fff",
+    color: "oklch(0.38 0.06 60)",
+    textColor: "var(--primary-ink)",
     kompetenzen: [
       {
         name: "Teamarbeit & Wissenstransfer",
@@ -209,9 +209,9 @@ const KOMPETENZFELDER: Kompetenzfeld[] = [
 // ── Stufe-Konfiguration ───────────────────────────────────────────────────────
 
 const STUFEN: { id: Stufe; label: string; badge: string; color: string }[] = [
-  { id: "berater",  label: "Berater",          badge: "Stufe 1", color: "#1a7f4b" },
-  { id: "sparring", label: "Sparringspartner",  badge: "Stufe 2", color: "#c45000" },
-  { id: "stratege", label: "Stratege",          badge: "Stufe 3", color: "#4c3bb5" },
+  { id: "berater",  label: "Berater",         badge: "Stufe 1", color: "oklch(0.38 0.10 160)" },
+  { id: "sparring", label: "Sparringspartner", badge: "Stufe 2", color: "var(--accent-ink)" },
+  { id: "stratege", label: "Stratege",         badge: "Stufe 3", color: "var(--primary)" },
 ];
 
 // ── Komponenten ───────────────────────────────────────────────────────────────
@@ -220,8 +220,8 @@ function StufeCell({ text, stufe, active }: { text: string; stufe: typeof STUFEN
   if (!active) return null;
   return (
     <div
-      className="rounded-xl p-3 text-sm leading-6 text-slate-700"
-      style={{ background: `${stufe.color}12`, borderLeft: `3px solid ${stufe.color}` }}
+      className="p-3 text-sm leading-6 text-ink-2"
+      style={{ borderLeft: `2px solid ${stufe.color}`, background: "var(--bg-2)" }}
     >
       {text}
     </div>
@@ -238,27 +238,29 @@ function KompetenzRow({
   const [open, setOpen] = useState(true);
 
   return (
-    <div className="border-b border-slate-100 last:border-0">
+    <div className="border-b border-line last:border-0">
       <button
         onClick={() => setOpen((o) => !o)}
         className="flex w-full items-center justify-between gap-3 py-3 text-left"
       >
-        <span className="font-semibold text-slate-800">{kompetenz.name}</span>
-        <span className="shrink-0 text-slate-400 transition-transform" style={{ transform: open ? "rotate(180deg)" : "" }}>
+        <span className="font-sans text-sm font-[500] text-ink">{kompetenz.name}</span>
+        <span
+          className="shrink-0 font-mono text-ink-3 transition-transform"
+          style={{ transform: open ? "rotate(180deg)" : "" }}
+        >
           ▾
         </span>
       </button>
       {open && (
-        <div className={`mb-3 grid gap-2 ${activeStufen.length > 1 ? "md:grid-cols-" + activeStufen.length : ""}`}
-          style={{ gridTemplateColumns: activeStufen.length > 1 ? `repeat(${activeStufen.length}, 1fr)` : "1fr" }}
+        <div
+          className="mb-3 grid gap-2"
+          style={{
+            gridTemplateColumns:
+              activeStufen.length > 1 ? `repeat(${activeStufen.length}, 1fr)` : "1fr",
+          }}
         >
           {STUFEN.filter((s) => activeStufen.includes(s.id)).map((stufe) => (
-            <StufeCell
-              key={stufe.id}
-              text={kompetenz.stufen[stufe.id]}
-              stufe={stufe}
-              active={true}
-            />
+            <StufeCell key={stufe.id} text={kompetenz.stufen[stufe.id]} stufe={stufe} active={true} />
           ))}
         </div>
       )}
@@ -274,26 +276,26 @@ function KompetenzfeldCard({
   activeStufen: Stufe[];
 }) {
   return (
-    <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
+    <div className="overflow-hidden border border-line bg-bg">
       {/* Header */}
-      <div className="flex items-center gap-3 px-5 py-4" style={{ background: feld.color }}>
+      <div
+        className="flex items-center gap-3 px-5 py-4"
+        style={{ background: feld.color, color: feld.textColor }}
+      >
         <span
-          className="rounded-lg px-2 py-0.5 text-xs font-bold"
-          style={{ background: "rgba(255,255,255,0.2)", color: "#fff" }}
+          className="font-mono text-[10px] uppercase tracking-[0.06em] px-2 py-0.5"
+          style={{ background: "rgba(255,255,255,0.15)" }}
         >
           {feld.id}
         </span>
-        <h2 className="text-base font-bold" style={{ color: feld.textColor }}>
-          {feld.name}
-        </h2>
+        <h2 className="font-sans text-sm font-[600]">{feld.name}</h2>
         <span
-          className="ml-auto rounded-full px-2 py-0.5 text-xs font-semibold"
-          style={{ background: "rgba(255,255,255,0.2)", color: "#fff" }}
+          className="ml-auto font-mono text-[10px] uppercase tracking-[0.06em] px-2 py-0.5"
+          style={{ background: "rgba(255,255,255,0.15)" }}
         >
           {feld.kompetenzen.length} Kompetenzen
         </span>
       </div>
-
       {/* Kompetenzen */}
       <div className="px-5">
         {feld.kompetenzen.map((k) => (
@@ -312,7 +314,6 @@ export default function KompetenzmodellPage() {
   function toggleStufe(stufe: Stufe) {
     setActiveStufen((prev) => {
       if (prev.includes(stufe)) {
-        // Mindestens eine muss aktiv bleiben
         if (prev.length === 1) return prev;
         return prev.filter((s) => s !== stufe);
       }
@@ -325,101 +326,89 @@ export default function KompetenzmodellPage() {
   }
 
   return (
-    <div className="space-y-8">
+    <div>
       {/* Seitenkopf */}
-      <div className="overflow-hidden rounded-[2.5rem] border border-primary/10 bg-white px-8 py-10 shadow-card lg:px-12">
-        <p className="text-sm font-semibold uppercase tracking-[0.25em] text-accent">
-          Entwicklungspfad
-        </p>
-        <h1 className="mt-3 text-4xl font-semibold tracking-tight text-primary">
-          Kompetenzmodell
-        </h1>
-        <p className="mt-4 max-w-2xl text-lg leading-8 text-slate-600">
-          6 Kompetenzfelder · 18 Kompetenzen · 3 Entwicklungsstufen. Der strukturierte
-          Entwicklungspfad vom Berater zum Strategischen Partner.
-        </p>
-
-        {/* Stufen-Legende */}
-        <div className="mt-8 flex flex-wrap gap-3">
-          {STUFEN.map((stufe) => (
-            <div key={stufe.id} className="flex items-center gap-2">
-              <span
-                className="inline-flex h-6 w-6 items-center justify-center rounded-full text-xs font-bold text-white"
-                style={{ background: stufe.color }}
-              >
-                {stufe.badge.slice(-1)}
-              </span>
-              <span className="text-sm font-semibold" style={{ color: stufe.color }}>
-                {stufe.badge}: {stufe.label}
-              </span>
-            </div>
-          ))}
-          <span className="ml-2 text-sm text-slate-400">→ Entwicklungsrichtung</span>
+      <section className="border-b border-ink">
+        <div className="mx-auto max-w-content px-6 lg:px-14 py-16 lg:py-20">
+          <div className="font-mono text-[11px] uppercase tracking-[0.08em] text-ink-3 mb-6">
+            § Kompetenzmodell
+          </div>
+          <h1 className="font-serif text-5xl lg:text-7xl font-normal leading-[0.93] tracking-[-0.035em] text-ink">
+            Kompetenzmodell.
+          </h1>
+          <p className="mt-6 font-serif text-xl leading-relaxed text-ink-2 max-w-2xl">
+            6 Kompetenzfelder · 18 Kompetenzen · 3 Entwicklungsstufen. Der strukturierte
+            Entwicklungspfad vom Berater zum Strategischen Partner.
+          </p>
+          {/* Stufen-Legende */}
+          <div className="mt-10 flex flex-wrap gap-6">
+            {STUFEN.map((stufe) => (
+              <div key={stufe.id} className="flex items-center gap-2">
+                <span
+                  className="inline-flex h-5 w-5 items-center justify-center font-mono text-[10px] text-primary-ink"
+                  style={{ background: stufe.color }}
+                >
+                  {stufe.badge.slice(-1)}
+                </span>
+                <span className="font-mono text-[11px] uppercase tracking-[0.06em] text-ink-2">
+                  {stufe.badge}: {stufe.label}
+                </span>
+              </div>
+            ))}
+            <span className="font-mono text-[11px] uppercase tracking-[0.06em] text-ink-3">
+              → Entwicklungsrichtung
+            </span>
+          </div>
         </div>
-      </div>
+      </section>
 
       {/* Filter */}
-      <div className="flex flex-wrap items-center gap-3">
-        <span className="text-sm font-semibold text-slate-500">Stufe anzeigen:</span>
-        <button
-          onClick={() => setActiveStufen(["berater", "sparring", "stratege"])}
-          className={`rounded-full border-2 px-4 py-1.5 text-sm font-semibold transition ${
-            activeStufen.length === 3
-              ? "border-primary bg-primary text-white"
-              : "border-slate-300 bg-white text-slate-600 hover:border-primary hover:text-primary"
-          }`}
-        >
-          Alle vergleichen
-        </button>
-        {STUFEN.map((stufe) => {
-          const isActive = activeStufen.length === 1 && activeStufen[0] === stufe.id;
-          return (
-            <button
-              key={stufe.id}
-              onClick={() => selectOnly(stufe.id)}
-              className={`rounded-full border-2 px-4 py-1.5 text-sm font-semibold transition`}
-              style={
-                isActive
-                  ? { borderColor: stufe.color, background: stufe.color, color: "#fff" }
-                  : { borderColor: "#cbd5e1", background: "#fff", color: "#475569" }
-              }
-            >
-              {stufe.badge}: {stufe.label}
-            </button>
-          );
-        })}
-      </div>
-
-      {/* Spalten-Header bei Vergleichsansicht */}
-      {activeStufen.length > 1 && (
-        <div
-          className="grid gap-4 rounded-2xl border border-slate-100 bg-white p-4 shadow-sm"
-          style={{ gridTemplateColumns: `200px repeat(${activeStufen.length}, 1fr)` }}
-        >
-          <div />
-          {STUFEN.filter((s) => activeStufen.includes(s.id)).map((stufe) => (
-            <div
-              key={stufe.id}
-              className="rounded-xl px-4 py-2 text-center text-sm font-bold"
-              style={{ background: `${stufe.color}15`, color: stufe.color }}
-            >
-              {stufe.badge} · {stufe.label}
-            </div>
-          ))}
+      <div className="border-b border-line bg-bg-2">
+        <div className="mx-auto max-w-content px-6 lg:px-14 py-4 flex flex-wrap items-center gap-3">
+          <span className="font-mono text-[10px] uppercase tracking-[0.08em] text-ink-3">
+            Stufe anzeigen:
+          </span>
+          <button
+            onClick={() => setActiveStufen(["berater", "sparring", "stratege"])}
+            className={`font-mono text-[11px] uppercase tracking-[0.08em] px-3 py-2 border transition ${
+              activeStufen.length === 3
+                ? "bg-ink text-bg border-ink"
+                : "border-line text-ink-2 hover:border-ink-2 hover:text-ink"
+            }`}
+          >
+            Alle vergleichen
+          </button>
+          {STUFEN.map((stufe) => {
+            const isActive = activeStufen.length === 1 && activeStufen[0] === stufe.id;
+            return (
+              <button
+                key={stufe.id}
+                onClick={() => selectOnly(stufe.id)}
+                className="font-mono text-[11px] uppercase tracking-[0.08em] px-3 py-2 border transition"
+                style={
+                  isActive
+                    ? { borderColor: stufe.color, background: stufe.color, color: "var(--primary-ink)" }
+                    : { borderColor: "var(--line)", background: "var(--bg)", color: "var(--ink-2)" }
+                }
+              >
+                {stufe.badge}: {stufe.label}
+              </button>
+            );
+          })}
         </div>
-      )}
+      </div>
 
       {/* Kompetenzfelder */}
-      <div className="grid gap-6 xl:grid-cols-2">
-        {KOMPETENZFELDER.map((feld) => (
-          <KompetenzfeldCard key={feld.id} feld={feld} activeStufen={activeStufen} />
-        ))}
+      <div className="mx-auto max-w-content px-6 lg:px-14 py-12">
+        <div className="grid gap-6 xl:grid-cols-2">
+          {KOMPETENZFELDER.map((feld) => (
+            <KompetenzfeldCard key={feld.id} feld={feld} activeStufen={activeStufen} />
+          ))}
+        </div>
+        <p className="mt-12 font-mono text-[10px] uppercase tracking-[0.08em] text-ink-3 text-center">
+          Firmenkundenakademie · Benedikt Zoller Coaching · Kompetenzmodell v1.0
+        </p>
       </div>
-
-      {/* Hinweis */}
-      <p className="text-center text-xs text-slate-400">
-        Firmenkundenakademie · Benedikt Zoller Coaching · Kompetenzmodell v1.0
-      </p>
     </div>
   );
 }

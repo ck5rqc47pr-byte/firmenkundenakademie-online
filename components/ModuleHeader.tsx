@@ -1,38 +1,59 @@
+import type React from "react";
 import Link from "next/link";
 import type { Module } from "@/lib/modules";
-import { StufenBadge } from "@/components/StufenBadge";
 
-type Props = {
-  module: Module;
+const ROMAN: Record<string, string> = {
+  finanzanalyse: "I",
+  branchenwissen: "II",
+  gespraechsfuehrung: "III",
+  vertrieb: "IV",
+  digital: "V",
+  fuehrung: "VI",
 };
 
-export function ModuleHeader({ module }: Props) {
+export function ModuleHeader({ module }: { module: Module }) {
+  const roman = ROMAN[module.kompetenzfeld_slug] ?? "·";
   return (
-    <section className="rounded-[2rem] bg-primary px-6 py-10 text-white shadow-card lg:px-10">
-      <div className="mb-6 flex flex-wrap items-center gap-2 text-sm text-white/75">
-        <Link href="/" className="transition hover:text-white">
-          Akademie
-        </Link>
-        <span>›</span>
-        <Link href={`/kompetenzfeld/${module.kompetenzfeld_slug}`} className="transition hover:text-white">
-          {module.kompetenzfeld}
-        </Link>
-        <span>›</span>
-        <span className="text-white">{module.title}</span>
+    <section className="border-b border-ink">
+      {/* Breadcrumb */}
+      <div className="mx-auto max-w-content px-6 lg:px-14 py-3 border-b border-line">
+        <nav className="font-mono text-[10px] uppercase tracking-[0.08em] text-ink-3 flex gap-3 flex-wrap">
+          <Link href="/" className="hover:text-ink transition">Campus</Link>
+          <span>/</span>
+          <Link href={`/kompetenzfeld/${module.kompetenzfeld_slug}`} className="hover:text-ink transition">
+            {module.kompetenzfeld}
+          </Link>
+          <span>/</span>
+          <span className="text-ink">{module.id}</span>
+        </nav>
       </div>
-      <p className="text-sm font-semibold uppercase tracking-[0.2em] text-orange-200">{module.id}</p>
-      <h1 className="mt-3 max-w-4xl text-4xl font-semibold tracking-tight lg:text-5xl">
-        {module.title}
-      </h1>
-      <p className="mt-4 max-w-3xl text-lg text-white/80">{module.subtitle}</p>
-      <div className="mt-6 flex flex-wrap gap-3">
-        <StufenBadge stufe={module.stufe} inverted />
-        <span className="rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-medium">
-          {module.dauer}
-        </span>
-        <span className="rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-medium">
-          Bloom {module.bloom}
-        </span>
+      {/* Hero */}
+      <div className="mx-auto max-w-content px-6 lg:px-14 py-14 lg:py-20">
+        <div className="font-mono text-[11px] uppercase tracking-[0.08em] text-ink-3 mb-6">
+          § {roman} · {module.id} · {module.dauer} · Bloom {module.bloom}
+        </div>
+        <h1
+          className="font-serif text-5xl lg:text-7xl xl:text-[88px] font-normal leading-[0.93] tracking-[-0.035em] text-ink"
+          style={{ textWrap: "balance" } as React.CSSProperties}
+        >
+          {module.title}
+        </h1>
+        <p className="mt-6 font-serif text-xl lg:text-2xl leading-relaxed text-ink-2 max-w-2xl">
+          {module.subtitle}
+        </p>
+      </div>
+      {/* Apparat */}
+      <div className="border-t border-line bg-bg-2">
+        <div className="mx-auto max-w-content px-6 lg:px-14 py-5 flex flex-wrap gap-10">
+          {([["Kompetenzstufe", module.stufe], ["Format", module.format], ["Version", module.version]] as [string, string][]).map(([label, val]) =>
+            val ? (
+              <div key={label}>
+                <div className="font-serif text-lg font-normal leading-tight">{val}</div>
+                <div className="font-mono text-[10px] uppercase tracking-[0.06em] text-ink-3 mt-1">{label}</div>
+              </div>
+            ) : null
+          )}
+        </div>
       </div>
     </section>
   );

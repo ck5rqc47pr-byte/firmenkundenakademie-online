@@ -1,84 +1,82 @@
 import Link from "next/link";
 import { getModuleById, type Module } from "@/lib/modules";
-import { BloomBadge } from "@/components/BloomBadge";
 
-type Props = {
-  module: Module;
-  className?: string;
-};
+type Props = { module: Module; className?: string };
 
-function ModuleChip({ moduleId }: { moduleId: string }) {
-  const targetModule = getModuleById(moduleId);
-
-  if (!targetModule) {
-    return (
-      <span className="inline-flex rounded-full border border-dashed border-slate-300 px-3 py-1 text-sm font-medium text-slate-400">
-        {moduleId}
-      </span>
-    );
-  }
-
-  return (
+function Chip({ moduleId }: { moduleId: string }) {
+  const t = getModuleById(moduleId);
+  const cls =
+    "font-mono text-[10px] uppercase tracking-[0.06em] px-2 py-1 border transition";
+  return t ? (
     <Link
       href={`/module/${moduleId}`}
-      className="inline-flex rounded-full border border-slate-300 px-3 py-1 text-sm font-medium text-slate-700 transition hover:border-primary hover:text-primary"
+      className={cls + " border-line text-primary hover:border-primary"}
     >
       {moduleId}
     </Link>
+  ) : (
+    <span className={cls + " border-dashed border-line text-ink-3"}>{moduleId}</span>
   );
 }
 
 export function MetaBox({ module, className }: Props) {
   return (
-    <aside className={`grid gap-6 lg:sticky lg:top-24 ${className ?? ""}`}>
-      <div className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-card">
-        <h2 className="text-lg font-semibold text-primary">Lernziele</h2>
-        <ul className="mt-5 space-y-4">
-          {module.lernziele.map((ziel, index) => (
-            <li key={`${ziel.text}-${index}`} className="flex items-start gap-3">
-              <BloomBadge level={ziel.bloom_stufe} />
-              <span className="pt-1 text-sm leading-6 text-ink">{ziel.text}</span>
+    <aside className={`space-y-8 ${className ?? ""}`}>
+      <div>
+        <div className="font-mono text-[10px] uppercase tracking-[0.08em] text-ink-3 pb-3 border-b border-ink mb-4">
+          Lernziele
+        </div>
+        <ul className="space-y-4">
+          {module.lernziele.map((z, i) => (
+            <li key={i} className="flex gap-3">
+              <span className="font-mono text-[10px] text-primary mt-0.5 shrink-0 font-[500]">
+                B{z.bloom_stufe}
+              </span>
+              <span className="text-sm leading-relaxed text-ink-2">{z.text}</span>
             </li>
           ))}
         </ul>
       </div>
-      <div className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-card">
-        <h2 className="text-lg font-semibold text-primary">Moduldetails</h2>
-        <dl className="mt-5 space-y-5 text-sm">
-          <div>
-            <dt className="font-semibold text-slate-500">Format</dt>
-            <dd className="mt-1 text-ink">{module.format}</dd>
-          </div>
-          <div>
-            <dt className="font-semibold text-slate-500">Version</dt>
-            <dd className="mt-1 text-ink">{module.version}</dd>
-          </div>
-          <div>
-            <dt className="font-semibold text-slate-500">Status</dt>
-            <dd className="mt-1 text-ink">{module.status}</dd>
-          </div>
-          <div>
-            <dt className="font-semibold text-slate-500">Voraussetzungen</dt>
-            <dd className="mt-2 flex flex-wrap gap-2">
-              {module.voraussetzungen.length ? (
-                module.voraussetzungen.map((item) => <ModuleChip key={item} moduleId={item} />)
-              ) : (
-                <span className="text-slate-500">Keine</span>
-              )}
-            </dd>
-          </div>
-          <div>
-            <dt className="font-semibold text-slate-500">Folgemodule</dt>
-            <dd className="mt-2 flex flex-wrap gap-2">
-              {module.folgemodule.length ? (
-                module.folgemodule.map((item) => <ModuleChip key={item} moduleId={item} />)
-              ) : (
-                <span className="text-slate-500">Keine</span>
-              )}
-            </dd>
-          </div>
+      <div>
+        <div className="font-mono text-[10px] uppercase tracking-[0.08em] text-ink-3 pb-3 border-b border-ink mb-4">
+          Details
+        </div>
+        <dl className="space-y-3">
+          {([["Format", module.format], ["Dauer", module.dauer], ["Version", module.version]] as [string, string][]).map(
+            ([l, v]) =>
+              v ? (
+                <div key={l}>
+                  <dt className="font-mono text-[10px] uppercase tracking-[0.06em] text-ink-3">{l}</dt>
+                  <dd className="mt-0.5 text-sm text-ink">{v}</dd>
+                </div>
+              ) : null,
+          )}
         </dl>
       </div>
+      {module.voraussetzungen.length > 0 && (
+        <div>
+          <div className="font-mono text-[10px] uppercase tracking-[0.08em] text-ink-3 mb-3">
+            Voraussetzungen
+          </div>
+          <div className="flex flex-wrap gap-2">
+            {module.voraussetzungen.map((id) => (
+              <Chip key={id} moduleId={id} />
+            ))}
+          </div>
+        </div>
+      )}
+      {module.folgemodule.length > 0 && (
+        <div>
+          <div className="font-mono text-[10px] uppercase tracking-[0.08em] text-ink-3 mb-3">
+            Folgemodule
+          </div>
+          <div className="flex flex-wrap gap-2">
+            {module.folgemodule.map((id) => (
+              <Chip key={id} moduleId={id} />
+            ))}
+          </div>
+        </div>
+      )}
     </aside>
   );
 }

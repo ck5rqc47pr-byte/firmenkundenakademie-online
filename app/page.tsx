@@ -1,159 +1,168 @@
 import Link from "next/link";
-import { ModuleCard } from "@/components/ModuleCard";
 import { getAllModules, getKompetenzfelder } from "@/lib/modules";
+import { ModuleCard } from "@/components/ModuleCard";
 
-const featuredFieldDefinitions = [
-  {
-    slug: "finanzanalyse",
-    shortName: "Finanzanalyse",
-    title: "K-01 Finanzanalyse & Kreditexpertise",
-    description: "Sicherer Umgang mit Abschlüssen, Kennzahlen und Kreditlogik.",
-  },
-  {
-    slug: "branchenwissen",
-    shortName: "Branchenwissen",
-    title: "K-02 Branchenwissen",
-    description: "Branchenspezifisches Wissen für fundierte Einordnung im Kundengespräch.",
-  },
-  {
-    slug: "gespraechsfuehrung",
-    shortName: "Gesprächsführung",
-    title: "K-03 Gesprächsführung",
-    description: "Beratungsarchitekturen für überzeugende, vertrauensstarke Gespräche.",
-  },
-] as const;
+const MANIFEST = [
+  ["I.", "Aus der Praxis.", "Wer schreibt, hat den Kunden gestern noch beraten."],
+  ["II.", "Fundiert.", "Jeder Befund mit Studie. Jeder Satz mit Quelle."],
+  ["III.", "Genossenschaftlich.", "Mitgliederlogik, Region, langfristige Beziehung."],
+  ["IV.", "Ihr Tempo.", "Lesen, wann es passt. Tief genug, um zu überzeugen."],
+];
 
 export default function HomePage() {
-  const modules = getAllModules();
-  const kompetenzfelder = getKompetenzfelder();
-  const fieldLookup = new Map(kompetenzfelder.map((field) => [field.slug, field]));
-  const featuredFields = featuredFieldDefinitions.map((field) => {
-    const existing = fieldLookup.get(field.slug);
-
-    return {
-      ...field,
-      name: existing?.name ?? field.title,
-      count: existing?.count ?? 0,
-    };
-  });
+  const modules = getAllModules().slice(0, 3);
+  const felder = getKompetenzfelder();
 
   return (
-    <div className="space-y-12">
-      <section className="overflow-hidden rounded-[2.5rem] border border-primary/10 bg-white shadow-card">
-        <div className="grid gap-10 px-6 py-10 lg:grid-cols-[1.3fr_0.9fr] lg:px-10 lg:py-14">
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.25em] text-accent">
-              Wissenschaftlich fundierte Weiterbildung
-            </p>
-            <h1 className="mt-4 max-w-3xl text-4xl font-semibold tracking-tight text-primary lg:text-6xl">
-              Online-Lernplattform für exzellente Firmenkundenberatung
-            </h1>
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-700">
-              21 Module · 5 Kompetenzfelder · Akademie-Niveau. Die Firmenkundenakademie
-              verbindet Fachwissen, Transfer in die Praxis und modulare Weiterbildung für
-              Volksbanken und Raiffeisenbanken.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-4">
-              <Link
-                href="/module"
-                className="rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white transition hover:bg-primary/90"
-              >
-                Alle Module ansehen
-              </Link>
-              <Link
-                href="#akademie"
-                className="rounded-full border border-slate-300 px-6 py-3 text-sm font-semibold text-slate-700 transition hover:border-primary hover:text-primary"
-              >
-                So funktioniert die Akademie
-              </Link>
-            </div>
+    <div>
+      {/* Hero */}
+      <section className="mx-auto max-w-content px-6 lg:px-14 pt-16 pb-14 border-b border-ink">
+        <div className="font-mono text-[11px] uppercase tracking-[0.08em] text-ink-3 mb-8">
+          FKB CAMPUS · FIRMENKUNDENAKADEMIE · VR-BANKEN
+        </div>
+        <h1
+          className="font-serif text-6xl lg:text-8xl xl:text-[112px] font-normal leading-[0.92] tracking-[-0.04em]"
+          style={{ textWrap: "balance" } as React.CSSProperties}
+        >
+          Die digitale<br />
+          <em style={{ fontStyle: "italic", color: "var(--primary)" }}>
+            Firmen&shy;kunden&shy;akademie
+          </em>
+          <br />
+          für VR-Banken.
+        </h1>
+        <div className="mt-12 grid grid-cols-1 gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
+          <p className="font-serif text-xl leading-relaxed text-ink-2 max-w-xl">
+            Entwickelt aus der Praxis. Fundiert auf Forschung. Geschrieben für Berater:innen,
+            die mehr wollen als ein Webinar zwischen zwei Terminen.
+          </p>
+          <div className="flex flex-col gap-3">
+            <Link
+              href="/module"
+              className="inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.08em] bg-ink text-bg px-6 py-3 hover:bg-ink-2 transition"
+            >
+              Programm ansehen →
+            </Link>
+            <Link
+              href="/kompetenzmodell"
+              className="inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.08em] border border-ink text-ink px-6 py-3 hover:bg-bg-2 transition"
+            >
+              Kompetenzmodell
+            </Link>
           </div>
-          <div className="grid gap-4 rounded-[2rem] bg-surface p-6">
-            <div className="rounded-[1.75rem] bg-primary px-5 py-6 text-white">
-              <p className="text-sm uppercase tracking-[0.2em] text-white/70">Module online</p>
-              <p className="mt-2 text-4xl font-semibold">{modules.length}</p>
+        </div>
+      </section>
+
+      {/* Stats */}
+      <section className="border-b border-line bg-bg-2">
+        <div className="mx-auto max-w-content px-6 lg:px-14 py-8 grid grid-cols-3 gap-8 lg:grid-cols-6">
+          {(
+            [
+              ["21", "Module"],
+              ["6", "Kompetenzfelder"],
+              ["3", "Stufen"],
+              ["Bloom 1–6", "Taxonomie"],
+              ["APA 7", "Zitierstandard"],
+              ["MaRisk", "Regulatorik"],
+            ] as [string, string][]
+          ).map(([k, v]) => (
+            <div key={v}>
+              <div className="font-serif text-2xl font-normal leading-tight tracking-[-0.02em]">
+                {k}
+              </div>
+              <div className="font-mono text-[10px] uppercase tracking-[0.06em] text-ink-3 mt-1">
+                {v}
+              </div>
             </div>
-            <div className="grid gap-4 sm:grid-cols-2">
-              <div className="rounded-[1.75rem] bg-white p-5">
-                <p className="text-sm text-slate-500">Freigegeben</p>
-                <p className="mt-2 text-3xl font-semibold text-ink">
-                  {modules.filter((module) => module.status === "freigegeben").length}
+          ))}
+        </div>
+      </section>
+
+      {/* Manifest */}
+      <section className="border-b border-ink">
+        <div className="mx-auto max-w-content px-6 lg:px-14">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border-t border-ink">
+            {MANIFEST.map(([n, t, d], i) => (
+              <div
+                key={n}
+                style={{
+                  background: i === 1 ? "var(--primary)" : undefined,
+                  color: i === 1 ? "var(--primary-ink)" : undefined,
+                }}
+                className="p-10 border-b border-r border-line min-h-[280px] flex flex-col"
+              >
+                <div
+                  className="font-serif text-5xl italic leading-[0.9]"
+                  style={{ color: i === 1 ? "var(--accent)" : "var(--primary)" }}
+                >
+                  {n}
+                </div>
+                <h3 className="font-serif text-2xl font-normal tracking-[-0.02em] mt-6 mb-3">
+                  {t}
+                </h3>
+                <p
+                  className="text-sm leading-relaxed"
+                  style={{
+                    color: i === 1 ? "oklch(0.85 0.02 240)" : "var(--ink-2)",
+                  }}
+                >
+                  {d}
                 </p>
               </div>
-              <div className="rounded-[1.75rem] bg-white p-5">
-                <p className="text-sm text-slate-500">Kompetenzfelder</p>
-                <p className="mt-2 text-3xl font-semibold text-ink">{kompetenzfelder.length}</p>
-              </div>
-            </div>
-            <p className="rounded-[1.75rem] border border-dashed border-primary/20 bg-white p-5 text-sm leading-7 text-slate-600">
-              Neue Module werden automatisch aus <code>content/modules/</code> geladen. Die
-              Plattform bleibt damit dateibasiert, wartungsarm und deploymentfreundlich.
-            </p>
+            ))}
           </div>
         </div>
       </section>
 
-      <section className="space-y-6">
-        <div className="flex items-end justify-between gap-6">
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-accent">
-              Kompetenzfelder
-            </p>
-            <h2 className="mt-2 text-3xl font-semibold text-primary">
-              Lernen entlang echter Beratungssituationen
+      {/* Kompetenzfelder */}
+      <section className="border-b border-ink">
+        <div className="mx-auto max-w-content px-6 lg:px-14 py-16">
+          <div className="font-mono text-[11px] uppercase tracking-[0.08em] text-ink-3 mb-6">
+            § Kompetenzfelder
+          </div>
+          <h2 className="font-serif text-4xl lg:text-6xl font-normal leading-tight tracking-[-0.03em] mb-12">
+            Sechs Felder.{" "}
+            <em style={{ fontStyle: "italic", color: "var(--primary)" }}>Ihr Lernpfad.</em>
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-t border-l border-ink">
+            {felder.map((f) => (
+              <Link
+                key={f.slug}
+                href={`/kompetenzfeld/${f.slug}`}
+                className="group p-8 border-b border-r border-line hover:bg-bg-2 transition flex flex-col gap-2"
+              >
+                <div className="font-mono text-[10px] uppercase tracking-[0.08em] text-primary">
+                  {f.count} Module
+                </div>
+                <div className="font-serif text-xl font-[500] leading-tight text-ink group-hover:text-primary transition">
+                  {f.name}
+                </div>
+                <div className="font-mono text-[11px] text-ink-3 mt-auto pt-4">Entdecken →</div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Empfohlene Module */}
+      <section className="border-b border-ink">
+        <div className="mx-auto max-w-content px-6 lg:px-14 py-16">
+          <div className="flex items-end justify-between mb-8">
+            <h2 className="font-serif text-3xl font-normal tracking-[-0.02em]">
+              Empfohlene Module.
             </h2>
-          </div>
-        </div>
-        <div className="grid gap-6 lg:grid-cols-3">
-          {featuredFields.map((field) => (
             <Link
-              key={field.slug}
-              href={`/kompetenzfeld/${field.slug}`}
-              className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-card transition hover:-translate-y-1"
+              href="/module"
+              className="font-mono text-[11px] uppercase tracking-[0.08em] text-ink-3 hover:text-ink transition"
             >
-              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-accent">
-                {field.count} Module
-              </p>
-              <h3 className="mt-4 text-2xl font-semibold text-ink">{field.shortName}</h3>
-              <p className="mt-2 text-sm font-medium text-slate-500">{field.name}</p>
-              <p className="mt-3 text-sm leading-7 text-slate-600">{field.description}</p>
+              Alle ansehen →
             </Link>
-          ))}
-        </div>
-      </section>
-
-      <section id="akademie" className="rounded-[2.5rem] border border-slate-200 bg-white p-6 shadow-card lg:p-10">
-        <p className="text-sm font-semibold uppercase tracking-[0.2em] text-accent">
-          Wie die Akademie funktioniert
-        </p>
-        <div className="mt-6 grid gap-6 lg:grid-cols-3">
-          {[
-            ["1", "Modul wählen", "Wählen Sie ein Modul entlang von Kompetenzfeld, Stufe und Praxisbedarf."],
-            ["2", "Video + Unterlagen", "Bearbeiten Sie Video, Inhalte und Unterlagen im eigenen Lerntempo."],
-            ["3", "Transfer in die Praxis", "Übertragen Sie das Gelernte mit Cases und Transferaufgaben ins Kundengespräch."],
-          ].map(([step, title, description]) => (
-            <div key={step} className="rounded-[2rem] bg-surface p-6">
-              <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-primary text-lg font-bold text-white">
-                {step}
-              </span>
-              <h3 className="mt-5 text-xl font-semibold text-ink">{title}</h3>
-              <p className="mt-3 text-sm leading-7 text-slate-600">{description}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="space-y-6">
-        <div>
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-accent">
-            Erste verfügbare Module
-          </p>
-          <h2 className="mt-2 text-3xl font-semibold text-primary">Direkt einsteigen</h2>
-        </div>
-        <div className="grid gap-6 lg:grid-cols-3">
-          {modules.slice(0, 3).map((module) => (
-            <ModuleCard key={module.id} module={module} />
-          ))}
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 border-t border-l border-ink">
+            {modules.map((m) => (
+              <ModuleCard key={m.id} module={m} />
+            ))}
+          </div>
         </div>
       </section>
     </div>

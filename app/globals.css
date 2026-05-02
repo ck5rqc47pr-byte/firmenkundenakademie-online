@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,300;8..60,400;8..60,500;8..60,600;8..60,700&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -6,22 +6,34 @@
 
 :root {
   color-scheme: light;
+  --bg: oklch(0.985 0.003 240);
+  --bg-2: oklch(0.965 0.005 240);
+  --ink: oklch(0.18 0.02 250);
+  --ink-2: oklch(0.38 0.02 250);
+  --ink-3: oklch(0.56 0.02 250);
+  --line: oklch(0.90 0.01 240);
+  --line-2: oklch(0.82 0.015 240);
+  --primary: oklch(0.32 0.08 250);
+  --primary-ink: oklch(0.98 0.003 240);
+  --accent: oklch(0.78 0.05 75);
+  --accent-ink: oklch(0.22 0.03 75);
+  --serif: "Source Serif 4", "Iowan Old Style", Georgia, serif;
+  --sans: "Inter Tight", system-ui, -apple-system, Segoe UI, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
 }
 
 html,
 body {
   overflow-x: hidden;
   scroll-behavior: smooth;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
 }
 
 body {
   margin: 0;
   min-height: 100vh;
-  background:
-    radial-gradient(circle at top left, rgba(224, 91, 0, 0.08), transparent 32%),
-    linear-gradient(180deg, #ffffff 0%, #f8f9fb 48%, #eef3ff 100%);
-  color: #1a1a2e;
-  font-family: "Inter", Arial, sans-serif;
 }
 
 a {
@@ -33,74 +45,187 @@ a {
   box-sizing: border-box;
 }
 
+::selection {
+  background: var(--primary);
+  color: var(--primary-ink);
+}
+
+/* ── Prose Academy ──────────────────────────────────────────────────────────── */
+
 .prose-academy {
-  @apply prose prose-lg prose-slate max-w-none prose-headings:font-semibold prose-p:text-ink prose-li:text-ink prose-strong:text-ink;
   overflow-wrap: break-word;
   word-break: break-word;
   min-width: 0;
+  font-family: var(--serif);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  color: var(--ink-2);
 }
 
-.prose-academy :where(h2) {
-  @apply text-primary;
+.prose-academy p {
+  margin-top: 0;
+  margin-bottom: 1.25em;
+}
+
+.prose-academy h2 {
+  font-family: var(--serif);
+  font-size: 2rem;
+  font-weight: 400;
+  letter-spacing: -0.025em;
+  border-top: 1px solid var(--ink);
+  padding-top: 2rem;
+  margin-top: 2.5em;
+  margin-bottom: 0.75em;
+  color: var(--ink);
   overflow-wrap: break-word;
+  line-height: 1.2;
 }
 
-.prose-academy :where(h3) {
-  @apply text-accent;
-  overflow-wrap: break-word;
+.prose-academy h3 {
+  font-family: var(--serif);
+  font-size: 1.375rem;
+  font-weight: 500;
+  margin-top: 2em;
+  margin-bottom: 0.5em;
+  color: var(--ink);
+  line-height: 1.3;
 }
 
-.prose-academy :where(table) {
-  @apply block max-w-full overflow-x-auto rounded-2xl border border-slate-200 shadow-sm;
-  border-collapse: separate;
-  border-spacing: 0;
+.prose-academy h4 {
+  font-family: var(--mono);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ink-3);
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
 }
 
-.prose-academy :where(thead) {
-  @apply bg-primary text-white;
+.prose-academy ul,
+.prose-academy ol {
+  padding-left: 1.5em;
+  margin-bottom: 1.25em;
 }
 
-.prose-academy :where(thead th) {
-  @apply border-primary/70 px-5 py-4 text-white;
-  color: #ffffff !important;
+.prose-academy li {
+  margin-bottom: 0.4em;
 }
 
-.prose-academy :where(thead th *) {
-  color: #ffffff !important;
+.prose-academy strong {
+  font-weight: 600;
+  color: var(--ink);
 }
 
-.prose-academy :where(tbody td) {
-  @apply px-5 py-4;
+.prose-academy blockquote {
+  border-left: 2px solid var(--primary);
+  background: var(--bg-2);
+  font-style: italic;
+  padding: 1em 1.25em;
+  margin: 1.5em 0;
+  color: var(--ink-2);
+  border-radius: 0;
 }
 
-.prose-academy :where(tbody tr:nth-child(even)) {
-  @apply bg-slate-50;
+.prose-academy table {
+  border-collapse: collapse;
+  display: block;
+  overflow-x: auto;
+  width: 100%;
+  margin: 1.5em 0;
 }
 
-.prose-academy :where(blockquote) {
-  @apply rounded-r-2xl border-l-4 border-accent bg-orange-50 px-5 py-3 text-ink not-italic;
+.prose-academy thead {
+  border-bottom: 2px solid var(--ink);
 }
 
-.prose-academy :where(code):not(:where(pre code)) {
-  @apply rounded bg-slate-100 px-1.5 py-0.5 text-sm text-primary;
+.prose-academy th {
+  font-family: var(--mono);
+  font-size: 0.625rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ink);
+  padding: 0.75em 1em;
+  text-align: left;
 }
 
-.prose-academy :where(pre) {
-  @apply max-w-full overflow-x-auto rounded-2xl border border-slate-200 border-l-4 border-l-primary bg-slate-50 px-6 py-5 text-ink shadow-sm;
+.prose-academy tbody td {
+  padding: 0.75em 1em;
+  border-bottom: 1px solid var(--line);
+  color: var(--ink-2);
+  font-size: 0.9375rem;
 }
 
-.prose-academy :where(pre code) {
-  @apply whitespace-pre text-[0.95em] leading-8 text-ink;
-  color: #1a1a2e !important;
+.prose-academy tbody tr:nth-child(even) {
+  background: var(--bg-2);
 }
 
-.handout-chapter {
-  @apply mt-14 rounded-[1.75rem] border-t-4 border-primary bg-slate-50 px-6 py-5;
+.prose-academy code:not(pre code) {
+  font-family: var(--mono);
+  font-size: 0.875em;
+  background: var(--bg-2);
+  border: 1px solid var(--line);
+  color: var(--primary);
+  padding: 0.1em 0.35em;
+  border-radius: 0;
 }
 
-.handout-kicker {
-  @apply text-xs font-semibold uppercase tracking-[0.22em] text-accent;
+.prose-academy pre {
+  font-family: var(--mono);
+  background: var(--bg-2);
+  border-left: 2px solid var(--primary);
+  padding: 1.25em 1.5em;
+  overflow-x: auto;
+  margin: 1.5em 0;
+  border-radius: 0;
+  font-size: 0.875rem;
+  line-height: 1.7;
 }
+
+.prose-academy pre code {
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--ink);
+  font-size: inherit;
+}
+
+.prose-academy sup.fn {
+  font-family: var(--mono);
+  font-size: 0.65em;
+  color: var(--primary);
+  font-weight: 500;
+}
+
+.prose-academy a {
+  color: var(--primary);
+  text-decoration: underline;
+  text-decoration-color: color-mix(in oklch, var(--primary) 40%, transparent);
+  text-underline-offset: 3px;
+}
+
+.prose-academy a:hover {
+  text-decoration-color: var(--primary);
+}
+
+/* ── Chapter helpers ────────────────────────────────────────────────────────── */
+
+.chapter-break {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--ink);
+}
+
+.chapter-eyebrow {
+  font-family: var(--mono);
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ink-3);
+}
+
+/* ── Print ──────────────────────────────────────────────────────────────────── */
 
 @media print {
   header,
@@ -109,7 +234,7 @@ a {
   }
 
   body {
-    background: #ffffff;
+    background: white;
   }
 
   main {
@@ -122,15 +247,14 @@ a {
     line-height: 1.6;
   }
 
-  .prose-academy :where(h2, h3) {
+  .prose-academy h2,
+  .prose-academy h3 {
     break-after: avoid;
   }
 
-  .prose-academy :where(table, pre, blockquote) {
+  .prose-academy table,
+  .prose-academy pre,
+  .prose-academy blockquote {
     break-inside: avoid;
-  }
-
-  .handout-chapter {
-    break-after: avoid;
   }
 }

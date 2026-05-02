@@ -12,19 +12,23 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="de">
-      <body>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+      </head>
+      <body className="font-sans">
         <NavBar />
-        <main className="mx-auto min-h-[calc(100vh-88px)] max-w-content px-6 py-8 lg:px-8 lg:py-12">
+        <main className="mx-auto min-h-[calc(100vh-72px)]">
           {children}
         </main>
-        <footer className="border-t border-slate-200 bg-white">
-          <div className="mx-auto flex max-w-content flex-col gap-3 px-6 py-8 text-sm text-slate-600 lg:flex-row lg:items-center lg:justify-between lg:px-8">
-            <p>© Benedikt Zoller Coaching</p>
-            <div className="flex gap-4">
-              <Link href="/impressum" className="transition hover:text-primary">
+        <footer className="border-t border-line">
+          <div className="mx-auto flex max-w-content flex-col gap-3 px-6 py-8 lg:flex-row lg:items-center lg:justify-between lg:px-14">
+            <p className="font-mono text-[11px] uppercase tracking-[0.08em] text-ink-3">© Benedikt Zoller Coaching</p>
+            <div className="flex gap-6">
+              <Link href="/impressum" className="font-mono text-[11px] uppercase tracking-[0.08em] text-ink-3 transition hover:text-ink">
                 Impressum
               </Link>
-              <Link href="/datenschutz" className="transition hover:text-primary">
+              <Link href="/datenschutz" className="font-mono text-[11px] uppercase tracking-[0.08em] text-ink-3 transition hover:text-ink">
                 Datenschutz
               </Link>
             </div>

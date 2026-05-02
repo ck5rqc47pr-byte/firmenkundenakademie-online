@@ -30,63 +30,67 @@ export function FilterBar({ kompetenzfelder }: Props) {
     } else {
       params.set(key, value);
     }
-
     router.push(`${pathname}?${params.toString()}`, { scroll: false });
   }
 
+  const selectCls =
+    "border border-line bg-bg font-mono text-[11px] uppercase tracking-[0.08em] text-ink-2 px-3 py-2 outline-none focus:border-ink transition w-full";
+
   return (
-    <div className="rounded-[2rem] border border-slate-200 bg-white p-5 shadow-card">
-      <div className="grid gap-5 lg:grid-cols-[1.2fr_1.4fr_1fr]">
-        <label className="grid gap-2 text-sm font-medium text-slate-700">
-          Kompetenzfeld
-          <select
-            value={activeField}
-            onChange={(event) => updateParam("kompetenzfeld", event.target.value)}
-            className="rounded-2xl border border-slate-300 bg-slate-50 px-4 py-3 outline-none transition focus:border-primary"
-          >
-            <option key="alle" value="alle">Alle Kompetenzfelder</option>
-            {kompetenzfelder.map((field) => (
-              <option key={field.slug} value={field.slug}>
-                {field.name}
-              </option>
-            ))}
-          </select>
-        </label>
-        <div className="grid gap-2">
-          <span className="text-sm font-medium text-slate-700">Stufe</span>
-          <div className="flex flex-wrap gap-2">
-            {stufen.map((stufe) => {
-              const active = activeStufe === stufe;
-              return (
-                <button
-                  key={stufe}
-                  type="button"
-                  onClick={() => updateParam("stufe", stufe)}
-                  className={`rounded-full px-4 py-2 text-sm font-semibold transition ${
-                    active ? "bg-primary text-white" : "bg-slate-100 text-slate-700 hover:bg-slate-200"
-                  }`}
-                >
-                  {stufe}
-                </button>
-              );
-            })}
-          </div>
+    <div className="flex flex-wrap items-end gap-6">
+      <label className="flex flex-col gap-1.5">
+        <span className="font-mono text-[10px] uppercase tracking-[0.08em] text-ink-3">Kompetenzfeld</span>
+        <select
+          value={activeField}
+          onChange={(e) => updateParam("kompetenzfeld", e.target.value)}
+          className={selectCls}
+        >
+          <option value="alle">Alle Felder</option>
+          {kompetenzfelder.map((field) => (
+            <option key={field.slug} value={field.slug}>
+              {field.name}
+            </option>
+          ))}
+        </select>
+      </label>
+
+      <div className="flex flex-col gap-1.5">
+        <span className="font-mono text-[10px] uppercase tracking-[0.08em] text-ink-3">Stufe</span>
+        <div className="flex flex-wrap gap-1">
+          {stufen.map((stufe) => {
+            const active = activeStufe === stufe;
+            return (
+              <button
+                key={stufe}
+                type="button"
+                onClick={() => updateParam("stufe", stufe)}
+                className={`font-mono text-[11px] uppercase tracking-[0.08em] px-3 py-2 border transition ${
+                  active
+                    ? "bg-ink text-bg border-ink"
+                    : "border-line text-ink-2 hover:border-ink-2 hover:text-ink"
+                }`}
+              >
+                {stufe}
+              </button>
+            );
+          })}
         </div>
-        <label className="grid gap-2 text-sm font-medium text-slate-700">
-          Status
-          <select
-            value={activeStatus}
-            onChange={(event) => updateParam("status", event.target.value)}
-            className="rounded-2xl border border-slate-300 bg-slate-50 px-4 py-3 outline-none transition focus:border-primary"
-          >
-            {statuses.map((status) => (
-              <option key={status.value} value={status.value}>
-                {status.label}
-              </option>
-            ))}
-          </select>
-        </label>
       </div>
+
+      <label className="flex flex-col gap-1.5">
+        <span className="font-mono text-[10px] uppercase tracking-[0.08em] text-ink-3">Status</span>
+        <select
+          value={activeStatus}
+          onChange={(e) => updateParam("status", e.target.value)}
+          className={selectCls}
+        >
+          {statuses.map((status) => (
+            <option key={status.value} value={status.value}>
+              {status.label}
+            </option>
+          ))}
+        </select>
+      </label>
     </div>
   );
 }
