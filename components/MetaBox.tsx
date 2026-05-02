@@ -4,6 +4,7 @@ import { BloomBadge } from "@/components/BloomBadge";
 
 type Props = {
   module: Module;
+  className?: string;
 };
 
 function ModuleChip({ moduleId }: { moduleId: string }) {
@@ -27,9 +28,9 @@ function ModuleChip({ moduleId }: { moduleId: string }) {
   );
 }
 
-export function MetaBox({ module }: Props) {
+export function MetaBox({ module, className }: Props) {
   return (
-    <aside className="grid gap-6 lg:sticky lg:top-24">
+    <aside className={`grid gap-6 lg:sticky lg:top-24 ${className ?? ""}`}>
       <div className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-card">
         <h2 className="text-lg font-semibold text-primary">Lernziele</h2>
         <ul className="mt-5 space-y-4">

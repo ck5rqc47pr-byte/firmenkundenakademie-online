@@ -35,14 +35,19 @@ a {
 
 .prose-academy {
   @apply prose prose-lg prose-slate max-w-none prose-headings:font-semibold prose-p:text-ink prose-li:text-ink prose-strong:text-ink;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  min-width: 0;
 }
 
 .prose-academy :where(h2) {
   @apply text-primary;
+  overflow-wrap: break-word;
 }
 
 .prose-academy :where(h3) {
   @apply text-accent;
+  overflow-wrap: break-word;
 }
 
 .prose-academy :where(table) {

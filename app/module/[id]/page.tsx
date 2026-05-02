@@ -33,11 +33,11 @@ export default function ModuleDetailPage({ params }: Props) {
   return (
     <div className="space-y-8">
       <ModuleHeader module={module} />
-      <section className="grid gap-8 lg:grid-cols-[0.9fr_1.5fr]">
-        <MetaBox module={module} />
-        <div className="space-y-8">
+      <section className="grid min-w-0 gap-8 lg:grid-cols-[0.9fr_1.5fr]">
+        <MetaBox module={module} className="order-2 min-w-0 lg:order-1" />
+        <div className="order-1 min-w-0 space-y-8 lg:order-2">
           <VideoEmbed youtubeId={module.youtube_id} title={module.title} />
-          <div className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-card lg:p-10">
+          <div className="min-w-0 overflow-hidden rounded-[2rem] border border-slate-200 bg-white p-6 shadow-card lg:p-10">
             <MarkdownRenderer content={module.content} />
           </div>
           <section className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-card">

@@ -36,11 +36,19 @@ function escapeMdxTextComparisons(markdown: string): string {
   return markdown.replace(/<(?=\d)/g, "&lt;");
 }
 
+// Strips leading section numbers like "4.1", "4.1.1", "5.2" from headings
+// so "### 4.1 Theorie-Input" becomes "### Theorie-Input"
+function stripSectionNumbers(markdown: string): string {
+  return markdown.replace(/^(#{1,6})\s+\d+(?:\.\d+)*\s+(.+)$/gm, "$1 $2");
+}
+
 export async function renderMarkdown(
   markdown: string,
   components: Record<string, (props: any) => ReactElement>,
 ): Promise<ReactElement> {
-  const processedMarkdown = injectSourceTooltips(escapeMdxTextComparisons(markdown));
+  const processedMarkdown = injectSourceTooltips(
+    escapeMdxTextComparisons(stripSectionNumbers(markdown)),
+  );
   const { content } = await compileMDX({
     source: processedMarkdown,
     components,
