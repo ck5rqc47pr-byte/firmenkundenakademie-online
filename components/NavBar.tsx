@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { useState } from "react";
 
 const NAV = [
   { href: "/", label: "Campus" },
@@ -8,10 +11,16 @@ const NAV = [
 ];
 
 export function NavBar() {
+  const [open, setOpen] = useState(false);
+
   return (
     <header className="sticky top-0 z-50 border-b border-ink bg-bg">
       <div className="mx-auto flex max-w-content items-center justify-between px-6 py-5 lg:px-14">
-        <Link href="/" className="flex items-center gap-2.5 font-sans text-sm font-semibold tracking-tight text-ink">
+        <Link
+          href="/"
+          className="flex items-center gap-2.5 font-sans text-sm font-semibold tracking-tight text-ink"
+          onClick={() => setOpen(false)}
+        >
           <svg width="20" height="20" viewBox="0 0 22 22" fill="none" aria-hidden>
             <rect x="2" y="2" width="18" height="3" fill="currentColor"/>
             <rect x="2" y="7" width="12" height="3" fill="currentColor" opacity="0.5"/>
@@ -20,6 +29,8 @@ export function NavBar() {
           </svg>
           FKB <span className="font-normal text-ink-2 ml-1">Campus</span>
         </Link>
+
+        {/* Desktop nav */}
         <nav className="hidden items-center gap-8 md:flex">
           {NAV.map(item => (
             <Link key={item.href} href={item.href}
@@ -28,8 +39,34 @@ export function NavBar() {
             </Link>
           ))}
         </nav>
-        <span className="font-mono text-xl md:hidden">≡</span>
+
+        {/* Mobile hamburger */}
+        <button
+          className="md:hidden font-mono text-xl text-ink leading-none px-1"
+          aria-label={open ? "Menü schließen" : "Menü öffnen"}
+          onClick={() => setOpen(o => !o)}
+        >
+          {open ? "✕" : "≡"}
+        </button>
       </div>
+
+      {/* Mobile dropdown */}
+      {open && (
+        <div className="md:hidden border-t border-ink bg-bg">
+          <nav className="mx-auto max-w-content px-6 py-4 flex flex-col gap-5">
+            {NAV.map(item => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="font-mono text-[11px] uppercase tracking-[0.08em] text-ink-2 hover:text-ink transition"
+                onClick={() => setOpen(false)}
+              >
+                {item.label}
+              </Link>
+            ))}
+          </nav>
+        </div>
+      )}
     </header>
   );
 }

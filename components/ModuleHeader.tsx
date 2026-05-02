@@ -43,13 +43,13 @@ export function ModuleHeader({ module }: { module: Module }) {
         </p>
       </div>
       {/* Apparat */}
-      <div className="border-t border-line bg-bg-2">
+      <div className="border-t border-line bg-primary">
         <div className="mx-auto max-w-content px-6 lg:px-14 py-5 flex flex-wrap gap-10">
           {([["Kompetenzstufe", module.stufe], ["Format", module.format], ["Version", module.version]] as [string, string][]).map(([label, val]) =>
             val ? (
               <div key={label}>
-                <div className="font-serif text-lg font-normal leading-tight">{val}</div>
-                <div className="font-mono text-[10px] uppercase tracking-[0.06em] text-ink-3 mt-1">{label}</div>
+                <div className="font-serif text-lg font-normal leading-tight text-primary-ink">{val}</div>
+                <div className="font-mono text-[10px] uppercase tracking-[0.06em] text-primary-ink opacity-60 mt-1">{label}</div>
               </div>
             ) : null
           )}

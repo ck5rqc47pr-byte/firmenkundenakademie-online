@@ -118,12 +118,12 @@ a {
 }
 
 .prose-academy blockquote {
-  border-left: 2px solid var(--primary);
-  background: var(--bg-2);
+  border-left: none;
+  background: var(--primary);
   font-style: italic;
   padding: 1em 1.25em;
   margin: 1.5em 0;
-  color: var(--ink-2);
+  color: var(--primary-ink);
   border-radius: 0;
 }
 
