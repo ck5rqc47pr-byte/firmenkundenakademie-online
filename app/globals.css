@@ -127,8 +127,16 @@ a {
   border-radius: 0;
 }
 
+.prose-academy blockquote strong {
+  color: var(--primary-ink);
+}
+
 .prose-academy blockquote.blockquote-accent {
   background: var(--accent);
+  color: var(--accent-ink);
+}
+
+.prose-academy blockquote.blockquote-accent strong {
   color: var(--accent-ink);
 }
 
