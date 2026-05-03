@@ -121,7 +121,7 @@ a {
   border-left: none;
   background: var(--primary);
   font-style: italic;
-  padding: 1.25em 1.75em;
+  padding: 1em 1.25em;
   margin: 1.5em 0;
   color: var(--primary-ink);
   border-radius: 0;
