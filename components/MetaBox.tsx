@@ -29,7 +29,10 @@ export function MetaBox({ module, className }: Props) {
         <ul className="space-y-4">
           {module.lernziele.map((z, i) => (
             <li key={i} className="flex gap-3">
-              <span className="font-mono text-[10px] text-primary mt-0.5 shrink-0 font-[500]">
+              <span
+                className="font-mono text-[10px] shrink-0 font-[500] px-1.5 py-0.5 leading-none"
+                style={{ background: "var(--accent)", color: "var(--accent-ink)" }}
+              >
                 B{z.bloom_stufe}
               </span>
               <span className="text-sm leading-relaxed text-ink-2">{z.text}</span>

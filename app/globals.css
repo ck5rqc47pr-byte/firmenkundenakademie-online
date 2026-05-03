@@ -127,6 +127,11 @@ a {
   border-radius: 0;
 }
 
+.prose-academy blockquote.blockquote-accent {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
 .prose-academy table {
   border-collapse: collapse;
   display: block;

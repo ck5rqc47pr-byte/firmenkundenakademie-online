@@ -25,7 +25,7 @@ export default function HomePage() {
           style={{ textWrap: "balance" } as React.CSSProperties}
         >
           Die digitale<br />
-          <em style={{ fontStyle: "italic", color: "var(--primary)" }}>
+          <em style={{ fontStyle: "italic", color: "var(--accent)" }}>
             Firmen&shy;kunden&shy;akademie
           </em>
           <br />

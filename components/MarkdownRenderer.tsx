@@ -3,6 +3,17 @@ import { renderMarkdown } from "@/lib/markdown";
 
 type Props = { content: string };
 
+function getFirstText(node: ReactNode): string {
+  if (typeof node === "string") return node;
+  if (Array.isArray(node)) return node.map(getFirstText).join("");
+  if (node && typeof node === "object" && "props" in (node as object)) {
+    return getFirstText((node as { props: { children?: ReactNode } }).props.children);
+  }
+  return "";
+}
+
+const ACCENT_TRIGGERS = ["Tipp", "Wichtig", "Hinweis", "Merksatz"];
+
 const components = {
   h2: (props: { children: ReactNode }) => (
     <div className="chapter-break">
@@ -23,6 +34,15 @@ const components = {
       {children}
     </h4>
   ),
+  blockquote: ({ children }: { children: ReactNode }) => {
+    const text = getFirstText(children);
+    const isAccent = ACCENT_TRIGGERS.some((t) => text.startsWith(t));
+    return isAccent ? (
+      <blockquote className="blockquote-accent">{children}</blockquote>
+    ) : (
+      <blockquote>{children}</blockquote>
+    );
+  },
   sup: (props: { children: ReactNode; title?: string }) => (
     <sup
       className="font-mono text-[0.65em] text-primary cursor-help font-[500] px-px"
