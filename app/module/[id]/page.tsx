@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/lib/auth";
 import { MarkdownRenderer } from "@/components/MarkdownRenderer";
 import { MetaBox } from "@/components/MetaBox";
 import { ModuleHeader } from "@/components/ModuleHeader";
@@ -15,9 +17,16 @@ export function generateStaticParams() {
   return getAllModules().map((m) => ({ id: m.id }));
 }
 
-export default function ModuleDetailPage({ params }: { params: { id: string } }) {
+export const dynamic = "force-dynamic";
+
+export default async function ModuleDetailPage({ params }: { params: { id: string } }) {
   const module = getModuleById(params.id);
   if (!module) notFound();
+
+  const session = await getServerSession(authOptions);
+  const role = (session?.user as { role?: string })?.role ?? "teilnehmer";
+  const isTrainerOrAdmin = role === "trainer" || role === "admin";
+
   const adjacent = getAdjacentModules(module.id);
   const pdfUrl = getParticipantHandoutPdfUrl(module.id);
 
@@ -32,9 +41,31 @@ export default function ModuleDetailPage({ params }: { params: { id: string } })
           />
           <div className="order-1 min-w-0 space-y-12 lg:order-2">
             <VideoEmbed youtubeId={module.youtube_id} title={module.title} />
+
+            {/* Wissenschaftliche Einordnung – sichtbar für alle */}
+            {module.content_theorie && (
+              <div className="min-w-0 overflow-hidden">
+                <MarkdownRenderer content={module.content_theorie} />
+              </div>
+            )}
+
+            {/* Hauptinhalt (Sec 4 + 5 + 7) */}
             <div className="min-w-0 overflow-hidden">
               <MarkdownRenderer content={module.content} />
             </div>
+
+            {/* Trainerbereich – nur für Trainer und Admin */}
+            {isTrainerOrAdmin && module.content_trainer && (
+              <div className="min-w-0 overflow-hidden border-t-2 border-accent pt-10">
+                <div className="mb-6 inline-flex items-center gap-2 bg-accent/10 px-3 py-1.5">
+                  <span className="font-mono text-[10px] uppercase tracking-[0.12em] text-accent font-semibold">
+                    Trainerbereich · Nur für {role === "admin" ? "Admin" : "Trainer"} sichtbar
+                  </span>
+                </div>
+                <MarkdownRenderer content={module.content_trainer} />
+              </div>
+            )}
+
             {pdfUrl && (
               <div className="border-t border-ink pt-8">
                 <div className="font-mono text-[10px] uppercase tracking-[0.08em] text-ink-3 mb-4">
