@@ -1,11 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  outputFileTracingExcludes: {
-    "*": [
-      "./content/**",
-      "./public/downloads/**",
-    ],
+  experimental: {
+    outputFileTracingExcludes: {
+      "*": ["./content/**", "./public/downloads/**"],
+    },
   },
 };
 
