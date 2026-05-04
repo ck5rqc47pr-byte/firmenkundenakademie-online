@@ -8,14 +8,9 @@ import { ModuleHeader } from "@/components/ModuleHeader";
 import { VideoEmbed } from "@/components/VideoEmbed";
 import {
   getAdjacentModules,
-  getAllModules,
   getModuleById,
   getParticipantHandoutPdfUrl,
 } from "@/lib/modules";
-
-export function generateStaticParams() {
-  return getAllModules().map((m) => ({ id: m.id }));
-}
 
 export const dynamic = "force-dynamic";
 
