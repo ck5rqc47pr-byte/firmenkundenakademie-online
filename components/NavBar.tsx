@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { useSession, signOut } from "next-auth/react";
 
 const NAV = [
   { href: "/", label: "Campus" },
@@ -10,8 +11,16 @@ const NAV = [
   { href: "/quellen", label: "Quellen" },
 ];
 
+const ROLE_LABEL: Record<string, string> = {
+  admin: "Admin",
+  trainer: "Trainer",
+  teilnehmer: "Teilnehmer",
+};
+
 export function NavBar() {
   const [open, setOpen] = useState(false);
+  const { data: session } = useSession();
+  const role = (session?.user as { role?: string })?.role ?? "";
 
   return (
     <header className="sticky top-0 z-50 border-b border-ink bg-bg">
@@ -40,6 +49,24 @@ export function NavBar() {
           ))}
         </nav>
 
+        {/* Session info + Logout (Desktop) */}
+        {session && (
+          <div className="hidden md:flex items-center gap-4">
+            <span className="font-mono text-[10px] uppercase tracking-[0.1em] text-ink-3">
+              {session.user?.name ?? session.user?.email}
+              {role && (
+                <span className="ml-1.5 text-accent">· {ROLE_LABEL[role] ?? role}</span>
+              )}
+            </span>
+            <button
+              onClick={() => signOut({ callbackUrl: "/login" })}
+              className="font-mono text-[10px] uppercase tracking-[0.1em] text-ink-3 hover:text-ink transition"
+            >
+              Abmelden
+            </button>
+          </div>
+        )}
+
         {/* Mobile hamburger */}
         <button
           className="md:hidden font-mono text-xl text-ink leading-none px-1"
@@ -64,6 +91,14 @@ export function NavBar() {
                 {item.label}
               </Link>
             ))}
+            {session && (
+              <button
+                onClick={() => signOut({ callbackUrl: "/login" })}
+                className="text-left font-mono text-[11px] uppercase tracking-[0.08em] text-ink-3 hover:text-ink transition"
+              >
+                Abmelden ({session.user?.name ?? session.user?.email})
+              </button>
+            )}
           </nav>
         </div>
       )}

@@ -19,6 +19,8 @@ export interface Module {
   youtube_id: string;
   lernziele: { text: string; bloom_stufe: 1 | 2 | 3 | 4 | 5 | 6 }[];
   content: string;
+  content_theorie: string;   // Sec 2 – Wissenschaftliche Einordnung (alle Rollen)
+  content_trainer: string;   // Sec 3 + Sec 6 – nur Trainer / Admin
   slug: string;
 }
 
@@ -188,12 +190,31 @@ function getHighestBloomLevel(value: unknown): Module["lernziele"][number]["bloo
   return highest as Module["lernziele"][number]["bloom_stufe"];
 }
 
+function extractMarkedSection(content: string, key: string): { main: string; section: string } {
+  const start = `<!-- CONTENT_${key}_START -->`;
+  const end = `<!-- CONTENT_${key}_END -->`;
+  const startIdx = content.indexOf(start);
+  const endIdx = content.indexOf(end);
+
+  if (startIdx === -1 || endIdx === -1) {
+    return { main: content, section: "" };
+  }
+
+  const section = content.slice(startIdx + start.length, endIdx).trim();
+  const main = (content.slice(0, startIdx) + content.slice(endIdx + end.length)).trim();
+  return { main, section };
+}
+
 function parseModule(filename: string): Module {
   const filePath = path.join(MODULES_DIR, filename);
   const raw = fs.readFileSync(filePath, "utf-8");
-  const { data, content } = matter(raw);
+  const { data, content: rawContent } = matter(raw);
   const normalizedData = data as Record<string, unknown>;
   const fallbackBloomLevel = getHighestBloomLevel(data.bloom);
+
+  // Trainer- und Theorie-Blöcke aus dem Markdown-Body extrahieren
+  const { main: afterTrainer, section: content_trainer } = extractMarkedSection(rawContent, "TRAINER");
+  const { main: content, section: content_theorie } = extractMarkedSection(afterTrainer, "THEORIE");
 
   return {
     ...(data as Omit<Module, "content" | "slug">),
@@ -214,5 +235,7 @@ function parseModule(filename: string): Module {
     lernziele: normalizeLernziele(data.lernziele, fallbackBloomLevel),
     slug: String(data.id),
     content,
+    content_theorie,
+    content_trainer,
   };
 }
