@@ -11,6 +11,8 @@ const NAV = [
   { href: "/quellen", label: "Quellen" },
 ];
 
+const TRAINER_NAV = { href: "/trainer", label: "Trainer" };
+
 const ROLE_LABEL: Record<string, string> = {
   admin: "Admin",
   trainer: "Trainer",
@@ -47,6 +49,14 @@ export function NavBar() {
               {item.label}
             </Link>
           ))}
+          {(role === "trainer" || role === "admin") && (
+            <Link
+              href={TRAINER_NAV.href}
+              className="font-mono text-[11px] uppercase tracking-[0.08em] text-accent transition hover:text-accent/80"
+            >
+              {TRAINER_NAV.label}
+            </Link>
+          )}
         </nav>
 
         {/* Session info + Logout (Desktop) */}
@@ -91,6 +101,15 @@ export function NavBar() {
                 {item.label}
               </Link>
             ))}
+            {(role === "trainer" || role === "admin") && (
+              <Link
+                href={TRAINER_NAV.href}
+                className="font-mono text-[11px] uppercase tracking-[0.08em] text-accent hover:text-accent/80 transition"
+                onClick={() => setOpen(false)}
+              >
+                {TRAINER_NAV.label}
+              </Link>
+            )}
             {session && (
               <button
                 onClick={() => signOut({ callbackUrl: "/login" })}
