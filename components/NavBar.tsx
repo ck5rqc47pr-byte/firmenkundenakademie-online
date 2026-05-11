@@ -12,6 +12,7 @@ const NAV = [
 ];
 
 const TRAINER_NAV = { href: "/trainer", label: "Trainer" };
+const ADMIN_NAV = { href: "/admin", label: "Admin" };
 
 const ROLE_LABEL: Record<string, string> = {
   admin: "Admin",
@@ -55,6 +56,14 @@ export function NavBar() {
               className="font-mono text-[11px] uppercase tracking-[0.08em] text-accent transition hover:text-accent/80"
             >
               {TRAINER_NAV.label}
+            </Link>
+          )}
+          {role === "admin" && (
+            <Link
+              href={ADMIN_NAV.href}
+              className="font-mono text-[11px] uppercase tracking-[0.08em] text-accent transition hover:text-accent/80"
+            >
+              {ADMIN_NAV.label}
             </Link>
           )}
         </nav>
@@ -108,6 +117,15 @@ export function NavBar() {
                 onClick={() => setOpen(false)}
               >
                 {TRAINER_NAV.label}
+              </Link>
+            )}
+            {role === "admin" && (
+              <Link
+                href={ADMIN_NAV.href}
+                className="font-mono text-[11px] uppercase tracking-[0.08em] text-accent hover:text-accent/80 transition"
+                onClick={() => setOpen(false)}
+              >
+                {ADMIN_NAV.label}
               </Link>
             )}
             {session && (
