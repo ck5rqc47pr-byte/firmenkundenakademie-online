@@ -2,7 +2,7 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
-import { getAllModules, getParticipantHandoutPdfUrl } from "@/lib/modules";
+import { getAllModules, getParticipantHandoutPdfUrl, getTrainerHandbuchPdfUrl } from "@/lib/modules";
 
 export const dynamic = "force-dynamic";
 
@@ -41,6 +41,7 @@ export default async function TrainerPage() {
   const withTrainer = allModules.filter((m) => m.content_trainer?.trim()).length;
   const withoutTrainer = total - withTrainer;
   const withPdf = allModules.filter((m) => getParticipantHandoutPdfUrl(m.id)).length;
+  const withThb = allModules.filter((m) => getTrainerHandbuchPdfUrl(m.id)).length;
 
   // Gruppierung nach Kompetenzfeld
   const grouped = FIELD_ORDER.reduce<Record<string, typeof allModules>>(
@@ -79,8 +80,8 @@ export default async function TrainerPage() {
             [
               [String(total), "Module gesamt"],
               [String(withTrainer), "Trainerhandbuch bereit"],
-              [String(withoutTrainer), "Ausstehend"],
               [String(withPdf), "TN-Unterlagen (PDF)"],
+              [String(withThb), "Handbuch (PDF)"],
             ] as [string, string][]
           ).map(([val, label]) => (
             <div key={label}>
@@ -125,8 +126,8 @@ export default async function TrainerPage() {
               {/* Modul-Tabelle */}
               <div className="border border-ink overflow-hidden">
                 {/* Tabellenkopf */}
-                <div className="grid grid-cols-[80px_1fr_120px_100px_80px_80px] bg-primary text-white">
-                  {["Modul", "Titel", "Stufe", "Handbuch", "PDF", ""].map((h) => (
+                <div className="grid grid-cols-[80px_1fr_120px_100px_80px_80px_80px] bg-primary text-white">
+                  {["Modul", "Titel", "Stufe", "Handbuch", "THB", "TNU", ""].map((h) => (
                     <div
                       key={h}
                       className="font-mono text-[10px] uppercase tracking-[0.08em] px-4 py-3"
@@ -140,12 +141,13 @@ export default async function TrainerPage() {
                 {modules.map((m, i) => {
                   const hasTrainer = Boolean(m.content_trainer?.trim());
                   const pdfUrl = getParticipantHandoutPdfUrl(m.id);
+                  const thbUrl = getTrainerHandbuchPdfUrl(m.id);
                   const even = i % 2 === 0;
 
                   return (
                     <div
                       key={m.id}
-                      className={`grid grid-cols-[80px_1fr_120px_100px_80px_80px] border-t border-line items-center ${even ? "bg-white" : "bg-bg-2"}`}
+                      className={`grid grid-cols-[80px_1fr_120px_100px_80px_80px_80px] border-t border-line items-center ${even ? "bg-white" : "bg-bg-2"}`}
                     >
                       {/* ID */}
                       <div className="px-4 py-3.5">
@@ -182,7 +184,23 @@ export default async function TrainerPage() {
                         )}
                       </div>
 
-                      {/* PDF */}
+                      {/* THB – Trainerhandbuch PDF */}
+                      <div className="px-4 py-3.5">
+                        {thbUrl ? (
+                          <a
+                            href={thbUrl}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="font-mono text-[10px] uppercase tracking-[0.06em] text-primary hover:underline"
+                          >
+                            PDF ↓
+                          </a>
+                        ) : (
+                          <span className="font-mono text-[10px] text-ink-3">–</span>
+                        )}
+                      </div>
+
+                      {/* TNU – Teilnehmerunterlagen PDF */}
                       <div className="px-4 py-3.5">
                         {pdfUrl ? (
                           <a
