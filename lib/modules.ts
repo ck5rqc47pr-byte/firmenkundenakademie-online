@@ -33,6 +33,12 @@ const PARTICIPANT_HANDOUTS_DIR = path.join(
   "downloads",
   "teilnehmerunterlagen",
 );
+const TRAINER_HANDBOOKS_DIR = path.join(
+  process.cwd(),
+  "public",
+  "downloads",
+  "trainerhandbuch",
+);
 
 export function getAllModules(): Module[] {
   const files = fs.readdirSync(MODULES_DIR).filter((file) => file.endsWith(".md"));
@@ -93,6 +99,18 @@ export function getParticipantHandoutPdfUrl(moduleId: string): string | null {
   }
 
   return `/downloads/teilnehmerunterlagen/${filename}`;
+}
+
+export function getTrainerHandbuchPdfUrl(moduleId: string): string | null {
+  const normalizedId = moduleId.toUpperCase();
+  const filename = `${normalizedId}.pdf`;
+  const absolutePath = path.join(TRAINER_HANDBOOKS_DIR, filename);
+
+  if (!fs.existsSync(absolutePath)) {
+    return null;
+  }
+
+  return `/downloads/trainerhandbuch/${filename}`;
 }
 
 function normalizeStatus(value: unknown): Module["status"] {
