@@ -17,9 +17,8 @@ const ACCENT_TRIGGERS = ["Tipp", "Wichtig", "Hinweis", "Merksatz"];
 const components = {
   h2: (props: { children: ReactNode }) => (
     <div className="chapter-break">
-      <div className="chapter-eyebrow">Abschnitt</div>
       <h2
-        className="font-serif text-2xl font-normal leading-tight tracking-[-0.02em] text-ink mt-2"
+        className="font-serif text-2xl font-normal leading-tight tracking-[-0.02em] text-ink"
         {...props}
       />
     </div>
