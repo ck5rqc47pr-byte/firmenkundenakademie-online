@@ -10,6 +10,7 @@ import {
   getAdjacentModules,
   getModuleById,
   getParticipantHandoutPdfUrl,
+  getTrainerHandbuchPdfUrl,
 } from "@/lib/modules";
 
 export const dynamic = "force-dynamic";
@@ -24,6 +25,7 @@ export default async function ModuleDetailPage({ params }: { params: { id: strin
 
   const adjacent = getAdjacentModules(module.id);
   const pdfUrl = getParticipantHandoutPdfUrl(module.id);
+  const trainerPdfUrl = getTrainerHandbuchPdfUrl(module.id);
 
   // Content in Abschnitte aufteilen (sync_akademie.py trennt mit \n\n---\n\n)
   const [sec4Content = "", sec5Content = "", sec7Content = ""] =
@@ -37,11 +39,34 @@ export default async function ModuleDetailPage({ params }: { params: { id: strin
           <MetaBox
             module={module}
             pdfUrl={pdfUrl}
+            trainerPdfUrl={trainerPdfUrl}
             hasTheorie={!!module.content_theorie}
             isTrainerOrAdmin={isTrainerOrAdmin}
             className="order-2 min-w-0 lg:order-1 lg:sticky lg:top-28 lg:self-start"
           />
           <div className="order-1 min-w-0 space-y-12 lg:order-2">
+            {/* Mobile Chapter-Nav – nur auf kleinen Screens, Desktop hat MetaBox-Sidebar */}
+            <nav className="lg:hidden flex flex-wrap gap-3 pt-2">
+              {module.content_theorie && (
+                <a href="#einordnung" className="font-mono text-[10px] uppercase tracking-[0.06em] border border-line text-ink-2 px-3 py-2 hover:border-primary hover:text-primary transition">
+                  Einordnung
+                </a>
+              )}
+              <a href="#inhalte" className="font-mono text-[10px] uppercase tracking-[0.06em] border border-line text-ink-2 px-3 py-2 hover:border-primary hover:text-primary transition">
+                Inhalte
+              </a>
+              <a href="#transfer" className="font-mono text-[10px] uppercase tracking-[0.06em] border border-line text-ink-2 px-3 py-2 hover:border-primary hover:text-primary transition">
+                Praxistransfer
+              </a>
+              <a href="#quellen" className="font-mono text-[10px] uppercase tracking-[0.06em] border border-line text-ink-2 px-3 py-2 hover:border-primary hover:text-primary transition">
+                Quellen
+              </a>
+              {isTrainerOrAdmin && (
+                <a href="#trainerbereich" className="font-mono text-[10px] uppercase tracking-[0.06em] border border-accent text-accent px-3 py-2 hover:bg-accent hover:text-primary-ink transition">
+                  Trainerbereich
+                </a>
+              )}
+            </nav>
             <VideoEmbed youtubeId={module.youtube_id} title={module.title} />
 
             {/* Wissenschaftliche Einordnung */}
