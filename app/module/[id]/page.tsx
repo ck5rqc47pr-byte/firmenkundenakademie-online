@@ -11,6 +11,7 @@ import {
   getModuleById,
   getParticipantHandoutPdfUrl,
   getTrainerHandbuchPdfUrl,
+  getBeobachtungsbogenPdfUrl,
 } from "@/lib/modules";
 
 export const dynamic = "force-dynamic";
@@ -22,10 +23,12 @@ export default async function ModuleDetailPage({ params }: { params: { id: strin
   const session = await getServerSession(authOptions);
   const role = (session?.user as { role?: string })?.role ?? "teilnehmer";
   const isTrainerOrAdmin = role === "trainer" || role === "admin";
+  const canSeeBeobachtungsbogen = role === "teamleiter" || role === "trainer" || role === "admin";
 
   const adjacent = getAdjacentModules(module.id);
   const pdfUrl = getParticipantHandoutPdfUrl(module.id);
   const trainerPdfUrl = getTrainerHandbuchPdfUrl(module.id);
+  const beobachtungsbogenUrl = getBeobachtungsbogenPdfUrl(module.id);
 
   // Content in Abschnitte aufteilen (sync_akademie.py trennt mit \n\n---\n\n)
   const [sec4Content = "", sec5Content = "", sec7Content = ""] =
@@ -40,6 +43,7 @@ export default async function ModuleDetailPage({ params }: { params: { id: strin
             module={module}
             pdfUrl={pdfUrl}
             trainerPdfUrl={trainerPdfUrl}
+            beobachtungsbogenUrl={canSeeBeobachtungsbogen ? beobachtungsbogenUrl : null}
             hasTheorie={!!module.content_theorie}
             isTrainerOrAdmin={isTrainerOrAdmin}
             className="order-2 min-w-0 lg:order-1 lg:sticky lg:top-28 lg:self-start"
