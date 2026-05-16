@@ -337,7 +337,7 @@ export default function KompetenzmodellPage() {
             Kompetenzmodell.
           </h1>
           <p className="mt-6 font-serif text-xl leading-relaxed text-ink-2 max-w-2xl">
-            6 Kompetenzfelder · 18 Kompetenzen · 3 Entwicklungsstufen. Der strukturierte
+            6 Kompetenzfelder · 17 Kompetenzen · 3 Entwicklungsstufen. Der strukturierte
             Entwicklungspfad vom Berater zum Strategischen Partner.
           </p>
           {/* Stufen-Legende */}
