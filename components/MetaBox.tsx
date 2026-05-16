@@ -1,7 +1,13 @@
 import Link from "next/link";
 import { getModuleById, type Module } from "@/lib/modules";
 
-type Props = { module: Module; pdfUrl?: string | null; className?: string };
+type Props = {
+  module: Module;
+  pdfUrl?: string | null;
+  hasTheorie?: boolean;
+  isTrainerOrAdmin?: boolean;
+  className?: string;
+};
 
 function Chip({ moduleId }: { moduleId: string }) {
   const t = getModuleById(moduleId);
@@ -19,9 +25,46 @@ function Chip({ moduleId }: { moduleId: string }) {
   );
 }
 
-export function MetaBox({ module, pdfUrl, className }: Props) {
+export function MetaBox({ module, pdfUrl, hasTheorie, isTrainerOrAdmin, className }: Props) {
   return (
     <aside className={`space-y-8 ${className ?? ""}`}>
+      {/* Auf dieser Seite */}
+      <div>
+        <div className="font-mono text-[10px] uppercase tracking-[0.08em] text-ink-3 pb-3 border-b border-ink mb-4">
+          Auf dieser Seite
+        </div>
+        <ul className="space-y-2">
+          {hasTheorie && (
+            <li>
+              <a href="#einordnung" className="font-mono text-[10px] uppercase tracking-[0.06em] text-ink-2 hover:text-primary transition">
+                Einordnung
+              </a>
+            </li>
+          )}
+          <li>
+            <a href="#inhalte" className="font-mono text-[10px] uppercase tracking-[0.06em] text-ink-2 hover:text-primary transition">
+              Inhalte
+            </a>
+          </li>
+          <li>
+            <a href="#transfer" className="font-mono text-[10px] uppercase tracking-[0.06em] text-ink-2 hover:text-primary transition">
+              Praxistransfer
+            </a>
+          </li>
+          <li>
+            <a href="#quellen" className="font-mono text-[10px] uppercase tracking-[0.06em] text-ink-2 hover:text-primary transition">
+              Quellen
+            </a>
+          </li>
+          {isTrainerOrAdmin && (
+            <li>
+              <a href="#trainerbereich" className="font-mono text-[10px] uppercase tracking-[0.06em] text-accent hover:opacity-80 transition">
+                Trainerbereich
+              </a>
+            </li>
+          )}
+        </ul>
+      </div>
       <div>
         <div className="font-mono text-[10px] uppercase tracking-[0.08em] text-ink-3 pb-3 border-b border-ink mb-4">
           Lernziele
@@ -39,22 +82,6 @@ export function MetaBox({ module, pdfUrl, className }: Props) {
             </li>
           ))}
         </ul>
-      </div>
-      <div>
-        <div className="font-mono text-[10px] uppercase tracking-[0.08em] text-ink-3 pb-3 border-b border-ink mb-4">
-          Details
-        </div>
-        <dl className="space-y-3">
-          {([["Format", module.format], ["Dauer", module.dauer], ["Version", module.version]] as [string, string][]).map(
-            ([l, v]) =>
-              v ? (
-                <div key={l}>
-                  <dt className="font-mono text-[10px] uppercase tracking-[0.06em] text-ink-3">{l}</dt>
-                  <dd className="mt-0.5 text-sm text-ink">{v}</dd>
-                </div>
-              ) : null,
-          )}
-        </dl>
       </div>
       {module.voraussetzungen.length > 0 && (
         <div>

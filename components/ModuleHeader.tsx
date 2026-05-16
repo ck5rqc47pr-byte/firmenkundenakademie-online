@@ -45,7 +45,7 @@ export function ModuleHeader({ module }: { module: Module }) {
       {/* Apparat */}
       <div className="border-t border-line bg-primary">
         <div className="mx-auto max-w-content px-6 lg:px-14 py-5 flex flex-wrap gap-10">
-          {([["Kompetenzstufe", module.stufe], ["Format", module.format], ["Version", module.version]] as [string, string][]).map(([label, val]) =>
+          {([["Kompetenzstufe", module.stufe], ["Format", module.format], ["Bloom-Stufe", module.bloom ? `Bloom ${module.bloom}` : ""]] as [string, string][]).map(([label, val]) =>
             val ? (
               <div key={label}>
                 <div className="font-serif text-lg font-normal leading-tight text-primary-ink">{val}</div>
