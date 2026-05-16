@@ -1,4 +1,4 @@
-export type UserRole = "admin" | "trainer" | "teilnehmer";
+export type UserRole = "admin" | "trainer" | "teamleiter" | "teilnehmer";
 
 export interface AppUser {
   id: string;
@@ -29,6 +29,14 @@ export const USERS: AppUser[] = [
   },
   {
     id: "3",
+    name: "Test Teamleiter",
+    login: "teamleiter",
+    // Standard: Teamleiter2026!
+    passwordHash: "$2b$10$iiJGkwMt.a.4SwyWa7DYHudsDychbRb9z/fbm8//3ub1848O2LzAW",
+    role: "teamleiter",
+  },
+  {
+    id: "4",
     name: "Test Teilnehmer",
     login: "teilnehmer",
     // Standard: Campus2026!

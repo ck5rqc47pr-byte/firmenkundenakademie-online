@@ -5,6 +5,7 @@ type Props = {
   module: Module;
   pdfUrl?: string | null;
   trainerPdfUrl?: string | null;
+  beobachtungsbogenUrl?: string | null;
   hasTheorie?: boolean;
   isTrainerOrAdmin?: boolean;
   className?: string;
@@ -26,7 +27,7 @@ function Chip({ moduleId }: { moduleId: string }) {
   );
 }
 
-export function MetaBox({ module, pdfUrl, trainerPdfUrl, hasTheorie, isTrainerOrAdmin, className }: Props) {
+export function MetaBox({ module, pdfUrl, trainerPdfUrl, beobachtungsbogenUrl, hasTheorie, isTrainerOrAdmin, className }: Props) {
   return (
     <aside className={`space-y-8 ${className ?? ""}`}>
       {/* Auf dieser Seite – nur Desktop (Mobile hat eigene Leiste oben) */}
@@ -119,7 +120,7 @@ export function MetaBox({ module, pdfUrl, trainerPdfUrl, hasTheorie, isTrainerOr
           {module.kompetenzfeld} →
         </Link>
       </div>
-      {(pdfUrl || (isTrainerOrAdmin && trainerPdfUrl)) && (
+      {(pdfUrl || beobachtungsbogenUrl || (isTrainerOrAdmin && trainerPdfUrl)) && (
         <div>
           <div className="font-mono text-[10px] uppercase tracking-[0.08em] text-ink-3 pb-3 border-b border-ink mb-4">
             Downloads
@@ -133,6 +134,17 @@ export function MetaBox({ module, pdfUrl, trainerPdfUrl, hasTheorie, isTrainerOr
                 className="flex items-center justify-between gap-2 bg-primary text-primary-ink px-4 py-3 font-mono text-[11px] uppercase tracking-[0.08em] hover:opacity-90 transition"
               >
                 <span>Teilnehmerunterlagen (PDF)</span>
+                <span>↓</span>
+              </a>
+            )}
+            {beobachtungsbogenUrl && (
+              <a
+                href={beobachtungsbogenUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center justify-between gap-2 border border-line text-ink-2 px-4 py-3 font-mono text-[11px] uppercase tracking-[0.08em] hover:border-primary hover:text-primary transition"
+              >
+                <span>Beobachtungsbogen (PDF)</span>
                 <span>↓</span>
               </a>
             )}
