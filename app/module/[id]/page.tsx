@@ -25,6 +25,10 @@ export default async function ModuleDetailPage({ params }: { params: { id: strin
   const adjacent = getAdjacentModules(module.id);
   const pdfUrl = getParticipantHandoutPdfUrl(module.id);
 
+  // Content in Abschnitte aufteilen (sync_akademie.py trennt mit \n\n---\n\n)
+  const [sec4Content = "", sec5Content = "", sec7Content = ""] =
+    module.content.split("\n\n---\n\n");
+
   return (
     <div>
       <ModuleHeader module={module} />
@@ -33,26 +37,42 @@ export default async function ModuleDetailPage({ params }: { params: { id: strin
           <MetaBox
             module={module}
             pdfUrl={pdfUrl}
+            hasTheorie={!!module.content_theorie}
+            isTrainerOrAdmin={isTrainerOrAdmin}
             className="order-2 min-w-0 lg:order-1 lg:sticky lg:top-28 lg:self-start"
           />
           <div className="order-1 min-w-0 space-y-12 lg:order-2">
             <VideoEmbed youtubeId={module.youtube_id} title={module.title} />
 
-            {/* Wissenschaftliche Einordnung – sichtbar für alle */}
+            {/* Wissenschaftliche Einordnung */}
             {module.content_theorie && (
-              <div className="min-w-0 overflow-hidden">
+              <div id="einordnung" className="min-w-0 overflow-hidden scroll-mt-28">
                 <MarkdownRenderer content={module.content_theorie} />
               </div>
             )}
 
-            {/* Hauptinhalt (Sec 4 + 5 + 7) */}
-            <div className="min-w-0 overflow-hidden">
-              <MarkdownRenderer content={module.content} />
+            {/* Sec 4: Modulinhalte */}
+            <div id="inhalte" className="min-w-0 overflow-hidden scroll-mt-28">
+              <MarkdownRenderer content={sec4Content} />
             </div>
+
+            {/* Sec 5: Praxistransfer */}
+            {sec5Content && (
+              <div id="transfer" className="min-w-0 overflow-hidden scroll-mt-28">
+                <MarkdownRenderer content={sec5Content} />
+              </div>
+            )}
+
+            {/* Sec 7: Quellen */}
+            {sec7Content && (
+              <div id="quellen" className="min-w-0 overflow-hidden scroll-mt-28">
+                <MarkdownRenderer content={sec7Content} />
+              </div>
+            )}
 
             {/* Trainerbereich – nur für Trainer und Admin */}
             {isTrainerOrAdmin && module.content_trainer && (
-              <div className="min-w-0 overflow-hidden border-t-2 border-accent pt-10">
+              <div id="trainerbereich" className="min-w-0 overflow-hidden border-t-2 border-accent pt-10 scroll-mt-28">
                 <div className="mb-6 inline-flex items-center gap-2 bg-accent/10 px-3 py-1.5">
                   <span className="font-mono text-[10px] uppercase tracking-[0.12em] text-accent font-semibold">
                     Trainerbereich · Nur für {role === "admin" ? "Admin" : "Trainer"} sichtbar
