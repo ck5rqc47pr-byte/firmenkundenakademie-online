@@ -32,6 +32,7 @@ export default async function ModuleDetailPage({ params }: { params: { id: strin
         <div className="grid gap-16 py-12 lg:grid-cols-[260px_1fr] lg:py-20 min-w-0">
           <MetaBox
             module={module}
+            pdfUrl={pdfUrl}
             className="order-2 min-w-0 lg:order-1 lg:sticky lg:top-28 lg:self-start"
           />
           <div className="order-1 min-w-0 space-y-12 lg:order-2">
@@ -61,56 +62,49 @@ export default async function ModuleDetailPage({ params }: { params: { id: strin
               </div>
             )}
 
-            {pdfUrl && (
-              <div className="border-t border-ink pt-8">
-                <div className="font-mono text-[10px] uppercase tracking-[0.08em] text-ink-3 mb-4">
-                  Downloads
-                </div>
-                <a
-                  href={pdfUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.08em] text-primary border border-primary px-4 py-2 hover:bg-primary hover:text-primary-ink transition"
-                >
-                  Teilnehmerunterlagen (PDF) →
-                </a>
-              </div>
-            )}
           </div>
         </div>
-        <nav className="border-t border-ink py-8 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-          <div className="flex gap-8">
+        <nav className="border-t border-ink py-8 flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
+          <div className="flex flex-col gap-1">
             {adjacent.previous ? (
               <Link
                 href={`/module/${adjacent.previous.id}`}
-                className="font-mono text-[11px] uppercase tracking-[0.08em] text-ink-2 hover:text-ink transition"
+                className="group flex flex-col gap-0.5 hover:text-ink transition"
               >
-                ← {adjacent.previous.id}
+                <span className="font-mono text-[10px] uppercase tracking-[0.08em] text-ink-3">
+                  ← {adjacent.previous.id}
+                </span>
+                <span className="font-serif text-base text-ink-2 group-hover:text-ink transition leading-snug">
+                  {adjacent.previous.title}
+                </span>
               </Link>
             ) : (
-              <span className="font-mono text-[11px] uppercase tracking-[0.08em] text-ink-3">
-                ← Voriges
-              </span>
-            )}
-            {adjacent.next ? (
-              <Link
-                href={`/module/${adjacent.next.id}`}
-                className="font-mono text-[11px] uppercase tracking-[0.08em] text-ink-2 hover:text-ink transition"
-              >
-                {adjacent.next.id} →
-              </Link>
-            ) : (
-              <span className="font-mono text-[11px] uppercase tracking-[0.08em] text-ink-3">
-                Nächstes →
-              </span>
+              <span className="font-mono text-[10px] uppercase tracking-[0.08em] text-ink-3">← Voriges</span>
             )}
           </div>
           <Link
             href="/module"
-            className="font-mono text-[11px] uppercase tracking-[0.08em] text-ink-3 hover:text-ink transition"
+            className="font-mono text-[11px] uppercase tracking-[0.08em] text-ink-3 hover:text-ink transition md:self-center"
           >
             Alle Module
           </Link>
+          <div className="flex flex-col gap-0.5 md:text-right">
+            {adjacent.next ? (
+              <Link
+                href={`/module/${adjacent.next.id}`}
+                className="group flex flex-col gap-0.5 hover:text-ink transition md:items-end"
+              >
+                <span className="font-mono text-[10px] uppercase tracking-[0.08em] text-ink-3">
+                  {adjacent.next.id} →
+                </span>
+                <span className="font-serif text-base text-ink-2 group-hover:text-ink transition leading-snug">
+                  {adjacent.next.title}
+                </span>
+              </Link>
+            ) : (
+              <span className="font-mono text-[10px] uppercase tracking-[0.08em] text-ink-3 md:self-end">Nächstes →</span>
+            )}
+          </div>
         </nav>
       </div>
     </div>

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { getModuleById, type Module } from "@/lib/modules";
 
-type Props = { module: Module; className?: string };
+type Props = { module: Module; pdfUrl?: string | null; className?: string };
 
 function Chip({ moduleId }: { moduleId: string }) {
   const t = getModuleById(moduleId);
@@ -19,7 +19,7 @@ function Chip({ moduleId }: { moduleId: string }) {
   );
 }
 
-export function MetaBox({ module, className }: Props) {
+export function MetaBox({ module, pdfUrl, className }: Props) {
   return (
     <aside className={`space-y-8 ${className ?? ""}`}>
       <div>
@@ -78,6 +78,33 @@ export function MetaBox({ module, className }: Props) {
               <Chip key={id} moduleId={id} />
             ))}
           </div>
+        </div>
+      )}
+      <div>
+        <div className="font-mono text-[10px] uppercase tracking-[0.08em] text-ink-3 pb-3 border-b border-ink mb-4">
+          Kompetenzfeld
+        </div>
+        <Link
+          href={`/kompetenzfeld/${module.kompetenzfeld_slug}`}
+          className="text-sm text-primary hover:underline leading-snug"
+        >
+          {module.kompetenzfeld} →
+        </Link>
+      </div>
+      {pdfUrl && (
+        <div>
+          <div className="font-mono text-[10px] uppercase tracking-[0.08em] text-ink-3 pb-3 border-b border-ink mb-4">
+            Unterlagen
+          </div>
+          <a
+            href={pdfUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="flex items-center justify-between gap-2 bg-primary text-primary-ink px-4 py-3 font-mono text-[11px] uppercase tracking-[0.08em] hover:opacity-90 transition"
+          >
+            <span>Teilnehmerunterlagen (PDF)</span>
+            <span>↓</span>
+          </a>
         </div>
       )}
     </aside>
