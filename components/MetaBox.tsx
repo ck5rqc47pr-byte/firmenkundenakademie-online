@@ -4,6 +4,7 @@ import { getModuleById, type Module } from "@/lib/modules";
 type Props = {
   module: Module;
   pdfUrl?: string | null;
+  trainerPdfUrl?: string | null;
   hasTheorie?: boolean;
   isTrainerOrAdmin?: boolean;
   className?: string;
@@ -25,11 +26,11 @@ function Chip({ moduleId }: { moduleId: string }) {
   );
 }
 
-export function MetaBox({ module, pdfUrl, hasTheorie, isTrainerOrAdmin, className }: Props) {
+export function MetaBox({ module, pdfUrl, trainerPdfUrl, hasTheorie, isTrainerOrAdmin, className }: Props) {
   return (
     <aside className={`space-y-8 ${className ?? ""}`}>
-      {/* Auf dieser Seite */}
-      <div>
+      {/* Auf dieser Seite – nur Desktop (Mobile hat eigene Leiste oben) */}
+      <div className="hidden lg:block">
         <div className="font-mono text-[10px] uppercase tracking-[0.08em] text-ink-3 pb-3 border-b border-ink mb-4">
           Auf dieser Seite
         </div>
@@ -118,20 +119,35 @@ export function MetaBox({ module, pdfUrl, hasTheorie, isTrainerOrAdmin, classNam
           {module.kompetenzfeld} →
         </Link>
       </div>
-      {pdfUrl && (
+      {(pdfUrl || (isTrainerOrAdmin && trainerPdfUrl)) && (
         <div>
           <div className="font-mono text-[10px] uppercase tracking-[0.08em] text-ink-3 pb-3 border-b border-ink mb-4">
-            Unterlagen
+            Downloads
           </div>
-          <a
-            href={pdfUrl}
-            target="_blank"
-            rel="noreferrer"
-            className="flex items-center justify-between gap-2 bg-primary text-primary-ink px-4 py-3 font-mono text-[11px] uppercase tracking-[0.08em] hover:opacity-90 transition"
-          >
-            <span>Teilnehmerunterlagen (PDF)</span>
-            <span>↓</span>
-          </a>
+          <div className="flex flex-col gap-2">
+            {pdfUrl && (
+              <a
+                href={pdfUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center justify-between gap-2 bg-primary text-primary-ink px-4 py-3 font-mono text-[11px] uppercase tracking-[0.08em] hover:opacity-90 transition"
+              >
+                <span>Teilnehmerunterlagen (PDF)</span>
+                <span>↓</span>
+              </a>
+            )}
+            {isTrainerOrAdmin && trainerPdfUrl && (
+              <a
+                href={trainerPdfUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center justify-between gap-2 border border-accent text-accent px-4 py-3 font-mono text-[11px] uppercase tracking-[0.08em] hover:bg-accent hover:text-primary-ink transition"
+              >
+                <span>Trainerhandbuch (PDF)</span>
+                <span>↓</span>
+              </a>
+            )}
+          </div>
         </div>
       )}
     </aside>
