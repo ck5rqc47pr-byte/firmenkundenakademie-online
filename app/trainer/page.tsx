@@ -68,7 +68,7 @@ export default async function TrainerPage() {
           </h1>
           <p className="mt-4 text-sm text-white/70 max-w-lg leading-relaxed">
             Übersicht aller Module mit Verfügbarkeit von Trainerhandbuch, Evaluation und
-            Teilnehmerunterlagen.
+            Workbook.
           </p>
         </div>
       </section>
@@ -200,7 +200,7 @@ export default async function TrainerPage() {
                         )}
                       </div>
 
-                      {/* TNU – Teilnehmerunterlagen PDF */}
+                      {/* Workbook PDF */}
                       <div className="px-4 py-3.5">
                         {pdfUrl ? (
                           <a

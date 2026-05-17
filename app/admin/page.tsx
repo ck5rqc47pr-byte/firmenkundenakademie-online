@@ -114,7 +114,7 @@ export default async function AdminPage() {
             { label: "KERN fertig", value: kernFertig, sub: "Sec 1,4,5,7" },
             { label: "Praxis-Review", value: praxisDone, sub: `von ${total}` },
             { label: "Wiss.-Review", value: wissDone, sub: `von ${total}` },
-            { label: "PDF bereit", value: mitPdf, sub: "Teilnehmerunterlagen" },
+            { label: "PDF bereit", value: mitPdf, sub: "Workbook" },
           ].map((kpi) => (
             <div
               key={kpi.label}
@@ -277,7 +277,7 @@ export default async function AdminPage() {
             Legende
           </div>
           <div className="grid grid-cols-2 gap-x-10 gap-y-2 text-[11px] text-ink-2">
-            <div><strong className="text-ink">KERN</strong> – Sec 1, 4, 5, 7 (Modulsteckbrief, Teilnehmerunterlagen, Praxistransfer, Quellen)</div>
+            <div><strong className="text-ink">KERN</strong> – Sec 1, 4, 5, 7 (Modulsteckbrief, Workbook, Praxistransfer, Quellen)</div>
             <div><strong className="text-ink">Vollst.</strong> – KERN + ERGÄNZUNG: Sec 2 (Wissenschaft), Sec 3+6 (Trainer + Evaluation)</div>
             <div><strong className="text-ink">P-Review</strong> – Praxis-Review durch Armin (FK-Berater, 25 J. Erfahrung)</div>
             <div><strong className="text-ink">W-Review</strong> – Wissenschaftliches Review durch Prof. Brandt</div>

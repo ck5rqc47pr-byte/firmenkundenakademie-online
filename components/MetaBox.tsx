@@ -126,7 +126,7 @@ export function MetaBox({ module, pdfUrl, trainerPdfUrl, beobachtungsbogenUrl, h
                 rel="noreferrer"
                 className="flex items-center justify-between gap-2 bg-primary text-primary-ink px-4 py-3 font-mono text-[11px] uppercase tracking-[0.08em] hover:opacity-90 transition"
               >
-                <span>Teilnehmerunterlagen (PDF)</span>
+                <span>Workbook (PDF)</span>
                 <span>↓</span>
               </a>
             )}
