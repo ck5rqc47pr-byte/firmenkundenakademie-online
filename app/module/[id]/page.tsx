@@ -36,7 +36,7 @@ export default async function ModuleDetailPage({ params }: { params: { id: strin
 
   return (
     <div>
-      <ModuleHeader module={module} />
+      <ModuleHeader module={module} isTrainerOrAdmin={isTrainerOrAdmin} />
       <div className="mx-auto max-w-content px-6 lg:px-14">
         <div className="grid gap-16 py-12 lg:grid-cols-[260px_1fr] lg:py-20 min-w-0">
           <MetaBox
