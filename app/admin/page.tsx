@@ -96,6 +96,12 @@ export default async function AdminPage() {
               Nutzer →
             </Link>
             <Link
+              href="/admin/feedback"
+              className="font-mono text-[10px] uppercase tracking-[0.08em] text-white/60 hover:text-white transition-colors"
+            >
+              Feedback →
+            </Link>
+            <Link
               href="/trainer"
               className="font-mono text-[10px] uppercase tracking-[0.08em] text-white/60 hover:text-white transition-colors"
             >
