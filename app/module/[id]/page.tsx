@@ -30,9 +30,9 @@ export default async function ModuleDetailPage({ params }: { params: { id: strin
   const trainerPdfUrl = getTrainerHandbuchPdfUrl(module.id);
   const beobachtungsbogenUrl = getBeobachtungsbogenPdfUrl(module.id);
 
-  // Content in Abschnitte aufteilen (sync_akademie.py trennt mit \n\n---\n\n)
+  // Content in Abschnitte aufteilen (sync_akademie.py trennt mit SECTION_BREAK)
   const [sec4Content = "", sec5Content = "", sec7Content = ""] =
-    module.content.split("\n\n---\n\n");
+    module.content.split("\n\n<!-- SECTION_BREAK -->\n\n");
 
   return (
     <div>
