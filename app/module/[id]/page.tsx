@@ -13,6 +13,8 @@ import {
   getTrainerHandbuchPdfUrl,
   getBeobachtungsbogenPdfUrl,
 } from "@/lib/modules";
+import { getProgressForUser } from "@/lib/db";
+import { actionMarkCompleted, actionUnmarkCompleted } from "./actions";
 
 export const dynamic = "force-dynamic";
 
@@ -22,8 +24,12 @@ export default async function ModuleDetailPage({ params }: { params: { id: strin
 
   const session = await getServerSession(authOptions);
   const role = (session?.user as { role?: string })?.role ?? "teilnehmer";
+  const userId = (session?.user as { id?: string })?.id ?? null;
   const isTrainerOrAdmin = role === "trainer" || role === "admin";
   const canSeeBeobachtungsbogen = role === "teamleiter" || role === "trainer" || role === "admin";
+
+  const progress = userId ? await getProgressForUser(userId) : [];
+  const isCompleted = progress.some((p) => p.module_id === module.id);
 
   const adjacent = getAdjacentModules(module.id);
   const pdfUrl = getParticipantHandoutPdfUrl(module.id);
@@ -108,6 +114,34 @@ export default async function ModuleDetailPage({ params }: { params: { id: strin
 
           </div>
         </div>
+        {/* Modul abschließen */}
+        {userId && (
+          <div className="border-t border-line pt-8 pb-2 flex items-center gap-4">
+            {isCompleted ? (
+              <>
+                <span className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.08em] text-emerald-600">
+                  <span className="w-2 h-2 rounded-full bg-emerald-500 inline-block" />
+                  Modul abgeschlossen
+                </span>
+                <form action={actionUnmarkCompleted.bind(null, module.id)}>
+                  <button type="submit" className="font-mono text-[10px] uppercase tracking-[0.06em] text-ink-3 hover:text-ink transition underline">
+                    Zurücksetzen
+                  </button>
+                </form>
+              </>
+            ) : (
+              <form action={actionMarkCompleted.bind(null, module.id)}>
+                <button
+                  type="submit"
+                  className="font-mono text-[11px] uppercase tracking-[0.08em] px-5 py-2.5 bg-primary text-white hover:opacity-90 transition"
+                >
+                  Modul abschließen ✓
+                </button>
+              </form>
+            )}
+          </div>
+        )}
+
         <nav className="border-t border-ink py-8 flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
           <div className="flex flex-col gap-1">
             {adjacent.previous ? (

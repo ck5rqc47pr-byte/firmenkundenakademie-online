@@ -11,6 +11,7 @@ const NAV = [
   { href: "/quellen", label: "Quellen" },
 ];
 
+const LERNREISE_NAV = { href: "/lernreise", label: "Lernreise" };
 const TRAINER_NAV = { href: "/trainer", label: "Trainer" };
 const ADMIN_NAV = { href: "/admin", label: "Admin" };
 
@@ -50,6 +51,14 @@ export function NavBar() {
               {item.label}
             </Link>
           ))}
+          {session && (
+            <Link
+              href={LERNREISE_NAV.href}
+              className="font-mono text-[11px] uppercase tracking-[0.08em] text-ink-2 transition hover:text-ink"
+            >
+              {LERNREISE_NAV.label}
+            </Link>
+          )}
           {(role === "trainer" || role === "admin") && (
             <Link
               href={TRAINER_NAV.href}
@@ -110,6 +119,15 @@ export function NavBar() {
                 {item.label}
               </Link>
             ))}
+            {session && (
+              <Link
+                href={LERNREISE_NAV.href}
+                className="font-mono text-[11px] uppercase tracking-[0.08em] text-ink-2 hover:text-ink transition"
+                onClick={() => setOpen(false)}
+              >
+                {LERNREISE_NAV.label}
+              </Link>
+            )}
             {(role === "trainer" || role === "admin") && (
               <Link
                 href={TRAINER_NAV.href}
