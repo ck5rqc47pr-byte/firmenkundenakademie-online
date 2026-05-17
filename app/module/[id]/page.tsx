@@ -65,11 +65,6 @@ export default async function ModuleDetailPage({ params }: { params: { id: strin
               <a href="#quellen" className="font-mono text-[10px] uppercase tracking-[0.06em] border border-line text-ink-2 px-3 py-2 hover:border-primary hover:text-primary transition">
                 Quellen
               </a>
-              {isTrainerOrAdmin && (
-                <a href="#trainerbereich" className="font-mono text-[10px] uppercase tracking-[0.06em] border border-accent text-accent px-3 py-2 hover:bg-accent hover:text-primary-ink transition">
-                  Trainerbereich
-                </a>
-              )}
             </nav>
             <VideoEmbed youtubeId={module.youtube_id} title={module.title} />
 
