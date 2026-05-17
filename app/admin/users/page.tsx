@@ -3,7 +3,8 @@ import { getServerSession } from "next-auth";
 import Link from "next/link";
 import { authOptions } from "@/lib/auth";
 import { getAllUsers, type UserRole } from "@/lib/db";
-import { actionCreateUser, actionUpdateRole, actionResetPassword, actionDeleteUser } from "./actions";
+import { actionCreateUser, actionUpdateRole, actionResetPassword } from "./actions";
+import { DeleteUserButton } from "./DeleteUserButton";
 
 export const dynamic = "force-dynamic";
 
@@ -135,18 +136,7 @@ export default async function UsersPage() {
                   </form>
 
                   {/* Löschen */}
-                  <form action={actionDeleteUser}>
-                    <input type="hidden" name="id" value={u.id} />
-                    <button
-                      type="submit"
-                      className="font-mono text-[10px] uppercase tracking-[0.06em] px-2 py-1 border border-red-200 text-red-400 hover:bg-red-50 hover:text-red-600 transition"
-                      onClick={(e) => {
-                        if (!confirm(`${u.name} wirklich löschen?`)) e.preventDefault();
-                      }}
-                    >
-                      ✕
-                    </button>
-                  </form>
+                  <DeleteUserButton id={u.id} name={u.name} />
                 </div>
               </div>
             ))}
