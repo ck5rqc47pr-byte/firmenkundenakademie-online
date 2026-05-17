@@ -90,6 +90,12 @@ export default async function AdminPage() {
           </div>
           <div className="flex gap-4">
             <Link
+              href="/admin/users"
+              className="font-mono text-[10px] uppercase tracking-[0.08em] text-white/60 hover:text-white transition-colors"
+            >
+              Nutzer →
+            </Link>
+            <Link
               href="/trainer"
               className="font-mono text-[10px] uppercase tracking-[0.08em] text-white/60 hover:text-white transition-colors"
             >
