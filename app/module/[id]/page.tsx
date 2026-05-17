@@ -13,8 +13,8 @@ import {
   getTrainerHandbuchPdfUrl,
   getBeobachtungsbogenPdfUrl,
 } from "@/lib/modules";
-import { getProgressForUser } from "@/lib/db";
-import { actionMarkCompleted, actionUnmarkCompleted } from "./actions";
+import { getProgressForUser, getFeedbackForUser } from "@/lib/db";
+import { actionMarkCompleted, actionUnmarkCompleted, actionSubmitFeedback } from "./actions";
 
 export const dynamic = "force-dynamic";
 
@@ -30,6 +30,7 @@ export default async function ModuleDetailPage({ params }: { params: { id: strin
 
   const progress = userId ? await getProgressForUser(userId) : [];
   const isCompleted = progress.some((p) => p.module_id === module.id);
+  const existingFeedback = userId && isCompleted ? await getFeedbackForUser(userId, module.id) : null;
 
   const adjacent = getAdjacentModules(module.id);
   const pdfUrl = getParticipantHandoutPdfUrl(module.id);
@@ -139,6 +140,76 @@ export default async function ModuleDetailPage({ params }: { params: { id: strin
                 </button>
               </form>
             )}
+          </div>
+        )}
+
+        {/* Rückmeldebogen – erscheint nach Abschluss */}
+        {userId && isCompleted && (
+          <div className="border border-line rounded p-6 space-y-6">
+            <div className="flex items-center justify-between">
+              <h3 className="font-mono text-[11px] uppercase tracking-[0.1em] text-ink-2 font-semibold">
+                Rückmeldebogen · Kirkpatrick L1
+              </h3>
+              {existingFeedback && (
+                <span className="font-mono text-[10px] text-emerald-600 uppercase tracking-[0.06em]">
+                  ✓ Abgegeben
+                </span>
+              )}
+            </div>
+            <form action={actionSubmitFeedback.bind(null, module.id)} className="space-y-5">
+              {([
+                ["rating_inhalt",   "Fachlicher Inhalt"],
+                ["rating_tempo",    "Lerntempo & Struktur"],
+                ["rating_praxis",   "Praxisbezug"],
+                ["rating_material", "Lernmaterialien"],
+                ["rating_gesamt",   "Gesamteindruck"],
+              ] as [string, string][]).map(([name, label]) => {
+                const current = existingFeedback?.[name as keyof typeof existingFeedback] as number | null;
+                return (
+                  <div key={name} className="flex items-center gap-4">
+                    <span className="font-mono text-[10px] uppercase tracking-[0.06em] text-ink-3 w-40 shrink-0">
+                      {label}
+                    </span>
+                    <div className="flex gap-2">
+                      {[1, 2, 3, 4, 5].map((v) => (
+                        <label key={v} className="flex flex-col items-center gap-1 cursor-pointer">
+                          <input
+                            type="radio"
+                            name={name}
+                            value={v}
+                            defaultChecked={current === v}
+                            required
+                            className="accent-primary"
+                          />
+                          <span className="font-mono text-[10px] text-ink-3">{v}</span>
+                        </label>
+                      ))}
+                    </div>
+                    <span className="font-mono text-[9px] text-ink-3 hidden sm:block">
+                      1 = schlecht · 5 = sehr gut
+                    </span>
+                  </div>
+                );
+              })}
+              <div className="flex flex-col gap-1.5">
+                <label className="font-mono text-[10px] uppercase tracking-[0.06em] text-ink-3">
+                  Kommentar (optional)
+                </label>
+                <textarea
+                  name="kommentar"
+                  rows={3}
+                  defaultValue={existingFeedback?.kommentar ?? ""}
+                  placeholder="Was hat besonders gut funktioniert? Was könnte besser sein?"
+                  className="border border-line px-3 py-2 text-sm bg-white text-ink focus:outline-none focus:border-primary resize-none"
+                />
+              </div>
+              <button
+                type="submit"
+                className="font-mono text-[11px] uppercase tracking-[0.08em] px-5 py-2.5 bg-primary text-white hover:opacity-90 transition"
+              >
+                {existingFeedback ? "Rückmeldung aktualisieren" : "Rückmeldung abschicken →"}
+              </button>
+            </form>
           </div>
         )}
 
