@@ -65,3 +65,33 @@ export async function updateUser(
 export async function deleteUser(id: string): Promise<void> {
   await sql`DELETE FROM users WHERE id = ${id}`;
 }
+
+// ── Progress ───────────────────────────────────────────────────────────────
+
+export interface ProgressEntry {
+  module_id: string;
+  completed_at: string;
+}
+
+export async function getProgressForUser(userId: string): Promise<ProgressEntry[]> {
+  const rows = await sql`
+    SELECT module_id, completed_at FROM progress
+    WHERE user_id = ${userId}
+    ORDER BY completed_at DESC
+  `;
+  return rows as ProgressEntry[];
+}
+
+export async function markModuleCompleted(userId: string, moduleId: string): Promise<void> {
+  await sql`
+    INSERT INTO progress (user_id, module_id)
+    VALUES (${userId}, ${moduleId})
+    ON CONFLICT (user_id, module_id) DO NOTHING
+  `;
+}
+
+export async function unmarkModuleCompleted(userId: string, moduleId: string): Promise<void> {
+  await sql`
+    DELETE FROM progress WHERE user_id = ${userId} AND module_id = ${moduleId}
+  `;
+}
