@@ -58,13 +58,6 @@ export function MetaBox({ module, pdfUrl, trainerPdfUrl, beobachtungsbogenUrl, h
               Quellen
             </a>
           </li>
-          {isTrainerOrAdmin && (
-            <li>
-              <a href="#trainerbereich" className="font-mono text-[10px] uppercase tracking-[0.06em] text-accent hover:opacity-80 transition">
-                Trainerbereich
-              </a>
-            </li>
-          )}
         </ul>
       </div>
       <div>
