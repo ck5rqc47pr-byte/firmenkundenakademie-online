@@ -1,6 +1,6 @@
 import "next-auth";
 import "next-auth/jwt";
-import { UserRole } from "@/lib/users";
+import { UserRole } from "@/lib/db";
 
 declare module "next-auth" {
   interface Session {

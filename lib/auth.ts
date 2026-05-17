@@ -1,7 +1,7 @@
 import { AuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import bcrypt from "bcryptjs";
-import { findUserByLogin, UserRole } from "./users";
+import { findUserByLogin, type UserRole } from "./db";
 
 export const authOptions: AuthOptions = {
   providers: [
@@ -14,10 +14,10 @@ export const authOptions: AuthOptions = {
       async authorize(credentials) {
         if (!credentials?.login || !credentials?.password) return null;
 
-        const user = findUserByLogin(credentials.login);
+        const user = await findUserByLogin(credentials.login);
         if (!user) return null;
 
-        const valid = await bcrypt.compare(credentials.password, user.passwordHash);
+        const valid = await bcrypt.compare(credentials.password, user.password_hash);
         if (!valid) return null;
 
         return { id: user.id, name: user.name, email: user.login, role: user.role };
