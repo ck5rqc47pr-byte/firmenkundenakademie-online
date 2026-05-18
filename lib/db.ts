@@ -148,6 +148,59 @@ export interface FeedbackStats {
   avg_gesamt: number | null;
 }
 
+// ── Quiz Results ───────────────────────────────────────────────────────────
+
+export interface QuizResult {
+  id: string;
+  user_id: string;
+  module_id: string;
+  score: number;
+  answers: Record<string, number>;
+  taken_at: string;
+}
+
+export async function getLatestQuizResult(userId: string, moduleId: string): Promise<QuizResult | null> {
+  const rows = await sql`
+    SELECT * FROM quiz_results
+    WHERE user_id = ${userId} AND module_id = ${moduleId}
+    ORDER BY taken_at DESC LIMIT 1
+  `;
+  return (rows[0] as QuizResult) ?? null;
+}
+
+export async function saveQuizResult(
+  userId: string,
+  moduleId: string,
+  score: number,
+  answers: Record<string, number>
+): Promise<void> {
+  await sql`
+    INSERT INTO quiz_results (user_id, module_id, score, answers)
+    VALUES (${userId}, ${moduleId}, ${score}, ${JSON.stringify(answers)})
+  `;
+}
+
+export interface QuizStats {
+  module_id: string;
+  count: number;
+  avg_score: number | null;
+  pass_rate: number | null;
+}
+
+export async function getQuizStats(): Promise<QuizStats[]> {
+  const rows = await sql`
+    SELECT
+      module_id,
+      COUNT(*)::int AS count,
+      ROUND(AVG(score)::numeric, 1) AS avg_score,
+      ROUND(100.0 * SUM(CASE WHEN score >= 60 THEN 1 ELSE 0 END) / COUNT(*), 0) AS pass_rate
+    FROM quiz_results
+    GROUP BY module_id
+    ORDER BY module_id
+  `;
+  return rows as QuizStats[];
+}
+
 export async function getFeedbackStats(): Promise<FeedbackStats[]> {
   const rows = await sql`
     SELECT

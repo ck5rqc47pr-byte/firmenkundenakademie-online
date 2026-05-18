@@ -102,6 +102,12 @@ export default async function AdminPage() {
               Feedback →
             </Link>
             <Link
+              href="/admin/quiz"
+              className="font-mono text-[10px] uppercase tracking-[0.08em] text-white/60 hover:text-white transition-colors"
+            >
+              Wissenstests →
+            </Link>
+            <Link
               href="/trainer"
               className="font-mono text-[10px] uppercase tracking-[0.08em] text-white/60 hover:text-white transition-colors"
             >
