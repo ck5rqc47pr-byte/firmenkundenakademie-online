@@ -13,8 +13,10 @@ import {
   getTrainerHandbuchPdfUrl,
   getBeobachtungsbogenPdfUrl,
 } from "@/lib/modules";
-import { getProgressForUser, getFeedbackForUser } from "@/lib/db";
+import { getProgressForUser, getFeedbackForUser, getLatestQuizResult } from "@/lib/db";
+import { getQuizForModule } from "@/lib/quizzes";
 import { actionMarkCompleted, actionUnmarkCompleted, actionSubmitFeedback } from "./actions";
+import { QuizSection } from "./QuizSection";
 
 export const dynamic = "force-dynamic";
 
@@ -31,6 +33,10 @@ export default async function ModuleDetailPage({ params }: { params: { id: strin
   const progress = userId ? await getProgressForUser(userId) : [];
   const isCompleted = progress.some((p) => p.module_id === module.id);
   const existingFeedback = userId && isCompleted ? await getFeedbackForUser(userId, module.id) : null;
+  const quizQuestions = getQuizForModule(module.id);
+  const latestQuizResult = userId && isCompleted && quizQuestions.length > 0
+    ? await getLatestQuizResult(userId, module.id)
+    : null;
 
   const adjacent = getAdjacentModules(module.id);
   const pdfUrl = getParticipantHandoutPdfUrl(module.id);
@@ -211,6 +217,15 @@ export default async function ModuleDetailPage({ params }: { params: { id: strin
               </button>
             </form>
           </div>
+        )}
+
+        {/* Wissenstest */}
+        {userId && isCompleted && quizQuestions.length > 0 && (
+          <QuizSection
+            moduleId={module.id}
+            questions={quizQuestions}
+            previousScore={latestQuizResult?.score ?? null}
+          />
         )}
 
         <nav className="border-t border-ink py-8 flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
