@@ -115,6 +115,20 @@ export function getBeobachtungsbogenPdfUrl(moduleId: string): string | null {
   return `/downloads/beobachtungsbogen/${filename}`;
 }
 
+export function getPresentationPptxUrl(moduleId: string): string | null {
+  const normalizedId = moduleId.toUpperCase();
+  const filename = `${normalizedId}.pptx`;
+  const absolutePath = path.join(
+    process.cwd(),
+    "public",
+    "downloads",
+    "praesentation",
+    filename
+  );
+  if (!fs.existsSync(absolutePath)) return null;
+  return `/downloads/praesentation/${filename}`;
+}
+
 export function getTrainerHandbuchPdfUrl(moduleId: string): string | null {
   const normalizedId = moduleId.toUpperCase();
   const filename = `${normalizedId}.pdf`;
