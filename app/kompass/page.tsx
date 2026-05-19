@@ -73,7 +73,7 @@ function Station({
     >
       <div className={`${dotBase} ${dotClass}`}>{m.id}</div>
       <div
-        className={`font-mono text-[9px] uppercase tracking-[0.05em] leading-tight max-w-[72px] ${
+        className={`hidden sm:block font-mono text-[9px] uppercase tracking-[0.05em] leading-tight max-w-[72px] ${
           dark ? "text-white/40" : "text-ink-3"
         }`}
       >
@@ -231,12 +231,7 @@ export default async function KompassPage() {
                 </div>
 
                 {/* Stationen */}
-                <div
-                  className="grid gap-4"
-                  style={{
-                    gridTemplateColumns: `repeat(${Math.min(etappeModule.length, 6)}, minmax(0, 1fr))`,
-                  }}
-                >
+                <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-3 lg:gap-4">
                   {etappeModule.map((m) => (
                     <Station
                       key={m.id}
