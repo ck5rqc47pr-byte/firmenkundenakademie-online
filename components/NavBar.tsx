@@ -4,8 +4,11 @@ import Link from "next/link";
 import { useState } from "react";
 import { useSession, signOut } from "next-auth/react";
 
-const NAV = [
+const NAV_START = [
   { href: "/", label: "Campus" },
+];
+
+const NAV_END = [
   { href: "/kompetenzmodell", label: "Kompetenzmodell" },
   { href: "/module", label: "Programm" },
   { href: "/quellen", label: "Quellen" },
@@ -45,7 +48,7 @@ export function NavBar() {
 
         {/* Desktop nav */}
         <nav className="hidden items-center gap-8 md:flex">
-          {NAV.map(item => (
+          {NAV_START.map(item => (
             <Link key={item.href} href={item.href}
               className="font-mono text-[11px] uppercase tracking-[0.08em] text-ink-2 transition hover:text-ink">
               {item.label}
@@ -59,6 +62,12 @@ export function NavBar() {
               {LERNREISE_NAV.label}
             </Link>
           )}
+          {NAV_END.map(item => (
+            <Link key={item.href} href={item.href}
+              className="font-mono text-[11px] uppercase tracking-[0.08em] text-ink-2 transition hover:text-ink">
+              {item.label}
+            </Link>
+          ))}
           {(role === "trainer" || role === "admin") && (
             <Link
               href={TRAINER_NAV.href}
@@ -109,7 +118,7 @@ export function NavBar() {
       {open && (
         <div className="md:hidden border-t border-ink bg-bg">
           <nav className="mx-auto max-w-content px-6 py-4 flex flex-col gap-5">
-            {NAV.map(item => (
+            {NAV_START.map(item => (
               <Link
                 key={item.href}
                 href={item.href}
@@ -128,6 +137,16 @@ export function NavBar() {
                 {LERNREISE_NAV.label}
               </Link>
             )}
+            {NAV_END.map(item => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="font-mono text-[11px] uppercase tracking-[0.08em] text-ink-2 hover:text-ink transition"
+                onClick={() => setOpen(false)}
+              >
+                {item.label}
+              </Link>
+            ))}
             {(role === "trainer" || role === "admin") && (
               <Link
                 href={TRAINER_NAV.href}
