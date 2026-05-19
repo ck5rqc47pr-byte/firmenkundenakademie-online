@@ -1,5 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import {
+  PortraitRoland,
+  PortraitDrSchreiber,
+  PortraitProfBrandt,
+  PortraitArmin,
+  PortraitPraktikant,
+} from "@/components/Portraits";
 
 export const metadata: Metadata = {
   title: "Team – FKB Campus",
@@ -16,6 +23,7 @@ type TeamMember = {
   avatarBg?: string;
   avatarFg?: string;
   initials: string;
+  Portrait?: React.FC<{ size?: number }>;
 };
 
 const TEAM: TeamMember[] = [
@@ -40,6 +48,7 @@ const TEAM: TeamMember[] = [
     initials: "RO",
     avatarBg: "#D9BF7A",
     avatarFg: "#191D2E",
+    Portrait: PortraitRoland,
     typ: "KI-Agent",
     rolle: "Content Creator · Modul- und Unterlagenentwicklung",
     eigenschaften: [
@@ -57,6 +66,7 @@ const TEAM: TeamMember[] = [
     initials: "DS",
     avatarBg: "#1F2B56",
     avatarFg: "#F8F8FA",
+    Portrait: PortraitDrSchreiber,
     typ: "KI-Agent",
     rolle: "Scientific Writer · Wissenschaftliche Fundierung & Literaturrecherche",
     eigenschaften: [
@@ -74,6 +84,7 @@ const TEAM: TeamMember[] = [
     initials: "PB",
     avatarBg: "#191D2E",
     avatarFg: "#D9BF7A",
+    Portrait: PortraitProfBrandt,
     typ: "KI-Agent",
     rolle: "Wissenschaftlicher Reviewer",
     eigenschaften: [
@@ -91,6 +102,7 @@ const TEAM: TeamMember[] = [
     initials: "AR",
     avatarBg: "#5C6B3A",
     avatarFg: "#F8F8FA",
+    Portrait: PortraitArmin,
     typ: "KI-Agent",
     rolle: "Praxis-Reviewer",
     eigenschaften: [
@@ -108,6 +120,7 @@ const TEAM: TeamMember[] = [
     initials: "P1",
     avatarBg: "#8A97B0",
     avatarFg: "#F8F8FA",
+    Portrait: PortraitPraktikant,
     typ: "KI-Agent",
     rolle: "Formatter · Dokumentproduktion & Corporate Design",
     eigenschaften: [
@@ -212,7 +225,7 @@ export default function TeamPage() {
               { nr: "02", agent: "Roland", action: "Modulerstellung & Unterlagenentwicklung" },
               { nr: "03", agent: "Prof. Dr. Brandt", action: "Wissenschaftliches Review" },
               { nr: "04", agent: "Armin", action: "Praxisreview & Alltagstauglichkeit" },
-              { nr: "05", agent: "Praktikant 1", action: "Finale Dokumente im VR-CI" },
+              { nr: "05", agent: "Praktikant 1", action: "Finale Dokumente & Präsentationen" },
             ].map((step) => (
               <div key={step.nr} className="border border-ink bg-white p-5">
                 <div className="font-mono text-[10px] uppercase tracking-[0.1em] text-primary mb-2">
@@ -296,8 +309,12 @@ function MemberCard({ member, featured = false }: { member: TeamMember; featured
         {/* Header */}
         <div className="flex items-start justify-between gap-4 mb-5">
           <div className="flex items-start gap-4">
-            <div className="shrink-0 mt-0.5 border border-line">
-              <Avatar member={member} featured={featured} />
+            <div className="shrink-0 mt-0.5 border border-line overflow-hidden">
+              {member.Portrait ? (
+                <member.Portrait size={featured ? 96 : 72} />
+              ) : (
+                <Avatar member={member} featured={featured} />
+              )}
             </div>
             <div>
               <TypBadge typ={member.typ} />
