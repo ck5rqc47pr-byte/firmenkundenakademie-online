@@ -80,8 +80,8 @@ function Station({
         {shortTitle}
       </div>
 
-      {/* Tooltip – CSS-only, erscheint bei Hover */}
-      <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-3 w-60 bg-bg border border-line p-3.5 opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-opacity pointer-events-none z-30 shadow-lg text-left">
+      {/* Tooltip – nur Desktop */}
+      <div className="hidden sm:block absolute bottom-full left-1/2 -translate-x-1/2 mb-3 w-60 bg-bg border border-line p-3.5 opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-opacity pointer-events-none z-30 shadow-lg text-left">
         <div className="font-mono text-[9px] uppercase tracking-[0.08em] text-ink-3 mb-1.5">
           {m.id} · {m.stufe} · {m.dauer}
         </div>
@@ -142,7 +142,7 @@ export default async function KompassPage() {
     <div className="min-h-screen bg-bg">
 
       {/* HERO */}
-      <section className="border-b border-line px-6 lg:px-14 py-20 max-w-[1240px] mx-auto">
+      <section className="border-b border-line px-6 lg:px-14 py-12 lg:py-20 max-w-[1240px] mx-auto">
         <div className="font-mono text-[11px] uppercase tracking-[0.1em] text-ink-3 mb-7 flex items-center gap-3">
           <span className="w-6 h-px bg-ink-3 inline-block" />
           FKB Campus · Kompass · {userName}
@@ -182,7 +182,7 @@ export default async function KompassPage() {
       </section>
 
       {/* STANDORTBESTIMMUNG */}
-      <section className="border-b border-line max-w-[1240px] mx-auto px-6 lg:px-14 py-16">
+      <section className="border-b border-line max-w-[1240px] mx-auto px-6 lg:px-14 py-10 lg:py-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           <div>
             <div className="font-mono text-[10px] uppercase tracking-[0.1em] text-ink-3 mb-5 flex items-center gap-2">
@@ -210,7 +210,7 @@ export default async function KompassPage() {
           {/* Heatmap */}
           <div>
             <div className="border border-line overflow-hidden">
-              <div className="grid grid-cols-[180px_repeat(3,1fr)] border-b border-line">
+              <div className="grid grid-cols-[100px_repeat(3,1fr)] sm:grid-cols-[180px_repeat(3,1fr)] border-b border-line">
                 {["", "Berater", "Sparring", "Stratege"].map((h) => (
                   <div
                     key={h}
@@ -234,9 +234,9 @@ export default async function KompassPage() {
                 return (
                   <div
                     key={row.slug}
-                    className="grid grid-cols-[180px_repeat(3,1fr)] border-b border-line last:border-b-0"
+                    className="grid grid-cols-[100px_repeat(3,1fr)] sm:grid-cols-[180px_repeat(3,1fr)] border-b border-line last:border-b-0"
                   >
-                    <div className="px-3 py-3 font-sans text-[12px] font-medium text-ink bg-bg flex items-center">
+                    <div className="px-2 py-3 font-sans text-[10px] sm:text-[12px] font-medium text-ink bg-bg flex items-center leading-tight">
                       {row.label}
                     </div>
                     {fill.map((f, i) => (
@@ -293,7 +293,7 @@ export default async function KompassPage() {
           return (
             <section
               key={etappe.nr}
-              className={`${bgClass} border-b ${borderClass} px-6 lg:px-14 py-14`}
+              className={`${bgClass} border-b ${borderClass} px-6 lg:px-14 py-10 lg:py-14`}
             >
               <div className="max-w-[1240px] mx-auto">
 
