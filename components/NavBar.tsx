@@ -11,7 +11,7 @@ const NAV = [
   { href: "/quellen", label: "Quellen" },
 ];
 
-const LERNREISE_NAV = { href: "/lernreise", label: "Lernreise" };
+const LERNREISE_NAV = { href: "/kompass", label: "Kompass" };
 const TRAINER_NAV = { href: "/trainer", label: "Trainer" };
 const ADMIN_NAV = { href: "/admin", label: "Admin" };
 
