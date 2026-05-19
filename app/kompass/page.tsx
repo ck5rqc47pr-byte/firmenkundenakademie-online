@@ -145,9 +145,9 @@ export default async function KompassPage() {
       <section className="border-b border-line px-6 lg:px-14 py-12 lg:py-20 max-w-[1240px] mx-auto">
         <div className="font-mono text-[11px] uppercase tracking-[0.1em] text-ink-3 mb-7 flex items-center gap-3">
           <span className="w-6 h-px bg-ink-3 inline-block" />
-          FKB Campus · Kompass · {userName}
+          FKB Campus · Kompass
         </div>
-        <h1 className="font-serif text-[clamp(48px,8vw,88px)] font-normal leading-[1.0] tracking-[-0.03em] mb-8 max-w-3xl">
+        <h1 className="font-serif text-[clamp(36px,8vw,88px)] font-normal leading-[1.05] tracking-[-0.03em] mb-8 max-w-3xl">
           Der{" "}
           <em className="italic" style={{ color: "var(--ink-2)" }}>
             Firmenkundenkompass
@@ -159,7 +159,7 @@ export default async function KompassPage() {
           Kompass zeigt deinen Standort, markiert den nächsten Schritt und hält
           fest, was du bereits gelernt hast.
         </p>
-        <div className="flex gap-10 pt-8 border-t border-line flex-wrap">
+        <div className="grid grid-cols-2 sm:flex sm:gap-10 gap-6 pt-8 border-t border-line">
           {[
             { num: allModules.length, label: "Module" },
             { num: 3, label: "Etappen" },
