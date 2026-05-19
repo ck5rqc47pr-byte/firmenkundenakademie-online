@@ -302,11 +302,10 @@ function Avatar({ member, featured }: { member: TeamMember; featured: boolean })
 
 function MemberCard({ member, featured = false }: { member: TeamMember; featured?: boolean }) {
   if (member.photo) {
-    // Layout mit echtem Foto: Bild links, Content rechts
     return (
-      <div className="border border-ink bg-white overflow-hidden flex">
-        {/* Foto-Spalte */}
-        <div className="shrink-0 w-[160px] relative self-stretch">
+      <div className="border border-ink bg-white overflow-hidden flex flex-col sm:flex-row">
+        {/* Foto: oben auf Mobile, links auf Desktop */}
+        <div className="relative w-full h-64 sm:w-[180px] sm:h-auto sm:self-stretch shrink-0">
           <Image
             src={member.photo}
             alt={member.name}
@@ -315,7 +314,7 @@ function MemberCard({ member, featured = false }: { member: TeamMember; featured
           />
         </div>
         {/* Content */}
-        <div className={`${featured ? "p-8 lg:p-10" : "p-6"} flex flex-col justify-between flex-1 min-w-0`}>
+        <div className="p-6 flex flex-col justify-between flex-1 min-w-0">
           <div>
             <TypBadge typ={member.typ} />
             <h3 className={`font-serif font-normal tracking-[-0.02em] text-ink mt-2 ${featured ? "text-3xl" : "text-xl"}`}>
