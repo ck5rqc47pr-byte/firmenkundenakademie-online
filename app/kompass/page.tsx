@@ -2,7 +2,7 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
-import { getProgressForUser } from "@/lib/db";
+import { getProgressForUser, getAssessmentForUser } from "@/lib/db";
 import { getAllModules } from "@/lib/modules";
 import type { Module } from "@/lib/modules";
 
@@ -117,8 +117,13 @@ export default async function KompassPage() {
   const userName = session.user?.name ?? "Teilnehmer";
 
   const allModules = getAllModules().filter((m) => m.status === "freigegeben");
-  const progress = await getProgressForUser(userId);
+  const [progress, assessment] = await Promise.all([
+    getProgressForUser(userId),
+    getAssessmentForUser(userId),
+  ]);
   const completedIds = new Set(progress.map((p) => p.module_id));
+  const assessmentMap: Record<string, number> = {};
+  for (const e of assessment) assessmentMap[e.field_slug] = e.self_score;
 
   const completedCount = allModules.filter((m) => completedIds.has(m.id)).length;
 
@@ -284,7 +289,7 @@ export default async function KompassPage() {
         })}
       </div>
 
-      {/* STANDORTBESTIMMUNG – Placeholder */}
+      {/* STANDORTBESTIMMUNG */}
       <section className="max-w-[1240px] mx-auto px-6 lg:px-14 py-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           <div>
@@ -297,17 +302,20 @@ export default async function KompassPage() {
               <em className="italic text-ink-2">heute?</em>
             </h2>
             <p className="font-serif text-base text-ink-2 leading-relaxed mb-8">
-              Bevor du losziehst, eine ehrliche Selbsteinschätzung über deine
-              Kompetenzen in allen sechs Feldern. Dauer: rund fünf Minuten.
-              Ergebnis: deine persönliche Kompetenzkarte.
+              {assessment.length > 0
+                ? "Deine persönliche Kompetenzkarte — basierend auf deiner Selbsteinschätzung. Du kannst sie jederzeit aktualisieren."
+                : "Bevor du losziehst, eine ehrliche Selbsteinschätzung über deine Kompetenzen in allen sechs Feldern. Dauer: rund fünf Minuten. Ergebnis: deine persönliche Kompetenzkarte."}
             </p>
-            <div className="inline-flex items-center gap-3 border border-line px-5 py-3 font-mono text-[11px] uppercase tracking-[0.06em] text-ink-3">
-              <span className="w-1.5 h-1.5 rounded-full bg-accent inline-block" />
-              Kompetenzkarte · In Entwicklung
-            </div>
+            <Link
+              href="/kompass/einschaetzung"
+              className="inline-flex items-center gap-3 border border-primary px-5 py-3 font-mono text-[11px] uppercase tracking-[0.06em] text-primary hover:bg-primary hover:text-white transition-all"
+            >
+              <span className="w-1.5 h-1.5 rounded-full bg-current inline-block" />
+              {assessment.length > 0 ? "Einschätzung aktualisieren →" : "Kompetenzkarte erstellen →"}
+            </Link>
           </div>
 
-          {/* Heatmap Preview */}
+          {/* Heatmap */}
           <div>
             <div className="border border-line overflow-hidden">
               {/* Header */}
@@ -322,41 +330,51 @@ export default async function KompassPage() {
                 ))}
               </div>
               {[
-                { label: "Finanzanalyse", fill: [3, 2, 0] },
-                { label: "Branchenwissen", fill: [2, 1, 0] },
-                { label: "Gesprächsführung", fill: [1, 0, 0] },
-                { label: "Vertrieb", fill: [2, 1, 0] },
-                { label: "Digital", fill: [1, 0, 0] },
-                { label: "Führung", fill: [0, 0, 0] },
-              ].map((row) => (
-                <div
-                  key={row.label}
-                  className="grid grid-cols-[180px_repeat(3,1fr)] border-b border-line last:border-b-0"
-                >
-                  <div className="px-3 py-3 font-sans text-[12px] font-medium text-ink bg-bg flex items-center">
-                    {row.label}
-                  </div>
-                  {row.fill.map((f, i) => (
-                    <div
-                      key={i}
-                      className={`px-3 py-3 flex items-center justify-center font-mono text-[10px] ${
-                        f === 3
-                          ? "bg-primary text-white"
-                          : f === 2
-                          ? "bg-primary/20 text-primary"
-                          : f === 1
-                          ? "bg-primary/8 text-ink-3"
-                          : "bg-bg text-ink-3/30"
-                      }`}
-                    >
-                      {f > 0 ? "●" : "·"}
+                { label: "Finanzanalyse", slug: "finanzanalyse" },
+                { label: "Branchenwissen", slug: "branchenwissen" },
+                { label: "Gesprächsführung", slug: "gespraechsfuehrung" },
+                { label: "Vertrieb", slug: "vertrieb" },
+                { label: "Digital", slug: "digital" },
+                { label: "Führung", slug: "fuehrung" },
+              ].map((row) => {
+                const score = assessmentMap[row.slug] ?? 0;
+                // fill[i] > 0 wenn Stufe i+1 erreicht oder überschritten
+                const fill = [1, 2, 3].map((s) => (score >= s ? score : 0));
+                const hasData = score > 0;
+                return (
+                  <div
+                    key={row.slug}
+                    className="grid grid-cols-[180px_repeat(3,1fr)] border-b border-line last:border-b-0"
+                  >
+                    <div className="px-3 py-3 font-sans text-[12px] font-medium text-ink bg-bg flex items-center">
+                      {row.label}
                     </div>
-                  ))}
-                </div>
-              ))}
+                    {fill.map((f, i) => (
+                      <div
+                        key={i}
+                        className={`px-3 py-3 flex items-center justify-center font-mono text-[10px] transition-colors ${
+                          !hasData
+                            ? "bg-bg text-ink-3/20"
+                            : f === 3
+                            ? "bg-primary text-white"
+                            : f === 2
+                            ? "bg-primary/20 text-primary"
+                            : f === 1
+                            ? "bg-primary/8 text-ink-3"
+                            : "bg-bg text-ink-3/20"
+                        }`}
+                      >
+                        {hasData ? (f > 0 ? "●" : "·") : "·"}
+                      </div>
+                    ))}
+                  </div>
+                );
+              })}
             </div>
             <p className="font-mono text-[10px] text-ink-3 mt-3 uppercase tracking-[0.06em]">
-              Beispiel-Kompetenzkarte · wird nach Selbsteinschätzung befüllt
+              {assessment.length > 0
+                ? "Deine Kompetenzkarte · zuletzt aktualisiert"
+                : "Noch keine Einschätzung · Karte ist leer"}
             </p>
           </div>
         </div>

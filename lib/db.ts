@@ -201,6 +201,38 @@ export async function getQuizStats(): Promise<QuizStats[]> {
   return rows as QuizStats[];
 }
 
+// ── Competence Assessment ──────────────────────────────────────────────────
+
+export interface CompetenceEntry {
+  field_slug: string;
+  self_score: number;
+  updated_at: string;
+}
+
+export async function getAssessmentForUser(userId: string): Promise<CompetenceEntry[]> {
+  const rows = await sql`
+    SELECT field_slug, self_score, updated_at
+    FROM competence_assessment
+    WHERE user_id = ${userId}
+  `;
+  return rows as CompetenceEntry[];
+}
+
+export async function upsertAssessment(
+  userId: string,
+  scores: Record<string, number>
+): Promise<void> {
+  for (const [field_slug, self_score] of Object.entries(scores)) {
+    await sql`
+      INSERT INTO competence_assessment (user_id, field_slug, self_score)
+      VALUES (${userId}, ${field_slug}, ${self_score})
+      ON CONFLICT (user_id, field_slug) DO UPDATE SET
+        self_score = EXCLUDED.self_score,
+        updated_at = now()
+    `;
+  }
+}
+
 export async function getFeedbackStats(): Promise<FeedbackStats[]> {
   const rows = await sql`
     SELECT
