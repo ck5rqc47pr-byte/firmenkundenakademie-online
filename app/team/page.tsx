@@ -307,35 +307,29 @@ function MemberCard({ member, featured = false }: { member: TeamMember; featured
       />
       <div className={`${featured ? "p-8 lg:p-10" : "p-6 lg:p-8"}`}>
         {/* Header */}
-        <div className="flex items-start justify-between gap-4 mb-5">
-          <div className="flex items-start gap-4">
-            <div className="shrink-0 mt-0.5 border border-line overflow-hidden">
-              {member.Portrait ? (
-                <member.Portrait size={featured ? 96 : 72} />
-              ) : (
-                <Avatar member={member} featured={featured} />
-              )}
-            </div>
-            <div>
-              <TypBadge typ={member.typ} />
-              <h3 className={`font-serif font-normal tracking-[-0.02em] text-ink mt-2 ${featured ? "text-3xl" : "text-xl"}`}>
-                {member.name}
-              </h3>
-              <div className="font-mono text-[11px] uppercase tracking-[0.06em] text-ink-3 mt-1">
-                {member.rolle}
-              </div>
-            </div>
+        <div className="flex items-start gap-4 mb-5">
+          <div className="shrink-0 mt-0.5 border border-line overflow-hidden">
+            {member.Portrait ? (
+              <member.Portrait size={featured ? 96 : 72} />
+            ) : (
+              <Avatar member={member} featured={featured} />
+            )}
           </div>
-          {member.modell && (
-            <div className="shrink-0 border border-line px-3 py-1.5 mt-1">
-              <div className="font-mono text-[9px] uppercase tracking-[0.1em] text-ink-3">
-                Modell
-              </div>
-              <div className="font-mono text-[10px] text-ink-2 mt-0.5">
-                {member.modell}
-              </div>
+          <div className="min-w-0">
+            <TypBadge typ={member.typ} />
+            <h3 className={`font-serif font-normal tracking-[-0.02em] text-ink mt-2 ${featured ? "text-3xl" : "text-xl"}`}>
+              {member.name}
+            </h3>
+            <div className="font-mono text-[11px] uppercase tracking-[0.06em] text-ink-3 mt-1 leading-snug">
+              {member.rolle}
             </div>
-          )}
+            {member.modell && (
+              <div className="inline-flex border border-line px-2 py-1 mt-2">
+                <span className="font-mono text-[9px] uppercase tracking-[0.1em] text-ink-3 mr-1.5">Modell</span>
+                <span className="font-mono text-[9px] text-ink-2">{member.modell}</span>
+              </div>
+            )}
+          </div>
         </div>
 
         {/* Aufgabe */}
