@@ -3,54 +3,149 @@
 import { actionSaveAssessment } from "./actions";
 import { useRef, useState } from "react";
 
-const FIELDS = [
+type Stufe = {
+  value: 1 | 2 | 3;
+  label: string;
+  sub: string;
+};
+
+const FIELDS: {
+  slug: string;
+  label: string;
+  beschreibung: string;
+  stufen: Stufe[];
+}[] = [
   {
     slug: "finanzanalyse",
     label: "Finanzanalyse",
-    beschreibung: "Bilanzen lesen, Risikofrüherkennung, Kreditentscheidungen, Branchenrisiken",
+    beschreibung: "M01 · M02 · M03 · M04 · M05 · M21",
+    stufen: [
+      {
+        value: 1,
+        label: "Berater",
+        sub: "Ich lese HGB-Bilanzen selbstständig, berechne EK-Quote und Anlagendeckung und erkenne erste Frühwarnsignale im Kreditportfolio.",
+      },
+      {
+        value: 2,
+        label: "Sparringspartner",
+        sub: "Ich führe Bilanzgespräche nach dem 5-Phasen-Rahmen, beziehe qualitative Unternehmenssignale ein und leite Beratungsimpulse für Verbundprodukte ab.",
+      },
+      {
+        value: 3,
+        label: "Stratege",
+        sub: "Ich analysiere und optimiere Kapitalstrukturen, bewerte Mezzanine und Beteiligungskapital und entwickle strategische Finanzierungspläne.",
+      },
+    ],
   },
   {
     slug: "branchenwissen",
     label: "Branchenwissen",
-    beschreibung: "KMU-Strukturen, Heilberufe, Immobilien, Branchen-Spezifika",
+    beschreibung: "M06 · M07 · M08 · M09",
+    stufen: [
+      {
+        value: 1,
+        label: "Berater",
+        sub: "Ich ordne Firmenkunden nach KMU-Kriterien ein und beschreibe typische Finanzierungsmuster und Risikofelder je Unternehmenstyp.",
+      },
+      {
+        value: 2,
+        label: "Sparringspartner",
+        sub: "Ich analysiere EÜR von Heilberuflern, berechne Praxiswert nach IDW S5 und beurteile Immobilienprojekte anhand LTV, DSCR und BelWertV.",
+      },
+      {
+        value: 3,
+        label: "Stratege",
+        sub: "Ich analysiere Branchen mit Porter's Five Forces und PESTEL, baue strukturiert Expertenwissen auf und positioniere mich als gefragten Branchenkenner.",
+      },
+    ],
   },
   {
     slug: "gespraechsfuehrung",
     label: "Gesprächsführung",
-    beschreibung: "Bedarfsanalyse, latente Bedarfe erkennen, CEO-Dialoge führen",
+    beschreibung: "M10 · M11 · M12",
+    stufen: [
+      {
+        value: 1,
+        label: "Berater",
+        sub: "Ich strukturiere Kundengespräche aktiv, stelle offene Fragen und halte relevante Informationen systematisch im UnternehmerDialog fest.",
+      },
+      {
+        value: 2,
+        label: "Sparringspartner",
+        sub: "Ich wende SPIN-Fragetechnik und das Vier-Ohren-Modell an, erkenne latente Bedarfe hinter sachlichen Aussagen und führe strukturierte Bedarfsanalysen.",
+      },
+      {
+        value: 3,
+        label: "Stratege",
+        sub: "Ich führe CEO-Dialoge auf Augenhöhe, erkenne emotionale Nachfolgewiderstände und entwickle gemeinsam individuelle Roadmaps über 3–7 Jahre.",
+      },
+    ],
   },
   {
     slug: "vertrieb",
     label: "Vertrieb",
-    beschreibung: "Cross-Selling, Ertrag pro Kunde, NMZ-Optimierung, Marktbearbeitung",
+    beschreibung: "M13 · M14 · M15 · M16",
+    stufen: [
+      {
+        value: 1,
+        label: "Berater",
+        sub: "Ich identifiziere Cross-Selling-Potenziale per Wallet-Share-Methodik, wende den 4-Schritte-Prozess an und lese NMZ-Berichte in agree.",
+      },
+      {
+        value: 2,
+        label: "Sparringspartner",
+        sub: "Ich berechne Kundendeckungsbeiträge, beurteile ob Beziehungen risikogerecht bepreist sind und führe wertbasierte Konditionengespräche.",
+      },
+      {
+        value: 3,
+        label: "Stratege",
+        sub: "Ich entwickle Marktbearbeitungsstrategien für Zielsegmente, bewerte die Wettbewerbsposition meiner Bank und plane strukturierte Jahresmaßnahmen.",
+      },
+    ],
   },
   {
     slug: "digital",
     label: "Digital",
-    beschreibung: "agree & Co. effizient nutzen, datengetriebener Vertrieb",
+    beschreibung: "M17 · M18",
+    stufen: [
+      {
+        value: 1,
+        label: "Berater",
+        sub: "Ich nutze agree sicher für Gesprächsvorbereitung, Bedarfsdokumentation und NMZ-Berichte und identifiziere Zeitfresser in meinem Workflow.",
+      },
+      {
+        value: 2,
+        label: "Sparringspartner",
+        sub: "Ich werte Kundendaten systematisch für den Vertrieb aus, erkenne Abwanderungssignale frühzeitig und leite datenbasierte Aktivitäten ab.",
+      },
+      {
+        value: 3,
+        label: "Stratege",
+        sub: "Ich gestalte datengetriebene Vertriebsprozesse im Team mit und nutze Kundendaten als strategisches Steuerungsinstrument.",
+      },
+    ],
   },
   {
     slug: "fuehrung",
     label: "Führung",
-    beschreibung: "Wissenstransfer im Team, Netzwerk & Sichtbarkeit",
-  },
-];
-
-const STUFEN = [
-  {
-    value: 1,
-    label: "Berater",
-    sub: "Ich kenne die Grundlagen und wende sie mit Anleitung an.",
-  },
-  {
-    value: 2,
-    label: "Sparringspartner",
-    sub: "Ich arbeite selbstständig und erkenne Zusammenhänge, die andere übersehen.",
-  },
-  {
-    value: 3,
-    label: "Stratege",
-    sub: "Ich gestalte aktiv mit und berate auf Augenhöhe mit der Geschäftsführung.",
+    beschreibung: "M19 · M20",
+    stufen: [
+      {
+        value: 1,
+        label: "Berater",
+        sub: "Ich teile mein Wissen aktiv mit Kollegen, hole mir gezielt Feedback und übernehme Verantwortung für meine eigene Weiterentwicklung.",
+      },
+      {
+        value: 2,
+        label: "Sparringspartner",
+        sub: "Ich strukturiere Wissenstransfer im Team, baue gezielt Netzwerke zu Verbundpartnern auf und etabliere mich als gefragten Ansprechpartner.",
+      },
+      {
+        value: 3,
+        label: "Stratege",
+        sub: "Ich gestalte meine interne und externe Sichtbarkeit aktiv, baue Netzwerke strategisch aus und positioniere mich als Experten in meinem Feld.",
+      },
+    ],
   },
 ];
 
@@ -83,7 +178,7 @@ export function AssessmentForm({
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pl-10">
-            {STUFEN.map((stufe) => {
+            {field.stufen.map((stufe) => {
               const isSelected = values[field.slug] === stufe.value;
               return (
                 <label
