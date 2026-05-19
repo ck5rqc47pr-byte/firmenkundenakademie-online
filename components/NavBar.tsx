@@ -6,8 +6,8 @@ import { useSession, signOut } from "next-auth/react";
 
 const NAV = [
   { href: "/", label: "Campus" },
-  { href: "/module", label: "Programm" },
   { href: "/kompetenzmodell", label: "Kompetenzmodell" },
+  { href: "/module", label: "Programm" },
   { href: "/quellen", label: "Quellen" },
 ];
 
