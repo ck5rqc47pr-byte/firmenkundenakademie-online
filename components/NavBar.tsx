@@ -12,6 +12,7 @@ const NAV_END = [
   { href: "/kompetenzmodell", label: "Kompetenzmodell" },
   { href: "/module", label: "Programm" },
   { href: "/quellen", label: "Quellen" },
+  { href: "/team", label: "Team" },
 ];
 
 const LERNREISE_NAV = { href: "/kompass", label: "Kompass" };
