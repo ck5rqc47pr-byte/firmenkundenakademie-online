@@ -301,27 +301,68 @@ function Avatar({ member, featured }: { member: TeamMember; featured: boolean })
 }
 
 function MemberCard({ member, featured = false }: { member: TeamMember; featured?: boolean }) {
+  if (member.photo) {
+    // Layout mit echtem Foto: Bild links, Content rechts
+    return (
+      <div className="border border-ink bg-white overflow-hidden flex">
+        {/* Foto-Spalte */}
+        <div className="shrink-0 w-[160px] relative self-stretch">
+          <Image
+            src={member.photo}
+            alt={member.name}
+            fill
+            className="object-cover object-top"
+          />
+        </div>
+        {/* Content */}
+        <div className={`${featured ? "p-8 lg:p-10" : "p-6"} flex flex-col justify-between flex-1 min-w-0`}>
+          <div>
+            <TypBadge typ={member.typ} />
+            <h3 className={`font-serif font-normal tracking-[-0.02em] text-ink mt-2 ${featured ? "text-3xl" : "text-xl"}`}>
+              {member.name}
+            </h3>
+            <div className="font-mono text-[11px] uppercase tracking-[0.06em] text-ink-3 mt-1 leading-snug">
+              {member.rolle}
+            </div>
+            {member.modell && (
+              <div className="inline-flex border border-line px-2 py-1 mt-2">
+                <span className="font-mono text-[9px] uppercase tracking-[0.1em] text-ink-3 mr-1.5">Modell</span>
+                <span className="font-mono text-[9px] text-ink-2">{member.modell}</span>
+              </div>
+            )}
+            <p className="text-ink-2 leading-relaxed mt-4 text-sm">
+              {member.aufgabe}
+            </p>
+          </div>
+          <div className="mt-5">
+            <div className="font-mono text-[10px] uppercase tracking-[0.1em] text-ink-3 mb-2">
+              Eigenschaften
+            </div>
+            <ul className="space-y-1.5">
+              {member.eigenschaften.map((e) => (
+                <li key={e} className="flex items-start gap-2.5 text-sm text-ink-2">
+                  <span className="text-primary mt-0.5 shrink-0 font-mono text-xs">▸</span>
+                  {e}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // Standard-Layout mit SVG-Portrait
   return (
-    <div className={`border border-ink bg-white overflow-hidden`}>
-      {/* Avatar strip */}
+    <div className="border border-ink bg-white overflow-hidden">
       <div
         className="h-2 w-full"
         style={{ backgroundColor: member.avatarBg ?? "#1F2B56" }}
       />
       <div className={`${featured ? "p-8 lg:p-10" : "p-6 lg:p-8"}`}>
-        {/* Header */}
         <div className="flex items-start gap-4 mb-5">
           <div className="shrink-0 mt-0.5 border border-line overflow-hidden">
-            {member.photo ? (
-              <Image
-                src={member.photo}
-                alt={member.name}
-                width={featured ? 96 : 72}
-                height={featured ? 96 : 72}
-                className="object-cover object-top"
-                style={{ width: featured ? 96 : 72, height: featured ? 96 : 72 }}
-              />
-            ) : member.Portrait ? (
+            {member.Portrait ? (
               <member.Portrait size={featured ? 96 : 72} />
             ) : (
               <Avatar member={member} featured={featured} />
@@ -343,13 +384,9 @@ function MemberCard({ member, featured = false }: { member: TeamMember; featured
             )}
           </div>
         </div>
-
-        {/* Aufgabe */}
         <p className={`text-ink-2 leading-relaxed mb-6 ${featured ? "text-sm max-w-2xl" : "text-sm"}`}>
           {member.aufgabe}
         </p>
-
-        {/* Eigenschaften */}
         <div>
           <div className="font-mono text-[10px] uppercase tracking-[0.1em] text-ink-3 mb-3">
             Eigenschaften
