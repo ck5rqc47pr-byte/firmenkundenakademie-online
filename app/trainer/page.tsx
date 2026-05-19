@@ -38,8 +38,6 @@ export default async function TrainerPage() {
 
   // Statistiken
   const total = allModules.length;
-  const withTrainer = allModules.filter((m) => m.content_trainer?.trim()).length;
-  const withoutTrainer = total - withTrainer;
   const withPdf  = allModules.filter((m) => getParticipantHandoutPdfUrl(m.id)).length;
   const withThb  = allModules.filter((m) => getTrainerHandbuchPdfUrl(m.id)).length;
   const withPptx = allModules.filter((m) => getPresentationPptxUrl(m.id)).length;
@@ -80,7 +78,7 @@ export default async function TrainerPage() {
           {(
             [
               [String(total), "Module gesamt"],
-              [String(withTrainer), "Trainerhandbuch bereit"],
+              [String(withThb), "Trainerhandbuch (PDF)"],
               [String(withPdf), "TN-Unterlagen (PDF)"],
               [String(withPptx), "Präsentationen (PPTX)"],
             ] as [string, string][]
@@ -100,8 +98,6 @@ export default async function TrainerPage() {
       {/* Module je Kompetenzfeld */}
       <div className="mx-auto max-w-content px-6 lg:px-14 py-16 space-y-20">
         {Object.entries(grouped).map(([slug, modules]) => {
-          const doneCount = modules.filter((m) => m.content_trainer?.trim()).length;
-
           return (
             <section key={slug}>
               {/* Feld-Header */}
@@ -116,10 +112,10 @@ export default async function TrainerPage() {
                 </div>
                 <div className="text-right">
                   <div className="font-mono text-[10px] uppercase tracking-[0.06em] text-ink-3">
-                    Trainerhandbuch
+                    THB verfügbar
                   </div>
                   <div className="font-mono text-sm text-ink mt-0.5">
-                    {doneCount}/{modules.length}
+                    {modules.filter((m) => getTrainerHandbuchPdfUrl(m.id)).length}/{modules.length}
                   </div>
                 </div>
               </div>
@@ -127,8 +123,8 @@ export default async function TrainerPage() {
               {/* Modul-Tabelle */}
               <div className="border border-ink overflow-hidden">
                 {/* Tabellenkopf */}
-                <div className="grid grid-cols-[80px_1fr_120px_100px_80px_80px_90px_80px] bg-primary text-white">
-                  {["Modul", "Titel", "Stufe", "Handbuch", "THB", "TNU", "PPTX", ""].map((h) => (
+                <div className="grid grid-cols-[80px_1fr_120px_80px_80px_90px_80px] bg-primary text-white">
+                  {["Modul", "Titel", "Stufe", "THB", "TNU", "PPTX", ""].map((h) => (
                     <div
                       key={h}
                       className="font-mono text-[10px] uppercase tracking-[0.08em] px-4 py-3"
@@ -140,7 +136,6 @@ export default async function TrainerPage() {
 
                 {/* Zeilen */}
                 {modules.map((m, i) => {
-                  const hasTrainer = Boolean(m.content_trainer?.trim());
                   const pdfUrl  = getParticipantHandoutPdfUrl(m.id);
                   const thbUrl  = getTrainerHandbuchPdfUrl(m.id);
                   const pptxUrl = getPresentationPptxUrl(m.id);
@@ -149,7 +144,7 @@ export default async function TrainerPage() {
                   return (
                     <div
                       key={m.id}
-                      className={`grid grid-cols-[80px_1fr_120px_100px_80px_80px_90px_80px] border-t border-line items-center ${even ? "bg-white" : "bg-bg-2"}`}
+                      className={`grid grid-cols-[80px_1fr_120px_80px_80px_90px_80px] border-t border-line items-center ${even ? "bg-white" : "bg-bg-2"}`}
                     >
                       {/* ID */}
                       <div className="px-4 py-3.5">
@@ -169,21 +164,6 @@ export default async function TrainerPage() {
                         <span className="font-mono text-[10px] uppercase tracking-[0.06em] text-ink-2">
                           {m.stufe}
                         </span>
-                      </div>
-
-                      {/* Handbuch-Status */}
-                      <div className="px-4 py-3.5">
-                        {hasTrainer ? (
-                          <span className="inline-flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-[0.06em] text-emerald-700">
-                            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 inline-block" />
-                            Bereit
-                          </span>
-                        ) : (
-                          <span className="inline-flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-[0.06em] text-ink-3">
-                            <span className="w-1.5 h-1.5 rounded-full bg-ink-3 inline-block" />
-                            Ausstehend
-                          </span>
-                        )}
                       </div>
 
                       {/* THB – Trainerhandbuch PDF */}
