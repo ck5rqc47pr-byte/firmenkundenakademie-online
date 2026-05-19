@@ -147,7 +147,7 @@ export default async function KompassPage() {
           <span className="w-6 h-px bg-ink-3 inline-block" />
           FKB Campus · Kompass
         </div>
-        <h1 className="font-serif text-[clamp(36px,8vw,88px)] font-normal leading-[1.05] tracking-[-0.03em] mb-8 max-w-3xl">
+        <h1 lang="de" className="font-serif text-[clamp(36px,8vw,88px)] font-normal leading-[1.05] tracking-[-0.03em] mb-8 max-w-3xl hyphens-auto">
           Der{" "}
           <em className="italic" style={{ color: "var(--ink-2)" }}>
             Firmenkundenkompass
