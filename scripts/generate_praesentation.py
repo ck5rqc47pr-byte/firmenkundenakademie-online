@@ -189,12 +189,12 @@ def rule(slide, lx, ty, w, color: RGBColor):
 
 def tb(slide, text, lx, ty, w, h,
        font=SANS, size=T_BODY, bold=False, italic=False,
-       color=INK, align=PP_ALIGN.LEFT, autofit=True) -> None:
+       color=INK, align=PP_ALIGN.LEFT, autofit=True, wrap=True) -> None:
     """Text-Box mit px-Koordinaten und optionalem Auto-Fit."""
     if not str(text).strip(): return
     tx = slide.shapes.add_textbox(p(lx), p(ty), p(w), p(h))
     tf = tx.text_frame
-    tf.word_wrap = True
+    tf.word_wrap = wrap
     if autofit:
         tf.auto_size = MSO_AUTO_SIZE.TEXT_TO_FIT_SHAPE
     par = tf.paragraphs[0]
@@ -227,7 +227,7 @@ def tbl_rows(slide, rows: list, lx, ty, w, h):
             run.font.bold  = (ri == 0)
             if ri == 0:
                 run.font.color.rgb = BG
-                _cell_bg(cell, INK)
+                _cell_bg(cell, PRIMARY)
             elif ri % 2 == 0:
                 run.font.color.rgb = INK
                 _cell_bg(cell, BG2)
@@ -301,21 +301,25 @@ def s_agenda(prs, m, pg):
     # Linke Spalte: Titel
     tb(s, "Inhalt.", M, TITLE_Y, 500, 260, SERIF, T_SECTION, italic=True, color=PRIMARY)
     # Rechte Spalte: Lernziele
-    ROMAN = ["I.","II.","III.","IV.","V.","VI.","VII.","VIII."]
+    ROMAN_AG = ["I","II","III","IV","V","VI","VII","VIII"]
     lz = m["lz"]
-    row_h = min(108, 820 // max(len(lz), 1))
+    n  = min(len(lz), 8)
+    row_h = max(80, min(110, 870 // max(n, 1)))
+    start_y = RULE_Y + 10
     for i, t in enumerate(lz[:8]):
-        y = RULE_Y + 10 + i * row_h
+        y = start_y + i * row_h
         rule(s, 640, y, 1184, LINE)
-        tb(s, ROMAN[i] if i < len(ROMAN) else f"{i+1}.",
-           640, y+6, 80, row_h-6, SERIF, Pt(26), italic=True, color=PRIMARY)
-        tb(s, textwrap.shorten(t, 180, placeholder="…"),
-           740, y+10, 1080, row_h-10, SERIF, T_LEAD, color=INK)
+        # Römische Zahl: word_wrap=False damit "III" nicht umbricht
+        tb(s, ROMAN_AG[i] if i < len(ROMAN_AG) else str(i+1),
+           640, y+8, 120, row_h-8, SERIF, Pt(24), italic=True, color=PRIMARY,
+           wrap=False)
+        tb(s, textwrap.shorten(t, 200, placeholder="…"),
+           780, y+10, 1044, row_h-10, SERIF, T_LEAD, color=INK)
 
 
 def s_section(prs, roman, title, sub, section, pg):
-    """03 — SECTION DIVIDER (dunkel)."""
-    s = blank(prs); bg(s, INK)
+    """03 — SECTION DIVIDER (primary blau)."""
+    s = blank(prs); bg(s, PRIMARY)
     chrome(s, section, dark=True, pg=pg)
     # Riesige Zahl links (280pt = ~156px Buchstabenhöhe auf 1080px Folie)
     tb(s, roman, M, 100, 860, 860, SERIF, Pt(280), italic=True, color=ACCENT)
@@ -439,25 +443,25 @@ def s_image_led(prs, name, situation, section, pg):
        MONO, T_MONO, color=INK3)
     tb(s, name, 760, 196, 1060, 260, SERIF, T_H2, color=INK)
     if situation:
-        tb(s, textwrap.shorten(situation, 400, placeholder="…"),
-           760, 470, 1060, 480, SERIF, T_LEAD, color=INK2)
+        tb(s, textwrap.shorten(situation, 700, placeholder="…"),
+           760, 470, 1060, 540, SERIF, T_LEAD, color=INK2)
 
 
 def s_sources(prs, src_list, pg):
-    """11 — QUELLENAPPARAT (dunkel)."""
-    s = blank(prs); bg(s, INK)
+    """11 — QUELLENAPPARAT (primary blau)."""
+    s = blank(prs); bg(s, PRIMARY)
     chrome(s, "Quellenapparat", dark=True, pg=pg)
     tb(s, "Quellenapparat", M, RULE_Y+6, 800, 32,
-       MONO, T_MONO, color=INK3)
+       MONO, T_MONO, color=RGBColor(0xA0,0xAA,0xCC))
     tb(s, "Quellen.", M, TITLE_Y, 1728, 200, SERIF, T_H2, color=PRI_INK)
-    rule(s, M, TITLE_Y+210, W, RGBColor(0x40,0x48,0x70))
+    rule(s, M, TITLE_Y+210, W, RGBColor(0x3A,0x48,0x80))
     mid = len(src_list) // 2 + 1
     for i, t in enumerate(src_list[:mid]):
-        tb(s, t, M, TITLE_Y+220 + i*72, 800, 68,
-           MONO, T_MONO, color=RGBColor(0xBF,0xC3,0xD8))
-    for i, t in enumerate(src_list[mid:mid+7]):
-        tb(s, t, 940, TITLE_Y+220 + i*72, 824, 68,
-           MONO, T_MONO, color=RGBColor(0xBF,0xC3,0xD8))
+        tb(s, t, M, TITLE_Y+220 + i*76, 820, 70,
+           MONO, Pt(10), color=PRI_INK)
+    for i, t in enumerate(src_list[mid:mid+8]):
+        tb(s, t, 960, TITLE_Y+220 + i*76, 824, 70,
+           MONO, Pt(10), color=PRI_INK)
 
 
 def s_closing(prs, m, pg):
@@ -522,10 +526,18 @@ def build(mid: str) -> Path:
 
         # Quellenverzeichnis → Quellenapparat-Folie
         if is_quellen(t2):
-            src = [ln.strip("- ").strip() for ln in b2.splitlines()
-                   if ln.strip() and not ln.startswith("#")]
+            src = []
+            for ln in b2.splitlines():
+                ln = ln.strip()
+                if not ln or ln.startswith("#"): continue
+                # "- Autor..." oder "1. Autor..." oder direkte Zeile
+                ln = re.sub(r"^[-*]\s+", "", ln)
+                ln = re.sub(r"^\d+\.\s+", "", ln)
+                ln = clean(ln).strip()
+                if ln and len(ln) > 10:
+                    src.append(textwrap.shorten(ln, 140, placeholder="…"))
             if src:
-                s_sources(prs, [clean(x) for x in src[:14]], pg())
+                s_sources(prs, src[:16], pg())
             continue
 
         # Section Divider
@@ -548,12 +560,18 @@ def build(mid: str) -> Path:
                 s_image_led(prs, name or t3, sit or clean(b3[:350]), sec, pg())
                 continue
 
-            # Reflexionsfragen → Content
+            # Reflexionsfragen / Selbstcheck → Content oder Table
             if is_reflex(t3):
-                qs = [m.group(1).strip()
-                      for m in re.finditer(r"^\d+\.\s+(.+)$", b3, re.MULTILINE)]
-                if not qs: qs = bullets(b3, 5)
-                if qs: s_content(prs, t3, qs, sec, pg())
+                tbl_r = md_table(b3)
+                if tbl_r:
+                    ctx = next((clean(para) for para in re.split(r"\n{2,}", b3)
+                                if not para.strip().startswith("|") and clean(para)), "")
+                    s_table(prs, t3, tbl_r, ctx[:200], sec, pg())
+                else:
+                    qs = [mm.group(1).strip()
+                          for mm in re.finditer(r"^\d+\.\s+(.+)$", b3, re.MULTILINE)]
+                    if not qs: qs = bullets(b3, 6)
+                    if qs: s_content(prs, t3, qs, sec, pg())
                 continue
 
             # Tabelle?
