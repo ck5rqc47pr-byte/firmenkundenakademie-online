@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import {
   PortraitRoland,
   PortraitDrSchreiber,
@@ -24,6 +25,7 @@ type TeamMember = {
   avatarFg?: string;
   initials: string;
   Portrait?: React.FC<{ size?: number }>;
+  photo?: string;
 };
 
 const TEAM: TeamMember[] = [
@@ -49,6 +51,7 @@ const TEAM: TeamMember[] = [
     avatarBg: "#D9BF7A",
     avatarFg: "#191D2E",
     Portrait: PortraitRoland,
+    photo: "/team/roland.webp",
     typ: "KI-Agent",
     rolle: "Content Creator · Modul- und Unterlagenentwicklung",
     eigenschaften: [
@@ -309,7 +312,16 @@ function MemberCard({ member, featured = false }: { member: TeamMember; featured
         {/* Header */}
         <div className="flex items-start gap-4 mb-5">
           <div className="shrink-0 mt-0.5 border border-line overflow-hidden">
-            {member.Portrait ? (
+            {member.photo ? (
+              <Image
+                src={member.photo}
+                alt={member.name}
+                width={featured ? 96 : 72}
+                height={featured ? 96 : 72}
+                className="object-cover object-top"
+                style={{ width: featured ? 96 : 72, height: featured ? 96 : 72 }}
+              />
+            ) : member.Portrait ? (
               <member.Portrait size={featured ? 96 : 72} />
             ) : (
               <Avatar member={member} featured={featured} />
