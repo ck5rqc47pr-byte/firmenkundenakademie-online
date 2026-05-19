@@ -17,133 +17,133 @@ const FIELDS: {
 }[] = [
   {
     slug: "finanzanalyse",
-    label: "Finanzanalyse",
-    beschreibung: "M01 · M02 · M03 · M04 · M05 · M21",
+    label: "Finanzanalyse & Kreditexpertise",
+    beschreibung: "Bilanz- & GuV-Analyse · M01 · M02 · M03 · M04 · M05 · M21",
     stufen: [
       {
         value: 1,
         label: "Berater",
-        sub: "Ich lese HGB-Bilanzen selbstständig, berechne EK-Quote und Anlagendeckung und erkenne erste Frühwarnsignale im Kreditportfolio.",
+        sub: "Ich lese und verstehe Jahresabschlüsse und erkenne Standard-Kennzahlen wie EK-Quote, Cashflow und DSCR.",
       },
       {
         value: 2,
         label: "Sparringspartner",
-        sub: "Ich führe Bilanzgespräche nach dem 5-Phasen-Rahmen, beziehe qualitative Unternehmenssignale ein und leite Beratungsimpulse für Verbundprodukte ab.",
+        sub: "Ich interpretiere Bilanzpolitik, erkenne Gestaltungsspielräume und erstelle eigenständig Kapitaldienstfähigkeitsberechnungen.",
       },
       {
         value: 3,
         label: "Stratege",
-        sub: "Ich analysiere und optimiere Kapitalstrukturen, bewerte Mezzanine und Beteiligungskapital und entwickle strategische Finanzierungspläne.",
+        sub: "Ich führe strategische Bilanzgespräche auf Augenhöhe mit GF/CFO und leite Handlungsempfehlungen aus der Finanzanalyse ab.",
       },
     ],
   },
   {
     slug: "branchenwissen",
     label: "Branchenwissen",
-    beschreibung: "M06 · M07 · M08 · M09",
+    beschreibung: "KMU / Mittelstand · M06 · M07 · M08 · M09",
     stufen: [
       {
         value: 1,
         label: "Berater",
-        sub: "Ich ordne Firmenkunden nach KMU-Kriterien ein und beschreibe typische Finanzierungsmuster und Risikofelder je Unternehmenstyp.",
+        sub: "Ich kenne branchentypische Kennzahlen und Finanzierungsanlässe der Top-5-Branchen in meinem Bestand.",
       },
       {
         value: 2,
         label: "Sparringspartner",
-        sub: "Ich analysiere EÜR von Heilberuflern, berechne Praxiswert nach IDW S5 und beurteile Immobilienprojekte anhand LTV, DSCR und BelWertV.",
+        sub: "Ich verstehe Wertschöpfungsketten, erkenne Branchenzyklen und deren Auswirkung auf die Bonität meiner Kunden.",
       },
       {
         value: 3,
         label: "Stratege",
-        sub: "Ich analysiere Branchen mit Porter's Five Forces und PESTEL, baue strukturiert Expertenwissen auf und positioniere mich als gefragten Branchenkenner.",
+        sub: "Ich fungiere als Branchenexperte, vernetze Kunden untereinander und antizipiere Marktveränderungen proaktiv.",
       },
     ],
   },
   {
     slug: "gespraechsfuehrung",
-    label: "Gesprächsführung",
-    beschreibung: "M10 · M11 · M12",
+    label: "Gesprächsführung & Beratung",
+    beschreibung: "Bedarfsanalyse & Gesprächsstruktur · M10 · M11 · M12",
     stufen: [
       {
         value: 1,
         label: "Berater",
-        sub: "Ich strukturiere Kundengespräche aktiv, stelle offene Fragen und halte relevante Informationen systematisch im UnternehmerDialog fest.",
+        sub: "Ich führe strukturierte Beratungsgespräche nach VR-Finanzplan-Standards und stelle gezielt offene Fragen.",
       },
       {
         value: 2,
         label: "Sparringspartner",
-        sub: "Ich wende SPIN-Fragetechnik und das Vier-Ohren-Modell an, erkenne latente Bedarfe hinter sachlichen Aussagen und führe strukturierte Bedarfsanalysen.",
+        sub: "Ich lenke Gespräche auf strategische Themen und identifiziere latente Bedarfe hinter dem eigentlichen Auftrag.",
       },
       {
         value: 3,
         label: "Stratege",
-        sub: "Ich führe CEO-Dialoge auf Augenhöhe, erkenne emotionale Nachfolgewiderstände und entwickle gemeinsam individuelle Roadmaps über 3–7 Jahre.",
+        sub: "Ich führe CEO-Dialoge auf Augenhöhe und moderiere komplexe Entscheidungsprozesse beim Kunden.",
       },
     ],
   },
   {
     slug: "vertrieb",
-    label: "Vertrieb",
-    beschreibung: "M13 · M14 · M15 · M16",
+    label: "Vertrieb & Ertragsmanagement",
+    beschreibung: "Cross-Selling & Verbundgeschäft · M13 · M14 · M15 · M16",
     stufen: [
       {
         value: 1,
         label: "Berater",
-        sub: "Ich identifiziere Cross-Selling-Potenziale per Wallet-Share-Methodik, wende den 4-Schritte-Prozess an und lese NMZ-Berichte in agree.",
+        sub: "Ich nutze systematisch Gesprächsanlässe und kenne die Angebote der Verbundpartner (R+V, Union Investment, Schwäbisch Hall u. a.).",
       },
       {
         value: 2,
         label: "Sparringspartner",
-        sub: "Ich berechne Kundendeckungsbeiträge, beurteile ob Beziehungen risikogerecht bepreist sind und führe wertbasierte Konditionengespräche.",
+        sub: "Ich entwickle kundenindividuelle Produktbündel und steuere aktiv den Deckungsbeitrag pro Kunde.",
       },
       {
         value: 3,
         label: "Stratege",
-        sub: "Ich entwickle Marktbearbeitungsstrategien für Zielsegmente, bewerte die Wettbewerbsposition meiner Bank und plane strukturierte Jahresmaßnahmen.",
+        sub: "Ich baue integrierte Beratungskonzepte über alle Verbundpartner und optimiere den Kundenertragswert langfristig.",
       },
     ],
   },
   {
     slug: "digital",
-    label: "Digital",
-    beschreibung: "M17 · M18",
+    label: "Digitale Kompetenz",
+    beschreibung: "Atruvia / agree-Systeme · M17 · M18",
     stufen: [
       {
         value: 1,
         label: "Berater",
-        sub: "Ich nutze agree sicher für Gesprächsvorbereitung, Bedarfsdokumentation und NMZ-Berichte und identifiziere Zeitfresser in meinem Workflow.",
+        sub: "Ich bediene Kernprozesse in agree sicher: Kreditantrag, Kontoeröffnung, VR-Standardprozesse.",
       },
       {
         value: 2,
         label: "Sparringspartner",
-        sub: "Ich werte Kundendaten systematisch für den Vertrieb aus, erkenne Abwanderungssignale frühzeitig und leite datenbasierte Aktivitäten ab.",
+        sub: "Ich nutze erweiterte agree-Funktionen effizient: Auswertungen, Workflows und Schnittstellen.",
       },
       {
         value: 3,
         label: "Stratege",
-        sub: "Ich gestalte datengetriebene Vertriebsprozesse im Team mit und nutze Kundendaten als strategisches Steuerungsinstrument.",
+        sub: "Ich identifiziere Prozessoptimierungen, gebe qualifiziertes Feedback an IT/Orga und teste neue Funktionen proaktiv.",
       },
     ],
   },
   {
     slug: "fuehrung",
-    label: "Führung",
-    beschreibung: "M19 · M20",
+    label: "Führung & Zusammenarbeit",
+    beschreibung: "Teamarbeit & Wissenstransfer · M19 · M20",
     stufen: [
       {
         value: 1,
         label: "Berater",
-        sub: "Ich teile mein Wissen aktiv mit Kollegen, hole mir gezielt Feedback und übernehme Verantwortung für meine eigene Weiterentwicklung.",
+        sub: "Ich teile relevante Informationen im Team und nehme aktiv an Fallbesprechungen teil.",
       },
       {
         value: 2,
         label: "Sparringspartner",
-        sub: "Ich strukturiere Wissenstransfer im Team, baue gezielt Netzwerke zu Verbundpartnern auf und etabliere mich als gefragten Ansprechpartner.",
+        sub: "Ich übernehme eine Mentorenrolle für jüngere Kollegen und leite Fachthemen in Teamrunden.",
       },
       {
         value: 3,
         label: "Stratege",
-        sub: "Ich gestalte meine interne und externe Sichtbarkeit aktiv, baue Netzwerke strategisch aus und positioniere mich als Experten in meinem Feld.",
+        sub: "Ich entwickle Schulungsformate, baue eine Wissensdatenbank auf und fördere eine Lernkultur im Bereich.",
       },
     ],
   },
