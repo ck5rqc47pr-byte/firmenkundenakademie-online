@@ -30,9 +30,9 @@ const TEAM: TeamMember[] = [
       "Benedikt verantwortet das Gesamtprogramm: Modulkonzeption, Qualitätsstandards, Vermarktung und Weiterentwicklung der Akademie. Er gibt die inhaltliche Richtung vor und trifft alle strategischen Entscheidungen.",
   },
   {
-    name: "Content Creator",
+    name: "Roland",
     typ: "KI-Agent",
-    rolle: "Modul- und Unterlagenentwicklung",
+    rolle: "Content Creator · Modul- und Unterlagenentwicklung",
     eigenschaften: [
       "Zertifizierter Bankfachtrainer (IHK)",
       "15+ Jahre Firmenkundengeschäft (VR-Banken)",
@@ -44,9 +44,9 @@ const TEAM: TeamMember[] = [
     modell: "Claude Haiku 4.5",
   },
   {
-    name: "Scientific Writer",
+    name: "Dr. Schreiber",
     typ: "KI-Agent",
-    rolle: "Wissenschaftliche Fundierung & Literaturrecherche",
+    rolle: "Scientific Writer · Wissenschaftliche Fundierung & Literaturrecherche",
     eigenschaften: [
       "Expertise in Bankbetriebslehre und Kompetenzforschung",
       "Akademisch-präziser Schreibstil auf Hochschulniveau",
@@ -86,9 +86,9 @@ const TEAM: TeamMember[] = [
     modell: "Claude Sonnet 4.6",
   },
   {
-    name: "Formatter",
+    name: "Praktikant 1",
     typ: "KI-Agent",
-    rolle: "Dokumentproduktion & Corporate Design",
+    rolle: "Formatter · Dokumentproduktion & Corporate Design",
     eigenschaften: [
       "Spezialist für VR-Banken Corporate Design",
       "Erzeugt DOCX, PPTX und XLSX aus Markdown-Quellen",
@@ -187,11 +187,11 @@ export default function TeamPage() {
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
             {[
-              { nr: "01", agent: "Scientific Writer", action: "Literaturrecherche & theoretische Grundlage" },
-              { nr: "02", agent: "Content Creator", action: "Modulerstellung & Unterlagenentwicklung" },
+              { nr: "01", agent: "Dr. Schreiber", action: "Literaturrecherche & theoretische Grundlage" },
+              { nr: "02", agent: "Roland", action: "Modulerstellung & Unterlagenentwicklung" },
               { nr: "03", agent: "Prof. Dr. Brandt", action: "Wissenschaftliches Review" },
               { nr: "04", agent: "Armin", action: "Praxisreview & Alltagstauglichkeit" },
-              { nr: "05", agent: "Formatter", action: "Finale Dokumente im VR-CI" },
+              { nr: "05", agent: "Praktikant 1", action: "Finale Dokumente im VR-CI" },
             ].map((step) => (
               <div key={step.nr} className="border border-ink bg-white p-5">
                 <div className="font-mono text-[10px] uppercase tracking-[0.1em] text-primary mb-2">
