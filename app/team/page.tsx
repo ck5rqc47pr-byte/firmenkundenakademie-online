@@ -13,11 +13,17 @@ type TeamMember = {
   eigenschaften: string[];
   aufgabe: string;
   modell?: string;
+  avatarBg?: string;
+  avatarFg?: string;
+  initials: string;
 };
 
 const TEAM: TeamMember[] = [
   {
     name: "Benedikt Zoller",
+    initials: "BZ",
+    avatarBg: "#1F2B56",
+    avatarFg: "#F8F8FA",
     typ: "Mensch",
     rolle: "Gründer & Programmverantwortlicher",
     eigenschaften: [
@@ -31,6 +37,9 @@ const TEAM: TeamMember[] = [
   },
   {
     name: "Roland",
+    initials: "RO",
+    avatarBg: "#D9BF7A",
+    avatarFg: "#191D2E",
     typ: "KI-Agent",
     rolle: "Content Creator · Modul- und Unterlagenentwicklung",
     eigenschaften: [
@@ -45,6 +54,9 @@ const TEAM: TeamMember[] = [
   },
   {
     name: "Dr. Schreiber",
+    initials: "DS",
+    avatarBg: "#1F2B56",
+    avatarFg: "#F8F8FA",
     typ: "KI-Agent",
     rolle: "Scientific Writer · Wissenschaftliche Fundierung & Literaturrecherche",
     eigenschaften: [
@@ -59,6 +71,9 @@ const TEAM: TeamMember[] = [
   },
   {
     name: "Prof. Dr. Brandt",
+    initials: "PB",
+    avatarBg: "#191D2E",
+    avatarFg: "#D9BF7A",
     typ: "KI-Agent",
     rolle: "Wissenschaftlicher Reviewer",
     eigenschaften: [
@@ -73,6 +88,9 @@ const TEAM: TeamMember[] = [
   },
   {
     name: "Armin",
+    initials: "AR",
+    avatarBg: "#5C6B3A",
+    avatarFg: "#F8F8FA",
     typ: "KI-Agent",
     rolle: "Praxis-Reviewer",
     eigenschaften: [
@@ -87,6 +105,9 @@ const TEAM: TeamMember[] = [
   },
   {
     name: "Praktikant 1",
+    initials: "P1",
+    avatarBg: "#8A97B0",
+    avatarFg: "#F8F8FA",
     typ: "KI-Agent",
     rolle: "Formatter · Dokumentproduktion & Corporate Design",
     eigenschaften: [
@@ -232,19 +253,60 @@ export default function TeamPage() {
   );
 }
 
+function Avatar({ member, featured }: { member: TeamMember; featured: boolean }) {
+  const size = featured ? 96 : 72;
+  const fontSize = featured ? 28 : 20;
+  const bg = member.avatarBg ?? "#1F2B56";
+  const fg = member.avatarFg ?? "#F8F8FA";
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox={`0 0 ${size} ${size}`}
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+    >
+      <rect width={size} height={size} fill={bg} />
+      <text
+        x={size / 2}
+        y={size / 2 + fontSize * 0.38}
+        textAnchor="middle"
+        fontFamily="Georgia, serif"
+        fontSize={fontSize}
+        fontWeight="400"
+        fill={fg}
+        letterSpacing="-0.02em"
+      >
+        {member.initials}
+      </text>
+    </svg>
+  );
+}
+
 function MemberCard({ member, featured = false }: { member: TeamMember; featured?: boolean }) {
   return (
-    <div className={`border border-ink ${featured ? "bg-white" : "bg-white"} overflow-hidden`}>
+    <div className={`border border-ink bg-white overflow-hidden`}>
+      {/* Avatar strip */}
+      <div
+        className="h-2 w-full"
+        style={{ backgroundColor: member.avatarBg ?? "#1F2B56" }}
+      />
       <div className={`${featured ? "p-8 lg:p-10" : "p-6 lg:p-8"}`}>
         {/* Header */}
         <div className="flex items-start justify-between gap-4 mb-5">
-          <div>
-            <TypBadge typ={member.typ} />
-            <h3 className={`font-serif font-normal tracking-[-0.02em] text-ink mt-2 ${featured ? "text-3xl" : "text-xl"}`}>
-              {member.name}
-            </h3>
-            <div className="font-mono text-[11px] uppercase tracking-[0.06em] text-ink-3 mt-1">
-              {member.rolle}
+          <div className="flex items-start gap-4">
+            <div className="shrink-0 mt-0.5 border border-line">
+              <Avatar member={member} featured={featured} />
+            </div>
+            <div>
+              <TypBadge typ={member.typ} />
+              <h3 className={`font-serif font-normal tracking-[-0.02em] text-ink mt-2 ${featured ? "text-3xl" : "text-xl"}`}>
+                {member.name}
+              </h3>
+              <div className="font-mono text-[11px] uppercase tracking-[0.06em] text-ink-3 mt-1">
+                {member.rolle}
+              </div>
             </div>
           </div>
           {member.modell && (
