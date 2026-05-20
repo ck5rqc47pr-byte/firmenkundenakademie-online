@@ -86,6 +86,7 @@ def clean(text: str) -> str:
     text = re.sub(r"`(.+?)`",       r"\1", text)
     text = re.sub(r"\[(.+?)\]\(.+?\)", r"\1", text)
     text = re.sub(r"^#{1,6}\s+", "", text, flags=re.MULTILINE)
+    text = re.sub(r"^>\s*", "", text, flags=re.MULTILINE)   # Blockquotes
     return text.strip()
 
 def bullets(text: str, n=6) -> list:
@@ -350,19 +351,30 @@ def s_headline(prs, title, left, right, section, pg):
 
 
 def s_content(prs, title, items, section, pg):
-    """Standard-Content-Folie: Titel + Bullet-Liste."""
+    """Standard-Content-Folie: Titel + Bullet-Liste als Multi-Paragraph-Box."""
     s = blank(prs); bg(s, BG)
     chrome(s, section, pg=pg)
     h_rule(s)
     tb(s, title, M, TITLE_Y, W, TITLE_H, SERIF, T_H2, color=INK)
     rule(s, M, TITLE_Y + TITLE_H + 10, W, LINE)
-    for i, b in enumerate(items[:6]):
-        y = TITLE_Y + TITLE_H + 24 + i * 84
-        if y + 84 > BOT_Y: break
-        tb(s, "–", M, y+4, 40, 56, SERIF, Pt(22), color=PRIMARY)
-        tb(s, textwrap.shorten(b, 220, placeholder="…"),
-           M+52, y, W-52, 80, SERIF, T_LEAD, color=INK)
-        rule(s, M+52, y+76, W-52, LINE)
+
+    # Alle Bullets in einer einzigen Textbox mit Paragraphen
+    by = TITLE_Y + TITLE_H + 24
+    tx = s.shapes.add_textbox(p(M), p(by), p(W), p(BOT_Y - by - 20))
+    tf = tx.text_frame
+    tf.word_wrap = True
+    tf.auto_size = MSO_AUTO_SIZE.TEXT_TO_FIT_SHAPE
+
+    for i, b in enumerate(items[:7]):
+        text = textwrap.shorten(b, 260, placeholder="…")
+        par = tf.paragraphs[0] if i == 0 else tf.add_paragraph()
+        par.space_before = Pt(6)
+        par.space_after  = Pt(6)
+        run = par.add_run()
+        run.text = f"–  {text}"
+        run.font.name  = SERIF
+        run.font.size  = T_LEAD
+        run.font.color.rgb = INK
 
 
 def s_two_col(prs, title, left, right, section, pg):
@@ -487,13 +499,13 @@ def s_closing(prs, m, pg):
 # MODUL → PRÄSENTATION
 # ══════════════════════════════════════════════════════════════════════════
 
-ROMAN = ["I.","II.","III.","IV.","V.","VI.","VII.","VIII.","IX.","X."]
+ROMAN = ["I","II","III","IV","V","VI","VII","VIII","IX","X"]
 
 SKIP_KW    = {"musterlösung","trainer-hinweis","trainer-tipp","trainertipp",
               "feedbackbogen","beobachtungsbogen"}
 PFALL_KW   = {"praxisfall","der fall","fallstudie","fallbeispiel"}
 REFLEX_KW  = {"reflexionsfragen","fragen zur reflexion","selbstcheck","reflexion"}
-QUELLEN_KW = {"quellenverzeichnis","literaturverzeichnis"}
+QUELLEN_KW = {"quellenverzeichnis","literaturverzeichnis","quellen"}
 
 def is_skip(t):    return any(k in t.lower() for k in SKIP_KW)
 def is_pfall(t):   return any(k in t.lower() for k in PFALL_KW)
@@ -541,7 +553,7 @@ def build(mid: str) -> Path:
             continue
 
         # Section Divider
-        roman = ROMAN[roman_idx] if roman_idx < len(ROMAN) else f"{roman_idx+1}."
+        roman = ROMAN[roman_idx] if roman_idx < len(ROMAN) else str(roman_idx+1)
         roman_idx += 1
         h3s = sections(b2, 3)
         sub = clean(h3s[0]["title"]) if h3s else ""
@@ -550,7 +562,7 @@ def build(mid: str) -> Path:
         for h3 in h3s:
             t3 = clean(h3["title"])
             b3 = h3["body"]
-            sec = f"§ {roman[:-1]} · {t2}"
+            sec = f"{roman} · {t2}"
 
             if is_skip(t3): continue
 
@@ -591,8 +603,9 @@ def build(mid: str) -> Path:
             h4s = sections(b3, 4)
             if h4s:
                 intro = re.split(r"^####", b3, maxsplit=1, flags=re.MULTILINE)[0]
-                left  = " ".join(bullets(intro, 2))
-                s_headline(prs, t3, left, "", sec, pg())
+                intro_bullets = bullets(intro, 2)
+                if intro_bullets:
+                    s_content(prs, t3, intro_bullets, sec, pg())
                 for h4 in h4s:
                     if is_skip(h4["title"]): continue
                     t4  = clean(h4["title"])
