@@ -70,6 +70,7 @@ const TEAM: TeamMember[] = [
     avatarBg: "#1F2B56",
     avatarFg: "#F8F8FA",
     Portrait: PortraitDrSchreiber,
+    photo: "/team/dr_schreiber.webp",
     typ: "KI-Agent",
     rolle: "Scientific Writer · Wissenschaftliche Fundierung & Literaturrecherche",
     eigenschaften: [
@@ -88,6 +89,7 @@ const TEAM: TeamMember[] = [
     avatarBg: "#191D2E",
     avatarFg: "#D9BF7A",
     Portrait: PortraitProfBrandt,
+    photo: "/team/prof_brandt.webp",
     typ: "KI-Agent",
     rolle: "Wissenschaftlicher Reviewer",
     eigenschaften: [
@@ -106,6 +108,7 @@ const TEAM: TeamMember[] = [
     avatarBg: "#5C6B3A",
     avatarFg: "#F8F8FA",
     Portrait: PortraitArmin,
+    photo: "/team/armin.webp",
     typ: "KI-Agent",
     rolle: "Praxis-Reviewer",
     eigenschaften: [
@@ -124,6 +127,7 @@ const TEAM: TeamMember[] = [
     avatarBg: "#8A97B0",
     avatarFg: "#F8F8FA",
     Portrait: PortraitPraktikant,
+    photo: "/team/praktikant.webp",
     typ: "KI-Agent",
     rolle: "Formatter · Dokumentproduktion & Corporate Design",
     eigenschaften: [
