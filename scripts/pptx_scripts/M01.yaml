@@ -1,0 +1,111 @@
+# Präsentationsskript M01 — Bilanzlesen für Praktiker
+# Erstellt aus Trainer-Perspektive (Roland)
+# Cover + Agenda + Closing werden automatisch generiert
+
+module: "M01"
+slides:
+
+  # ── SEKTION I: Was Bilanzen wirklich zeigen ─────────────────────────────
+  - type: section
+    roman: "I"
+    title: "Was Bilanzen wirklich zeigen"
+    subtitle: "Und was sie verschweigen"
+
+  - type: content
+    title: "Drei Dokumente — eine Geschichte"
+    bullets:
+      - "Bilanz: Was besitzt das Unternehmen, wer hat es finanziert?"
+      - "GuV: Wie verdient es sein Geld — oder verliert es?"
+      - "Anhang: Was steckt hinter den Zahlen? (Oft wertvoller als die Bilanz)"
+      - "Lagebericht: Wie schätzt das Management die Zukunft ein?"
+    section: "I · Was Bilanzen wirklich zeigen"
+
+  - type: headline
+    title: "Viele KMU legen keine GuV offen — Sie müssen sie anfordern"
+    left: "Kleine GmbHs (Bilanzsumme ≤ 6 Mio., Umsatz ≤ 12 Mio., ≤ 50 MA) müssen nur eine verkürzte Bilanz einreichen. GuV und Anhang entfallen. Für die Kreditwürdigkeitsprüfung nach § 18 KWG reicht das nicht."
+    right: "Konsequenz für den Berater: Immer GuV direkt beim Kunden anfordern — nicht auf den Bundesanzeiger warten."
+    section: "I · Was Bilanzen wirklich zeigen"
+
+  - type: table
+    title: "Wer muss was offenlegen? (§ 267 HGB)"
+    rows:
+      - ["Größenklasse", "Bilanzsumme", "Umsatz", "Offenlegung"]
+      - ["Klein", "≤ 6 Mio.", "≤ 12 Mio.", "Nur verkürzte Bilanz"]
+      - ["Mittel", "≤ 20 Mio.", "≤ 40 Mio.", "Bilanz + GuV + Anhang"]
+      - ["Groß", "> 20 Mio.", "> 40 Mio.", "Vollständig + Lagebericht"]
+    section: "I · Was Bilanzen wirklich zeigen"
+
+  # ── SEKTION II: Bilanzen können täuschen ────────────────────────────────
+  - type: section
+    roman: "II"
+    title: "Bilanzen können täuschen"
+    subtitle: "Wahlrechte als Steuerungsinstrument"
+
+  - type: table
+    title: "Defensiv oder aggressiv — der Unternehmer entscheidet"
+    rows:
+      - ["Wahlrecht", "Defensiv (niedrigerer Gewinn)", "Aggressiv (höherer Gewinn)"]
+      - ["Herstellungskosten §255 HGB", "Niedrige Vorräte", "Hohe Vorräte"]
+      - ["GWG-Sofortabschreibung", "Höhere AfA", "Geringere AfA"]
+      - ["Rückstellungen §249 HGB", "Höhere Rückstellungen", "Niedrigere Rückstellungen"]
+      - ["Forderungsbewertung §253 HGB", "Strenge Abwertung", "Beibehaltung zweifelhafter Forderungen"]
+    section: "II · Bilanzen können täuschen"
+
+  - type: pullquote
+    quote: "Bilanzen lügen nicht. Aber wer sie schreibt, entscheidet, wie viel Wahrheit darin steckt."
+    author: "Roland"
+    role: "FKB Campus Trainer"
+    section: "II · Bilanzen können täuschen"
+
+  # ── SEKTION III: Sechs Kennzahlen, die entscheiden ──────────────────────
+  - type: section
+    roman: "III"
+    title: "Sechs Kennzahlen, die entscheiden"
+    subtitle: "Was ein Berater auf einen Blick sehen muss"
+
+  - type: content
+    title: "Das Basis-Set: Stabilität, Ertrag, Liquidität"
+    bullets:
+      - "EK-Quote = EK ÷ Bilanzsumme → Benchmark: ≥ 30 % (Mittelstand)"
+      - "Verschuldungsgrad = FK ÷ EK → Je niedriger, desto stabiler"
+      - "EBIT-Marge = EBIT ÷ Umsatz → Benchmark Maschinenbau: 6,1 %"
+      - "KDCG = (JÜ + AfA + Zinsen) ÷ (Tilgung + Zinsen) → Mindest: ≥ 1,20"
+      - "Liquidität II = (Ford. + Kasse) ÷ kurzfristige Verbindlichk. → ≥ 100 %"
+      - "Anlagendeckung II = (EK + langfr. FK) ÷ Anlagevermögen → ≥ 100 %"
+    section: "III · Sechs Kennzahlen, die entscheiden"
+
+  - type: headline
+    title: "KDCG unter 1,0: Warnsignal — nicht erst beim nächsten Jahresabschluss"
+    left: "Der Kapitaldienstdeckungsgrad zeigt, ob das Unternehmen seinen Schuldendienst aus dem laufenden Cashflow decken kann. Ein KDCG < 1,0 bedeutet: Der Kredit wird aus der Substanz bedient."
+    right: "Handlungspflicht: MaRisk verlangt strukturierte Dokumentation und Reaktion. Nicht abwarten — ansprechen."
+    section: "III · Sechs Kennzahlen, die entscheiden"
+
+  # ── SEKTION IV: Praxisfall ───────────────────────────────────────────────
+  - type: section
+    roman: "IV"
+    title: "Jetzt am konkreten Fall"
+    subtitle: "Bauer GmbH — Kreditentscheidung vorbereiten"
+
+  - type: praxisfall
+    name: "Bauer GmbH — 650.000 EUR Investitionsdarlehen"
+    situation: "Maschinenbauer, 65 MA, Hausbank seit Jahren. KK-Linie (400 TEUR) dauerhaft zu 85 % ausgelastet. Jetzt Antrag für neue CNC-Fräsmaschine. Sie bereiten die Kreditvorlage vor — der Jahresabschluss 2023 liegt auf dem Tisch."
+    section: "IV · Jetzt am konkreten Fall"
+
+  # ── SEKTION V: Transfer ──────────────────────────────────────────────────
+  - type: section
+    roman: "V"
+    title: "Was nehmen Sie mit?"
+    subtitle: "Transferaufgabe für die nächsten 30 Tage"
+
+  - type: content
+    title: "Ihr Auftrag für die nächsten 30 Tage"
+    bullets:
+      - "Nehmen Sie einen Kunden aus Ihrem Portfolio"
+      - "Berechnen Sie alle sechs Kennzahlen systematisch"
+      - "Identifizieren Sie eine Auffälligkeit — sprechen Sie sie an"
+      - "Dokumentieren Sie das Ergebnis im CRM (§ 18 KWG)"
+      - "Besprechen Sie den Befund mit Ihrem Teamleiter"
+    section: "V · Was nehmen Sie mit?"
+
+  - type: sources
+    items: []
