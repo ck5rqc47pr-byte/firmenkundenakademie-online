@@ -89,6 +89,26 @@ def clean(text: str) -> str:
     text = re.sub(r"^>\s*", "", text, flags=re.MULTILINE)   # Blockquotes
     return text.strip()
 
+def clean_title(text: str) -> str:
+    """Bereinigt Folientitel: entfernt Dok.-Nummern, Labels nur wenn Kolon + Inhalt folgt."""
+    text = clean(text)
+    # "4.1 Titel" oder "4.1: Titel" → Ziffer-Prefix weg
+    text = re.sub(r"^\d+\.[\d\.]*\s*:?\s*", "", text).strip()
+    # "Sektion 4: Titel" → "Titel"
+    text = re.sub(r"^Sektion\s+\d+\s*:\s*", "", text, flags=re.IGNORECASE).strip()
+    # "Theorie-Input: Aufbau des …" → "Aufbau des …"
+    # Nur streifen wenn echtes Label-Wort + Kolon + Inhalt
+    m = re.match(
+        r"^(Theorie-Input|Praxis-Input|Theorie|"
+        r"Praxisfall|Fallstudie|Fallbeispiel|"
+        r"Vertiefungsliteratur|Empfohlene Vertiefungsliteratur|"
+        r"Wissenstest|Feedbackbogen|Evaluation)\s*:\s*(.+)$",
+        text, re.IGNORECASE
+    )
+    if m and m.group(2).strip():
+        text = m.group(2).strip()
+    return text.strip()
+
 def bullets(text: str, n=6) -> list:
     out = []
     for ln in text.splitlines():
@@ -99,7 +119,7 @@ def bullets(text: str, n=6) -> list:
     if not out:
         for para in re.split(r"\n{2,}", text):
             c = clean(para).strip()
-            if c and not c.startswith("|") and len(c) > 15:
+            if c and not c.startswith("|") and not re.match(r"^[-–—]{2,}$", c) and len(c) > 15:
                 out.append(textwrap.shorten(c, 220, placeholder="…"))
     return out[:n]
 
@@ -556,24 +576,25 @@ def build(mid: str) -> Path:
         roman = ROMAN[roman_idx] if roman_idx < len(ROMAN) else str(roman_idx+1)
         roman_idx += 1
         h3s = sections(b2, 3)
-        sub = clean(h3s[0]["title"]) if h3s else ""
-        s_section(prs, roman, t2, sub, t2, pg())
+        sub = clean_title(h3s[0]["title"]) if h3s else ""
+        s_section(prs, roman, clean_title(t2), sub, clean_title(t2), pg())
 
         for h3 in h3s:
-            t3 = clean(h3["title"])
-            b3 = h3["body"]
-            sec = f"{roman} · {t2}"
+            t3_raw = h3["title"]
+            t3  = clean_title(t3_raw)   # bereinigter Titel ohne "4.1 Theorie-Input:"
+            b3  = h3["body"]
+            sec = f"{roman} · {clean_title(t2)}"
 
-            if is_skip(t3): continue
+            if is_skip(t3_raw): continue
 
             # Praxisfall → Image-Led
-            if is_pfall(t3):
-                name, sit = praxisfall("### " + t3 + "\n" + b3)
+            if is_pfall(t3_raw):
+                name, sit = praxisfall("### " + t3_raw + "\n" + b3)
                 s_image_led(prs, name or t3, sit or clean(b3[:350]), sec, pg())
                 continue
 
             # Reflexionsfragen / Selbstcheck → Content oder Table
-            if is_reflex(t3):
+            if is_reflex(t3_raw):
                 tbl_r = md_table(b3)
                 if tbl_r:
                     ctx = next((clean(para) for para in re.split(r"\n{2,}", b3)
@@ -586,39 +607,36 @@ def build(mid: str) -> Path:
                     if qs: s_content(prs, t3, qs, sec, pg())
                 continue
 
-            # Tabelle?
-            tbl = md_table(b3)
+            # Tabelle direkt unter h3 (kein h4)?
+            h4s = sections(b3, 4)
+            tbl = md_table(b3) if not h4s else None
             if tbl:
                 ctx = next((clean(p) for p in re.split(r"\n{2,}", b3)
-                            if not p.strip().startswith("|") and clean(p)), "")
-                s_table(prs, t3, tbl, ctx[:180], sec, pg())
-                # Rest-H4 nach Tabelle
-                for h4 in sections(b3, 4):
-                    if is_skip(h4["title"]): continue
-                    bs = bullets(h4["body"])
-                    if bs: s_content(prs, clean(h4["title"]), bs, sec, pg())
+                            if not p.strip().startswith("|") and clean(p)
+                            and not re.match(r"^[-–—]{2,}$", p.strip())), "")
+                s_table(prs, t3 or clean_title(t3_raw), tbl, ctx[:180], sec, pg())
                 continue
 
-            # H4-Unterabschnitte?
-            h4s = sections(b3, 4)
+            # H4-Unterabschnitte: h3 ist nur ein Organisationslabel →
+            # Intro-Folie weglassen, direkt zu h4-Folien
             if h4s:
-                intro = re.split(r"^####", b3, maxsplit=1, flags=re.MULTILINE)[0]
-                intro_bullets = bullets(intro, 2)
-                if intro_bullets:
-                    s_content(prs, t3, intro_bullets, sec, pg())
                 for h4 in h4s:
                     if is_skip(h4["title"]): continue
-                    t4  = clean(h4["title"])
+                    t4  = clean_title(h4["title"])
                     b4  = h4["body"]
+                    if not t4: t4 = t3
                     tbl4 = md_table(b4)
                     if tbl4:
-                        s_table(prs, t4, tbl4, "", sec, pg())
+                        ctx4 = next((clean(p) for p in re.split(r"\n{2,}", b4)
+                                     if not p.strip().startswith("|") and clean(p)
+                                     and not re.match(r"^[-–—]{2,}$", p.strip())), "")
+                        s_table(prs, t4, tbl4, ctx4[:180], sec, pg())
                     else:
                         bs = bullets(b4)
                         if bs: s_content(prs, t4, bs, sec, pg())
                 continue
 
-            # Nur Bullets
+            # Nur Bullets unter h3 (flat, keine h4)
             bs = bullets(b3)
             if not bs: continue
             if len(bs) >= 4:
