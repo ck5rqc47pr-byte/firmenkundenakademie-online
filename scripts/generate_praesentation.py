@@ -516,10 +516,116 @@ def s_closing(prs, m, pg):
 
 
 # ══════════════════════════════════════════════════════════════════════════
-# MODUL → PRÄSENTATION
+# MODUL → PRÄSENTATION  (Stufe 2: YAML-Skript rendern)
 # ══════════════════════════════════════════════════════════════════════════
 
 ROMAN = ["I","II","III","IV","V","VI","VII","VIII","IX","X"]
+
+SCRIPTS_DIR = SCRIPT_DIR / "pptx_scripts"
+SCRIPTS_DIR.mkdir(exist_ok=True)
+
+def _src_from_body(body: str) -> list:
+    """Quellenzeilen aus MD-Body extrahieren."""
+    src = []
+    in_ql = False
+    for ln in body.splitlines():
+        if re.match(r"^##\s+Quellen", ln, re.IGNORECASE):
+            in_ql = True; continue
+        if in_ql and re.match(r"^##", ln):
+            break
+        if not in_ql: continue
+        ln = ln.strip()
+        if not ln or ln.startswith("#"): continue
+        ln = re.sub(r"^[-*]\s+", "", ln)
+        ln = re.sub(r"^\d+\.\s+", "", ln)
+        ln = clean(ln).strip()
+        if ln and len(ln) > 10:
+            src.append(textwrap.shorten(ln, 140, placeholder="…"))
+    return src[:16]
+
+def build_from_yaml(mid: str) -> Path:
+    """Stufe 2: Rendert PPTX aus einem YAML-Präsentationsskript."""
+    script_path = SCRIPTS_DIR / f"{mid.upper()}.yaml"
+    if not script_path.exists():
+        print(f"Kein Skript gefunden: {script_path}")
+        print("→ Starte zuerst den pptx-script-writer Agenten für dieses Modul.")
+        sys.exit(1)
+
+    m   = parse_module(mid)
+    prs = new_prs()
+
+    pages = [0]
+    def pg():
+        pages[0] += 1
+        return f"{pages[0]:02d}"
+
+    script = yaml.safe_load(script_path.read_text(encoding="utf-8"))
+    slides = script.get("slides", [])
+
+    # Cover + Agenda immer zuerst (automatisch)
+    s_cover(prs, m); pg()
+    if m["lz"]:
+        s_agenda(prs, m, pg())
+
+    for sl in slides:
+        t = sl.get("type", "")
+        sec = sl.get("section", "")
+
+        if t == "section":
+            s_section(prs,
+                roman  = sl.get("roman", ""),
+                title  = sl.get("title", ""),
+                sub    = sl.get("subtitle", ""),
+                section= sl.get("title", ""),
+                pg     = pg())
+
+        elif t == "content":
+            items = sl.get("bullets", [])
+            if items:
+                s_content(prs, sl.get("title",""), items, sec, pg())
+
+        elif t == "table":
+            rows = sl.get("rows", [])
+            if rows:
+                s_table(prs, sl.get("title",""), rows,
+                        sl.get("context",""), sec, pg())
+
+        elif t == "headline":
+            s_headline(prs,
+                title  = sl.get("title",""),
+                left   = sl.get("left",""),
+                right  = sl.get("right",""),
+                section= sec, pg=pg())
+
+        elif t == "pullquote":
+            s_pullquote(prs,
+                quote  = sl.get("quote",""),
+                author = sl.get("author",""),
+                role   = sl.get("role",""),
+                section= sec, pg=pg())
+
+        elif t == "praxisfall":
+            s_image_led(prs,
+                name      = sl.get("name",""),
+                situation = sl.get("situation",""),
+                section   = sec, pg=pg())
+
+        elif t == "sources":
+            # Items aus YAML oder automatisch aus dem Modul-Body
+            items = sl.get("items") or _src_from_body(m["body"])
+            if items:
+                s_sources(prs, items, pg())
+
+        else:
+            print(f"  ⚠ Unbekannter Folientyp: {t!r} — übersprungen")
+
+    # Closing immer zuletzt (automatisch)
+    s_closing(prs, m, pg())
+
+    out = OUTPUT_DIR / f"{mid.upper()}.pptx"
+    prs.save(out)
+    print(f"✓  {out}  ({len(prs.slides)} Folien, aus YAML-Skript)")
+    return out
 
 SKIP_KW    = {"musterlösung","trainer-hinweis","trainer-tipp","trainertipp",
               "feedbackbogen","beobachtungsbogen"}
@@ -660,15 +766,35 @@ def build(mid: str) -> Path:
 
 def main():
     if len(sys.argv) < 2:
-        print("Verwendung: python3 generate_praesentation.py M01|all")
+        print("Verwendung:")
+        print("  python3 generate_praesentation.py M01          # YAML-Modus (wenn Skript vorhanden)")
+        print("  python3 generate_praesentation.py M01 --legacy # MD-Parsing-Modus")
+        print("  python3 generate_praesentation.py all          # alle Module (YAML bevorzugt)")
         sys.exit(1)
-    arg = sys.argv[1].strip().lower()
+
+    arg    = sys.argv[1].strip().lower()
+    legacy = "--legacy" in sys.argv
+
     if arg == "all":
         for path in sorted(MODULES_DIR.glob("*.md")):
-            try:   build(path.stem)
-            except Exception as e: print(f"✗  {path.stem}: {e}")
+            mid = path.stem
+            try:
+                script = SCRIPTS_DIR / f"{mid.upper()}.yaml"
+                if script.exists() and not legacy:
+                    build_from_yaml(mid)
+                else:
+                    build(mid)
+            except Exception as e:
+                print(f"✗  {mid}: {e}")
     else:
-        build(arg)
+        mid    = arg.upper()
+        script = SCRIPTS_DIR / f"{mid}.yaml"
+        if script.exists() and not legacy:
+            build_from_yaml(mid)
+        else:
+            if not legacy:
+                print(f"Kein YAML-Skript für {mid} — falle auf MD-Modus zurück")
+            build(arg)
 
 if __name__ == "__main__":
     main()
