@@ -1,0 +1,65 @@
+module: "M10"
+slides:
+
+  - type: section
+    roman: "I"
+    title: "Vom Jahresgespräch zum echten Bedarf"
+    subtitle: "Warum Kunden nicht sagen, was sie wirklich brauchen"
+
+  - type: headline
+    title: "Was gesagt wird — und was gemeint ist"
+    left: "Kunden formulieren Bedarfe selten direkt. 'Wir brauchen eine neue Maschine' bedeutet oft: 'Ich habe Angst, den Anschluss zu verlieren.' Das Vier-Ohren-Modell (Schulz von Thun) hilft, den richtigen Kanal zu öffnen."
+    right: "Beziehungsebene zuerst. Wer nur die Sachebene hört, verpasst den eigentlichen Bedarf — und die Beratungschance."
+    section: "I · Vom Jahresgespräch zum echten Bedarf"
+
+  - type: section
+    roman: "II"
+    title: "SPIN: Fragen, die Bedarfe erzeugen"
+    subtitle: "Das meistbewährte Fragenmodell im B2B-Vertrieb"
+
+  - type: content
+    title: "Vier Fragetypen — eine Gesprächslogik"
+    bullets:
+      - "Situation: 'Wie läuft das Geschäft aktuell?' (Kontext verstehen)"
+      - "Problem: 'Was beschäftigt Sie im Moment am meisten?' (Schmerz aufdecken)"
+      - "Implikation: 'Was passiert, wenn sich das nicht ändert?' (Dringlichkeit erzeugen)"
+      - "Nutzen: 'Was würde es bedeuten, wenn das gelöst wäre?' (Kaufmotiv aktivieren)"
+    section: "II · SPIN: Fragen, die Bedarfe erzeugen"
+
+  - type: pullquote
+    quote: "Die beste Bedarfsanalyse ist die, bei der der Kunde am Ende glaubt, er habe selbst die Lösung gefunden."
+    author: "Roland"
+    role: "FKB Campus Trainer"
+    section: "II · SPIN: Fragen, die Bedarfe erzeugen"
+
+  - type: section
+    roman: "III"
+    title: "Sichtbare und latente Bedarfe"
+    subtitle: "Der Eisberg im Kundengespräch"
+
+  - type: content
+    title: "Was sichtbar ist — und was darunter liegt"
+    bullets:
+      - "Sichtbar: Kreditwunsch, Kontokorrentrahmen, Garantien"
+      - "Latent: Nachfolgesorge, Fachkräftemangel, Wachstumsängste"
+      - "Latent: Absicherungslücken (BU, Rente, Schlüsselperson)"
+      - "Latent: Gesellschafterkonflikt, Ertragssorge, Marktveränderung"
+      - "Zugang über: Stille, Nachfragen, 'Was beschäftigt Sie sonst noch?'"
+    section: "III · Sichtbare und latente Bedarfe"
+
+  - type: praxisfall
+    name: "Florian Maurer, Metallbau GmbH & Co. KG — UnternehmerDialog"
+    situation: "Jahresgespräch, Kunde kommt 'wegen des Kontokorrentrahmens'. Tatsächlich: Sohn kommt nicht in die Firma, Konkurrenz aus Polen wächst, ein Großkunde hat gekündigt. Ihre Aufgabe: SPIN-Fragensequenz durchführen und latente Bedarfe aufdecken."
+    section: "III · Sichtbare und latente Bedarfe"
+
+  - type: content
+    title: "Ihr Auftrag: Nächstes Gespräch anders vorbereiten"
+    bullets:
+      - "Einen Kunden auswählen, den Sie nur 'reaktiv' kennen"
+      - "Je eine Frage für jede SPIN-Stufe vorbereiten"
+      - "Nach dem Gespräch: Welche latenten Bedarfe sind aufgetaucht?"
+      - "Bedarfsdiagnose im CRM dokumentieren (UnternehmerDialog)"
+    section: "III · Sichtbare und latente Bedarfe"
+
+  - type: sources
+    items: []

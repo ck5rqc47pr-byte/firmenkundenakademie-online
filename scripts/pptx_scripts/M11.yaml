@@ -1,0 +1,64 @@
+module: "M11"
+slides:
+
+  - type: section
+    roman: "I"
+    title: "Der Eisberg der Kundenbedürfnisse"
+    subtitle: "10 % sichtbar — 90 % unsichtbar"
+
+  - type: headline
+    title: "Kunden sagen selten, was sie wirklich brauchen"
+    left: "Explizite Bedarfe werden direkt geäußert: 'Ich brauche einen Kredit.' Latente Bedarfe liegen darunter — noch nicht formuliert, oft nicht einmal bewusst. Sie zu entdecken ist der Unterschied zwischen Transaktions- und Beziehungsbanking."
+    right: "Wer nur explizite Bedarfe bedient, ist austauschbar. Wer latente Bedarfe aufdeckt, wird Partner."
+    section: "I · Der Eisberg der Kundenbedürfnisse"
+
+  - type: section
+    roman: "II"
+    title: "SPIN in der Tiefe"
+    subtitle: "Implizites in Explizites verwandeln"
+
+  - type: content
+    title: "Vom Problem zum Bedarf — die SPIN-Logik"
+    bullets:
+      - "Implizit: 'Wir haben manchmal Liquiditätsengpässe' (Problem, noch kein Bedarf)"
+      - "Implication: 'Was kostet Sie das, wenn Lieferantenrabatte entfallen?'"
+      - "Explizit: 'Wir brauchen einen flexibleren Kontokorrent'"
+      - "Die Implikationsfrage transformiert Problem → dringenden Bedarf"
+    section: "II · SPIN in der Tiefe"
+
+  - type: content
+    title: "Signale erkennen — verbal, paraverbal, nonverbal"
+    bullets:
+      - "Verbal: Zögern, Einschränkungen, Themenwechsel"
+      - "Paraverbal: Tonfall, Pausen, Betonung"
+      - "Nonverbal: Blickkontakt meiden, Körperhaltung, Gestik"
+      - "Regeln: Nicht unterbrechen. 5-Sekunden-Pause aushalten. Nachfragen."
+    section: "II · SPIN in der Tiefe"
+
+  - type: section
+    roman: "III"
+    title: "Typische latente Bedarfsfelder"
+    subtitle: "Was Firmenkundenberater häufig übersehen"
+
+  - type: content
+    title: "Sechs Bedarfsfelder mit hohem Latenz-Potenzial"
+    bullets:
+      - "Nachfolge & Übergabe: Thema, das viele GF verdrängen"
+      - "Schlüsselpersonenabsicherung: Wer führt, wenn der GF ausfällt?"
+      - "Betriebliche Altersversorgung: Mitarbeiterbindung und Steueroptimierung"
+      - "Wachstumsfinanzierung: Oft erst angesprochen, wenn es eng wird"
+      - "Währungsrisiko bei Export: Kaum Absicherung bei KMU"
+      - "Digitalisierung / Investition: Zögern trotz Förderprogrammen"
+    section: "III · Typische latente Bedarfsfelder"
+
+  - type: content
+    title: "Qualität des Frageverhaltens messen"
+    bullets:
+      - "Verhältnis offene zu geschlossene Fragen (Ziel: 70/30)"
+      - "Wie viel redet der Berater vs. der Kunde? (Ziel: 30/70)"
+      - "Wurden Implication-Fragen gestellt?"
+      - "Selbstreflexion nach jedem Gespräch: Was hätte ich früher fragen können?"
+    section: "III · Typische latente Bedarfsfelder"
+
+  - type: sources
+    items: []

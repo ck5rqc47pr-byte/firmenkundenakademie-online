@@ -1,0 +1,58 @@
+module: "M17"
+slides:
+
+  - type: section
+    roman: "I"
+    title: "agree: Mehr als ein Verwaltungssystem"
+    subtitle: "Wer agree gut nutzt, gewinnt Zeit für echte Beratung"
+
+  - type: content
+    title: "Fünf Funktionsbereiche — ein System"
+    bullets:
+      - "Kundenstamm & CRM: Vollständige Beziehungshistorie auf einen Blick"
+      - "UnternehmerDialog: Strukturierter Gesprächsleitfaden direkt im System"
+      - "NMZ & Berichte: Bestandsanalyse und Frühwarnberichte automatisiert"
+      - "Kreditakte: Von der Anfrage bis zur Vorlage im System"
+      - "Dokumentation § 18 KWG: Compliance-konform, lückenlos"
+    section: "I · agree: Mehr als ein Verwaltungssystem"
+
+  - type: section
+    roman: "II"
+    title: "Die fünf häufigsten Zeitfresser"
+    subtitle: "Und wie agree sie löst"
+
+  - type: content
+    title: "Zeitfresser und ihre agree-Lösung"
+    bullets:
+      - "Gesprächsvorbereitung dauert 45 Min: → agree-Profil + UD-Leitfaden nutzen (15 Min.)"
+      - "Dokumentation nach Gespräch separat: → Notizen direkt im UD eintragen"
+      - "Frühwarnberichte manuell erstellen: → Standardbericht aus agree abrufen"
+      - "NMZ unklar: → NMZ-Bestandsbericht monatlich ziehen und auswerten"
+      - "Doppelte Datenpflege: → agree als Single Source of Truth konsequent nutzen"
+    section: "II · Die fünf häufigsten Zeitfresser"
+
+  - type: section
+    roman: "III"
+    title: "Der UnternehmerDialog: Beratung strukturieren"
+    subtitle: "Nicht nur Protokoll — sondern Gesprächsführung"
+
+  - type: content
+    title: "UnternehmerDialog in vier Schritten nutzen"
+    bullets:
+      - "Vor dem Gespräch: Profil öffnen, letzte Notizen lesen, Lücken markieren"
+      - "Im Gespräch: UD als Leitfaden — nicht als Formular abarbeiten"
+      - "Nach dem Gespräch: Bedarfe, Folgeaktionen und Termine direkt eintragen"
+      - "Auswertung: Bedarfsdiagnose als Basis für Cross-Selling-Planung"
+    section: "III · Der UnternehmerDialog: Beratung strukturieren"
+
+  - type: content
+    title: "Ihr Auftrag: agree-Workflow analysieren"
+    bullets:
+      - "Eigene Nutzung ehrlich einschätzen: Welche Funktionen kennen Sie nicht?"
+      - "Zwei Zeitfresser aus Ihrem Alltag identifizieren"
+      - "Agree-Funktion zuordnen und in der nächsten Woche anwenden"
+      - "Ergebnis im Team teilen"
+    section: "III · Der UnternehmerDialog"
+
+  - type: sources
+    items: []

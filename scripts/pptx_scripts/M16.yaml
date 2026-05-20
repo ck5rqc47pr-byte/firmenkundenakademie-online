@@ -1,0 +1,53 @@
+module: "M16"
+slides:
+
+  - type: section
+    roman: "I"
+    title: "Die Nettomargenziffer: Was sie wirklich misst"
+    subtitle: "Warum der DB alleine lügt"
+
+  - type: headline
+    title: "Deckungsbeitrag täuscht — NMZ zeigt die Wahrheit"
+    left: "Der Deckungsbeitrag ignoriert das Risiko. Zwei Kunden mit gleichem DB können völlig unterschiedlich ertragreich sein — wenn einer ein deutlich schlechteres Rating hat und damit mehr Eigenkapital bindet."
+    right: "NMZ = Deckungsbeitrag ÷ risikoadjustiertes Kapital. Sie misst die Rendite auf das eingesetzte Risikokapital — die eigentliche Steuerungsgröße."
+    section: "I · Die Nettomargenziffer: Was sie wirklich misst"
+
+  - type: section
+    roman: "II"
+    title: "NMZ im agree lesen und interpretieren"
+    subtitle: "Aus dem Bericht zur Handlung"
+
+  - type: content
+    title: "Drei Ebenen der NMZ-Steuerung"
+    bullets:
+      - "Einzelkunde: Welcher Kunde ist ertragsstark, welcher defizitär?"
+      - "Segment: Welche Branche/Größenklasse trägt meinen Bestand?"
+      - "Gesamtbestand: Wo liegt meine NMZ im Benchmark-Vergleich?"
+    section: "II · NMZ im agree lesen und interpretieren"
+
+  - type: content
+    title: "NMZ-Verbesserung: Vier Hebel"
+    bullets:
+      - "Konditionsanpassung: Risikogerechtes Pricing durchsetzen"
+      - "Cross-Selling: Provisionserträge erhöhen ohne Kreditrisiko"
+      - "Rating-Verbesserung: Bessere Daten vom Kunden → niedrigere Risikokosten"
+      - "Bestandsoptimierung: Defizitäre Engagements aktiv steuern"
+    section: "II · NMZ im agree lesen und interpretieren"
+
+  - type: section
+    roman: "III"
+    title: "Drei Kunden — drei Maßnahmen"
+    subtitle: "Vom Bericht zur Handlung"
+
+  - type: content
+    title: "So gehen Sie vor"
+    bullets:
+      - "NMZ-Bericht aus agree ziehen: Kunden nach NMZ sortieren"
+      - "Die drei Kunden mit größtem Verbesserungspotenzial identifizieren"
+      - "Je Kunde: Haupthebel bestimmen (Kondition, Cross-Selling, Rating)"
+      - "Maßnahme und Zeitplan im CRM dokumentieren"
+      - "Im Teammeeting teilen: Was funktioniert? Was nicht?"
+    section: "III · Drei Kunden — drei Maßnahmen"
+
+  - type: sources
+    items: []

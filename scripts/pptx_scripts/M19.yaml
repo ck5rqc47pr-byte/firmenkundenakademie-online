@@ -1,0 +1,63 @@
+module: "M19"
+slides:
+
+  - type: section
+    roman: "I"
+    title: "Was Experten wissen — und nicht aufschreiben"
+    subtitle: "Implizites Wissen als größter Schatz im Team"
+
+  - type: headline
+    title: "Explizit vs. implizit: Der Unterschied entscheidet"
+    left: "Explizites Wissen steht in Handbüchern. Implizites Wissen steckt im Kopf des erfahrenen Beraters: Wie man schwierige Gespräche dreht. Welcher Unternehmer-Typ welche Frage braucht. Was bei Branche X wirklich zählt."
+    right: "Wenn erfahrene Berater das Team verlassen, geht dieses Wissen verloren — es sei denn, das Team hat es zuvor systematisch geteilt."
+    section: "I · Was Experten wissen — und nicht aufschreiben"
+
+  - type: section
+    roman: "II"
+    title: "Wie Wissenstransfer wirklich funktioniert"
+    subtitle: "Zwei Methoden mit sofortigem Effekt"
+
+  - type: content
+    title: "Methode 1: Tandem-Gespräche"
+    bullets:
+      - "Erfahrener Berater nimmt Junior mit ins Kundengespräch"
+      - "Vor dem Gespräch: Vorbereitung gemeinsam besprechen"
+      - "Im Gespräch: Junior beobachtet, notiert Fragen"
+      - "Nach dem Gespräch: 15-minütige Reflexion — Was haben Sie gelernt?"
+    section: "II · Wie Wissenstransfer wirklich funktioniert"
+
+  - type: content
+    title: "Methode 2: Kollegiale Fallberatung"
+    bullets:
+      - "Ein Berater bringt einen schwierigen Fall mit (5 Min. Schilderung)"
+      - "Gruppe stellt ausschließlich Fragen — keine Ratschläge"
+      - "Berater denkt laut nach, findet eigene Lösung"
+      - "Abschluss: Team teilt ähnliche Erfahrungen"
+      - "Format: 45 Minuten, max. 6 Personen, regelmäßig"
+    section: "II · Wie Wissenstransfer wirklich funktioniert"
+
+  - type: section
+    roman: "III"
+    title: "Das Team als Community of Practice"
+    subtitle: "Gemeinsam besser werden — strukturiert"
+
+  - type: content
+    title: "Transferbarrieren und wie man sie überwindet"
+    bullets:
+      - "Zeitdruck: Transfer-Routine in bestehende Meetings integrieren"
+      - "Statusdenken: 'Wer gibt, verliert' — das Gegenteil ist wahr"
+      - "Fehlende Struktur: Festes Format schlägt guten Willen"
+      - "Kein Mandat: Teamleiter muss Wissenstransfer aktiv einfordern"
+    section: "III · Das Team als Community of Practice"
+
+  - type: content
+    title: "Ihr Auftrag: Eine Routine starten"
+    bullets:
+      - "Einen Kollegen oder Junior für Tandem-Gespräch anfragen"
+      - "Nächstes Teammeeting: 10 Minuten für Fallreflexion reservieren"
+      - "Eigenes implizites Wissen benennen: Was könnten Sie teilen?"
+      - "Transferbarriere im Team identifizieren und ansprechen"
+    section: "III · Das Team als Community of Practice"
+
+  - type: sources
+    items: []

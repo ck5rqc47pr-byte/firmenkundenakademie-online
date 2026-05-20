@@ -1,0 +1,52 @@
+module: "M20"
+slides:
+
+  - type: section
+    roman: "I"
+    title: "Netzwerk ist kein Visitenkartensammeln"
+    subtitle: "Strategisches Beziehungskapital aufbauen"
+
+  - type: headline
+    title: "Operative Netzwerkpflege vs. strategischer Beziehungsaufbau"
+    left: "Operative Pflege: Bestehende Kontakte halten, Geburtstage notieren, IHK-Abend besuchen. Strategisch: Gezielt in Beziehungen investieren, die langfristig Vertrauen und Empfehlungen erzeugen."
+    right: "Faustregel: 20 % der Netzwerkkontakte erzeugen 80 % der Empfehlungen. Wer sind Ihre 20 %?"
+    section: "I · Netzwerk ist kein Visitenkartensammeln"
+
+  - type: section
+    roman: "II"
+    title: "Das eigene Netzwerk analysieren"
+    subtitle: "Stärken, Brücken und Lücken sehen"
+
+  - type: content
+    title: "Netzwerkanalyse in drei Schritten"
+    bullets:
+      - "Bestandsaufnahme: Wer ist in meinem Netzwerk? (Kunden, Partner, Multiplikatoren)"
+      - "Stärke bewerten: Wer empfiehlt mich aktiv? Wer kennt mich nur flüchtig?"
+      - "Lücken identifizieren: Welche Branchen, Berufsgruppen fehlen?"
+      - "Brücken finden: Wer kann mich zu jemandem einführen, den ich brauche?"
+    section: "II · Das eigene Netzwerk analysieren"
+
+  - type: section
+    roman: "III"
+    title: "Sichtbarkeit aufbauen — authentisch"
+    subtitle: "Expertise zeigen ohne Eigenwerbung"
+
+  - type: content
+    title: "Drei Wege zur Fachsichtbarkeit"
+    bullets:
+      - "LinkedIn: Fachbeiträge zu Themen, die Ihre Zielkunden beschäftigen"
+      - "Veranstaltungen: Aktiv mitgestalten — nicht nur besuchen"
+      - "Kooperationen: Steuerberater, Anwälte, Unternehmensberater als Partner"
+    section: "III · Sichtbarkeit aufbauen — authentisch"
+
+  - type: content
+    title: "90-Tage-Netzwerkplan: Konkret werden"
+    bullets:
+      - "Monat 1: Netzwerkanalyse + fünf Stärkungsgespräche"
+      - "Monat 2: Zwei neue Kooperationspartner ansprechen"
+      - "Monat 3: Einen LinkedIn-Beitrag veröffentlichen oder Vortrag halten"
+      - "Messbar: Wie viele qualifizierte Empfehlungen im Quartal?"
+    section: "III · Sichtbarkeit aufbauen — authentisch"
+
+  - type: sources
+    items: []
