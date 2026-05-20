@@ -1,0 +1,74 @@
+module: "M09"
+slides:
+
+  - type: section
+    roman: "I"
+    title: "Was einen Branchenexperten ausmacht"
+    subtitle: "Mehr als Zahlen — ein anderes Gespräch"
+
+  - type: headline
+    title: "Der Unterschied: Zahlen kennen vs. Branche verstehen"
+    left: "Ein guter Analyst liest Zahlen. Ein Branchenexperte weiß, warum sie so aussehen — und was als nächstes kommt. Er spricht die Sprache des Unternehmers, nicht die des Kreditprüfers."
+    right: "Folge: Kunden suchen das Gespräch. Cross-Selling entsteht von allein. Das Rating verbessert sich, weil der Berater Risiken früher erkennt."
+    section: "I · Was einen Branchenexperten ausmacht"
+
+  - type: section
+    roman: "II"
+    title: "Branche analysieren — in 90 Minuten"
+    subtitle: "Porter's Five Forces + PESTEL"
+
+  - type: content
+    title: "Porter's Five Forces: Fünf Fragen, ein Branchenbild"
+    bullets:
+      - "Branchenrivalität: Wer kämpft um denselben Kunden?"
+      - "Substitution: Welche Technologie oder Lösung ersetzt das Produkt?"
+      - "Neue Wettbewerber: Wie schwer ist der Markteintritt?"
+      - "Lieferantenmacht: Können Preise diktiiert werden?"
+      - "Kundenmacht: Wer hat die Verhandlungshoheit?"
+    section: "II · Branche analysieren — in 90 Minuten"
+
+  - type: content
+    title: "PESTEL: Die äußeren Kräfte"
+    bullets:
+      - "Politisch: Regulierung, Förderprogramme, Subventionen"
+      - "Ökonomisch: Zinsen, Konjunktur, Rohstoffpreise"
+      - "Sozial: Fachkräftemangel, Demografie, Kaufverhalten"
+      - "Technologisch: Digitalisierung, KI, Automatisierung"
+      - "Ökologisch: CO₂-Auflagen, ESG-Anforderungen"
+    section: "II · Branche analysieren — in 90 Minuten"
+
+  - type: section
+    roman: "III"
+    title: "Ihr 3-Monats-Plan zum Branchenexperten"
+    subtitle: "Strukturiert. Realistisch. Messbar."
+
+  - type: content
+    title: "Monat 1: Wissen aufbauen"
+    bullets:
+      - "Eine Zielbranche wählen (wo sind Ihre größten Kunden?)"
+      - "Branchenberichte lesen: KfW, Creditreform, IHK, Fachverband"
+      - "Fünf Gespräche mit Kunden dieser Branche führen — zuhören"
+      - "Fünf Forces für die gewählte Branche ausfüllen"
+    section: "III · Ihr 3-Monats-Plan"
+
+  - type: content
+    title: "Monat 2–3: Netzwerk und Sichtbarkeit"
+    bullets:
+      - "Branchenverbands-Veranstaltung besuchen"
+      - "Einen Steuerberater der Branche als Kooperationspartner ansprechen"
+      - "Fachpresse verfolgen: Google Alerts einrichten"
+      - "Intern: Wissenstransfer — Erkenntnisse im Teammeeting teilen"
+      - "Extern: Kurzes Fachgespräch bei Kunden platzieren"
+    section: "III · Ihr 3-Monats-Plan"
+
+  - type: content
+    title: "Ihr Auftrag: Jetzt starten"
+    bullets:
+      - "Zielbranche festlegen — heute, nicht 'irgendwann'"
+      - "Ersten Analysebericht beschaffen (Bibliothek, IHK, kostenlos)"
+      - "Zwei Kundengespräche für diese Woche einplanen"
+      - "3-Monats-Plan schriftlich fixieren und mit Teamleiter besprechen"
+    section: "III · Ihr 3-Monats-Plan"
+
+  - type: sources
+    items: []

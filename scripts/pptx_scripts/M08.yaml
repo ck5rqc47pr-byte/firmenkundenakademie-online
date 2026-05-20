@@ -1,0 +1,64 @@
+module: "M08"
+slides:
+
+  - type: section
+    roman: "I"
+    title: "Drei Kunden — drei völlig verschiedene Risiken"
+    subtitle: "Bestandshalter, Bauträger und Projektentwickler richtig einordnen"
+
+  - type: table
+    title: "Kundentypologie Immobilienfinanzierung"
+    rows:
+      - ["Typ", "Geschäftsmodell", "Hauptrisiko", "Bankperspektive"]
+      - ["Bestandshalter", "Mieteinnahmen auf Dauer", "Leerstand, Zinsänderung", "Solide, planbar"]
+      - ["Bauträger", "Bau & Verkauf von Einheiten", "Vorfinanzierung, Absatz", "Hohe Volatilität"]
+      - ["Projektentwickler", "Entwicklung & Exit", "Genehmigung, Markt", "Komplex, erfahrungs­abhängig"]
+    section: "I · Drei Kunden — drei völlig verschiedene Risiken"
+
+  - type: section
+    roman: "II"
+    title: "Was eine Immobilie wirklich wert ist"
+    subtitle: "Beleihungswert ≠ Marktwert"
+
+  - type: headline
+    title: "Der Beleihungswert ist ein Stresstest — kein Gutachten"
+    left: "Der Beleihungswert nach BelWertV schätzt, was die Immobilie langfristig und nachhaltig erbringt — nicht was am Markt gerade gezahlt wird. Er ist bewusst konservativ."
+    right: "Praxisregel: Beleihungswert liegt oft 15–25 % unter dem Marktwert. LTV-Grenzen: 60 % Realkreditgrenze, 80 % mögliche Ausnahme mit Risikoaufschlag."
+    section: "II · Was eine Immobilie wirklich wert ist"
+
+  - type: section
+    roman: "III"
+    title: "Die vier Kennzahlen, die entscheiden"
+    subtitle: "LTV, DSCR, ICR, Nettoanfangsrendite"
+
+  - type: content
+    title: "Das Kennzahlen-Set für die Immobilienfinanzierung"
+    bullets:
+      - "LTV (Loan-to-Value) = Kredit ÷ Beleihungswert → Ziel ≤ 60–70 %"
+      - "DSCR (Debt Service Coverage Ratio) = NOI ÷ Schuldendienst → Ziel ≥ 1,20"
+      - "ICR (Interest Coverage Ratio) = NOI ÷ Zinsen → Ziel ≥ 1,50"
+      - "Nettoanfangsrendite = Nettomieteinnahmen ÷ Kaufpreis → Benchmark je Lage"
+    section: "III · Die vier Kennzahlen, die entscheiden"
+
+  - type: section
+    roman: "IV"
+    title: "Bauträgerfinanzierung: Die hohe Schule"
+    subtitle: "Wenn alles vom Verkaufserfolg abhängt"
+
+  - type: content
+    title: "Risikofelder der Bauträgerfinanzierung"
+    bullets:
+      - "Absatzrisiko: Was passiert, wenn 30 % der Einheiten unverkauft bleiben?"
+      - "Baukostenrisiko: Materialpreise und Subunternehmer nicht kalkulierbar"
+      - "Genehmigungsrisiko: Verzögerungen kosten Zinsen und Liquidität"
+      - "Fertigstellungsrisiko: Insolvenz des Generalunternehmers"
+      - "Schutzmaßnahme: Verkaufsquoten-Covenants (≥ 50–60 % vor Auszahlung)"
+    section: "IV · Bauträgerfinanzierung: Die hohe Schule"
+
+  - type: praxisfall
+    name: "Quartier Sonnenhalde — Bauträger Ravensburg"
+    situation: "Bauträger plant 24 Eigentumswohnungen, Gesamtinvestition 9,8 Mio. EUR. Vorverkaufsquote bisher 42 %. Kreditantrag 6,5 Mio. EUR. Ihre Aufgabe: LTV und DSCR berechnen, Risikofelder gewichten, Kreditempfehlung formulieren."
+    section: "IV · Bauträgerfinanzierung: Die hohe Schule"
+
+  - type: sources
+    items: []

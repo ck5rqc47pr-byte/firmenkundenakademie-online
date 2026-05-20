@@ -1,0 +1,64 @@
+module: "M12"
+slides:
+
+  - type: section
+    roman: "I"
+    title: "Das CEO-Gespräch"
+    subtitle: "Auf Augenhöhe mit dem Unternehmer — was das bedeutet"
+
+  - type: content
+    title: "Board-Room-Mindset: Drei Haltungsveränderungen"
+    bullets:
+      - "Von 'Ich erkläre' zu 'Ich erkunde' — echte Neugier statt versteckter Agenda"
+      - "Von 'Kreditgespräch' zu 'Strategiegespräch' — Bankbrille ablegen"
+      - "Von 'Ich informiere' zu 'Ich provoziere konstruktiv' — Fragen statt Antworten"
+      - "Vorbereitung: Branche kennen, Unternehmen kennen, Fragen vorbereiten"
+    section: "I · Das CEO-Gespräch"
+
+  - type: content
+    title: "Systemische Fragen — jenseits von SPIN"
+    bullets:
+      - "'Was würde Ihr bester Mitbewerber über Sie sagen?'"
+      - "'Wenn Sie das Unternehmen heute neu gründen würden — was würden Sie anders machen?'"
+      - "'Wer würde am meisten verlieren, wenn Sie das Unternehmen in fünf Jahren übergeben?'"
+      - "'Was hält Sie davon ab, den nächsten Schritt zu gehen?'"
+    section: "I · Das CEO-Gespräch"
+
+  - type: section
+    roman: "II"
+    title: "Nachfolge: Das größte Tabuthema im Mittelstand"
+    subtitle: "Warum 40 % der Übergaben scheitern — und wie Berater helfen"
+
+  - type: content
+    title: "Vier Nachfolgeoptionen — vier Beratungsprofile"
+    bullets:
+      - "Familienintern: Günstig, aber emotionsgeladen — Konflikte vorprogrammiert"
+      - "MBO (Management Buy-out): Kontinuität, aber Finanzierungsdruck"
+      - "Strategischer Verkauf: Höchster Preis, aber Kontrollverlust"
+      - "Stiftungslösung: Dauerhafter Erhalt — aber komplex und wenig umkehrbar"
+    section: "II · Nachfolge: Das größte Tabuthema im Mittelstand"
+
+  - type: headline
+    title: "Der Unternehmer gibt nicht nur ein Unternehmen ab — er gibt seine Identität ab"
+    left: "Loslasswiderstand ist kein Versagen — er ist menschlich. Wer das ignoriert, verliert das Mandat. Wer es anspricht, wird zum Vertrauenspartner."
+    right: "Lösungsorientierte Zukunftsfrage (de Shazer): 'Was müsste passieren, damit Sie sich vorstellen könnten, loszulassen?' Diese Frage öffnet mehr als jede Checkliste."
+    section: "II · Nachfolge: Das größte Tabuthema im Mittelstand"
+
+  - type: table
+    title: "Nachfolgeprozess — fünf Phasen im Überblick"
+    rows:
+      - ["Phase", "Inhalt", "Zeithorizont"]
+      - ["1. Sensibilisierung", "Thema ansprechen, Bereitschaft prüfen", "3–5 Jahre vor Übergabe"]
+      - ["2. Konzeption", "Optionen entwickeln, Bewertung beauftragen", "2–3 Jahre vorher"]
+      - ["3. Kandidatensuche", "Innen oder außen suchen", "1–2 Jahre vorher"]
+      - ["4. Verhandlung", "Term Sheet, Kaufvertrag, Finanzierung", "6–18 Monate"]
+      - ["5. Übergabe", "Einführung, Wissenstransfer, Rückzug", "6–12 Monate"]
+    section: "II · Nachfolge: Das größte Tabuthema im Mittelstand"
+
+  - type: praxisfall
+    name: "Metallverarbeitung Wagner KG, Stuttgart — CEO-Dialog"
+    situation: "Inhaber, 62 Jahre, zwei Kinder — keines will übernehmen. Unternehmen läuft gut (Umsatz 14 Mio., EBIT 8,5 %). Er spricht nie über Nachfolge. Ihre Aufgabe: Systemische Fragen einsetzen, emotionale Bereitschaft erkunden, Roadmap skizzieren."
+    section: "II · Nachfolge: Das größte Tabuthema im Mittelstand"
+
+  - type: sources
+    items: []

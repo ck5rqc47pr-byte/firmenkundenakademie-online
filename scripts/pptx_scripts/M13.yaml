@@ -1,0 +1,72 @@
+module: "M13"
+slides:
+
+  - type: section
+    roman: "I"
+    title: "Cross-Selling neu denken"
+    subtitle: "Von Produkt-Push zu echtem Bedarfsservice"
+
+  - type: headline
+    title: "Der Unterschied: Push vs. Pull"
+    left: "Push-Cross-Selling: 'Wir haben gerade eine Aktion für Zinsabsicherung.' Pull-Cross-Selling: 'Sie planen zu expandieren — welche Risiken sehen Sie dabei?' Eines nervt. Das andere schafft Mehrwert."
+    right: "Kunden empfehlen Berater weiter, die ihre Situation verstehen — nicht die, die Produkte anbieten."
+    section: "I · Cross-Selling neu denken"
+
+  - type: section
+    roman: "II"
+    title: "Potenziale systematisch entdecken"
+    subtitle: "Wallet-Share-Analyse: Was läuft woanders?"
+
+  - type: content
+    title: "Wallet-Share: Drei Fragen für jeden Kunden"
+    bullets:
+      - "Was macht der Kunde mit uns? (Vollständige Produktlandschaft erfassen)"
+      - "Was könnte er bei uns machen, macht er aber nicht? (Gap identifizieren)"
+      - "Was macht er bei Mitbewerbern? (Indirekt erfragen — oft bekannt)"
+      - "Ziel: 60–70 % Wallet-Share als Hausbank-Anspruch"
+    section: "II · Potenziale systematisch entdecken"
+
+  - type: content
+    title: "Vier Bedarfsfelder mit Cross-Selling-Potenzial"
+    bullets:
+      - "Absicherung: BU, Schlüsselperson, Betriebsunterbrechung (R+V)"
+      - "Altersvorsorge: bAV, Gesellschafter-GF-Versorgung (R+V, Union)"
+      - "Kapitalanlage: Liquiditätsreserven anlegen (Union Investment)"
+      - "Immobilienfinanzierung: Privat und betrieblich (MünchenerHyp, Schwäbisch Hall)"
+    section: "II · Potenziale systematisch entdecken"
+
+  - type: section
+    roman: "III"
+    title: "Der 4-Schritte-Prozess"
+    subtitle: "Analyse — Hypothese — Gespräch — Dokumentation"
+
+  - type: content
+    title: "Cross-Selling in vier Schritten"
+    bullets:
+      - "1. Analyse: Kundenprofil + Bestandsübersicht → Lücken identifizieren"
+      - "2. Hypothese: 'Welcher Bedarf könnte bestehen?' — nicht raten, sondern fragen"
+      - "3. Gespräch: SPIN-Fragen einsetzen — erst Problem, dann Lösung"
+      - "4. Dokumentation: Bedarfsdiagnose + nächste Schritte im CRM"
+    section: "III · Der 4-Schritte-Prozess"
+
+  - type: table
+    title: "Verbundpartner: Wer liefert was?"
+    rows:
+      - ["Bedarf", "Verbundpartner", "Ansprechpartner"]
+      - ["Sachversicherung, BU", "R+V Versicherung", "Regionaler Außendienst"]
+      - ["Betriebliche AV, Fonds", "Union Investment", "Regionaler Berater"]
+      - ["Baufinanzierung", "Schwäbisch Hall / MünchenerHyp", "Spezialist Bank"]
+      - ["Firmenfinanzierung > 5 Mio.", "DZ BANK", "Kompetenzcenter FK"]
+    section: "III · Der 4-Schritte-Prozess"
+
+  - type: content
+    title: "Ihr Auftrag: Wallet-Share-Analyse für drei Kunden"
+    bullets:
+      - "Drei Kunden aus dem Portfolio auswählen"
+      - "Produktlandschaft vollständig erfassen (was haben sie schon?)"
+      - "Größten Gap identifizieren"
+      - "Cross-Selling-Gespräch für den nächsten Kontakt vorbereiten"
+    section: "III · Der 4-Schritte-Prozess"
+
+  - type: sources
+    items: []

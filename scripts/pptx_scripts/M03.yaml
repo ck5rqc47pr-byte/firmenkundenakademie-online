@@ -1,0 +1,72 @@
+module: "M03"
+slides:
+
+  - type: section
+    roman: "I"
+    title: "Jenseits des Kreditgesprächs"
+    subtitle: "Wenn der Berater zum strategischen Partner wird"
+
+  - type: content
+    title: "Drei Ebenen — drei verschiedene Gespräche"
+    bullets:
+      - "Ebene 1 (operativ): Jahresabschluss, Kontokorrent, Liquidität"
+      - "Ebene 2 (taktisch): Finanzierungsstruktur, Kapitalkosten, Rating"
+      - "Ebene 3 (strategisch): Wachstum, Wert, Nachfolge, Exit"
+      - "Die meisten Berater spielen auf Ebene 1. Strategen spielen auf Ebene 3."
+    section: "I · Jenseits des Kreditgesprächs"
+
+  - type: section
+    roman: "II"
+    title: "Was den Unternehmenswert wirklich treibt"
+    subtitle: "Drei Hebel, die Banker kennen müssen"
+
+  - type: content
+    title: "Wachstum × Marge × Kapitaleffizienz = Wert"
+    bullets:
+      - "Wachstum allein schafft keinen Wert — wenn die Marge dabei fällt"
+      - "EBIT-Marge: Wie viel bleibt pro EUR Umsatz?"
+      - "Kapitalrendite (ROCE): Wie effizient arbeitet das gebundene Kapital?"
+      - "Working Capital: Hier steckt oft verstecktes Geld"
+    section: "II · Was den Unternehmenswert wirklich treibt"
+
+  - type: section
+    roman: "III"
+    title: "Welche Finanzierung passt wann?"
+    subtitle: "Nicht jede Lösung ist eine Bankfinanzierung"
+
+  - type: table
+    title: "Drei Wege — drei Profile"
+    rows:
+      - ["Finanzierungsform", "Stärken", "Grenzen", "Wann sinnvoll?"]
+      - ["Bankkredit", "Günstig, bekannt, schnell", "Besicherung, Covenants", "Investitionen mit klarem Cashflow"]
+      - ["Mezzanine", "Kein Kontrollverlust", "Teurer als Kredit", "Wachstum ohne Sicherheiten"]
+      - ["Beteiligungskapital", "Keine Rückzahlung", "Kontrollverlust", "Rapid Scale-up, Nachfolge"]
+    section: "III · Welche Finanzierung passt wann?"
+
+  - type: headline
+    title: "Wann die Bankfinanzierung an ihre Grenzen stößt"
+    left: "Wenn das Unternehmen schnell wächst, keine verwertbaren Sicherheiten hat oder einen strategischen Investor braucht — dann ist die Bank nicht die beste Lösung. Das ehrlich zu sagen, schafft mehr Vertrauen als ein Nein."
+    right: "Die ehrlichste Beratung ist manchmal: 'Für diesen Schritt brauchen Sie einen anderen Partner — aber ich begleite Sie dabei.'"
+    section: "III · Welche Finanzierung passt wann?"
+
+  - type: praxisfall
+    name: "Habermaier Präzisionsteile GmbH — Strategiegespräch"
+    situation: "Mittelständischer Präzisionsmechaniker, Umsatz 18 Mio. EUR, EBIT-Marge 7,2 %. Wachstumsfinanzierung für neuen Markt geplant. Eigentümer fragt: Bank oder Investor? Ihre Aufgabe: strategischen Finanzierungsrahmen entwickeln."
+    section: "III · Welche Finanzierung passt wann?"
+
+  - type: section
+    roman: "IV"
+    title: "Transfer"
+    subtitle: "Ihr erster strategischer Dialog"
+
+  - type: content
+    title: "Wer aus Ihrem Portfolio ist bereit für Ebene 3?"
+    bullets:
+      - "Kunden mit Wachstumsplänen identifizieren"
+      - "Working Capital analysieren — oft unentdecktes Potenzial"
+      - "Gesprächseinstieg üben: 'Wo sehen Sie Ihr Unternehmen in 5 Jahren?'"
+      - "Verbundpartner einbinden: DZ Bank, Union Investment, MünchenerHyp"
+    section: "IV · Transfer"
+
+  - type: sources
+    items: []

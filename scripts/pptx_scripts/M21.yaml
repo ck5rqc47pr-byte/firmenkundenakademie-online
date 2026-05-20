@@ -1,0 +1,63 @@
+module: "M21"
+slides:
+
+  - type: section
+    roman: "I"
+    title: "Eine gute Kreditentscheidung braucht ein System"
+    subtitle: "Das 8-Felder-Framework für strukturierte Analyse"
+
+  - type: content
+    title: "Acht Felder — eine vollständige Analyse"
+    bullets:
+      - "Feld 1: Zweck & Verwendung — Wofür wird das Geld gebraucht?"
+      - "Feld 2: Rückzahlungsquelle — Reicht der Cashflow?"
+      - "Feld 3: Kapitalstruktur — Wie stabil ist die Basis?"
+      - "Feld 4: Managementqualität — Wem vertrauen wir?"
+      - "Feld 5: Branchenpositionierung — Wie ist die Marktlage?"
+      - "Feld 6: Sicherheiten — Was ist verwertbar?"
+      - "Feld 7: Konditionen — Risikogerecht bepreist?"
+      - "Feld 8: Exit-Szenarien — Was passiert im Worst Case?"
+    section: "I · Das 8-Felder-Framework"
+
+  - type: section
+    roman: "II"
+    title: "Die Rückzahlungsquelle ist alles"
+    subtitle: "Feld 2: Cashflow-Analyse in der Praxis"
+
+  - type: headline
+    title: "Sicherheiten sind das letzte Mittel — Cashflow ist die erste Frage"
+    left: "Eine Bank, die primär auf Sicherheiten schaut, wird irgendwann Verwertungsexpertin. Die bessere Frage: Kann dieses Unternehmen den Kredit aus seinem operativen Cashflow zurückzahlen — auch wenn es schlechter läuft als geplant?"
+    right: "KDCG ≥ 1,20 ist der Mindeststandard. Der 'Stresstest': Was passiert, wenn der Umsatz 15 % fällt?"
+    section: "II · Die Rückzahlungsquelle ist alles"
+
+  - type: section
+    roman: "III"
+    title: "Von der Analyse zur Entscheidungsvorlage"
+    subtitle: "MaRisk-konform und überzeugend"
+
+  - type: content
+    title: "Struktur einer Kreditvorlage nach MaRisk BTO 1.1"
+    bullets:
+      - "Zusammenfassung: Empfehlung auf einen Blick — am Anfang, nicht am Ende"
+      - "Kreditnehmer: Unternehmen, Eigentümer, Konzernstruktur"
+      - "Kreditwürdigkeitsanalyse: 8 Felder, quantitativ + qualitativ"
+      - "Sicherheitenkonzept: Art, Wert, Verwertbarkeit"
+      - "Votum: Bewilligung / Ablehnung / Auflagen — mit Begründung"
+    section: "III · Von der Analyse zur Entscheidungsvorlage"
+
+  - type: content
+    title: "Entscheidungspsychologie: Wie der Ausschuss wirklich entscheidet"
+    bullets:
+      - "Rahmen-Effekt: Wie wird das Risiko präsentiert?"
+      - "Verfügbarkeitsheuristik: Letzte Erfahrungen prägen die Einschätzung"
+      - "Confirmation Bias: Ausschuss sucht Bestätigung der Empfehlung"
+      - "Konsequenz: Klare Empfehlung zuerst — dann Begründung"
+    section: "III · Von der Analyse zur Entscheidungsvorlage"
+
+  - type: praxisfall
+    name: "Metallbau Schnell GmbH, Heilbronn — Kreditentscheidung"
+    situation: "Investitionskredit 1,4 Mio. EUR für neue Fertigungsanlage. 3-Jahres-Vergleich liegt vor: Umsatz stabil, EBIT-Marge von 6,8 % auf 4,2 % gefallen, EK-Quote 24 %. GF erklärt Rückgang mit Einmaleffekten. Ihre Aufgabe: 8-Felder-Analyse + Kreditempfehlung."
+    section: "III · Von der Analyse zur Entscheidungsvorlage"
+
+  - type: sources
+    items: []

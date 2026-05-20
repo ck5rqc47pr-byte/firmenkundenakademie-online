@@ -1,0 +1,58 @@
+module: "M14"
+slides:
+
+  - type: section
+    roman: "I"
+    title: "Was verdienen wir an diesem Kunden wirklich?"
+    subtitle: "Umsatz täuscht — Deckungsbeitrag entscheidet"
+
+  - type: content
+    title: "Vier Ertragskomponenten — ein vollständiges Bild"
+    bullets:
+      - "Zinsmarge: Differenz zwischen Kredit- und Refinanzierungszins"
+      - "Provisionserträge: Gebühren, Vermittlungen, Avalprovisionen"
+      - "Eigenkapitalkosten: Risikogewichtetes Kapital × Mindestrendite"
+      - "Risikokosten (Expected Loss): Erwarteter Verlust aus Ausfallwahrscheinlichkeit"
+    section: "I · Was verdienen wir an diesem Kunden wirklich?"
+
+  - type: headline
+    title: "Niedriger Zins + hohes Risiko = negativer Deckungsbeitrag"
+    left: "Viele Kreditengagements sind ertragsseitig defizitär, wenn man Risikokosten und Eigenkapitalkosten einrechnet. Das VR-Rating und der Expected Loss bestimmen, wie viel echte Marge bleibt."
+    right: "Konsequenz: Konditionengespräche sind keine Rabattgespräche. Sie sind eine Diskussion über risikogerechte Bepreisung."
+    section: "I · Was verdienen wir an diesem Kunden wirklich?"
+
+  - type: section
+    roman: "II"
+    title: "Den Hebel finden"
+    subtitle: "Wo lässt sich der Ertrag am wirkungsvollsten steigern?"
+
+  - type: content
+    title: "Drei Optimierungsansätze im Vergleich"
+    bullets:
+      - "Konditionsanpassung: Direkt wirksam, aber Kundengespräch nötig"
+      - "Volumensausweitung: Mehr Geschäft bei gleichem Kunden"
+      - "Cross-Selling: Neue Ertragsquellen ohne Kreditrisiko"
+      - "Rating-Verbesserung: Niedrigere Risikokosten durch bessere Daten"
+    section: "II · Den Hebel finden"
+
+  - type: section
+    roman: "III"
+    title: "Das Konditionengespräch wertbasiert führen"
+    subtitle: "Zuerst der Nutzen — dann der Preis"
+
+  - type: content
+    title: "Wertbasiertes Konditionengespräch — Schritt für Schritt"
+    bullets:
+      - "Schritt 1: Nutzen der Beziehung darstellen (Schnelligkeit, Verlässlichkeit, Know-how)"
+      - "Schritt 2: Risikolage sachlich benennen (Rating, Sicherheiten, EK-Quote)"
+      - "Schritt 3: Konditionen als faire Reflexion des Risikos erklären"
+      - "Schritt 4: Verbesserungspotenzial aufzeigen: 'Was würde sich für Sie verbessern?'"
+    section: "III · Das Konditionengespräch wertbasiert führen"
+
+  - type: praxisfall
+    name: "Müller GmbH — Deckungsbeitragsanalyse"
+    situation: "Langjähriger Kunde, Umsatz 8 Mio., Kredit 1,2 Mio., Zins 3,8 %. Fragt nach Zinssenkung auf 3,2 %. Rating: B+. Ihre Aufgabe: Deckungsbeitrag berechnen, wertbasiertes Gegengespräch vorbereiten."
+    section: "III · Das Konditionengespräch wertbasiert führen"
+
+  - type: sources
+    items: []

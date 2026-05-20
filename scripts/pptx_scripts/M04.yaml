@@ -1,0 +1,83 @@
+module: "M04"
+slides:
+
+  - type: section
+    roman: "I"
+    title: "Krisen kündigen sich an"
+    subtitle: "Wer früh erkennt, kann handeln"
+
+  - type: content
+    title: "Vier Krisenphasen — vier Handlungsfenster"
+    bullets:
+      - "Phase 1 – Strategiekrise: Geschäftsmodell verliert Stärke (oft unsichtbar)"
+      - "Phase 2 – Erfolgskrise: Margen fallen, Ergebnis verschlechtert sich"
+      - "Phase 3 – Liquiditätskrise: Kontokorrent dauerhaft ausgelastet, Zahlungsverzug"
+      - "Phase 4 – Insolvenz: Handlungsfähigkeit verloren"
+      - "Berater sehen Phase 3 — Ziel: Phase 1 und 2 erkennen"
+    section: "I · Krisen kündigen sich an"
+
+  - type: section
+    roman: "II"
+    title: "Die Signale lesen"
+    subtitle: "Quantitativ + qualitativ = vollständiges Bild"
+
+  - type: content
+    title: "Quantitative Frühwarnzeichen"
+    bullets:
+      - "EK-Quote sinkt zwei Jahre in Folge unter Branchenschnitt"
+      - "EBIT-Marge fällt unter 3 % (Maschinenbau: Alarm unter 4 %)"
+      - "KDCG unter 1,10 — Schuldendienstdeckung wird eng"
+      - "Kontokorrent dauerhaft > 75 % ausgelastet (> 80 %: kritisch)"
+      - "Forderungslaufzeit steigt: Kunden zahlen langsamer"
+    section: "II · Die Signale lesen"
+
+  - type: content
+    title: "Qualitative Warnsignale — oft früher sichtbar"
+    bullets:
+      - "Managementwechsel ohne klare Nachfolge"
+      - "Unternehmer ist schwer erreichbar, weicht Fragen aus"
+      - "Jahresabschluss wird später als üblich eingereicht"
+      - "Lieferanten berichten von verzögerten Zahlungen"
+      - "Beraterwechsel: Steuerberater oder Wirtschaftsprüfer wechselt plötzlich"
+    section: "II · Die Signale lesen"
+
+  - type: table
+    title: "Ampel-Bewertung: Drei Risikostufen"
+    rows:
+      - ["Signal", "Grün", "Gelb", "Rot"]
+      - ["EK-Quote", "> 30 %", "20–30 %", "< 20 %"]
+      - ["KDCG", "> 1,30", "1,10–1,30", "< 1,10"]
+      - ["KK-Auslastung", "< 60 %", "60–80 %", "> 80 %"]
+      - ["Jahresabschluss", "Pünktlich", "1–3 Monate verspätet", "> 3 Monate"]
+    section: "II · Die Signale lesen"
+
+  - type: section
+    roman: "III"
+    title: "Wer handelt wann?"
+    subtitle: "Eskalation ist kein Versagen — sondern Professionalität"
+
+  - type: content
+    title: "Eskalationspfad — drei Stufen"
+    bullets:
+      - "Stufe 1 (gelb): Intensivierung der Betreuung, Gesprächstermin vereinbaren"
+      - "Stufe 2 (rot): Intensivbetreuung, Rating-Update, Kreditausschuss informieren"
+      - "Stufe 3 (kritisch): Sanierungsabteilung einschalten, § 18 KWG-Dokumentation"
+      - "Grundregel: Früh ansprechen schützt Kunden UND Bank"
+    section: "III · Wer handelt wann?"
+
+  - type: praxisfall
+    name: "Renner Metallverarbeitung GmbH — Krisenerkennung"
+    situation: "Zulieferer, 45 MA, bisher unauffälliger Kunde. Jahresabschluss kommt drei Monate zu spät. Kontokorrent bei 87 %. GF erklärt alles mit 'Sondereffekten'. Ihre Aufgabe: Ampel-Checkliste anwenden und Eskalationsstufe bestimmen."
+    section: "III · Wer handelt wann?"
+
+  - type: content
+    title: "Ihr Auftrag: Risikocheck im eigenen Bestand"
+    bullets:
+      - "Drei Kunden mit KK-Auslastung > 75 % identifizieren"
+      - "Ampel-Checkliste auf jeden anwenden"
+      - "Mindestens einen Gesprächstermin vereinbaren"
+      - "Ergebnis mit Teamleiter besprechen und dokumentieren"
+    section: "III · Wer handelt wann?"
+
+  - type: sources
+    items: []

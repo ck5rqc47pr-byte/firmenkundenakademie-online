@@ -1,0 +1,80 @@
+module: "M06"
+slides:
+
+  - type: section
+    roman: "I"
+    title: "Was ist eigentlich ein KMU?"
+    subtitle: "Zwei Definitionen — eine Praxisrealität"
+
+  - type: table
+    title: "KMU-Definition: IfM Bonn vs. EU-Kommission"
+    rows:
+      - ["Kriterium", "IfM Bonn (national)", "EU-Kommission (regulatorisch)"]
+      - ["Umsatz", "≤ 50 Mio. EUR", "≤ 50 Mio. EUR"]
+      - ["Mitarbeiter", "≤ 499", "≤ 249"]
+      - ["Rechtsform", "Inhabergeführt", "Unabhängig (< 25 % Fremdbesitz)"]
+    section: "I · Was ist eigentlich ein KMU?"
+
+  - type: content
+    title: "KMU in Zahlen: Der Rücken der Volkswirtschaft"
+    bullets:
+      - "99,4 % aller Unternehmen in Deutschland sind KMU"
+      - "55 % aller sozialversicherungspflichtigen Arbeitsplätze"
+      - "52 % der gesamten Bruttowertschöpfung"
+      - "Die VR-Bank ist für diese Unternehmen meist die einzige Bankbeziehung"
+    section: "I · Was ist eigentlich ein KMU?"
+
+  - type: section
+    roman: "II"
+    title: "Warum KMU anders funktionieren"
+    subtitle: "Fünf Typologien — fünf Beratungsansätze"
+
+  - type: content
+    title: "Das Hausbank-Prinzip als Wettbewerbsvorteil"
+    bullets:
+      - "KMU haben weniger Bankbeziehungen als Großunternehmen"
+      - "Vertrauen und persönliche Beziehung schlagen Konditionen"
+      - "Hausbank kennt Geschäftsmodell, Familie, Pläne — Wettbewerb nicht"
+      - "Risiko: Hausbank-Loyalität kann durch Fehler schnell verloren gehen"
+    section: "II · Warum KMU anders funktionieren"
+
+  - type: content
+    title: "Finanzierung: KMU vs. Großunternehmen"
+    bullets:
+      - "KMU: 70–80 % Fremdkapital, kaum Kapitalmarkt-Zugang"
+      - "Innenfinanzierung dominiert: Gewinneinbehalt ist wichtigste EK-Quelle"
+      - "Sicherheiten oft begrenzt: Immobilien, Maschinen, Forderungen"
+      - "Basel III / IV: Rating-Pflicht belastet KMU stärker als Konzerne"
+    section: "II · Warum KMU anders funktionieren"
+
+  - type: section
+    roman: "III"
+    title: "Branche verstehen — Kunden besser beraten"
+    subtitle: "Das 5-Fragen-Schema"
+
+  - type: content
+    title: "Fünf Fragen für jeden neuen Kunden"
+    bullets:
+      - "1. Welches Geschäftsmodell? (Produktion, Handel, Dienstleistung?)"
+      - "2. Welcher Markt? (Regional, national, Export?)"
+      - "3. Wer entscheidet? (Alleininhaber, Gesellschafter, Familienrat?)"
+      - "4. Welche Abhängigkeiten? (Lieferanten, Kunden, Technologie?)"
+      - "5. Welche Zukunftsfrage steht an? (Wachstum, Nachfolge, Exit?)"
+    section: "III · Branche verstehen — Kunden besser beraten"
+
+  - type: praxisfall
+    name: "Bergmann Holzmanufaktur GmbH & Co. KG"
+    situation: "Familienunternehmen, 3. Generation, 28 MA. Spezialmöbel für Hotellerie. Inhaber möchte investieren, ist aber unsicher wegen Fachkräftemangel und Rohstoffpreisen. Ihre Aufgabe: 5-Fragen-Schema anwenden und Beratungsansatz ableiten."
+    section: "III · Branche verstehen — Kunden besser beraten"
+
+  - type: content
+    title: "Ihr Auftrag: Drei Kunden neu einordnen"
+    bullets:
+      - "Drei KMU aus dem Portfolio nehmen"
+      - "5-Fragen-Schema für jeden ausfüllen"
+      - "Lücken identifizieren: Was wissen Sie noch nicht?"
+      - "Welche Branchenfrage könnten Sie beim nächsten Gespräch stellen?"
+    section: "III · Branche verstehen — Kunden besser beraten"
+
+  - type: sources
+    items: []

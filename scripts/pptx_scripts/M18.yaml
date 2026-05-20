@@ -1,0 +1,54 @@
+module: "M18"
+slides:
+
+  - type: section
+    roman: "I"
+    title: "Vom Zufallskontakt zum Signal-gesteuerten Vertrieb"
+    subtitle: "Daten in agree erzählen Geschichten — man muss sie nur lesen"
+
+  - type: headline
+    title: "Reaktiver vs. trigger-basierter Vertrieb"
+    left: "Reaktiv: Der Kunde ruft an, weil er ein Problem hat. Trigger-basiert: Sie rufen an, weil Sie sehen, dass ein Problem entstehen könnte — oder eine Chance."
+    right: "Agree liefert täglich Signale: Kontokorrentauslastung, Zahlungseingänge, ablaufende Zinsbindungen, neue Zahlungsverbindungen. Wer sie liest, hat immer einen Gesprächsanlass."
+    section: "I · Vom Zufallskontakt zum Signal-gesteuerten Vertrieb"
+
+  - type: section
+    roman: "II"
+    title: "Fünf Trigger-Typen die Sie kennen müssen"
+    subtitle: "Mit Vorlaufzeit und Wirksamkeit"
+
+  - type: content
+    title: "Trigger-Signale aus agree — priorisiert"
+    bullets:
+      - "Zinsbindungsauslauf: 6–12 Monate Vorlaufzeit → Prolongationsgespräch"
+      - "KK-Auslastung > 80 %: Sofortiger Handlungsbedarf → Kreditgespräch"
+      - "Neue Zahlungsverbindung: Kontoverbindung zu Mitbewerber → Gespräch suchen"
+      - "Jahresabschluss steht aus: Checkliste anstoßen, § 18 KWG sichern"
+      - "Umsatzeinbruch > 20 %: Frühwarnsignal → proaktiv nachfragen"
+    section: "II · Fünf Trigger-Typen die Sie kennen müssen"
+
+  - type: section
+    roman: "III"
+    title: "DSGVO-konform arbeiten"
+    subtitle: "Was erlaubt ist — was nicht"
+
+  - type: content
+    title: "Drei Grundsätze der datenschutzkonformen Nutzung"
+    bullets:
+      - "Zweckbindung: Daten nur für die Zwecke nutzen, die der Kunde kennt"
+      - "Verhältnismäßigkeit: Nur die Daten auswerten, die wirklich relevant sind"
+      - "Transparenz: Kunden können fragen, welche Daten genutzt werden"
+      - "Praxisregel: Wenn Sie unsicher sind, fragen Sie den Datenschutzbeauftragten"
+    section: "III · DSGVO-konform arbeiten"
+
+  - type: content
+    title: "Ihr Auftrag: Trigger-Dashboard einrichten"
+    bullets:
+      - "Frühwarnbericht aus agree für Ihren Bestand abrufen"
+      - "Fünf Kunden mit aktiven Signalen identifizieren"
+      - "Für jeden: Welcher Trigger? Welche Aktion? Bis wann?"
+      - "Terminkalender: Zwei Kontakte in dieser Woche auslösen"
+    section: "III · DSGVO-konform arbeiten"
+
+  - type: sources
+    items: []

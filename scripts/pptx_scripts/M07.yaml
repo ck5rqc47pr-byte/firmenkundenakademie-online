@@ -1,0 +1,68 @@
+module: "M07"
+slides:
+
+  - type: section
+    roman: "I"
+    title: "Heilberufe: Kein Gewerbe — aber ein Geschäft"
+    subtitle: "Was Arztpraxen, Apotheken und Zahnärzte von GmbHs unterscheidet"
+
+  - type: content
+    title: "Freier Beruf vs. Gewerbe — praxisrelevante Unterschiede"
+    bullets:
+      - "Keine Gewerbesteuer, kein Handelsregister (§ 18 EStG)"
+      - "EÜR statt Bilanz: GuV-Logik gilt hier nicht"
+      - "Zulassung ist das wertvollste Asset — und nicht beleihbar"
+      - "Versorgungswerk statt gesetzlicher Rente: Pfändung stark eingeschränkt"
+    section: "I · Heilberufe: Kein Gewerbe — aber ein Geschäft"
+
+  - type: content
+    title: "EÜR lesen: Was der Berater wirklich braucht"
+    bullets:
+      - "Einnahmen: KV-Honorar, PKV, Privatleistungen — trennen!"
+      - "AfA-Struktur: Medizintechnik schreibt schnell ab (5–8 Jahre)"
+      - "Privatentnahmen des Inhabers: Oft sehr hoch — kein 'Gewinn' im Sinne eines GF-Gehalts"
+      - "Kennzahl KDCG: Bereinigter Überschuss + AfA ÷ Schuldendienst ≥ 1,20"
+    section: "I · Heilberufe: Kein Gewerbe — aber ein Geschäft"
+
+  - type: section
+    roman: "II"
+    title: "Was eine Praxis wert ist — und wie man sie finanziert"
+    subtitle: "Goodwill ist real, aber nicht beleihbar"
+
+  - type: headline
+    title: "Praxiswert = Substanzwert + Goodwill (IDW S5)"
+    left: "Der materielle Teil (Geräte, Einrichtung) ist klar. Der Goodwill — Patientenstamm, Lage, Ruf — ist oft das Dreifache davon. Banken finanzieren Goodwill nur mit Vorsicht, da er im Insolvenzfall wertlos ist."
+    right: "Faustregel: Goodwill ≤ 50–60 % des Gesamtfinanzierungsvolumens. Cashflow-Tragfähigkeit (KDCG) ist entscheidend."
+    section: "II · Was eine Praxis wert ist — und wie man sie finanziert"
+
+  - type: section
+    roman: "III"
+    title: "Risiken, die Heilberufe-Kunden unterschätzen"
+    subtitle: "Und die der Berater kennen muss"
+
+  - type: content
+    title: "Vier Risiken, die kein KV-Honorar abdeckt"
+    bullets:
+      - "Zulassungsrisiko: Entzug trifft sofort — ohne Einnahmen, mit Schulden"
+      - "Regressrisiko: Falschabrechnung kann Jahre zurückverfolgt werden"
+      - "Krankheitsrisiko: Kein Unternehmer ist so systemkritisch wie der Arzt"
+      - "Nachfolge-/Praxiswert-Risiko: Wer kauft eine Praxis in einer schrumpfenden Region?"
+    section: "III · Risiken, die Heilberufe-Kunden unterschätzen"
+
+  - type: content
+    title: "Sicherheitenkonzept — was geht, was nicht"
+    bullets:
+      - "Praxisimmobilie: Gut verwertbar, sofern lageangemessen"
+      - "Medizintechnik: Schnell veraltet, geringe Restwerte"
+      - "Zulassung / Goodwill: Nicht beleihbar"
+      - "Lebensversicherung / Versorgungswerk: Nur eingeschränkt abtretbar"
+      - "Verbundpartner Schwäbisch Hall: Praxisimmobilien, Tilgungsaussetzung"
+    section: "III · Risiken, die Heilberufe-Kunden unterschätzen"
+
+  - type: praxisfall
+    name: "Dr. Mayer — Zahnarztpraxis-Übernahme, Ravensburg"
+    situation: "Junge Zahnärztin übernimmt etablierte Praxis für 680 TEUR (Substanzwert 180 TEUR, Goodwill 500 TEUR). EÜR-Planzahlen liegen vor. Ihre Aufgabe: KDCG berechnen, Sicherheitenkonzept entwickeln, Tragfähigkeit bewerten."
+    section: "III · Risiken, die Heilberufe-Kunden unterschätzen"
+
+  - type: sources
+    items: []

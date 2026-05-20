@@ -509,8 +509,8 @@ def s_closing(prs, m, pg):
     lead = (f"Modul «{m['title']}» auf FKB Campus — "
             f"{len(m['lz'])} Lernziele, Praxisfall und Quellenapparat.")
     tb(s, lead, M, 780, 900, 180, SERIF, T_LEAD, italic=True, color=INK)
-    tb(s, "Kontakt",       1060, 780, 380, 28,  MONO, T_MONO, color=INK3)
-    tb(s, "info@benedikt-zoller.de", 1060, 812, 380, 60, SERIF, T_LEAD, color=INK)
+    tb(s, "Trainer",        1060, 780, 380, 28,  MONO, T_MONO, color=INK3)
+    tb(s, "[Name · Kontakt]", 1060, 812, 380, 60, SERIF, T_LEAD, color=INK2)
     tb(s, "Modul",         1480, 780, 344, 28,  MONO, T_MONO, color=INK3)
     tb(s, f"{m['id']} · {m['stufe']}", 1480, 812, 344, 60, SERIF, T_LEAD, color=INK)
 

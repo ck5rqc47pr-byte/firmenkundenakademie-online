@@ -1,0 +1,78 @@
+module: "M05"
+slides:
+
+  - type: section
+    roman: "I"
+    title: "Kennzahlen brauchen Kontext"
+    subtitle: "Branchenwissen ist kein Luxus — es ist Pflicht"
+
+  - type: headline
+    title: "Eine EK-Quote von 18 % — gut oder schlecht?"
+    left: "Im Maschinenbau: Alarmsignal. Im Lebensmitteleinzelhandel: Branchendurchschnitt. Ohne Branchenkenntnis ist jede Kennzahl ein Stochern im Nebel."
+    right: "MaRisk BTO 1.2 verlangt branchendifferenzierte Risikoanalyse. Branchenwissen ist keine Kür — es ist regulatorische Pflicht."
+    section: "I · Kennzahlen brauchen Kontext"
+
+  - type: section
+    roman: "II"
+    title: "Sechs Branchen — sechs Risikolandschaften"
+    subtitle: "Was der Berater über jeden Sektor wissen muss"
+
+  - type: content
+    title: "Baugewerbe & Bauträger: Hohe Schwankung, enge Margen"
+    bullets:
+      - "Zyklisch: Konjunktureinbrüche treffen hart und schnell"
+      - "Vorfinanzierungsrisiko: Zahlungen kommen erst bei Abnahme"
+      - "Subunternehmer-Abhängigkeit: Qualitäts- und Haftungsrisiken"
+      - "Warnsignal: Viele offene Baustellen + sinkende Anzahlungen"
+    section: "II · Sechs Branchen — sechs Risikolandschaften"
+
+  - type: content
+    title: "Gastronomie & Hotel: Betriebsrisiko auf engstem Raum"
+    bullets:
+      - "EBIT-Margen strukturell niedrig (3–7 % im Schnitt)"
+      - "Personalkosten nicht flexibel genug in Krisen"
+      - "Pachtvertrag ist oft das größte Risiko — nicht der Kredit"
+      - "Standort entscheidet über Erfolg oder Misserfolg"
+    section: "II · Sechs Branchen — sechs Risikolandschaften"
+
+  - type: content
+    title: "Heilberufe: Stabile Erträge — aber unterschätzte Risiken"
+    bullets:
+      - "Zulassungsrisiken: Entzug der KV-Zulassung trifft sofort"
+      - "Regressrisiken: Abrechnungsfehler können Jahre zurückliegen"
+      - "Praxiswert ist immateriell — nicht verwertbar wie Maschinen"
+      - "Versorgungswerk statt Rentenversicherung: Pfändung eingeschränkt"
+    section: "II · Sechs Branchen — sechs Risikolandschaften"
+
+  - type: table
+    title: "Vier Sektoren im Risikovergleich"
+    rows:
+      - ["Branche", "Zyklizität", "Typische EK-Quote", "Hauptrisiko"]
+      - ["Maschinenbau", "Mittel", "28–35 %", "Auftragsschwankung"]
+      - ["Baugewerbe", "Hoch", "15–22 %", "Vorfinanzierung"]
+      - ["Einzelhandel", "Mittel", "18–25 %", "Online-Wettbewerb"]
+      - ["Heilberufe", "Niedrig", "35–50 %", "Zulassungsrisiko"]
+    section: "II · Sechs Branchen — sechs Risikolandschaften"
+
+  - type: section
+    roman: "III"
+    title: "Porters Five Forces in der Praxis"
+    subtitle: "Strukturanalyse in 10 Minuten"
+
+  - type: content
+    title: "Fünf Fragen — ein Branchenbild"
+    bullets:
+      - "Lieferantenmacht: Kann der Kunde Preise verhandeln?"
+      - "Kundenmacht: Wie viel Abhängigkeit von Einzelkunden?"
+      - "Neue Wettbewerber: Wie hoch sind Markteintrittsbarrieren?"
+      - "Substitutionsgefahr: Welche Technologie gefährdet das Geschäftsmodell?"
+      - "Wettbewerbsintensität: Preis- oder Qualitätswettbewerb?"
+    section: "III · Porters Five Forces in der Praxis"
+
+  - type: praxisfall
+    name: "Bäckerei Hofmann GmbH — Branchenrisikoanalyse"
+    situation: "Traditionsbäckerei, 12 Filialen, Stuttgart. Steigende Rohstoffpreise, wachsender Discount-Wettbewerb. Kreditantrag 800 TEUR für neue Produktionsanlage. Ihre Aufgabe: Five Forces + Ampel-Scoring."
+    section: "III · Porters Five Forces in der Praxis"
+
+  - type: sources
+    items: []

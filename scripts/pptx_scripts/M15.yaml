@@ -1,0 +1,62 @@
+module: "M15"
+slides:
+
+  - type: section
+    roman: "I"
+    title: "Vom reaktiven zum strategischen Vertrieb"
+    subtitle: "Wer wartet, verliert"
+
+  - type: headline
+    title: "Reaktiver Vertrieb: Der Kunde kommt, wenn er Probleme hat"
+    left: "Reaktiver Vertrieb ist bequem aber gefährlich. Wer nur bedient, was kommt, verliert den strategischen Überblick — und Kunden an Wettbewerber, die aktiver sind."
+    right: "Strategischer Vertrieb heißt: Ich weiß, wen ich wann und warum anspreche. Ich warte nicht auf den Anruf."
+    section: "I · Vom reaktiven zum strategischen Vertrieb"
+
+  - type: section
+    roman: "II"
+    title: "Marktpotenziale analysieren"
+    subtitle: "Wer ist mein Zielsegment — und wie groß ist das Potenzial?"
+
+  - type: content
+    title: "Marktpotenzial: Wo steckt das Wachstum?"
+    bullets:
+      - "Bestandskundenpotenzial: Wallet-Share noch nicht ausgeschöpft"
+      - "Neukunden in Zielbranchen: Welche Unternehmen passen zu uns?"
+      - "Regionaler Marktanteil: Was ist unser Anteil am Firmenkunden-Kreditmarkt?"
+      - "Wettbewerbsanalyse: Wer ist stark wo wir schwach sind?"
+    section: "II · Marktpotenziale analysieren"
+
+  - type: section
+    roman: "III"
+    title: "Strategie entwickeln und umsetzen"
+    subtitle: "Jahresplan mit Zielen, Maßnahmen, Meilensteinen"
+
+  - type: content
+    title: "Strategie in drei Dimensionen"
+    bullets:
+      - "Zielkunden-Kriterien: Welche Unternehmen wollen wir? (Branche, Größe, Potenzial)"
+      - "Wertversprechen: Warum sollten sie zu uns kommen — nicht zur Sparkasse?"
+      - "Ansprachekanäle: Empfehlung, Veranstaltung, LinkedIn, Steuerberater-Kooperation"
+    section: "III · Strategie entwickeln und umsetzen"
+
+  - type: content
+    title: "Neukundenansprache: Was wirklich funktioniert"
+    bullets:
+      - "Empfehlungsmarketing: Bestehende Kunden empfehlen aktiv"
+      - "Steuerberater-Kooperation: Gemeinsame Zielkunden, gegenseitige Empfehlung"
+      - "Branchenveranstaltungen: Sichtbarkeit als Fachexperte aufbauen"
+      - "LinkedIn: Content zu Fachthemen schafft Reichweite ohne Kaltakquise"
+      - "Cold Outreach: Nur mit persönlichem Bezug — nie generisch"
+    section: "III · Strategie entwickeln und umsetzen"
+
+  - type: content
+    title: "Ihr Auftrag: Jahresplan auf einer Seite"
+    bullets:
+      - "Zielsegment definieren (eine Branche, eine Größenklasse)"
+      - "Fünf Zielunternehmen benennen"
+      - "Wertversprechen in zwei Sätzen formulieren"
+      - "Drei konkrete Maßnahmen für das nächste Quartal"
+    section: "III · Strategie entwickeln und umsetzen"
+
+  - type: sources
+    items: []

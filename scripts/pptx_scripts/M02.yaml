@@ -1,0 +1,88 @@
+module: "M02"
+slides:
+
+  - type: section
+    roman: "I"
+    title: "Vom Zahlenleser zum Gesprächsführer"
+    subtitle: "Was Kennzahlen allein nicht leisten"
+
+  - type: content
+    title: "Warum gute Zahlenanalyse allein nicht reicht"
+    bullets:
+      - "Kunden reagieren auf Kritik mit Rechtfertigung, nicht mit Offenheit"
+      - "Beziehungsebene entscheidet, ob Sachebene gehört wird"
+      - "Augenhöhe entsteht durch Zuhören — nicht durch Vorlesen von Kennzahlen"
+      - "Ziel: Gemeinsam Erkenntnisse entwickeln, nicht Befunde verkünden"
+    section: "I · Vom Zahlenleser zum Gesprächsführer"
+
+  - type: headline
+    title: "5 Phasen — ein Gespräch das Vertrauen schafft"
+    left: "Vorbereitung → Eröffnung → Analyse-Dialog → Impulse → Abschluss. Jede Phase hat eine klare Funktion. Wer die Phasen kennt, behält auch in schwierigen Gesprächen die Führung."
+    right: "Entscheidend: Die Eröffnung. Die ersten 3 Minuten entscheiden, ob der Kunde sich als Partner oder als Prüfling fühlt."
+    section: "I · Vom Zahlenleser zum Gesprächsführer"
+
+  - type: content
+    title: "Fragetechniken, die Erkenntnisse erzeugen"
+    bullets:
+      - "Offene Fragen: 'Was hat Sie im letzten Jahr am meisten beschäftigt?'"
+      - "Skalenfragen: 'Wie schätzen Sie Ihre Liquiditätssituation auf einer Skala 1–10 ein?'"
+      - "Hypothetische Fragen: 'Angenommen, der Umsatz fällt 15 % — was passiert?'"
+      - "Schweigen aushalten: Nach einer kritischen Frage 5 Sekunden warten"
+    section: "I · Vom Zahlenleser zum Gesprächsführer"
+
+  - type: section
+    roman: "II"
+    title: "Kritisches ansprechen ohne Abwehr"
+    subtitle: "Wenn die Zahlen eine unbequeme Geschichte erzählen"
+
+  - type: pullquote
+    quote: "Nicht die Wahrheit schmerzt — sondern wie sie gesagt wird."
+    author: "Kommunikationsprinzip"
+    role: "Inhalts- und Beziehungsebene trennen"
+    section: "II · Kritisches ansprechen ohne Abwehr"
+
+  - type: content
+    title: "Einwände konstruktiv aufgreifen — nicht entkräften"
+    bullets:
+      - "Einwand anerkennen: 'Das verstehe ich — das war ein schwieriges Jahr.'"
+      - "Gemeinsam erkunden: 'Was glauben Sie, warum die EK-Quote gefallen ist?'"
+      - "Zukunft öffnen: 'Was wäre hilfreich, um das mittelfristig zu stabilisieren?'"
+      - "Nie widersprechen — immer weiterführen"
+    section: "II · Kritisches ansprechen ohne Abwehr"
+
+  - type: section
+    roman: "III"
+    title: "Vom Gespräch zur Beratung"
+    subtitle: "Qualitative Signale + Kennzahlen = vollständiges Bild"
+
+  - type: content
+    title: "Was Zahlen nicht sagen — und trotzdem wichtig ist"
+    bullets:
+      - "Managementqualität: Reagiert der GF schnell, klar, realistisch?"
+      - "Abhängigkeiten: Einzelkunde > 30 % Umsatz ist ein stilles Risiko"
+      - "Marktposition: Wächst die Branche oder schrumpft sie?"
+      - "Nachfolgefrage: Wer führt das Unternehmen in 10 Jahren?"
+      - "Verbundpotenzial: Welche Lücke in der Absicherung fällt auf?"
+    section: "III · Vom Gespräch zur Beratung"
+
+  - type: praxisfall
+    name: "Schwäbische Metallbau GmbH — Rollenspiel"
+    situation: "Jahresabschluss liegt vor: EK-Quote gefallen, Kontokorrent dauerhaft ausgelastet. Der GF ist stolz auf das Wachstum des letzten Jahres. Ihre Aufgabe: Das Gespräch so führen, dass er selbst die Risiken erkennt."
+    section: "III · Vom Gespräch zur Beratung"
+
+  - type: section
+    roman: "IV"
+    title: "Transfer"
+    subtitle: "Was verändert sich ab morgen?"
+
+  - type: content
+    title: "Ihr Auftrag: Das nächste Gespräch anders vorbereiten"
+    bullets:
+      - "Einen Kunden auswählen, dessen Zahlen Sie schon kennen"
+      - "5-Phasen-Rahmen auf dieses Gespräch anwenden"
+      - "Drei offene Fragen vorbereiten — keine Ja/Nein-Fragen"
+      - "Nach dem Gespräch: Was hat der Kunde selbst erkannt?"
+    section: "IV · Transfer"
+
+  - type: sources
+    items: []
