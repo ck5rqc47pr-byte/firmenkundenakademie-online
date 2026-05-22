@@ -12,5 +12,6 @@ export const config = {
     "/kompass/:path*",
     "/trainer/:path*",
     "/admin/:path*",
+    "/module/:path*",
   ],
 };
