@@ -63,7 +63,7 @@ export default function HomePage() {
             </em>
           </h1>
           <p className="font-serif text-xl text-ink-2 leading-relaxed max-w-2xl mb-12">
-            FKB Campus ist ein praxisorientiertes Qualifizierungsprogramm
+            Der FKB Campus ist ein praxisorientiertes Qualifizierungsprogramm
             für Firmenkundenberater in Volksbanken und Raiffeisenbanken —
             wissenschaftlich fundiert, direkt auf den Beratungsalltag zugeschnitten.
           </p>
