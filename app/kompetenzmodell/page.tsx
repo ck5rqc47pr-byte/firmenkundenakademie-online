@@ -275,6 +275,9 @@ function KompetenzfeldCard({
   feld: Kompetenzfeld;
   activeStufen: Stufe[];
 }) {
+  const visibleStufen = STUFEN.filter((s) => activeStufen.includes(s.id));
+  const showHeaders = visibleStufen.length > 1;
+
   return (
     <div className="overflow-hidden border border-line bg-bg">
       {/* Header */}
@@ -296,6 +299,33 @@ function KompetenzfeldCard({
           {feld.kompetenzen.length} Kompetenzen
         </span>
       </div>
+
+      {/* Spaltenköpfe */}
+      {showHeaders && (
+        <div
+          className="grid gap-2 px-5 pt-3 pb-1"
+          style={{ gridTemplateColumns: `repeat(${visibleStufen.length}, 1fr)` }}
+        >
+          {visibleStufen.map((stufe) => (
+            <div
+              key={stufe.id}
+              className="flex items-center gap-1.5 pb-1"
+              style={{ borderBottom: `2px solid ${stufe.color}` }}
+            >
+              <span
+                className="inline-flex h-4 w-4 shrink-0 items-center justify-center font-mono text-[9px] text-primary-ink"
+                style={{ background: stufe.color }}
+              >
+                {stufe.badge.slice(-1)}
+              </span>
+              <span className="font-mono text-[10px] uppercase tracking-[0.06em] text-ink-2 leading-tight">
+                {stufe.label}
+              </span>
+            </div>
+          ))}
+        </div>
+      )}
+
       {/* Kompetenzen */}
       <div className="px-5">
         {feld.kompetenzen.map((k) => (
