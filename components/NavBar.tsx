@@ -6,7 +6,7 @@ import { useSession, signOut } from "next-auth/react";
 
 // Öffentlich sichtbar (immer)
 const NAV_PUBLIC = [
-  { href: "/fuer-banken",     label: "Für Banken" },
+  { href: "/",                label: "Für Banken" },
   { href: "/module",          label: "Programm" },
   { href: "/kompetenzmodell", label: "Kompetenzmodell" },
   { href: "/team",            label: "Team" },
