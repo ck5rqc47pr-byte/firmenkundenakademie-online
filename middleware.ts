@@ -6,7 +6,11 @@ export default withAuth({
   },
 });
 
-// Alle Routen schützen außer Login, API-Auth und statische Assets
+// Nur geschützte Routen absichern — öffentliche Seiten sind frei zugänglich
 export const config = {
-  matcher: ["/((?!login|api/auth|_next/static|_next/image|favicon.ico|downloads).*)"],
+  matcher: [
+    "/kompass/:path*",
+    "/trainer/:path*",
+    "/admin/:path*",
+  ],
 };
