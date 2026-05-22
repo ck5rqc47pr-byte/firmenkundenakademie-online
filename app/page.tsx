@@ -51,7 +51,7 @@ export default function HomePage() {
         <div className="mx-auto max-w-content px-6 lg:px-14 pt-16 pb-14 lg:pt-24 lg:pb-20">
           <div className="font-mono text-[11px] uppercase tracking-[0.1em] text-ink-3 mb-8 flex items-center gap-3">
             <span className="w-6 h-px bg-ink-3 inline-block" />
-            Firmenkundenakademie · Für Bereichsleiter Firmenkunden
+            FKB Campus · Für Bereichsleiter Firmenkunden
           </div>
           <h1
             className="font-serif text-[clamp(44px,7vw,96px)] font-normal leading-[0.95] tracking-[-0.035em] mb-8 max-w-4xl"
@@ -63,7 +63,7 @@ export default function HomePage() {
             </em>
           </h1>
           <p className="font-serif text-xl text-ink-2 leading-relaxed max-w-2xl mb-12">
-            Die Firmenkundenakademie ist ein praxisorientiertes Qualifizierungsprogramm
+            FKB Campus ist ein praxisorientiertes Qualifizierungsprogramm
             für Firmenkundenberater in Volksbanken und Raiffeisenbanken —
             wissenschaftlich fundiert, direkt auf den Beratungsalltag zugeschnitten.
           </p>
