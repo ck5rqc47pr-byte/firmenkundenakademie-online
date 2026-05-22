@@ -4,20 +4,21 @@ import Link from "next/link";
 import { useState } from "react";
 import { useSession, signOut } from "next-auth/react";
 
-const NAV_START = [
-  { href: "/", label: "Campus" },
-];
-
-const NAV_END = [
+// Öffentlich sichtbar (immer)
+const NAV_PUBLIC = [
+  { href: "/fuer-banken",     label: "Für Banken" },
+  { href: "/module",          label: "Programm" },
   { href: "/kompetenzmodell", label: "Kompetenzmodell" },
-  { href: "/module", label: "Programm" },
-  { href: "/quellen", label: "Quellen" },
-  { href: "/team", label: "Team" },
+  { href: "/team",            label: "Team" },
 ];
 
-const LERNREISE_NAV = { href: "/kompass", label: "Kompass" };
+// Nur für eingeloggte Nutzer
+const NAV_AUTH = [
+  { href: "/kompass", label: "Kompass" },
+];
+
 const TRAINER_NAV = { href: "/trainer", label: "Trainer" };
-const ADMIN_NAV = { href: "/admin", label: "Admin" };
+const ADMIN_NAV   = { href: "/admin",   label: "Admin" };
 
 const ROLE_LABEL: Record<string, string> = {
   admin: "Admin",
@@ -49,61 +50,56 @@ export function NavBar() {
 
         {/* Desktop nav */}
         <nav className="hidden items-center gap-8 md:flex">
-          {NAV_START.map(item => (
+          {NAV_PUBLIC.map(item => (
             <Link key={item.href} href={item.href}
               className="font-mono text-[11px] uppercase tracking-[0.08em] text-ink-2 transition hover:text-ink">
               {item.label}
             </Link>
           ))}
-          {session && (
-            <Link
-              href={LERNREISE_NAV.href}
-              className="font-mono text-[11px] uppercase tracking-[0.08em] text-ink-2 transition hover:text-ink"
-            >
-              {LERNREISE_NAV.label}
-            </Link>
-          )}
-          {NAV_END.map(item => (
+          {session && NAV_AUTH.map(item => (
             <Link key={item.href} href={item.href}
               className="font-mono text-[11px] uppercase tracking-[0.08em] text-ink-2 transition hover:text-ink">
               {item.label}
             </Link>
           ))}
           {(role === "trainer" || role === "admin") && (
-            <Link
-              href={TRAINER_NAV.href}
-              className="font-mono text-[11px] uppercase tracking-[0.08em] text-accent transition hover:text-accent/80"
-            >
+            <Link href={TRAINER_NAV.href}
+              className="font-mono text-[11px] uppercase tracking-[0.08em] text-accent transition hover:text-accent/80">
               {TRAINER_NAV.label}
             </Link>
           )}
           {role === "admin" && (
-            <Link
-              href={ADMIN_NAV.href}
-              className="font-mono text-[11px] uppercase tracking-[0.08em] text-accent transition hover:text-accent/80"
-            >
+            <Link href={ADMIN_NAV.href}
+              className="font-mono text-[11px] uppercase tracking-[0.08em] text-accent transition hover:text-accent/80">
               {ADMIN_NAV.label}
             </Link>
           )}
         </nav>
 
-        {/* Session info + Logout (Desktop) */}
-        {session && (
-          <div className="hidden md:flex items-center gap-4">
-            <span className="font-mono text-[10px] uppercase tracking-[0.1em] text-ink-3">
-              {session.user?.name ?? session.user?.email}
-              {role && (
-                <span className="ml-1.5 text-accent">· {ROLE_LABEL[role] ?? role}</span>
-              )}
-            </span>
-            <button
-              onClick={() => signOut({ callbackUrl: "/login" })}
-              className="font-mono text-[10px] uppercase tracking-[0.1em] text-ink-3 hover:text-ink transition"
+        {/* Rechte Seite: Login-CTA oder Session-Info */}
+        <div className="hidden md:flex items-center gap-4">
+          {session ? (
+            <>
+              <span className="font-mono text-[10px] uppercase tracking-[0.1em] text-ink-3">
+                {session.user?.name ?? session.user?.email}
+                {role && <span className="ml-1.5 text-accent">· {ROLE_LABEL[role] ?? role}</span>}
+              </span>
+              <button
+                onClick={() => signOut({ callbackUrl: "/login" })}
+                className="font-mono text-[10px] uppercase tracking-[0.1em] text-ink-3 hover:text-ink transition"
+              >
+                Abmelden
+              </button>
+            </>
+          ) : (
+            <Link
+              href="/login"
+              className="font-mono text-[11px] uppercase tracking-[0.08em] px-4 py-2 bg-ink text-bg hover:bg-ink-2 transition"
             >
-              Abmelden
-            </button>
-          </div>
-        )}
+              Anmelden
+            </Link>
+          )}
+        </div>
 
         {/* Mobile hamburger */}
         <button
@@ -119,61 +115,53 @@ export function NavBar() {
       {open && (
         <div className="md:hidden border-t border-ink bg-bg">
           <nav className="mx-auto max-w-content px-6 py-4 flex flex-col gap-5">
-            {NAV_START.map(item => (
-              <Link
-                key={item.href}
-                href={item.href}
+            {/* Öffentliche Links */}
+            {NAV_PUBLIC.map(item => (
+              <Link key={item.href} href={item.href}
                 className="font-mono text-[11px] uppercase tracking-[0.08em] text-ink-2 hover:text-ink transition"
-                onClick={() => setOpen(false)}
-              >
+                onClick={() => setOpen(false)}>
                 {item.label}
               </Link>
             ))}
-            {session && (
-              <Link
-                href={LERNREISE_NAV.href}
+            {/* Auth-Links */}
+            {session && NAV_AUTH.map(item => (
+              <Link key={item.href} href={item.href}
                 className="font-mono text-[11px] uppercase tracking-[0.08em] text-ink-2 hover:text-ink transition"
-                onClick={() => setOpen(false)}
-              >
-                {LERNREISE_NAV.label}
-              </Link>
-            )}
-            {NAV_END.map(item => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="font-mono text-[11px] uppercase tracking-[0.08em] text-ink-2 hover:text-ink transition"
-                onClick={() => setOpen(false)}
-              >
+                onClick={() => setOpen(false)}>
                 {item.label}
               </Link>
             ))}
             {(role === "trainer" || role === "admin") && (
-              <Link
-                href={TRAINER_NAV.href}
+              <Link href={TRAINER_NAV.href}
                 className="font-mono text-[11px] uppercase tracking-[0.08em] text-accent hover:text-accent/80 transition"
-                onClick={() => setOpen(false)}
-              >
+                onClick={() => setOpen(false)}>
                 {TRAINER_NAV.label}
               </Link>
             )}
             {role === "admin" && (
-              <Link
-                href={ADMIN_NAV.href}
+              <Link href={ADMIN_NAV.href}
                 className="font-mono text-[11px] uppercase tracking-[0.08em] text-accent hover:text-accent/80 transition"
-                onClick={() => setOpen(false)}
-              >
+                onClick={() => setOpen(false)}>
                 {ADMIN_NAV.label}
               </Link>
             )}
-            {session && (
-              <button
-                onClick={() => signOut({ callbackUrl: "/login" })}
-                className="text-left font-mono text-[11px] uppercase tracking-[0.08em] text-ink-3 hover:text-ink transition"
-              >
-                Abmelden ({session.user?.name ?? session.user?.email})
-              </button>
-            )}
+            {/* Trennlinie */}
+            <div className="border-t border-line pt-3">
+              {session ? (
+                <button
+                  onClick={() => signOut({ callbackUrl: "/login" })}
+                  className="text-left font-mono text-[11px] uppercase tracking-[0.08em] text-ink-3 hover:text-ink transition"
+                >
+                  Abmelden · {session.user?.name ?? session.user?.email}
+                </button>
+              ) : (
+                <Link href="/login"
+                  className="font-mono text-[11px] uppercase tracking-[0.08em] px-4 py-2 bg-ink text-bg inline-block"
+                  onClick={() => setOpen(false)}>
+                  Anmelden
+                </Link>
+              )}
+            </div>
           </nav>
         </div>
       )}
