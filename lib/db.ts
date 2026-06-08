@@ -201,6 +201,85 @@ export async function getQuizStats(): Promise<QuizStats[]> {
   return rows as QuizStats[];
 }
 
+// ── Suggestions (Verbesserungsvorschläge) ─────────────────────────────────
+
+export type SuggestionType = "inhalt" | "fehler" | "beispiel" | "sonstiges";
+export type SuggestionStatus = "offen" | "in_bearbeitung" | "umgesetzt" | "abgelehnt";
+
+export interface Suggestion {
+  id: string;
+  user_id: string;
+  user_name: string | null;
+  module_id: string;
+  type: SuggestionType;
+  message: string;
+  status: SuggestionStatus;
+  admin_note: string | null;
+  created_at: string;
+  updated_at: string;
+}
+
+export async function ensureSuggestionsTable(): Promise<void> {
+  await sql`
+    CREATE TABLE IF NOT EXISTS suggestions (
+      id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+      user_id text NOT NULL,
+      user_name text,
+      module_id text NOT NULL,
+      type text NOT NULL DEFAULT 'sonstiges',
+      message text NOT NULL,
+      status text NOT NULL DEFAULT 'offen',
+      admin_note text,
+      created_at timestamptz NOT NULL DEFAULT now(),
+      updated_at timestamptz NOT NULL DEFAULT now()
+    )
+  `;
+}
+
+export async function createSuggestion(
+  userId: string,
+  userName: string | null,
+  moduleId: string,
+  type: SuggestionType,
+  message: string
+): Promise<void> {
+  await sql`
+    INSERT INTO suggestions (user_id, user_name, module_id, type, message)
+    VALUES (${userId}, ${userName}, ${moduleId}, ${type}, ${message})
+  `;
+}
+
+export async function getAllSuggestions(): Promise<Suggestion[]> {
+  const rows = await sql`
+    SELECT * FROM suggestions ORDER BY created_at DESC
+  `;
+  return rows as Suggestion[];
+}
+
+export async function updateSuggestionStatus(
+  id: string,
+  status: SuggestionStatus,
+  adminNote?: string
+): Promise<void> {
+  await sql`
+    UPDATE suggestions
+    SET status = ${status},
+        admin_note = ${adminNote ?? null},
+        updated_at = now()
+    WHERE id = ${id}
+  `;
+}
+
+export async function getSuggestionCounts(): Promise<{ offen: number; gesamt: number }> {
+  const rows = await sql`
+    SELECT
+      COUNT(*)::int AS gesamt,
+      COUNT(*) FILTER (WHERE status = 'offen')::int AS offen
+    FROM suggestions
+  `;
+  return (rows[0] as { offen: number; gesamt: number }) ?? { offen: 0, gesamt: 0 };
+}
+
 // ── Competence Assessment ──────────────────────────────────────────────────
 
 export interface CompetenceEntry {
