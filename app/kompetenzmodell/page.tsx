@@ -436,7 +436,7 @@ export default function KompetenzmodellPage() {
           ))}
         </div>
         <p className="mt-12 font-mono text-[10px] uppercase tracking-[0.08em] text-ink-3 text-center">
-          Firmenkundenakademie · Benedikt Zoller Coaching · Kompetenzmodell v1.0
+          Firmenkundenakademie · FKB Campus · Kompetenzmodell v1.0
         </p>
       </div>
     </div>

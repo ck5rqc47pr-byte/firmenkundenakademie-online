@@ -25,7 +25,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           </main>
           <footer className="border-t border-line">
             <div className="mx-auto flex max-w-content flex-col gap-3 px-6 py-8 lg:flex-row lg:items-center lg:justify-between lg:px-14">
-              <p className="font-mono text-[11px] uppercase tracking-[0.08em] text-ink-3">© Benedikt Zoller Coaching</p>
+              <p className="font-mono text-[11px] uppercase tracking-[0.08em] text-ink-3">© FKB Campus</p>
               <div className="flex gap-6">
                 <Link href="/impressum" className="font-mono text-[11px] uppercase tracking-[0.08em] text-ink-3 transition hover:text-ink">
                   Impressum
