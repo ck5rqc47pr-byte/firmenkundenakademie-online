@@ -262,7 +262,7 @@ export default function TeamPage() {
             </p>
           </div>
           <a
-            href="mailto:info@benedikt-zoller.de"
+            href="mailto:kreisel-sendung7x@icloud.com"
             className="inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.08em] bg-primary text-white px-6 py-3 hover:bg-primary/90 transition shrink-0"
           >
             Kontakt aufnehmen →

@@ -69,7 +69,7 @@ export default function HomePage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <a
-              href="mailto:info@benedikt-zoller.de?subject=Firmenkundenakademie – Interesse"
+              href="mailto:kreisel-sendung7x@icloud.com?subject=Firmenkundenakademie – Interesse"
               className="inline-flex items-center gap-3 bg-primary text-white px-7 py-4 font-mono text-[11px] uppercase tracking-[0.08em] hover:bg-primary/90 transition-all"
             >
               Gespräch vereinbaren →
@@ -350,7 +350,7 @@ export default function HomePage() {
           </div>
           <div className="flex flex-col gap-4">
             <a
-              href="mailto:info@benedikt-zoller.de?subject=Firmenkundenakademie – Gesprächsanfrage"
+              href="mailto:kreisel-sendung7x@icloud.com?subject=Firmenkundenakademie – Gesprächsanfrage"
               className="inline-flex items-center justify-center gap-3 bg-white text-primary px-8 py-5 font-mono text-[11px] uppercase tracking-[0.08em] hover:bg-white/90 transition-all"
             >
               Per E-Mail melden →
