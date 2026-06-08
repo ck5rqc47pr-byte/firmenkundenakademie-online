@@ -17,6 +17,7 @@ import { getProgressForUser, getFeedbackForUser, getLatestQuizResult } from "@/l
 import { getQuizForModule } from "@/lib/quizzes";
 import { actionMarkCompleted, actionUnmarkCompleted, actionSubmitFeedback } from "./actions";
 import { QuizSection } from "./QuizSection";
+import { SuggestionForm } from "@/components/SuggestionForm";
 
 export const dynamic = "force-dynamic";
 
@@ -216,6 +217,13 @@ export default async function ModuleDetailPage({ params }: { params: { id: strin
                 {existingFeedback ? "Rückmeldung aktualisieren" : "Rückmeldung abschicken →"}
               </button>
             </form>
+          </div>
+        )}
+
+        {/* Verbesserungsvorschläge */}
+        {userId && (
+          <div className="mt-6">
+            <SuggestionForm moduleId={module.id} />
           </div>
         )}
 

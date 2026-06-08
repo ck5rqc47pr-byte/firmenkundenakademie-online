@@ -308,6 +308,43 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ── FEEDBACK-VERSPRECHEN ─────────────────────────────────────────── */}
+      <section className="border-b border-ink bg-bg">
+        <div className="mx-auto max-w-content px-6 lg:px-14 py-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <div className="font-mono text-[10px] uppercase tracking-[0.1em] text-accent mb-5 flex items-center gap-2">
+                <span className="w-4 h-px inline-block bg-accent" />
+                Lebendiges Programm
+              </div>
+              <h2 className="font-serif text-[clamp(28px,4vw,44px)] font-normal leading-[1.1] tracking-[-0.02em] mb-5">
+                Jeder Hinweis zählt.{" "}
+                <em className="italic text-ink-2">Garantiert.</em>
+              </h2>
+              <p className="font-serif text-lg text-ink-2 leading-relaxed">
+                Der FKB Campus wächst durch das Feedback derer, die ihn nutzen.
+                Jeder Verbesserungsvorschlag wird geprüft — kritische Fehler sofort
+                korrigiert, alle anderen Hinweise innerhalb von 5 Werktagen bestätigt
+                und im nächsten Revisionszyklus umgesetzt.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-0 border border-line divide-y sm:divide-y-0 sm:divide-x divide-line">
+              {[
+                { kennzahl: "5 WT",    label: "Bestätigung",        sub: "Jeder Hinweis wird innerhalb von 5 Werktagen geprüft" },
+                { kennzahl: "Sofort",  label: "Bei krit. Fehlern",  sub: "Falsche Zahlen oder Regulatorik werden umgehend korrigiert" },
+                { kennzahl: "100 %",   label: "Transparenz",        sub: "Jede Änderung ist im Changelog der Modulversion sichtbar" },
+              ].map((item) => (
+                <div key={item.kennzahl} className="p-6">
+                  <div className="font-serif text-3xl text-primary mb-1">{item.kennzahl}</div>
+                  <div className="font-mono text-[10px] uppercase tracking-[0.07em] text-ink-2 mb-2">{item.label}</div>
+                  <p className="font-serif text-[13px] text-ink-3 leading-snug">{item.sub}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── EMPFOHLENE MODULE ─────────────────────────────────────────────── */}
       <section className="border-b border-ink">
         <div className="mx-auto max-w-content px-6 lg:px-14 py-16">
