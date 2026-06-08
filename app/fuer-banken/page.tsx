@@ -72,7 +72,7 @@ export default function FuerBankenPage() {
 
         <div className="flex flex-col sm:flex-row gap-4">
           <a
-            href="mailto:info@benedikt-zoller.de?subject=Firmenkundenakademie – Interesse"
+            href="mailto:kreisel-sendung7x@icloud.com?subject=Firmenkundenakademie – Interesse"
             className="inline-flex items-center gap-3 bg-primary text-white px-7 py-4 font-mono text-[11px] uppercase tracking-[0.08em] hover:bg-primary/90 transition-all"
           >
             Gespräch vereinbaren →
@@ -332,7 +332,7 @@ export default function FuerBankenPage() {
           </div>
           <div className="flex flex-col gap-4">
             <a
-              href="mailto:info@benedikt-zoller.de?subject=Firmenkundenakademie – Gesprächsanfrage"
+              href="mailto:kreisel-sendung7x@icloud.com?subject=Firmenkundenakademie – Gesprächsanfrage"
               className="inline-flex items-center justify-center gap-3 bg-white text-primary px-8 py-5 font-mono text-[11px] uppercase tracking-[0.08em] hover:bg-white/90 transition-all"
             >
               Per E-Mail melden →
@@ -344,7 +344,7 @@ export default function FuerBankenPage() {
               Alle 21 Module ansehen
             </Link>
             <p className="font-mono text-[10px] text-white/40 uppercase tracking-[0.06em] text-center pt-2">
-              Benedikt Zoller Coaching · info@benedikt-zoller.de
+              Benedikt Zoller Coaching · kreisel-sendung7x@icloud.com
             </p>
           </div>
         </div>
