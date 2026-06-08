@@ -5,7 +5,7 @@ export default function ImpressumPage() {
       <h1 className="mt-3 text-4xl font-semibold text-primary">Impressum</h1>
       <div className="mt-6 space-y-4 text-slate-700">
         <p>
-          Benedikt Zoller Coaching
+          FKB Campus
           <br />
           Firmenkundenakademie
         </p>

@@ -344,7 +344,7 @@ export default function FuerBankenPage() {
               Alle 21 Module ansehen
             </Link>
             <p className="font-mono text-[10px] text-white/40 uppercase tracking-[0.06em] text-center pt-2">
-              Benedikt Zoller Coaching · kreisel-sendung7x@icloud.com
+              FKB Campus · kreisel-sendung7x@icloud.com
             </p>
           </div>
         </div>

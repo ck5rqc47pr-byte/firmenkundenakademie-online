@@ -6,7 +6,7 @@
 ## Projektauftrag
 
 Baue eine öffentlich zugängliche Online-Lernplattform für die
-„Firmenkundenakademie" von Benedikt Zoller Coaching. Die Plattform
+„Firmenkundenakademie" von FKB Campus. Die Plattform
 richtet sich an Firmenkundenberater von Volksbanken/Raiffeisenbanken
 und vermarktet wissenschaftlich fundierte Weiterbildungsmodule.
 
@@ -164,7 +164,7 @@ interface Module {
   Gesprächsführung) mit Modulanzahl und Kurztext
 - Abschnitt „Wie die Akademie funktioniert" (3 Schritte: Modul wählen
   → Video + Unterlagen → Transfer in die Praxis)
-- Footer: © Benedikt Zoller Coaching | Impressum | Datenschutz
+- Footer: © FKB Campus | Impressum | Datenschutz
 
 ### Modulübersicht `/module`
 - Filterleiste: Kompetenzfeld (Dropdown), Stufe (Tabs:
