@@ -137,51 +137,69 @@ export default function HomePage() {
       </section>
 
       {/* ── ETAPPEN ───────────────────────────────────────────────────────── */}
-      <section className="border-b border-line bg-bg-2">
-        <div className="mx-auto max-w-content px-6 lg:px-14 py-20">
+      <section className="border-b border-ink">
+        <div className="mx-auto max-w-content px-6 lg:px-14 pt-16 pb-12">
           <div className="font-mono text-[10px] uppercase tracking-[0.1em] text-ink-3 mb-5 flex items-center gap-2">
             <span className="w-4 h-px inline-block bg-ink-3" />
             Das Programm
           </div>
-          <h2 className="font-serif text-3xl lg:text-4xl font-normal tracking-[-0.02em] leading-tight mb-16 max-w-xl">
+          <h2 className="font-serif text-3xl lg:text-4xl font-normal tracking-[-0.02em] leading-tight max-w-xl">
             Drei Etappen. Ein klarer{" "}
             <em className="italic text-ink-2">Entwicklungspfad.</em>
           </h2>
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-            {ETAPPEN.map((e) => (
-              <div
-                key={e.nr}
-                className={`border border-line p-8 ${e.nr === 3 ? "bg-primary text-white border-primary" : "bg-bg"}`}
-              >
-                <div className={`font-mono text-[10px] uppercase tracking-[0.1em] mb-6 flex items-center gap-2 ${e.nr === 3 ? "text-white/50" : "text-ink-3"}`}>
-                  <span className={`w-5 h-5 rounded-full border flex items-center justify-center text-[9px] ${e.nr === 3 ? "border-white/30 text-white/50" : "border-ink-3 text-ink-3"}`}>
-                    {e.nr}
-                  </span>
-                  Etappe {e.nr}
+        </div>
+        <div className="mx-auto max-w-content border-t border-ink">
+          <div className="grid grid-cols-1 lg:grid-cols-3">
+            {ETAPPEN.map((e, i) => {
+              const isDark   = i === 2;
+              const isAccent = i === 1;
+              const numerals = ["I.", "II.", "III."];
+              return (
+                <div
+                  key={e.nr}
+                  className={`px-8 lg:px-10 pt-10 pb-12 ${i < 2 ? "border-b lg:border-b-0 lg:border-r border-ink" : ""}`}
+                  style={{ background: isDark ? "var(--primary)" : isAccent ? "var(--accent)" : "var(--bg-2)" }}
+                >
+                  {/* Roman numeral */}
+                  <div
+                    className="font-serif text-[54px] leading-none italic mb-5"
+                    style={{ color: isDark ? "var(--accent)" : "var(--primary)" }}
+                  >
+                    {numerals[i]}
+                  </div>
+                  {/* Eyebrow */}
+                  <div className={`font-mono text-[9px] uppercase tracking-[0.1em] mb-2 ${isDark ? "text-white/40" : "text-ink-3"}`}>
+                    Etappe {e.nr}
+                  </div>
+                  {/* Title */}
+                  <h3 className={`font-serif text-2xl font-normal tracking-[-0.01em] mb-1 ${isDark ? "text-white" : "text-ink"}`}>
+                    {e.titel}
+                  </h3>
+                  <div className={`font-mono text-[9px] uppercase tracking-[0.06em] mb-5 ${isDark ? "text-white/40" : "text-ink-3"}`}>
+                    {e.count} Module · Zielstufe: {e.sub}
+                  </div>
+                  <div className={`h-px mb-5 ${isDark ? "bg-white/15" : "bg-ink/20"}`} />
+                  {/* Description */}
+                  <p className={`font-serif text-[15px] leading-relaxed mb-6 ${isDark ? "text-white/60" : "text-ink-2"}`}>
+                    {e.beschreibung}
+                  </p>
+                  <div className={`h-px mb-5 ${isDark ? "bg-white/15" : "bg-line"}`} />
+                  {/* Module list */}
+                  <div className="space-y-1.5">
+                    {e.module.slice(0, 4).map((m) => (
+                      <div key={m} className={`flex items-center gap-2 font-mono text-[10px] ${isDark ? "text-white/40" : "text-ink-3"}`}>
+                        <span>—</span><span>{m}</span>
+                      </div>
+                    ))}
+                    {e.module.length > 4 && (
+                      <div className={`font-mono text-[10px] font-medium ${isDark ? "text-white/30" : "text-ink-3"}`}>
+                        + {e.module.length - 4} weitere
+                      </div>
+                    )}
+                  </div>
                 </div>
-                <h3 className={`font-serif text-2xl font-normal tracking-[-0.01em] mb-1 ${e.nr === 3 ? "text-white" : "text-ink"}`}>
-                  {e.titel}
-                </h3>
-                <div className={`font-mono text-[10px] uppercase tracking-[0.06em] mb-5 ${e.nr === 3 ? "text-white/40" : "text-ink-3"}`}>
-                  {e.count} Module · Zielstufe: {e.sub}
-                </div>
-                <p className={`font-serif text-[15px] leading-relaxed mb-6 ${e.nr === 3 ? "text-white/60" : "text-ink-2"}`}>
-                  {e.beschreibung}
-                </p>
-                <div className={`pt-5 border-t ${e.nr === 3 ? "border-white/15" : "border-line"} space-y-1.5`}>
-                  {e.module.slice(0, 4).map((m) => (
-                    <div key={m} className={`flex items-center gap-2 font-mono text-[10px] ${e.nr === 3 ? "text-white/40" : "text-ink-3"}`}>
-                      <span>—</span><span>{m}</span>
-                    </div>
-                  ))}
-                  {e.module.length > 4 && (
-                    <div className={`font-mono text-[10px] ${e.nr === 3 ? "text-white/30" : "text-ink-3/60"}`}>
-                      + {e.module.length - 4} weitere
-                    </div>
-                  )}
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
