@@ -255,7 +255,7 @@ export default async function AdminPage() {
             <div><strong className="text-ink">Vollst.</strong> – KERN + ERGÄNZUNG: Sec 2 (Wissenschaft), Sec 3+6 (Trainer + Evaluation)</div>
             <div><strong className="text-ink">P-Rev.</strong> – Praxis-Review durch Armin (FK-Berater, 25 J. Erfahrung)</div>
             <div><strong className="text-ink">W-Rev.</strong> – Wissenschaftliches Review durch Prof. Brandt</div>
-            <div><strong className="text-ink">Sim.</strong> – Workshop-Simulation mit Teilnehmer-Personas; Feedback ausgewertet</div>
+            <div><strong className="text-ink">Sim.</strong> – Workshop-Simulation abgeschlossen UND Verbesserungsvorschläge ins Modul eingearbeitet</div>
           </div>
         </div>
       </div>
