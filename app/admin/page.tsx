@@ -56,9 +56,7 @@ export default async function AdminPage() {
   const total = allModules.length;
 
   // Statistiken
-  const vollstaendig = allModules.filter(
-    (m) => m.content_trainer?.trim() && m.content_theorie?.trim()
-  ).length;
+  const vollstaendig = allModules.filter((m) => m.ergaenzung).length;
   const kernFertig = allModules.filter((m) => m.content?.trim()).length;
   const praxisDone = allModules.filter((m) => m.praxis_review).length;
   const wissDone = allModules.filter((m) => m.wiss_review).length;
@@ -219,8 +217,7 @@ export default async function AdminPage() {
               {/* Zeilen */}
               {modules.map((m, i) => {
                 const hasKern = Boolean(m.content?.trim());
-                const hasErgaenzung = Boolean(m.content_trainer?.trim() && m.content_theorie?.trim());
-                const vollstaendig = hasKern && hasErgaenzung;
+                const vollstaendig = m.ergaenzung;
                 const pdfUrl = getParticipantHandoutPdfUrl(m.id);
                 const even = i % 2 === 0;
 
@@ -268,6 +265,7 @@ export default async function AdminPage() {
                     {/* Vollständig (KERN + ERGÄNZUNG) */}
                     <div className="px-3 py-3">
                       <Check ok={vollstaendig} label={vollstaendig ? "Ja" : hasKern ? "KERN" : "–"} />
+
                     </div>
 
                     {/* Praxis-Review */}

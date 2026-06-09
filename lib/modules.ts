@@ -19,6 +19,7 @@ export interface Module {
   youtube_id: string;
   praxis_review: boolean;    // Praxis-Review durch Armin abgeschlossen
   wiss_review: boolean;      // Wissenschaftliches Review durch Prof. Brandt abgeschlossen
+  ergaenzung: boolean;       // Sec 2 + 3 + 6 fertig (Wissenschaft, Trainerhandbuch, Evaluation)
   lernziele: { text: string; bloom_stufe: 1 | 2 | 3 | 4 | 5 | 6 }[];
   content: string;
   content_theorie: string;   // Sec 2 – Wissenschaftliche Einordnung (alle Rollen)
@@ -282,6 +283,7 @@ function parseModule(filename: string): Module {
     youtube_id: String(data.youtube_id ?? ""),
     praxis_review: Boolean(data.praxis_review),
     wiss_review: Boolean(data.wiss_review),
+    ergaenzung: Boolean(data.ergaenzung),
     lernziele: normalizeLernziele(data.lernziele, fallbackBloomLevel),
     slug: String(data.id),
     content,
