@@ -59,6 +59,7 @@ export default async function AdminPage() {
   const kernFertig   = allModules.filter((m) => m.content?.trim()).length;
   const praxisDone   = allModules.filter((m) => m.praxis_review).length;
   const wissDone     = allModules.filter((m) => m.wiss_review).length;
+  const simDone      = allModules.filter((m) => m.sim_review).length;
   const mitPdf       = allModules.filter((m) => getParticipantHandoutPdfUrl(m.id)).length;
 
   const grouped = FIELD_ORDER.reduce<Record<string, typeof allModules>>(
@@ -111,13 +112,14 @@ export default async function AdminPage() {
       <div className="max-w-[1400px] mx-auto px-4 sm:px-8 py-8">
 
         {/* ── KPI-Kacheln ─────────────────────────────────────────────── */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 mb-8">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-3 mb-8">
           {[
             { label: "Module gesamt", value: total,        sub: "22 geplant" },
             { label: "Vollständig",   value: vollstaendig, sub: "Sec 1–7",      highlight: vollstaendig === total },
             { label: "KERN fertig",   value: kernFertig,   sub: "Sec 1,4,5,7" },
             { label: "Praxis-Review", value: praxisDone,   sub: `von ${total}` },
             { label: "Wiss.-Review",  value: wissDone,     sub: `von ${total}` },
+            { label: "Sim.-Review",   value: simDone,      sub: `von ${total}` },
             { label: "PDF bereit",    value: mitPdf,       sub: "Workbook" },
           ].map((kpi) => (
             <div
@@ -137,11 +139,12 @@ export default async function AdminPage() {
 
         {/* ── Fortschrittsbalken ──────────────────────────────────────── */}
         <div className="bg-white border border-line p-5 mb-8">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-5">
+          <div className="grid grid-cols-2 lg:grid-cols-5 gap-5">
             {[
               { label: "Vollständigkeit", done: vollstaendig, total },
               { label: "Praxis-Review",   done: praxisDone,   total },
               { label: "Wiss.-Review",    done: wissDone,     total },
+              { label: "Sim.-Review",     done: simDone,      total },
               { label: "PDF",             done: mitPdf,       total },
             ].map((bar) => (
               <div key={bar.label}>
@@ -180,8 +183,8 @@ export default async function AdminPage() {
               {/* Scrollbarer Tabellencontainer */}
               <div className="overflow-x-auto">
                 {/* Kopfzeile */}
-                <div className="grid grid-cols-[60px_minmax(140px,1fr)_80px_80px_70px_70px_70px_70px_56px] min-w-[700px] bg-primary text-white text-[10px] font-mono uppercase tracking-[0.08em]">
-                  {["ID", "Titel", "Version", "Stufe", "KERN", "Vollst.", "P-Rev.", "W-Rev.", "PDF"].map((h) => (
+                <div className="grid grid-cols-[60px_minmax(140px,1fr)_80px_80px_70px_70px_70px_70px_70px_56px] min-w-[700px] bg-primary text-white text-[10px] font-mono uppercase tracking-[0.08em]">
+                  {["ID", "Titel", "Version", "Stufe", "KERN", "Vollst.", "P-Rev.", "W-Rev.", "Sim.", "PDF"].map((h) => (
                     <div key={h} className="px-3 py-2.5">{h}</div>
                   ))}
                 </div>
@@ -196,7 +199,7 @@ export default async function AdminPage() {
                   return (
                     <div
                       key={m.id}
-                      className={`grid grid-cols-[60px_minmax(140px,1fr)_80px_80px_70px_70px_70px_70px_56px] min-w-[700px] border-t border-line items-center ${even ? "bg-white" : "bg-bg-2"}`}
+                      className={`grid grid-cols-[60px_minmax(140px,1fr)_80px_80px_70px_70px_70px_70px_70px_56px] min-w-[700px] border-t border-line items-center ${even ? "bg-white" : "bg-bg-2"}`}
                     >
                       <div className="px-3 py-3">
                         <Link href={`/module/${m.id}`} className="font-mono text-[11px] font-semibold text-primary hover:underline">
@@ -227,6 +230,9 @@ export default async function AdminPage() {
                         <Check ok={m.wiss_review} />
                       </div>
                       <div className="px-3 py-3">
+                        <Check ok={m.sim_review} />
+                      </div>
+                      <div className="px-3 py-3">
                         {pdfUrl ? (
                           <a href={pdfUrl} className="font-mono text-[10px] text-primary hover:underline" target="_blank">PDF</a>
                         ) : (
@@ -249,6 +255,7 @@ export default async function AdminPage() {
             <div><strong className="text-ink">Vollst.</strong> – KERN + ERGÄNZUNG: Sec 2 (Wissenschaft), Sec 3+6 (Trainer + Evaluation)</div>
             <div><strong className="text-ink">P-Rev.</strong> – Praxis-Review durch Armin (FK-Berater, 25 J. Erfahrung)</div>
             <div><strong className="text-ink">W-Rev.</strong> – Wissenschaftliches Review durch Prof. Brandt</div>
+            <div><strong className="text-ink">Sim.</strong> – Workshop-Simulation mit Teilnehmer-Personas; Feedback ausgewertet</div>
           </div>
         </div>
       </div>
