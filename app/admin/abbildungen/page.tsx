@@ -74,7 +74,7 @@ export default async function AbbildungenPage() {
     <div className="min-h-screen bg-bg-2">
       {/* Header */}
       <div className="bg-primary border-b border-ink">
-        <div className="max-w-[1400px] mx-auto px-8 py-6 flex items-center justify-between">
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-8 py-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
           <div>
             <div className="font-mono text-[10px] uppercase tracking-[0.12em] text-white/50 mb-1">
               Admin-Konsole
@@ -83,7 +83,7 @@ export default async function AbbildungenPage() {
               Abbildungen
             </h1>
           </div>
-          <div className="flex gap-4">
+          <div className="flex flex-wrap gap-4">
             <Link href="/admin" className="font-mono text-[10px] uppercase tracking-[0.08em] text-white/60 hover:text-white transition-colors">
               ← Modulübersicht
             </Link>
@@ -97,10 +97,10 @@ export default async function AbbildungenPage() {
         </div>
       </div>
 
-      <div className="max-w-[1400px] mx-auto px-8 py-10">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-8 py-8">
 
         {/* Status-Bar */}
-        <div className="grid grid-cols-3 gap-4 mb-10">
+        <div className="grid grid-cols-3 gap-3 mb-8">
           <div className="bg-white border border-line p-4">
             <div className="font-mono text-[10px] uppercase tracking-[0.08em] text-ink-3 mb-2">Abbildungen gesamt</div>
             <div className="font-serif text-3xl text-ink">{gesamt}</div>
@@ -120,7 +120,7 @@ export default async function AbbildungenPage() {
           {ABBILDUNGEN.map((a) => (
             <div key={a.id} className="bg-white border border-line">
               {/* Meta-Kopf */}
-              <div className="px-6 py-4 border-b border-line flex items-start justify-between gap-6">
+              <div className="px-4 sm:px-6 py-4 border-b border-line flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
                 <div>
                   <div className="flex items-center gap-3 mb-1">
                     <span className="font-mono text-[10px] uppercase tracking-[0.08em] text-ink-3">{a.id}</span>
@@ -129,13 +129,13 @@ export default async function AbbildungenPage() {
                     </span>
                   </div>
                   <h2 className="font-serif text-xl font-normal text-ink">{a.titel}</h2>
-                  <p className="font-serif text-[14px] text-ink-2 mt-1 leading-snug max-w-2xl">{a.beschreibung}</p>
+                  <p className="font-serif text-[14px] text-ink-2 mt-1 leading-snug">{a.beschreibung}</p>
                 </div>
-                <div className="shrink-0 text-right">
+                <div className="sm:shrink-0 sm:text-right">
                   <div className="font-mono text-[9px] uppercase tracking-[0.06em] text-ink-3 mb-1">Quelle</div>
                   <div className="font-mono text-[11px] text-ink-2">{a.quelle}</div>
                   <div className="font-mono text-[9px] uppercase tracking-[0.06em] text-ink-3 mt-3 mb-1">Verwendet in</div>
-                  <div className="flex gap-1 justify-end flex-wrap">
+                  <div className="flex gap-1 sm:justify-end flex-wrap">
                     {a.verwendung.map((v) => (
                       <span key={v} className="font-mono text-[9px] uppercase tracking-[0.04em] px-2 py-0.5 bg-bg-2 text-ink-3 border border-line">
                         {v}
@@ -147,7 +147,7 @@ export default async function AbbildungenPage() {
 
               {/* Vorschau */}
               {a.datei ? (
-                <div className="p-6 bg-bg-2">
+                <div className="p-4 sm:p-6 bg-bg-2">
                   <img
                     src={a.datei}
                     alt={a.titel}
@@ -165,7 +165,7 @@ export default async function AbbildungenPage() {
                   </div>
                 </div>
               ) : (
-                <div className="p-6 bg-bg-2 flex items-center justify-center" style={{ minHeight: 120 }}>
+                <div className="p-4 sm:p-6 bg-bg-2 flex items-center justify-center" style={{ minHeight: 100 }}>
                   <span className="font-mono text-[10px] uppercase tracking-[0.08em] text-ink-3">
                     Noch nicht erstellt
                   </span>
