@@ -19,137 +19,162 @@
        CARD GRID: 3 cols × 2 rows
        Col x: 40, 307, 574   Width: 247
        Row y: 55, 295         Height: 225
+       Inner padding: 15px each side
+       Seg positions per card (inner x, 3×72px + 1px remainder on seg3):
+         Card x=40:  55 / 127 / 199  (width 72/72/73)
+         Card x=307: 322 / 394 / 466 (width 72/72/73)
+         Card x=574: 589 / 661 / 733 (width 72/72/73)
        ══════════════════════════════════════════════ -->
 
-  <!-- ─── CARD 1: EK-Quote (top-left) ─── -->
+  <!-- ─── CARD 1: EK-Quote ─── -->
   <rect x="40" y="55" width="247" height="225" fill="#FFFFFF" stroke="#E2E3E8" stroke-width="1"/>
-  <!-- Top bar: primary -->
   <rect x="40" y="55" width="247" height="4" fill="#1F2C56"/>
-  <!-- Content -->
   <text x="55" y="82" class="serif" font-size="16" fill="#1F2C56" font-weight="500">EK-Quote</text>
   <text x="55" y="98" class="mono" font-size="9" fill="#7A8099" letter-spacing="1">EIGENKAPITALQUOTE</text>
   <line x1="55" y1="108" x2="272" y2="108" stroke="#E2E3E8" stroke-width="1"/>
-  <text x="55" y="124" class="mono" font-size="11" fill="#3D4460" font-style="italic">Eigenkapital</text>
-  <line x1="55" y1="130" x2="200" y2="130" stroke="#3D4460" stroke-width="1"/>
-  <text x="55" y="144" class="mono" font-size="11" fill="#3D4460" font-style="italic">Bilanzsumme</text>
-  <text x="210" y="136" class="mono" font-size="14" fill="#3D4460">× 100</text>
+  <!-- Formula -->
+  <text x="55" y="124" class="mono" font-size="9" fill="#3D4460" font-style="italic">Eigenkapital</text>
+  <line x1="55" y1="130" x2="192" y2="130" stroke="#3D4460" stroke-width="1"/>
+  <text x="55" y="144" class="mono" font-size="9" fill="#3D4460" font-style="italic">Bilanzsumme</text>
+  <text x="200" y="139" class="mono" font-size="12" fill="#3D4460">× 100</text>
+  <!-- Separator -->
   <line x1="55" y1="155" x2="272" y2="155" stroke="#E2E3E8" stroke-width="1"/>
-  <text x="55" y="170" class="mono" font-size="8" fill="#7A8099" letter-spacing="1">BENCHMARK</text>
-  <text x="55" y="186" class="mono" font-size="9" fill="#15192B" letter-spacing="0.5">&gt; 30 %  ·  15–30 %  ·  &lt; 15 %</text>
-  <line x1="55" y1="197" x2="272" y2="197" stroke="#E2E3E8" stroke-width="1"/>
-  <!-- Traffic lights -->
-  <circle cx="70" cy="213" r="5" fill="#22c55e"/>
-  <text x="80" y="217" class="mono" font-size="8" fill="#7A8099">gut</text>
-  <circle cx="130" cy="213" r="5" fill="#f59e0b"/>
-  <text x="140" y="217" class="mono" font-size="8" fill="#7A8099">beobachten</text>
-  <circle cx="220" cy="213" r="5" fill="#ef4444"/>
-  <text x="230" y="217" class="mono" font-size="8" fill="#7A8099">kritisch</text>
-  <!-- Period label -->
-  <text x="55" y="267" class="mono" font-size="8" fill="#B0B3C0">Zielwert &gt; 30 %</text>
+  <!-- Bewertung label -->
+  <text x="55" y="167" class="mono" font-size="8" fill="#7A8099" letter-spacing="1">BEWERTUNG</text>
+  <line x1="55" y1="177" x2="272" y2="177" stroke="#E2E3E8" stroke-width="1"/>
+  <!-- Traffic light scale: green / amber / red -->
+  <rect x="55" y="183" width="72" height="26" fill="#22c55e"/>
+  <rect x="127" y="183" width="72" height="26" fill="#f59e0b"/>
+  <rect x="199" y="183" width="73" height="26" fill="#ef4444"/>
+  <!-- Threshold values inside bars -->
+  <text x="91" y="200" class="mono" font-size="8" fill="#FFFFFF" text-anchor="middle">&gt; 30 %</text>
+  <text x="163" y="200" class="mono" font-size="8" fill="#15192B" text-anchor="middle">15–30 %</text>
+  <text x="235" y="200" class="mono" font-size="8" fill="#FFFFFF" text-anchor="middle">&lt; 15 %</text>
+  <!-- Qualitative labels below bars -->
+  <text x="91" y="222" class="mono" font-size="7" fill="#7A8099" text-anchor="middle">gut</text>
+  <text x="163" y="222" class="mono" font-size="7" fill="#7A8099" text-anchor="middle">beobachten</text>
+  <text x="235" y="222" class="mono" font-size="7" fill="#7A8099" text-anchor="middle">kritisch</text>
+  <!-- Context note -->
+  <text x="55" y="264" class="mono" font-size="7" fill="#B0B3C0">Richtwert: 20–35 % · branchenabhängig</text>
 
-  <!-- ─── CARD 2: Verschuldungsgrad (top-center) ─── -->
+  <!-- ─── CARD 2: Verschuldungsgrad ─── -->
   <rect x="307" y="55" width="247" height="225" fill="#FFFFFF" stroke="#E2E3E8" stroke-width="1"/>
   <rect x="307" y="55" width="247" height="4" fill="#D9C089"/>
   <text x="322" y="82" class="serif" font-size="16" fill="#1F2C56" font-weight="500">Verschuldungsgrad</text>
   <text x="322" y="98" class="mono" font-size="9" fill="#7A8099" letter-spacing="1">LEVERAGE RATIO</text>
   <line x1="322" y1="108" x2="539" y2="108" stroke="#E2E3E8" stroke-width="1"/>
-  <text x="322" y="124" class="mono" font-size="11" fill="#3D4460" font-style="italic">Fremdkapital</text>
-  <line x1="322" y1="130" x2="455" y2="130" stroke="#3D4460" stroke-width="1"/>
-  <text x="322" y="144" class="mono" font-size="11" fill="#3D4460" font-style="italic">Eigenkapital</text>
+  <text x="322" y="124" class="mono" font-size="9" fill="#3D4460" font-style="italic">Fremdkapital</text>
+  <line x1="322" y1="130" x2="452" y2="130" stroke="#3D4460" stroke-width="1"/>
+  <text x="322" y="144" class="mono" font-size="9" fill="#3D4460" font-style="italic">Eigenkapital</text>
   <line x1="322" y1="155" x2="539" y2="155" stroke="#E2E3E8" stroke-width="1"/>
-  <text x="322" y="170" class="mono" font-size="8" fill="#7A8099" letter-spacing="1">BENCHMARK</text>
-  <text x="322" y="186" class="mono" font-size="9" fill="#15192B" letter-spacing="0.5">&lt; 2,0  ·  2,0–3,5  ·  &gt; 3,5</text>
-  <line x1="322" y1="197" x2="539" y2="197" stroke="#E2E3E8" stroke-width="1"/>
-  <circle cx="337" cy="213" r="5" fill="#22c55e"/>
-  <text x="347" y="217" class="mono" font-size="8" fill="#7A8099">gut</text>
-  <circle cx="397" cy="213" r="5" fill="#f59e0b"/>
-  <text x="407" y="217" class="mono" font-size="8" fill="#7A8099">beobachten</text>
-  <circle cx="487" cy="213" r="5" fill="#ef4444"/>
-  <text x="497" y="217" class="mono" font-size="8" fill="#7A8099">kritisch</text>
+  <text x="322" y="167" class="mono" font-size="8" fill="#7A8099" letter-spacing="1">BEWERTUNG</text>
+  <line x1="322" y1="177" x2="539" y2="177" stroke="#E2E3E8" stroke-width="1"/>
+  <rect x="322" y="183" width="72" height="26" fill="#22c55e"/>
+  <rect x="394" y="183" width="72" height="26" fill="#f59e0b"/>
+  <rect x="466" y="183" width="73" height="26" fill="#ef4444"/>
+  <text x="358" y="200" class="mono" font-size="8" fill="#FFFFFF" text-anchor="middle">&lt; 2,0</text>
+  <text x="430" y="200" class="mono" font-size="8" fill="#15192B" text-anchor="middle">2,0–3,5</text>
+  <text x="502" y="200" class="mono" font-size="8" fill="#FFFFFF" text-anchor="middle">&gt; 3,5</text>
+  <text x="358" y="222" class="mono" font-size="7" fill="#7A8099" text-anchor="middle">gut</text>
+  <text x="430" y="222" class="mono" font-size="7" fill="#7A8099" text-anchor="middle">beobachten</text>
+  <text x="502" y="222" class="mono" font-size="7" fill="#7A8099" text-anchor="middle">kritisch</text>
+  <text x="322" y="264" class="mono" font-size="7" fill="#B0B3C0">Industrie: Zielwert &lt; 2,0 · KfW (2023)</text>
 
-  <!-- ─── CARD 3: EBIT-Marge (top-right) ─── -->
+  <!-- ─── CARD 3: EBIT-Marge ─── -->
   <rect x="574" y="55" width="247" height="225" fill="#FFFFFF" stroke="#E2E3E8" stroke-width="1"/>
   <rect x="574" y="55" width="247" height="4" fill="#1F2C56"/>
   <text x="589" y="82" class="serif" font-size="16" fill="#1F2C56" font-weight="500">EBIT-Marge</text>
   <text x="589" y="98" class="mono" font-size="9" fill="#7A8099" letter-spacing="1">BETRIEBLICHE UMSATZRENDITE</text>
   <line x1="589" y1="108" x2="806" y2="108" stroke="#E2E3E8" stroke-width="1"/>
-  <text x="589" y="124" class="mono" font-size="11" fill="#3D4460" font-style="italic">EBIT</text>
-  <line x1="589" y1="130" x2="670" y2="130" stroke="#3D4460" stroke-width="1"/>
-  <text x="589" y="144" class="mono" font-size="11" fill="#3D4460" font-style="italic">Umsatz</text>
-  <text x="678" y="136" class="mono" font-size="14" fill="#3D4460">× 100</text>
+  <text x="589" y="124" class="mono" font-size="9" fill="#3D4460" font-style="italic">EBIT</text>
+  <line x1="589" y1="130" x2="660" y2="130" stroke="#3D4460" stroke-width="1"/>
+  <text x="589" y="144" class="mono" font-size="9" fill="#3D4460" font-style="italic">Umsatz</text>
+  <text x="668" y="139" class="mono" font-size="12" fill="#3D4460">× 100</text>
   <line x1="589" y1="155" x2="806" y2="155" stroke="#E2E3E8" stroke-width="1"/>
-  <text x="589" y="170" class="mono" font-size="8" fill="#7A8099" letter-spacing="1">BENCHMARK · ∅ MASCHINENBAU 6,1 %</text>
-  <text x="589" y="186" class="mono" font-size="9" fill="#15192B" letter-spacing="0.5">&gt; 6 %  ·  3–6 %  ·  &lt; 3 %</text>
-  <line x1="589" y1="197" x2="806" y2="197" stroke="#E2E3E8" stroke-width="1"/>
-  <circle cx="604" cy="213" r="5" fill="#22c55e"/>
-  <text x="614" y="217" class="mono" font-size="8" fill="#7A8099">gut</text>
-  <circle cx="664" cy="213" r="5" fill="#f59e0b"/>
-  <text x="674" y="217" class="mono" font-size="8" fill="#7A8099">beobachten</text>
-  <circle cx="754" cy="213" r="5" fill="#ef4444"/>
-  <text x="764" y="217" class="mono" font-size="8" fill="#7A8099">kritisch</text>
+  <text x="589" y="167" class="mono" font-size="8" fill="#7A8099" letter-spacing="1">BEWERTUNG</text>
+  <line x1="589" y1="177" x2="806" y2="177" stroke="#E2E3E8" stroke-width="1"/>
+  <rect x="589" y="183" width="72" height="26" fill="#22c55e"/>
+  <rect x="661" y="183" width="72" height="26" fill="#f59e0b"/>
+  <rect x="733" y="183" width="73" height="26" fill="#ef4444"/>
+  <text x="625" y="200" class="mono" font-size="8" fill="#FFFFFF" text-anchor="middle">&gt; 6 %</text>
+  <text x="697" y="200" class="mono" font-size="8" fill="#15192B" text-anchor="middle">3–6 %</text>
+  <text x="769" y="200" class="mono" font-size="8" fill="#FFFFFF" text-anchor="middle">&lt; 3 %</text>
+  <text x="625" y="222" class="mono" font-size="7" fill="#7A8099" text-anchor="middle">gut</text>
+  <text x="697" y="222" class="mono" font-size="7" fill="#7A8099" text-anchor="middle">beobachten</text>
+  <text x="769" y="222" class="mono" font-size="7" fill="#7A8099" text-anchor="middle">kritisch</text>
+  <text x="589" y="264" class="mono" font-size="7" fill="#B0B3C0">Maschinenbau-Ø: 6,1 % (Destatis 2022)</text>
 
-  <!-- ─── CARD 4: KDCG (bottom-left) ─── -->
+  <!-- ─── CARD 4: KDCG ─── -->
   <rect x="40" y="295" width="247" height="225" fill="#FFFFFF" stroke="#E2E3E8" stroke-width="1"/>
   <rect x="40" y="295" width="247" height="4" fill="#D9C089"/>
   <text x="55" y="322" class="serif" font-size="16" fill="#1F2C56" font-weight="500">KDCG</text>
   <text x="55" y="338" class="mono" font-size="9" fill="#7A8099" letter-spacing="1">KAPITALDIENSTDECKUNGSGRAD</text>
   <line x1="55" y1="348" x2="272" y2="348" stroke="#E2E3E8" stroke-width="1"/>
-  <text x="55" y="364" class="mono" font-size="9" fill="#3D4460" font-style="italic">JÜ + AfA + Zinsaufwand</text>
-  <line x1="55" y1="370" x2="255" y2="370" stroke="#3D4460" stroke-width="1"/>
-  <text x="55" y="384" class="mono" font-size="9" fill="#3D4460" font-style="italic">Tilgung + Zinsaufwand</text>
+  <text x="55" y="364" class="mono" font-size="8" fill="#3D4460" font-style="italic">JÜ + AfA + Zinsaufwand</text>
+  <line x1="55" y1="370" x2="272" y2="370" stroke="#3D4460" stroke-width="1"/>
+  <text x="55" y="384" class="mono" font-size="8" fill="#3D4460" font-style="italic">Tilgung + Zinsaufwand</text>
   <line x1="55" y1="395" x2="272" y2="395" stroke="#E2E3E8" stroke-width="1"/>
-  <text x="55" y="410" class="mono" font-size="8" fill="#7A8099" letter-spacing="1">BENCHMARK</text>
-  <text x="55" y="426" class="mono" font-size="9" fill="#15192B" letter-spacing="0.5">≥ 1,20  ·  1,00–1,20  ·  &lt; 1,00</text>
-  <line x1="55" y1="437" x2="272" y2="437" stroke="#E2E3E8" stroke-width="1"/>
-  <circle cx="70" cy="453" r="5" fill="#22c55e"/>
-  <text x="80" y="457" class="mono" font-size="8" fill="#7A8099">gut</text>
-  <circle cx="130" cy="453" r="5" fill="#f59e0b"/>
-  <text x="140" y="457" class="mono" font-size="8" fill="#7A8099">beobachten</text>
-  <circle cx="220" cy="453" r="5" fill="#ef4444"/>
-  <text x="230" y="457" class="mono" font-size="8" fill="#7A8099">kritisch</text>
+  <text x="55" y="407" class="mono" font-size="8" fill="#7A8099" letter-spacing="1">BEWERTUNG</text>
+  <line x1="55" y1="417" x2="272" y2="417" stroke="#E2E3E8" stroke-width="1"/>
+  <rect x="55" y="423" width="72" height="26" fill="#22c55e"/>
+  <rect x="127" y="423" width="72" height="26" fill="#f59e0b"/>
+  <rect x="199" y="423" width="73" height="26" fill="#ef4444"/>
+  <text x="91" y="440" class="mono" font-size="8" fill="#FFFFFF" text-anchor="middle">≥ 1,20</text>
+  <text x="163" y="440" class="mono" font-size="8" fill="#15192B" text-anchor="middle">1,00–1,20</text>
+  <text x="235" y="440" class="mono" font-size="8" fill="#FFFFFF" text-anchor="middle">&lt; 1,00</text>
+  <text x="91" y="462" class="mono" font-size="7" fill="#7A8099" text-anchor="middle">gut</text>
+  <text x="163" y="462" class="mono" font-size="7" fill="#7A8099" text-anchor="middle">beobachten</text>
+  <text x="235" y="462" class="mono" font-size="7" fill="#7A8099" text-anchor="middle">kritisch</text>
+  <text x="55" y="504" class="mono" font-size="7" fill="#B0B3C0">Kreditvergabe: Mindestdeckungsgrad 1,00</text>
 
-  <!-- ─── CARD 5: Anlagendeckung II (bottom-center) ─── -->
+  <!-- ─── CARD 5: Anlagendeckung II ─── -->
   <rect x="307" y="295" width="247" height="225" fill="#FFFFFF" stroke="#E2E3E8" stroke-width="1"/>
   <rect x="307" y="295" width="247" height="4" fill="#1F2C56"/>
   <text x="322" y="322" class="serif" font-size="16" fill="#1F2C56" font-weight="500">Anlagendeckung II</text>
   <text x="322" y="338" class="mono" font-size="9" fill="#7A8099" letter-spacing="1">GOLDENE BILANZREGEL</text>
   <line x1="322" y1="348" x2="539" y2="348" stroke="#E2E3E8" stroke-width="1"/>
-  <text x="322" y="364" class="mono" font-size="9" fill="#3D4460" font-style="italic">EK + FK langfristig</text>
-  <line x1="322" y1="370" x2="510" y2="370" stroke="#3D4460" stroke-width="1"/>
-  <text x="322" y="384" class="mono" font-size="9" fill="#3D4460" font-style="italic">Anlagevermögen</text>
-  <text x="465" y="376" class="mono" font-size="13" fill="#3D4460">× 100</text>
+  <text x="322" y="364" class="mono" font-size="8" fill="#3D4460" font-style="italic">EK + FK langfristig</text>
+  <line x1="322" y1="370" x2="503" y2="370" stroke="#3D4460" stroke-width="1"/>
+  <text x="322" y="384" class="mono" font-size="8" fill="#3D4460" font-style="italic">Anlagevermögen</text>
+  <text x="510" y="379" class="mono" font-size="12" fill="#3D4460">× 100</text>
   <line x1="322" y1="395" x2="539" y2="395" stroke="#E2E3E8" stroke-width="1"/>
-  <text x="322" y="410" class="mono" font-size="8" fill="#7A8099" letter-spacing="1">BENCHMARK</text>
-  <text x="322" y="426" class="mono" font-size="9" fill="#15192B" letter-spacing="0.5">&gt; 100 %  ·  90–100 %  ·  &lt; 90 %</text>
-  <line x1="322" y1="437" x2="539" y2="437" stroke="#E2E3E8" stroke-width="1"/>
-  <circle cx="337" cy="453" r="5" fill="#22c55e"/>
-  <text x="347" y="457" class="mono" font-size="8" fill="#7A8099">gut</text>
-  <circle cx="397" cy="453" r="5" fill="#f59e0b"/>
-  <text x="407" y="457" class="mono" font-size="8" fill="#7A8099">beobachten</text>
-  <circle cx="487" cy="453" r="5" fill="#ef4444"/>
-  <text x="497" y="457" class="mono" font-size="8" fill="#7A8099">kritisch</text>
+  <text x="322" y="407" class="mono" font-size="8" fill="#7A8099" letter-spacing="1">BEWERTUNG</text>
+  <line x1="322" y1="417" x2="539" y2="417" stroke="#E2E3E8" stroke-width="1"/>
+  <rect x="322" y="423" width="72" height="26" fill="#22c55e"/>
+  <rect x="394" y="423" width="72" height="26" fill="#f59e0b"/>
+  <rect x="466" y="423" width="73" height="26" fill="#ef4444"/>
+  <text x="358" y="440" class="mono" font-size="8" fill="#FFFFFF" text-anchor="middle">&gt; 100 %</text>
+  <text x="430" y="440" class="mono" font-size="8" fill="#15192B" text-anchor="middle">90–100 %</text>
+  <text x="502" y="440" class="mono" font-size="8" fill="#FFFFFF" text-anchor="middle">&lt; 90 %</text>
+  <text x="358" y="462" class="mono" font-size="7" fill="#7A8099" text-anchor="middle">gut</text>
+  <text x="430" y="462" class="mono" font-size="7" fill="#7A8099" text-anchor="middle">beobachten</text>
+  <text x="502" y="462" class="mono" font-size="7" fill="#7A8099" text-anchor="middle">kritisch</text>
+  <text x="322" y="504" class="mono" font-size="7" fill="#B0B3C0">Goldene Bilanzregel: Anlagedeckung ≥ 100 %</text>
 
-  <!-- ─── CARD 6: Liquidität II (bottom-right) ─── -->
+  <!-- ─── CARD 6: Liquidität II ─── -->
   <rect x="574" y="295" width="247" height="225" fill="#FFFFFF" stroke="#E2E3E8" stroke-width="1"/>
   <rect x="574" y="295" width="247" height="4" fill="#D9C089"/>
   <text x="589" y="322" class="serif" font-size="16" fill="#1F2C56" font-weight="500">Liquidität II</text>
   <text x="589" y="338" class="mono" font-size="9" fill="#7A8099" letter-spacing="1">QUICK RATIO</text>
   <line x1="589" y1="348" x2="806" y2="348" stroke="#E2E3E8" stroke-width="1"/>
-  <text x="589" y="364" class="mono" font-size="9" fill="#3D4460" font-style="italic">Forderungen + Kassenbestand</text>
+  <text x="589" y="364" class="mono" font-size="8" fill="#3D4460" font-style="italic">Forderungen + Kassenbestand</text>
   <line x1="589" y1="370" x2="806" y2="370" stroke="#3D4460" stroke-width="1"/>
-  <text x="589" y="384" class="mono" font-size="9" fill="#3D4460" font-style="italic">kurzfristiges FK</text>
-  <text x="720" y="376" class="mono" font-size="13" fill="#3D4460">× 100</text>
+  <text x="589" y="384" class="mono" font-size="8" fill="#3D4460" font-style="italic">kurzfristiges Fremdkapital</text>
+  <text x="726" y="364" class="mono" font-size="12" fill="#3D4460">× 100</text>
   <line x1="589" y1="395" x2="806" y2="395" stroke="#E2E3E8" stroke-width="1"/>
-  <text x="589" y="410" class="mono" font-size="8" fill="#7A8099" letter-spacing="1">BENCHMARK</text>
-  <text x="589" y="426" class="mono" font-size="9" fill="#15192B" letter-spacing="0.5">&gt; 100 %  ·  70–100 %  ·  &lt; 70 %</text>
-  <line x1="589" y1="437" x2="806" y2="437" stroke="#E2E3E8" stroke-width="1"/>
-  <circle cx="604" cy="453" r="5" fill="#22c55e"/>
-  <text x="614" y="457" class="mono" font-size="8" fill="#7A8099">gut</text>
-  <circle cx="664" cy="453" r="5" fill="#f59e0b"/>
-  <text x="674" y="457" class="mono" font-size="8" fill="#7A8099">beobachten</text>
-  <circle cx="754" cy="453" r="5" fill="#ef4444"/>
-  <text x="764" y="457" class="mono" font-size="8" fill="#7A8099">kritisch</text>
+  <text x="589" y="407" class="mono" font-size="8" fill="#7A8099" letter-spacing="1">BEWERTUNG</text>
+  <line x1="589" y1="417" x2="806" y2="417" stroke="#E2E3E8" stroke-width="1"/>
+  <rect x="589" y="423" width="72" height="26" fill="#22c55e"/>
+  <rect x="661" y="423" width="72" height="26" fill="#f59e0b"/>
+  <rect x="733" y="423" width="73" height="26" fill="#ef4444"/>
+  <text x="625" y="440" class="mono" font-size="8" fill="#FFFFFF" text-anchor="middle">&gt; 100 %</text>
+  <text x="697" y="440" class="mono" font-size="8" fill="#15192B" text-anchor="middle">70–100 %</text>
+  <text x="769" y="440" class="mono" font-size="8" fill="#FFFFFF" text-anchor="middle">&lt; 70 %</text>
+  <text x="625" y="462" class="mono" font-size="7" fill="#7A8099" text-anchor="middle">gut</text>
+  <text x="697" y="462" class="mono" font-size="7" fill="#7A8099" text-anchor="middle">beobachten</text>
+  <text x="769" y="462" class="mono" font-size="7" fill="#7A8099" text-anchor="middle">kritisch</text>
+  <text x="589" y="504" class="mono" font-size="7" fill="#B0B3C0">Orientierungswert: branchenabhängig</text>
 
   <!-- Source -->
-  <text x="40" y="530" class="mono" font-size="9" fill="#B0B3C0" letter-spacing="0.5">Schierenbeck, Lister &amp; Kirmsse (2014) · KfW-Mittelstandspanel (2023) · Bankübliche Mindeststandards</text>
+  <text x="40" y="534" class="mono" font-size="9" fill="#B0B3C0" letter-spacing="0.5">Schierenbeck, Lister &amp; Kirmsse (2014) · KfW-Mittelstandspanel (2023) · Bankübliche Mindeststandards</text>
 </svg>
