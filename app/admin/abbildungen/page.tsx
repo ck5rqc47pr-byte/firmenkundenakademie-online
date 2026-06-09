@@ -36,11 +36,11 @@ const ABBILDUNGEN = [
   {
     id: "lernpfad",
     titel: "Lernpfad-Übersicht",
-    beschreibung: "Die drei Etappen des FKB Campus als Entwicklungspfad — Beraterhandwerk, Sparringspartner, Strategischer Partner.",
-    datei: null,
+    beschreibung: "Die drei Etappen des FKB Campus als Curriculum-Übersicht — Beraterhandwerk, Sparringspartner, Strategischer Partner mit Themen, Bloom-Fokus und Kompetenzfeldern.",
+    datei: "/grafiken/lernpfad-uebersicht.svg",
     quelle: "FKB Campus",
-    verwendung: ["Startseite", "Kompass"],
-    status: "geplant",
+    verwendung: ["Startseite", "Kompass", "Modulsteckbrief"],
+    status: "fertig",
   },
   {
     id: "prozess-modul",
