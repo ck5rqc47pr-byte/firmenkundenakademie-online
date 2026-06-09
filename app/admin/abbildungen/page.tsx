@@ -27,11 +27,11 @@ const ABBILDUNGEN = [
   {
     id: "kirkpatrick",
     titel: "Kirkpatrick-Evaluationsmodell",
-    beschreibung: "Vier Evaluationsebenen nach Kirkpatrick (1994): Reaktion, Lernen, Verhalten, Ergebnis.",
-    datei: null,
+    beschreibung: "Vier Evaluationsebenen nach Kirkpatrick (1994): Reaktion, Lernen, Verhalten, Ergebnis — von einfach messbar bis höchster Wirkungstiefe.",
+    datei: "/grafiken/kirkpatrick-modell.svg",
     quelle: "Kirkpatrick (1994)",
-    verwendung: ["Evaluation", "Feedbackbogen"],
-    status: "geplant",
+    verwendung: ["Evaluation", "Feedbackbogen", "Admin-Konsole"],
+    status: "fertig",
   },
   {
     id: "lernpfad",
