@@ -90,6 +90,7 @@ export default async function AdminPage() {
               { href: "/admin/quiz",        label: "Wissenstests",   accent: false },
               { href: "/admin/abbildungen", label: "Abbildungen",    accent: true  },
               { href: "/admin/suggestions", label: "Vorschläge",     accent: false },
+              { href: "/admin/team",        label: "Team",           accent: false },
               { href: "/trainer",           label: "Trainer-Ansicht",accent: false },
               { href: "/",                  label: "Akademie",       accent: false },
             ].map(({ href, label, accent }) => (
