@@ -15,6 +15,21 @@ function getFirstText(node: ReactNode): string {
 const ACCENT_TRIGGERS = ["Tipp", "Wichtig", "Hinweis", "Merksatz"];
 
 const components = {
+  img: ({ src, alt }: { src?: string; alt?: string }) => (
+    <figure className="my-8">
+      <img
+        src={src}
+        alt={alt ?? ""}
+        className="w-full border border-line bg-bg-2"
+        style={{ display: "block" }}
+      />
+      {alt && (
+        <figcaption className="font-mono text-[9px] uppercase tracking-[0.08em] text-ink-3 mt-2">
+          {alt}
+        </figcaption>
+      )}
+    </figure>
+  ),
   h2: (props: { children: ReactNode }) => (
     <div className="chapter-break">
       <h2
