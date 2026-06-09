@@ -6,6 +6,7 @@ import {
   PortraitDrSchreiber,
   PortraitProfBrandt,
   PortraitArmin,
+  PortraitFelix,
   PortraitPraktikant,
 } from "@/components/Portraits";
 
@@ -122,6 +123,24 @@ const TEAM: TeamMember[] = [
     modell: "Claude Sonnet 4.6",
   },
   {
+    name: "Felix",
+    initials: "FK",
+    avatarBg: "#C9AD68",
+    avatarFg: "#191D2E",
+    Portrait: PortraitFelix,
+    typ: "KI-Agent",
+    rolle: "Visual Communicator · Schaubilder & Infografiken",
+    eigenschaften: [
+      "Spezialist für Informationsdesign und Finanzvisualisierung",
+      "Erstellt SVG-Grafiken konsequent im FKB-Campus-CI",
+      "Kennt alle Grafiktypen: T-Konten, Prozessdiagramme, Strategiematrizen",
+      "Schreibt ausschließlich valides XML — kein border-radius, keine Schatten",
+    ],
+    aufgabe:
+      "Erstellt modulspezifische Schaubilder und Standard-Grafiken (Dreyfus, Bloom, Kirkpatrick, Lernpfad). Übersetzt bankwirtschaftliche Konzepte in klare, wissenschaftlich korrekte SVG-Visualisierungen — eine Grafik pro Kernkonzept, konsistent im FKB-Campus-CI.",
+    modell: "Claude Sonnet 4.6",
+  },
+  {
     name: "Praktikant 1",
     initials: "P1",
     avatarBg: "#8A97B0",
@@ -226,13 +245,14 @@ export default function TeamPage() {
           <h2 className="font-serif text-2xl font-normal tracking-[-0.02em] text-ink mb-8">
             Wie wir zusammenarbeiten
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-6">
             {[
               { nr: "01", agent: "Dr. Schreiber", action: "Literaturrecherche & theoretische Grundlage" },
               { nr: "02", agent: "Roland", action: "Modulerstellung & Unterlagenentwicklung" },
               { nr: "03", agent: "Prof. Dr. Brandt", action: "Wissenschaftliches Review" },
               { nr: "04", agent: "Armin", action: "Praxisreview & Alltagstauglichkeit" },
-              { nr: "05", agent: "Praktikant 1", action: "Finale Dokumente & Präsentationen" },
+              { nr: "05", agent: "Felix", action: "Modulspezifische Schaubilder & Grafiken" },
+              { nr: "06", agent: "Praktikant 1", action: "Finale Dokumente & Präsentationen" },
             ].map((step) => (
               <div key={step.nr} className="border border-ink bg-white p-5">
                 <div className="font-mono text-[10px] uppercase tracking-[0.1em] text-primary mb-2">

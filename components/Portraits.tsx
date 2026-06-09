@@ -208,6 +208,52 @@ export function PortraitArmin({ size = 200 }: { size?: number }) {
   );
 }
 
+export function PortraitFelix({ size = 200 }: { size?: number }) {
+  return (
+    <svg viewBox="0 0 200 200" width={size} height={size} fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Felix">
+      <defs>
+        <clipPath id="pr-felix"><circle cx="100" cy="100" r="99" /></clipPath>
+      </defs>
+      <circle cx="100" cy="100" r="100" fill="#C9AD68" />
+      <g clipPath="url(#pr-felix)">
+        {/* Creative casual shirt – teal */}
+        <path d="M10 205 C34 174 65 161 100 159 C135 161 166 174 190 205Z" fill="#2A7A74" />
+        {/* Collar – open, relaxed */}
+        <path d="M90 159 L86 174 L100 165 L114 174 L110 159 C104 154 96 154 90 159Z" fill="#F0F0EE" />
+        {/* Neck */}
+        <rect x="89" y="144" width="22" height="18" rx="2" fill={SKIN} />
+        {/* Head – slightly narrower, creative type */}
+        <ellipse cx="100" cy="103" rx="46" ry="52" fill={SKIN} />
+        {/* Ears */}
+        <ellipse cx="55" cy="107" rx="7" ry="9" fill={SKIN_D} />
+        <ellipse cx="145" cy="107" rx="7" ry="9" fill={SKIN_D} />
+        {/* Hair – sandy brown, loose, slightly longer on top */}
+        <path d="M56 90 C58 52 78 40 100 40 C122 40 142 52 144 90 C136 68 120 60 100 60 C80 60 64 68 56 90Z" fill="#8B6A3A" />
+        {/* Loose top volume */}
+        <path d="M66 65 Q83 46 100 44 Q117 46 134 65 Q117 54 100 53 Q83 54 66 65Z" fill="#A07840" />
+        {/* Slight side sweep left */}
+        <path d="M56 90 C52 98 52 106 53 111 C56 100 59 90 63 85Z" fill="#8B6A3A" />
+        <path d="M144 90 C148 98 148 106 147 111 C144 100 141 90 137 85Z" fill="#8B6A3A" />
+        {/* Eyebrows – relaxed, expressive */}
+        <path d="M73 96 Q82 92 91 94" stroke="#7A5830" strokeWidth="2.2" strokeLinecap="round" />
+        <path d="M109 94 Q118 92 127 96" stroke="#7A5830" strokeWidth="2.2" strokeLinecap="round" />
+        {/* Eyes – focused, creative */}
+        <ellipse cx="81" cy="106" rx="9" ry="8" fill="white" />
+        <circle cx="81" cy="107" r="5" fill="#2A3A20" />
+        <circle cx="83" cy="105" r="1.5" fill="white" />
+        <ellipse cx="119" cy="106" rx="9" ry="8" fill="white" />
+        <circle cx="119" cy="107" r="5" fill="#2A3A20" />
+        <circle cx="121" cy="105" r="1.5" fill="white" />
+        {/* Nose */}
+        <path d="M99 119 C97 124 96 129 99 131 Q100 132 101 131 C104 129 103 124 101 119Z" fill={SKIN_D} />
+        {/* Warm focused smile */}
+        <path d="M87 139 Q100 148 113 139" stroke="#9A6555" strokeWidth="2.5" strokeLinecap="round" fill="none" />
+        <path d="M90 139 Q100 147 110 139 Q100 149 90 139Z" fill="#C07868" opacity="0.4" />
+      </g>
+    </svg>
+  );
+}
+
 export function PortraitPraktikant({ size = 200 }: { size?: number }) {
   return (
     <svg viewBox="0 0 200 200" width={size} height={size} fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Praktikant 1">
