@@ -19,7 +19,7 @@ export interface Module {
   youtube_id: string;
   praxis_review: boolean;    // Praxis-Review durch Armin abgeschlossen
   wiss_review: boolean;      // Wissenschaftliches Review durch Prof. Brandt abgeschlossen
-  sim_review: boolean;       // Workshop-Simulation abgeschlossen und Feedback ausgewertet
+  sim_review: boolean;       // Workshop-Simulation + Verbesserungsvorschläge ins Modul eingearbeitet
   ergaenzung: boolean;       // Sec 2 + 3 + 6 fertig (Wissenschaft, Trainerhandbuch, Evaluation)
   lernziele: { text: string; bloom_stufe: 1 | 2 | 3 | 4 | 5 | 6 }[];
   content: string;
