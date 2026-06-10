@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 520" width="860" height="520">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;1,8..60,400&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap');
+      text { font-family: Georgia, serif; }
+      .mono { font-family: 'JetBrains Mono', 'Courier New', monospace; }
+      .serif { font-family: 'Source Serif 4', Georgia, serif; }
+    </style>
+  </defs>
+
+  <rect width="860" height="520" fill="#F8F8FA"/>
+
+  <text x="40" y="30" class="mono" font-size="10" fill="#7A8099" letter-spacing="2">DREI GESPRÄCHSEBENEN · MODUL 03 · DER STRATEGISCHE FINANZDIALOG</text>
+  <line x1="40" y1="40" x2="820" y2="40" stroke="#E2E3E8" stroke-width="1"/>
+
+  <!-- Depth axis (left) -->
+  <text x="58" y="285" class="mono" font-size="9" fill="#B0B3C0" letter-spacing="1" transform="rotate(-90 58 285)" text-anchor="middle">STRATEGISCHE TIEFE NIMMT ZU</text>
+
+  <!-- Band 3: Strategisch (top, primary) -->
+  <rect x="100" y="70" width="720" height="124" fill="#1F2C56"/>
+  <text x="124" y="112" class="serif" font-size="30" font-style="italic" fill="#D9C089">3</text>
+  <text x="168" y="105" class="serif" font-size="17" fill="#F8F8FA" font-weight="500">Strategisch</text>
+  <text x="168" y="124" class="mono" font-size="8" fill="#8898C4" letter-spacing="0.5">ZUKUNFTSFRAGEN · WO WOLLEN SIE HIN?</text>
+  <line x1="168" y1="134" x2="796" y2="134" stroke="#F8F8FA" stroke-width="0.5" opacity="0.2"/>
+  <text x="168" y="160" class="serif" font-size="13" font-style="italic" fill="#F8F8FA">„Was wäre der nächste Schritt, wenn Ihre Eigenkapitalquote 30 % überschreitet?"</text>
+
+  <!-- Band 2: Taktisch (mid) -->
+  <rect x="100" y="206" width="720" height="124" fill="#3D5494"/>
+  <text x="124" y="248" class="serif" font-size="30" font-style="italic" fill="#D9C089">2</text>
+  <text x="168" y="241" class="serif" font-size="17" fill="#F8F8FA" font-weight="500">Taktisch</text>
+  <text x="168" y="260" class="mono" font-size="8" fill="#8898C4" letter-spacing="0.5">IMPLIKATIONSFRAGEN · WAS BEDEUTET DAS?</text>
+  <line x1="168" y1="270" x2="796" y2="270" stroke="#F8F8FA" stroke-width="0.5" opacity="0.2"/>
+  <text x="168" y="296" class="serif" font-size="13" font-style="italic" fill="#F8F8FA">„Wenn die Marge weiter sinkt – welche Investitionen müssen Sie verschieben?"</text>
+
+  <!-- Band 1: Operativ (bottom, light) -->
+  <rect x="100" y="342" width="720" height="124" fill="#EDEDF3" stroke="#15192B" stroke-width="1"/>
+  <text x="124" y="384" class="serif" font-size="30" font-style="italic" fill="#1F2C56">1</text>
+  <text x="168" y="377" class="serif" font-size="17" fill="#1F2C56" font-weight="500">Operativ</text>
+  <text x="168" y="396" class="mono" font-size="8" fill="#7A8099" letter-spacing="0.5">SACHSTANDSFRAGEN · WAS IST?</text>
+  <line x1="168" y1="406" x2="796" y2="406" stroke="#15192B" stroke-width="0.5" opacity="0.15"/>
+  <text x="168" y="432" class="serif" font-size="13" font-style="italic" fill="#3D4460">„Wie entwickelt sich Ihr Auftragsbestand im nächsten Quartal?"</text>
+
+  <text x="40" y="500" class="mono" font-size="9" fill="#B0B3C0" letter-spacing="0.5">Rappaport (1986) Werttreibermodell · Rackham (1988) · Fragenhierarchie im strategischen Finanzdialog</text>
+</svg>

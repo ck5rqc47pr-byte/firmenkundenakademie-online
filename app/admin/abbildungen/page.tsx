@@ -51,6 +51,69 @@ const GRAFIKEN_MAP: Record<string, Array<{ bezeichnung: string; datei: string }>
     { bezeichnung: "Kennzahlen-Karte",         datei: "/grafiken/M01-kennzahlen.svg"      },
     { bezeichnung: "Analyseprozess 4 Schritte",datei: "/grafiken/M01-analyseprozess.svg" },
   ],
+  M02: [
+    { bezeichnung: "Gesprächsphasen 5-Phasen-Rahmen", datei: "/grafiken/M02-gespraechsphasen.svg" },
+  ],
+  M03: [
+    { bezeichnung: "Drei Gesprächsebenen", datei: "/grafiken/M03-finanzdialog-ebenen.svg" },
+  ],
+  M04: [
+    { bezeichnung: "Frühwarn-Ampelkarte", datei: "/grafiken/M04-fruehwarnampel.svg" },
+  ],
+  M05: [
+    { bezeichnung: "Five-Forces-Modell", datei: "/grafiken/M05-fiveforces.svg" },
+  ],
+  M06: [
+    { bezeichnung: "Zwei KMU-Definitionen", datei: "/grafiken/M06-kmu-definition.svg" },
+  ],
+  M07: [
+    { bezeichnung: "Praxiswert-Ermittlung (IDW S5)", datei: "/grafiken/M07-goodwill.svg" },
+  ],
+  M08: [
+    { bezeichnung: "Drei Immobilien-Typologien", datei: "/grafiken/M08-immobilientypologien.svg" },
+  ],
+  M09: [
+    { bezeichnung: "PESTEL-Analyse", datei: "/grafiken/M09-pestel.svg" },
+  ],
+  M10: [
+    { bezeichnung: "SPIN-Fragetrichter", datei: "/grafiken/M10-spin.svg" },
+  ],
+  M11: [
+    { bezeichnung: "Eisberg-Modell latente Bedarfe", datei: "/grafiken/M11-eisberg.svg" },
+  ],
+  M12: [
+    { bezeichnung: "Nachfolge-Phasenmodell", datei: "/grafiken/M12-nachfolge-phasen.svg" },
+  ],
+  M13: [
+    { bezeichnung: "Verbundpartner-Matrix", datei: "/grafiken/M13-verbundpartner.svg" },
+  ],
+  M14: [
+    { bezeichnung: "Deckungsbeitrags-Wasserfall", datei: "/grafiken/M14-deckungsbeitrag.svg" },
+  ],
+  M15: [
+    { bezeichnung: "Strategie-Landkarte", datei: "/grafiken/M15-strategie-landkarte.svg" },
+  ],
+  M16: [
+    { bezeichnung: "Nettomargenbeitrag (NMZ)", datei: "/grafiken/M16-nmz.svg" },
+  ],
+  M17: [
+    { bezeichnung: "agree21 Kernbereiche", datei: "/grafiken/M17-agree-kernbereiche.svg" },
+  ],
+  M18: [
+    { bezeichnung: "Drei Trigger-Typen", datei: "/grafiken/M18-trigger-typen.svg" },
+  ],
+  M19: [
+    { bezeichnung: "SECI-Modell Wissensspirale", datei: "/grafiken/M19-seci.svg" },
+  ],
+  M20: [
+    { bezeichnung: "Netzwerk-Dimensionen", datei: "/grafiken/M20-netzwerk-dimensionen.svg" },
+  ],
+  M21: [
+    { bezeichnung: "8-Felder-Framework", datei: "/grafiken/M21-achtfelder.svg" },
+  ],
+  M22: [
+    { bezeichnung: "Wettbewerbsstrategie-Matrix", datei: "/grafiken/M22-wettbewerbsmatrix.svg" },
+  ],
 };
 
 const STATUS_STYLE: Record<string, string> = {

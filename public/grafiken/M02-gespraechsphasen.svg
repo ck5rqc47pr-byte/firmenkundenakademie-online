@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 480" width="860" height="480">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;1,8..60,400&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap');
+      text { font-family: Georgia, serif; }
+      .mono { font-family: 'JetBrains Mono', 'Courier New', monospace; }
+      .serif { font-family: 'Source Serif 4', Georgia, serif; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="860" height="480" fill="#F8F8FA"/>
+
+  <!-- Eyebrow -->
+  <text x="40" y="30" class="mono" font-size="10" fill="#7A8099" letter-spacing="2">5-PHASEN-RAHMEN · MODUL 02 · BILANZGESPRÄCH AUF AUGENHÖHE</text>
+  <line x1="40" y1="40" x2="820" y2="40" stroke="#E2E3E8" stroke-width="1"/>
+
+  <!-- ══════════════════════════════════════════════
+       5 STEPS: x=40,199,358,517,676  w=144  y=80–360
+       ══════════════════════════════════════════════ -->
+
+  <!-- ─── PHASE 1: Vorbereitung — bg-2 #EDEDF3 ─── -->
+  <rect x="40" y="80" width="144" height="280" fill="#EDEDF3"/>
+  <rect x="40" y="80" width="144" height="280" fill="none" stroke="#15192B" stroke-width="1"/>
+  <text x="54" y="138" class="serif" font-size="44" font-style="italic" fill="#1F2C56">I.</text>
+  <text x="54" y="164" class="serif" font-size="13" fill="#15192B" font-weight="500">Vorbereitung</text>
+  <text x="54" y="181" class="mono" font-size="8" fill="#7A8099" letter-spacing="0.5">VOR TERMIN · 30–45 MIN</text>
+  <line x1="54" y1="191" x2="170" y2="191" stroke="#15192B" stroke-width="0.5" opacity="0.2"/>
+  <text x="54" y="208" class="mono" font-size="8" fill="#7A8099" letter-spacing="0.3">Kennzahlen berechnen</text>
+  <text x="54" y="224" class="mono" font-size="8" fill="#7A8099" letter-spacing="0.3">Zeitreihe 3 Jahre</text>
+  <text x="54" y="240" class="mono" font-size="8" fill="#7A8099" letter-spacing="0.3">Branchenwert recherch.</text>
+  <text x="54" y="256" class="mono" font-size="8" fill="#7A8099" letter-spacing="0.3">Fragen vorbereiten</text>
+
+  <!-- Arrow 1→2 -->
+  <polygon points="186,212 197,220 186,228" fill="#C8CAD4"/>
+
+  <!-- ─── PHASE 2: Eröffnung — accent #D9C089 ─── -->
+  <rect x="199" y="80" width="144" height="280" fill="#D9C089"/>
+  <rect x="199" y="80" width="144" height="280" fill="none" stroke="#15192B" stroke-width="1"/>
+  <text x="213" y="138" class="serif" font-size="44" font-style="italic" fill="#15192B">II.</text>
+  <text x="213" y="164" class="serif" font-size="13" fill="#15192B" font-weight="500">Eröffnung</text>
+  <text x="213" y="181" class="mono" font-size="8" fill="#3D4460" letter-spacing="0.5">CA. 10 MIN</text>
+  <line x1="213" y1="191" x2="329" y2="191" stroke="#15192B" stroke-width="0.5" opacity="0.2"/>
+  <text x="213" y="208" class="mono" font-size="8" fill="#3D4460" letter-spacing="0.3">Kontext &amp; Ziel setzen</text>
+  <text x="213" y="224" class="mono" font-size="8" fill="#3D4460" letter-spacing="0.3">Ablauf ankündigen</text>
+  <text x="213" y="240" class="mono" font-size="8" fill="#3D4460" letter-spacing="0.3">Augenhöhe schaffen</text>
+
+  <!-- Arrow 2→3 -->
+  <polygon points="345,212 356,220 345,228" fill="#C8CAD4"/>
+
+  <!-- ─── PHASE 3: Analyse-Dialog — primary #1F2C56 (HERZSTÜCK) ─── -->
+  <rect x="358" y="80" width="144" height="280" fill="#1F2C56"/>
+  <rect x="358" y="80" width="144" height="280" fill="none" stroke="#1F2C56" stroke-width="1"/>
+  <text x="372" y="138" class="serif" font-size="44" font-style="italic" fill="#D9C089">III.</text>
+  <text x="372" y="164" class="serif" font-size="13" fill="#F8F8FA" font-weight="500">Analyse-Dialog</text>
+  <text x="372" y="181" class="mono" font-size="8" fill="#D9C089" letter-spacing="0.5">CA. 75 MIN · HERZSTÜCK</text>
+  <line x1="372" y1="191" x2="488" y2="191" stroke="#F8F8FA" stroke-width="0.5" opacity="0.25"/>
+  <text x="372" y="208" class="mono" font-size="8" fill="#8898C4" letter-spacing="0.3">Kennzahl vorstellen</text>
+  <text x="372" y="224" class="mono" font-size="8" fill="#8898C4" letter-spacing="0.3">offen fragen, zuhören</text>
+  <text x="372" y="240" class="mono" font-size="8" fill="#8898C4" letter-spacing="0.3">gemeinsam deuten</text>
+  <text x="372" y="256" class="mono" font-size="8" fill="#8898C4" letter-spacing="0.3">Verständnis bestätigen</text>
+
+  <!-- Arrow 3→4 -->
+  <polygon points="504,212 515,220 504,228" fill="#C8CAD4"/>
+
+  <!-- ─── PHASE 4: Beratungsimpulse — mid #3D5494 ─── -->
+  <rect x="517" y="80" width="144" height="280" fill="#3D5494"/>
+  <rect x="517" y="80" width="144" height="280" fill="none" stroke="#15192B" stroke-width="1"/>
+  <text x="531" y="138" class="serif" font-size="44" font-style="italic" fill="#F8F8FA">IV.</text>
+  <text x="531" y="164" class="serif" font-size="12" fill="#F8F8FA" font-weight="500">Beratungsimpulse</text>
+  <text x="531" y="181" class="mono" font-size="8" fill="#8898C4" letter-spacing="0.5">CA. 30 MIN</text>
+  <line x1="531" y1="191" x2="647" y2="191" stroke="#F8F8FA" stroke-width="0.5" opacity="0.25"/>
+  <text x="531" y="208" class="mono" font-size="8" fill="#8898C4" letter-spacing="0.3">Optionen ableiten</text>
+  <text x="531" y="224" class="mono" font-size="8" fill="#8898C4" letter-spacing="0.3">aus Analyse heraus</text>
+  <text x="531" y="240" class="mono" font-size="8" fill="#8898C4" letter-spacing="0.3">Verbundlösungen</text>
+
+  <!-- Arrow 4→5 -->
+  <polygon points="663,212 674,220 663,228" fill="#C8CAD4"/>
+
+  <!-- ─── PHASE 5: Vereinbarungen — primary #1F2C56 ─── -->
+  <rect x="676" y="80" width="144" height="280" fill="#1F2C56"/>
+  <rect x="676" y="80" width="144" height="280" fill="none" stroke="#1F2C56" stroke-width="1"/>
+  <text x="690" y="138" class="serif" font-size="44" font-style="italic" fill="#D9C089">V.</text>
+  <text x="690" y="164" class="serif" font-size="13" fill="#F8F8FA" font-weight="500">Vereinbarungen</text>
+  <text x="690" y="181" class="mono" font-size="8" fill="#8898C4" letter-spacing="0.5">CA. 15 MIN</text>
+  <line x1="690" y1="191" x2="806" y2="191" stroke="#F8F8FA" stroke-width="0.5" opacity="0.25"/>
+  <text x="690" y="208" class="mono" font-size="8" fill="#8898C4" letter-spacing="0.3">Erkenntnisse bündeln</text>
+  <text x="690" y="224" class="mono" font-size="8" fill="#8898C4" letter-spacing="0.3">Maßnahmen + Termine</text>
+  <text x="690" y="240" class="mono" font-size="8" fill="#8898C4" letter-spacing="0.3">Follow-up fixieren</text>
+
+  <!-- ── Baseline y=360 ── -->
+  <line x1="40" y1="360" x2="820" y2="360" stroke="#15192B" stroke-width="1"/>
+
+  <!-- Direction label below baseline -->
+  <text x="40" y="378" class="mono" font-size="9" fill="#7A8099" letter-spacing="1">SEMINAR-ÜBUNGSFORMAT · IM REALEN KUNDENTERMIN: 60–75 MIN GESAMTDAUER OPTIMAL</text>
+  <line x1="600" y1="374" x2="780" y2="374" stroke="#E2E3E8" stroke-width="1"/>
+  <polygon points="780,370 790,374 780,378" fill="#E2E3E8"/>
+
+  <!-- Source -->
+  <text x="40" y="465" class="mono" font-size="9" fill="#B0B3C0" letter-spacing="0.5">Watzlawick, Beavin &amp; Jackson (1969) · Schulz von Thun (1981) · 5-Phasen-Rahmen Bilanzgespräch</text>
+</svg>
