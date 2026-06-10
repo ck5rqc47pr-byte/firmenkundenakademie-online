@@ -6,6 +6,7 @@ type Props = {
   pdfUrl?: string | null;
   trainerPdfUrl?: string | null;
   beobachtungsbogenUrl?: string | null;
+  presentationUrl?: string | null;
   hasTheorie?: boolean;
   isTrainerOrAdmin?: boolean;
   className?: string;
@@ -27,7 +28,7 @@ function Chip({ moduleId }: { moduleId: string }) {
   );
 }
 
-export function MetaBox({ module, pdfUrl, trainerPdfUrl, beobachtungsbogenUrl, hasTheorie, isTrainerOrAdmin, className }: Props) {
+export function MetaBox({ module, pdfUrl, trainerPdfUrl, beobachtungsbogenUrl, presentationUrl, hasTheorie, isTrainerOrAdmin, className }: Props) {
   return (
     <aside className={`space-y-8 ${className ?? ""}`}>
       {/* Auf dieser Seite – nur Desktop (Mobile hat eigene Leiste oben) */}
@@ -113,7 +114,7 @@ export function MetaBox({ module, pdfUrl, trainerPdfUrl, beobachtungsbogenUrl, h
           {module.kompetenzfeld} →
         </Link>
       </div>
-      {(pdfUrl || beobachtungsbogenUrl || (isTrainerOrAdmin && trainerPdfUrl)) && (
+      {(pdfUrl || beobachtungsbogenUrl || (isTrainerOrAdmin && (trainerPdfUrl || presentationUrl))) && (
         <div>
           <div className="font-mono text-[10px] uppercase tracking-[0.08em] text-ink-3 pb-3 border-b border-ink mb-4">
             Downloads
@@ -149,6 +150,17 @@ export function MetaBox({ module, pdfUrl, trainerPdfUrl, beobachtungsbogenUrl, h
                 className="flex items-center justify-between gap-2 border border-accent text-accent px-4 py-3 font-mono text-[11px] uppercase tracking-[0.08em] hover:bg-accent hover:text-primary-ink transition"
               >
                 <span>Trainerhandbuch (PDF)</span>
+                <span>↓</span>
+              </a>
+            )}
+            {isTrainerOrAdmin && presentationUrl && (
+              <a
+                href={presentationUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center justify-between gap-2 border border-accent text-accent px-4 py-3 font-mono text-[11px] uppercase tracking-[0.08em] hover:bg-accent hover:text-primary-ink transition"
+              >
+                <span>Präsentation (PPTX)</span>
                 <span>↓</span>
               </a>
             )}
