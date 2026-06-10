@@ -36,7 +36,7 @@ export default async function ModuleDetailPage({ params }: { params: { id: strin
   const isCompleted = progress.some((p) => p.module_id === module.id);
   const existingFeedback = userId && isCompleted ? await getFeedbackForUser(userId, module.id) : null;
   const quizQuestions = getQuizForModule(module.id);
-  const latestQuizResult = userId && isCompleted && quizQuestions.length > 0
+  const latestQuizResult = userId && quizQuestions.length > 0
     ? await getLatestQuizResult(userId, module.id)
     : null;
 
@@ -230,8 +230,8 @@ export default async function ModuleDetailPage({ params }: { params: { id: strin
           </div>
         )}
 
-        {/* Wissenstest */}
-        {userId && isCompleted && quizQuestions.length > 0 && (
+        {/* Wissenstest – unabhängig vom Modulabschluss bearbeitbar */}
+        {userId && quizQuestions.length > 0 && (
           <QuizSection
             moduleId={module.id}
             questions={quizQuestions}
