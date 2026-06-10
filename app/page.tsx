@@ -207,29 +207,20 @@ export default function HomePage() {
       {/* ── MANIFEST ──────────────────────────────────────────────────────── */}
       <section className="border-b border-ink">
         <div className="mx-auto max-w-content px-6 lg:px-14">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border-t border-ink">
-            {MANIFEST.map(([n, t, d], i) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border-t border-l border-ink">
+            {MANIFEST.map(([n, t, d]) => (
               <div
                 key={n}
-                style={{
-                  background: i === 1 ? "var(--primary)" : undefined,
-                  color:      i === 1 ? "var(--primary-ink)" : undefined,
-                }}
                 className="p-10 border-b border-r border-line min-h-[280px] flex flex-col"
               >
                 <div
                   className="font-serif text-5xl italic leading-[0.9]"
-                  style={{ color: i === 1 ? "var(--accent)" : "var(--primary)" }}
+                  style={{ color: "var(--primary)" }}
                 >
                   {n}
                 </div>
                 <h3 className="font-serif text-2xl font-normal tracking-[-0.02em] mt-6 mb-3">{t}</h3>
-                <p
-                  className="text-sm leading-relaxed"
-                  style={{ color: i === 1 ? "oklch(0.85 0.02 240)" : "var(--ink-2)" }}
-                >
-                  {d}
-                </p>
+                <p className="text-sm leading-relaxed text-ink-2">{d}</p>
               </div>
             ))}
           </div>
