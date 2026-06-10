@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 560" width="860" height="560">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;1,8..60,400&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap');
+      text { font-family: Georgia, serif; }
+      .mono { font-family: 'JetBrains Mono', 'Courier New', monospace; }
+      .serif { font-family: 'Source Serif 4', Georgia, serif; }
+    </style>
+  </defs>
+
+  <rect width="860" height="560" fill="#F8F8FA"/>
+
+  <text x="40" y="30" class="mono" font-size="10" fill="#7A8099" letter-spacing="2">BRANCHENLEBENSZYKLUS · MODUL 05 · BRANCHENSPEZIFISCHE RISIKOSYSTEME</text>
+  <line x1="40" y1="40" x2="820" y2="40" stroke="#E2E3E8" stroke-width="1"/>
+
+  <!-- axes -->
+  <line x1="90" y1="110" x2="90" y2="372" stroke="#C8CAD4" stroke-width="1"/>
+  <line x1="90" y1="372" x2="810" y2="372" stroke="#C8CAD4" stroke-width="1"/>
+  <text x="80" y="240" class="mono" font-size="9" fill="#B0B3C0" letter-spacing="1" transform="rotate(-90 80 240)" text-anchor="middle">MARKTVOLUMEN</text>
+  <text x="810" y="392" class="mono" font-size="9" fill="#B0B3C0" letter-spacing="0.5" text-anchor="end">ZEIT / BRANCHENALTER</text>
+
+  <!-- phase dividers -->
+  <line x1="260" y1="120" x2="260" y2="372" stroke="#E2E3E8" stroke-width="1" stroke-dasharray="3 3"/>
+  <line x1="450" y1="120" x2="450" y2="372" stroke="#E2E3E8" stroke-width="1" stroke-dasharray="3 3"/>
+  <line x1="640" y1="120" x2="640" y2="372" stroke="#E2E3E8" stroke-width="1" stroke-dasharray="3 3"/>
+
+  <!-- curve fill + line -->
+  <path d="M90,360 C170,356 220,350 260,338 C330,300 380,200 450,168 C520,150 580,150 640,158 C710,170 760,250 810,300 L810,372 L90,372 Z" fill="#3D5494" opacity="0.10"/>
+  <path d="M90,360 C170,356 220,350 260,338 C330,300 380,200 450,168 C520,150 580,150 640,158 C710,170 760,250 810,300" fill="none" stroke="#1F2C56" stroke-width="2.5"/>
+
+  <!-- phase top labels -->
+  <text x="175" y="138" class="mono" font-size="9" fill="#3D4460" letter-spacing="0.5" text-anchor="middle">ENTSTEHUNG</text>
+  <text x="355" y="138" class="mono" font-size="9" fill="#3D4460" letter-spacing="0.5" text-anchor="middle">WACHSTUM</text>
+  <text x="545" y="138" class="mono" font-size="9" fill="#3D4460" letter-spacing="0.5" text-anchor="middle">REIFE</text>
+  <text x="725" y="138" class="mono" font-size="9" fill="#3D4460" letter-spacing="0.5" text-anchor="middle">SCHRUMPFUNG</text>
+
+  <!-- phase cards -->
+  <rect x="90" y="400" width="171" height="118" fill="#FFFFFF" stroke="#E2E3E8" stroke-width="1"/>
+  <circle cx="106" cy="424" r="5" fill="#ef4444"/>
+  <text x="120" y="428" class="serif" font-size="14" fill="#1F2C56" font-weight="500">Entstehung</text>
+  <text x="106" y="456" class="mono" font-size="8" fill="#ef4444">KREDITRISIKO HOCH</text>
+  <text x="106" y="480" class="serif" font-size="11" fill="#3D4460">Unsichere Markt-</text>
+  <text x="106" y="496" class="serif" font-size="11" fill="#3D4460">fähigkeit, hoher</text>
+  <text x="106" y="512" class="serif" font-size="11" fill="#3D4460">Kapitalbedarf.</text>
+
+  <rect x="273" y="400" width="171" height="118" fill="#FFFFFF" stroke="#E2E3E8" stroke-width="1"/>
+  <circle cx="289" cy="424" r="5" fill="#f59e0b"/>
+  <text x="303" y="428" class="serif" font-size="14" fill="#1F2C56" font-weight="500">Wachstum</text>
+  <text x="289" y="456" class="mono" font-size="8" fill="#f59e0b">KREDITRISIKO MITTEL</text>
+  <text x="289" y="480" class="serif" font-size="11" fill="#3D4460">Skalierung,</text>
+  <text x="289" y="496" class="serif" font-size="11" fill="#3D4460">Finanzierungs-</text>
+  <text x="289" y="512" class="serif" font-size="11" fill="#3D4460">bedarf, Dynamik.</text>
+
+  <rect x="456" y="400" width="171" height="118" fill="#FFFFFF" stroke="#E2E3E8" stroke-width="1"/>
+  <circle cx="472" cy="424" r="5" fill="#22c55e"/>
+  <text x="486" y="428" class="serif" font-size="14" fill="#1F2C56" font-weight="500">Reife</text>
+  <text x="472" y="456" class="mono" font-size="8" fill="#22c55e">KREDITRISIKO NIEDRIG</text>
+  <text x="472" y="480" class="serif" font-size="11" fill="#3D4460">Stabile Cashflows,</text>
+  <text x="472" y="496" class="serif" font-size="11" fill="#3D4460">etablierte Position,</text>
+  <text x="472" y="512" class="serif" font-size="11" fill="#3D4460">geringe Dynamik.</text>
+
+  <rect x="639" y="400" width="171" height="118" fill="#FFFFFF" stroke="#E2E3E8" stroke-width="1"/>
+  <circle cx="655" cy="424" r="5" fill="#ef4444"/>
+  <text x="669" y="428" class="serif" font-size="14" fill="#1F2C56" font-weight="500">Schrumpfung</text>
+  <text x="655" y="456" class="mono" font-size="8" fill="#ef4444">KREDITRISIKO STEIGEND</text>
+  <text x="655" y="480" class="serif" font-size="11" fill="#3D4460">Überkapazität,</text>
+  <text x="655" y="496" class="serif" font-size="11" fill="#3D4460">Margendruck,</text>
+  <text x="655" y="512" class="serif" font-size="11" fill="#3D4460">Konsolidierung.</text>
+
+  <text x="40" y="544" class="mono" font-size="9" fill="#B0B3C0" letter-spacing="0.5">Branchenlebenszyklus (Vernon 1966 / Porter 1980) · Marktphasen als Kreditrisiko-Indikator</text>
+</svg>
