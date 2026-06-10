@@ -206,20 +206,25 @@ export default function HomePage() {
 
       {/* ── MANIFEST ──────────────────────────────────────────────────────── */}
       <section className="border-b border-ink">
-        <div className="mx-auto max-w-content px-6 lg:px-14">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border-t border-l border-ink">
+        <div className="mx-auto max-w-content px-6 lg:px-14 py-20">
+          <div className="font-mono text-[10px] uppercase tracking-[0.1em] text-ink-3 mb-5 flex items-center gap-2">
+            <span className="w-4 h-px inline-block bg-ink-3" />
+            Das Versprechen
+          </div>
+          <h2 className="font-serif text-3xl lg:text-4xl font-normal tracking-[-0.02em] leading-tight mb-14 max-w-xl">
+            Vier Prinzipien.{" "}
+            <em className="italic text-ink-2">Ein Anspruch.</em>
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {MANIFEST.map(([n, t, d]) => (
-              <div
-                key={n}
-                className="p-10 border-b border-r border-line min-h-[280px] flex flex-col"
-              >
+              <div key={n} className="border border-line p-8 flex flex-col">
                 <div
-                  className="font-serif text-5xl italic leading-[0.9]"
+                  className="font-serif text-4xl italic leading-[0.9]"
                   style={{ color: "var(--primary)" }}
                 >
                   {n}
                 </div>
-                <h3 className="font-serif text-2xl font-normal tracking-[-0.02em] mt-6 mb-3">{t}</h3>
+                <h3 className="font-serif text-xl font-normal tracking-[-0.02em] mt-5 mb-3">{t}</h3>
                 <p className="text-sm leading-relaxed text-ink-2">{d}</p>
               </div>
             ))}
