@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 600" width="860" height="600">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;1,8..60,400&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap');
+      text { font-family: Georgia, serif; }
+      .mono { font-family: 'JetBrains Mono', 'Courier New', monospace; }
+      .serif { font-family: 'Source Serif 4', Georgia, serif; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="860" height="600" fill="#F8F8FA"/>
+
+  <!-- Eyebrow -->
+  <text x="40" y="30" class="mono" font-size="10" fill="#7A8099" letter-spacing="2">DREI FINANZIERUNGSTYPOLOGIEN · MODUL 08 · IMMOBILIEN- &amp; PROJEKTFINANZIERUNG</text>
+  <line x1="40" y1="40" x2="820" y2="40" stroke="#E2E3E8" stroke-width="1"/>
+
+  <!-- ═══ TYPOLOGIE-KARTEN ═══ -->
+  <!-- Card 1: Bestandshalter -->
+  <rect x="40" y="64" width="240" height="262" fill="#FFFFFF" stroke="#E2E3E8" stroke-width="1"/>
+  <rect x="40" y="64" width="240" height="4" fill="#1F2C56"/>
+  <text x="58" y="100" class="serif" font-size="16" fill="#1F2C56" font-weight="500">Bestandshalter</text>
+  <text x="58" y="118" class="mono" font-size="8" fill="#7A8099">STABILE MIETERTRÄGE</text>
+  <line x1="58" y1="128" x2="262" y2="128" stroke="#E2E3E8" stroke-width="1"/>
+  <text x="58" y="148" class="serif" font-size="11" fill="#3D4460">· Laufender Miet-Cashflow</text>
+  <text x="58" y="167" class="serif" font-size="11" fill="#3D4460">· Diversifizierter Mietermix</text>
+  <text x="58" y="186" class="serif" font-size="11" fill="#3D4460">· Lange Haltedauer</text>
+  <text x="58" y="232" class="mono" font-size="8" fill="#7A8099">LEITKENNZAHL</text>
+  <text x="58" y="250" class="serif" font-size="14" fill="#1F2C56" font-weight="500">DSCR</text>
+  <text x="58" y="288" class="mono" font-size="8" fill="#7A8099">HAUPTRISIKO</text>
+  <text x="58" y="306" class="serif" font-size="12" font-style="italic" fill="#ef4444">Leerstand &amp; Mietausfall</text>
+
+  <!-- Card 2: Bauträger -->
+  <rect x="310" y="64" width="240" height="262" fill="#FFFFFF" stroke="#E2E3E8" stroke-width="1"/>
+  <rect x="310" y="64" width="240" height="4" fill="#D9C089"/>
+  <text x="328" y="100" class="serif" font-size="16" fill="#1F2C56" font-weight="500">Bauträger</text>
+  <text x="328" y="118" class="mono" font-size="8" fill="#7A8099">KEIN LAUFENDER MIET-CF</text>
+  <line x1="328" y1="128" x2="532" y2="128" stroke="#E2E3E8" stroke-width="1"/>
+  <text x="328" y="148" class="serif" font-size="11" fill="#3D4460">· Erlös erst bei Verkauf</text>
+  <text x="328" y="167" class="serif" font-size="11" fill="#3D4460">· Vorverkaufsquote zählt</text>
+  <text x="328" y="186" class="serif" font-size="11" fill="#3D4460">· Kurzer Projektzyklus</text>
+  <text x="328" y="232" class="mono" font-size="8" fill="#7A8099">LEITKENNZAHL</text>
+  <text x="328" y="250" class="serif" font-size="14" fill="#1F2C56" font-weight="500">LTV auf GDV</text>
+  <text x="328" y="288" class="mono" font-size="8" fill="#7A8099">HAUPTRISIKO</text>
+  <text x="328" y="306" class="serif" font-size="12" font-style="italic" fill="#ef4444">Fertigstellung &amp; Absatz</text>
+
+  <!-- Card 3: Projektentwickler -->
+  <rect x="580" y="64" width="240" height="262" fill="#FFFFFF" stroke="#E2E3E8" stroke-width="1"/>
+  <rect x="580" y="64" width="240" height="4" fill="#3D5494"/>
+  <text x="598" y="100" class="serif" font-size="16" fill="#1F2C56" font-weight="500">Projektentwickler</text>
+  <text x="598" y="118" class="mono" font-size="8" fill="#7A8099">WERTSCHÖPFUNG ÜBER ENTWICKLUNG</text>
+  <line x1="598" y1="128" x2="802" y2="128" stroke="#E2E3E8" stroke-width="1"/>
+  <text x="598" y="148" class="serif" font-size="11" fill="#3D4460">· Projektrendite im Fokus</text>
+  <text x="598" y="167" class="serif" font-size="11" fill="#3D4460">· Vorvermietung sichert Exit</text>
+  <text x="598" y="186" class="serif" font-size="11" fill="#3D4460">· Langer Zeithorizont</text>
+  <text x="598" y="232" class="mono" font-size="8" fill="#7A8099">LEITKENNZAHL</text>
+  <text x="598" y="250" class="serif" font-size="14" fill="#1F2C56" font-weight="500">Projektrendite</text>
+  <text x="598" y="288" class="mono" font-size="8" fill="#7A8099">HAUPTRISIKO</text>
+  <text x="598" y="306" class="serif" font-size="12" font-style="italic" fill="#ef4444">Planung &amp; langer Horizont</text>
+
+  <!-- ═══ KENNZAHLEN-AMPELN ═══ -->
+  <text x="40" y="368" class="mono" font-size="9" fill="#7A8099" letter-spacing="1">RISIKO-LEITKENNZAHLEN · SCHWELLENWERTE</text>
+
+  <!-- LTV -->
+  <rect x="40" y="386" width="240" height="150" fill="#FFFFFF" stroke="#E2E3E8" stroke-width="1"/>
+  <text x="58" y="414" class="serif" font-size="14" fill="#1F2C56" font-weight="500">LTV</text>
+  <text x="58" y="432" class="mono" font-size="8" fill="#7A8099">Darlehen / Beleihungswert × 100</text>
+  <rect x="58" y="450" width="68" height="34" fill="#22c55e"/>
+  <rect x="126" y="450" width="68" height="34" fill="#f59e0b"/>
+  <rect x="194" y="450" width="68" height="34" fill="#ef4444"/>
+  <text x="92"  y="471" class="mono" font-size="9" fill="#FFFFFF" text-anchor="middle">&lt; 60%</text>
+  <text x="160" y="471" class="mono" font-size="9" fill="#15192B" text-anchor="middle">60–80%</text>
+  <text x="228" y="471" class="mono" font-size="9" fill="#FFFFFF" text-anchor="middle">&gt; 80%</text>
+  <text x="58" y="510" class="mono" font-size="8" fill="#7A8099">niedriger Beleihungsauslauf</text>
+  <text x="58" y="523" class="mono" font-size="8" fill="#7A8099">= mehr Risikopuffer</text>
+
+  <!-- DSCR -->
+  <rect x="310" y="386" width="240" height="150" fill="#FFFFFF" stroke="#E2E3E8" stroke-width="1"/>
+  <text x="328" y="414" class="serif" font-size="14" fill="#1F2C56" font-weight="500">DSCR</text>
+  <text x="328" y="432" class="mono" font-size="8" fill="#7A8099">NOI / Kapitaldienst</text>
+  <rect x="328" y="450" width="68" height="34" fill="#ef4444"/>
+  <rect x="396" y="450" width="68" height="34" fill="#f59e0b"/>
+  <rect x="464" y="450" width="68" height="34" fill="#22c55e"/>
+  <text x="362" y="471" class="mono" font-size="9" fill="#FFFFFF" text-anchor="middle">&lt; 1,10</text>
+  <text x="430" y="471" class="mono" font-size="9" fill="#15192B" text-anchor="middle">1,10–1,25</text>
+  <text x="498" y="471" class="mono" font-size="9" fill="#FFFFFF" text-anchor="middle">&gt; 1,25</text>
+  <text x="328" y="510" class="mono" font-size="8" fill="#7A8099">Cashflow deckt Kapitaldienst</text>
+  <text x="328" y="523" class="mono" font-size="8" fill="#7A8099">höher = sicherer</text>
+
+  <!-- ICR -->
+  <rect x="580" y="386" width="240" height="150" fill="#FFFFFF" stroke="#E2E3E8" stroke-width="1"/>
+  <text x="598" y="414" class="serif" font-size="14" fill="#1F2C56" font-weight="500">ICR</text>
+  <text x="598" y="432" class="mono" font-size="8" fill="#7A8099">EBIT / Zinsaufwand</text>
+  <rect x="598" y="450" width="68" height="34" fill="#ef4444"/>
+  <rect x="666" y="450" width="68" height="34" fill="#f59e0b"/>
+  <rect x="734" y="450" width="68" height="34" fill="#22c55e"/>
+  <text x="632" y="471" class="mono" font-size="9" fill="#FFFFFF" text-anchor="middle">&lt; 1,5</text>
+  <text x="700" y="471" class="mono" font-size="9" fill="#15192B" text-anchor="middle">1,5–2,0</text>
+  <text x="768" y="471" class="mono" font-size="9" fill="#FFFFFF" text-anchor="middle">&gt; 2,0</text>
+  <text x="598" y="510" class="mono" font-size="8" fill="#7A8099">Zinsdeckung aus Betriebs-</text>
+  <text x="598" y="523" class="mono" font-size="8" fill="#7A8099">ergebnis · &gt; 2,0 komfortabel</text>
+
+  <!-- Source -->
+  <text x="40" y="576" class="mono" font-size="9" fill="#B0B3C0" letter-spacing="0.5">BelWertV · gif e.V. (2017) zu Immobilien-Cashflows · DSCR/ICR/LTV branchenübliche Schwellenwerte</text>
+</svg>

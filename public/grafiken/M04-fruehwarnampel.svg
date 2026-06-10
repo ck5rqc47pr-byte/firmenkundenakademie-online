@@ -1,0 +1,165 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 540" width="860" height="540">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;1,8..60,400&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap');
+      text { font-family: Georgia, serif; }
+      .mono { font-family: 'JetBrains Mono', 'Courier New', monospace; }
+      .serif { font-family: 'Source Serif 4', Georgia, serif; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="860" height="540" fill="#F8F8FA"/>
+
+  <!-- Eyebrow -->
+  <text x="40" y="30" class="mono" font-size="10" fill="#7A8099" letter-spacing="2">FRÜHWARNINDIKATOREN · MODUL 04 · KREDITRISIKOFRÜHERKENNUNG</text>
+  <line x1="40" y1="40" x2="820" y2="40" stroke="#E2E3E8" stroke-width="1"/>
+
+  <!-- ══════════════════════════════════════════════
+       CARD GRID: 3 cols × 2 rows  (5 Indikatoren + Gesamtscore)
+       Col x: 40, 307, 574   Width: 247   Row y: 55, 295   Height: 225
+       Seg centers  Col1: 91/163/235  Col2: 358/430/502  Col3: 625/697/769
+       ══════════════════════════════════════════════ -->
+
+  <!-- ─── CARD 1: EBITDA-Marge ─── -->
+  <rect x="40" y="55" width="247" height="225" fill="#FFFFFF" stroke="#E2E3E8" stroke-width="1"/>
+  <rect x="40" y="55" width="247" height="4" fill="#1F2C56"/>
+  <text x="55" y="82" class="serif" font-size="16" fill="#1F2C56" font-weight="500">EBITDA-Marge</text>
+  <text x="55" y="98" class="mono" font-size="9" fill="#7A8099" letter-spacing="1">OPERATIVE ERTRAGSKRAFT</text>
+  <line x1="55" y1="108" x2="272" y2="108" stroke="#E2E3E8" stroke-width="1"/>
+  <text x="55" y="124" class="mono" font-size="9" fill="#3D4460" font-style="italic">EBITDA</text>
+  <line x1="55" y1="130" x2="138" y2="130" stroke="#3D4460" stroke-width="1"/>
+  <text x="55" y="144" class="mono" font-size="9" fill="#3D4460" font-style="italic">Umsatz</text>
+  <text x="146" y="139" class="mono" font-size="12" fill="#3D4460">× 100</text>
+  <line x1="55" y1="155" x2="272" y2="155" stroke="#E2E3E8" stroke-width="1"/>
+  <text x="55" y="167" class="mono" font-size="8" fill="#7A8099" letter-spacing="1">BEWERTUNG</text>
+  <line x1="55" y1="177" x2="272" y2="177" stroke="#E2E3E8" stroke-width="1"/>
+  <rect x="55" y="183" width="72" height="26" fill="#22c55e"/>
+  <rect x="127" y="183" width="72" height="26" fill="#f59e0b"/>
+  <rect x="199" y="183" width="73" height="26" fill="#ef4444"/>
+  <text x="91" y="200" class="mono" font-size="8" fill="#FFFFFF" text-anchor="middle">&gt; 8 %</text>
+  <text x="163" y="200" class="mono" font-size="8" fill="#15192B" text-anchor="middle">5–8 %</text>
+  <text x="235" y="200" class="mono" font-size="8" fill="#FFFFFF" text-anchor="middle">&lt; 5 %</text>
+  <text x="91" y="222" class="mono" font-size="7" fill="#7A8099" text-anchor="middle">gut</text>
+  <text x="163" y="222" class="mono" font-size="7" fill="#7A8099" text-anchor="middle">beobachten</text>
+  <text x="235" y="222" class="mono" font-size="7" fill="#7A8099" text-anchor="middle">kritisch</text>
+  <text x="55" y="264" class="mono" font-size="7" fill="#B0B3C0">Quelle: Jahresabschluss / BWA</text>
+
+  <!-- ─── CARD 2: Leverage ─── -->
+  <rect x="307" y="55" width="247" height="225" fill="#FFFFFF" stroke="#E2E3E8" stroke-width="1"/>
+  <rect x="307" y="55" width="247" height="4" fill="#D9C089"/>
+  <text x="322" y="82" class="serif" font-size="16" fill="#1F2C56" font-weight="500">Leverage</text>
+  <text x="322" y="98" class="mono" font-size="9" fill="#7A8099" letter-spacing="1">NFK / EBITDA</text>
+  <line x1="322" y1="108" x2="539" y2="108" stroke="#E2E3E8" stroke-width="1"/>
+  <text x="322" y="124" class="mono" font-size="9" fill="#3D4460" font-style="italic">Netto-Finanzverbindl.</text>
+  <line x1="322" y1="130" x2="503" y2="130" stroke="#3D4460" stroke-width="1"/>
+  <text x="322" y="144" class="mono" font-size="9" fill="#3D4460" font-style="italic">EBITDA</text>
+  <line x1="322" y1="155" x2="539" y2="155" stroke="#E2E3E8" stroke-width="1"/>
+  <text x="322" y="167" class="mono" font-size="8" fill="#7A8099" letter-spacing="1">BEWERTUNG</text>
+  <line x1="322" y1="177" x2="539" y2="177" stroke="#E2E3E8" stroke-width="1"/>
+  <rect x="322" y="183" width="72" height="26" fill="#22c55e"/>
+  <rect x="394" y="183" width="72" height="26" fill="#f59e0b"/>
+  <rect x="466" y="183" width="73" height="26" fill="#ef4444"/>
+  <text x="358" y="200" class="mono" font-size="8" fill="#FFFFFF" text-anchor="middle">&lt; 3,0x</text>
+  <text x="430" y="200" class="mono" font-size="8" fill="#15192B" text-anchor="middle">3,0–4,0x</text>
+  <text x="502" y="200" class="mono" font-size="8" fill="#FFFFFF" text-anchor="middle">&gt; 4,0x</text>
+  <text x="358" y="222" class="mono" font-size="7" fill="#7A8099" text-anchor="middle">gut</text>
+  <text x="430" y="222" class="mono" font-size="7" fill="#7A8099" text-anchor="middle">beobachten</text>
+  <text x="502" y="222" class="mono" font-size="7" fill="#7A8099" text-anchor="middle">kritisch</text>
+  <text x="322" y="264" class="mono" font-size="7" fill="#B0B3C0">Schuldentilgung &gt; 4 J. = Rot-Signal</text>
+
+  <!-- ─── CARD 3: Eigenkapitalquote ─── -->
+  <rect x="574" y="55" width="247" height="225" fill="#FFFFFF" stroke="#E2E3E8" stroke-width="1"/>
+  <rect x="574" y="55" width="247" height="4" fill="#1F2C56"/>
+  <text x="589" y="82" class="serif" font-size="16" fill="#1F2C56" font-weight="500">Eigenkapitalquote</text>
+  <text x="589" y="98" class="mono" font-size="9" fill="#7A8099" letter-spacing="1">KAPITALSTRUKTUR</text>
+  <line x1="589" y1="108" x2="806" y2="108" stroke="#E2E3E8" stroke-width="1"/>
+  <text x="589" y="124" class="mono" font-size="9" fill="#3D4460" font-style="italic">Eigenkapital</text>
+  <line x1="589" y1="130" x2="715" y2="130" stroke="#3D4460" stroke-width="1"/>
+  <text x="589" y="144" class="mono" font-size="9" fill="#3D4460" font-style="italic">Bilanzsumme</text>
+  <text x="723" y="139" class="mono" font-size="12" fill="#3D4460">× 100</text>
+  <line x1="589" y1="155" x2="806" y2="155" stroke="#E2E3E8" stroke-width="1"/>
+  <text x="589" y="167" class="mono" font-size="8" fill="#7A8099" letter-spacing="1">BEWERTUNG</text>
+  <line x1="589" y1="177" x2="806" y2="177" stroke="#E2E3E8" stroke-width="1"/>
+  <rect x="589" y="183" width="72" height="26" fill="#22c55e"/>
+  <rect x="661" y="183" width="72" height="26" fill="#f59e0b"/>
+  <rect x="733" y="183" width="73" height="26" fill="#ef4444"/>
+  <text x="625" y="200" class="mono" font-size="8" fill="#FFFFFF" text-anchor="middle">&gt; 20 %</text>
+  <text x="697" y="200" class="mono" font-size="8" fill="#15192B" text-anchor="middle">10–20 %</text>
+  <text x="769" y="200" class="mono" font-size="8" fill="#FFFFFF" text-anchor="middle">&lt; 10 %</text>
+  <text x="625" y="222" class="mono" font-size="7" fill="#7A8099" text-anchor="middle">gut</text>
+  <text x="697" y="222" class="mono" font-size="7" fill="#7A8099" text-anchor="middle">beobachten</text>
+  <text x="769" y="222" class="mono" font-size="7" fill="#7A8099" text-anchor="middle">kritisch</text>
+  <text x="589" y="264" class="mono" font-size="7" fill="#B0B3C0">EK-Erosion = latentes Krisensignal</text>
+
+  <!-- ─── CARD 4: KK-Inanspruchnahme ─── -->
+  <rect x="40" y="295" width="247" height="225" fill="#FFFFFF" stroke="#E2E3E8" stroke-width="1"/>
+  <rect x="40" y="295" width="247" height="4" fill="#D9C089"/>
+  <text x="55" y="322" class="serif" font-size="16" fill="#1F2C56" font-weight="500">KK-Inanspruchnahme</text>
+  <text x="55" y="338" class="mono" font-size="9" fill="#7A8099" letter-spacing="1">KONTOKORRENT-AUSLASTUNG</text>
+  <line x1="55" y1="348" x2="272" y2="348" stroke="#E2E3E8" stroke-width="1"/>
+  <text x="55" y="364" class="mono" font-size="8" fill="#3D4460" font-style="italic">Ø-Inanspruchnahme</text>
+  <line x1="55" y1="370" x2="212" y2="370" stroke="#3D4460" stroke-width="1"/>
+  <text x="55" y="384" class="mono" font-size="8" fill="#3D4460" font-style="italic">Kreditlimit</text>
+  <text x="220" y="379" class="mono" font-size="12" fill="#3D4460">× 100</text>
+  <line x1="55" y1="395" x2="272" y2="395" stroke="#E2E3E8" stroke-width="1"/>
+  <text x="55" y="407" class="mono" font-size="8" fill="#7A8099" letter-spacing="1">BEWERTUNG</text>
+  <line x1="55" y1="417" x2="272" y2="417" stroke="#E2E3E8" stroke-width="1"/>
+  <rect x="55" y="423" width="72" height="26" fill="#22c55e"/>
+  <rect x="127" y="423" width="72" height="26" fill="#f59e0b"/>
+  <rect x="199" y="423" width="73" height="26" fill="#ef4444"/>
+  <text x="91" y="440" class="mono" font-size="8" fill="#FFFFFF" text-anchor="middle">&lt; 60 %</text>
+  <text x="163" y="440" class="mono" font-size="8" fill="#15192B" text-anchor="middle">60–85 %</text>
+  <text x="235" y="440" class="mono" font-size="8" fill="#FFFFFF" text-anchor="middle">&gt; 85 %</text>
+  <text x="91" y="462" class="mono" font-size="7" fill="#7A8099" text-anchor="middle">gut</text>
+  <text x="163" y="462" class="mono" font-size="7" fill="#7A8099" text-anchor="middle">beobachten</text>
+  <text x="235" y="462" class="mono" font-size="7" fill="#7A8099" text-anchor="middle">kritisch</text>
+  <text x="55" y="504" class="mono" font-size="7" fill="#B0B3C0">Dauerhafte Ausschöpfung = akut</text>
+
+  <!-- ─── CARD 5: Jahresabschluss-Vorlage ─── -->
+  <rect x="307" y="295" width="247" height="225" fill="#FFFFFF" stroke="#E2E3E8" stroke-width="1"/>
+  <rect x="307" y="295" width="247" height="4" fill="#1F2C56"/>
+  <text x="322" y="322" class="serif" font-size="16" fill="#1F2C56" font-weight="500">JA-Vorlage</text>
+  <text x="322" y="338" class="mono" font-size="9" fill="#7A8099" letter-spacing="1">TRANSPARENZ-DISZIPLIN</text>
+  <line x1="322" y1="348" x2="539" y2="348" stroke="#E2E3E8" stroke-width="1"/>
+  <text x="322" y="366" class="mono" font-size="9" fill="#3D4460" font-style="italic">Monate nach</text>
+  <text x="322" y="382" class="mono" font-size="9" fill="#3D4460" font-style="italic">Geschäftsjahresende</text>
+  <line x1="322" y1="395" x2="539" y2="395" stroke="#E2E3E8" stroke-width="1"/>
+  <text x="322" y="407" class="mono" font-size="8" fill="#7A8099" letter-spacing="1">BEWERTUNG</text>
+  <line x1="322" y1="417" x2="539" y2="417" stroke="#E2E3E8" stroke-width="1"/>
+  <rect x="322" y="423" width="72" height="26" fill="#22c55e"/>
+  <rect x="394" y="423" width="72" height="26" fill="#f59e0b"/>
+  <rect x="466" y="423" width="73" height="26" fill="#ef4444"/>
+  <text x="358" y="440" class="mono" font-size="8" fill="#FFFFFF" text-anchor="middle">&lt; 6 Mon</text>
+  <text x="430" y="440" class="mono" font-size="8" fill="#15192B" text-anchor="middle">6–9 Mon</text>
+  <text x="502" y="440" class="mono" font-size="8" fill="#FFFFFF" text-anchor="middle">&gt; 9 Mon</text>
+  <text x="358" y="462" class="mono" font-size="7" fill="#7A8099" text-anchor="middle">gut</text>
+  <text x="430" y="462" class="mono" font-size="7" fill="#7A8099" text-anchor="middle">beobachten</text>
+  <text x="502" y="462" class="mono" font-size="7" fill="#7A8099" text-anchor="middle">kritisch</text>
+  <text x="322" y="504" class="mono" font-size="7" fill="#B0B3C0">Verweigerung = sofortiger Rot-Trigger</text>
+
+  <!-- ─── CARD 6: Gesamtscore ─── -->
+  <rect x="574" y="295" width="247" height="225" fill="#FFFFFF" stroke="#E2E3E8" stroke-width="1"/>
+  <rect x="574" y="295" width="247" height="4" fill="#D9C089"/>
+  <text x="589" y="322" class="serif" font-size="16" fill="#1F2C56" font-weight="500">Gesamtscore</text>
+  <text x="589" y="338" class="mono" font-size="9" fill="#7A8099" letter-spacing="1">AMPEL-CHECKLISTE</text>
+  <line x1="589" y1="348" x2="806" y2="348" stroke="#E2E3E8" stroke-width="1"/>
+  <text x="589" y="366" class="mono" font-size="9" fill="#3D4460" font-style="italic">Σ Punkte aller Indikatoren</text>
+  <text x="589" y="382" class="mono" font-size="8" fill="#7A8099">je Indikator 0 / 1 / 2 Punkte</text>
+  <line x1="589" y1="395" x2="806" y2="395" stroke="#E2E3E8" stroke-width="1"/>
+  <text x="589" y="407" class="mono" font-size="8" fill="#7A8099" letter-spacing="1">NÄCHSTER SCHRITT</text>
+  <line x1="589" y1="417" x2="806" y2="417" stroke="#E2E3E8" stroke-width="1"/>
+  <rect x="589" y="423" width="72" height="26" fill="#22c55e"/>
+  <rect x="661" y="423" width="72" height="26" fill="#f59e0b"/>
+  <rect x="733" y="423" width="73" height="26" fill="#ef4444"/>
+  <text x="625" y="440" class="mono" font-size="8" fill="#FFFFFF" text-anchor="middle">0–5</text>
+  <text x="697" y="440" class="mono" font-size="8" fill="#15192B" text-anchor="middle">6–10</text>
+  <text x="769" y="440" class="mono" font-size="8" fill="#FFFFFF" text-anchor="middle">11–20</text>
+  <text x="625" y="462" class="mono" font-size="7" fill="#7A8099" text-anchor="middle">regulär</text>
+  <text x="697" y="462" class="mono" font-size="7" fill="#7A8099" text-anchor="middle">Gespräch</text>
+  <text x="769" y="462" class="mono" font-size="7" fill="#7A8099" text-anchor="middle">Eskalation</text>
+  <text x="589" y="504" class="mono" font-size="7" fill="#B0B3C0">Einzel-Rot-Trigger überschreibt Score</text>
+
+  <!-- Source -->
+  <text x="40" y="534" class="mono" font-size="9" fill="#B0B3C0" letter-spacing="0.5">Altman (1968) · Gleißner (2022) · MaRisk BTO 1.3 (BaFin 2023) · branchenübergreifende Schwellenwerte</text>
+</svg>

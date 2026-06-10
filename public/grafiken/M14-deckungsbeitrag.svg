@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 560" width="860" height="560">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;1,8..60,400&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap');
+      text { font-family: Georgia, serif; }
+      .mono { font-family: 'JetBrains Mono', 'Courier New', monospace; }
+      .serif { font-family: 'Source Serif 4', Georgia, serif; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="860" height="560" fill="#F8F8FA"/>
+
+  <!-- Eyebrow -->
+  <text x="40" y="30" class="mono" font-size="10" fill="#7A8099" letter-spacing="2">DECKUNGSBEITRAGS-WASSERFALL · MODUL 14 · KUNDENWERT &amp; PRICING</text>
+  <line x1="40" y1="40" x2="820" y2="40" stroke="#E2E3E8" stroke-width="1"/>
+
+  <!-- Case label -->
+  <text x="40" y="62" class="serif" font-size="13" fill="#1F2C56" font-weight="500">Fallbeispiel Müller GmbH<tspan class="mono" font-size="9" fill="#7A8099">  ·  Kreditvolumen 800.000 €</tspan></text>
+
+  <!-- Baseline -->
+  <line x1="80" y1="440" x2="820" y2="440" stroke="#15192B" stroke-width="1"/>
+
+  <!-- Connectors (dashed) -->
+  <line x1="167" y1="163" x2="202" y2="163" stroke="#C8CAD4" stroke-width="1" stroke-dasharray="3,3"/>
+  <line x1="272" y1="108" x2="307" y2="108" stroke="#C8CAD4" stroke-width="1" stroke-dasharray="3,3"/>
+  <line x1="377" y1="89"  x2="412" y2="89"  stroke="#C8CAD4" stroke-width="1" stroke-dasharray="3,3"/>
+  <line x1="482" y1="199" x2="517" y2="199" stroke="#C8CAD4" stroke-width="1" stroke-dasharray="3,3"/>
+  <line x1="587" y1="199" x2="622" y2="199" stroke="#C8CAD4" stroke-width="1" stroke-dasharray="3,3"/>
+  <line x1="692" y1="224" x2="727" y2="224" stroke="#C8CAD4" stroke-width="1" stroke-dasharray="3,3"/>
+
+  <!-- 1 Zinsüberschuss (start) -->
+  <rect x="97" y="163" width="70" height="277" fill="#1F2C56"/>
+  <text x="132" y="155" class="mono" font-size="9" fill="#1F2C56" text-anchor="middle">+16.150</text>
+  <!-- 2 Provisionsertrag -->
+  <rect x="202" y="108" width="70" height="55" fill="#D9C089"/>
+  <text x="237" y="100" class="mono" font-size="9" fill="#7A8099" text-anchor="middle">+3.200</text>
+  <!-- 3 Verbundertrag -->
+  <rect x="307" y="89" width="70" height="19" fill="#D9C089"/>
+  <text x="342" y="81" class="mono" font-size="9" fill="#7A8099" text-anchor="middle">+1.100</text>
+  <!-- 4 Risikokosten (negative) -->
+  <rect x="412" y="89" width="70" height="110" fill="#ef4444"/>
+  <text x="447" y="81" class="mono" font-size="9" fill="#ef4444" text-anchor="middle">−6.400</text>
+  <!-- 5 DB I (subtotal) -->
+  <rect x="517" y="199" width="70" height="241" fill="#3D5494"/>
+  <text x="552" y="191" class="mono" font-size="9" fill="#1F2C56" font-weight="500" text-anchor="middle">14.050</text>
+  <!-- 6 Betriebskosten (negative) -->
+  <rect x="622" y="199" width="70" height="25" fill="#ef4444"/>
+  <text x="657" y="191" class="mono" font-size="9" fill="#ef4444" text-anchor="middle">−1.440</text>
+  <!-- 7 DB II (total) -->
+  <rect x="727" y="224" width="70" height="216" fill="#1F2C56"/>
+  <rect x="727" y="224" width="70" height="4" fill="#D9C089"/>
+  <text x="762" y="216" class="mono" font-size="9" fill="#1F2C56" font-weight="500" text-anchor="middle">12.610</text>
+
+  <!-- X labels -->
+  <text x="132" y="458" class="mono" font-size="8" fill="#7A8099" text-anchor="middle">Zins-</text>
+  <text x="132" y="469" class="mono" font-size="8" fill="#7A8099" text-anchor="middle">überschuss</text>
+  <text x="237" y="458" class="mono" font-size="8" fill="#7A8099" text-anchor="middle">Provisions-</text>
+  <text x="237" y="469" class="mono" font-size="8" fill="#7A8099" text-anchor="middle">ertrag</text>
+  <text x="342" y="458" class="mono" font-size="8" fill="#7A8099" text-anchor="middle">Verbund-</text>
+  <text x="342" y="469" class="mono" font-size="8" fill="#7A8099" text-anchor="middle">ertrag</text>
+  <text x="447" y="458" class="mono" font-size="8" fill="#7A8099" text-anchor="middle">Risiko-</text>
+  <text x="447" y="469" class="mono" font-size="8" fill="#7A8099" text-anchor="middle">kosten</text>
+  <text x="552" y="458" class="mono" font-size="8" fill="#1F2C56" font-weight="500" text-anchor="middle">= DB I</text>
+  <text x="552" y="469" class="mono" font-size="8" fill="#7A8099" text-anchor="middle">Bruttoertrag</text>
+  <text x="657" y="458" class="mono" font-size="8" fill="#7A8099" text-anchor="middle">Betriebs-</text>
+  <text x="657" y="469" class="mono" font-size="8" fill="#7A8099" text-anchor="middle">kosten</text>
+  <text x="762" y="458" class="mono" font-size="8" fill="#1F2C56" font-weight="500" text-anchor="middle">= DB II</text>
+  <text x="762" y="469" class="mono" font-size="8" fill="#7A8099" text-anchor="middle">Nettoergebnis</text>
+
+  <!-- Result callout -->
+  <rect x="80" y="498" width="740" height="34" fill="#FFFFFF" stroke="#E2E3E8" stroke-width="1"/>
+  <text x="96" y="519" class="serif" font-size="12" fill="#1F2C56"><tspan font-weight="500">Nettomargenbeitrag</tspan>  =  DB II 12.610 € / Volumen 800.000 €  =  <tspan font-weight="500" fill="#3D5494">1,58 %</tspan>  <tspan class="mono" font-size="9" fill="#7A8099">· Benchmark &gt; 1,5 % = sehr guter Kundenwert</tspan></text>
+
+  <!-- Source -->
+  <text x="40" y="552" class="mono" font-size="9" fill="#B0B3C0" letter-spacing="0.5">zeb (2021) zu Kundenwertrechnung · Deckungsbeitragsrechnung im Firmenkundengeschäft · alle Werte p.a.</text>
+</svg>
