@@ -50,27 +50,35 @@ const GRAFIKEN_MAP: Record<string, Array<{ bezeichnung: string; datei: string }>
     { bezeichnung: "Bilanzstruktur T-Konto",  datei: "/grafiken/M01-bilanzstruktur.svg"  },
     { bezeichnung: "Kennzahlen-Karte",         datei: "/grafiken/M01-kennzahlen.svg"      },
     { bezeichnung: "Analyseprozess 4 Schritte",datei: "/grafiken/M01-analyseprozess.svg" },
+    { bezeichnung: "Handlungsempfehlung (Wenn-Dann)", datei: "/grafiken/M01-handlungsempfehlung.svg" },
   ],
   M02: [
     { bezeichnung: "Gesprächsphasen 5-Phasen-Rahmen", datei: "/grafiken/M02-gespraechsphasen.svg" },
+    { bezeichnung: "Vier-Ohren-Modell", datei: "/grafiken/M02-vier-ohren.svg" },
   ],
   M03: [
     { bezeichnung: "Drei Gesprächsebenen", datei: "/grafiken/M03-finanzdialog-ebenen.svg" },
+    { bezeichnung: "Werttreiberbaum", datei: "/grafiken/M03-werttreiberbaum.svg" },
   ],
   M04: [
     { bezeichnung: "Frühwarn-Ampelkarte", datei: "/grafiken/M04-fruehwarnampel.svg" },
+    { bezeichnung: "Handlungsempfehlung (Wenn-Dann)", datei: "/grafiken/M04-handlungsempfehlung.svg" },
   ],
   M05: [
     { bezeichnung: "Five-Forces-Modell", datei: "/grafiken/M05-fiveforces.svg" },
+    { bezeichnung: "Branchenlebenszyklus", datei: "/grafiken/M05-branchenlebenszyklus.svg" },
   ],
   M06: [
     { bezeichnung: "Zwei KMU-Definitionen", datei: "/grafiken/M06-kmu-definition.svg" },
+    { bezeichnung: "Fünf-Fragen-Schema", datei: "/grafiken/M06-fuenf-fragen.svg" },
   ],
   M07: [
     { bezeichnung: "Praxiswert-Ermittlung (IDW S5)", datei: "/grafiken/M07-goodwill.svg" },
+    { bezeichnung: "Handlungsempfehlung (Wenn-Dann)", datei: "/grafiken/M07-handlungsempfehlung.svg" },
   ],
   M08: [
     { bezeichnung: "Drei Immobilien-Typologien", datei: "/grafiken/M08-immobilientypologien.svg" },
+    { bezeichnung: "Handlungsempfehlung (Wenn-Dann)", datei: "/grafiken/M08-handlungsempfehlung.svg" },
   ],
   M09: [
     { bezeichnung: "PESTEL-Analyse", datei: "/grafiken/M09-pestel.svg" },
@@ -83,6 +91,7 @@ const GRAFIKEN_MAP: Record<string, Array<{ bezeichnung: string; datei: string }>
   ],
   M12: [
     { bezeichnung: "Nachfolge-Phasenmodell", datei: "/grafiken/M12-nachfolge-phasen.svg" },
+    { bezeichnung: "Veränderungskurve (Kübler-Ross)", datei: "/grafiken/M12-kuebler-ross.svg" },
   ],
   M13: [
     { bezeichnung: "Verbundpartner-Matrix", datei: "/grafiken/M13-verbundpartner.svg" },
@@ -104,15 +113,19 @@ const GRAFIKEN_MAP: Record<string, Array<{ bezeichnung: string; datei: string }>
   ],
   M19: [
     { bezeichnung: "SECI-Modell Wissensspirale", datei: "/grafiken/M19-seci.svg" },
+    { bezeichnung: "Kolb-Lernzyklus", datei: "/grafiken/M19-kolb-zyklus.svg" },
   ],
   M20: [
     { bezeichnung: "Netzwerk-Dimensionen", datei: "/grafiken/M20-netzwerk-dimensionen.svg" },
   ],
   M21: [
     { bezeichnung: "8-Felder-Framework", datei: "/grafiken/M21-achtfelder.svg" },
+    { bezeichnung: "Zwei Denksysteme (Kahneman)", datei: "/grafiken/M21-system12.svg" },
+    { bezeichnung: "Handlungsempfehlung (Wenn-Dann)", datei: "/grafiken/M21-handlungsempfehlung.svg" },
   ],
   M22: [
     { bezeichnung: "Wettbewerbsstrategie-Matrix", datei: "/grafiken/M22-wettbewerbsmatrix.svg" },
+    { bezeichnung: "Drei Analyse-Ebenen", datei: "/grafiken/M22-drei-ebenen.svg" },
   ],
 };
 

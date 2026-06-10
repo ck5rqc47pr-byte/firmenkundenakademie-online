@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 560" width="860" height="560">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;1,8..60,400&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap');
+      text { font-family: Georgia, serif; }
+      .mono { font-family: 'JetBrains Mono', 'Courier New', monospace; }
+      .serif { font-family: 'Source Serif 4', Georgia, serif; }
+    </style>
+  </defs>
+
+  <rect width="860" height="560" fill="#F8F8FA"/>
+
+  <text x="40" y="30" class="mono" font-size="10" fill="#7A8099" letter-spacing="2">FÜNF-FRAGEN-SCHEMA · MODUL 06 · KMU-KOMPETENZ GRUNDLAGEN</text>
+  <line x1="40" y1="40" x2="820" y2="40" stroke="#E2E3E8" stroke-width="1"/>
+
+  <text x="40" y="68" class="mono" font-size="9" fill="#7A8099" letter-spacing="1">STRUKTURIERTES ERSTGESPRÄCH MIT MITTELSTÄNDISCHEN UNTERNEHMEN</text>
+
+  <!-- Q1 -->
+  <rect x="40" y="84" width="780" height="80" fill="#FFFFFF" stroke="#E2E3E8" stroke-width="1"/>
+  <rect x="40" y="84" width="6" height="80" fill="#1F2C56"/>
+  <circle cx="86" cy="124" r="18" fill="#1F2C56"/>
+  <text x="86" y="130" class="serif" font-size="18" fill="#D9C089" text-anchor="middle">1</text>
+  <text x="124" y="118" class="serif" font-size="15" font-style="italic" fill="#1F2C56">„Womit verdient Ihr Unternehmen heute hauptsächlich sein Geld?"</text>
+  <text x="124" y="142" class="mono" font-size="8" fill="#7A8099">ZIEL · GESCHÄFTSMODELL &amp; ERTRAGSQUELLEN VERSTEHEN</text>
+
+  <!-- Q2 -->
+  <rect x="40" y="172" width="780" height="80" fill="#FFFFFF" stroke="#E2E3E8" stroke-width="1"/>
+  <rect x="40" y="172" width="6" height="80" fill="#3D5494"/>
+  <circle cx="86" cy="212" r="18" fill="#3D5494"/>
+  <text x="86" y="218" class="serif" font-size="18" fill="#D9C089" text-anchor="middle">2</text>
+  <text x="124" y="206" class="serif" font-size="15" font-style="italic" fill="#1F2C56">„Wer sind Ihre drei wichtigsten Kunden – und wie groß ist deren Anteil?"</text>
+  <text x="124" y="230" class="mono" font-size="8" fill="#7A8099">ZIEL · KLUMPENRISIKO &amp; ABHÄNGIGKEITEN ERKENNEN</text>
+
+  <!-- Q3 -->
+  <rect x="40" y="260" width="780" height="80" fill="#FFFFFF" stroke="#E2E3E8" stroke-width="1"/>
+  <rect x="40" y="260" width="6" height="80" fill="#D9C089"/>
+  <circle cx="86" cy="300" r="18" fill="#1F2C56"/>
+  <text x="86" y="306" class="serif" font-size="18" fill="#D9C089" text-anchor="middle">3</text>
+  <text x="124" y="294" class="serif" font-size="15" font-style="italic" fill="#1F2C56">„Was wird Ihre größte Herausforderung in den nächsten zwölf Monaten?"</text>
+  <text x="124" y="318" class="mono" font-size="8" fill="#7A8099">ZIEL · ZUKUNFTSTHEMEN &amp; LATENTEN BEDARF AUFDECKEN</text>
+
+  <!-- Q4 -->
+  <rect x="40" y="348" width="780" height="80" fill="#FFFFFF" stroke="#E2E3E8" stroke-width="1"/>
+  <rect x="40" y="348" width="6" height="80" fill="#3D5494"/>
+  <circle cx="86" cy="388" r="18" fill="#3D5494"/>
+  <text x="86" y="394" class="serif" font-size="18" fill="#D9C089" text-anchor="middle">4</text>
+  <text x="124" y="382" class="serif" font-size="15" font-style="italic" fill="#1F2C56">„Wie finanzieren Sie Wachstum und größere Investitionen?"</text>
+  <text x="124" y="406" class="mono" font-size="8" fill="#7A8099">ZIEL · FINANZIERUNGSVERSTÄNDNIS &amp; -BEDARF</text>
+
+  <!-- Q5 -->
+  <rect x="40" y="436" width="780" height="80" fill="#FFFFFF" stroke="#E2E3E8" stroke-width="1"/>
+  <rect x="40" y="436" width="6" height="80" fill="#1F2C56"/>
+  <circle cx="86" cy="476" r="18" fill="#1F2C56"/>
+  <text x="86" y="482" class="serif" font-size="18" fill="#D9C089" text-anchor="middle">5</text>
+  <text x="124" y="470" class="serif" font-size="15" font-style="italic" fill="#1F2C56">„Was passiert, wenn Ihr größter Kunde sechs Monate ausfällt?"</text>
+  <text x="124" y="494" class="mono" font-size="8" fill="#7A8099">ZIEL · RESILIENZ &amp; STRESSTEST DES GESCHÄFTSMODELLS</text>
+
+  <text x="40" y="544" class="mono" font-size="9" fill="#B0B3C0" letter-spacing="0.5">IfM Bonn (2024) · Petersen &amp; Rajan (1994) zu Relationship Lending · strukturiertes KMU-Erstgespräch</text>
+</svg>
