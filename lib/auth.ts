@@ -1,4 +1,4 @@
-import { AuthOptions } from "next-auth";
+import { AuthOptions, getServerSession } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import bcrypt from "bcryptjs";
 import { findUserByLogin, type UserRole } from "./db";
@@ -45,3 +45,20 @@ export const authOptions: AuthOptions = {
     signIn: "/login",
   },
 };
+
+/** Liefert die aktuelle Rolle aus der Session (oder "" wenn nicht eingeloggt). */
+export async function getSessionRole(): Promise<string> {
+  const session = await getServerSession(authOptions);
+  return (session?.user as { role?: string } | undefined)?.role ?? "";
+}
+
+/**
+ * Wirft einen Fehler, wenn der aktuelle Nutzer kein Admin ist.
+ * In Server Actions verwenden, um privilegierte Mutationen abzusichern.
+ */
+export async function requireAdmin(): Promise<void> {
+  const role = await getSessionRole();
+  if (role !== "admin") {
+    throw new Error("Nicht autorisiert: Adminrechte erforderlich.");
+  }
+}
