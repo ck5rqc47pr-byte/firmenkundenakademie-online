@@ -11,7 +11,7 @@ export async function actionMarkCompleted(moduleId: string) {
   if (!userId) return;
   await markModuleCompleted(userId, moduleId);
   revalidatePath(`/module/${moduleId}`);
-  revalidatePath("/lernreise");
+  revalidatePath("/kompass");
 }
 
 export async function actionUnmarkCompleted(moduleId: string) {
@@ -20,7 +20,7 @@ export async function actionUnmarkCompleted(moduleId: string) {
   if (!userId) return;
   await unmarkModuleCompleted(userId, moduleId);
   revalidatePath(`/module/${moduleId}`);
-  revalidatePath("/lernreise");
+  revalidatePath("/kompass");
 }
 
 export async function actionSubmitQuiz(
