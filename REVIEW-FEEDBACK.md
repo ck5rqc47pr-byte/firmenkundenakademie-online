@@ -182,7 +182,129 @@ Entscheidung nötig: M22 freigeben → „22", oder „21" bewusst beibehalten u
 
 ---
 
-## 4. Priorisierte Aufgabenliste fürs Team
+## 4. Perspektive Trainer: PPTX-Präsentationen & Trainerhandbücher (Nachtrag)
+
+**Geprüft:** Alle 22 Trainerhandbücher (PDF, Text extrahiert) und alle 22 Präsentationen
+(PPTX, Folientexte + Notizen extrahiert), abgeglichen mit Modul-Frontmatter und
+Teilnehmerunterlagen. Leitfrage: Ist das Material logisch für einen Workshop aufgebaut?
+
+### 4.1 Gesamturteil
+
+**Die Handbücher sind die Stärke des Pakets, die Foliensätze die Schwäche.**
+Alle 22 Handbücher folgen einem konsistenten, professionellen Aufbau: detaillierter
+Phasen-Ablaufplan mit Uhrzeiten (Einstieg → Aktivierung → Input → Übung → Auswertung →
+Transfer), konkrete Moderationshinweise inkl. typischer Teilnehmer-Einwände mit
+Trainer-Antworten, Differenzierung nach Erfahrungsstand, Materiallisten mit Stückzahlen
+sowie vollständige Kirkpatrick-Instrumente (L1-Feedbackbogen, L2-Wissenstest mit
+Musterlösungen, L3-Beobachtungsbogen für Führungskräfte). Die didaktische Dramaturgie ist
+durchgängig schlüssig (Kolb-Zyklus, problembasiertes Lernen, Rollenspiele mit
+Beobachterrollen und strukturiertem Debriefing).
+
+Die Foliensätze sind dagegen erkennbar automatisch aus den Modultexten generiert
+(`scripts/generate_praesentation.py` + YAML) und in vier Punkten nicht workshop-reif
+(Details unten): keine Trainer-Notizen, gebrochene Folienverweise, Theorie-Textwüsten
+und einkopierte Arbeitsblätter.
+
+### 4.2 Befunde pro Modul
+
+| Modul | Dauer FM → HB | Folien real (HB-Verweis) | Zeitsumme HB | Urteil | Kernbefund |
+|---|---|---|---|---|---|
+| M01 | 90 → **95 Min.** | 9 (**HB: „13 Folien", „Folie 7–12", „Folie 13 Musterlösung"**) | ✓ 95 | eingeschränkt | Folienverweise zeigen ins Leere; Musterlösungsfolie fehlt; AB-Nummerierung HB ≠ Workbook (s. 4.3) |
+| M02 | 180 → 180 | 8 (keine Nummern-Verweise) | ✓ | **ja** | Rollenspiel-Design stark (Freeze-Technik, 4-Schritt-Debriefing, Varianten A/B); Pause eingeplant |
+| M03 | „ca. 7 Std." → 420 netto + 90 Pause | 9 | ✓ 510 | **ja** | Ganztag sauber strukturiert; referenziertes XLSX-Kennzahlen-Dashboard existiert nicht im Repo — klären |
+| M04 | 90 → 90 | 10 (**HB: „Folie 13–14 Musterlösung", „ca. 15 Folien"**) | ✓ 90 | eingeschränkt | Musterlösungsfolien fehlen → Auswertungsphase (65–80 Min.) ohne geplante Visualisierung |
+| M05 | 1 Tag (8 Std.) → 480 | 9 (HB: „Backup-Folien max. 10" ✓) | ✓ 480 exakt | **ja** | Bester Ganztagsplan: 6 Bausteine, Pausen korrekt (15+45+15), 4 Fallstudien + Musterlösungen; Vorlauf: Branchenreports 2 Werktage vorher, Creditreform via BVR-Zugang |
+| M06 | 90–120 → ~100 | 9 | ✓ | **ja** | Blended: 30-Min.-E-Learning als Pflicht-Vorarbeit, mit dokumentiertem Fallback wenn TN unvorbereitet |
+| M07 | 3,5–4 Std. → 240 | 10 (HB nutzt eigene Zählung „T-1…T-3") | ✓ 240 | eingeschränkt | **Nur 10 Min. Pause auf 4 Stunden** — überladen; dichte Theoriefolien; Taschenrechner zwingend |
+| M08 | **„360 Min." → Plan 08:30–17:00 (≈435 netto)** | 10 | ⚠️ Widerspruch im HB selbst | eingeschränkt | Größte Zeitdiskrepanz: HB-Kopf sagt „360 Min. Nettozeit", eigener Ablaufplan ergibt ~435 Min. netto |
+| M09 | 1 Tag + 3 Monatsrunden → 371 + 3×90 | 12 | ✓ | **ja** | Hybrid-Format vollständig beschrieben (Monatsrunden-Agenda, Modell FK-geleitet vs. Peer-Rotation); L2 clever als Online-Hausaufgabe 48 h danach |
+| M10 | 90 → 90 | 7 | ✓ | eingeschränkt | **Einziges Modul: L2-Wissenstest ohne Musterlösungen** (3 offene Fragen, kein Erwartungshorizont); dichtestes 90-Min.-Format |
+| M11 | 90 → 90 | 10 | ✓ | **ja** | Sehr gutes Schweigen-/Rollenspiel-Design; HB empfiehlt explizit „kein Folieneinsatz" — Spannungsfeld zur existierenden PPTX dokumentieren |
+| M12 | 1 Tag (8 Std.) → 450 netto + 90 Pause | 10 | ✓ | eingeschränkt | Setzt **externen Coach** voraus (Kosten/Verfügbarkeit, kein Fallback beschrieben); Folien 3+5 textlastig; hoher Vorbereitungsaufwand (Kuverts, Laminate) |
+| M13 | 90 → 90 | 14 | ✓ | **ja** | 4-Schritte-Prozess klar; Verbundpartner-Matrix als zentrales Schaubild |
+| M14 | 90 → 90 | 14 | ✓ | eingeschränkt | Sehr dicht (2 Rechenübungen + Rollenspiel in 90 Min.), keine Pausen-Option notiert; Musterlösungen nur Trainer-Set ✓ |
+| M15 | 1 Tag → 480 | 13 | ✓ 480 | **ja** | Didaktisch herausragend: 3 Einzelarbeitsphasen, Peer-Präsentation mit Feedback-Regeln („I like / I wish / What if"), Galerie-Alternative bei >8 TN |
+| M16 | 90 → **95** | 12 | ✓ 95 | **ja** | agree-Demo mit Fallback-Datensatz vorbereitet; +5 Min. FM-Abweichung |
+| M17 | 90 → **95** | 11 | ✓ 95 | **ja** | Live-Demos mit Fallback; Hinweis auf bankindividuelle Menüpfade — praxisnah |
+| M18 | 90 → 90 | 14 | ✓ | **ja** | DSGVO-/Einwilligungs-Check als eigene Folien; Screenshot-Fallback falls agree ausfällt |
+| M19 | 90 → 90 | 13 | ✓ | **ja** | SECI/Kolb sauber eingesetzt; Praxiscase „Team Ostbayern" |
+| M20 | 90 → 90 | 14 | ✓ | **ja** | Sensible Moderationshinweise („Ich bin kein Selbstdarsteller"-Einwand antizipiert) |
+| M21 | Halbtag (4 Std.) → 240 | 13 | ✓ 240 exakt | **ja** | Bestes Halbtagsmodul: Kolb-Zyklus vollständig, Timeboxing-Regie, Musterlösung bewusst als „eine mögliche Entscheidung" gerahmt |
+| M22 | **„90 Min." → HB plant 120 Min.** | 14 (kein YAML-Quellskript) | ⚠️ +30 Min. | **nein (draft)** | Dreifacher Widerspruch: Dauer FM 90 vs. HB 120; Version FM v0.2 vs. HB/Folie v0.1; **HB-Methode sagt „max. 3 Flip-Seiten, keine Folien" — trotzdem existiert eine 14-Folien-PPTX** |
+
+**Bilanz:** 13 von 22 Modulen sind aus Trainersicht direkt einsetzbar, 8 eingeschränkt
+(behebbar mit kleinen Korrekturen), M22 als Draft nicht einsetzbar.
+
+### 4.3 Modulübergreifende Befunde (Foliensätze)
+
+1. **Keine einzige der 22 PPTX enthält Trainer-Notizen** (programmatisch geprüft: 0 von 22).
+   Die exzellenten Moderationshinweise stehen nur im Handbuch — der Trainer muss parallel
+   in zwei Dokumenten arbeiten. Empfehlung: Generator um Notizen-Feld erweitern und die
+   Phasen-/Moderationshinweise je Folie in den Notes-Bereich übernehmen.
+2. **Gebrochene Folienverweise (M01, M04):** Die Handbücher beschreiben größere Foliensätze
+   (M01: „13 Folien", M04: „ca. 15 Folien" inkl. Musterlösungsfolien 13–14), als real
+   existieren (9 bzw. 10). Vermutlich wurden die Handbücher vor der Generator-Kürzung
+   geschrieben (Commit „Modulseiten auf Überblicks-Modus"). Folge im Seminar: Der Trainer
+   sucht in der Auswertungsphase eine Folie, die es nicht gibt. → Entweder Folien ergänzen
+   oder Handbuch-Verweise korrigieren; idealerweise Verweise automatisiert gegen die
+   YAML-Skripte prüfen.
+3. **Arbeitsblätter auf Folien:** 14 von 22 Decks enthalten Ausfüllfelder (`____`) auf
+   Folien (z.B. M01 Folie 6 „Ihre Rechnung: ___", M16 Folie 11/12). Auf dem Beamer ist das
+   nicht bearbeitbar und dupliziert das Workbook. → Entscheidung dokumentieren: Folien nur
+   als visueller Anker (Schaubild + Aufgabenstellung), Ausfüll-Versionen ausschließlich im
+   Workbook.
+4. **AB-Nummerierung inkonsistent (Handbuch ↔ Workbook):** Beispiel M01 — im Handbuch ist
+   „AB-3" der Selbstcheck; im Teilnehmer-Workbook ist AB-3 das Kennzahlen-Referenzblatt und
+   AB-4 die Checkliste; ein Selbstcheck kommt im Workbook gar nicht vor (0 Treffer).
+   Im Seminar führt das zu „Bitte nehmen Sie AB-3" — und die Hälfte blättert falsch.
+   → Nummerierung über alle drei Artefakte (HB, Workbook, Folien) synchronisieren.
+5. **Theorie-Textwüsten:** Einzelne Inhaltsfolien übernehmen ganze Theorieabschnitte aus dem
+   Modul (M01 Folie 3, M06 Folie 5/6, M07 Folie 7/8, M12 Folie 3/5). Für die Projektion
+   sind das Lesetexte, keine Präsentationsfolien. Auffällig: Der Generator kennt
+   Agenda-/Abschnittsfolien (`s_agenda`, `s_section`), nutzt sie aber nicht — kein einziges
+   Deck hat eine Agenda, auch die Ganztagsmodule nicht.
+
+### 4.4 Modulübergreifende Befunde (Handbücher)
+
+6. **Dauer-Diskrepanzen Frontmatter ↔ Handbuch:** gravierend bei M08 (360 vs. ~435 Min.
+   netto, Widerspruch sogar innerhalb des HB) und M22 (90 vs. 120 Min.); geringfügig
+   (+5 Min.) bei M01, M16, M17. → Frontmatter als führende Quelle definieren und abgleichen.
+7. **Pausenplanung:** Ganztagsmodule sind vorbildlich (M05: 75 Min., M12/M15: 90 Min.),
+   aber **M07 plant nur 10 Min. Pause auf 4 Stunden** — unrealistisch; M10/M14 (90 Min.,
+   sehr dicht) ohne Mikropausen-Hinweis.
+8. **Einzelne Lücke im sonst flächendeckenden Kirkpatrick-Setup:** M10-Wissenstest ohne
+   Musterlösungen (alle anderen 21 Module haben sie).
+9. **Operative Abhängigkeiten sind dokumentiert, aber nicht zentral gesammelt:**
+   agree-Zugang inkl. IT-Freigabe (M13, M16–M18), externer Coach (M12, ohne Fallback),
+   Branchenreports mit 2 Tagen Vorlauf (M05), Taschenrechner-Sätze (M07, M08, M14),
+   XLSX-Dashboard (M03, Existenz ungeklärt). → Eine „Trainer-Logistik-Übersicht" je Modul
+   (1 Seite) würde Planungsfehler vermeiden.
+10. **M22 vor Freigabe harmonisieren:** Dauer, Version, Methode (Flipchart-Konzept vs.
+    generierte PPTX — eine der beiden Welten streichen), YAML-Skript ergänzen, Quiz erstellen.
+
+### 4.5 Trainer-Aufgabenliste (priorisiert)
+
+**Vor dem nächsten Seminareinsatz**
+- [ ] M01/M04: Folienverweise im Handbuch korrigieren oder fehlende Folien (insb. Musterlösungen) ergänzen.
+- [ ] M08: Dauerangabe klären (Frontmatter + HB-Kopf vs. realer Ablaufplan).
+- [ ] M10: Musterlösungen/Erwartungshorizont für den L2-Wissenstest ergänzen.
+- [ ] M07: Pausenplan überarbeiten (mind. 2×10–15 Min. auf 4 Stunden).
+- [ ] M01: AB-Nummerierung Handbuch ↔ Workbook synchronisieren; fehlenden Selbstcheck ins Workbook aufnehmen.
+
+**Nächste Überarbeitungsrunde**
+- [ ] Trainer-Notizen in alle PPTX generieren (Generator erweitern; Quelle: Moderationshinweise des HB).
+- [ ] Agenda-/Abschnittsfolien aktivieren (mind. für Halbtags-/Ganztagsmodule M03, M05, M07, M08, M12, M15, M21).
+- [ ] Arbeitsblatt-Folien auf „Anker-Format" reduzieren (Aufgabe + Verweis aufs Workbook statt Ausfüllfelder).
+- [ ] M12: Fallback ohne externen Coach beschreiben (z.B. Video-Demo).
+- [ ] M03: XLSX-Kennzahlen-Dashboard erstellen oder Referenz entfernen.
+- [ ] Zentrale Logistik-Übersicht je Modul (Systeme, Geräte, Vorlaufzeiten, externe Personen).
+
+**Mit M22-Finalisierung**
+- [ ] M22: Dauer (90 vs. 120), Version (v0.1 vs. v0.2) und Methode (Flipchart vs. PPTX) entscheiden, YAML-Skript + Quiz ergänzen, dann Status „freigegeben".
+
+---
+
+## 5. Priorisierte Aufgabenliste fürs Team
 
 **Sofort (Blocker, vor jedem echten Nutzerzugang)**
 - [ ] B1: Auth-Check (`role === "admin"`) in alle vier `app/admin/users/actions.ts`-Funktionen.
