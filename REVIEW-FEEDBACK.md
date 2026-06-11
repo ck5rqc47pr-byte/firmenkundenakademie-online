@@ -334,5 +334,64 @@ und einkopierte Arbeitsblätter.
 
 ---
 
+## 6. Lokale Repository- & Ordnerstruktur (Befunde aus Struktur-Audit, 2026-06-10)
+
+Zusätzlich zum inhaltlichen Review wurde die lokale Projekt- und Repo-Struktur
+untersucht. Folgende Auffälligkeiten (A1–A9) sind unabhängig vom Content-Review
+und überwiegend Hygiene-/Datenschutz-Themen. **A1 ist sicherheits- und
+urheberrechtskritisch und hat höchste Priorität.**
+
+### A1 — KRITISCH: `referenzmaterial/` ist trotz `.gitignore` getrackt und auf GitHub
+- **Befund:** 198 Dateien (~400 MB) im Ordner `referenzmaterial/` sind im Haupt-Repo
+  versioniert **und bereits auf GitHub gepusht**, obwohl `.gitignore` den Ordner listet.
+  Ursache: `.gitignore` greift nicht für bereits getrackte Dateien.
+- **Schwere 1 – Urheberrecht:** Enthält die EuroFH-Studienbriefe. CLAUDE.md verbietet
+  ausdrücklich, dieses Material zu verbreiten/pushen.
+- **Schwere 2 – Personenbezogene Daten (DSGVO):** Enthält private Dokumente, u.a.
+  Studienausweis (`Studienausweis_910077028.pdf`), Online-Anmeldung mit Klarnamen,
+  Buchungsbestätigung, Teilnahmebescheinigung, Expertise/Zoller, Ulm HRA 727243.
+- **Fix:** `git rm -r --cached referenzmaterial/` + Commit (entfernt aus Tracking,
+  Dateien bleiben lokal). Da bereits gepusht: **History-Bereinigung** mit
+  `git filter-repo` + Force-Push nötig, sonst bleibt das Material in der GitHub-Historie
+  abrufbar. Repo-Sichtbarkeit (public/private) prüfen.
+- [ ] `referenzmaterial/` aus Tracking entfernen, History purgen, Force-Push, Repo-Privacy prüfen.
+
+### A2 — `Backup - Don't touch/` (473 MB Voll-Duplikat des Projekts)
+- **Befund:** Vollständige Projektkopie im Arbeitsverzeichnis (gitignored, also nicht im Repo,
+  aber lokaler Ballast und Verwechslungsgefahr).
+- [ ] Außerhalb des Projektordners archivieren.
+
+### A3 — Online-Repo: getrackte Build-Artefakte
+- **Befund:** `tsconfig.tsbuildinfo`, `scripts/__pycache__/*.pyc`, `fkakademie.production.*.build.log`
+  sind im Online-Repo versioniert.
+- [ ] `git rm --cached` + `.gitignore`-Einträge ergänzen (vgl. §5 Repo-Hygiene).
+
+### A4 — Online-Repo: doppelte Deployment-Konfiguration
+- **Befund:** Sowohl `vercel.json` als auch `wrangler.toml` (Cloudflare) vorhanden.
+  Deploy-Ziel ist Vercel.
+- [ ] `wrangler.toml` entfernen (Querverweis §3 IT).
+
+### A5 — Online-Repo: `lib/users.ts` Dead Code mit Default-Passwörtern
+- **Befund:** Ungenutzte User-/Passwort-Liste im Klartext.
+- [ ] Datei entfernen (Querverweis §3 IT-Befund Dead Code).
+
+### A6 — `.env.example` zeigt Supabase statt Neon
+- **Befund:** Beispiel-Umgebungsvariablen passen nicht zur tatsächlichen DB (Neon).
+- [ ] `.env.example` korrigieren (Querverweis §3 IT).
+
+### A7 — OS-/Office-Artefakte getrackt
+- **Befund:** `.DS_Store` und `~$`-Office-Lock-Dateien in `referenzmaterial/` versioniert.
+- [ ] Aus Tracking entfernen, in `.gitignore` aufnehmen (entfällt mit A1, falls History-Purge).
+
+### A8 — Veraltete Dokumentations-Referenzen auf „Online-Akademie - Codex/"
+- **Befund:** MEMORY.md und CLAUDE.md verweisen auf einen Codex-Ordner, der nicht mehr existiert.
+- [ ] Verweise in CLAUDE.md/MEMORY.md aktualisieren oder entfernen.
+
+### A9 — Haupt-Repo: generierte Präsentationen getrackt
+- **Befund:** `output/Praesentation/*.pptx` (generierte Artefakte) sind versioniert.
+- [ ] Bewusst entscheiden: tracken (für Übergabe) oder ignorieren (regenerierbar). Geringe Priorität.
+
+---
+
 *Erstellt zur Übergabe an das Entwicklungs- und Redaktionsteam. Alle technischen Befunde sind
 am Code verifiziert; korrigierte Erstbefunde sind als „Klarstellung" gekennzeichnet.*
