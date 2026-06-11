@@ -35,16 +35,16 @@ const PARTICIPANT_HANDOUTS_DIR = path.join(
   "downloads",
   "teilnehmerunterlagen",
 );
+// Trainer-Material liegt außerhalb von public/ und wird nur über die
+// rollengeschützte Route /api/downloads/... ausgeliefert (siehe B2).
 const TRAINER_HANDBOOKS_DIR = path.join(
   process.cwd(),
-  "public",
-  "downloads",
+  "protected-downloads",
   "trainerhandbuch",
 );
 const BEOBACHTUNGSBOGEN_DIR = path.join(
   process.cwd(),
-  "public",
-  "downloads",
+  "protected-downloads",
   "beobachtungsbogen",
 );
 
@@ -114,7 +114,7 @@ export function getBeobachtungsbogenPdfUrl(moduleId: string): string | null {
   const filename = `${normalizedId}.pdf`;
   const absolutePath = path.join(BEOBACHTUNGSBOGEN_DIR, filename);
   if (!fs.existsSync(absolutePath)) return null;
-  return `/downloads/beobachtungsbogen/${filename}`;
+  return `/api/downloads/beobachtungsbogen/${filename}`;
 }
 
 export function getPresentationPptxUrl(moduleId: string): string | null {
@@ -122,13 +122,12 @@ export function getPresentationPptxUrl(moduleId: string): string | null {
   const filename = `${normalizedId}.pptx`;
   const absolutePath = path.join(
     process.cwd(),
-    "public",
-    "downloads",
+    "protected-downloads",
     "praesentation",
     filename
   );
   if (!fs.existsSync(absolutePath)) return null;
-  return `/downloads/praesentation/${filename}`;
+  return `/api/downloads/praesentation/${filename}`;
 }
 
 export function getTrainerHandbuchPdfUrl(moduleId: string): string | null {
@@ -140,7 +139,7 @@ export function getTrainerHandbuchPdfUrl(moduleId: string): string | null {
     return null;
   }
 
-  return `/downloads/trainerhandbuch/${filename}`;
+  return `/api/downloads/trainerhandbuch/${filename}`;
 }
 
 function normalizeStatus(value: unknown): Module["status"] {
