@@ -11,7 +11,7 @@ const STANDARD_GRAFIKEN = [
   {
     id: "dreyfus-treppe",
     titel: "Dreyfus-Kompetenztreppe",
-    beschreibung: "Drei Kompetenzstufen des FKB Campus nach Dreyfus & Dreyfus (1980): Berater, Sparringspartner, Stratege.",
+    beschreibung: "Drei Kompetenzstufen des FKB Campus nach Dreyfus & Dreyfus (1980): Berater, Sparringspartner, Strategischer Partner.",
     datei: "/grafiken/dreyfus-treppe.svg",
     quelle: "Dreyfus & Dreyfus (1980)",
     verwendung: ["Modulsteckbrief", "Startseite"],

@@ -42,7 +42,7 @@ und fehlendem Führungs-/Reporting-Nutzen**.
   Trainerhandbuch/PPTX werden in der Oberfläche nur Trainern/Admins angezeigt.
 
 ### Schwachstellen
-1. **Stufen-Filter findet Module nicht** *(Hoch, siehe B4)*
+1. **Stufen-Filter findet Module nicht** *(Hoch, siehe B4 — ✅ erledigt: kanonischer Wert „Strategischer Partner", normalizeStufe mappt Alt-Werte)*
    `components/ModuleGrid.tsx:19` filtert per exaktem Vergleich `module.stufe === stufe`.
    In den Modulen kommen aber 6 verschiedene Schreibweisen vor (siehe Abschnitt 2.1).
    Folge: Klick auf Tab **„Sparringspartner"** blendet M02, M10, M11, M14 (Wert `"Sparring"`)
@@ -66,7 +66,7 @@ und fehlendem Führungs-/Reporting-Nutzen**.
 ## 2. Perspektive Bereichsleiter (Einkaufs-/Einsatzentscheidung)
 
 ### Was überzeugt
-- **Didaktisches Fundament:** Dreyfus-Stufen (Berater → Sparringspartner → Stratege),
+- **Didaktisches Fundament:** Dreyfus-Stufen (Berater → Sparringspartner → Strategischer Partner),
   Bloom-Taxonomie in den Lernzielen, Kirkpatrick-Logik (Reaktion/Lernen/Transfer).
 - **Curriculum:** 22 Module über 6 Kompetenzfelder; logische lineare Pfade
   (z.B. M01→M02→M03, M10→M11→M12).
@@ -101,10 +101,15 @@ und fehlendem Führungs-/Reporting-Nutzen**.
 |------|--------|-----------|
 | `"Berater"` | 6 | ✅ |
 | `"Sparringspartner"` | 5 | ✅ |
-| `"Stratege"` | 5 | ✅ |
+| `"Stratege"` | 5 | ⬚ → umbenannt in „Strategischer Partner" |
 | `"Sparring"` | 4 | ❌ → sollte „Sparringspartner" |
 | `Sparringspartner` (ohne Anführungszeichen) | 1 | ⚠️ parst korrekt, aber Stil-Bruch |
-| `Strategischer Partner` | 1 (M05) | ❌ → sollte „Stratege" |
+| `Strategischer Partner` | 1 (M05) | ✅ kanonisch (Endstufe) |
+
+> **Entscheidung (2026-06-12, umgesetzt):** Die Endstufe heißt **überall „Strategischer Partner"**
+> (NICHT „Stratege") — bewusst entgegen der ursprünglichen Review-Empfehlung. Umgesetzt durch
+> Umbenennung des kanonischen Werts in Typ-Unions, Frontmatter, Filter, Maps, Landingpage und SVG;
+> `normalizeStufe()` in `lib/modules.ts` mappt alle Alt-Werte auf „Strategischer Partner".
 
 Kompetenzfeld-Drift: `K-01` erscheint als „…& Kreditexpertise" (5×) **und** „…& Strategieberatung" (2×);
 `K-05` als „Digital & Daten" **und** „Digital & Technologie". Bitte je Feld eine verbindliche
@@ -285,36 +290,36 @@ und einkopierte Arbeitsblätter.
 ### 4.5 Trainer-Aufgabenliste (priorisiert)
 
 **Vor dem nächsten Seminareinsatz**
-- [ ] M01/M04: Folienverweise im Handbuch korrigieren oder fehlende Folien (insb. Musterlösungen) ergänzen.
-- [ ] M08: Dauerangabe klären (Frontmatter + HB-Kopf vs. realer Ablaufplan).
-- [ ] M10: Musterlösungen/Erwartungshorizont für den L2-Wissenstest ergänzen.
-- [ ] M07: Pausenplan überarbeiten (mind. 2×10–15 Min. auf 4 Stunden).
-- [ ] M01: AB-Nummerierung Handbuch ↔ Workbook synchronisieren; fehlenden Selbstcheck ins Workbook aufnehmen.
+- [x] M01/M04: Folienverweise im Handbuch korrigieren oder fehlende Folien (insb. Musterlösungen) ergänzen.
+- [x] M08: Dauerangabe klären (Frontmatter + HB-Kopf vs. realer Ablaufplan).
+- [x] M10: Musterlösungen/Erwartungshorizont für den L2-Wissenstest ergänzen.
+- [x] M07: Pausenplan überarbeiten (mind. 2×10–15 Min. auf 4 Stunden).
+- [x] M01: AB-Nummerierung Handbuch ↔ Workbook synchronisieren; fehlenden Selbstcheck ins Workbook aufnehmen.
 
 **Nächste Überarbeitungsrunde**
-- [ ] Trainer-Notizen in alle PPTX generieren (Generator erweitern; Quelle: Moderationshinweise des HB).
-- [ ] Agenda-/Abschnittsfolien aktivieren (mind. für Halbtags-/Ganztagsmodule M03, M05, M07, M08, M12, M15, M21).
-- [ ] Arbeitsblatt-Folien auf „Anker-Format" reduzieren (Aufgabe + Verweis aufs Workbook statt Ausfüllfelder).
-- [ ] M12: Fallback ohne externen Coach beschreiben (z.B. Video-Demo).
-- [ ] M03: XLSX-Kennzahlen-Dashboard erstellen oder Referenz entfernen.
-- [ ] Zentrale Logistik-Übersicht je Modul (Systeme, Geräte, Vorlaufzeiten, externe Personen).
+- [x] Trainer-Notizen in alle PPTX generieren (Generator erweitern; Quelle: Moderationshinweise des HB).
+- [x] Agenda-/Abschnittsfolien aktivieren (mind. für Halbtags-/Ganztagsmodule M03, M05, M07, M08, M12, M15, M21).
+- [x] Arbeitsblatt-Folien auf „Anker-Format" reduzieren (Aufgabe + Verweis aufs Workbook statt Ausfüllfelder).
+- [x] M12: Fallback ohne externen Coach beschreiben (z.B. Video-Demo).
+- [x] M03: XLSX-Kennzahlen-Dashboard erstellen oder Referenz entfernen.
+- [x] Zentrale Logistik-Übersicht je Modul (Systeme, Geräte, Vorlaufzeiten, externe Personen).
 
 **Mit M22-Finalisierung**
-- [ ] M22: Dauer (90 vs. 120), Version (v0.1 vs. v0.2) und Methode (Flipchart vs. PPTX) entscheiden, YAML-Skript + Quiz ergänzen, dann Status „freigegeben".
+- [x] M22: Dauer (90 vs. 120), Version (v0.1 vs. v0.2) und Methode (Flipchart vs. PPTX) entscheiden, YAML-Skript + Quiz ergänzen, dann Status „freigegeben". *(Dauer 120, v0.2, Flipchart-Methode beibehalten, Quiz ergänzt, freigegeben; YAML-Skript entfällt – authoritativer Generator ist scripts/generate_praesentation.py)*
 
 ---
 
 ## 5. Priorisierte Aufgabenliste fürs Team
 
 **Sofort (Blocker, vor jedem echten Nutzerzugang)**
-- [ ] B1: Auth-Check (`role === "admin"`) in alle vier `app/admin/users/actions.ts`-Funktionen.
-- [ ] B2: Trainer-PDF/PPTX aus `public/` entfernen, über geschützte API-Route mit Rollen-Check ausliefern.
+- [x] B1: Auth-Check (`role === "admin"`) in alle vier `app/admin/users/actions.ts`-Funktionen. *(requireAdmin() in allen vier Actions)*
+- [x] B2: Trainer-PDF/PPTX aus `public/` entfernen, über geschützte API-Route mit Rollen-Check ausliefern. *(protected-downloads/ + /api/downloads mit Rollen-Check; Generatoren umgestellt)*
 - [ ] B3: Impressum & Datenschutz mit rechtlich geprüften Inhalten füllen.
-- [ ] B4: `stufe`-Werte in allen Modulen auf `Berater` / `Sparringspartner` / `Stratege` normalisieren.
+- [x] B4: `stufe`-Werte in allen Modulen auf `Berater` / `Sparringspartner` / `Strategischer Partner` normalisieren. *(kanonisch = „Strategischer Partner"; normalizeStufe mappt Alt-Werte; tsc grün)*
 
 **Diese Woche (Hoch)**
 - [ ] Kompetenzfeld-Bezeichnungen (K-01, K-05) vereinheitlichen; M05-Frontmatter quoten.
-- [ ] Modulzahl-Entscheidung (M22 freigeben + Quiz, oder „21" bewusst belassen).
+- [x] Modulzahl-Entscheidung (M22 freigeben + Quiz, oder „21" bewusst belassen). *(M22 freigegeben + Quiz → 22 Module)*
 - [ ] Bereichsleiter-Sicht definieren: Team-Fortschritt, Quiz-Auswertung, Export, Zertifikat.
 - [ ] Dependencies aktualisieren (`next`, `postcss`, `uuid`/`next-auth`), Regressionstest.
 - [ ] `.env.example` korrigieren; Privat-Mail-Fallback entfernen.
@@ -322,7 +327,7 @@ und einkopierte Arbeitsblätter.
 **Danach (Mittel)**
 - [ ] Input-Validierung `api/suggestions` (Enum-Check `type`, Längenlimit `message`), Rate-Limiting.
 - [ ] Sicherheits-Header in `next.config.mjs`.
-- [ ] Repo-Hygiene: `tsconfig.tsbuildinfo`, `__pycache__`, `*.build.log` in `.gitignore`.
+- [x] Repo-Hygiene: `tsconfig.tsbuildinfo`, `__pycache__`, `*.build.log` in `.gitignore`.
 - [ ] CI-Workflow (lint, typecheck, audit).
 - [ ] Quellen `[Q-XXX]` an Kernaussagen der Module verankern.
 - [ ] `ARCHITECTURE.md`/`README.md` an realen Stand (DB, Auth, Deployment-Ziel) anpassen.
@@ -354,42 +359,42 @@ urheberrechtskritisch und hat höchste Priorität.**
   Dateien bleiben lokal). Da bereits gepusht: **History-Bereinigung** mit
   `git filter-repo` + Force-Push nötig, sonst bleibt das Material in der GitHub-Historie
   abrufbar. Repo-Sichtbarkeit (public/private) prüfen.
-- [ ] `referenzmaterial/` aus Tracking entfernen, History purgen, Force-Push, Repo-Privacy prüfen.
+- [x] `referenzmaterial/` aus Tracking entfernen, History purgen, Force-Push, Repo-Privacy prüfen. *(nicht getrackt, gitignored, nicht in History/Remote-Tree)*
 
 ### A2 — `Backup - Don't touch/` (473 MB Voll-Duplikat des Projekts)
 - **Befund:** Vollständige Projektkopie im Arbeitsverzeichnis (gitignored, also nicht im Repo,
   aber lokaler Ballast und Verwechslungsgefahr).
-- [ ] Außerhalb des Projektordners archivieren.
+- [x] Außerhalb des Projektordners archivieren. *(Ordner nicht mehr im Projekt)*
 
 ### A3 — Online-Repo: getrackte Build-Artefakte
 - **Befund:** `tsconfig.tsbuildinfo`, `scripts/__pycache__/*.pyc`, `fkakademie.production.*.build.log`
   sind im Online-Repo versioniert.
-- [ ] `git rm --cached` + `.gitignore`-Einträge ergänzen (vgl. §5 Repo-Hygiene).
+- [x] `git rm --cached` + `.gitignore`-Einträge ergänzen (vgl. §5 Repo-Hygiene).
 
 ### A4 — Online-Repo: doppelte Deployment-Konfiguration
 - **Befund:** Sowohl `vercel.json` als auch `wrangler.toml` (Cloudflare) vorhanden.
   Deploy-Ziel ist Vercel.
-- [ ] `wrangler.toml` entfernen (Querverweis §3 IT).
+- [x] `wrangler.toml` entfernen (Querverweis §3 IT).
 
 ### A5 — Online-Repo: `lib/users.ts` Dead Code mit Default-Passwörtern
 - **Befund:** Ungenutzte User-/Passwort-Liste im Klartext.
-- [ ] Datei entfernen (Querverweis §3 IT-Befund Dead Code).
+- [x] Datei entfernen (Querverweis §3 IT-Befund Dead Code). *(lib/users.ts entfernt)*
 
 ### A6 — `.env.example` zeigt Supabase statt Neon
 - **Befund:** Beispiel-Umgebungsvariablen passen nicht zur tatsächlichen DB (Neon).
-- [ ] `.env.example` korrigieren (Querverweis §3 IT).
+- [x] `.env.example` korrigieren (Querverweis §3 IT). *(kein Supabase mehr, DATABASE_URL vorhanden)*
 
 ### A7 — OS-/Office-Artefakte getrackt
 - **Befund:** `.DS_Store` und `~$`-Office-Lock-Dateien in `referenzmaterial/` versioniert.
-- [ ] Aus Tracking entfernen, in `.gitignore` aufnehmen (entfällt mit A1, falls History-Purge).
+- [x] Aus Tracking entfernen, in `.gitignore` aufnehmen (entfällt mit A1, falls History-Purge).
 
 ### A8 — Veraltete Dokumentations-Referenzen auf „Online-Akademie - Codex/"
 - **Befund:** MEMORY.md und CLAUDE.md verweisen auf einen Codex-Ordner, der nicht mehr existiert.
-- [ ] Verweise in CLAUDE.md/MEMORY.md aktualisieren oder entfernen.
+- [x] Verweise in CLAUDE.md/MEMORY.md aktualisieren oder entfernen. *(kein „Online-Akademie - Codex/" mehr referenziert)*
 
 ### A9 — Haupt-Repo: generierte Präsentationen getrackt
 - **Befund:** `output/Praesentation/*.pptx` (generierte Artefakte) sind versioniert.
-- [ ] Bewusst entscheiden: tracken (für Übergabe) oder ignorieren (regenerierbar). Geringe Priorität.
+- [x] Bewusst entscheiden: tracken (für Übergabe) oder ignorieren (regenerierbar). Geringe Priorität. *(Entscheidung: getrackt für Übergabe)*
 
 ---
 

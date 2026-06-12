@@ -29,7 +29,7 @@ const ETAPPEN = [
   },
   {
     nr: 3,
-    stufe: "Stratege" as const,
+    stufe: "Strategischer Partner" as const,
     titel: "Strategischer Partner",
     versprechen:
       "Du gestaltest mit — bei deinem Kunden und in deinem Haus. Nachfolge, Kapitalstruktur, Marktbearbeitung: Themen, in denen aus Beratung Partnerschaft wird.",
@@ -211,7 +211,7 @@ export default async function KompassPage() {
           <div>
             <div className="border border-line overflow-hidden">
               <div className="grid grid-cols-[100px_repeat(3,1fr)] sm:grid-cols-[180px_repeat(3,1fr)] border-b border-line">
-                {["", "Berater", "Sparring", "Stratege"].map((h) => (
+                {["", "Berater", "Sparringspartner", "Strategischer Partner"].map((h) => (
                   <div
                     key={h}
                     className="px-3 py-2.5 font-mono text-[10px] uppercase tracking-[0.06em] text-ink-3 bg-bg-2"

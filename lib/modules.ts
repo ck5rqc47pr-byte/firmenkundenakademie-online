@@ -8,7 +8,7 @@ export interface Module {
   subtitle: string;
   kompetenzfeld: string;
   kompetenzfeld_slug: string;
-  stufe: "Berater" | "Sparringspartner" | "Stratege";
+  stufe: "Berater" | "Sparringspartner" | "Strategischer Partner";
   bloom: string;
   dauer: string;
   format: string;
@@ -175,7 +175,7 @@ function normalizeStufe(value: unknown): Module["stufe"] {
     return "Sparringspartner";
   }
 
-  return "Stratege";
+  return "Strategischer Partner";
 }
 
 function normalizeKompetenzfeldSlug(data: Record<string, unknown>) {

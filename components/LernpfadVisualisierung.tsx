@@ -1,8 +1,8 @@
 type Props = {
-  current?: "Berater" | "Sparringspartner" | "Stratege";
+  current?: "Berater" | "Sparringspartner" | "Strategischer Partner";
 };
 
-const steps = ["Berater", "Sparringspartner", "Stratege"] as const;
+const steps = ["Berater", "Sparringspartner", "Strategischer Partner"] as const;
 
 export function LernpfadVisualisierung({ current }: Props) {
   return (

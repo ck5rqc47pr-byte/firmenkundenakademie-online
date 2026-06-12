@@ -211,7 +211,7 @@ const KOMPETENZFELDER: Kompetenzfeld[] = [
 const STUFEN: { id: Stufe; label: string; badge: string; color: string }[] = [
   { id: "berater",  label: "Berater",         badge: "Stufe 1", color: "oklch(0.38 0.10 160)" },
   { id: "sparring", label: "Sparringspartner", badge: "Stufe 2", color: "var(--accent-ink)" },
-  { id: "stratege", label: "Stratege",         badge: "Stufe 3", color: "var(--primary)" },
+  { id: "stratege", label: "Strategischer Partner", badge: "Stufe 3", color: "var(--primary)" },
 ];
 
 // ── Komponenten ───────────────────────────────────────────────────────────────

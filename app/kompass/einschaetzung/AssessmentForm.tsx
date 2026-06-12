@@ -32,7 +32,7 @@ const FIELDS: {
       },
       {
         value: 3,
-        label: "Stratege",
+        label: "Strategischer Partner",
         sub: "Ich führe strategische Bilanzgespräche auf Augenhöhe mit GF/CFO und leite Handlungsempfehlungen aus der Finanzanalyse ab.",
       },
     ],
@@ -54,7 +54,7 @@ const FIELDS: {
       },
       {
         value: 3,
-        label: "Stratege",
+        label: "Strategischer Partner",
         sub: "Ich fungiere als Branchenexperte, vernetze Kunden untereinander und antizipiere Marktveränderungen proaktiv.",
       },
     ],
@@ -76,7 +76,7 @@ const FIELDS: {
       },
       {
         value: 3,
-        label: "Stratege",
+        label: "Strategischer Partner",
         sub: "Ich führe CEO-Dialoge auf Augenhöhe und moderiere komplexe Entscheidungsprozesse beim Kunden.",
       },
     ],
@@ -98,7 +98,7 @@ const FIELDS: {
       },
       {
         value: 3,
-        label: "Stratege",
+        label: "Strategischer Partner",
         sub: "Ich baue integrierte Beratungskonzepte über alle Verbundpartner und optimiere den Kundenertragswert langfristig.",
       },
     ],
@@ -120,7 +120,7 @@ const FIELDS: {
       },
       {
         value: 3,
-        label: "Stratege",
+        label: "Strategischer Partner",
         sub: "Ich identifiziere Prozessoptimierungen, gebe qualifiziertes Feedback an IT/Orga und teste neue Funktionen proaktiv.",
       },
     ],
@@ -142,7 +142,7 @@ const FIELDS: {
       },
       {
         value: 3,
-        label: "Stratege",
+        label: "Strategischer Partner",
         sub: "Ich entwickle Schulungsformate, baue eine Wissensdatenbank auf und fördere eine Lernkultur im Bereich.",
       },
     ],

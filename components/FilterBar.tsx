@@ -6,7 +6,7 @@ type Props = {
   kompetenzfelder: { slug: string; name: string }[];
 };
 
-const stufen = ["Alle", "Berater", "Sparringspartner", "Stratege"] as const;
+const stufen = ["Alle", "Berater", "Sparringspartner", "Strategischer Partner"] as const;
 const statuses = [
   { value: "alle", label: "Alle Status" },
   { value: "freigegeben", label: "Verfügbar" },

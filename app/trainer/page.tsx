@@ -6,7 +6,7 @@ import { getAllModules, getParticipantHandoutPdfUrl, getTrainerHandbuchPdfUrl, g
 
 export const dynamic = "force-dynamic";
 
-const STUFE_ORDER = { Berater: 1, Sparringspartner: 2, Stratege: 3 } as const;
+const STUFE_ORDER = { Berater: 1, Sparringspartner: 2, "Strategischer Partner": 3 } as const;
 
 const FIELD_LABELS: Record<string, string> = {
   finanzanalyse: "Finanzanalyse",

@@ -20,7 +20,7 @@ export default function KompetenzfeldPage({ params }: Props) {
     notFound();
   }
 
-  const stufen = ["Berater", "Sparringspartner", "Stratege"];
+  const stufen = ["Berater", "Sparringspartner", "Strategischer Partner"];
 
   return (
     <div>

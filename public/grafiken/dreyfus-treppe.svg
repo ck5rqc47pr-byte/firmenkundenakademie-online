@@ -40,12 +40,12 @@
   <text x="330" y="318" class="mono" font-size="9" fill="#3D4460" letter-spacing="0.5">Bilanzgespräch · Bedarfsanalyse</text>
   <text x="330" y="333" class="mono" font-size="9" fill="#3D4460" letter-spacing="0.5">Kreditentscheidung · Heilberufe</text>
 
-  <!-- ── Stufe III: Stratege ── -->
+  <!-- ── Stufe III: Strategischer Partner ── -->
   <rect x="580" y="60" width="240" height="360" fill="#1F2C56"/>
   <!-- Roman numeral -->
   <text x="600" y="114" class="serif" font-size="54" font-style="italic" fill="#D9C089">III.</text>
   <!-- Level name -->
-  <text x="600" y="142" class="serif" font-size="16" fill="#F8F8FA" font-weight="500">Stratege</text>
+  <text x="600" y="142" class="serif" font-size="15" fill="#F8F8FA" font-weight="500">Strategischer Partner</text>
   <!-- Dreyfus label -->
   <text x="600" y="160" class="mono" font-size="9" fill="#8898C4" letter-spacing="1">STUFE 4 · EXPERTE</text>
   <!-- Separator -->

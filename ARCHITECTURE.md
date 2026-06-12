@@ -58,7 +58,7 @@ title: "KMU-Kompetenz Grundlagen"
 subtitle: "Branchenwissen für den Firmenkundenberater"
 kompetenzfeld: "K-02 Branchenwissen"
 kompetenzfeld_slug: "branchenwissen"
-stufe: "Berater"             # Berater | Sparringspartner | Stratege
+stufe: "Berater"             # Berater | Sparringspartner | Strategischer Partner
 bloom: "1–3"
 dauer: "90–120 Min."
 format: "Blended Learning"
@@ -92,7 +92,7 @@ interface Module {
   subtitle: string;
   kompetenzfeld: string;               // "K-02 Branchenwissen"
   kompetenzfeld_slug: string;          // "branchenwissen"
-  stufe: "Berater" | "Sparringspartner" | "Stratege";
+  stufe: "Berater" | "Sparringspartner" | "Strategischer Partner";
   bloom: string;
   dauer: string;
   format: string;
@@ -168,7 +168,7 @@ interface Module {
 
 ### Modulübersicht `/module`
 - Filterleiste: Kompetenzfeld (Dropdown), Stufe (Tabs:
-  Alle / Berater / Sparringspartner / Stratege), Status
+  Alle / Berater / Sparringspartner / Strategischer Partner), Status
 - Modul-Grid (3 Spalten Desktop, 1 Spalte Mobile)
 - ModuleCard zeigt: Nummer-Badge, Titel, Kompetenzfeld, Stufe,
   Dauer, Status-Chip
@@ -215,7 +215,7 @@ Aufbau von oben nach unten:
 
 ### Kompetenzfeld-Seiten `/kompetenzfeld/[slug]`
 - Alle Module dieses Feldes als Cards
-- Lernpfad-Visualisierung: Berater → Sparringspartner → Stratege
+- Lernpfad-Visualisierung: Berater → Sparringspartner → Strategischer Partner
   (horizontal, verbunden mit Pfeilen)
 
 ---

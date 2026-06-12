@@ -27,7 +27,7 @@ const FIELD_ORDER = [
 const STUFE_BADGE: Record<string, string> = {
   Berater: "bg-blue-50 text-blue-700",
   Sparringspartner: "bg-violet-50 text-violet-700",
-  Stratege: "bg-amber-50 text-amber-700",
+  "Strategischer Partner": "bg-amber-50 text-amber-700",
 };
 
 function Check({ ok, label }: { ok: boolean; label?: string }) {

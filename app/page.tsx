@@ -24,7 +24,7 @@ const ETAPPEN = [
   {
     nr: 3,
     titel: "Strategischer Partner",
-    sub: "Stratege",
+    sub: "Strategischer Partner",
     beschreibung:
       "Nachfolge, Kapitalstruktur, Marktbearbeitung: Themen, in denen aus Beratung Partnerschaft wird — auf Augenhöhe mit der Geschäftsführung.",
     module: ["Strategischer Finanzdialog", "Branchenrisiken", "CEO-Dialog & Nachfolge", "Marktbearbeitung", "Branchenexperte", "Netzwerk & Sichtbarkeit"],

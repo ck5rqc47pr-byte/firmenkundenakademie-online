@@ -1,5 +1,5 @@
 type Props = {
-  stufe: "Berater" | "Sparringspartner" | "Stratege";
+  stufe: "Berater" | "Sparringspartner" | "Strategischer Partner";
   inverted?: boolean;
 };
 
