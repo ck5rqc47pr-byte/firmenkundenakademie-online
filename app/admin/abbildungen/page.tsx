@@ -65,8 +65,9 @@ const GRAFIKEN_MAP: Record<string, Array<{ bezeichnung: string; datei: string }>
     { bezeichnung: "Handlungsempfehlung (Wenn-Dann)", datei: "/grafiken/M04-handlungsempfehlung.svg" },
   ],
   M05: [
-    { bezeichnung: "Five-Forces-Modell", datei: "/grafiken/M05-fiveforces.svg" },
+    { bezeichnung: "Five-Forces-Modell", datei: "/grafiken/frameworks/five-forces.svg" },
     { bezeichnung: "Branchenlebenszyklus", datei: "/grafiken/M05-branchenlebenszyklus.svg" },
+    { bezeichnung: "Handlungsempfehlung (Wenn-Dann)", datei: "/grafiken/M05-handlungsempfehlung.svg" },
   ],
   M06: [
     { bezeichnung: "Zwei KMU-Definitionen", datei: "/grafiken/M06-kmu-definition.svg" },
@@ -81,7 +82,7 @@ const GRAFIKEN_MAP: Record<string, Array<{ bezeichnung: string; datei: string }>
     { bezeichnung: "Handlungsempfehlung (Wenn-Dann)", datei: "/grafiken/M08-handlungsempfehlung.svg" },
   ],
   M09: [
-    { bezeichnung: "PESTEL-Analyse", datei: "/grafiken/M09-pestel.svg" },
+    { bezeichnung: "PESTEL-Analyse", datei: "/grafiken/frameworks/pestel.svg" },
   ],
   M10: [
     { bezeichnung: "SPIN-Fragetrichter", datei: "/grafiken/M10-spin.svg" },
@@ -98,6 +99,7 @@ const GRAFIKEN_MAP: Record<string, Array<{ bezeichnung: string; datei: string }>
   ],
   M14: [
     { bezeichnung: "Deckungsbeitrags-Wasserfall", datei: "/grafiken/M14-deckungsbeitrag.svg" },
+    { bezeichnung: "Handlungsempfehlung (Wenn-Dann)", datei: "/grafiken/M14-handlungsempfehlung.svg" },
   ],
   M15: [
     { bezeichnung: "Strategie-Landkarte", datei: "/grafiken/M15-strategie-landkarte.svg" },
@@ -112,8 +114,8 @@ const GRAFIKEN_MAP: Record<string, Array<{ bezeichnung: string; datei: string }>
     { bezeichnung: "Drei Trigger-Typen", datei: "/grafiken/M18-trigger-typen.svg" },
   ],
   M19: [
-    { bezeichnung: "SECI-Modell Wissensspirale", datei: "/grafiken/M19-seci.svg" },
-    { bezeichnung: "Kolb-Lernzyklus", datei: "/grafiken/M19-kolb-zyklus.svg" },
+    { bezeichnung: "SECI-Modell Wissensspirale", datei: "/grafiken/frameworks/seci.svg" },
+    { bezeichnung: "Kolb-Lernzyklus", datei: "/grafiken/frameworks/kolb-zyklus.svg" },
   ],
   M20: [
     { bezeichnung: "Netzwerk-Dimensionen", datei: "/grafiken/M20-netzwerk-dimensionen.svg" },
@@ -124,8 +126,9 @@ const GRAFIKEN_MAP: Record<string, Array<{ bezeichnung: string; datei: string }>
     { bezeichnung: "Handlungsempfehlung (Wenn-Dann)", datei: "/grafiken/M21-handlungsempfehlung.svg" },
   ],
   M22: [
-    { bezeichnung: "Wettbewerbsstrategie-Matrix", datei: "/grafiken/M22-wettbewerbsmatrix.svg" },
+    { bezeichnung: "Wettbewerbsstrategie-Matrix", datei: "/grafiken/frameworks/wettbewerbsmatrix.svg" },
     { bezeichnung: "Drei Analyse-Ebenen", datei: "/grafiken/M22-drei-ebenen.svg" },
+    { bezeichnung: "Handlungsempfehlung (Wenn-Dann)", datei: "/grafiken/M22-handlungsempfehlung.svg" },
   ],
 };
 
