@@ -2,10 +2,24 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 
+// Ablaufphase für „So läuft das Modul" – von sync_akademie.py aus dem
+// Sec-3.1-Ablaufplan extrahiert (teilnehmertaugliche Spalten).
+export interface AblaufPhase {
+  zeit: string;
+  phase: string;
+  methode: string;
+  dauer?: string;
+}
+
 export interface Module {
   id: string;
   title: string;
   subtitle: string;
+  kurzbeschreibung: string;       // kuratierter Überblickstext (Quelle: Modul-MD-Frontmatter)
+  hero_grafik: string;            // zentrale Konzept-Grafik (erste Grafik in Sec 4)
+  praxisfall_vignette: string;    // Fall-Vignette aus Sec 4 (Unternehmensportrait)
+  workbook_inhalt: string[];      // Inhaltsliste des Workbooks (AB-/Abschnitts-Titel)
+  ablauf: AblaufPhase[];          // Workshop-Ablauf (Zeit/Phase/Methode)
   kompetenzfeld: string;
   kompetenzfeld_slug: string;
   stufe: "Berater" | "Sparringspartner" | "Strategischer Partner";
@@ -264,6 +278,19 @@ function extractMarkedSection(content: string, key: string): { main: string; sec
   return { main, section };
 }
 
+function normalizeAblauf(value: unknown): AblaufPhase[] {
+  if (!Array.isArray(value)) return [];
+  return value
+    .filter((v): v is Record<string, unknown> => typeof v === "object" && v !== null)
+    .map((v) => ({
+      zeit: String(v.zeit ?? ""),
+      phase: String(v.phase ?? ""),
+      methode: String(v.methode ?? ""),
+      ...(v.dauer ? { dauer: String(v.dauer) } : {}),
+    }))
+    .filter((p) => p.phase || p.zeit);
+}
+
 function parseModule(filename: string): Module {
   const filePath = path.join(MODULES_DIR, filename);
   const raw = fs.readFileSync(filePath, "utf-8");
@@ -280,6 +307,11 @@ function parseModule(filename: string): Module {
     id: String(data.id),
     title: String(data.title ?? data.id),
     subtitle: String(data.subtitle ?? ""),
+    kurzbeschreibung: String(data.kurzbeschreibung ?? ""),
+    hero_grafik: String(data.hero_grafik ?? ""),
+    praxisfall_vignette: String(data.praxisfall_vignette ?? ""),
+    workbook_inhalt: normalizeList(data.workbook_inhalt),
+    ablauf: normalizeAblauf(data.ablauf),
     kompetenzfeld: normalizeKompetenzfeld(normalizedData),
     kompetenzfeld_slug: normalizeKompetenzfeldSlug(normalizedData),
     stufe: normalizeStufe(data.stufe),

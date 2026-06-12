@@ -50,8 +50,10 @@ export default async function ModuleDetailPage({ params }: { params: { id: strin
   const beobachtungsbogenUrl = getBeobachtungsbogenPdfUrl(module.id);
   const presentationUrl = getPresentationPptxUrl(module.id);
 
-  // Content in Abschnitte aufteilen (sync_akademie.py trennt mit SECTION_BREAK)
-  const [sec4Content = "", sec5Content = "", sec7Content = ""] =
+  // Content in Abschnitte aufteilen (sync_akademie.py trennt mit SECTION_BREAK):
+  // Body = [Praxistransfer (gekürzt), Quellen]; Überblick/Ablauf/Praxisfall/
+  // Workbook kommen als strukturierte Frontmatter-Felder.
+  const [sec5Content = "", sec7Content = ""] =
     module.content.split("\n\n<!-- SECTION_BREAK -->\n\n");
 
   return (
@@ -72,46 +74,153 @@ export default async function ModuleDetailPage({ params }: { params: { id: strin
           <div className="order-1 min-w-0 space-y-12 lg:order-2">
             {/* Mobile Chapter-Nav – nur auf kleinen Screens, Desktop hat MetaBox-Sidebar */}
             <nav className="lg:hidden flex flex-wrap gap-3 pt-2">
-              {module.content_theorie && (
-                <a href="#einordnung" className="font-mono text-[10px] uppercase tracking-[0.06em] border border-line text-ink-2 px-3 py-2 hover:border-primary hover:text-primary transition">
-                  Einordnung
+              {[
+                ["#ueberblick", "Überblick"],
+                ...(module.ablauf.length > 0 ? [["#ablauf", "Ablauf"]] : []),
+                ["#workbook", "Workbook"],
+                ["#transfer", "Nach dem Workshop"],
+                ["#vertiefung", "Vertiefung"],
+              ].map(([href, label]) => (
+                <a key={href} href={href} className="font-mono text-[10px] uppercase tracking-[0.06em] border border-line text-ink-2 px-3 py-2 hover:border-primary hover:text-primary transition">
+                  {label}
                 </a>
-              )}
-              <a href="#inhalte" className="font-mono text-[10px] uppercase tracking-[0.06em] border border-line text-ink-2 px-3 py-2 hover:border-primary hover:text-primary transition">
-                Inhalte
-              </a>
-              <a href="#transfer" className="font-mono text-[10px] uppercase tracking-[0.06em] border border-line text-ink-2 px-3 py-2 hover:border-primary hover:text-primary transition">
-                Praxistransfer
-              </a>
-              <a href="#quellen" className="font-mono text-[10px] uppercase tracking-[0.06em] border border-line text-ink-2 px-3 py-2 hover:border-primary hover:text-primary transition">
-                Quellen
-              </a>
+              ))}
             </nav>
             <VideoEmbed youtubeId={module.youtube_id} title={module.title} />
 
-            {/* Wissenschaftliche Einordnung */}
-            {module.content_theorie && (
-              <div id="einordnung" className="min-w-0 overflow-hidden scroll-mt-28">
-                <MarkdownRenderer content={module.content_theorie} />
+            {/* Überblick: Worum geht es + Hero-Grafik */}
+            <div id="ueberblick" className="min-w-0 scroll-mt-28 space-y-6">
+              {module.kurzbeschreibung && (
+                <>
+                  <div className="font-mono text-[10px] uppercase tracking-[0.1em] text-ink-3 flex items-center gap-2">
+                    <span className="w-4 h-px bg-ink-3 inline-block" />
+                    Worum geht es
+                  </div>
+                  <p className="font-serif text-xl leading-relaxed text-ink">
+                    {module.kurzbeschreibung}
+                  </p>
+                </>
+              )}
+              {module.hero_grafik && (
+                /* eslint-disable-next-line @next/next/no-img-element */
+                <img
+                  src={module.hero_grafik}
+                  alt={`Zentrale Konzept-Grafik des Moduls ${module.id}`}
+                  className="w-full border border-line"
+                />
+              )}
+            </div>
+
+            {/* So läuft das Modul */}
+            {module.ablauf.length > 0 && (
+              <div id="ablauf" className="min-w-0 scroll-mt-28">
+                <div className="font-mono text-[10px] uppercase tracking-[0.1em] text-ink-3 flex items-center gap-2 mb-5">
+                  <span className="w-4 h-px bg-ink-3 inline-block" />
+                  So läuft das Modul
+                </div>
+                <div className="border border-line divide-y divide-line">
+                  {module.ablauf.map((p, i) => (
+                    <div key={i} className="grid grid-cols-[72px_1fr] sm:grid-cols-[88px_180px_1fr] gap-x-4 px-4 py-2.5 items-baseline">
+                      <span className="font-mono text-[10px] text-ink-3 tabular-nums">
+                        {p.zeit}{p.dauer && !p.zeit.includes("–") ? ` · ${p.dauer}` : ""}
+                      </span>
+                      <span className="font-serif text-[15px] text-ink">{p.phase}</span>
+                      <span className="font-mono text-[10px] uppercase tracking-[0.04em] text-ink-3 col-start-2 sm:col-start-3">
+                        {p.methode}
+                      </span>
+                    </div>
+                  ))}
+                </div>
               </div>
             )}
 
-            {/* Sec 4: Modulinhalte */}
-            <div id="inhalte" className="min-w-0 overflow-hidden scroll-mt-28">
-              <MarkdownRenderer content={sec4Content} />
-            </div>
+            {/* Der Praxisfall */}
+            {module.praxisfall_vignette && (
+              <div id="praxisfall" className="min-w-0 scroll-mt-28">
+                <div className="font-mono text-[10px] uppercase tracking-[0.1em] text-ink-3 flex items-center gap-2 mb-5">
+                  <span className="w-4 h-px bg-ink-3 inline-block" />
+                  Der Praxisfall
+                </div>
+                <blockquote className="border-l-2 border-accent pl-5 font-serif text-base leading-relaxed text-ink-2 italic">
+                  {module.praxisfall_vignette}
+                </blockquote>
+              </div>
+            )}
 
-            {/* Sec 5: Praxistransfer */}
+            {/* Ihr Workbook */}
+            {(module.workbook_inhalt.length > 0 || pdfUrl) && (
+              <div id="workbook" className="min-w-0 scroll-mt-28 border border-line bg-bg-2 p-6">
+                <div className="font-mono text-[10px] uppercase tracking-[0.1em] text-ink-3 flex items-center gap-2 mb-4">
+                  <span className="w-4 h-px bg-ink-3 inline-block" />
+                  Ihr Workbook
+                </div>
+                {module.workbook_inhalt.length > 0 && (
+                  <ul className="space-y-1.5 mb-5">
+                    {module.workbook_inhalt.map((item) => (
+                      <li key={item} className="font-serif text-[15px] text-ink-2 flex gap-2.5">
+                        <span className="text-accent">▪</span>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+                {pdfUrl ? (
+                  <a
+                    href={pdfUrl}
+                    target="_blank"
+                    rel="noopener"
+                    className="inline-flex items-center gap-3 bg-primary text-white px-5 py-3 font-mono text-[10px] uppercase tracking-[0.08em] hover:opacity-90 transition"
+                  >
+                    Workbook laden (PDF) →
+                  </a>
+                ) : (
+                  <p className="font-mono text-[10px] uppercase tracking-[0.06em] text-ink-3">
+                    Workbook-Download nach Anmeldung verfügbar.
+                  </p>
+                )}
+              </div>
+            )}
+
+            {/* Nach dem Workshop: Praxistransfer */}
             {sec5Content && (
-              <div id="transfer" className="min-w-0 overflow-hidden scroll-mt-28">
+              <div id="transfer" className="min-w-0 overflow-hidden scroll-mt-28 border-t border-line pt-10">
+                <div className="font-mono text-[10px] uppercase tracking-[0.1em] text-ink-3 flex items-center gap-2 mb-2">
+                  <span className="w-4 h-px bg-ink-3 inline-block" />
+                  Nach dem Workshop
+                </div>
                 <MarkdownRenderer content={sec5Content} />
               </div>
             )}
 
-            {/* Sec 7: Quellen */}
-            {sec7Content && (
-              <div id="quellen" className="min-w-0 overflow-hidden scroll-mt-28">
-                <MarkdownRenderer content={sec7Content} />
+            {/* Vertiefung: Wissenschaftliche Einordnung + Quellen (einklappbar) */}
+            {(module.content_theorie || sec7Content) && (
+              <div id="vertiefung" className="min-w-0 scroll-mt-28 border-t border-line pt-10 space-y-4">
+                <div className="font-mono text-[10px] uppercase tracking-[0.1em] text-ink-3 flex items-center gap-2">
+                  <span className="w-4 h-px bg-ink-3 inline-block" />
+                  Vertiefung
+                </div>
+                {module.content_theorie && (
+                  <details className="group border border-line">
+                    <summary className="cursor-pointer list-none px-5 py-3.5 font-serif text-base text-ink flex items-center justify-between hover:bg-bg-2 transition">
+                      Wissenschaftliche Einordnung
+                      <span className="font-mono text-[10px] text-ink-3 group-open:rotate-90 transition-transform">→</span>
+                    </summary>
+                    <div className="min-w-0 overflow-hidden px-5 pb-5 border-t border-line pt-4">
+                      <MarkdownRenderer content={module.content_theorie} />
+                    </div>
+                  </details>
+                )}
+                {sec7Content && (
+                  <details className="group border border-line">
+                    <summary className="cursor-pointer list-none px-5 py-3.5 font-serif text-base text-ink flex items-center justify-between hover:bg-bg-2 transition">
+                      Quellen
+                      <span className="font-mono text-[10px] text-ink-3 group-open:rotate-90 transition-transform">→</span>
+                    </summary>
+                    <div className="min-w-0 overflow-hidden px-5 pb-5 border-t border-line pt-4">
+                      <MarkdownRenderer content={sec7Content} />
+                    </div>
+                  </details>
+                )}
               </div>
             )}
 
