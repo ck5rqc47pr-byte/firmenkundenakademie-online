@@ -18,6 +18,7 @@ const NAV_AUTH = [
 ];
 
 const TRAINER_NAV = { href: "/trainer", label: "Trainer" };
+const COCKPIT_NAV = { href: "/cockpit", label: "Cockpit" };
 const ADMIN_NAV   = { href: "/admin",   label: "Admin" };
 
 const ROLE_LABEL: Record<string, string> = {
@@ -62,6 +63,12 @@ export function NavBar() {
               {item.label}
             </Link>
           ))}
+          {(role === "teamleiter" || role === "trainer" || role === "admin") && (
+            <Link href={COCKPIT_NAV.href}
+              className="font-mono text-[11px] uppercase tracking-[0.08em] text-accent transition hover:text-accent/80">
+              {COCKPIT_NAV.label}
+            </Link>
+          )}
           {(role === "trainer" || role === "admin") && (
             <Link href={TRAINER_NAV.href}
               className="font-mono text-[11px] uppercase tracking-[0.08em] text-accent transition hover:text-accent/80">
@@ -131,6 +138,13 @@ export function NavBar() {
                 {item.label}
               </Link>
             ))}
+            {(role === "teamleiter" || role === "trainer" || role === "admin") && (
+              <Link href={COCKPIT_NAV.href}
+                className="font-mono text-[11px] uppercase tracking-[0.08em] text-accent hover:text-accent/80 transition"
+                onClick={() => setOpen(false)}>
+                {COCKPIT_NAV.label}
+              </Link>
+            )}
             {(role === "trainer" || role === "admin") && (
               <Link href={TRAINER_NAV.href}
                 className="font-mono text-[11px] uppercase tracking-[0.08em] text-accent hover:text-accent/80 transition"

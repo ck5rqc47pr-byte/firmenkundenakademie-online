@@ -201,6 +201,69 @@ export async function getQuizStats(): Promise<QuizStats[]> {
   return rows as QuizStats[];
 }
 
+// ── Team-Cockpit (Teamleiter-Sicht, Kirkpatrick L2/L3) ─────────────────────
+// Option 1 (ein Team): Die Rolle teamleiter sieht alle Teilnehmer.
+// Eine spätere Team-Zuordnung (teamleiter_id am Nutzer) wäre hier nur ein Filter.
+
+export interface TeamMemberProgress {
+  user_id: string;
+  user_name: string;
+  completed_count: number;
+  last_activity: string | null;
+}
+
+export async function getTeamProgress(): Promise<TeamMemberProgress[]> {
+  const rows = await sql`
+    SELECT u.id AS user_id, u.name AS user_name,
+           COUNT(p.module_id)::int AS completed_count,
+           MAX(p.completed_at) AS last_activity
+    FROM users u
+    LEFT JOIN progress p ON p.user_id = u.id
+    WHERE u.role = 'teilnehmer'
+    GROUP BY u.id, u.name
+    ORDER BY u.name
+  `;
+  return rows as TeamMemberProgress[];
+}
+
+export interface TeamQuizAvg {
+  user_id: string;
+  quiz_count: number;
+  avg_best_score: number | null;
+}
+
+export async function getTeamQuizAverages(): Promise<TeamQuizAvg[]> {
+  // Bester Versuch je Modul, davon der Durchschnitt je Nutzer
+  const rows = await sql`
+    SELECT user_id,
+           COUNT(*)::int AS quiz_count,
+           ROUND(AVG(best_score)::numeric, 0) AS avg_best_score
+    FROM (
+      SELECT user_id, module_id, MAX(score) AS best_score
+      FROM quiz_results
+      GROUP BY user_id, module_id
+    ) best
+    GROUP BY user_id
+  `;
+  return rows as TeamQuizAvg[];
+}
+
+export interface ModuleCompletionStat {
+  module_id: string;
+  completed_count: number;
+}
+
+export async function getModuleCompletionStats(): Promise<ModuleCompletionStat[]> {
+  const rows = await sql`
+    SELECT p.module_id, COUNT(DISTINCT p.user_id)::int AS completed_count
+    FROM progress p
+    JOIN users u ON u.id = p.user_id AND u.role = 'teilnehmer'
+    GROUP BY p.module_id
+    ORDER BY p.module_id
+  `;
+  return rows as ModuleCompletionStat[];
+}
+
 // ── Suggestions (Verbesserungsvorschläge) ─────────────────────────────────
 
 export type SuggestionType = "inhalt" | "fehler" | "beispiel" | "sonstiges";
