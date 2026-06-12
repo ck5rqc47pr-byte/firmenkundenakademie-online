@@ -35,6 +35,13 @@ const PARTICIPANT_HANDOUTS_DIR = path.join(
   "downloads",
   "teilnehmerunterlagen",
 );
+// Workbooks liegen rollengeschützt (teilnehmer+); nur das Schaufenster-
+// Exemplar (M01) bleibt in public/ und ist ohne Login abrufbar.
+const PARTICIPANT_HANDOUTS_PROTECTED_DIR = path.join(
+  process.cwd(),
+  "protected-downloads",
+  "teilnehmerunterlagen",
+);
 // Trainer-Material liegt außerhalb von public/ und wird nur über die
 // rollengeschützte Route /api/downloads/... ausgeliefert (siehe B2).
 const TRAINER_HANDBOOKS_DIR = path.join(
@@ -100,13 +107,16 @@ export function getAdjacentModules(id: string) {
 export function getParticipantHandoutPdfUrl(moduleId: string): string | null {
   const normalizedId = moduleId.toUpperCase();
   const filename = `${normalizedId}.pdf`;
-  const absolutePath = path.join(PARTICIPANT_HANDOUTS_DIR, filename);
 
-  if (!fs.existsSync(absolutePath)) {
-    return null;
+  // Öffentliches Schaufenster-Exemplar (M01) zuerst
+  if (fs.existsSync(path.join(PARTICIPANT_HANDOUTS_DIR, filename))) {
+    return `/downloads/teilnehmerunterlagen/${filename}`;
   }
-
-  return `/downloads/teilnehmerunterlagen/${filename}`;
+  // Rollengeschützte Workbooks via API-Route
+  if (fs.existsSync(path.join(PARTICIPANT_HANDOUTS_PROTECTED_DIR, filename))) {
+    return `/api/downloads/teilnehmerunterlagen/${filename}`;
+  }
+  return null;
 }
 
 export function getBeobachtungsbogenPdfUrl(moduleId: string): string | null {

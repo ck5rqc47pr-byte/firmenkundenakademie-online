@@ -7,9 +7,12 @@ export const dynamic = "force-dynamic";
 
 // Welche Rolle darf welchen geschützten Download-Typ abrufen.
 const ACCESS: Record<string, string[]> = {
-  trainerhandbuch:   ["trainer", "admin"],
-  praesentation:     ["trainer", "admin"],
-  beobachtungsbogen: ["teamleiter", "trainer", "admin"],
+  trainerhandbuch:      ["trainer", "admin"],
+  praesentation:        ["trainer", "admin"],
+  beobachtungsbogen:    ["teamleiter", "trainer", "admin"],
+  // Workbooks: jede angemeldete Rolle; M01 liegt als öffentliches
+  // Schaufenster-Exemplar weiterhin unter public/downloads/.
+  teilnehmerunterlagen: ["teilnehmer", "teamleiter", "trainer", "admin"],
 };
 
 const CONTENT_TYPE: Record<string, string> = {

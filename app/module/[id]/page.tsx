@@ -41,7 +41,11 @@ export default async function ModuleDetailPage({ params }: { params: { id: strin
     : null;
 
   const adjacent = getAdjacentModules(module.id);
-  const pdfUrl = getParticipantHandoutPdfUrl(module.id);
+  // Geschützte Workbook-Links nur für angemeldete Nutzer anzeigen;
+  // öffentliche (M01-Schaufenster) immer.
+  const rawPdfUrl = getParticipantHandoutPdfUrl(module.id);
+  const pdfUrl =
+    rawPdfUrl && (userId || rawPdfUrl.startsWith("/downloads/")) ? rawPdfUrl : null;
   const trainerPdfUrl = getTrainerHandbuchPdfUrl(module.id);
   const beobachtungsbogenUrl = getBeobachtungsbogenPdfUrl(module.id);
   const presentationUrl = getPresentationPptxUrl(module.id);

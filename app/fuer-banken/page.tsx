@@ -83,7 +83,18 @@ export default function FuerBankenPage() {
           >
             Alle Module ansehen
           </Link>
+          <a
+            href="/downloads/teilnehmerunterlagen/M01.pdf"
+            target="_blank"
+            rel="noopener"
+            className="inline-flex items-center gap-3 border border-accent px-7 py-4 font-mono text-[11px] uppercase tracking-[0.08em] text-ink-2 hover:border-ink hover:text-ink transition-all"
+          >
+            Muster-Workbook laden (M01, PDF)
+          </a>
         </div>
+        <p className="mt-4 font-mono text-[10px] uppercase tracking-[0.06em] text-ink-3">
+          Vollständiges Teilnehmer-Workbook „Bilanzlesen für Praktiker" – frei zugänglich als Qualitätsprobe.
+        </p>
       </section>
 
       {/* ── STATS ────────────────────────────────────────────── */}
