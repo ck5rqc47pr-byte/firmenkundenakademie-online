@@ -1,0 +1,62 @@
+[
+  {
+    "id": "M21-Q1",
+    "question": "Das 8-Felder-Framework für Kreditentscheidungen dient welchem regulatorischen Ziel?",
+    "options": [
+      "A) Der Umsetzung von Basel III-Kapitalanforderungen",
+      "B) Der MaRisk BTO 1.1-konformen Dokumentation strukturierter Kreditanalysen",
+      "C) Der Erfüllung der IFRS 9-Rückstellungspflichten",
+      "D) Der Einhaltung der BaFin-Großkreditgrenze"
+    ],
+    "correctIndex": 1,
+    "explanation": "Das 8-Felder-Framework macht Kreditentscheidungen transparent, nachvollziehbar und prüfsicher nach MaRisk BTO 1.1 (BaFin, 2023). Es stellt sicher, dass alle wesentlichen Risikofelder strukturiert analysiert und dokumentiert werden — eine Grundanforderung für die Kreditvergabe."
+  },
+  {
+    "id": "M21-Q2",
+    "question": "Was ist laut Becker (2019) das wichtigste Trennungsprinzip in der Kreditanalyse?",
+    "options": [
+      "A) Trennung von kurz- und langfristigen Verbindlichkeiten",
+      "B) Trennung von Rückzahlungsfähigkeit (primär) und Sicherheitenqualität (sekundär)",
+      "C) Trennung von quantitativen und qualitativen Faktoren in zwei separate Gutachten",
+      "D) Trennung von Kreditnehmer- und Bürgschaftsbonitäten"
+    ],
+    "correctIndex": 1,
+    "explanation": "Becker (2019) betont: Eine vollständige Kreditanalyse trennt strikt die Rückzahlungsfähigkeit (primäre Rückzahlungsquelle: operativer Cashflow) von der Sicherheitenqualität (sekundäre Rückzahlungsquelle). Gute Sicherheiten ersetzen keine fehlende Rückzahlungsfähigkeit."
+  },
+  {
+    "id": "M21-Q3",
+    "question": "Ein Unternehmen hat folgende Daten: EBIT 300.000 EUR, Zinsaufwand 80.000 EUR, Tilgung 120.000 EUR. Wie hoch ist der DSCR (Debt Service Coverage Ratio), und was bedeutet das?",
+    "options": [
+      "A) DSCR = 1,5 – ausreichende Deckung des Kapitaldienstes",
+      "B) DSCR = 3,75 – sehr komfortable Deckung",
+      "C) DSCR = 0,75 – Kapitaldienst nicht gedeckt",
+      "D) DSCR = 2,5 – gute Deckung"
+    ],
+    "correctIndex": 0,
+    "explanation": "DSCR = EBIT / (Zins + Tilgung) = 300.000 / (80.000 + 120.000) = 300.000 / 200.000 = 1,5. Ein DSCR von 1,5 bedeutet: Das operative Ergebnis übersteigt den Kapitaldienst um 50 % — ein solider Wert. Unter 1,2 wäre ein Warnsignal, unter 1,0 bedeutete es, dass der Cashflow den Kapitaldienst nicht deckt."
+  },
+  {
+    "id": "M21-Q4",
+    "question": "Was sind Financial Covenants und welchem Zweck dienen sie im Kreditvertrag?",
+    "options": [
+      "A) Zinsbindungsklauseln, die den Zinssatz für die gesamte Laufzeit fixieren",
+      "B) Vertragliche Kennzahlengrenzen, die der Bank bei Verletzung Sonderkündigungsrechte oder Nachbesicherungsansprüche geben — als Frühwarnsystem",
+      "C) Garantien des Kreditnehmers für die Beschäftigtenanzahl",
+      "D) Gesetzlich vorgeschriebene Klauseln nach § 18 KWG"
+    ],
+    "correctIndex": 1,
+    "explanation": "Financial Covenants — z. B. Mindest-Eigenkapitalquote, maximaler Verschuldungsgrad, Mindest-DSCR — sind vertragliche Kennzahlengrenzen. Werden sie unterschritten, erhält die Bank Sonderkündigungs- oder Nachbesicherungsrechte. Sie wirken als Frühwarnsystem und ermöglichen proaktives Eingreifen vor einem formellen Kreditausfall."
+  },
+  {
+    "id": "M21-Q5",
+    "question": "Feld 4 des 8-Felder-Frameworks analysiert die 'Managementqualität'. Welche Informationsquellen sind hierfür primär relevant?",
+    "options": [
+      "A) Jahresabschluss und GuV der letzten 3 Jahre",
+      "B) Gespräch mit der Geschäftsführung, Lebenslauf und Track-Record",
+      "C) Kreditauskunft und SCHUFA-Score des Geschäftsführers",
+      "D) Branchenberichte und Wettbewerbsanalysen"
+    ],
+    "correctIndex": 1,
+    "explanation": "Managementqualität lässt sich nicht aus Bilanzen ablesen — sie wird im persönlichen Gespräch, durch Analyse des Track-Records (bisherige Entscheidungen, Unternehmensentwicklung) und über den Lebenslauf bewertet. Das ist ein klassischer qualitativer Faktor, der nur durch direkten Kontakt zugänglich ist."
+  }
+]

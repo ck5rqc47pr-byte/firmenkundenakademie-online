@@ -1,0 +1,62 @@
+[
+  {
+    "id": "M14-Q1",
+    "question": "Was besagt die empirische Beobachtung der zeb-Firmenkundenstudie zur Ertragsverteilung im Firmenkundenbestand?",
+    "options": [
+      "A) Alle Kunden tragen gleichmäßig zum Deckungsbeitrag bei",
+      "B) 20 % der Kunden erzeugen 80 % des Deckungsbeitrags",
+      "C) 50 % der Kunden sind nicht profitabel",
+      "D) Neukunden sind immer ertragreicher als Bestandskunden"
+    ],
+    "correctIndex": 1,
+    "explanation": "Die zeb-Studie zeigt die klassische 80/20-Verteilung: 20 % der Kunden generieren 80 % des Deckungsbeitrags. Ohne Ertragsanalyse investieren Berater Zeit und Kapital in ertragsschwache Kunden, während ertragstarke Kunden zu wenig Aufmerksamkeit erhalten."
+  },
+  {
+    "id": "M14-Q2",
+    "question": "Was ist der 'Expected Loss' in der Konditionenkalkulation?",
+    "options": [
+      "A) Der tatsächliche Verlust bei einer Kundeninsolvenz",
+      "B) Die statistisch erwartete Verlusthöhe aus Kreditausfällen, die als Risikokosten in die Kondition eingepreist wird",
+      "C) Der Verlust aus Zinsänderungsrisiken bei Festzinskrediten",
+      "D) Die Abschreibung auf notleidende Kredite laut HGB"
+    ],
+    "correctIndex": 1,
+    "explanation": "Expected Loss = Probability of Default (PD) × Loss Given Default (LGD) × Exposure at Default (EAD). Er beschreibt den statistisch erwarteten Verlust und muss in der Kreditkondition als Risikoprämie abgedeckt sein. Ist er nicht gedeckt, wird das Kreditgeschäft risikogerechte Renditen unterschreiten."
+  },
+  {
+    "id": "M14-Q3",
+    "question": "Ein Firmenkundenberater führt ein Konditionengespräch. Was empfiehlt Modul M14 als ersten Schritt, bevor über Preise gesprochen wird?",
+    "options": [
+      "A) Das Konkurrenzangebot des Kunden einzuholen",
+      "B) Den Nutzen der Bankbeziehung und des Produkts klar kommunizieren",
+      "C) Die eigene Mindestkondition zu nennen und dann zu verhandeln",
+      "D) Den Kunden auf § 18 KWG hinzuweisen"
+    ],
+    "correctIndex": 1,
+    "explanation": "Wertbasiertes Konditionengespräch bedeutet: Erst den Wert kommunizieren (Zuverlässigkeit, Schnelligkeit, Expertise, Verbundleistungen), dann über den Preis sprechen. Wer zuerst über Konditionen spricht, macht sich zum Commodity. Wer zuerst Nutzen kommuniziert, rechtfertigt sein Pricing."
+  },
+  {
+    "id": "M14-Q4",
+    "question": "Welche vier Ertragskomponenten bilden den Kundendeckungsbeitrag im Firmenkundengeschäft?",
+    "options": [
+      "A) Zinsmarge, Provisionsmarge, Risikokosten, Betriebskosten",
+      "B) Kreditzins, Kontoführungsgebühr, Beratungshonorar, Verbundprovisionen",
+      "C) Zinsergebnis, Provisionsergebnis, Bewertungsergebnis, Overheadkosten",
+      "D) Bruttomarge, Handelsspanne, Refinanzierungskosten, Eigenkapitalkosten"
+    ],
+    "correctIndex": 0,
+    "explanation": "Der Kundendeckungsbeitrag setzt sich zusammen aus: Zinsmarge (Kreditzins minus Refinanzierungskosten), Provisionsmarge (Gebühren, Verbundprovisionen), abzüglich Risikokosten (Expected Loss) und Betriebskosten (Zeit- und Sachaufwand für den Kunden). Das Ergebnis zeigt die echte Profitabilität."
+  },
+  {
+    "id": "M14-Q5",
+    "question": "Welchen der folgenden Kunden sollte ein Berater laut der Ertragslogik von M14 am intensivsten betreuen?",
+    "options": [
+      "A) Den Kunden mit dem höchsten Kreditvolumen",
+      "B) Den Kunden mit dem höchsten Deckungsbeitrag",
+      "C) Den Kunden mit der längsten Bankverbindung",
+      "D) Den Kunden mit dem besten Rating"
+    ],
+    "correctIndex": 1,
+    "explanation": "Die Betreuungsintensität sollte am Deckungsbeitrag ausgerichtet werden — nicht am Kreditvolumen oder der Dauer der Bankverbindung. Hohe Kreditvolumina mit geringer Marge liefern weniger Deckungsbeitrag als kleinere Kunden mit breitem Produktmix und Verbundgeschäft."
+  }
+]

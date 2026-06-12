@@ -1,0 +1,62 @@
+[
+  {
+    "id": "M01-Q1",
+    "question": "Was schreibt § 267 HGB für eine 'kleine' GmbH bezüglich der Offenlegungspflicht vor?",
+    "options": [
+      "A) Vollständiger Jahresabschluss inklusive Lagebericht",
+      "B) Bilanz, GuV und Anhang",
+      "C) Nur verkürzte Bilanz, keine GuV",
+      "D) Keine Offenlegungspflicht"
+    ],
+    "correctIndex": 2,
+    "explanation": "Kleine GmbHs (Bilanzsumme ≤ 6 Mio. EUR, Umsatz ≤ 12 Mio. EUR, ≤ 50 MA) müssen laut § 267 HGB nur eine verkürzte Bilanz ohne GuV offenlegen. Für den Kreditgeber bedeutet das: GuV-Daten müssen im Rahmen der § 18 KWG-Prüfung direkt beim Kunden angefordert werden."
+  },
+  {
+    "id": "M01-Q2",
+    "question": "Was besagt die 'Goldene Bilanzregel' im Kontext der Kreditanalyse?",
+    "options": [
+      "A) Das Eigenkapital muss mindestens 30 % der Bilanzsumme betragen",
+      "B) Langfristig gebundenes Vermögen sollte durch langfristiges Kapital finanziert sein",
+      "C) Der Jahresüberschuss muss stets größer als die Zinslast sein",
+      "D) Anlagevermögen darf nicht durch kurzfristige Bankdarlehen finanziert werden, sofern der Zinssatz unter 5 % liegt"
+    ],
+    "correctIndex": 1,
+    "explanation": "Die Goldene Bilanzregel (Fristenkongruenz) fordert, dass langfristig gebundenes Vermögen (z. B. Maschinen) durch langfristiges Kapital finanziert wird. Eine Verletzung — kurzfristige Darlehen zur Maschinenfinanzierung — ist ein strukturelles Warnsignal für den Kreditgeber."
+  },
+  {
+    "id": "M01-Q3",
+    "question": "Ab welcher Kredithöhe verpflichtet § 18 KWG ein Kreditinstitut dazu, sich die wirtschaftlichen Verhältnisse des Kreditnehmers offenbaren zu lassen?",
+    "options": [
+      "A) Ab 250.000 EUR",
+      "B) Ab 500.000 EUR",
+      "C) Ab 750.000 EUR",
+      "D) Ab 1.000.000 EUR"
+    ],
+    "correctIndex": 2,
+    "explanation": "§ 18 KWG verpflichtet Kreditinstitute bei Krediten ab 750.000 EUR, sich die wirtschaftlichen Verhältnisse des Kreditnehmers (insbesondere den Jahresabschluss) offenbaren zu lassen. Verweigert der Kunde die Vorlage, ist dies selbst ein Warnsignal und begründet eine Handlungspflicht der Bank."
+  },
+  {
+    "id": "M01-Q4",
+    "question": "Ein Unternehmen hat Eigenkapital von 800.000 EUR und eine Bilanzsumme von 4.000.000 EUR. Wie hoch ist die Eigenkapitalquote, und wie ist sie branchentypisch einzuordnen?",
+    "options": [
+      "A) 20 % – für viele KMU bereits ein solider Wert",
+      "B) 25 % – im deutschen Mittelstand der Standardwert",
+      "C) 20 % – kritisch, da der Richtwert bei mindestens 30 % liegt",
+      "D) 5 % – viel zu niedrig für jede Branche"
+    ],
+    "correctIndex": 0,
+    "explanation": "EK-Quote = 800.000 / 4.000.000 = 20 %. Dieser Wert liegt unter dem deutschen Mittelstandsdurchschnitt von ca. 30 %, ist aber für viele KMU-Branchen (z. B. Handel, Bau) noch im plausiblen Bereich. Die Einordnung erfordert immer einen Branchenvergleich und die Zeitreihe."
+  },
+  {
+    "id": "M01-Q5",
+    "question": "Welche Wirkung hat das Bilanzierungswahlrecht der Sofortabschreibung von geringwertigen Wirtschaftsgütern (GWG, § 6 Abs. 2 EStG) auf den ausgewiesenen Jahresgewinn?",
+    "options": [
+      "A) Es erhöht den Jahresgewinn, weil Investitionen aktiviert werden",
+      "B) Es hat keine Auswirkung auf den Jahresgewinn",
+      "C) Es senkt den Jahresgewinn durch höhere Abschreibungen",
+      "D) Es erhöht die Bilanzsumme durch höhere Vorräte"
+    ],
+    "correctIndex": 2,
+    "explanation": "Die GWG-Sofortabschreibung erlaubt die vollständige Abschreibung im Anschaffungsjahr statt über die Nutzungsdauer. Das erhöht die Abschreibungen im laufenden Jahr und senkt damit den ausgewiesenen Jahresgewinn — ein defensives Bilanzierungswahlrecht, das Steuer spart, aber das Ergebnis optisch schlechter erscheinen lässt."
+  }
+]

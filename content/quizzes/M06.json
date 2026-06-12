@@ -1,0 +1,62 @@
+[
+  {
+    "id": "M06-Q1",
+    "question": "Welche zwei Schwellenwerte definiert das IfM Bonn für ein 'mittleres Unternehmen'?",
+    "options": [
+      "A) 10–249 Mitarbeiter und 2–49,9 Mio. EUR Jahresumsatz",
+      "B) 10–499 Mitarbeiter und 2–49,9 Mio. EUR Jahresumsatz",
+      "C) 50–249 Mitarbeiter und 10–50 Mio. EUR Jahresumsatz",
+      "D) 50–500 Mitarbeiter und 10–100 Mio. EUR Jahresumsatz"
+    ],
+    "correctIndex": 1,
+    "explanation": "Das IfM Bonn (2024) definiert mittlere Unternehmen als Unternehmen mit 10–499 Mitarbeitern UND 2–49,9 Mio. EUR Jahresumsatz. Beide Kriterien müssen erfüllt sein. Zudem gilt das qualitative Kriterium der Einheit von Eigentum und Leitung."
+  },
+  {
+    "id": "M06-Q2",
+    "question": "Was ist das qualitative Merkmal, das die IfM-Bonn-Definition von KMU von rein quantitativen Definitionen unterscheidet?",
+    "options": [
+      "A) Der Hauptsitz des Unternehmens in Deutschland",
+      "B) Die Einheit von Eigentum und Leitung — der Inhaber führt das Unternehmen selbst",
+      "C) Die Mitgliedschaft in einer IHK oder HWK",
+      "D) Die Rechtsform als GmbH oder Einzelunternehmen"
+    ],
+    "correctIndex": 1,
+    "explanation": "Das qualitative Kernmerkmal der IfM-Definition ist die Einheit von Eigentum und Leitung: Der Inhaber führt das Unternehmen selbst und haftet persönlich. Das erklärt das Schlüsselpersonenrisiko, die Verflechtung von Privat- und Betriebsvermögen — und ist für die Kreditanalyse von zentraler Bedeutung."
+  },
+  {
+    "id": "M06-Q3",
+    "question": "Für welchen praktischen Zweck ist die EU-KMU-Definition besonders relevant im Firmenkundengeschäft?",
+    "options": [
+      "A) Für die Bestimmung der Offenlegungspflicht nach HGB",
+      "B) Für EU-Förderprogramme und KfW-Finanzierungsprodukte",
+      "C) Für die Klassifizierung als systemrelevantes Institut",
+      "D) Für die MaRisk-konforme Risikogewichtung"
+    ],
+    "correctIndex": 1,
+    "explanation": "Die EU-Definition (Europäische Kommission, 2020) ist die Grundlage für EU-Förderprogramme und KfW-Finanzierungsprodukte. Wer als KMU nach EU-Definition gilt, hat Zugang zu vergünstigten Förderkrediten und staatlichen Garantieprogrammen — direkt relevant für die Beratung."
+  },
+  {
+    "id": "M06-Q4",
+    "question": "Warum ist das Schlüsselpersonenrisiko bei Inhabergeführten KMU ein besonderes Kreditrisiko?",
+    "options": [
+      "A) Weil der Inhaber oft keine kaufmännische Ausbildung hat",
+      "B) Weil Unternehmen und Inhaberperson eng verknüpft sind — fällt der Inhaber aus, fehlt oft auch die unternehmerische Führung",
+      "C) Weil Inhabergeführte KMU keine Vertretungsregelung in der GmbH-Satzung haben dürfen",
+      "D) Weil die Bank haftet, wenn der Inhaber strafrechtlich verurteilt wird"
+    ],
+    "correctIndex": 1,
+    "explanation": "Bei der Einheit von Eigentum und Leitung ist der Inhaber oft gleichzeitig Stratege, Vertriebschef und Hauptkunde-Kontakt. Fällt er durch Krankheit, Tod oder Unfall aus, bricht häufig auch das Geschäftsmodell ein. Das Schlüsselpersonenrisiko ist daher ein Kernbestandteil der KMU-Kreditanalyse."
+  },
+  {
+    "id": "M06-Q5",
+    "question": "Das 5-Fragen-Schema zur KMU-Einordnung hilft dem Berater, einen neuen Kunden schnell zu verstehen. Welche der folgenden Fragen gehört NICHT zum Schema?",
+    "options": [
+      "A) Was ist das Geschäftsmodell — wie verdient das Unternehmen Geld?",
+      "B) Wer sind die wichtigsten Kunden und wie konzentriert ist der Umsatz?",
+      "C) Welche Branche, und welche strukturellen Risiken bringt sie mit?",
+      "D) Welche Gesellschafterstruktur und welches Stammkapital hat die GmbH?"
+    ],
+    "correctIndex": 3,
+    "explanation": "Das 5-Fragen-Schema zielt auf Geschäftsmodell, Kundenbasis, Branchencharakteristika, Finanzierungsstruktur und Schlüsselpersonen — nicht auf rechtliche Formalien wie Stammkapital. Gesellschafterstruktur ist zwar relevant, aber das Stammkapital allein hilft bei der ersten Einordnung kaum."
+  }
+]

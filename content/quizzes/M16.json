@@ -1,0 +1,62 @@
+[
+  {
+    "id": "M16-Q1",
+    "question": "Was misst die Nettomargenziffer (NMZ) im VR-Firmenkundensegment?",
+    "options": [
+      "A) Den absoluten Deckungsbeitrag in EUR pro Kunde",
+      "B) Die bereinigte Ertragsmarge auf das betreute Kreditvolumen — in Basispunkten oder Prozent",
+      "C) Die Anzahl der Cross-Selling-Produkte pro Kunde",
+      "D) Den Risikogewichteten Aktivawert (RWA) des Bestands"
+    ],
+    "correctIndex": 1,
+    "explanation": "Die NMZ ist die zentrale relative Steuerungsgröße: Sie misst, wie viel Nettoertrag (nach Risikokosten, Refinanzierung, anteiligen Betriebskosten) je Einheit betreutes Volumen generiert wird. Sie erlaubt den Vergleich von Kunden unterschiedlicher Größe auf einer gemeinsamen Skala."
+  },
+  {
+    "id": "M16-Q2",
+    "question": "Welche Maßnahme hat den größten direkten Hebel auf die NMZ eines einzelnen Kunden?",
+    "options": [
+      "A) Das Kreditvolumen erhöhen",
+      "B) Zusätzliche Verbundprodukte platzieren und die Konditionsbasis risikogerecht anpassen",
+      "C) Die Besuchsfrequenz erhöhen",
+      "D) Den Kunden in eine höhere Kundensegmentklasse einstufen"
+    ],
+    "correctIndex": 1,
+    "explanation": "NMZ-Verbesserungen entstehen primär durch zwei Hebel: Konditionsanpassung (höhere Zinsmarge bei risikogerechtem Pricing) und Provisionserträge durch Verbundprodukte. Höheres Kreditvolumen allein verbessert die NMZ nicht, wenn die Marge konstant bleibt — es erhöht nur den absoluten Ertrag."
+  },
+  {
+    "id": "M16-Q3",
+    "question": "Wozu dient der NMZ-Bestandsbericht in agree?",
+    "options": [
+      "A) Um die Bonität aller Kunden in einer Übersicht zu sehen",
+      "B) Um Kunden nach NMZ zu sortieren und Verbesserungspotenziale im Bestand zu identifizieren",
+      "C) Um die Frühwarnindikatoren aller Kreditnehmer zu überwachen",
+      "D) Um die Jahresabschlüsse aller Kunden automatisch zu verarbeiten"
+    ],
+    "correctIndex": 1,
+    "explanation": "Der NMZ-Bestandsbericht in agree listet alle Kunden nach ihrer Nettomargenziffer und ermöglicht es dem Berater, auf einen Blick die ertragsschwächsten Kunden zu identifizieren, bei denen konkrete Maßnahmen zur NMZ-Verbesserung ansetzen sollten."
+  },
+  {
+    "id": "M16-Q4",
+    "question": "Was ist das 'dominante Schwachfeld' in der NMZ-Analyse eines Bestands?",
+    "options": [
+      "A) Der Kunde mit dem niedrigsten Rating",
+      "B) Die Ertragskomponente (Zins, Provision, Risiko), die am meisten zur niedrigen NMZ beiträgt",
+      "C) Das Produkt mit den meisten Reklamationen",
+      "D) Der Bereich mit der höchsten Mitarbeiterfluktuation"
+    ],
+    "correctIndex": 1,
+    "explanation": "Das dominante Schwachfeld ist die Ertragskomponente, die systematisch die NMZ drückt — z. B. zu niedrige Kreditmargen (Zins), fehlende Verbundprodukte (Provision) oder zu hohe Risikokosten (schlechte Portfolioqualität). Die Identifikation ermöglicht gezielte Steuerung statt Gießkannenprinzip."
+  },
+  {
+    "id": "M16-Q5",
+    "question": "Warum ist die NMZ besser als der absolute Deckungsbeitrag zur Steuerung der Betreuungsintensität?",
+    "options": [
+      "A) Weil die NMZ in agree automatisch berechnet wird, der DB nicht",
+      "B) Weil die NMZ Kunden unterschiedlicher Größe vergleichbar macht — ein kleiner Kunde mit hoher NMZ kann rentabler sein als ein großer mit niedriger NMZ",
+      "C) Weil der DB nach HGB berechnet wird und steuerlich nicht relevant ist",
+      "D) Weil die NMZ dem Kunden kommuniziert werden darf, der DB nicht"
+    ],
+    "correctIndex": 1,
+    "explanation": "Die NMZ normiert auf das Volumen und macht damit Äpfel mit Birnen vergleichbar. Ein Kunde mit 500.000 EUR Kredit und hoher NMZ kann rentabler sein als ein Kunde mit 5 Mio. EUR und geringer NMZ. Absolute DBs bevorzugen systematisch große Kunden — unabhängig von deren Effizienz."
+  }
+]

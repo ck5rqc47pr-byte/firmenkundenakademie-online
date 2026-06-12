@@ -1,0 +1,98 @@
+[
+  {
+    "id": "M22-Q1",
+    "question": "Welche der fünf Wettbewerbskräfte nach Porter (1979) beschreibt die Gefahr, dass wenige Großabnehmer Preisdruck auf den Lieferanten ausüben?",
+    "options": [
+      "A) Bedrohung durch neue Marktteilnehmer",
+      "B) Verhandlungsmacht der Lieferanten",
+      "C) Verhandlungsmacht der Kunden",
+      "D) Rivalität unter bestehenden Wettbewerbern"
+    ],
+    "correctIndex": 2,
+    "explanation": "Die Verhandlungsmacht der Kunden (Abnehmer) beschreibt den Preisdruck, den starke oder wenige Großabnehmer auf einen Lieferanten ausüben. Im Kreditkontext ist dies eng mit dem Klumpenrisiko verknüpft: Hängt ein Unternehmen von wenigen Großkunden ab, kann es Preise und Konditionen kaum durchsetzen."
+  },
+  {
+    "id": "M22-Q2",
+    "question": "Ein Maschinenbauer produziert Standardteile zu mittlerem Preis und ist weder der günstigste Anbieter noch verfügt er über eine erkennbare Alleinstellung. Welche strategische Situation beschreibt Porter (1980)?",
+    "options": [
+      "A) Kostenführerschaft",
+      "B) Differenzierungsstrategie",
+      "C) Nischenstrategie",
+      "D) Stuck in the Middle"
+    ],
+    "correctIndex": 3,
+    "explanation": "„Stuck in the Middle\" beschreibt ein Unternehmen, das sich für keine der generischen Wettbewerbsstrategien entschieden hat — weder Kostenführerschaft noch Differenzierung noch Fokus. Porter (1980) sieht darin eine strategisch riskante Position, weil das Unternehmen weder über den Preis noch über ein Alleinstellungsmerkmal überzeugen kann."
+  },
+  {
+    "id": "M22-Q3",
+    "question": "Welches Merkmal gehört laut Barney (1991) zu den VRIN-Kriterien für nachhaltige Wettbewerbsvorteile?",
+    "options": [
+      "A) Sichtbar und kommunizierbar",
+      "B) Wertvoll, selten, nicht imitierbar, nicht substituierbar",
+      "C) Günstig, standardisiert, skalierbar, digital",
+      "D) Messbar, bewertbar, übertragbar, veräußerbar"
+    ],
+    "correctIndex": 1,
+    "explanation": "Die VRIN-Kriterien des Resource-based View (Barney, 1991) lauten: Valuable (wertvoll), Rare (selten), Inimitable (nicht imitierbar) und Non-substitutable (nicht substituierbar). Nur Ressourcen, die alle vier Kriterien erfüllen, begründen einen dauerhaften Wettbewerbsvorteil — ein zentrales Signal für die mittelfristige Kreditwürdigkeit."
+  },
+  {
+    "id": "M22-Q4",
+    "question": "Im Praxisfall Haller GmbH entfallen 60 % des Umsatzes auf einen einzigen Kunden. Welche kreditrelevante Risikokategorie ist primär betroffen?",
+    "options": [
+      "A) Zinsänderungsrisiko",
+      "B) Klumpenrisiko (Konzentrationsrisiko)",
+      "C) Währungsrisiko",
+      "D) Operationelles Risiko"
+    ],
+    "correctIndex": 1,
+    "explanation": "Eine Umsatzkonzentration von 60 % auf einen einzigen Kunden ist ein klassisches Klumpenrisiko (Konzentrationsrisiko). Fällt dieser Kunde aus, gerät die gesamte Ertrags- und Kapitaldienstfähigkeit ins Wanken — ein qualitativer Risikofaktor, der über die reine Bilanzanalyse hinausgeht."
+  },
+  {
+    "id": "M22-Q5",
+    "question": "Was versteht die SWOT-Analyse unter „Bedrohungen\" (Threats) im Kreditkontext?",
+    "options": [
+      "A) Interne Schwächen des Unternehmens",
+      "B) Externe Entwicklungen, die das Ertragspotenzial gefährden",
+      "C) Risiken aus dem Kreditvertrag",
+      "D) Fehlende Sicherheiten"
+    ],
+    "correctIndex": 1,
+    "explanation": "„Threats\" (Bedrohungen) sind externe Entwicklungen — etwa Marktveränderungen, neue Wettbewerber oder regulatorische Eingriffe —, die das künftige Ertragspotenzial gefährden. Sie sind von den internen Schwächen (Weaknesses) abzugrenzen und im Kreditkontext für die Beurteilung der Zukunftsfähigkeit entscheidend."
+  },
+  {
+    "id": "M22-Q6",
+    "question": "Welche regulatorische Vorschrift verpflichtet Kreditinstitute, die wirtschaftlichen Verhältnisse eines Kreditnehmers (ab 750.000 EUR) vollständig zu analysieren?",
+    "options": [
+      "A) BelWertV § 4",
+      "B) CRR Art. 122",
+      "C) § 18 KWG",
+      "D) MaRisk BTO 1.2.1"
+    ],
+    "correctIndex": 2,
+    "explanation": "§ 18 KWG verpflichtet Kreditinstitute, sich bei Krediten ab 750.000 EUR die wirtschaftlichen Verhältnisse des Kreditnehmers offenlegen zu lassen und diese zu analysieren. Die strategische Geschäftsmodellbewertung ist Teil dieser umfassenden Analysepflicht."
+  },
+  {
+    "id": "M22-Q7",
+    "question": "Ein 63-jähriger Alleingeschäftsführer plant keine Nachfolgeregelung. Wie ist das im Rahmen einer strategischen Kreditbewertung einzuordnen?",
+    "options": [
+      "A) Nicht kreditrelevant, da operativ nicht messbar",
+      "B) Schwäche in der SWOT-Analyse und strukturelles Risiko für die Fortführungsfähigkeit",
+      "C) Nur relevant bei Krediten über 5 Mio. EUR",
+      "D) Relevant, aber ausschließlich durch Sicherheiten zu kompensieren"
+    ],
+    "correctIndex": 1,
+    "explanation": "Eine fehlende Nachfolgeregelung bei einem alleinigen, älteren Geschäftsführer ist ein „Succession Gap\" — eine Schwäche in der SWOT-Analyse und ein strukturelles Risiko für die Fortführungsfähigkeit. Es ist ein qualitativer, nicht durch Sicherheiten kompensierbarer Faktor, der unabhängig von der Kredithöhe in die Bewertung gehört."
+  },
+  {
+    "id": "M22-Q8",
+    "question": "Welcher didaktische Ansatz liegt der Fallarbeit in diesem Modul zugrunde, bei dem Lernende an einem authentischen, ungelösten Problem aktiv Wissen konstruieren?",
+    "options": [
+      "A) Instruktionales Design nach Gagné",
+      "B) Problembasiertes Lernen nach Barrows (1986)",
+      "C) Mastery Learning nach Bloom",
+      "D) Situiertes Lernen in authentischen Lernumgebungen"
+    ],
+    "correctIndex": 1,
+    "explanation": "Problembasiertes Lernen (Barrows, 1986) stellt ein authentisches, ungelöstes Problem an den Anfang des Lernprozesses: Lernende konstruieren Wissen aktiv, indem sie den Fall analysieren und eine Lösung erarbeiten. Genau dieses Prinzip trägt die Fallarbeit am Beispiel der Haller GmbH."
+  }
+]

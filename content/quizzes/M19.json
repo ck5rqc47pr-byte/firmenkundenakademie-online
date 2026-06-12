@@ -1,0 +1,62 @@
+[
+  {
+    "id": "M19-Q1",
+    "question": "Was ist der Unterschied zwischen explizitem und implizitem Wissen im Kontext des Wissenstransfers?",
+    "options": [
+      "A) Explizites Wissen ist geheim, implizites öffentlich",
+      "B) Explizites Wissen ist dokumentiert und übertragbar; implizites Wissen ist an Erfahrung gebunden und schwer zu verbalisieren",
+      "C) Implizites Wissen ist veraltet, explizites Wissen ist aktuell",
+      "D) Explizites Wissen betrifft Produkte, implizites Wissen betrifft Kunden"
+    ],
+    "correctIndex": 1,
+    "explanation": "Explizites Wissen (Handbücher, Prozesse, Checklisten) ist leicht dokumentierbar und übertragbar. Implizites Wissen (Intuition, Erfahrung, 'Fingerspitzengefühl') ist an die Person gebunden und erfordert besondere Transfermethoden wie Mentoring, Shadowing oder strukturierte Fallbesprechungen."
+  },
+  {
+    "id": "M19-Q2",
+    "question": "Welche der folgenden Methoden ist besonders geeignet, implizites Expertenwissen von erfahrenen Beratern auf Nachwuchskräfte zu übertragen?",
+    "options": [
+      "A) Schriftliches Handbuch mit Best-Practice-Beispielen",
+      "B) E-Learning-Modul mit Multiple-Choice-Tests",
+      "C) Shadowing und Tandem-Lernen — gemeinsame Kundengespräche mit anschließender Reflexion",
+      "D) Videokonferenz mit Wissenspräsentation"
+    ],
+    "correctIndex": 2,
+    "explanation": "Implizites Wissen wird am effektivsten durch direkte Erfahrungsübertragung transferiert: Shadowing (Beobachten im realen Kontext) und Tandem-Lernen (gemeinsam handeln, dann reflektieren) machen unbewusstes Können sichtbar und nachvollziehbar. Schriftliche Formate greifen hier zu kurz."
+  },
+  {
+    "id": "M19-Q3",
+    "question": "Was ist eine 'Community of Practice' im Firmenkundenteam?",
+    "options": [
+      "A) Ein formelles Ausschussgremium der Bank",
+      "B) Eine selbstorganisierte Lerngemeinschaft von Beratern, die durch gemeinsame Praxis, Fälle und Reflexion kollektiv Expertise aufbauen",
+      "C) Eine externe Beratungsgruppe für Kunden",
+      "D) Ein Pflichtprogramm der Personalentwicklung"
+    ],
+    "correctIndex": 1,
+    "explanation": "Communities of Practice (Wenger, 1998) sind informelle Gruppen, die durch geteilte Praxis und gemeinsames Lernen Expertise entwickeln. Im FK-Team bedeutet das: regelmäßige Fallbesprechungen, kollegiale Beratung, Wissensteilung — ohne formalen Schulungscharakter."
+  },
+  {
+    "id": "M19-Q4",
+    "question": "Was sind typische Transferbarrieren für Wissenstransfer in einem Firmenkundenteam?",
+    "options": [
+      "A) Zu hohe Fachkompetenz der Mitarbeiter",
+      "B) Zeitdruck, fehlende Strukturen für den Austausch, mangelnde psychologische Sicherheit und das Gefühl, Wissen = Machtposition",
+      "C) Zu viele Schulungsangebote, die ablenken",
+      "D) Zu gute IT-Systeme, die Wissen automatisch speichern"
+    ],
+    "correctIndex": 1,
+    "explanation": "Die häufigsten Transferbarrieren sind: Zeitdruck (kein Raum für Austausch), fehlende Strukturen (kein regelmäßiges Format), mangelnde Sicherheit (Angst, Fehler zu zeigen) und Wissenshoarding (implizites Motiv: 'Wenn ich mein Wissen teile, verliere ich meinen Expertenstatus'). Alle vier müssen adressiert werden."
+  },
+  {
+    "id": "M19-Q5",
+    "question": "Das SECI-Modell von Nonaka & Takeuchi beschreibt vier Wissenswandlungsprozesse. Welcher Prozess findet statt, wenn ein Berater seine intuitive Kundenstrategie in eine Checkliste schreibt?",
+    "options": [
+      "A) Sozialisation (implizit → implizit)",
+      "B) Externalisierung (implizit → explizit)",
+      "C) Kombination (explizit → explizit)",
+      "D) Internalisierung (explizit → implizit)"
+    ],
+    "correctIndex": 1,
+    "explanation": "Externalisierung bezeichnet den Prozess, bei dem implizites Wissen (Intuition, Erfahrung) in explizite Form (Checkliste, Modell, Dokumentation) überführt wird. Das ist der wertvollste, aber schwierigste Transferschritt — er macht persönliche Expertise für andere nutzbar."
+  }
+]

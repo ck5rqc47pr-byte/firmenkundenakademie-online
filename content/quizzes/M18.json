@@ -1,0 +1,62 @@
+[
+  {
+    "id": "M18-Q1",
+    "question": "Was ist der Kernunterschied zwischen reaktivem und trigger-basiertem Vertrieb?",
+    "options": [
+      "A) Reaktiver Vertrieb ist digital, trigger-basierter analog",
+      "B) Reaktiver Vertrieb wartet auf Kundenanfragen; trigger-basierter Vertrieb nutzt Datensignale, um proaktiv zum richtigen Zeitpunkt zu kontaktieren",
+      "C) Trigger-basierter Vertrieb ist teurer und nur für Großkunden geeignet",
+      "D) Reaktiver Vertrieb ist nach MaRisk nicht erlaubt"
+    ],
+    "correctIndex": 1,
+    "explanation": "Trigger-basierter Vertrieb nutzt Ereignisse in den Kundendaten als Auslöser für proaktive Kontaktaufnahme — z. B. eine hohe Kontokorrent-Inanspruchnahme als Signal für Finanzierungsbedarf. Reaktiver Vertrieb wartet, bis der Kunde kommt. Trigger-basiert ist schneller und relevanter."
+  },
+  {
+    "id": "M18-Q2",
+    "question": "Welches der folgenden Ereignisse in agree-Daten ist ein typisches Trigger-Signal für einen potenziellen Investitionskredit-Bedarf?",
+    "options": [
+      "A) Der Kunde hat seit 3 Monaten kein Girokonto-Umsatz",
+      "B) Regelmäßige Kontokorrent-Inanspruchnahme nahe des Limits über mehrere Monate",
+      "C) Der Jahresabschluss liegt 6 Monate vor Fälligkeit",
+      "D) Der Kunde hat ein Gehaltskonto bei der Bank"
+    ],
+    "correctIndex": 1,
+    "explanation": "Dauerhaft ausgeschöpfter Kontokorrent signalisiert strukturellen Liquiditätsbedarf — oft ein Zeichen für nicht finanzierte Investitionen oder Working-Capital-Lücken. Das ist ein klassisches Trigger-Signal: Der Berater kann proaktiv ein Investitionsgespräch initiieren, bevor der Kunde selbst aktiv wird."
+  },
+  {
+    "id": "M18-Q3",
+    "question": "Welche DSGVO-Grundsätze gelten bei der Nutzung von Kundendaten für den trigger-basierten Vertrieb?",
+    "options": [
+      "A) Kundendaten dürfen für den Vertrieb frei verwendet werden, solange der Kunde ein Girokonto hat",
+      "B) Daten dürfen nur für den vereinbarten Zweck genutzt werden; der Kunde muss informiert werden, und es gelten Zweckbindung und Datensparsamkeit",
+      "C) Trigger-Daten sind anonymisiert und unterliegen nicht der DSGVO",
+      "D) Interne Systemdaten aus agree unterliegen nicht der DSGVO, nur externe Daten"
+    ],
+    "correctIndex": 1,
+    "explanation": "Die DSGVO gilt auch für interne Kundendaten: Zweckbindung (Daten nur für vereinbarte Zwecke nutzen), Informationspflicht (Kunden müssen wissen, wie ihre Daten genutzt werden) und Datensparsamkeit. Im Firmenkundengeschäft ist die Nutzung transaktionaler Daten für Beratungszwecke grundsätzlich zulässig, aber transparent zu gestalten."
+  },
+  {
+    "id": "M18-Q4",
+    "question": "Welcher Trigger-Typ hat die längste Vorlaufzeit für proaktive Vertriebsmaßnahmen?",
+    "options": [
+      "A) Reaktive Trigger (Kundenkontakt nach Reklamation)",
+      "B) Verhaltens-Trigger (aktuelle Kontokorrentnutzung)",
+      "C) Lebenszyklus-Trigger (Unternehmensgründung, Investitionszyklen, Altersentwicklung des Inhabers)",
+      "D) Markt-Trigger (Zinsveränderung der EZB gestern)"
+    ],
+    "correctIndex": 2,
+    "explanation": "Lebenszyklus-Trigger wie Unternehmensalter, Inhaberalter oder bekannte Investitionszyklen haben die längste Vorlaufzeit — manchmal Jahre. Sie erlauben die frühzeitigste Positionierung. Verhaltens-Trigger und Markt-Trigger sind kurzfristiger und erfordern schnelleres Handeln."
+  },
+  {
+    "id": "M18-Q5",
+    "question": "Warum ist Datenqualität im CRM-Bestand eine Voraussetzung für effektiven trigger-basierten Vertrieb?",
+    "options": [
+      "A) Weil schlechte Daten zu BaFin-Sanktionen führen",
+      "B) Weil Trigger-Signale nur dann relevant sind, wenn die zugrundeliegenden Kundendaten aktuell und vollständig sind — falsche Branche, veraltetes Inhaberalter, fehlende Umsatzdaten führen zu falschen Signalen",
+      "C) Weil agree ohne vollständige Daten nicht starten kann",
+      "D) Weil die DSGVO vollständige Kundendaten vorschreibt"
+    ],
+    "correctIndex": 1,
+    "explanation": "Trigger-Algorithmen sind nur so gut wie die Daten, auf denen sie basieren. Ist die Branche falsch erfasst, das Inhaberalter veraltet oder Umsatzdaten lückenhaft, erzeugt das System irrelevante oder falsche Trigger. Datenqualitätspflege ist daher keine Verwaltungsaufgabe, sondern vertriebliche Voraussetzung."
+  }
+]

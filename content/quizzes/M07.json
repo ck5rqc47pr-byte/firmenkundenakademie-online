@@ -1,0 +1,62 @@
+[
+  {
+    "id": "M07-Q1",
+    "question": "Was ist der praktische Unterschied für den Firmenkundenberater, wenn ein Kunde Freiberufler (§ 18 EStG) statt Gewerbetreibender ist?",
+    "options": [
+      "A) Freiberufler müssen keine Steuern zahlen",
+      "B) Freiberufler sind von der Gewerbesteuer befreit und können EÜR statt Bilanz einreichen",
+      "C) Freiberufler unterliegen strengerer Bankenaufsicht nach KWG",
+      "D) Freiberufler haben keine Offenlegungspflicht gegenüber der Bank"
+    ],
+    "correctIndex": 1,
+    "explanation": "Freiberufler nach § 18 EStG zahlen keine Gewerbesteuer und sind bis 600.000 EUR Umsatz von der handelsrechtlichen Bilanzierungspflicht befreit — sie reichen eine Einnahmen-Überschuss-Rechnung (EÜR) ein. Das ändert die Analysebasis für den Kreditberater grundlegend."
+  },
+  {
+    "id": "M07-Q2",
+    "question": "Wie wird der Goodwill einer Arztpraxis nach der modifizierten Ertragswertmethode (IDW S5) grundsätzlich ermittelt?",
+    "options": [
+      "A) Als Differenz zwischen Bilanzsumme und Verbindlichkeiten",
+      "B) Als Barwert der zukünftig erwarteten Überschüsse über einen risikogerechten Zinssatz, abzüglich Substanzwert",
+      "C) Als Vielfaches des letzten Jahresumsatzes",
+      "D) Als Summe aller aktivierten immateriellen Vermögensgegenstände laut Bilanz"
+    ],
+    "correctIndex": 1,
+    "explanation": "Die modifizierte Ertragswertmethode (IDW S5) ermittelt den Goodwill als Barwert der nachhaltig erzielbaren Überschüsse (Ertragswert), abzüglich des Substanzwertes (Inventar, Einrichtung). Der Goodwill ist der immateriell Wert — die Patientenbindung, der Ruf, die Lage."
+  },
+  {
+    "id": "M07-Q3",
+    "question": "Was unterscheidet eine Berufsausübungsgemeinschaft (BAG) von einem Medizinischen Versorgungszentrum (MVZ) aus kreditanalytischer Sicht?",
+    "options": [
+      "A) Die BAG darf nur in einer Rechtsform als GmbH geführt werden, das MVZ nicht",
+      "B) Im MVZ können auch Nicht-Ärzte Gesellschafter sein und angestellte Ärzte tätig sein — die persönliche Zulassung ist vom Unternehmen getrennt",
+      "C) Das MVZ unterliegt nicht dem § 18 KWG",
+      "D) In der BAG gibt es kein Schlüsselpersonenrisiko, im MVZ schon"
+    ],
+    "correctIndex": 1,
+    "explanation": "Im MVZ können Nicht-Ärzte (z. B. Klinikträger) Gesellschafter sein, und die ärztliche Tätigkeit wird durch angestellte Ärzte erbracht — die Kassenzulassung liegt beim MVZ, nicht bei der Person. Das verändert das Risikoprofil erheblich: weniger Schlüsselpersonenrisiko, aber komplexere Governance."
+  },
+  {
+    "id": "M07-Q4",
+    "question": "Warum ist das Zulassungsrisiko bei Heilberufskunden ein besonders relevantes Kreditrisiko?",
+    "options": [
+      "A) Weil die Zulassung jährlich neu beantragt werden muss und hohe Gebühren kostet",
+      "B) Weil bei Entzug der Kassenzulassung der wesentliche Umsatzstrom wegbricht und die Kreditfähigkeit schlagartig entfällt",
+      "C) Weil die Zulassungsausschüsse keine Auskunft an Banken geben",
+      "D) Weil Heilberufe nach § 18 KWG nicht als Unternehmen gelten"
+    ],
+    "correctIndex": 1,
+    "explanation": "Die Kassenzulassung ist die Existenzberechtigung für den Großteil des Umsatzes eines Arztes oder Apothekers. Entzug oder Rückgabe der Zulassung (z. B. bei Disziplinarverfahren) bedeutet sofortigen Umsatzeinbruch um häufig 70–90 %. Kreditrückzahlung ist dann kaum mehr möglich."
+  },
+  {
+    "id": "M07-Q5",
+    "question": "Was ist bei der Analyse einer EÜR (Einnahmen-Überschuss-Rechnung) eines Arztes besonders zu beachten im Vergleich zur handelsrechtlichen GuV?",
+    "options": [
+      "A) Die EÜR weist immer einen höheren Gewinn aus als die GuV",
+      "B) Die EÜR folgt dem Zufluss-/Abflussprinzip — Einnahmen und Ausgaben werden bei Zahlung erfasst, nicht bei Entstehung",
+      "C) Die EÜR ist nur für die Steuererklärung relevant und hat keine Kreditrelevanz",
+      "D) Die EÜR enthält keine Abschreibungen, da Freiberufler keine Investitionen tätigen"
+    ],
+    "correctIndex": 1,
+    "explanation": "Die EÜR basiert auf dem Zufluss-/Abflussprinzip (Kassenprinzip): Einnahmen werden bei Zufluss, Ausgaben bei Abfluss erfasst. Das kann zu signifikanten Verschiebungen im Vergleich zur periodengerechten GuV führen — z. B. wenn Honorare spät gezahlt werden. Für die Schuldendienstanalyse muss der Berater das berücksichtigen."
+  }
+]

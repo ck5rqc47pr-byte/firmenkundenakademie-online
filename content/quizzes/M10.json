@@ -1,0 +1,62 @@
+[
+  {
+    "id": "M10-Q1",
+    "question": "Das Vier-Ohren-Modell nach Schulz von Thun beschreibt vier Kommunikationsebenen. Welche Ebene meint der Unternehmer, wenn er sagt: 'Wir hatten letztes Jahr einen starken Einbruch'?",
+    "options": [
+      "A) Nur die Sachinhalt-Ebene — er teilt eine Tatsache mit",
+      "B) Alle vier Ebenen gleichzeitig — Sachinhalt, Beziehung, Selbstoffenbarung und Appell",
+      "C) Nur die Appell-Ebene — er bittet um Hilfe",
+      "D) Nur die Beziehungsebene — er testet, ob der Berater Verständnis zeigt"
+    ],
+    "correctIndex": 1,
+    "explanation": "Jede Aussage enthält laut Schulz von Thun gleichzeitig vier Botschaften: Sachinhalt (Umsatzeinbruch), Selbstoffenbarung (Sorge, Unsicherheit), Beziehungsbotschaft (Vertrauen zum Berater?) und Appell (Hilf mir / versteh mich). Der Berater muss alle vier Ebenen wahrnehmen, nicht nur den Sachinhalt."
+  },
+  {
+    "id": "M10-Q2",
+    "question": "Was ist der UnternehmerDialog als Instrument im Modul M10?",
+    "options": [
+      "A) Ein digitales CRM-Tool in agree für Gesprächsdokumentation",
+      "B) Ein strukturierter Gesprächsrahmen, der alle relevanten Bedarfsdimensionen eines Firmenkundengesprächs systematisch erschließt",
+      "C) Ein Rollenspiel-Format für die interne Weiterbildung",
+      "D) Ein gesetzlich vorgeschriebenes Format für Jahresgespräche"
+    ],
+    "correctIndex": 1,
+    "explanation": "Der UnternehmerDialog ist ein strukturierter Leitfaden, der sicherstellt, dass der Berater alle relevanten Dimensionen des Kundengesprächs (Unternehmen, Finanzierung, Absicherung, Vorsorge, Nachfolge) systematisch erschließt — und nichts Wesentliches vergisst."
+  },
+  {
+    "id": "M10-Q3",
+    "question": "Was bedeutet es, den 'Vollständigkeitsgrad' einer Bedarfsanalyse zu bewerten?",
+    "options": [
+      "A) Zu prüfen, ob alle Pflichtfelder im agree-Formular ausgefüllt wurden",
+      "B) Einzuschätzen, welche Bedarfsdimensionen im Gespräch erschlossen wurden und welche noch offen sind",
+      "C) Zu zählen, wie viele Produkte dem Kunden angeboten wurden",
+      "D) Den Deckungsbeitrag des Kunden mit dem Bestandsdurchschnitt zu vergleichen"
+    ],
+    "correctIndex": 1,
+    "explanation": "Der Vollständigkeitsgrad beschreibt, wie viele der relevanten Bedarfsdimensionen im Gespräch tatsächlich erkundet wurden. Ein hoher Vollständigkeitsgrad bedeutet: Der Berater hat nicht nur das Offensichtliche abgefragt, sondern auch latente Bedarfe und zukünftige Veränderungen angesprochen."
+  },
+  {
+    "id": "M10-Q4",
+    "question": "Welches Problem tritt auf, wenn ein Berater im Kundengespräch ausschließlich auf der Sachinhalt-Ebene hört?",
+    "options": [
+      "A) Er verletzt die DSGVO, weil er zu viele Daten erhebt",
+      "B) Er übersieht Selbstoffenbarung, Beziehungsbotschaften und Appelle — und damit den eigentlichen Bedeutungsrahmen hinter sachlichen Aussagen",
+      "C) Er stellt zu viele offene Fragen und verlängert das Gespräch unnötig",
+      "D) Er dokumentiert zu viel in agree und verletzt Datenschutzbestimmungen"
+    ],
+    "correctIndex": 1,
+    "explanation": "Wer nur sachlich hört, verpasst das Wesentliche: Was beschäftigt den Unternehmer wirklich? Welche Sorgen schwingen mit? Welche unausgesprochene Bitte steckt hinter der Aussage? Diese Ebenen entscheiden, ob ein Gespräch Vertrauen aufbaut oder rein transaktional bleibt."
+  },
+  {
+    "id": "M10-Q5",
+    "question": "Welche Fragetechnik sollte der Berater einsetzen, um Bedarfsdimensionen zu erschließen, ohne die Richtung des Gesprächs zu sehr zu steuern?",
+    "options": [
+      "A) Geschlossene Fragen für schnelle Datenerhebung",
+      "B) Suggestivfragen, um Produkte zu platzieren",
+      "C) Offene Fragen, die dem Kunden Raum geben, seinen Bedeutungsrahmen zu entfalten",
+      "D) Rhetorische Fragen, die die Antwort bereits implizieren"
+    ],
+    "correctIndex": 2,
+    "explanation": "Offene Fragen (W-Fragen: Wie, Was, Warum, Womit) laden den Kunden ein, seinen eigenen Rahmen zu beschreiben, ohne dass der Berater eine Richtung vorgibt. Das ist die Grundtechnik zur Erschließung latenter Bedarfe und zur Kommunikation auf allen vier Ebenen."
+  }
+]

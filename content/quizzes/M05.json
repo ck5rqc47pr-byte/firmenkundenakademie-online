@@ -1,0 +1,62 @@
+[
+  {
+    "id": "M05-Q1",
+    "question": "Welche der fünf Kräfte aus Porter's Five Forces hat die folgende Kreditrelevanz: 'Hohe Markteintrittsbarrieren führen zu geringerem Überangebot und stabileren Margen'?",
+    "options": [
+      "A) Verhandlungsmacht der Abnehmer",
+      "B) Bedrohung durch neue Konkurrenten",
+      "C) Rivalität unter bestehenden Wettbewerbern",
+      "D) Bedrohung durch Substitute"
+    ],
+    "correctIndex": 1,
+    "explanation": "Die 'Bedrohung durch neue Konkurrenten' hängt von Markteintrittsbarrieren ab. Hohe Barrieren (Kapitalintensität, Skaleneffekte, Markenzugang) bedeuten, dass wenige neue Wettbewerber eintreten können — das stabilisiert Margen und reduziert das Kreditrisiko für die bestehendenUnternehmen."
+  },
+  {
+    "id": "M05-Q2",
+    "question": "Warum erhöht eine hohe Verhandlungsmacht der Abnehmer (wenige Großkunden) das Kreditrisiko eines KMU?",
+    "options": [
+      "A) Weil die Bank dann höhere Zinsen verlangen muss",
+      "B) Weil Verlust eines Großkunden zu massivem Umsatzeinbruch und erhöhter Insolvenzwahrscheinlichkeit führt",
+      "C) Weil große Abnehmer immer Insolvenz anmelden",
+      "D) Weil die Bilanzsumme bei wenigen Kunden automatisch sinkt"
+    ],
+    "correctIndex": 1,
+    "explanation": "Hohe Abnehmerkonzentration bedeutet: Fällt ein Großkunde weg, verliert das KMU einen überproportionalen Umsatzanteil. Das ist das klassische Klumpenrisiko auf der Umsatzseite — ein zentraler Kreditrisikotreiber, den die Branchenanalyse nach Porter sichtbar macht."
+  },
+  {
+    "id": "M05-Q3",
+    "question": "Welche der folgenden Branchen hat typischerweise die höchsten Markteintrittsbarrieren und damit das stabilste Margenprofil für Kreditgeber?",
+    "options": [
+      "A) Einzelhandel ohne Spezialisierung",
+      "B) Online-Dienstleistungen ohne Regulierung",
+      "C) Sondermaschinenbau mit proprietären Technologien",
+      "D) Gastronomie in Innenstadtlage"
+    ],
+    "correctIndex": 2,
+    "explanation": "Sondermaschinenbau erfordert spezialisiertes Know-how, hohe Kapitalinvestitionen und proprietäre Technologien — klassische Markteintrittsbarrieren. Hohe Barrieren schützen Margen und machen die Branche für Kreditgeber attraktiver als Segmente mit niedrigen Eintrittsbarrieren wie Gastronomie."
+  },
+  {
+    "id": "M05-Q4",
+    "question": "Was ist das Ziel der branchenspezifischen Risikoklassifikation im Kontext der Kreditvergabe?",
+    "options": [
+      "A) Das Branchenrating vollständig durch das Unternehmensrating zu ersetzen",
+      "B) Das strukturelle Risiko einer Branche unabhängig vom einzelnen Unternehmen zu bewerten",
+      "C) Die Kreditvergabe an bestimmte Branchen generell zu untersagen",
+      "D) Die BaFin-Meldepflicht für Branchenkonzentrationen zu erfüllen"
+    ],
+    "correctIndex": 1,
+    "explanation": "Die Branchenrisikoanalyse zielt darauf ab, das strukturelle Risiko einer Branche (Wettbewerbsintensität, Margenstruktur, Zyklik) unabhängig vom einzelnen Kreditnehmer zu bewerten. Ein gutes Unternehmen in einer schlechten Branche bleibt risikoreicher als ein gutes Unternehmen in einer stabilen Branche."
+  },
+  {
+    "id": "M05-Q5",
+    "question": "Ein Firmenkundenberater analysiert einen Kreditantrag eines Druckerei-Unternehmens. Digitaldruck und Online-Medien haben den klassischen Offset-Druck stark unter Druck gesetzt. Welche der fünf Kräfte beschreibt dieses Risiko?",
+    "options": [
+      "A) Rivalität unter bestehenden Wettbewerbern",
+      "B) Verhandlungsmacht der Lieferanten",
+      "C) Bedrohung durch Substitute",
+      "D) Bedrohung durch neue Konkurrenten"
+    ],
+    "correctIndex": 2,
+    "explanation": "Digitaldruck und Online-Medien sind Substitute für klassischen Offset-Druck — sie erfüllen denselben Kundenbedarf auf alternative Weise. Die 'Bedrohung durch Substitute' beschreibt genau diese Kraft: Wenn Alternativen verfügbar und günstiger/besser sind, verliert die traditionelle Branche Nachfrage und Marge."
+  }
+]

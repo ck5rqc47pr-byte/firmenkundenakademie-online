@@ -1,0 +1,62 @@
+[
+  {
+    "id": "M03-Q1",
+    "question": "Was unterscheidet den 'Strategischen Partner' vom klassischen 'Kreditberater' laut Modul M03?",
+    "options": [
+      "A) Der Strategische Partner hat eine höhere Kreditkompetenz und darf größere Volumina entscheiden",
+      "B) Der Strategische Partner richtet seinen Blick auf langfristige Wertsteigerung und erkennt Probleme, bevor der Unternehmer sie formuliert",
+      "C) Der Strategische Partner berät ausschließlich Unternehmen ab 50 Mio. EUR Umsatz",
+      "D) Der Strategische Partner führt ausschließlich schriftliche Analysen durch"
+    ],
+    "correctIndex": 1,
+    "explanation": "Der Übergang zum Strategischen Partner bedeutet den Wechsel vom Rückzahlungsrisiko-Fokus zur langfristigen Wertperspektive. Consultative Selling nach Rackham (1988) beschreibt diesen Berater als jemanden, der Probleme des Unternehmers erkennt und löst, bevor dieser sie selbst formuliert."
+  },
+  {
+    "id": "M03-Q2",
+    "question": "Welcher Fragetyp gehört laut dem Drei-Ebenen-Modell des strategischen Finanzdialogs zur strategischen Ebene?",
+    "options": [
+      "A) 'Wie entwickelt sich Ihr Auftragsbestand im nächsten Quartal?' (Sachstandsfrage)",
+      "B) 'Wenn die Marge weiter sinkt – welche Investitionen müssen Sie dann verschieben?' (Implikationsfrage)",
+      "C) 'Was wäre der nächste Schritt, wenn Ihre Eigenkapitalquote 30 % überschreitet?' (Zukunftsfrage)",
+      "D) 'Welche Kennzahl hat sich in den letzten 3 Jahren am stärksten verändert?' (Analysefrage)"
+    ],
+    "correctIndex": 2,
+    "explanation": "Die strategische Ebene arbeitet mit Zukunftsfragen ('Was wäre wenn …'), die den Unternehmer zu strategischen Überlegungen einladen. Sachstandsfragen (operativ) und Implikationsfragen (taktisch) bereiten die strategische Ebene vor — zusammen bilden sie das SPIN-Prinzip."
+  },
+  {
+    "id": "M03-Q3",
+    "question": "Welchen Einfluss hat die Kapitalstruktur eines Unternehmens auf seinen Handlungsspielraum?",
+    "options": [
+      "A) Die Kapitalstruktur beeinflusst nur die Steuerlast, nicht die Investitionsfähigkeit",
+      "B) Ein höherer Fremdkapitalanteil erhöht stets die Rendite ohne Risiko",
+      "C) Kapitalstrukturentscheidungen wirken direkt auf Unternehmenswert, Risikoprofil und strategische Handlungsfähigkeit",
+      "D) Die Kapitalstruktur ist irrelevant, solange der Cashflow positiv ist"
+    ],
+    "correctIndex": 2,
+    "explanation": "Kapitalstrukturentscheidungen sind keine rein bilanziellen Größen. Sie bestimmen, wie viel Spielraum ein Unternehmen für Investitionen, Krisen und Wachstum hat. Ein zu hoher Verschuldungsgrad schränkt die strategische Handlungsfähigkeit ein und erhöht das Insolvenzrisiko."
+  },
+  {
+    "id": "M03-Q4",
+    "question": "Rackham (1988) zeigt in seinen SPIN-Studien, welcher Gesprächsanteil bei hochkomplexen B2B-Transaktionen der entscheidende Erfolgsfaktor ist. Welcher ist das?",
+    "options": [
+      "A) Situationsfragen — um schnell ein vollständiges Bild zu bekommen",
+      "B) Produktpräsentation — um Vorteile klar zu kommunizieren",
+      "C) Implikations- und Nutzenfragen — um den Wert einer Lösung spürbar zu machen",
+      "D) Abschlussfragen — um die Entscheidung des Kunden herbeizuführen"
+    ],
+    "correctIndex": 2,
+    "explanation": "Rackham's SPIN-Forschung zeigt, dass bei komplexen Verkäufen Implikationsfragen (welche Konsequenzen hat das Problem?) und Nutzenfragen (was wäre der Wert einer Lösung?) die entscheidenden Erfolgsfaktoren sind. Situationsfragen und Abschlussfragen spielen eine untergeordnete Rolle."
+  },
+  {
+    "id": "M03-Q5",
+    "question": "Ein Unternehmer erwägt Mezzanine-Kapital als Alternative zum Bankkredit. Welche Eigenschaft kennzeichnet Mezzanine-Kapital?",
+    "options": [
+      "A) Es ist immer billiger als Bankkredit und hat keine Nachrangigkeit",
+      "B) Es kombiniert Merkmale von Eigen- und Fremdkapital und wird bei Insolvenz nachrangig bedient",
+      "C) Es erfordert zwingend eine Börsennotierung des Unternehmens",
+      "D) Es ist ausschließlich für Unternehmen mit Jahresumsatz über 100 Mio. EUR verfügbar"
+    ],
+    "correctIndex": 1,
+    "explanation": "Mezzanine-Kapital (z. B. stille Beteiligungen, Nachrangdarlehen, Genussscheine) vereint Eigenschaften von Eigen- und Fremdkapital. Im Insolvenzfall wird es nachrangig zu Bankverbindlichkeiten bedient, was den Zinssatz erhöht. Dafür stärkt es die Eigenkapitalbasis und erweitert den Finanzierungsspielraum."
+  }
+]

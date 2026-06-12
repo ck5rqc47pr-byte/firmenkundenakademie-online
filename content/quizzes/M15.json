@@ -1,0 +1,62 @@
+[
+  {
+    "id": "M15-Q1",
+    "question": "Was ist der erste Schritt bei der Entwicklung einer Marktbearbeitungsstrategie laut Modul M15?",
+    "options": [
+      "A) Die eigene NMZ im Bestand analysieren",
+      "B) Das Marktpotenzial im Zielsegment analysieren und adressierbare Neukunden-Opportunitäten schätzen",
+      "C) Das jährliche Vertriebsbudget festlegen",
+      "D) Die Verbundpartner über das neue Segment informieren"
+    ],
+    "correctIndex": 1,
+    "explanation": "Der erste Schritt ist die Marktpotenzialanalyse: Wie viele potenzielle Neukunden gibt es im Zielsegment? Wie viele werden bereits von der eigenen Bank betreut? Was ist das adressierbare Volumen? Ohne diese Grundlage fehlt die Basis für eine fundierte Strategie."
+  },
+  {
+    "id": "M15-Q2",
+    "question": "Was ist ein 'Wertversprechen' (Value Proposition) im Kontext der Marktbearbeitungsstrategie?",
+    "options": [
+      "A) Der zugesicherte Zinssatz für Neukunden",
+      "B) Die spezifische Antwort auf die Frage: 'Warum sollte dieser Kunde zu unserer Bank kommen und nicht zum Wettbewerb?'",
+      "C) Die gesetzlich vorgeschriebene Beratungsdokumentation nach MiFID II",
+      "D) Das jährliche Ertragsziel für das Segment"
+    ],
+    "correctIndex": 1,
+    "explanation": "Das Wertversprechen beschreibt den spezifischen Mehrwert, den die eigene Bank im Zielsegment bietet — z. B. Branchenexpertise, regionale Präsenz, Verbundlösungen, Entscheidungsschnelligkeit. Es beantwortet die Frage, die jeder potenzielle Neukunde implizit stellt: Warum gerade ihr?"
+  },
+  {
+    "id": "M15-Q3",
+    "question": "Welches Instrument dient laut Modul M15 dazu, die Wettbewerbsposition der eigenen Bank im Zielsegment zu bewerten?",
+    "options": [
+      "A) Nur die eigene NMZ im Vergleich zum Branchendurchschnitt",
+      "B) Analyse von Stärken, Schwächen und Differenzierungspotenzialen gegenüber dem Wettbewerb",
+      "C) Das BVR-Benchmark-Reporting",
+      "D) Der Net Promoter Score (NPS) der eigenen Kunden"
+    ],
+    "correctIndex": 1,
+    "explanation": "Die Wettbewerbspositionierung erfolgt durch eine ehrliche Stärken-Schwächen-Analyse im Zielsegment: Wo sind wir besser als der Wettbewerb? Wo haben wir Nachholbedarf? Was sind unsere echten Differenzierungspotenziale? Erst dann kann ein glaubwürdiges Wertversprechen entwickelt werden."
+  },
+  {
+    "id": "M15-Q4",
+    "question": "Warum ist die Neukundenansprache über Empfehlungen (Multiplikatoren) oft effektiver als Kaltakquise?",
+    "options": [
+      "A) Weil Kaltakquise gesetzlich verboten ist",
+      "B) Weil Empfehlungen eine vertrauensbildende Vorleistung liefern, die den Erstkontakt erheblich erleichtert",
+      "C) Weil Multiplikatoren immer eine Provision verlangen und daher leistungsfähiger sind",
+      "D) Weil agree nur Empfehlungskontakte verarbeiten kann"
+    ],
+    "correctIndex": 1,
+    "explanation": "Empfehlungen von Steuerberatern, Rechtsanwälten oder anderen vertrauenswürdigen Multiplikatoren liefern eine Vertrauensvorleistung: Der potenzielle Neukunde kommt nicht als Fremder, sondern mit einer Empfehlung, die Skepsis abbaut. Das erhöht die Conversion-Rate erheblich gegenüber Kaltakquise."
+  },
+  {
+    "id": "M15-Q5",
+    "question": "Was enthält ein strukturierter Jahresplan nach Modul M15?",
+    "options": [
+      "A) Nur Ertragsziele für das Segment",
+      "B) Zielgrößen, konkrete Maßnahmen und Meilensteine über das Jahr verteilt",
+      "C) Die Kreditvolumina aller Neukunden im Vorjahr",
+      "D) Die Zinsprognose der EZB für das laufende Jahr"
+    ],
+    "correctIndex": 1,
+    "explanation": "Ein strukturierter Jahresplan kombiniert messbare Zielgrößen (Anzahl Erstkontakte, Neukunden, Ertrag) mit konkreten Maßnahmen (Events, Netzwerktreffen, Verbundpartner-Aktionen) und zeitlichen Meilensteinen. Nur die Kombination aller drei Elemente macht den Plan steuerbar."
+  }
+]

@@ -1,0 +1,62 @@
+[
+  {
+    "id": "M12-Q1",
+    "question": "Welche der folgenden Nachfolgeoptionen ist typischerweise mit dem geringsten Verkaufserlös für den Unternehmer verbunden, bietet aber die höchste Kontinuität für Mitarbeiter und Unternehmenskultur?",
+    "options": [
+      "A) Strategischer Verkauf an einen Wettbewerber",
+      "B) Börsengang (IPO)",
+      "C) Familieninterne Nachfolge",
+      "D) Management-Buy-Out (MBO)"
+    ],
+    "correctIndex": 2,
+    "explanation": "Die familieninterne Nachfolge maximiert die Kontinuität (Kultur, Werte, Mitarbeiterbindung), führt aber häufig zu günstigeren Übertragungswegen (Schenkung, Erbfolge), die den realisierten Erlös reduzieren. Strategische Käufer zahlen meist mehr, weil sie Synergien einpreisen."
+  },
+  {
+    "id": "M12-Q2",
+    "question": "Was sind laut Modul M12 drei bewährte Anlässe, um das Thema Nachfolge bei einem Bestandskunden erstmalig anzusprechen?",
+    "options": [
+      "A) Kreditantrag, Ratinggespräch, Jahresabschlussvorlage",
+      "B) Jahresgespräch, nach einem persönlichen Lebens-Event, aus einem Marktgespräch heraus",
+      "C) Neue Bankprodukte, Zinsentwicklung, regulatorische Änderungen",
+      "D) Mitarbeiterpension, Unternehmensinsolvenz eines Wettbewerbers, Steuernachzahlung"
+    ],
+    "correctIndex": 1,
+    "explanation": "M12 beschreibt drei natürliche Einstiegs-Anlässe: das Jahresgespräch (immer möglich), ein persönliches Lebens-Event (runder Geburtstag, Krankheit) und ein Marktgespräch (z. B. Nachfolge eines Mitbewerbers). Diese Anlässe schaffen einen glaubwürdigen, nicht aufgesetzten Einstieg in das Thema."
+  },
+  {
+    "id": "M12-Q3",
+    "question": "Systemische und zirkuläre Fragen werden im CEO-Dialog eingesetzt. Was ist das Ziel einer zirkulären Frage?",
+    "options": [
+      "A) Den Kunden zur Unterschrift zu bewegen",
+      "B) Die Sichtweise anderer Beteiligter zu aktivieren und Außenperspektiven einzubeziehen",
+      "C) Das Rating des Unternehmens zu verbessern",
+      "D) Rechtliche Risiken der Nachfolge zu klären"
+    ],
+    "correctIndex": 1,
+    "explanation": "Zirkuläre Fragen fragen nach der Perspektive anderer: 'Was würde Ihre Frau sagen, wenn Sie heute die Nachfolge regeln würden?' Sie durchbrechen die Ich-Perspektive des Unternehmers und bringen neue Sichtweisen ins Gespräch — oft kommen dabei latente Konflikte und Ängste zum Vorschein."
+  },
+  {
+    "id": "M12-Q4",
+    "question": "Warum ist die emotionale Bereitschaft zur Übergabe oft die größte Hürde bei Unternehmensnachfolgen?",
+    "options": [
+      "A) Weil Unternehmer grundsätzlich kein Interesse an Steueroptimierung haben",
+      "B) Weil das Unternehmen oft die zentrale Lebensidentität des Inhabers ist — Loslassen bedeutet Identitätsverlust",
+      "C) Weil Nachfolger rechtlich nicht zur Übernahme verpflichtet werden können",
+      "D) Weil Banken keine Finanzierung für Nachfolger anbieten dürfen"
+    ],
+    "correctIndex": 1,
+    "explanation": "Für viele Inhaberunternehmer ist das Unternehmen mehr als ein Wirtschaftsgut — es ist Lebenswerk, soziales Netzwerk und Identität. Die Vorstellung loszulassen, löst Angst vor dem Bedeutungsverlust aus. Erst wenn der Berater diese emotionale Dimension adressiert, können sachliche Planungsschritte greifen."
+  },
+  {
+    "id": "M12-Q5",
+    "question": "Was umfasst eine vollständige Nachfolge-Roadmap laut Modul M12?",
+    "options": [
+      "A) Nur den Kaufpreis und die Finanzierungsstruktur",
+      "B) Finanzierungs-, Steuer- und emotionale Meilensteine über einen Zeitraum von 3–7 Jahren",
+      "C) Den Gesellschaftsvertrag und die Handelsregistereintragung",
+      "D) Ausschließlich die steuerliche Optimierung des Veräußerungsgewinns"
+    ],
+    "correctIndex": 1,
+    "explanation": "Eine professionelle Nachfolge-Roadmap integriert Finanzierungsmeilensteine (Kaufpreiszahlung, Ablösung Altverbindlichkeiten), Steuermeilensteine (Übergabezeitpunkt, Freibeträge) und emotionale Meilensteine (Rückzug des Seniors, Autoritätsübertragung). Nur alle drei Dimensionen zusammen sichern eine erfolgreiche Übergabe."
+  }
+]

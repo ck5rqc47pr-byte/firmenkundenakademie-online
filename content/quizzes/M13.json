@@ -1,0 +1,62 @@
+[
+  {
+    "id": "M13-Q1",
+    "question": "Was ist der Unterschied zwischen reaktivem und systematisch-bedarfsorientiertem Cross-Selling?",
+    "options": [
+      "A) Reaktives Cross-Selling nutzt digitale Kanäle, bedarfsorientiertes nutzt persönliche Gespräche",
+      "B) Reaktives Cross-Selling reagiert auf Kundenwünsche; bedarfsorientiertes Cross-Selling identifiziert Bedarfe proaktiv auf Basis der Kundenanalyse",
+      "C) Reaktives Cross-Selling ist günstiger, bedarfsorientiertes teurer",
+      "D) Reaktives Cross-Selling ist MaRisk-konform, bedarfsorientiertes nicht"
+    ],
+    "correctIndex": 1,
+    "explanation": "Reaktives Cross-Selling wartet, bis der Kunde einen Bedarf äußert. Bedarfsorientiertes Cross-Selling analysiert proaktiv das Kundenprofil (Branche, Lebensphase, Portfolio), um Bedarfe zu antizipieren, bevor der Kunde sie formuliert. Das zweite Modell ist nachhaltiger und schafft echten Mehrwert."
+  },
+  {
+    "id": "M13-Q2",
+    "question": "Was misst die Wallet-Share-Methodik im Cross-Selling-Kontext?",
+    "options": [
+      "A) Den Anteil des Kunden am Gesamtbestand der Bank",
+      "B) Den Anteil der Bank am gesamten Finanzierungsvolumen des Kunden (Marktanteil pro Kunde)",
+      "C) Den Deckungsbeitrag des Kunden im Vergleich zum Branchendurchschnitt",
+      "D) Das Potenzial für digitale Produkte beim Kunden"
+    ],
+    "correctIndex": 1,
+    "explanation": "Wallet Share bezeichnet den Anteil, den die eigene Bank am gesamten 'Geldbeutel' des Kunden hat — also wie viel Prozent des gesamten Finanzierungsvolumens, der Absicherungsprodukte und Anlagegelder bei der eigenen Bank liegen. Ein niedriger Wallet Share zeigt Cross-Selling-Potenzial auf."
+  },
+  {
+    "id": "M13-Q3",
+    "question": "Welcher Verbundpartner ist bei Firmenkundenbedarfen im Bereich gewerbliche Absicherung (z. B. Betriebshaftpflicht, Kreditausfallschutz) der primäre Ansprechpartner?",
+    "options": [
+      "A) Union Investment",
+      "B) DZ Bank",
+      "C) R+V Versicherung",
+      "D) Schwäbisch Hall"
+    ],
+    "correctIndex": 2,
+    "explanation": "R+V ist der Versicherungsverbundpartner der VR-Banken und deckt gewerbliche Versicherungsbedarfe ab (Betriebshaftpflicht, Kreditausfallversicherung, Cyber, Gebäude). Union Investment = Kapitalanlage, DZ Bank = Kapitalmarkt/Derivate, Schwäbisch Hall = Bausparen/private Baufinanzierung."
+  },
+  {
+    "id": "M13-Q4",
+    "question": "Der 4-Schritte-Cross-Selling-Prozess beginnt mit der Analyse. Was ist der zweite Schritt?",
+    "options": [
+      "A) Direktes Produktangebot",
+      "B) Hypothesenbildung — eine bedarfsorientierte Arbeitshypothese über den wahrscheinlichsten nächsten Bedarf",
+      "C) Dokumentation in agree",
+      "D) Einholung eines Konkurrenzangebots"
+    ],
+    "correctIndex": 1,
+    "explanation": "Nach der Analyse folgt die Hypothesenbildung: Auf Basis des Kundenprofils formuliert der Berater eine Arbeitshypothese ('Dieser Kunde hat vermutlich einen Absicherungsbedarf für seine Exportrisiken'). Erst danach kommt das strukturierte Gespräch — und am Ende die Dokumentation."
+  },
+  {
+    "id": "M13-Q5",
+    "question": "Warum ist produktgetriebenes Push-Cross-Selling langfristig weniger erfolgreich als bedarfsorientiertes Cross-Selling?",
+    "options": [
+      "A) Weil Produkte gesetzlich nicht aktiv angeboten werden dürfen",
+      "B) Weil es die Kundenbeziehung belastet und als aufdringlich empfunden wird, wenn kein echter Bedarf besteht",
+      "C) Weil Push-Selling in agree nicht dokumentiert werden kann",
+      "D) Weil Verbundpartner nur bei Bedarfsorientierung Provision zahlen"
+    ],
+    "correctIndex": 1,
+    "explanation": "Push-Cross-Selling — das Anbieten von Produkten unabhängig vom Kundenbedarf — führt zu Ablehnung und beschädigt das Vertrauen. Wenn Kunden das Gefühl bekommen, nur als Umsatzziel betrachtet zu werden, rücken sie ab. Bedarfsorientiertes Cross-Selling schafft dagegen Mehrwert und stärkt die Bindung."
+  }
+]

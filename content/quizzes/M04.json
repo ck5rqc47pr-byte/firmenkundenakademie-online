@@ -1,0 +1,62 @@
+[
+  {
+    "id": "M04-Q1",
+    "question": "Welche der drei Kreditrisikoarten beschreibt die Gefahr, dass die Bonität eines Kreditnehmers sich verschlechtert, ohne dass sofort ein Ausfall eintritt?",
+    "options": [
+      "A) Ausfallrisiko",
+      "B) Migrationsrisiko",
+      "C) Konzentrationsrisiko",
+      "D) Liquiditätsrisiko"
+    ],
+    "correctIndex": 1,
+    "explanation": "Migrationsrisiko bezeichnet die Verschlechterung des Ratings (Migration von einer besseren zu einer schlechteren Ratingklasse). Obwohl noch kein Ausfall eingetreten ist, steigt das Risikogewicht und damit der Eigenkapitalbedarf der Bank. Beispiel: Ein Mittelständler rutscht von Rating B nach C."
+  },
+  {
+    "id": "M04-Q2",
+    "question": "Laut empirischen Studien sind 80 % aller Unternehmensinsolvenzen durch Frühwarnindikatoren wie viele Monate vor dem Insolvenzantrag erkennbar?",
+    "options": [
+      "A) 3–6 Monate",
+      "B) 6–9 Monate",
+      "C) 12–18 Monate",
+      "D) 24–36 Monate"
+    ],
+    "correctIndex": 2,
+    "explanation": "Empirische Studien zeigen, dass 80 % aller Unternehmensinsolvenzen durch Frühwarnindikatoren mindestens 12–18 Monate vor dem Insolvenzantrag erkennbar sind. Das macht Früherkennung zum wirksamsten Instrument zur Verlustminimierung — noch vor der Besicherung."
+  },
+  {
+    "id": "M04-Q3",
+    "question": "In welcher Krisenphase befindet sich ein Unternehmen, wenn der Kontokorrentrahmen dauerhaft ausgeschöpft ist und erste Zinsverzüge auftreten?",
+    "options": [
+      "A) Phase 1: Potenzielle Krise (gelb)",
+      "B) Phase 2: Latente Krise (gelb–rot)",
+      "C) Phase 3: Akute/beherrschbare Krise (rot)",
+      "D) Phase 4: Insolvenzreife"
+    ],
+    "correctIndex": 2,
+    "explanation": "Dauerhaft ausgeschöpfter Kontokorrent und Zinsverzüge sind klassische Signale der Phase 3 (akute/beherrschbare Krise). Die Ampel steht auf Rot, sofortige Eskalation ist erforderlich. Phase 2 wäre noch das Haupthandlungsfenster für präventive Maßnahmen."
+  },
+  {
+    "id": "M04-Q4",
+    "question": "Welches Konzentrationsrisiko beschreibt das folgende Szenario: 35 % des Kreditvolumens einer VR-Bank liegen in der Automobilzulieferer-Branche?",
+    "options": [
+      "A) Ausfallrisiko eines einzelnen Kreditnehmers",
+      "B) Migrationsrisiko einer Unternehmensgruppe",
+      "C) Branchenkonzentrationsrisiko im Portfolio",
+      "D) Regionaler Klumpen durch geografische Konzentration"
+    ],
+    "correctIndex": 2,
+    "explanation": "35 % Kreditvolumen in einer Branche ist ein typisches Branchenkonzentrationsrisiko: Bei einer Branchenkrise (z. B. Einbruch der Automobilnachfrage) sind überproportional viele Kreditnehmer gleichzeitig betroffen. MaRisk fordert entsprechende Klumpenrisiko-Überwachung."
+  },
+  {
+    "id": "M04-Q5",
+    "question": "Was ist neben der Verlustminimierung der zweite Grund, warum § 18 KWG die Offenlegung wirtschaftlicher Verhältnisse vorschreibt?",
+    "options": [
+      "A) Um die Steuerpflicht des Kreditnehmers zu überprüfen",
+      "B) Als regulatorische Handlungspflicht — die Verweigerung des Jahresabschlusses ist selbst ein Warnsignal",
+      "C) Um die Gesellschafterliste für den Bundesanzeiger zu aktualisieren",
+      "D) Um die Insolvenzverschleppung des Geschäftsführers zu verhindern"
+    ],
+    "correctIndex": 1,
+    "explanation": "§ 18 KWG erfüllt eine Doppelfunktion: Er schützt die Bank durch Informationspflicht und signalisiert gleichzeitig, dass die Verweigerung der Unterlagenvorlage durch den Kunden selbst ein Frühwarnsignal ist. In diesem Fall besteht eine regulatorische Handlungspflicht der Bank."
+  }
+]

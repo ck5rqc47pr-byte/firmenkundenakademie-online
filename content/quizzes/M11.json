@@ -1,0 +1,62 @@
+[
+  {
+    "id": "M11-Q1",
+    "question": "Was ist der Unterschied zwischen einem expliziten und einem latenten Bedarf laut Rackham (1988)?",
+    "options": [
+      "A) Explizite Bedarfe betreffen Kredite, latente Bedarfe betreffen Versicherungen",
+      "B) Explizite Bedarfe sind klar geäußerte Wünsche, latente Bedarfe sind unbewusste oder nicht artikulierte Problemlagen",
+      "C) Latente Bedarfe sind nur für Großunternehmen relevant",
+      "D) Explizite Bedarfe entstehen im Jahresgespräch, latente erst nach dem Abschluss"
+    ],
+    "correctIndex": 1,
+    "explanation": "Rackham (1988) unterscheidet: Explizite Bedarfe sind klar geäußerte Wünsche ('Ich brauche einen Investitionskredit'). Latente Bedarfe sind unbewusste Problemlagen oder Unzufriedenheiten, die der Kunde noch nicht als Bedarf formuliert hat. Sie zu erkennen ist die Königsdisziplin der Bedarfsanalyse."
+  },
+  {
+    "id": "M11-Q2",
+    "question": "Die SPIN-Fragetechnik besteht aus vier Fragetypen. Was ist das Ziel einer 'Implikationsfrage'?",
+    "options": [
+      "A) Die Situation des Kunden zu erfassen",
+      "B) Das Problem zu benennen",
+      "C) Die Konsequenzen des Problems spürbar zu machen, damit der Handlungsdruck steigt",
+      "D) Den Nutzen der Lösung zu kommunizieren"
+    ],
+    "correctIndex": 2,
+    "explanation": "Implikationsfragen ('Was passiert, wenn dieses Problem nicht gelöst wird?') vertiefen das Problembewusstsein und machen den Handlungsdruck spürbar. Sie bauen auf Problem-Fragen auf und bereiten die Nutzenfragen vor — Rackham zeigt, dass sie der entscheidende Erfolgsfaktor bei komplexen Verkäufen sind."
+  },
+  {
+    "id": "M11-Q3",
+    "question": "Ein Unternehmer sagt: 'Eigentlich läuft alles gut, nur die Zahlungsmoral unserer Kunden nervt manchmal.' Was signalisiert diese Aussage?",
+    "options": [
+      "A) Kein Bedarf — alles ist in Ordnung",
+      "B) Ein latentes Signal für möglichen Liquiditätsbedarf und potenziellen Forderungsfinanzierungsbedarf",
+      "C) Der Unternehmer möchte kein Gespräch über Finanzen führen",
+      "D) Ein expliziter Bedarf nach einem Kontokorrentkredit"
+    ],
+    "correctIndex": 1,
+    "explanation": "Die Aussage ist ein klassisches latentes Signal: Der Unternehmer formuliert kein Finanzprodukt, beschreibt aber ein Problem (schlechte Zahlungsmoral), das auf Liquiditätsengpässe hinweist. Das öffnet Türen für Factoring, Lieferantenkredit-Optimierung oder Kontokorrent-Erweiterung."
+  },
+  {
+    "id": "M11-Q4",
+    "question": "Das Eisberg-Modell der Kundenbedürfnisse besagt, welchen Anteil der Bedarfe ein Kunden typischerweise explizit äußert?",
+    "options": [
+      "A) Nahezu alle Bedarfe — was nicht geäußert wird, ist kein Bedarf",
+      "B) Ca. 20 % — der Rest liegt unterhalb der Oberfläche als latente Bedürfnisse",
+      "C) Genau 50 % — latent und explizit halten sich die Waage",
+      "D) Über 80 % — latente Bedarfe sind die Ausnahme"
+    ],
+    "correctIndex": 1,
+    "explanation": "Das Eisberg-Modell zeigt: Nur der sichtbare Teil (ca. 20 %) wird explizit geäußert. Der weitaus größere Teil liegt unter der Oberfläche — das sind unbewusste Bedürfnisse, Ängste und Wünsche, die erst durch gezielte Fragetechniken sichtbar werden."
+  },
+  {
+    "id": "M11-Q5",
+    "question": "Welches paraverbale Signal kann ein latentes Unbehagen anzeigen, das der Unternehmer sachlich nicht äußert?",
+    "options": [
+      "A) Lautes und klares Sprechen",
+      "B) Häufiges Zögern, Satzabbrüche oder ein plötzlicher Themenwechsel",
+      "C) Direkter Blickkontakt und aufrechte Sitzhaltung",
+      "D) Detaillierte und strukturierte Antworten"
+    ],
+    "correctIndex": 1,
+    "explanation": "Paraverbale Signale wie Zögern, Satzabbrüche oder abrupte Themenwechsel können auf Themen hinweisen, bei denen der Unternehmer unsicher oder belastet ist — z. B. wenn es um Nachfolge, Gesellschafterkonflikte oder finanzielle Schwierigkeiten geht. Aktives Zuhören erfasst auch diese Ebene."
+  }
+]

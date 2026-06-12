@@ -1,0 +1,62 @@
+[
+  {
+    "id": "M02-Q1",
+    "question": "Watzlawick, Beavin und Jackson beschreiben, dass jede Aussage zwei Ebenen enthält. Welche Formulierung zeigt, wie man im Bilanzgespräch die Beziehungsebene schützt?",
+    "options": [
+      "A) 'Ihre EK-Quote ist viel zu niedrig — das ist ein Problem.'",
+      "B) 'Sie haben offensichtlich in den letzten Jahren schlecht gewirtschaftet.'",
+      "C) 'Ich sehe, dass die EK-Quote von 22 % auf 15 % gefallen ist. Wie erklären Sie sich das?'",
+      "D) 'Wir können nur weiter zusammenarbeiten, wenn sich die Kennzahlen verbessern.'"
+    ],
+    "correctIndex": 2,
+    "explanation": "Das Muster 'Beobachtung + offene Frage' hält die Sachinformation neutral und öffnet den Dialog, anstatt eine Bewertung zu machen, die auf der Beziehungsebene als Vorwurf ankommt. Die anderen Optionen enthalten Bewertungen, die Abwehrhaltungen provozieren."
+  },
+  {
+    "id": "M02-Q2",
+    "question": "Der 5-Phasen-Rahmen für das Bilanzgespräch sieht in Phase 1 (Vorbereitung) vor, mindestens wie viele Kennzahlen zu berechnen und Vorjahre zu vergleichen?",
+    "options": [
+      "A) 2 Kennzahlen, 1 Vorjahr",
+      "B) 4 Kennzahlen, 2 Vorjahre",
+      "C) 6 Kennzahlen, 3 Vorjahre",
+      "D) 8 Kennzahlen, 5 Vorjahre"
+    ],
+    "correctIndex": 1,
+    "explanation": "Die Vorbereitung sieht mindestens 4 Kennzahlen (EK-Quote, Liquidität, Verschuldungsgrad, EBIT-Marge) sowie den Vergleich zu mindestens 2 Vorjahren vor, um Trends erkennbar zu machen. Zusätzlich werden 3 Schlüsselbotschaften und 5 offene Fragen schriftlich vorbereitet."
+  },
+  {
+    "id": "M02-Q3",
+    "question": "Was ist laut Modul M02 die optimale Gesprächsdauer für ein reales Bilanzgespräch beim Kunden vor Ort?",
+    "options": [
+      "A) 30–45 Minuten",
+      "B) 60–75 Minuten",
+      "C) 120–150 Minuten",
+      "D) 180 Minuten (wie das Workshop-Format)"
+    ],
+    "correctIndex": 1,
+    "explanation": "Für den echten Kundentermin gilt 60–75 Minuten als optimal. Der Unternehmer hat Kunden und Aufträge im Kopf und wird nach 60 Minuten unruhig. Das 180-Minuten-Format im Modul ist ein Übungsformat für den Seminarraum, keine Vorlage für den Kundentermin."
+  },
+  {
+    "id": "M02-Q4",
+    "question": "Warum reicht eine reine Kennzahlenanalyse laut Krecek (2019) nicht aus, um die Zukunftsfähigkeit eines Unternehmens zu beurteilen?",
+    "options": [
+      "A) Weil Kennzahlen aus dem Jahresabschluss vergangenheitsbezogen und ohne qualitativen Kontext bedeutungslos sind",
+      "B) Weil Kennzahlen nur auf HGB-Basis berechnet werden dürfen",
+      "C) Weil die BaFin eine reine Kennzahlenanalyse als nicht MaRisk-konform einstuft",
+      "D) Weil Jahresabschlüsse kleiner GmbHs keine ausreichende Datenbasis bieten"
+    ],
+    "correctIndex": 0,
+    "explanation": "Krecek (2019) betont: Die Bilanzanalyse muss in einem Gesprächsprozess mit dem Unternehmen eingebettet sein, da qualitative Faktoren (Managementqualität, Strategie, Marktposition) nur im Dialog erkennbar werden. Kennzahlen sind neutral — sie werden erst aussagekräftig im Kontext."
+  },
+  {
+    "id": "M02-Q5",
+    "question": "In welcher Phase des 5-Phasen-Rahmens leitet der Berater aus der Bilanzanalyse konkrete Beratungsimpulse für Verbundprodukte ab?",
+    "options": [
+      "A) Phase 1 – Vorbereitung",
+      "B) Phase 2 – Eröffnung",
+      "C) Phase 3 – Analyse-Dialog",
+      "D) Phase 4 – Beratungsimpulse"
+    ],
+    "correctIndex": 3,
+    "explanation": "Phase 4 dient dazu, aus den Erkenntnissen des Analyse-Dialogs konkrete Produktoptionen abzuleiten — immer aus der Analyse heraus, nicht als produktgetriebenes Push-Selling. So entsteht ein natürlicher, bedarfsorientierter Übergang zu Verbundprodukten."
+  }
+]

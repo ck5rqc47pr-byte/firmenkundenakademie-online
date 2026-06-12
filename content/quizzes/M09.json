@@ -1,0 +1,62 @@
+[
+  {
+    "id": "M09-Q1",
+    "question": "Welches Analyseinstrument kombiniert Modul M09 mit Porter's Five Forces für eine vollständige Branchenanalyse?",
+    "options": [
+      "A) Balanced Scorecard",
+      "B) PESTEL-Analyse",
+      "C) SWOT-Analyse",
+      "D) Benchmarking"
+    ],
+    "correctIndex": 1,
+    "explanation": "M09 kombiniert Porter's Five Forces (Wettbewerbsstruktur) mit der PESTEL-Analyse (Political, Economic, Social, Technological, Environmental, Legal), um sowohl die Branchenstruktur als auch das Makroumfeld systematisch zu erfassen — eine vollständige Grundlage für Branchenexpertise."
+  },
+  {
+    "id": "M09-Q2",
+    "question": "Was ist das Kernziel des 3-Monats-Plans zum Aufbau von Branchenexpertise in Modul M09?",
+    "options": [
+      "A) In drei Monaten ein vollständiges Branchenrating für alle Kunden zu erstellen",
+      "B) Strukturiert Informationsquellen zu erschließen, ein Netzwerk aufzubauen und ein Branchenportfolio zu dokumentieren",
+      "C) Die NMZ im Zielsegment um 20 % zu steigern",
+      "D) Einen Fachartikel in einer Branchenpublikation zu veröffentlichen"
+    ],
+    "correctIndex": 1,
+    "explanation": "Der 3-Monats-Plan fokussiert auf drei parallele Aktivitäten: systematische Informationserschließung (Quellen, Publikationen), Netzwerkaufbau zu Branchenexperten und Verbänden sowie die Dokumentation im Branchenportfolio. Das Ziel ist nachhaltige Expertise, nicht kurzfristige Kennzahlverbesserung."
+  },
+  {
+    "id": "M09-Q3",
+    "question": "Was unterscheidet den Branchenexperten im Firmenkundengeschäft vom generalistischen Berater?",
+    "options": [
+      "A) Der Branchenexperte hat eine höhere Kreditkompetenz und darf mehr entscheiden",
+      "B) Der Branchenexperte kennt typische Kennzahlen, Risikotreiber und Netzwerke einer Branche und kann Unternehmen besser einordnen und beraten",
+      "C) Der Branchenexperte ist ausschließlich für Großunternehmen zuständig",
+      "D) Der Branchenexperte hat eine spezielle BaFin-Zulassung"
+    ],
+    "correctIndex": 1,
+    "explanation": "Branchenexpertise ermöglicht es dem Berater, Abweichungen von Branchennormen sofort zu erkennen, branchenspezifische Risiken zu gewichten und mit Unternehmern auf Augenhöhe zu sprechen. Das schafft Vertrauen und differenziert von Wettbewerbsbanken, die generalistisch beraten."
+  },
+  {
+    "id": "M09-Q4",
+    "question": "Welche Informationsquelle für Branchenwissen ist laut Modul M09 besonders wertvoll, aber zeitverzögert?",
+    "options": [
+      "A) IHK-Newsletter",
+      "B) Bundesbank Unternehmensabschlussstatistik",
+      "C) LinkedIn-Branchengruppen",
+      "D) agree-Frühwarnberichte"
+    ],
+    "correctIndex": 1,
+    "explanation": "Die Bundesbank Unternehmensabschlussstatistik ist kostenlos verfügbar und liefert belastbare Branchenkennzahlen — ist aber oft 2 Jahre zeitverzögert. Für aktuellere Daten empfiehlt das Modul die Creditreform/Bisnode-Branchenbenchmarks, die in agree direkt abrufbar sind."
+  },
+  {
+    "id": "M09-Q5",
+    "question": "Wozu dient das 'Branchenportfolio' als Dokumentationsinstrument in Modul M09?",
+    "options": [
+      "A) Als Pflichtdokumentation für den MaRisk-Bericht der Bank",
+      "B) Als persönliches Wissensmanagement-Tool, das Erkenntnisse, Quellen und Netzwerkkontakte einer Branche strukturiert sammelt",
+      "C) Als Kreditentscheidungsunterlage für den Kreditausschuss",
+      "D) Als Grundlage für das jährliche Mitarbeitergespräch"
+    ],
+    "correctIndex": 1,
+    "explanation": "Das Branchenportfolio ist ein persönliches Werkzeug des Beraters — es hält Branchenkenntnisse, relevante Quellen, Schlüsselkontakte und Lessons Learned aus Kundengesprächen fest. Es wächst mit der Erfahrung und ist die Grundlage dafür, langfristig als Branchenexperte wahrgenommen zu werden."
+  }
+]

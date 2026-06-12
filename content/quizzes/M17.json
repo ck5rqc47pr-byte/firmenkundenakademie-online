@@ -1,0 +1,62 @@
+[
+  {
+    "id": "M17-Q1",
+    "question": "Welche fünf Funktionsbereiche von agree sind für Firmenkundenberater besonders relevant?",
+    "options": [
+      "A) Buchführung, Lohnabrechnung, SCHUFA, Depot, Kartenverwaltung",
+      "B) Kundenstamm/CRM, Kreditanalyse, Gesprächsdokumentation (UnternehmerDialog), NMZ-Reporting, Frühwarnung",
+      "C) Online-Banking, Mobile App, Video-Beratung, Chatbot, Dokumentenarchiv",
+      "D) Budgetplanung, HR-Management, Compliance, Risikocontrolling, Buchhaltung"
+    ],
+    "correctIndex": 1,
+    "explanation": "Die fünf zentralen agree-Funktionsbereiche für FKB sind: Kundenstamm und CRM-Daten, Kreditanalyse und Rating, Gesprächsdokumentation über den UnternehmerDialog, NMZ-Bestandsreporting und Frühwarnberichte. Diese Bereiche decken den Kernalltag des Firmenkundenberaters ab."
+  },
+  {
+    "id": "M17-Q2",
+    "question": "Was ist das Ziel der digitalen Gesprächsvorbereitung in agree vor einem Jahresgespräch?",
+    "options": [
+      "A) Alle Dokumente des Kunden auszudrucken",
+      "B) Relevante Kundendaten, NMZ, letzte Aktivitäten und offene Folgeaufgaben vor dem Termin strukturiert zu sichten",
+      "C) Das Kreditrating des Kunden zu aktualisieren",
+      "D) Den Kunden per E-Mail über die Tagesordnung zu informieren"
+    ],
+    "correctIndex": 1,
+    "explanation": "Die digitale Vorbereitung in agree erlaubt dem Berater, in wenigen Minuten NMZ, Portf oliozusammensetzung, letzte Gesprächsnotizen, offene Aufgaben und Auffälligkeiten zu sichten — so kommt er gut vorbereitet und kann sich im Gespräch auf Inhalte konzentrieren statt auf Datenbeschaffung."
+  },
+  {
+    "id": "M17-Q3",
+    "question": "Wie hilft der UnternehmerDialog in agree bei der Bedarfserfassung?",
+    "options": [
+      "A) Er erstellt automatisch Kreditanträge aus dem Gespräch",
+      "B) Er liefert einen strukturierten Leitfaden, der alle Bedarfsdimensionen führt, und ermöglicht unmittelbare Dokumentation von Bedarfen und Folgeaktivitäten",
+      "C) Er sendet automatisch Angebote an den Kunden nach dem Gespräch",
+      "D) Er berechnet den Expected Loss auf Basis der Gesprächsnotizen"
+    ],
+    "correctIndex": 1,
+    "explanation": "Der UnternehmerDialog in agree ist ein digitaler Gesprächsstrukturierer: Er führt den Berater durch alle relevanten Dimensionen (Unternehmen, Finanzierung, Absicherung, Vorsorge, Zukunft) und erlaubt die direkte Dokumentation von Bedarfen und Folgeaufgaben — ohne Doppelerfassung nach dem Gespräch."
+  },
+  {
+    "id": "M17-Q4",
+    "question": "Was zeigt der Frühwarnbericht in agree?",
+    "options": [
+      "A) Kunden, die einen Kredit anfragen möchten",
+      "B) Kunden, bei denen Frühwarnsignale (z. B. Kontokorrent-Überziehung, Rücklastschriften, Rating-Verschlechterung) ausgelöst wurden",
+      "C) Kunden mit überfälligen Jahresabschlüssen",
+      "D) Kunden, bei denen das Gespräch länger als 6 Monate zurückliegt"
+    ],
+    "correctIndex": 1,
+    "explanation": "Der Frühwarnbericht aggregiert automatisiert Signale aus Kontobewegungen, Rating-Veränderungen und Jahresabschluss-Fälligkeiten. Er hilft dem Berater, risikorelevante Kunden frühzeitig zu identifizieren — entsprechend dem Ziel, 80 % der Insolvenzen 12–18 Monate vor Eintreten zu erkennen."
+  },
+  {
+    "id": "M17-Q5",
+    "question": "Wie identifiziert ein Berater laut Modul M17 seine persönlichen 'Zeitfresser' im agree-Workflow?",
+    "options": [
+      "A) Durch Analyse seines Kalenders und der Meetingdauer",
+      "B) Durch Analyse der eigenen Nutzungsgewohnheiten: Welche Aufgaben dauern länger als nötig? Welche agree-Funktion reduziert diesen Aufwand?",
+      "C) Durch Befragung des Vorgesetzten zur eigenen Produktivität",
+      "D) Durch Vergleich der eigenen Gesprächsanzahl mit dem Teamdurchschnitt"
+    ],
+    "correctIndex": 1,
+    "explanation": "Zeitfresser-Analyse bedeutet: Wo verbringt der Berater unverhältnismäßig viel Zeit für Routineaufgaben (Dokumentation, Datenbeschaffung, Nachtelefonieren)? Dann prüft er, welche agree-Funktion diese Aufgabe automatisiert oder vereinfacht. Das ist der Kern des Moduls: Systemkompetenz als Zeitgewinn."
+  }
+]

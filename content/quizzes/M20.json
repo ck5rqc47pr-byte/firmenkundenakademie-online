@@ -1,0 +1,62 @@
+[
+  {
+    "id": "M20-Q1",
+    "question": "Was beschreibt Mark Granovetters Konzept der 'Strength of Weak Ties'?",
+    "options": [
+      "A) Starke Beziehungen sind für Neukundenakquise am wichtigsten",
+      "B) Schwache Kontakte erschließen andere Informationskreise und Netzwerke, die starke Kontakte nicht erreichen",
+      "C) Netzwerken ist nur für extrovertierte Berater sinnvoll",
+      "D) Digitale Netzwerke sind stärker als persönliche Kontakte"
+    ],
+    "correctIndex": 1,
+    "explanation": "Granovetters (1973) Kernthese: Starke Bindungen bewegen sich in denselben sozialen Kreisen — man kennt bereits dieselben Menschen. Schwache Bindungen dagegen bauen Brücken zu anderen Netzwerken und liefern neue, nicht-redundante Informationen und Kontakte. Für Neukundenakquise sind schwache Ties daher oft wertvoller."
+  },
+  {
+    "id": "M20-Q2",
+    "question": "Was ist eine 'Sichtbarkeitsstrategie' für einen Firmenkundenberater?",
+    "options": [
+      "A) Ein Plan zur Erhöhung der Anzahl der Kundenbesuche",
+      "B) Ein systematischer Ansatz, durch Fachvorträge, Publikationen und Netzwerkpräsenz als Experte wahrgenommen zu werden",
+      "C) Die Strategie, möglichst viele LinkedIn-Kontakte zu sammeln",
+      "D) Ein Marketingplan der Bankzentrale für das Firmenkundensegment"
+    ],
+    "correctIndex": 1,
+    "explanation": "Eine persönliche Sichtbarkeitsstrategie positioniert den Berater als Fachexperten im Zielsegment — durch Fachvorträge bei IHK oder Verbänden, Gastbeiträge in regionalen Medien, aktive Social-Media-Präsenz und Netzwerkengagement. Sichtbarkeit schafft Vertrauen vor dem ersten Kontakt."
+  },
+  {
+    "id": "M20-Q3",
+    "question": "Ronald Burts Konzept der 'Structural Holes' beschreibt, welche Netzwerkposition strategisch am wertvollsten ist?",
+    "options": [
+      "A) Derjenige mit den meisten direkten Kontakten",
+      "B) Derjenige, der als einziger Verbindung zwischen unverbundenen Gruppen herstellt (Broker-Position)",
+      "C) Derjenige, der in einer eng vernetzten Clique ist",
+      "D) Derjenige mit den stärksten Bindungen zu Entscheidungsträgern"
+    ],
+    "correctIndex": 1,
+    "explanation": "Burt (1992) zeigt: Wer als Broker zwischen ansonsten unverbundenen Gruppen vermittelt ('Structural Hole überbrücken'), kontrolliert den Informationsfluss und erlangt strategische Vorteile. Ein FK-Berater, der Unternehmer mit Steuerberatern, Investoren und Branchenverbänden vernetzt, besetzt genau diese wertvolle Broker-Position."
+  },
+  {
+    "id": "M20-Q4",
+    "question": "Welche drei Netzwerkdimensionen sollte ein Firmenkundenberater systematisch entwickeln?",
+    "options": [
+      "A) Lokales, regionales und nationales Netzwerk",
+      "B) Kundennetzwerk, Multiplikatorennetzwerk und internes Kompetenznetzwerk",
+      "C) Digitales, analoges und internationales Netzwerk",
+      "D) Kreditnetzwerk, Einlagennetzwerk und Verbundnetzwerk"
+    ],
+    "correctIndex": 1,
+    "explanation": "Die drei Netzwerkdimensionen sind: Kundennetzwerk (direkte Kundenbeziehungen pflegen), Multiplikatorennetzwerk (Steuerberater, Rechtsanwälte, Unternehmensberater als Empfehlungsgeber) und internes Kompetenznetzwerk (Spezialisten der eigenen Bank und Verbundpartner). Alle drei Dimensionen ergänzen sich."
+  },
+  {
+    "id": "M20-Q5",
+    "question": "Welches Prinzip sollte die Netzwerkpflege eines Firmenkundenberaters laut Modul M20 leiten?",
+    "options": [
+      "A) Möglichst viele Kontakte sammeln — Quantität vor Qualität",
+      "B) 'Geben vor Nehmen' — regelmäßig Mehrwert liefern ohne unmittelbare Gegenleistungserwartung",
+      "C) Netzwerkpflege ausschließlich auf digitalen Plattformen durchführen",
+      "D) Nur Kontakte pflegen, von denen direkter Geschäftsabschluss erwartet wird"
+    ],
+    "correctIndex": 1,
+    "explanation": "Nachhaltige Netzwerkbeziehungen basieren auf Reziprozität und Vertrauen. Wer regelmäßig relevante Informationen teilt, hilft und Mehrwert liefert — ohne sofortige Gegenleistungserwartung — baut langfristige Beziehungskapital auf. Transaktionale Netzwerkpflege ('was bringt mir das?') bleibt oberflächlich."
+  }
+]

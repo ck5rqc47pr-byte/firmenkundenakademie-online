@@ -1,0 +1,62 @@
+[
+  {
+    "id": "M08-Q1",
+    "question": "Was ist der wesentliche Unterschied im Cashflow-Profil eines Bauträgers gegenüber einem Bestandshalter?",
+    "options": [
+      "A) Der Bauträger hat stabile Mieteinnahmen, der Bestandshalter volatile Projekteingänge",
+      "B) Beim Bauträger fließt der Cashflow erst am Projektende durch Verkaufserlöse — nicht durch laufende Mieten",
+      "C) Der Bauträger unterliegt dem Beleihungswertverfahren, der Bestandshalter nicht",
+      "D) Bestandshalter haben kein Zinsänderungsrisiko, Bauträger schon"
+    ],
+    "correctIndex": 1,
+    "explanation": "Der Bauträger entwickelt, verkauft und zieht sich dann zurück — kein laufender Cashflow, sondern Projekterlöse am Ende. Das erhöht das Liquiditätsrisiko während der Bauphase erheblich. Der Bestandshalter hingegen finanziert sich aus stabilen Mieteinnahmen."
+  },
+  {
+    "id": "M08-Q2",
+    "question": "Was misst der DSCR (Debt Service Coverage Ratio) bei der Immobilienfinanzierung?",
+    "options": [
+      "A) Den Beleihungsauslauf (Kredit zu Immobilienwert)",
+      "B) Ob die Mieteinnahmen ausreichen, um Zinsen und Tilgung des Darlehens zu decken",
+      "C) Die Nettoanfangsrendite im Verhältnis zum Kaufpreis",
+      "D) Das Verhältnis von Eigenkapital zu Gesamtinvestition"
+    ],
+    "correctIndex": 1,
+    "explanation": "DSCR = Nettomieteinnahmen / Kapitaldienst (Zins + Tilgung). Ein DSCR > 1,2 gilt als Mindestanforderung — das Mietaufkommen übersteigt den Kapitaldienst um 20 % als Puffer. Der DSCR ist die zentrale Kennzahl für Bestandshalterfinanzierungen."
+  },
+  {
+    "id": "M08-Q3",
+    "question": "Nach welchem Prinzip wird der Beleihungswert gemäß BelWertV ermittelt, und warum ist er für Kreditgeber wichtiger als der Verkehrswert?",
+    "options": [
+      "A) Er wird als Durchschnitt der letzten 5 Verkaufspreise in der Region ermittelt und ist damit aktueller",
+      "B) Er ist ein nachhaltiger, marktunabhängiger Wert — er zeigt, was die Immobilie auch in schlechten Marktphasen wert ist",
+      "C) Er entspricht dem steuerlichen Einheitswert laut Grundsteuergesetz",
+      "D) Er liegt immer 30 % über dem Verkehrswert als Sicherheitspuffer"
+    ],
+    "correctIndex": 1,
+    "explanation": "Der Beleihungswert nach BelWertV ist ein langfristig nachhaltiger, konjunkturunabhängiger Wert. Er berücksichtigt nur nachhaltige Mieteinnahmen und schließt spekulative Preisspitzen aus. Für Kreditgeber ist er relevanter als der aktuelle Verkehrswert, weil er zeigt, was die Sicherheit auch in Krisenzeiten wert ist."
+  },
+  {
+    "id": "M08-Q4",
+    "question": "Bei welchem Immobilienkundentypus trägt die Bank das höchste Fertigstellungsrisiko?",
+    "options": [
+      "A) Bestandshalter mit vollvermieteter Gewerbeimmobilie",
+      "B) Projektentwickler in der frühen Entwicklungsphase",
+      "C) Wohnungsgesellschaft mit bestehendem Portfolio",
+      "D) Arztpraxis-Betreiber als Eigennutzer"
+    ],
+    "correctIndex": 1,
+    "explanation": "Projektentwickler stehen in der frühen Phase vor dem größten Risiko: keine Baugenehmigung, kein Mieter, kein Verkäufer — nur Planung und Bodenankauf. Das Fertigstellungsrisiko ist maximal. Bestandshalter und Eigennutzer haben bereits laufende Cashflows, die das Risiko stark reduzieren."
+  },
+  {
+    "id": "M08-Q5",
+    "question": "Was beschreibt die Nettoanfangsrendite (NAR) bei Immobilien?",
+    "options": [
+      "A) Den jährlichen Zinsaufwand im Verhältnis zur Bilanzsumme",
+      "B) Die jährlichen Nettomieteinnahmen im Verhältnis zum Kaufpreis der Immobilie",
+      "C) Die Eigenkapitalrendite nach Steuern beim Immobilienkauf",
+      "D) Den Abschreibungssatz auf das Gebäude nach AfA-Tabelle"
+    ],
+    "correctIndex": 1,
+    "explanation": "Nettoanfangsrendite = Jahresnettomiete / Kaufpreis. Sie zeigt, wie viel Prozent des Kaufpreises jährlich als Miete zurückfließen. Je höher die NAR, desto attraktiver die Immobilie für Investoren und desto besser die Tragfähigkeit des Kapitaldienstes."
+  }
+]
