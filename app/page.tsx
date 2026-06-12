@@ -59,7 +59,7 @@ export default function HomePage() {
           >
             Aus Beratern werden{" "}
             <em className="italic" style={{ color: "var(--accent)" }}>
-              Sparringspartner.
+              Strategische Partner.
             </em>
           </h1>
           <p className="font-serif text-xl text-ink-2 leading-relaxed max-w-2xl mb-12">

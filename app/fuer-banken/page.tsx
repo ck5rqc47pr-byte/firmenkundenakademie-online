@@ -60,7 +60,7 @@ export default function FuerBankenPage() {
         <h1 lang="de" className="font-serif text-[clamp(40px,7vw,88px)] font-normal leading-[1.0] tracking-[-0.03em] mb-8 max-w-4xl hyphens-auto">
           Aus Beratern werden{" "}
           <em className="italic" style={{ color: "var(--ink-2)" }}>
-            Sparringspartner.
+            Strategische Partner.
           </em>
         </h1>
 

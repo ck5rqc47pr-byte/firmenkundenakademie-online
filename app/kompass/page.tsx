@@ -155,7 +155,7 @@ export default async function KompassPage() {
           .
         </h1>
         <p className="font-serif text-lg text-ink-2 leading-relaxed max-w-xl mb-12">
-          In drei Etappen vom Berater zum strategischen Sparringspartner. Der
+          In drei Etappen vom Berater zum Strategischen Partner. Der
           Kompass zeigt deinen Standort, markiert den nächsten Schritt und hält
           fest, was du bereits gelernt hast.
         </p>
