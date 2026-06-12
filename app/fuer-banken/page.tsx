@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { getAllModules } from "@/lib/modules";
 
 const ETAPPEN = [
   {
@@ -8,7 +9,6 @@ const ETAPPEN = [
     beschreibung:
       "Bilanzen lesen, Risiken früh erkennen, KMU-Strukturen verstehen. Die handwerkliche Grundlage, auf der alles Weitere aufbaut.",
     module: ["Bilanzlesen", "Kreditrisikofrüherkennung", "KMU-Kompetenz", "NMZ-Optimierung", "agree & Co.", "Cross-Selling"],
-    count: 6,
   },
   {
     nr: 2,
@@ -16,8 +16,7 @@ const ETAPPEN = [
     sub: "Sparringspartner",
     beschreibung:
       "Der Kunde sucht das Gespräch, weil der Berater Strukturen erkennt, die andere übersehen — und Optionen aufzeigt, die er selbst nicht gesehen hätte.",
-    module: ["Bilanzgespräch", "Bedarfsanalyse", "Latente Bedarfe", "Heilberufe", "Immobilien", "Ertragsoptimierung", "Datengetriebener Vertrieb", "Wissenstransfer", "Kreditentscheidung"],
-    count: 9,
+    module: ["Bilanzgespräch", "Bedarfsanalyse", "Latente Bedarfe", "Heilberufe", "Immobilien", "Ertragsoptimierung", "Datengetriebener Vertrieb", "Wissenstransfer", "Kreditentscheidung", "Geschäftsmodell & Strategie"],
   },
   {
     nr: 3,
@@ -26,12 +25,12 @@ const ETAPPEN = [
     beschreibung:
       "Nachfolge, Kapitalstruktur, Marktbearbeitung: Themen, in denen aus Beratung Partnerschaft wird — auf Augenhöhe mit der Geschäftsführung.",
     module: ["Strategischer Finanzdialog", "Branchenrisiken", "CEO-Dialog & Nachfolge", "Marktbearbeitung", "Branchenexperte", "Netzwerk & Sichtbarkeit"],
-    count: 6,
   },
 ];
 
 const STATS = [
-  { num: "21", label: "Module" },
+  // num "Module" wird zur Laufzeit aus getAllModules().length gesetzt
+  { num: "", label: "Module" },
   { num: "3", label: "Etappen" },
   { num: "6", label: "Kompetenzfelder" },
   { num: "90–180", label: "Min. je Modul" },
@@ -47,6 +46,13 @@ const FELDER = [
 ];
 
 export default function FuerBankenPage() {
+  const alleModule = getAllModules();
+  const moduleCount = alleModule.length;
+  const countByStufe = (stufe: string) =>
+    alleModule.filter((m) => m.stufe === stufe).length;
+  const stats = STATS.map((s) =>
+    s.label === "Module" ? { ...s, num: String(moduleCount) } : s,
+  );
   return (
     <div className="min-h-screen bg-bg text-ink">
 
@@ -100,7 +106,7 @@ export default function FuerBankenPage() {
       {/* ── STATS ────────────────────────────────────────────── */}
       <section className="border-b border-line bg-primary text-white px-6 lg:px-14 py-12">
         <div className="max-w-[1240px] mx-auto grid grid-cols-2 lg:grid-cols-4 gap-8">
-          {STATS.map((s) => (
+          {stats.map((s) => (
             <div key={s.label}>
               <div className="font-serif text-[clamp(36px,5vw,56px)] font-normal leading-none tracking-[-0.02em] mb-2">
                 {s.num}
@@ -179,7 +185,7 @@ export default function FuerBankenPage() {
                   {e.titel}
                 </h3>
                 <div className={`font-mono text-[10px] uppercase tracking-[0.06em] mb-5 ${e.nr === 3 ? "text-white/40" : "text-ink-3"}`}>
-                  {e.count} Module · Zielstufe: {e.sub}
+                  {countByStufe(e.sub)} Module · Zielstufe: {e.sub}
                 </div>
                 <p className={`font-serif text-[15px] leading-relaxed mb-6 ${e.nr === 3 ? "text-white/60" : "text-ink-2"}`}>
                   {e.beschreibung}
@@ -352,7 +358,7 @@ export default function FuerBankenPage() {
               href="/module"
               className="inline-flex items-center justify-center gap-3 border border-white/30 text-white/80 px-8 py-5 font-mono text-[11px] uppercase tracking-[0.08em] hover:border-white hover:text-white transition-all"
             >
-              Alle 21 Module ansehen
+              Alle {moduleCount} Module ansehen
             </Link>
             <p className="font-mono text-[10px] text-white/40 uppercase tracking-[0.06em] text-center pt-2">
               FKB Campus · kreisel-sendung7x@icloud.com
