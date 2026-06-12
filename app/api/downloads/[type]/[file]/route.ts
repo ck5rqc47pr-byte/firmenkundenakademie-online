@@ -10,6 +10,7 @@ const ACCESS: Record<string, string[]> = {
   trainerhandbuch:      ["trainer", "admin"],
   praesentation:        ["trainer", "admin"],
   beobachtungsbogen:    ["teamleiter", "trainer", "admin"],
+  "teamleiter-leitfaden": ["teamleiter", "trainer", "admin"],
   // Workbooks: jede angemeldete Rolle; M01 liegt als öffentliches
   // Schaufenster-Exemplar weiterhin unter public/downloads/.
   teilnehmerunterlagen: ["teilnehmer", "teamleiter", "trainer", "admin"],

@@ -12,6 +12,7 @@ import {
   getParticipantHandoutPdfUrl,
   getTrainerHandbuchPdfUrl,
   getBeobachtungsbogenPdfUrl,
+  getTeamleiterLeitfadenPdfUrl,
   getPresentationPptxUrl,
 } from "@/lib/modules";
 import { getProgressForUser, getFeedbackForUser, getLatestQuizResult } from "@/lib/db";
@@ -48,6 +49,7 @@ export default async function ModuleDetailPage({ params }: { params: { id: strin
     rawPdfUrl && (userId || rawPdfUrl.startsWith("/downloads/")) ? rawPdfUrl : null;
   const trainerPdfUrl = getTrainerHandbuchPdfUrl(module.id);
   const beobachtungsbogenUrl = getBeobachtungsbogenPdfUrl(module.id);
+  const teamleiterLeitfadenUrl = getTeamleiterLeitfadenPdfUrl(module.id);
   const presentationUrl = getPresentationPptxUrl(module.id);
 
   // Content in Abschnitte aufteilen (sync_akademie.py trennt mit SECTION_BREAK):
@@ -66,6 +68,7 @@ export default async function ModuleDetailPage({ params }: { params: { id: strin
             pdfUrl={pdfUrl}
             trainerPdfUrl={trainerPdfUrl}
             beobachtungsbogenUrl={canSeeBeobachtungsbogen ? beobachtungsbogenUrl : null}
+            teamleiterLeitfadenUrl={canSeeBeobachtungsbogen ? teamleiterLeitfadenUrl : null}
             presentationUrl={isTrainerOrAdmin ? presentationUrl : null}
             hasTheorie={!!module.content_theorie}
             isTrainerOrAdmin={isTrainerOrAdmin}

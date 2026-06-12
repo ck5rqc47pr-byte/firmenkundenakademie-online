@@ -133,6 +133,16 @@ export function getParticipantHandoutPdfUrl(moduleId: string): string | null {
   return null;
 }
 
+export function getTeamleiterLeitfadenPdfUrl(moduleId: string): string | null {
+  const normalizedId = moduleId.toUpperCase();
+  const filename = `${normalizedId}.pdf`;
+  const absolutePath = path.join(
+    process.cwd(), "protected-downloads", "teamleiter-leitfaden", filename,
+  );
+  if (!fs.existsSync(absolutePath)) return null;
+  return `/api/downloads/teamleiter-leitfaden/${filename}`;
+}
+
 export function getBeobachtungsbogenPdfUrl(moduleId: string): string | null {
   const normalizedId = moduleId.toUpperCase();
   const filename = `${normalizedId}.pdf`;
