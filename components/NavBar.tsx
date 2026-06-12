@@ -15,6 +15,7 @@ const NAV_PUBLIC = [
 // Nur für eingeloggte Nutzer
 const NAV_AUTH = [
   { href: "/kompass", label: "Kompass" },
+  { href: "/zertifikate", label: "Zertifikate" },
 ];
 
 const TRAINER_NAV = { href: "/trainer", label: "Trainer" };
