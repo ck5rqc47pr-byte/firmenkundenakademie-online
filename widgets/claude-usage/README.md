@@ -1,83 +1,154 @@
 # Claude Usage Widget für iPhone
 
-Ein Homescreen-Widget, das die aktuelle Nutzung der Anthropic/Claude API anzeigt —
-umgesetzt mit der kostenlosen iOS-App [Scriptable](https://scriptable.app)
-(kein eigener App-Store-Build nötig).
+Homescreen-Widgets, die die aktuelle Claude-Nutzung anzeigen — umgesetzt mit der
+kostenlosen iOS-App [Scriptable](https://scriptable.app) (kein eigener
+App-Store-Build nötig).
 
-![Widget-Größen: Small, Medium, Large werden unterstützt]()
+Es gibt **zwei Varianten** in diesem Ordner:
 
-## Was wird angezeigt?
+| Script | Für wen | Zeigt |
+|---|---|---|
+| [`claude-abo-widget.js`](./claude-abo-widget.js) | **Claude-Abo (Pro/Max)** ← die meisten | 5-Stunden-Fenster, Wochenlimits, Extra-Nutzung |
+| [`claude-usage-widget.js`](./claude-usage-widget.js) | API-Kunden (Pay-per-Token, Organisation) | Kosten heute/Monat, Token-Verbrauch, 7-Tage-Chart |
+
+---
+
+## Variante 1: Abo-Widget (Pro/Max) — empfohlen
+
+Zeigt dieselben Werte wie der `/usage`-Befehl in Claude Code bzw. die
+Usage-Seite in den Claude-Einstellungen:
+
+- **5-Stunden-Fenster:** Auslastung in % mit Farbampel (grün/orange/rot),
+  Fortschrittsbalken und Reset-Zeitpunkt („Reset in 2 h 15 min")
+- **Wochenlimit** (alle Modelle) und modell-spezifische Wochenlimits
+  (z. B. Opus), falls dein Plan welche hat
+- **Extra-Nutzung** (Credits), falls aktiviert — nur im großen Widget
+- Ein Tipp aufs Widget öffnet `claude.ai/settings/usage`
+
+### ⚠️ Wichtig: inoffizielle Schnittstelle
+
+Für Abo-Limits gibt es **keine offizielle öffentliche API**. Das Widget nutzt
+den internen OAuth-Endpoint (`api.anthropic.com/api/oauth/usage`), den auch
+Claude Code selbst verwendet — derselbe Weg wie bekannte Community-Tools
+(ccusage, Claude Usage Monitor u. a.). Das funktioniert zuverlässig, kann sich
+aber jederzeit ohne Ankündigung ändern.
+
+### Voraussetzungen
+
+1. **Claude-Abo** (Pro oder Max)
+2. **Claude Code** einmalig auf einem Rechner installiert und per Abo eingeloggt
+   (`claude` → `/login`) — daher kommen die OAuth-Tokens
+3. **Scriptable** aus dem App Store (kostenlos)
+
+### Tokens auslesen
+
+Das Widget braucht zwei Werte aus deinem Claude-Code-Login:
+
+- **Access-Token** (`sk-ant-oat01-…`) — kurzlebig (Stunden)
+- **Refresh-Token** (`sk-ant-ort01-…`) — damit erneuert das Widget den
+  Access-Token automatisch; ohne ihn musst du nach ein paar Stunden neu einrichten
+
+**macOS** — die Tokens liegen im Schlüsselbund:
+
+```bash
+security find-generic-password -s "Claude Code-credentials" -w
+```
+
+**Linux / Windows (WSL):**
+
+```bash
+cat ~/.claude/.credentials.json
+```
+
+Beides gibt ein JSON aus — du brauchst `accessToken` und `refreshToken` daraus.
+
+### Einrichtung (ca. 3 Minuten)
+
+1. **Script anlegen:** Scriptable öffnen → `+` → kompletten Inhalt von
+   [`claude-abo-widget.js`](./claude-abo-widget.js) einfügen → Script z. B.
+   `Claude Abo` nennen.
+2. **Tokens hinterlegen:** Script einmal in der App ausführen (▶︎). Im Dialog
+   Access- und Refresh-Token einfügen. Beide werden **im iOS-Schlüsselbund**
+   gespeichert — nicht im Script.
+3. **Widget hinzufügen:** Homescreen lange drücken → `+` → *Scriptable* →
+   Größe wählen → Widget antippen → unter *Script* `Claude Abo` auswählen.
+
+| Größe | Inhalt |
+|---|---|
+| **Small** | 5-Std-Fenster groß (% + Balken + Reset), Wochenwert klein |
+| **Medium** | 5-Std-Fenster + Wochenlimit als Balken mit Reset-Zeiten |
+| **Large** | Alle Fenster (inkl. Opus/Sonnet-Wochenlimits) + Extra-Nutzung |
+
+### Tokens zurücksetzen
+
+In Scriptable eine Datei mit diesem Inhalt ausführen, danach das Widget-Script
+in der App neu starten:
+
+```javascript
+Keychain.remove("claude-abo-access-token");
+Keychain.remove("claude-abo-refresh-token");
+Keychain.remove("claude-abo-token-expires");
+```
+
+### Troubleshooting (Abo)
+
+| Problem | Lösung |
+|---|---|
+| „Kein Token hinterlegt" | Script einmal in der Scriptable-App ausführen |
+| „Token abgelaufen — bitte neu einrichten" | Refresh-Token fehlt oder ist ungültig → Tokens zurücksetzen und neu aus Claude Code auslesen (vorher dort einmal einloggen) |
+| HTTP 429 / rate_limit | Der Endpoint drosselt stark; das Widget pollt deshalb nur ~alle 15 min und zeigt sonst den Cache (⚠︎ offline) |
+| Werte weichen von der Claude-App ab | Daten kommen vom selben Endpoint wie Claude Code `/usage`; kurze Verzögerungen sind normal |
+| Nach Claude-Code-Re-Login geht nichts mehr | Beim Re-Login werden neue Tokens ausgestellt → im Widget neu hinterlegen |
+
+---
+
+## Variante 2: API-Widget (Pay-per-Token)
+
+Für Nutzung der **Claude API** mit einer Organisation. Datenquelle ist die
+offizielle **Usage & Cost Admin API**:
+
+- `GET /v1/organizations/usage_report/messages` (Token-Verbrauch, Tages-Buckets)
+- `GET /v1/organizations/cost_report` (Kosten in USD, Tages-Buckets)
 
 | Größe | Inhalt |
 |---|---|
 | **Small** | Kosten heute, Tokens heute, Monatskosten |
 | **Medium** | Kosten heute + Monat, Tokens heute, 7-Tage-Balkendiagramm |
-| **Large** | Zusätzlich Token-Aufschlüsselung (Input / Output / Cache-Read / Cache-Write) |
+| **Large** | Zusätzlich Token-Aufschlüsselung (Input / Output / Cache) |
 
-Datenquelle ist die offizielle **Usage & Cost Admin API** von Anthropic:
+### Voraussetzungen
 
-- `GET /v1/organizations/usage_report/messages` (Token-Verbrauch, Tages-Buckets)
-- `GET /v1/organizations/cost_report` (Kosten in USD, Tages-Buckets)
+- **Anthropic Admin API Key** (`sk-ant-admin…`) aus der
+  [Claude Console](https://platform.claude.com/settings/admin-keys)
+  (*Settings → Admin Keys*). Nur für **Organisationen** verfügbar; ein normaler
+  API-Key (`sk-ant-api…`) funktioniert nicht.
 
-Das Widget aktualisiert sich ca. alle 15 Minuten (iOS entscheidet final über das
-Timing). Bei Netz- oder API-Fehlern zeigt es den letzten erfolgreichen Stand mit
-einem ⚠︎-offline-Hinweis. Ein Tipp auf das Widget öffnet die Usage-Seite der
-Claude Console.
+Einrichtung wie oben: Script [`claude-usage-widget.js`](./claude-usage-widget.js)
+in Scriptable anlegen, einmal ausführen, Admin-Key eingeben (landet im
+iOS-Schlüsselbund), Widget hinzufügen.
 
-## Voraussetzungen
-
-1. **Anthropic Admin API Key** (`sk-ant-admin...`)
-   - Erstellen in der [Claude Console](https://platform.claude.com/settings/admin-keys)
-     unter *Settings → Admin Keys*.
-   - ⚠️ Die Admin API ist **nur für Organisationen** verfügbar, nicht für
-     Einzel-Accounts. Falls *Settings → Organization* noch nicht eingerichtet ist,
-     dort zuerst eine Organisation anlegen.
-   - Ein normaler API-Key (`sk-ant-api...`) funktioniert **nicht**.
-2. **Scriptable** aus dem App Store (kostenlos).
-
-> **Hinweis:** Das Widget zeigt die Nutzung der **Claude API** (Pay-per-Token).
-> Für die Limits eines Claude-Pro/Max-**Abos** (z. B. das 5-Stunden-Fenster in der
-> Claude-App) gibt es derzeit keine offizielle öffentliche API — diese Werte kann
-> das Widget daher nicht anzeigen.
-
-## Einrichtung (ca. 3 Minuten)
-
-1. **Script anlegen:** Scriptable öffnen → `+` → den kompletten Inhalt von
-   [`claude-usage-widget.js`](./claude-usage-widget.js) einfügen → Script z. B.
-   `Claude Usage` nennen.
-2. **Key hinterlegen:** Script einmal in der App ausführen (▶︎). Es erscheint ein
-   Dialog zur Eingabe des Admin-Keys. Der Key wird **im iOS-Schlüsselbund**
-   gespeichert — nicht im Script und nicht in iCloud-Klartext.
-3. **Widget hinzufügen:** Homescreen lange drücken → `+` → *Scriptable* →
-   gewünschte Größe wählen → Widget antippen → unter *Script* `Claude Usage`
-   auswählen → *When Interacting: Run Script*.
-
-Fertig — das Widget lädt beim nächsten Refresh die Daten.
-
-## Key ändern oder entfernen
-
-In der Scriptable-App eine neue Datei mit folgendem Einzeiler ausführen:
+Key entfernen:
 
 ```javascript
 Keychain.remove("anthropic-admin-api-key");
 ```
 
-Beim nächsten Start des Widget-Scripts in der App wird der Key neu abgefragt.
-
-## Sicherheit
-
-- Der Admin-Key liegt ausschließlich im iOS-Schlüsselbund des Geräts.
-- Der Key hat **Lesezugriff auf Organisationsdaten** (Mitglieder, Workspaces,
-  Usage/Kosten). Er kann keine Inferenz-Anfragen stellen, sollte aber trotzdem
-  wie ein Geheimnis behandelt werden.
-- Das Script sendet Anfragen ausschließlich an `api.anthropic.com`.
-
-## Troubleshooting
+### Troubleshooting (API)
 
 | Problem | Lösung |
 |---|---|
-| „Kein API-Key hinterlegt" | Script einmal in der Scriptable-App ausführen |
 | HTTP 401 / `authentication_error` | Key prüfen — muss mit `sk-ant-admin` beginnen |
 | „This API is unavailable for individual accounts" | In der Console eine Organisation anlegen (Settings → Organization) |
-| Widget zeigt $0.00 trotz Nutzung | Daten erscheinen mit bis zu ~5 Minuten Verzögerung; Buckets sind UTC-Tage |
-| Widget aktualisiert selten | iOS drosselt Widget-Refreshes systemseitig; in der App ausführen erzwingt einen Abruf |
+| Widget zeigt $0.00 trotz Nutzung | Daten erscheinen mit bis zu ~5 min Verzögerung; Buckets sind UTC-Tage |
+
+---
+
+## Sicherheit (beide Varianten)
+
+- Alle Tokens/Keys liegen ausschließlich im **iOS-Schlüsselbund** des Geräts —
+  nie im Script, nie in iCloud-Klartext.
+- Die Scripts senden Anfragen ausschließlich an `api.anthropic.com` bzw.
+  `console.anthropic.com` (Token-Refresh).
+- iOS entscheidet final über das Refresh-Timing von Widgets; angefragt sind
+  ~15 Minuten. Bei Netz-/API-Fehlern zeigt das Widget den letzten erfolgreichen
+  Stand mit ⚠︎-offline-Hinweis.
