@@ -25,7 +25,7 @@ export default function ImpressumPage() {
         <div>
           <h2 className="text-lg font-semibold text-primary">Diensteanbieter</h2>
           <p className="mt-2">
-            <PH>Vollständiger Name / Firmenbezeichnung (z. B. Benedikt Zoller Coaching)</PH>
+            <PH>Vollständiger Name / Firmenbezeichnung des Diensteanbieters</PH>
             <br />
             <PH>Straße und Hausnummer</PH>
             <br />

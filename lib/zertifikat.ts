@@ -109,11 +109,11 @@ export async function createZertifikatPdf(opts: {
                   thickness: 0.75, color: INK_3 });
   page.drawText("Datum", { x: 100, y: 88, size: 8, font: mono, color: INK_3 });
 
-  page.drawText("Benedikt Zoller", { x: W - 280, y: 110, size: 13,
-                                     font: serifItalic, color: INK_2 });
+  page.drawText("FKB Campus", { x: W - 280, y: 110, size: 13,
+                                font: serifItalic, color: INK_2 });
   page.drawLine({ start: { x: W - 290, y: 102 }, end: { x: W - 100, y: 102 },
                   thickness: 0.75, color: INK_3 });
-  page.drawText("Benedikt Zoller Coaching · FKB Campus", {
+  page.drawText("FKB Campus · Firmenkundenakademie", {
     x: W - 290, y: 88, size: 8, font: mono, color: INK_3 });
 
   const footer = "Wissenschaftlich fundierte Weiterbildung für Firmenkundenberater · Bloom-Taxonomie · Dreyfus-Kompetenzmodell · Kirkpatrick-Evaluation";
