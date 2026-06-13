@@ -14,11 +14,14 @@ const ACCESS: Record<string, string[]> = {
   // Workbooks: jede angemeldete Rolle; M01 liegt als öffentliches
   // Schaufenster-Exemplar weiterhin unter public/downloads/.
   teilnehmerunterlagen: ["teilnehmer", "teamleiter", "trainer", "admin"],
+  // Arbeitsmaterial (z. B. XLSX-Planungsmodell): jede angemeldete Rolle.
+  arbeitsmaterial: ["teilnehmer", "teamleiter", "trainer", "admin"],
 };
 
 const CONTENT_TYPE: Record<string, string> = {
   pdf:  "application/pdf",
   pptx: "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+  xlsx: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
 };
 
 const PROTECTED_DIR = path.join(process.cwd(), "protected-downloads");
@@ -34,8 +37,8 @@ export async function GET(
     return NextResponse.json({ error: "Unbekannter Download-Typ" }, { status: 404 });
   }
 
-  // Dateiname streng validieren (verhindert Path-Traversal): nur MXX.pdf / MXX.pptx
-  const match = /^(M\d{2})\.(pdf|pptx)$/.exec(file);
+  // Dateiname streng validieren (verhindert Path-Traversal): nur MXX.pdf/.pptx/.xlsx
+  const match = /^(M\d{2})\.(pdf|pptx|xlsx)$/.exec(file);
   if (!match) {
     return NextResponse.json({ error: "Ungültiger Dateiname" }, { status: 400 });
   }

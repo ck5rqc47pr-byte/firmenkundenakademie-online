@@ -133,6 +133,16 @@ export function getParticipantHandoutPdfUrl(moduleId: string): string | null {
   return null;
 }
 
+export function getArbeitsmaterialUrl(moduleId: string): string | null {
+  const normalizedId = moduleId.toUpperCase();
+  const filename = `${normalizedId}.xlsx`;
+  const absolutePath = path.join(
+    process.cwd(), "protected-downloads", "arbeitsmaterial", filename,
+  );
+  if (!fs.existsSync(absolutePath)) return null;
+  return `/api/downloads/arbeitsmaterial/${filename}`;
+}
+
 export function getTeamleiterLeitfadenPdfUrl(moduleId: string): string | null {
   const normalizedId = moduleId.toUpperCase();
   const filename = `${normalizedId}.pdf`;
