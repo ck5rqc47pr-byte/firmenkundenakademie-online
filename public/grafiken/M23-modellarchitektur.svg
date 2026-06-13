@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 520" width="860" height="520">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap');
+      text { font-family: Georgia, serif; }
+      .mono { font-family: 'JetBrains Mono', 'Courier New', monospace; }
+      .serif { font-family: 'Source Serif 4', Georgia, serif; }
+    </style>
+  </defs>
+
+  <rect width="860" height="520" fill="#F8F8FA"/>
+  <text x="40" y="30" class="mono" font-size="10" fill="#7A8099" letter-spacing="2">MODELLARCHITEKTUR · MODUL 23 · FINANCIAL MODELLING</text>
+  <line x1="40" y1="40" x2="820" y2="40" stroke="#E2E3E8" stroke-width="1"/>
+  <text x="40" y="64" class="mono" font-size="9" fill="#7A8099" letter-spacing="1">VOM AGREE-EXPORT ZUR FINANZIERUNGSEMPFEHLUNG</text>
+
+  <!-- Step 1: agree-Export -->
+  <rect x="40" y="90" width="150" height="70" fill="#1F2C56"/>
+  <text x="58" y="120" class="mono" font-size="8" fill="#D9C089">SCHRITT 1</text>
+  <text x="58" y="138" class="serif" font-size="13" fill="#FFFFFF">agree-Export</text>
+  <text x="58" y="152" class="serif" font-size="10" fill="#B0B3C0">Bilanz-Auswertung</text>
+
+  <!-- arrow -->
+  <line x1="190" y1="125" x2="230" y2="125" stroke="#7A8099" stroke-width="1.5"/>
+  <polygon points="230,125 222,121 222,129" fill="#7A8099"/>
+
+  <!-- Step 2: Mapping -->
+  <rect x="232" y="90" width="150" height="70" fill="#FFFFFF" stroke="#D9C089" stroke-width="2"/>
+  <text x="250" y="120" class="mono" font-size="8" fill="#9A7B2E">SCHRITT 2</text>
+  <text x="250" y="138" class="serif" font-size="13" fill="#1F2C56">Mapping-Tabelle</text>
+  <text x="250" y="152" class="serif" font-size="10" fill="#3D4460">Pos.-Nr. → Zielzelle</text>
+
+  <!-- arrow -->
+  <line x1="382" y1="125" x2="422" y2="125" stroke="#7A8099" stroke-width="1.5"/>
+  <polygon points="422,125 414,121 414,129" fill="#7A8099"/>
+
+  <!-- Step 3: Annahmen -->
+  <rect x="424" y="90" width="150" height="70" fill="#FFFFFF" stroke="#E2E3E8" stroke-width="1"/>
+  <text x="442" y="120" class="mono" font-size="8" fill="#7A8099">SCHRITT 3</text>
+  <text x="442" y="138" class="serif" font-size="13" fill="#1F2C56">Annahmen</text>
+  <text x="442" y="152" class="serif" font-size="10" fill="#3D4460">Werttreiber setzen</text>
+
+  <!-- Integrated core box -->
+  <rect x="40" y="200" width="534" height="170" fill="#FFFFFF" stroke="#1F2C56" stroke-width="1.5"/>
+  <text x="58" y="226" class="mono" font-size="9" fill="#1F2C56" letter-spacing="1">INTEGRIERTES MODELL · DREI RECHENWERKE</text>
+
+  <rect x="58" y="240" width="150" height="56" fill="#EDEDF3"/>
+  <text x="74" y="266" class="serif" font-size="13" fill="#1F2C56">GuV</text>
+  <text x="74" y="283" class="serif" font-size="10" fill="#3D4460">Ergebnis</text>
+
+  <rect x="232" y="240" width="150" height="56" fill="#EDEDF3"/>
+  <text x="248" y="266" class="serif" font-size="13" fill="#1F2C56">Bilanz</text>
+  <text x="248" y="283" class="serif" font-size="10" fill="#3D4460">EK · Investition</text>
+
+  <rect x="406" y="240" width="150" height="56" fill="#EDEDF3"/>
+  <text x="422" y="266" class="serif" font-size="13" fill="#1F2C56">Cashflow</text>
+  <text x="422" y="283" class="serif" font-size="10" fill="#3D4460">Working Capital</text>
+
+  <text x="58" y="324" class="serif" font-size="11" fill="#3D4460">Ergebnis → Eigenkapital  ·  Investition/Finanzierung → CF  ·  ΔWorking Capital → operativer CF</text>
+  <text x="58" y="346" class="mono" font-size="9" fill="#9A7B2E">Bilanzausgleich = Konsistenzprüfung (Side Calcs · Debt Schedule)</text>
+
+  <!-- arrow down to output -->
+  <line x1="610" y1="285" x2="650" y2="285" stroke="#7A8099" stroke-width="1.5"/>
+  <polygon points="650,285 642,281 642,289" fill="#7A8099"/>
+
+  <!-- Output -->
+  <rect x="652" y="200" width="168" height="170" fill="#1F2C56"/>
+  <text x="670" y="226" class="mono" font-size="9" fill="#D9C089" letter-spacing="1">OUTPUT</text>
+  <text x="670" y="252" class="serif" font-size="12" fill="#FFFFFF">EBITDA-Marge</text>
+  <text x="670" y="274" class="serif" font-size="12" fill="#FFFFFF">DSCR ≥ 1,20</text>
+  <text x="670" y="296" class="serif" font-size="12" fill="#FFFFFF">EK-Quote</text>
+  <text x="670" y="318" class="serif" font-size="12" fill="#FFFFFF">Net Debt/EBITDA</text>
+  <text x="670" y="346" class="serif" font-size="11" fill="#D9C089">→ Empfehlung</text>
+
+  <!-- bottom: Soll-Ist -->
+  <rect x="40" y="408" width="780" height="64" fill="#FFFFFF" stroke="#E2E3E8" stroke-width="1"/>
+  <text x="58" y="434" class="mono" font-size="8" fill="#7A8099">MONITORING</text>
+  <text x="58" y="456" class="serif" font-size="13" fill="#1F2C56">Soll-Ist-Abgleich</text>
+  <text x="230" y="456" class="serif" font-size="11" fill="#3D4460">Plan gegen unterjährige BWA · Covenant-Überwachung · Frühwarnung bei Abweichung</text>
+
+  <text x="40" y="500" class="mono" font-size="9" fill="#B0B3C0" letter-spacing="0.5">Integriertes Planungsmodell · agree-Daten als Ist-Basis · gemeinsam mit dem Unternehmer aufgebaut</text>
+</svg>

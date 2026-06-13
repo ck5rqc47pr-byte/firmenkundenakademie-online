@@ -130,6 +130,10 @@ const GRAFIKEN_MAP: Record<string, Array<{ bezeichnung: string; datei: string }>
     { bezeichnung: "Drei Analyse-Ebenen", datei: "/grafiken/M22-drei-ebenen.svg" },
     { bezeichnung: "Handlungsempfehlung (Wenn-Dann)", datei: "/grafiken/M22-handlungsempfehlung.svg" },
   ],
+  M23: [
+    { bezeichnung: "Modellarchitektur (agree → Modell)", datei: "/grafiken/M23-modellarchitektur.svg" },
+    { bezeichnung: "Handlungsempfehlung (Wenn-Dann)", datei: "/grafiken/M23-handlungsempfehlung.svg" },
+  ],
 };
 
 const STATUS_STYLE: Record<string, string> = {
