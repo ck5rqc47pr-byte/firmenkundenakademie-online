@@ -134,6 +134,10 @@ const GRAFIKEN_MAP: Record<string, Array<{ bezeichnung: string; datei: string }>
     { bezeichnung: "Modellarchitektur (agree → Modell)", datei: "/grafiken/M23-modellarchitektur.svg" },
     { bezeichnung: "Handlungsempfehlung (Wenn-Dann)", datei: "/grafiken/M23-handlungsempfehlung.svg" },
   ],
+  M24: [
+    { bezeichnung: "Drei Verfahren → Wertbandbreite", datei: "/grafiken/M24-bewertungsverfahren.svg" },
+    { bezeichnung: "Handlungsempfehlung (Wenn-Dann)", datei: "/grafiken/M24-handlungsempfehlung.svg" },
+  ],
 };
 
 const STATUS_STYLE: Record<string, string> = {

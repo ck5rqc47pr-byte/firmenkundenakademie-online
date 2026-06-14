@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 560" width="860" height="560">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;1,8..60,400&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap');
+      text { font-family: Georgia, serif; }
+      .mono { font-family: 'JetBrains Mono', 'Courier New', monospace; }
+      .serif { font-family: 'Source Serif 4', Georgia, serif; }
+    </style>
+  </defs>
+
+  <rect width="860" height="560" fill="#F8F8FA"/>
+
+  <text x="40" y="30" class="mono" font-size="10" fill="#7A8099" letter-spacing="2">MODUL 24 · UNTERNEHMENSBEWERTUNG</text>
+  <line x1="40" y1="40" x2="820" y2="40" stroke="#E2E3E8" stroke-width="1"/>
+
+  <text x="40" y="68" class="serif" font-size="20" fill="#1F2C56">Drei Verfahren – eine begründete Wertbandbreite</text>
+  <text x="40" y="90" class="mono" font-size="9" fill="#7A8099" letter-spacing="1">DIE VERFAHREN KONVERGIEREN NIE EXAKT · DIE BERATUNGSLEISTUNG IST DIE BANDBREITE</text>
+
+  <!-- Column 1: Ertragswert -->
+  <rect x="40" y="120" width="240" height="170" fill="#FFFFFF" stroke="#E2E3E8" stroke-width="1"/>
+  <rect x="40" y="120" width="240" height="6" fill="#1F2C56"/>
+  <text x="60" y="152" class="serif" font-size="16" fill="#1F2C56">Ertragswert</text>
+  <text x="60" y="170" class="mono" font-size="8" fill="#9A7B2E">IDW S 1 · MITTELSTANDS-STANDARD</text>
+  <text x="60" y="196" class="serif" font-size="12" fill="#3D4460">Barwert künftiger finanzieller</text>
+  <text x="60" y="213" class="serif" font-size="12" fill="#3D4460">Überschüsse, diskontiert mit</text>
+  <text x="60" y="230" class="serif" font-size="12" fill="#3D4460">risikoadjustiertem Zins.</text>
+  <text x="60" y="262" class="mono" font-size="8" fill="#B0B3C0">GRENZE</text>
+  <text x="60" y="278" class="serif" font-size="11" fill="#7A8099">zins- &amp; annahmeempfindlich</text>
+
+  <!-- Column 2: DCF -->
+  <rect x="310" y="120" width="240" height="170" fill="#FFFFFF" stroke="#E2E3E8" stroke-width="1"/>
+  <rect x="310" y="120" width="240" height="6" fill="#3b82f6"/>
+  <text x="330" y="152" class="serif" font-size="16" fill="#1F2C56">DCF</text>
+  <text x="330" y="170" class="mono" font-size="8" fill="#9A7B2E">WACC / EQUITY · INTERNATIONAL</text>
+  <text x="330" y="196" class="serif" font-size="12" fill="#3D4460">Barwert künftiger Cashflows;</text>
+  <text x="330" y="213" class="serif" font-size="12" fill="#3D4460">methodisch eng mit dem</text>
+  <text x="330" y="230" class="serif" font-size="12" fill="#3D4460">Ertragswert verwandt.</text>
+  <text x="330" y="262" class="mono" font-size="8" fill="#B0B3C0">GRENZE</text>
+  <text x="330" y="278" class="serif" font-size="11" fill="#7A8099">braucht saubere Planung (M23)</text>
+
+  <!-- Column 3: Multiples -->
+  <rect x="580" y="120" width="240" height="170" fill="#FFFFFF" stroke="#E2E3E8" stroke-width="1"/>
+  <rect x="580" y="120" width="240" height="6" fill="#E05B00"/>
+  <text x="600" y="152" class="serif" font-size="16" fill="#1F2C56">Multiples</text>
+  <text x="600" y="170" class="mono" font-size="8" fill="#9A7B2E">EBIT / EBITDA / UMSATZ · MARKT</text>
+  <text x="600" y="196" class="serif" font-size="12" fill="#3D4460">Wert über Vergleichs-</text>
+  <text x="600" y="213" class="serif" font-size="12" fill="#3D4460">multiplikatoren; im KMU-</text>
+  <text x="600" y="230" class="serif" font-size="12" fill="#3D4460">Verkauf praktisch dominant.</text>
+  <text x="600" y="262" class="mono" font-size="8" fill="#B0B3C0">GRENZE</text>
+  <text x="600" y="278" class="serif" font-size="11" fill="#7A8099">Vergleichbarkeit der Referenz</text>
+
+  <!-- arrows down to band -->
+  <polygon points="153,300 167,300 160,318 153,300" fill="#D9C089"/>
+  <polygon points="423,300 437,300 430,318 423,300" fill="#D9C089"/>
+  <polygon points="693,300 707,300 700,318 693,300" fill="#D9C089"/>
+
+  <!-- KMU corrections note -->
+  <rect x="40" y="328" width="780" height="40" fill="#F1ECDF" stroke="#E2D9BE" stroke-width="1"/>
+  <text x="60" y="346" class="mono" font-size="8" fill="#9A7B2E">VOR DER BEWERTUNG · KMU-KORREKTUREN</text>
+  <text x="60" y="361" class="serif" font-size="12" fill="#3D4460">kalkulatorischer Unternehmerlohn · nicht betriebsnotwendiges Vermögen · Personenabhängigkeit</text>
+
+  <!-- Wertbandbreite bar -->
+  <text x="40" y="404" class="mono" font-size="9" fill="#7A8099" letter-spacing="1">WERTBANDBREITE · BEISPIELFALL PRÄZISIONSTECHNIK</text>
+  <rect x="40" y="416" width="780" height="64" fill="#FFFFFF" stroke="#E2E3E8" stroke-width="1"/>
+  <!-- scale -->
+  <rect x="170" y="446" width="520" height="10" rx="5" fill="#E2E3E8"/>
+  <rect x="300" y="446" width="290" height="10" rx="5" fill="#1F2C56"/>
+  <circle cx="300" cy="451" r="9" fill="#E05B00"/>
+  <circle cx="590" cy="451" r="9" fill="#1F2C56"/>
+  <text x="300" y="438" class="mono" font-size="10" fill="#E05B00" text-anchor="middle">4,3 Mio €</text>
+  <text x="300" y="476" class="serif" font-size="10" fill="#7A8099" text-anchor="middle">Multiple-Wert</text>
+  <text x="590" y="438" class="mono" font-size="10" fill="#1F2C56" text-anchor="middle">5,8 Mio €</text>
+  <text x="590" y="476" class="serif" font-size="10" fill="#7A8099" text-anchor="middle">Ertragswert</text>
+  <text x="445" y="476" class="serif" font-size="10" fill="#3D4460" text-anchor="middle">Korridor ≈ 5,0 Mio €</text>
+
+  <text x="40" y="516" class="serif" font-size="12" fill="#3D4460">Die Differenz ist kein Fehler: Der Ertragswert unterstellt fortgeführten Erfolg, das Multiple preist</text>
+  <text x="40" y="534" class="serif" font-size="12" fill="#3D4460">Personenabhängigkeit und Transaktionsabschläge ein. Eine geordnete Übergabe hebt den Preis.</text>
+</svg>
