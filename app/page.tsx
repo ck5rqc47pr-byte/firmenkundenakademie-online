@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { getAllModules, getKompetenzfelder } from "@/lib/modules";
-import { ModuleCard } from "@/components/ModuleCard";
 
 const ETAPPEN = [
   {
@@ -41,7 +40,6 @@ export default function HomePage() {
   const moduleCount = alleModule.length;
   const countByStufe = (stufe: string) =>
     alleModule.filter((m) => m.stufe === stufe).length;
-  const modules = alleModule.slice(0, 3);
   const felder = getKompetenzfelder();
 
   return (
@@ -86,7 +84,18 @@ export default function HomePage() {
             >
               Alle Module ansehen
             </Link>
+            <a
+              href="/downloads/teilnehmerunterlagen/M01.pdf"
+              target="_blank"
+              rel="noopener"
+              className="inline-flex items-center gap-3 border border-accent px-7 py-4 font-mono text-[11px] uppercase tracking-[0.08em] text-ink-2 hover:border-ink hover:text-ink transition-all"
+            >
+              Muster-Workbook laden (M01, PDF)
+            </a>
           </div>
+          <p className="mt-4 font-mono text-[10px] uppercase tracking-[0.06em] text-ink-3">
+            Vollständiges Teilnehmer-Workbook „Bilanzlesen für Praktiker" – frei zugänglich als Qualitätsprobe.
+          </p>
         </div>
       </section>
 
@@ -367,28 +376,6 @@ export default function HomePage() {
                 </div>
               ))}
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── EMPFOHLENE MODULE ─────────────────────────────────────────────── */}
-      <section className="border-b border-ink">
-        <div className="mx-auto max-w-content px-6 lg:px-14 py-16">
-          <div className="flex items-end justify-between mb-8">
-            <h2 className="font-serif text-3xl font-normal tracking-[-0.02em]">
-              Empfohlene Module.
-            </h2>
-            <Link
-              href="/module"
-              className="font-mono text-[11px] uppercase tracking-[0.08em] text-ink-3 hover:text-ink transition"
-            >
-              Alle ansehen →
-            </Link>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 border-t border-l border-ink">
-            {modules.map((m) => (
-              <ModuleCard key={m.id} module={m} />
-            ))}
           </div>
         </div>
       </section>
