@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { getAllModules, getKompetenzfelder } from "@/lib/modules";
+import { FeedbackKreislauf } from "@/components/FeedbackKreislauf";
 
 const ETAPPEN = [
   {
@@ -376,6 +377,9 @@ export default function HomePage() {
                 </div>
               ))}
             </div>
+          </div>
+          <div className="mt-14 border-t border-line pt-12">
+            <FeedbackKreislauf className="w-full max-w-3xl mx-auto h-auto" />
           </div>
         </div>
       </section>

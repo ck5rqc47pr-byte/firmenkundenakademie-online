@@ -5,8 +5,8 @@ import { useState } from "react";
 import { useSession, signOut } from "next-auth/react";
 
 // Öffentlich sichtbar (immer)
+// Hinweis: Startseite (/) ist über das Logo erreichbar – kein eigener „Für Banken"-Eintrag (Redundanz/Nav-Gedränge).
 const NAV_PUBLIC = [
-  { href: "/",                label: "Für Banken" },
   { href: "/leitbild",        label: "Leitbild" },
   { href: "/module",          label: "Campus" },
   { href: "/kompetenzmodell", label: "Kompetenzmodell" },
