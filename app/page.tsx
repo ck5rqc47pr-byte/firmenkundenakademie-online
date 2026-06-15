@@ -30,10 +30,10 @@ const ETAPPEN = [
 ];
 
 const MANIFEST = [
-  ["I.", "Aus der Praxis.", "Wer schreibt, hat den Kunden gestern noch beraten."],
-  ["II.", "Fundiert.", "Jeder Befund mit Studie. Jeder Satz mit Quelle."],
-  ["III.", "Genossenschaftlich.", "Mitgliederlogik, Region, langfristige Beziehung."],
-  ["IV.", "Ihr Tempo.", "Lesen, wann es passt. Tief genug, um zu überzeugen."],
+  ["I.", "Praxis trifft Evidenz", "Inhalte aus echten Fragestellungen — fachlich geprüft und wissenschaftlich fundiert."],
+  ["II.", "Klarheit als Disziplin", "Komplexes verdichtet, damit es im Alltag anwendbar bleibt — ohne Tiefe zu verlieren."],
+  ["III.", "Kundennutzen vor Produkt", "Beratung, die das Unternehmen versteht — nicht das Erklären von Produkten."],
+  ["IV.", "Austausch, der zurückfließt", "Hinweise aus der Praxis fließen geprüft in den Campus und seine Weiterentwicklung ein."],
 ];
 
 export default function HomePage() {
@@ -218,7 +218,7 @@ export default function HomePage() {
             Das Versprechen
           </div>
           <h2 className="font-serif text-3xl lg:text-4xl font-normal tracking-[-0.02em] leading-tight mb-14 max-w-xl">
-            Vier Prinzipien.{" "}
+            Vier Leitwerte.{" "}
             <em className="italic text-ink-2">Ein Anspruch.</em>
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -235,6 +235,12 @@ export default function HomePage() {
               </div>
             ))}
           </div>
+          <Link
+            href="/leitbild"
+            className="inline-flex items-center gap-2 mt-10 font-mono text-[11px] uppercase tracking-[0.08em] text-ink-2 hover:text-ink transition-all"
+          >
+            Mission, Vision &amp; Leitbild →
+          </Link>
         </div>
       </section>
 

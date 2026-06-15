@@ -186,36 +186,12 @@ export default function FuerBankenPage() {
           <p className="text-ink font-medium">Genau diese Lücke schließt der FKB Campus.</p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          <div className="border border-line bg-bg-2 p-8">
-            <div className="font-mono text-[10px] uppercase tracking-[0.1em] text-accent mb-4">
-              Mission
-            </div>
-            <p className="font-serif text-lg text-ink leading-relaxed mb-4">
-              Wir machen relevantes Wissen im Firmenkundengeschäft sichtbar, prüfbar und
-              anwendbar.
-            </p>
-            <p className="font-serif text-[15px] text-ink-2 leading-relaxed">
-              Dafür verbinden wir Erfahrungswissen aus der Praxis mit wissenschaftlicher
-              Grundlage und übersetzen es in kompakte Inhalte, die Berater im Alltag
-              wirklich nutzen können.
-            </p>
-          </div>
-          <div className="border border-primary bg-primary text-white p-8">
-            <div className="font-mono text-[10px] uppercase tracking-[0.1em] text-white/50 mb-4">
-              Vision
-            </div>
-            <p className="font-serif text-lg leading-relaxed mb-4">
-              Ein Firmenkundengeschäft, in dem Wissen nicht verloren geht, Einarbeitung
-              schneller gelingt und Beratung kontinuierlich besser wird.
-            </p>
-            <p className="font-serif text-[15px] text-white/70 leading-relaxed">
-              Denn der deutsche Mittelstand braucht keine Banker, die nur Produkte erklären —
-              sondern strategische Partner, die Unternehmen verstehen, Entwicklungen
-              einordnen und unternehmerische Entscheidungen begleiten.
-            </p>
-          </div>
-        </div>
+        <Link
+          href="/leitbild"
+          className="inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.08em] text-ink-2 hover:text-ink transition-all"
+        >
+          Mission, Vision &amp; Leitwerte ansehen →
+        </Link>
       </section>
 
       {/* ── LÖSUNG: ETAPPEN ──────────────────────────────────── */}
