@@ -227,6 +227,13 @@ export default async function ModuleDetailPage({ params }: { params: { id: strin
                     </div>
                   </details>
                 )}
+                {userId && quizQuestions.length > 0 && (
+                  <QuizSection
+                    moduleId={module.id}
+                    questions={quizQuestions}
+                    previousScore={latestQuizResult?.score ?? null}
+                  />
+                )}
               </div>
             )}
 
@@ -347,15 +354,6 @@ export default async function ModuleDetailPage({ params }: { params: { id: strin
           <div className="mt-6">
             <SuggestionForm moduleId={module.id} />
           </div>
-        )}
-
-        {/* Wissenstest – unabhängig vom Modulabschluss bearbeitbar */}
-        {userId && quizQuestions.length > 0 && (
-          <QuizSection
-            moduleId={module.id}
-            questions={quizQuestions}
-            previousScore={latestQuizResult?.score ?? null}
-          />
         )}
 
         <nav className="border-t border-ink py-8 flex flex-col gap-6 md:flex-row md:items-start md:justify-between">

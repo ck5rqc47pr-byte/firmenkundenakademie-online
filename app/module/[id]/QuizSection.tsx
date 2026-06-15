@@ -14,7 +14,7 @@ export function QuizSection({ moduleId, questions, previousScore }: Props) {
   if (questions.length === 0) return null;
 
   return (
-    <details className="group border border-line" open={previousScore == null}>
+    <details className="group border border-line">
       <summary className="cursor-pointer list-none px-5 py-3.5 font-serif text-base text-ink flex items-center justify-between hover:bg-bg-2 transition">
         <span>
           Wissenstest · {questions.length} Fragen
