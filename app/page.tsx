@@ -288,12 +288,82 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ── EINSATZFERTIG / ZWEI WEGE ─────────────────────────────────────── */}
+      <section className="border-b border-ink">
+        <div className="mx-auto max-w-content px-6 lg:px-14 py-20">
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-12 lg:gap-20 items-start">
+            <div>
+              <div className="font-mono text-[10px] uppercase tracking-[0.1em] text-ink-3 mb-5 flex items-center gap-2">
+                <span className="w-4 h-px inline-block bg-ink-3" />
+                Einsatzfertig
+              </div>
+              <h2 className="font-serif text-3xl lg:text-4xl font-normal tracking-[-0.02em] leading-tight mb-5">
+                Aufschlagen und{" "}
+                <em className="italic text-ink-2">loslegen.</em>
+              </h2>
+              <p className="font-serif text-lg text-ink-2 leading-relaxed mb-7">
+                Keine Zeit zur Vorbereitung? Jedes Modul kommt einsatzfertig — Ihr Bereichs-
+                oder Teamleiter führt es durch, ganz ohne Vorbereitungsaufwand.
+              </p>
+              <ul className="space-y-2.5">
+                {[
+                  "Trainerhandbuch mit Regie & Minuten-Zeitplan",
+                  "Fertiges Foliendeck (PPTX)",
+                  "Teilnehmer-Workbook mit Praxiscases",
+                  "Musterlösungen für den Trainer",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-3 font-serif text-[15px] text-ink-2 leading-snug">
+                    <span className="font-mono text-accent text-xs pt-1">▪</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              {[
+                {
+                  nr: "Weg 1",
+                  titel: "Inhouse-Workshop",
+                  text: "Durch Ihren eigenen Trainer, Bereichs- oder Teamleiter — oder Sie buchen einen unserer Trainer. Alle Unterlagen liegen fertig bereit.",
+                  badge: "Verfügbar",
+                  verfuegbar: true,
+                },
+                {
+                  nr: "Weg 2",
+                  titel: "Vorproduziertes Webinar",
+                  text: "Module als vorproduziertes Video — Wissensvermittlung ganz ohne eigene Durchführung, jederzeit im Campus abrufbar.",
+                  badge: "In Vorbereitung",
+                  verfuegbar: false,
+                },
+              ].map((w) => (
+                <div key={w.nr} className="border border-line p-8 flex flex-col">
+                  <div className="flex items-center justify-between mb-5">
+                    <span className="font-mono text-[10px] uppercase tracking-[0.08em] text-ink-3">{w.nr}</span>
+                    <span
+                      className={`font-mono text-[9px] uppercase tracking-[0.08em] px-2.5 py-1 border ${
+                        w.verfuegbar
+                          ? "text-accent border-accent"
+                          : "text-ink-3 border-line"
+                      }`}
+                    >
+                      {w.badge}
+                    </span>
+                  </div>
+                  <h3 className="font-serif text-2xl font-normal tracking-[-0.01em] text-ink mb-3">{w.titel}</h3>
+                  <p className="font-serif text-[15px] text-ink-2 leading-relaxed">{w.text}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── FORMAT & DURCHFÜHRUNG ─────────────────────────────────────────── */}
       <section className="border-b border-line bg-bg-2">
         <div className="mx-auto max-w-content px-6 lg:px-14 py-20">
           <div className="font-mono text-[10px] uppercase tracking-[0.1em] text-ink-3 mb-5 flex items-center gap-2">
             <span className="w-4 h-px inline-block bg-ink-3" />
-            Format & Durchführung
+            So ist ein Modul aufgebaut
           </div>
           <h2 className="font-serif text-3xl lg:text-4xl font-normal tracking-[-0.02em] leading-tight mb-14 max-w-xl">
             Lernen, das in den{" "}
@@ -301,7 +371,7 @@ export default function HomePage() {
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { nr: "01", titel: "Workshop",        text: "90–180 Minuten je Modul. Trainer-geführt, mit Praxiscases aus dem VR-Umfeld." },
+              { nr: "01", titel: "Kompaktes Format",  text: "90–180 Minuten je Modul — fokussiert auf konkrete Situationen aus dem Beratungsalltag." },
               { nr: "02", titel: "Praxistransfer",  text: "Jedes Modul enthält eine konkrete Transferaufgabe für die nächsten 4 Wochen." },
               { nr: "03", titel: "Wissenstest",     text: "Kurzer Wissenstest nach jedem Modul — Kirkpatrick Level 2, anonym auswertbar." },
               { nr: "04", titel: "Online-Begleitung", text: "Alle Unterlagen, Kompetenzkarte und Lernfortschritt im FKB Campus." },
