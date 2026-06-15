@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { getAllModules, getKompetenzfelder } from "@/lib/modules";
 import { FeedbackKreislauf } from "@/components/FeedbackKreislauf";
+import { Entwicklungspfad } from "@/components/Entwicklungspfad";
 
 const ETAPPEN = [
   {
@@ -163,6 +164,9 @@ export default function HomePage() {
             Drei Etappen. Ein klarer{" "}
             <em className="italic text-ink-2">Entwicklungspfad.</em>
           </h2>
+        </div>
+        <div className="mx-auto max-w-content px-6 lg:px-14 pb-14">
+          <Entwicklungspfad className="w-full max-w-4xl mx-auto h-auto" />
         </div>
         <div className="mx-auto max-w-content border-t border-ink">
           <div className="grid grid-cols-1 lg:grid-cols-3">
