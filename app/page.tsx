@@ -63,10 +63,15 @@ export default function HomePage() {
               Strategische Partner.
             </em>
           </h1>
-          <p className="font-serif text-xl text-ink-2 leading-relaxed max-w-2xl mb-12">
+          <p className="font-serif text-xl text-ink-2 leading-relaxed max-w-2xl mb-6">
             Der FKB Campus ist ein praxisorientiertes Qualifizierungsprogramm
             für Firmenkundenberater in Volksbanken und Raiffeisenbanken —
             wissenschaftlich fundiert, direkt auf den Beratungsalltag zugeschnitten.
+          </p>
+          <p className="font-serif text-lg text-ink-2 leading-relaxed max-w-2xl mb-12 border-l-2 border-accent pl-5">
+            Wir machen relevantes Wissen im Firmenkundengeschäft sichtbar, prüfbar und
+            anwendbar — für ein Firmenkundengeschäft, in dem Wissen nicht verloren geht und
+            Beratung kontinuierlich besser wird.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <a

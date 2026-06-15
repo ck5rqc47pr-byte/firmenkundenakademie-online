@@ -160,6 +160,64 @@ export default function FuerBankenPage() {
         </div>
       </section>
 
+      {/* ── LEITBILD: WARUM / MISSION / VISION ───────────────── */}
+      <section className="border-b border-line px-6 lg:px-14 py-20 max-w-[1240px] mx-auto">
+        <div className="font-mono text-[10px] uppercase tracking-[0.1em] text-ink-3 mb-5 flex items-center gap-2">
+          <span className="w-4 h-px inline-block bg-ink-3" />
+          Warum FKB Campus
+        </div>
+        <h2 className="font-serif text-3xl lg:text-4xl font-normal tracking-[-0.02em] leading-tight mb-8 max-w-2xl">
+          Zwischen Praxis und Wissenschaft entsteht eine{" "}
+          <em className="italic text-ink-2">Lücke.</em>
+        </h2>
+        <div className="max-w-2xl space-y-5 font-serif text-base text-ink-2 leading-relaxed mb-16">
+          <p>
+            Der demografische Wandel, Fluktuation und Rollenwechsel führen dazu, dass
+            wertvolles Erfahrungswissen im Firmenkundengeschäft verloren geht. Gleichzeitig
+            müssen neue Berater schneller handlungsfähig werden — in einem Umfeld, das
+            fachlich anspruchsvoller, zeitlich enger und beratungsintensiver wird.
+          </p>
+          <p>
+            Klassische Akademieformate leisten dabei einen wichtigen Beitrag, sind aber
+            häufig teuer, zeitaufwendig und nicht immer nah genug am aktuellen
+            Beratungsalltag. Zwischen gelebter Praxis und wissenschaftlicher Evidenz
+            entsteht eine Lücke.
+          </p>
+          <p className="text-ink font-medium">Genau diese Lücke schließt der FKB Campus.</p>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div className="border border-line bg-bg-2 p-8">
+            <div className="font-mono text-[10px] uppercase tracking-[0.1em] text-accent mb-4">
+              Mission
+            </div>
+            <p className="font-serif text-lg text-ink leading-relaxed mb-4">
+              Wir machen relevantes Wissen im Firmenkundengeschäft sichtbar, prüfbar und
+              anwendbar.
+            </p>
+            <p className="font-serif text-[15px] text-ink-2 leading-relaxed">
+              Dafür verbinden wir Erfahrungswissen aus der Praxis mit wissenschaftlicher
+              Grundlage und übersetzen es in kompakte Inhalte, die Berater im Alltag
+              wirklich nutzen können.
+            </p>
+          </div>
+          <div className="border border-primary bg-primary text-white p-8">
+            <div className="font-mono text-[10px] uppercase tracking-[0.1em] text-white/50 mb-4">
+              Vision
+            </div>
+            <p className="font-serif text-lg leading-relaxed mb-4">
+              Ein Firmenkundengeschäft, in dem Wissen nicht verloren geht, Einarbeitung
+              schneller gelingt und Beratung kontinuierlich besser wird.
+            </p>
+            <p className="font-serif text-[15px] text-white/70 leading-relaxed">
+              Denn der deutsche Mittelstand braucht keine Banker, die nur Produkte erklären —
+              sondern strategische Partner, die Unternehmen verstehen, Entwicklungen
+              einordnen und unternehmerische Entscheidungen begleiten.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* ── LÖSUNG: ETAPPEN ──────────────────────────────────── */}
       <section className="border-b border-line bg-bg-2">
         <div className="max-w-[1240px] mx-auto px-6 lg:px-14 py-20">

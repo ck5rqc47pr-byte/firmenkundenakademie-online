@@ -24,15 +24,20 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             {children}
           </main>
           <footer className="border-t border-line">
-            <div className="mx-auto flex max-w-content flex-col gap-3 px-6 py-8 lg:flex-row lg:items-center lg:justify-between lg:px-14">
-              <p className="font-mono text-[11px] uppercase tracking-[0.08em] text-ink-3">© FKB Campus</p>
-              <div className="flex gap-6">
-                <Link href="/impressum" className="font-mono text-[11px] uppercase tracking-[0.08em] text-ink-3 transition hover:text-ink">
-                  Impressum
-                </Link>
-                <Link href="/datenschutz" className="font-mono text-[11px] uppercase tracking-[0.08em] text-ink-3 transition hover:text-ink">
-                  Datenschutz
-                </Link>
+            <div className="mx-auto max-w-content px-6 py-8 lg:px-14">
+              <p className="font-serif text-sm text-ink-2 leading-relaxed mb-5 max-w-xl">
+                Wir machen relevantes Wissen im Firmenkundengeschäft sichtbar, prüfbar und anwendbar.
+              </p>
+              <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
+                <p className="font-mono text-[11px] uppercase tracking-[0.08em] text-ink-3">© FKB Campus</p>
+                <div className="flex gap-6">
+                  <Link href="/impressum" className="font-mono text-[11px] uppercase tracking-[0.08em] text-ink-3 transition hover:text-ink">
+                    Impressum
+                  </Link>
+                  <Link href="/datenschutz" className="font-mono text-[11px] uppercase tracking-[0.08em] text-ink-3 transition hover:text-ink">
+                    Datenschutz
+                  </Link>
+                </div>
               </div>
             </div>
           </footer>
