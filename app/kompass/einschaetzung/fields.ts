@@ -79,6 +79,16 @@ export const BERATER_FIELDS: AssessmentField[] = [
 
 export const ASSISTENZ_FIELDS: AssessmentField[] = [
   {
+    slug: "k-a00",
+    label: "Orientierung & Grundlagen",
+    beschreibung: "Produkte, Prozesse, Systeme & Partner im Überblick · VA00",
+    stufen: [
+      { value: 1, label: "Sachbearbeitung", sub: "Ich kenne die Produkte und Verbundpartner meines Hauses im Überblick und weiß, welches System ich wofür nutze." },
+      { value: 2, label: "Eigenständige Assistenz", sub: "Ich finde mich im Kreditprozess und in der Rollenverteilung (Markt/Marktfolge) sicher zurecht und weiß, wen ich bei welchem Anliegen anspreche." },
+      { value: 3, label: "Co-Pilot", sub: "Ich nutze meinen Überblick über Haus, Produkte und Schnittstellen, um Abläufe aktiv mitzudenken und neue Kolleg:innen zu orientieren." },
+    ],
+  },
+  {
     slug: "k-a01",
     label: "Auftrags- & Kreditsachbearbeitung",
     beschreibung: "Kreditakte & Sicherheiten · VA01 · VA02",

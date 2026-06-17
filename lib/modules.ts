@@ -53,6 +53,7 @@ export const TRACKS: Record<Zielrolle, TrackDef> = {
     label: "Vertriebsassistenz",
     stufen: ["Sachbearbeitung", "Eigenständige Assistenz", "Co-Pilot"],
     felder: [
+      { slug: "k-a00", label: "Orientierung & Grundlagen" },
       { slug: "k-a01", label: "Auftrags- & Kreditsachbearbeitung" },
       { slug: "k-a02", label: "Systeme & Prozesse" },
       { slug: "k-a03", label: "Kundenkommunikation Innendienst" },
