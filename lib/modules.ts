@@ -11,6 +11,66 @@ export interface AblaufPhase {
   dauer?: string;
 }
 
+// ── Track-Modell ───────────────────────────────────────────────────────────
+// Zwei parallele Lernpfade: Berater-Track (K-01…K-06) und Vertriebsassistenz-
+// Track (K-A01…K-A05). Diese Konstanten sind die *einzige* Quelle für Stufen-
+// und Kompetenzfeld-Definitionen je Track – Kompass, Einschätzungsbogen,
+// Modulübersicht, Admin und Trainer leiten ihre Listen daraus ab.
+export type Zielrolle = "berater" | "assistenz";
+
+export type BeraterStufe = "Berater" | "Sparringspartner" | "Strategischer Partner";
+export type AssistenzStufe = "Sachbearbeitung" | "Eigenständige Assistenz" | "Co-Pilot";
+export type Stufe = BeraterStufe | AssistenzStufe;
+
+export interface KompetenzfeldDef {
+  slug: string;
+  label: string;
+}
+
+export interface TrackDef {
+  id: Zielrolle;
+  label: string;
+  stufen: [Stufe, Stufe, Stufe];
+  felder: KompetenzfeldDef[];
+}
+
+export const TRACKS: Record<Zielrolle, TrackDef> = {
+  berater: {
+    id: "berater",
+    label: "Berater",
+    stufen: ["Berater", "Sparringspartner", "Strategischer Partner"],
+    felder: [
+      { slug: "finanzanalyse", label: "Finanzanalyse" },
+      { slug: "branchenwissen", label: "Branchenwissen" },
+      { slug: "gespraechsfuehrung", label: "Gesprächsführung" },
+      { slug: "vertrieb", label: "Vertrieb" },
+      { slug: "digital", label: "Digital" },
+      { slug: "fuehrung", label: "Führung" },
+    ],
+  },
+  assistenz: {
+    id: "assistenz",
+    label: "Vertriebsassistenz",
+    stufen: ["Sachbearbeitung", "Eigenständige Assistenz", "Co-Pilot"],
+    felder: [
+      { slug: "k-a01", label: "Auftrags- & Kreditsachbearbeitung" },
+      { slug: "k-a02", label: "Systeme & Prozesse" },
+      { slug: "k-a03", label: "Kundenkommunikation Innendienst" },
+      { slug: "k-a04", label: "Zusammenarbeit & Selbstorganisation" },
+      { slug: "k-a05", label: "Vertriebsunterstützung" },
+    ],
+  },
+};
+
+const STUFE_TO_TRACK: Record<Stufe, Zielrolle> = {
+  Berater: "berater",
+  Sparringspartner: "berater",
+  "Strategischer Partner": "berater",
+  Sachbearbeitung: "assistenz",
+  "Eigenständige Assistenz": "assistenz",
+  "Co-Pilot": "assistenz",
+};
+
 export interface Module {
   id: string;
   title: string;
@@ -22,7 +82,8 @@ export interface Module {
   ablauf: AblaufPhase[];          // Workshop-Ablauf (Zeit/Phase/Methode)
   kompetenzfeld: string;
   kompetenzfeld_slug: string;
-  stufe: "Berater" | "Sparringspartner" | "Strategischer Partner";
+  stufe: Stufe;
+  zielrolle: Zielrolle;
   bloom: string;
   dauer: string;
   format: string;
@@ -88,8 +149,13 @@ export function getModulesByKompetenzfeld(slug: string): Module[] {
   return getAllModules().filter((module) => module.kompetenzfeld_slug === slug);
 }
 
-export function getKompetenzfelder() {
-  return getAllModules().reduce<
+export function getModulesByZielrolle(zielrolle: Zielrolle): Module[] {
+  return getAllModules().filter((module) => module.zielrolle === zielrolle);
+}
+
+export function getKompetenzfelder(zielrolle?: Zielrolle) {
+  const source = zielrolle ? getModulesByZielrolle(zielrolle) : getAllModules();
+  return source.reduce<
     { slug: string; name: string; count: number }[]
   >((fields, module) => {
     const existing = fields.find((field) => field.slug === module.kompetenzfeld_slug);
@@ -207,10 +273,10 @@ function normalizeStufe(value: unknown): Module["stufe"] {
     .trim()
     .toLowerCase();
 
+  // Berater-Track
   if (normalized === "berater") {
     return "Berater";
   }
-
   if (
     normalized === "sparringspartner" ||
     normalized === "sparing" ||
@@ -219,7 +285,27 @@ function normalizeStufe(value: unknown): Module["stufe"] {
     return "Sparringspartner";
   }
 
+  // Vertriebsassistenz-Track
+  if (normalized === "sachbearbeitung") {
+    return "Sachbearbeitung";
+  }
+  if (normalized === "eigenständige assistenz" || normalized === "eigenstaendige assistenz") {
+    return "Eigenständige Assistenz";
+  }
+  if (normalized === "co-pilot" || normalized === "co-pilotin" || normalized === "copilot") {
+    return "Co-Pilot";
+  }
+
   return "Strategischer Partner";
+}
+
+function normalizeZielrolle(value: unknown, stufe: Module["stufe"]): Zielrolle {
+  const normalized = String(value ?? "").trim().toLowerCase();
+  if (normalized === "assistenz" || normalized === "berater") {
+    return normalized;
+  }
+  // Kein explizites Feld: aus der (bereits normalisierten) Stufe ableiten.
+  return STUFE_TO_TRACK[stufe];
 }
 
 function normalizeKompetenzfeldSlug(data: Record<string, unknown>) {
@@ -317,6 +403,7 @@ function parseModule(filename: string): Module {
   const { data, content: rawContent } = matter(raw);
   const normalizedData = data as Record<string, unknown>;
   const fallbackBloomLevel = getHighestBloomLevel(data.bloom);
+  const stufe = normalizeStufe(data.stufe);
 
   // Trainer- und Theorie-Blöcke aus dem Markdown-Body extrahieren
   const { main: afterTrainer, section: content_trainer } = extractMarkedSection(rawContent, "TRAINER");
@@ -334,7 +421,8 @@ function parseModule(filename: string): Module {
     ablauf: normalizeAblauf(data.ablauf),
     kompetenzfeld: normalizeKompetenzfeld(normalizedData),
     kompetenzfeld_slug: normalizeKompetenzfeldSlug(normalizedData),
-    stufe: normalizeStufe(data.stufe),
+    stufe,
+    zielrolle: normalizeZielrolle(data.zielrolle, stufe),
     bloom: String(data.bloom ?? ""),
     dauer: String(data.dauer ?? ""),
     format: String(data.format ?? ""),

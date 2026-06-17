@@ -10,15 +10,17 @@ type Props = {
 
 export function ModuleGrid({ modules }: Props) {
   const searchParams = useSearchParams();
+  const track = searchParams.get("track");
   const kompetenzfeld = searchParams.get("kompetenzfeld");
   const stufe = searchParams.get("stufe");
   const status = searchParams.get("status");
 
   const filteredModules = modules.filter((module) => {
+    const trackMatch = !track || track === "alle" || module.zielrolle === track;
     const fieldMatch = !kompetenzfeld || module.kompetenzfeld_slug === kompetenzfeld;
     const levelMatch = !stufe || stufe === "Alle" || module.stufe === stufe;
     const statusMatch = !status || status === "alle" || module.status === status;
-    return fieldMatch && levelMatch && statusMatch;
+    return trackMatch && fieldMatch && levelMatch && statusMatch;
   });
 
   return (

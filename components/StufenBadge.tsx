@@ -1,5 +1,7 @@
+import type { Stufe } from "@/lib/modules";
+
 type Props = {
-  stufe: "Berater" | "Sparringspartner" | "Strategischer Partner";
+  stufe: Stufe;
   inverted?: boolean;
 };
 

@@ -8,6 +8,12 @@ const ROMAN: Record<string, string> = {
   vertrieb: "IV",
   digital: "V",
   fuehrung: "VI",
+  // Vertriebsassistenz-Track (K-A01…K-A05)
+  "k-a01": "A1",
+  "k-a02": "A2",
+  "k-a03": "A3",
+  "k-a04": "A4",
+  "k-a05": "A5",
 };
 
 export function ModuleCard({ module }: { module: Module }) {

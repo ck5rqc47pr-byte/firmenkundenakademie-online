@@ -2,29 +2,25 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
-import { getAllModules, getParticipantHandoutPdfUrl, getTrainerHandbuchPdfUrl, getPresentationPptxUrl } from "@/lib/modules";
+import { getAllModules, getParticipantHandoutPdfUrl, getTrainerHandbuchPdfUrl, getPresentationPptxUrl, TRACKS } from "@/lib/modules";
+import type { Stufe } from "@/lib/modules";
 
 export const dynamic = "force-dynamic";
 
-const STUFE_ORDER = { Berater: 1, Sparringspartner: 2, "Strategischer Partner": 3 } as const;
-
-const FIELD_LABELS: Record<string, string> = {
-  finanzanalyse: "Finanzanalyse",
-  branchenwissen: "Branchenwissen",
-  gespraechsfuehrung: "Gesprächsführung",
-  vertrieb: "Vertrieb",
-  digital: "Digital",
-  fuehrung: "Führung",
+const STUFE_ORDER: Record<Stufe, number> = {
+  Berater: 1,
+  Sparringspartner: 2,
+  "Strategischer Partner": 3,
+  Sachbearbeitung: 1,
+  "Eigenständige Assistenz": 2,
+  "Co-Pilot": 3,
 };
 
-const FIELD_ORDER = [
-  "finanzanalyse",
-  "branchenwissen",
-  "gespraechsfuehrung",
-  "vertrieb",
-  "digital",
-  "fuehrung",
-];
+const ALL_FELDER = Object.values(TRACKS).flatMap((t) => t.felder);
+const FIELD_LABELS: Record<string, string> = Object.fromEntries(
+  ALL_FELDER.map((f) => [f.slug, f.label]),
+);
+const FIELD_ORDER = ALL_FELDER.map((f) => f.slug);
 
 export default async function TrainerPage() {
   const session = await getServerSession(authOptions);

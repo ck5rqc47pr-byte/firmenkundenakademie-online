@@ -2,32 +2,23 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
-import { getAllModules, getParticipantHandoutPdfUrl } from "@/lib/modules";
+import { getAllModules, getParticipantHandoutPdfUrl, TRACKS } from "@/lib/modules";
 
 export const dynamic = "force-dynamic";
 
-const FIELD_LABELS: Record<string, string> = {
-  finanzanalyse: "Finanzanalyse",
-  branchenwissen: "Branchenwissen",
-  gespraechsfuehrung: "Gesprächsführung",
-  vertrieb: "Vertrieb",
-  digital: "Digital",
-  fuehrung: "Führung",
-};
-
-const FIELD_ORDER = [
-  "finanzanalyse",
-  "branchenwissen",
-  "gespraechsfuehrung",
-  "vertrieb",
-  "digital",
-  "fuehrung",
-];
+const ALL_FELDER = Object.values(TRACKS).flatMap((t) => t.felder);
+const FIELD_LABELS: Record<string, string> = Object.fromEntries(
+  ALL_FELDER.map((f) => [f.slug, f.label]),
+);
+const FIELD_ORDER = ALL_FELDER.map((f) => f.slug);
 
 const STUFE_BADGE: Record<string, string> = {
   Berater: "bg-blue-50 text-blue-700",
   Sparringspartner: "bg-violet-50 text-violet-700",
   "Strategischer Partner": "bg-amber-50 text-amber-700",
+  Sachbearbeitung: "bg-blue-50 text-blue-700",
+  "Eigenständige Assistenz": "bg-violet-50 text-violet-700",
+  "Co-Pilot": "bg-amber-50 text-amber-700",
 };
 
 function Check({ ok, label }: { ok: boolean; label?: string }) {

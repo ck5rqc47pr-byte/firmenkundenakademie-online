@@ -3,39 +3,75 @@ import { redirect } from "next/navigation";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
 import { getProgressForUser, getAssessmentForUser } from "@/lib/db";
-import { getAllModules } from "@/lib/modules";
-import type { Module } from "@/lib/modules";
+import { getAllModules, TRACKS } from "@/lib/modules";
+import type { Module, Zielrolle } from "@/lib/modules";
 
 export const dynamic = "force-dynamic";
 
 type Status = "abgeschlossen" | "empfehlung" | "offen";
 
-const ETAPPEN = [
-  {
-    nr: 1,
-    stufe: "Berater" as const,
-    titel: "Beraterhandwerk",
-    versprechen:
-      "Du beherrschst dein Werkzeug. Bilanzen lesen, Risiken früh erkennen, KMU-Strukturen verstehen — die handwerkliche Grundlage, auf der alles Weitere aufbaut.",
-    dark: false,
+type EtappeView = { nr: number; stufe: string; titel: string; versprechen: string; dark: boolean };
+
+const TRACK_VIEW: Record<Zielrolle, { heroLead: string; etappen: EtappeView[] }> = {
+  berater: {
+    heroLead: "In drei Etappen vom Berater zum Strategischen Partner.",
+    etappen: [
+      {
+        nr: 1,
+        stufe: "Berater",
+        titel: "Beraterhandwerk",
+        versprechen:
+          "Du beherrschst dein Werkzeug. Bilanzen lesen, Risiken früh erkennen, KMU-Strukturen verstehen — die handwerkliche Grundlage, auf der alles Weitere aufbaut.",
+        dark: false,
+      },
+      {
+        nr: 2,
+        stufe: "Sparringspartner",
+        titel: "Sparringspartner",
+        versprechen:
+          "Du wirst gefragt, nicht beauftragt. Der Kunde sucht das Gespräch, weil du Strukturen erkennst, die andere übersehen — und Optionen aufzeigst, die er selbst nicht gesehen hätte.",
+        dark: false,
+      },
+      {
+        nr: 3,
+        stufe: "Strategischer Partner",
+        titel: "Strategischer Partner",
+        versprechen:
+          "Du gestaltest mit — bei deinem Kunden und in deinem Haus. Nachfolge, Kapitalstruktur, Marktbearbeitung: Themen, in denen aus Beratung Partnerschaft wird.",
+        dark: true,
+      },
+    ],
   },
-  {
-    nr: 2,
-    stufe: "Sparringspartner" as const,
-    titel: "Sparringspartner",
-    versprechen:
-      "Du wirst gefragt, nicht beauftragt. Der Kunde sucht das Gespräch, weil du Strukturen erkennst, die andere übersehen — und Optionen aufzeigst, die er selbst nicht gesehen hätte.",
-    dark: false,
+  assistenz: {
+    heroLead: "In drei Etappen von der Sachbearbeitung zur Co-Pilotin des Beraters.",
+    etappen: [
+      {
+        nr: 1,
+        stufe: "Sachbearbeitung",
+        titel: "Sachbearbeitung",
+        versprechen:
+          "Du arbeitest prozesssicher. Kreditakten, Sicherheiten, agree-Vorgänge und Fristen sitzen — die formale Grundlage, auf die sich der Berater verlassen kann.",
+        dark: false,
+      },
+      {
+        nr: 2,
+        stufe: "Eigenständige Assistenz",
+        titel: "Eigenständige Assistenz",
+        versprechen:
+          "Du denkst mit, statt nur abzuarbeiten. Du erkennst, worauf es im Vorgang ankommt, bereitest Termine entscheidungsreif vor und gestaltest die Schnittstelle zum Berater aktiv.",
+        dark: false,
+      },
+      {
+        nr: 3,
+        stufe: "Co-Pilot",
+        titel: "Co-Pilot",
+        versprechen:
+          "Du entlastest proaktiv. Aus Bestandsdaten machst du Vertriebsanlässe und bereitest sie so auf, dass der Berater nur noch handeln muss — vom Zuarbeiter zur Co-Pilotin.",
+        dark: true,
+      },
+    ],
   },
-  {
-    nr: 3,
-    stufe: "Strategischer Partner" as const,
-    titel: "Strategischer Partner",
-    versprechen:
-      "Du gestaltest mit — bei deinem Kunden und in deinem Haus. Nachfolge, Kapitalstruktur, Marktbearbeitung: Themen, in denen aus Beratung Partnerschaft wird.",
-    dark: true,
-  },
-];
+};
 
 function Station({
   m,
@@ -109,14 +145,24 @@ function Station({
   );
 }
 
-export default async function KompassPage() {
+export default async function KompassPage({
+  searchParams,
+}: {
+  searchParams?: { track?: string };
+}) {
   const session = await getServerSession(authOptions);
   if (!session) redirect("/login?callbackUrl=/kompass");
 
   const userId = (session.user as { id?: string }).id!;
-  const userName = session.user?.name ?? "Teilnehmer";
 
-  const allModules = getAllModules().filter((m) => m.status === "freigegeben");
+  const track: Zielrolle = searchParams?.track === "assistenz" ? "assistenz" : "berater";
+  const view = TRACK_VIEW[track];
+  const ETAPPEN = view.etappen;
+  const trackDef = TRACKS[track];
+
+  const allModules = getAllModules().filter(
+    (m) => m.status === "freigegeben" && m.zielrolle === track,
+  );
   const [progress, assessment] = await Promise.all([
     getProgressForUser(userId),
     getAssessmentForUser(userId),
@@ -147,17 +193,35 @@ export default async function KompassPage() {
           <span className="w-6 h-px bg-ink-3 inline-block" />
           FKB Campus · Kompass
         </div>
+
+        {/* Track-Umschalter */}
+        <div className="flex flex-wrap gap-1 mb-8">
+          {(Object.keys(TRACKS) as Zielrolle[]).map((id) => {
+            const active = id === track;
+            return (
+              <Link
+                key={id}
+                href={id === "berater" ? "/kompass" : `/kompass?track=${id}`}
+                className={`font-mono text-[11px] uppercase tracking-[0.08em] px-4 py-2 border transition ${
+                  active ? "bg-ink text-bg border-ink" : "border-line text-ink-2 hover:border-ink-2 hover:text-ink"
+                }`}
+              >
+                {TRACKS[id].label}
+              </Link>
+            );
+          })}
+        </div>
+
         <h1 lang="de" className="font-serif text-[clamp(36px,8vw,88px)] font-normal leading-[1.05] tracking-[-0.03em] mb-8 max-w-3xl hyphens-auto">
           Der{" "}
           <em className="italic" style={{ color: "var(--ink-2)" }}>
-            Firmenkundenkompass
+            {track === "assistenz" ? "Assistenzkompass" : "Firmenkundenkompass"}
           </em>
           .
         </h1>
         <p className="font-serif text-lg text-ink-2 leading-relaxed max-w-xl mb-12">
-          In drei Etappen vom Berater zum Strategischen Partner. Der
-          Kompass zeigt deinen Standort, markiert den nächsten Schritt und hält
-          fest, was du bereits gelernt hast.
+          {view.heroLead} Der Kompass zeigt deinen Standort, markiert den nächsten
+          Schritt und hält fest, was du bereits gelernt hast.
         </p>
         <div className="grid grid-cols-2 sm:flex sm:gap-10 gap-6 pt-8 border-t border-line">
           {[
@@ -196,10 +260,10 @@ export default async function KompassPage() {
             <p className="font-serif text-base text-ink-2 leading-relaxed mb-8">
               {assessment.length > 0
                 ? "Deine persönliche Kompetenzkarte — basierend auf deiner Selbsteinschätzung. Du kannst sie jederzeit aktualisieren."
-                : "Bevor du losziehst, eine ehrliche Selbsteinschätzung über deine Kompetenzen in allen sechs Feldern. Dauer: rund fünf Minuten. Ergebnis: deine persönliche Kompetenzkarte."}
+                : `Bevor du losziehst, eine ehrliche Selbsteinschätzung über deine Kompetenzen in allen ${trackDef.felder.length} Feldern. Dauer: rund fünf Minuten. Ergebnis: deine persönliche Kompetenzkarte.`}
             </p>
             <Link
-              href="/kompass/einschaetzung"
+              href={track === "berater" ? "/kompass/einschaetzung" : `/kompass/einschaetzung?track=${track}`}
               className="inline-flex items-center gap-3 border border-primary px-5 py-3 font-mono text-[11px] uppercase tracking-[0.06em] text-primary hover:bg-primary hover:text-white transition-all"
             >
               <span className="w-1.5 h-1.5 rounded-full bg-current inline-block" />
@@ -211,7 +275,7 @@ export default async function KompassPage() {
           <div>
             <div className="border border-line overflow-hidden">
               <div className="grid grid-cols-[100px_repeat(3,1fr)] sm:grid-cols-[180px_repeat(3,1fr)] border-b border-line">
-                {["", "Berater", "Sparringspartner", "Strategischer Partner"].map((h) => (
+                {["", ...trackDef.stufen].map((h) => (
                   <div
                     key={h}
                     className="px-3 py-2.5 font-mono text-[10px] uppercase tracking-[0.06em] text-ink-3 bg-bg-2"
@@ -220,14 +284,7 @@ export default async function KompassPage() {
                   </div>
                 ))}
               </div>
-              {[
-                { label: "Finanzanalyse", slug: "finanzanalyse" },
-                { label: "Branchenwissen", slug: "branchenwissen" },
-                { label: "Gesprächsführung", slug: "gespraechsfuehrung" },
-                { label: "Vertrieb", slug: "vertrieb" },
-                { label: "Digital", slug: "digital" },
-                { label: "Führung", slug: "fuehrung" },
-              ].map((row) => {
+              {trackDef.felder.map((row) => {
                 const score = assessmentMap[row.slug] ?? 0;
                 const fill = [1, 2, 3].map((s) => (score >= s ? score : 0));
                 const hasData = score > 0;
