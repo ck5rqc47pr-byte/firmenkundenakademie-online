@@ -129,6 +129,16 @@ export const ASSISTENZ_FIELDS: AssessmentField[] = [
     ],
   },
   {
+    slug: "k-a06",
+    label: "Neugeschäft & gesetzliche Sorgfaltspflichten",
+    beschreibung: "Legitimation, Vertretung, Einheiten & Geldwäscheprävention · VA10 · VA11",
+    stufen: [
+      { value: 1, label: "Sachbearbeitung", sub: "Ich lege Neukunden formal korrekt an: Legitimation, Kontenwahrheit und Vertretungs-/Zeichnungsberechtigung prüfe ich sicher." },
+      { value: 2, label: "Eigenständige Assistenz", sub: "Ich bilde Kreditnehmereinheiten aus Beteiligungsstrukturen, ermittle den wirtschaftlich Berechtigten und erkenne Geldwäsche-Verdachtsmomente." },
+      { value: 3, label: "Co-Pilot", sub: "Ich bin im Team Ansprechpartnerin für die gesetzlichen Sorgfaltspflichten, halte die GwG-Prozesse sauber und führe neue Kolleg:innen ein." },
+    ],
+  },
+  {
     slug: "k-a05",
     label: "Vertriebsunterstützung",
     beschreibung: "Vertriebsanlässe erkennen & aufbereiten · VA09",

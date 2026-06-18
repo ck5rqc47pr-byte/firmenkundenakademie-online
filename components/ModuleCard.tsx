@@ -15,6 +15,7 @@ const ROMAN: Record<string, string> = {
   "k-a03": "A3",
   "k-a04": "A4",
   "k-a05": "A5",
+  "k-a06": "A6",
 };
 
 export function ModuleCard({ module }: { module: Module }) {

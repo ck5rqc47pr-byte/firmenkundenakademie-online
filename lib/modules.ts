@@ -59,6 +59,7 @@ export const TRACKS: Record<Zielrolle, TrackDef> = {
       { slug: "k-a03", label: "Kundenkommunikation Innendienst" },
       { slug: "k-a04", label: "Zusammenarbeit & Selbstorganisation" },
       { slug: "k-a05", label: "Vertriebsunterstützung" },
+      { slug: "k-a06", label: "Neugeschäft & gesetzliche Sorgfaltspflichten" },
     ],
   },
 };
