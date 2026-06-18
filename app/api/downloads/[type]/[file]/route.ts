@@ -37,8 +37,9 @@ export async function GET(
     return NextResponse.json({ error: "Unbekannter Download-Typ" }, { status: 404 });
   }
 
-  // Dateiname streng validieren (verhindert Path-Traversal): nur MXX.pdf/.pptx/.xlsx
-  const match = /^(M\d{2})\.(pdf|pptx|xlsx)$/.exec(file);
+  // Dateiname streng validieren (verhindert Path-Traversal): nur MXX/VAXX.pdf/.pptx/.xlsx
+  // (Berater-Track M01–M24, Vertriebsassistenz-Track VA00–VA09)
+  const match = /^((?:M|VA)\d{2})\.(pdf|pptx|xlsx)$/.exec(file);
   if (!match) {
     return NextResponse.json({ error: "Ungültiger Dateiname" }, { status: 400 });
   }
