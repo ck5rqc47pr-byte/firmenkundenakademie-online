@@ -42,7 +42,9 @@ export default function HomePage() {
   const moduleCount = alleModule.length;
   const countByStufe = (stufe: string) =>
     alleModule.filter((m) => m.stufe === stufe).length;
-  const felder = getKompetenzfelder();
+  const felderBerater = getKompetenzfelder("berater");
+  const felderAssistenz = getKompetenzfelder("assistenz");
+  const feldZahl = felderBerater.length + felderAssistenz.length;
 
   return (
     <div>
@@ -107,7 +109,7 @@ export default function HomePage() {
           {[
             { num: String(moduleCount), label: "Module" },
             { num: "3",      label: "Etappen" },
-            { num: "6",      label: "Kompetenzfelder" },
+            { num: String(feldZahl), label: "Kompetenzfelder" },
             { num: "90–180", label: "Min. je Modul" },
           ].map((s) => (
             <div key={s.label}>
@@ -264,27 +266,43 @@ export default function HomePage() {
           <div className="font-mono text-[11px] uppercase tracking-[0.08em] text-ink-3 mb-6">
             § Kompetenzfelder
           </div>
-          <h2 className="font-serif text-4xl lg:text-6xl font-normal leading-tight tracking-[-0.03em] mb-12">
-            Sechs Felder.{" "}
-            <em style={{ fontStyle: "italic", color: "var(--primary)" }}>Ihr Lernpfad.</em>
+          <h2 className="font-serif text-4xl lg:text-6xl font-normal leading-tight tracking-[-0.03em] mb-4">
+            Zwei Lernpfade.{" "}
+            <em style={{ fontStyle: "italic", color: "var(--primary)" }}>Ihre Kompetenzfelder.</em>
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-t border-l border-ink">
-            {felder.map((f) => (
-              <Link
-                key={f.slug}
-                href={`/kompetenzfeld/${f.slug}`}
-                className="group p-8 border-b border-r border-line hover:bg-bg-2 transition flex flex-col gap-2"
-              >
-                <div className="font-mono text-[10px] uppercase tracking-[0.08em] text-primary">
-                  {f.count} Module
-                </div>
-                <div className="font-serif text-xl font-[500] leading-tight text-ink group-hover:text-primary transition">
-                  {f.name}
-                </div>
-                <div className="font-mono text-[11px] text-ink-3 mt-auto pt-4">Entdecken →</div>
-              </Link>
-            ))}
-          </div>
+          <p className="font-serif text-lg text-ink-2 leading-relaxed max-w-2xl mb-12">
+            Ein eigener Entwicklungspfad für Firmenkundenberater – und ein paralleler Track für
+            die Vertriebsassistenz im Innendienst. Jedes Feld ein klar abgegrenzter Lernweg.
+          </p>
+
+          {[
+            { label: "Firmenkundenberater", felder: felderBerater },
+            { label: "Vertriebsassistenz", felder: felderAssistenz },
+          ].map((track) => (
+            <div key={track.label} className="mb-12 last:mb-0">
+              <div className="font-mono text-[11px] uppercase tracking-[0.08em] text-ink-2 mb-4 flex items-center gap-2">
+                <span className="w-5 h-px inline-block bg-primary" />
+                {track.label} · {track.felder.length} Felder
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-t border-l border-ink">
+                {track.felder.map((f) => (
+                  <Link
+                    key={f.slug}
+                    href={`/kompetenzfeld/${f.slug}`}
+                    className="group p-8 border-b border-r border-line hover:bg-bg-2 transition flex flex-col gap-2"
+                  >
+                    <div className="font-mono text-[10px] uppercase tracking-[0.08em] text-primary">
+                      {f.count} {f.count === 1 ? "Modul" : "Module"}
+                    </div>
+                    <div className="font-serif text-xl font-[500] leading-tight text-ink group-hover:text-primary transition">
+                      {f.name}
+                    </div>
+                    <div className="font-mono text-[11px] text-ink-3 mt-auto pt-4">Entdecken →</div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
