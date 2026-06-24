@@ -4,13 +4,12 @@ import Link from "next/link";
 import { useState } from "react";
 import { useSession, signOut } from "next-auth/react";
 
-// Öffentlich sichtbar (immer)
-// Hinweis: Startseite (/) ist über das Logo erreichbar – kein eigener „Für Banken"-Eintrag (Redundanz/Nav-Gedränge).
+// Öffentlich sichtbar (immer) – bewusst auf die zwei primären Einstiegspunkte reduziert.
+// Startseite (/) ist über das Logo erreichbar (kein „Für Banken"-Eintrag).
+// Über-uns-/Marketing-Seiten (Leitbild, Team) liegen im Footer, nicht in der Top-Nav (Nav-Gedränge vermeiden).
 const NAV_PUBLIC = [
-  { href: "/leitbild",        label: "Leitbild" },
   { href: "/module",          label: "Campus" },
   { href: "/kompetenzmodell", label: "Kompetenzmodell" },
-  { href: "/team",            label: "Team" },
 ];
 
 // Nur für eingeloggte Nutzer

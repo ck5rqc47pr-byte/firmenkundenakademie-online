@@ -30,7 +30,13 @@ export default function RootLayout({ children }: { children: ReactNode }) {
               </p>
               <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
                 <p className="font-mono text-[11px] uppercase tracking-[0.08em] text-ink-3">© FKB Campus</p>
-                <div className="flex gap-6">
+                <div className="flex flex-wrap gap-x-6 gap-y-2">
+                  <Link href="/leitbild" className="font-mono text-[11px] uppercase tracking-[0.08em] text-ink-3 transition hover:text-ink">
+                    Leitbild
+                  </Link>
+                  <Link href="/team" className="font-mono text-[11px] uppercase tracking-[0.08em] text-ink-3 transition hover:text-ink">
+                    Team
+                  </Link>
                   <Link href="/impressum" className="font-mono text-[11px] uppercase tracking-[0.08em] text-ink-3 transition hover:text-ink">
                     Impressum
                   </Link>
