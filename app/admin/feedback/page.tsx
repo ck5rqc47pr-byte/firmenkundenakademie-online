@@ -7,15 +7,18 @@ import { getAllModules } from "@/lib/modules";
 
 export const dynamic = "force-dynamic";
 
-function StarBar({ value }: { value: number | null }) {
-  if (!value) return <span className="font-mono text-[10px] text-ink-3">–</span>;
-  const pct = (value / 5) * 100;
+function StarBar({ value }: { value: number | string | null }) {
+  const num = value == null ? null : Number(value);
+  if (num == null || Number.isNaN(num) || num === 0) {
+    return <span className="font-mono text-[10px] text-ink-3">–</span>;
+  }
+  const pct = (num / 5) * 100;
   return (
     <div className="flex items-center gap-2">
       <div className="w-16 h-1.5 bg-line overflow-hidden">
         <div className="h-full bg-primary" style={{ width: `${pct}%` }} />
       </div>
-      <span className="font-mono text-[11px] text-ink tabular-nums">{value.toFixed(1)}</span>
+      <span className="font-mono text-[11px] text-ink tabular-nums">{num.toFixed(1)}</span>
     </div>
   );
 }
@@ -31,7 +34,7 @@ export default async function FeedbackAdminPage() {
 
   const totalResponses = stats.reduce((sum, s) => sum + s.count, 0);
   const avgGesamt = stats.length
-    ? (stats.reduce((sum, s) => sum + (s.avg_gesamt ?? 0), 0) / stats.length).toFixed(1)
+    ? (stats.reduce((sum, s) => sum + (Number(s.avg_gesamt) || 0), 0) / stats.length).toFixed(1)
     : "–";
 
   return (

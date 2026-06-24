@@ -376,15 +376,18 @@ export async function upsertAssessment(
 }
 
 export async function getFeedbackStats(): Promise<FeedbackStats[]> {
+  // Wichtig: numeric/ROUND kommt über @neondatabase/serverless sonst als String
+  // zurück (Präzisionsschutz). Cast auf float8 → echte JS-Zahl (sonst bricht
+  // z. B. value.toFixed(1) im Admin-Frontend mit einer Server-Exception).
   const rows = await sql`
     SELECT
       module_id,
       COUNT(*)::int AS count,
-      ROUND(AVG(rating_inhalt)::numeric, 1) AS avg_inhalt,
-      ROUND(AVG(rating_tempo)::numeric, 1) AS avg_tempo,
-      ROUND(AVG(rating_praxis)::numeric, 1) AS avg_praxis,
-      ROUND(AVG(rating_material)::numeric, 1) AS avg_material,
-      ROUND(AVG(rating_gesamt)::numeric, 1) AS avg_gesamt
+      ROUND(AVG(rating_inhalt)::numeric, 1)::float8 AS avg_inhalt,
+      ROUND(AVG(rating_tempo)::numeric, 1)::float8 AS avg_tempo,
+      ROUND(AVG(rating_praxis)::numeric, 1)::float8 AS avg_praxis,
+      ROUND(AVG(rating_material)::numeric, 1)::float8 AS avg_material,
+      ROUND(AVG(rating_gesamt)::numeric, 1)::float8 AS avg_gesamt
     FROM feedback
     GROUP BY module_id
     ORDER BY module_id
