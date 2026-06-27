@@ -25,11 +25,18 @@ export function ModuleCard({ module }: { module: Module }) {
       href={`/module/${module.id}`}
       className="group flex flex-col p-6 border-b border-r border-line min-h-[200px] transition hover:bg-bg-2 relative overflow-hidden"
     >
-      <div className="flex items-center justify-between mb-4">
-        <span className="font-mono text-[10px] uppercase tracking-[0.08em] text-primary">
-          § {roman} · {module.id}
+      <div className="flex items-center justify-between gap-2 mb-4">
+        <span className="flex items-center gap-2 min-w-0">
+          <span className="font-mono text-[10px] uppercase tracking-[0.08em] text-primary whitespace-nowrap">
+            § {roman} · {module.id}
+          </span>
+          {module.premium && (
+            <span className="font-mono text-[9px] uppercase tracking-[0.08em] bg-accent text-accent-ink px-1.5 py-0.5 leading-none whitespace-nowrap">
+              Premium
+            </span>
+          )}
         </span>
-        <span className="font-mono text-[10px] uppercase tracking-[0.06em] text-ink-3">
+        <span className="font-mono text-[10px] uppercase tracking-[0.06em] text-ink-3 whitespace-nowrap">
           {module.stufe === "Sparringspartner" ? "Sparring" : module.stufe}
         </span>
       </div>

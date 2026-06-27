@@ -89,6 +89,7 @@ export interface Module {
   bloom: string;
   dauer: string;
   format: string;
+  premium: boolean;          // Premium-Modul (Stufe Strategischer Partner, eigene Hervorhebung)
   status: "freigegeben" | "draft" | "coming-soon";
   version: string;
   voraussetzungen: string[];
@@ -428,6 +429,7 @@ function parseModule(filename: string): Module {
     bloom: String(data.bloom ?? ""),
     dauer: String(data.dauer ?? ""),
     format: String(data.format ?? ""),
+    premium: Boolean(data.premium),
     status: normalizeStatus(data.status),
     version: String(data.version ?? ""),
     voraussetzungen: normalizeList(data.voraussetzungen),
