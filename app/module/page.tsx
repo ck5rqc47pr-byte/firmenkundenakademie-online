@@ -1,6 +1,7 @@
 import { Suspense } from "react";
 import { FilterBar } from "@/components/FilterBar";
 import { ModuleGrid } from "@/components/ModuleGrid";
+import { WelcomeBanner } from "@/components/WelcomeBanner";
 import { getAllModules, getKompetenzfelder, TRACKS } from "@/lib/modules";
 
 export default function ModulesPage() {
@@ -20,6 +21,9 @@ export default function ModulesPage() {
 
   return (
     <div>
+      {/* Willkommens-/Onboarding-Sicht „Warum dieser Campus?" (dismissbar) */}
+      <WelcomeBanner />
+
       {/* Heading block */}
       <section className="border-b border-ink px-6 lg:px-14 py-20 mx-auto max-w-content">
         <div className="font-mono text-[11px] uppercase tracking-[0.08em] text-ink-3 mb-6">
