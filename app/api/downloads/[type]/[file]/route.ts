@@ -11,6 +11,8 @@ const ACCESS: Record<string, string[]> = {
   praesentation:        ["trainer", "admin"],
   beobachtungsbogen:    ["teamleiter", "trainer", "admin"],
   "teamleiter-leitfaden": ["teamleiter", "trainer", "admin"],
+  // Generisches, modul-unabhängiges Teamleiter-Material (z. B. Kickoff-WHY-Leitfaden).
+  "teamleiter-material": ["teamleiter", "trainer", "admin"],
   // Workbooks: jede angemeldete Rolle; M01 liegt als öffentliches
   // Schaufenster-Exemplar weiterhin unter public/downloads/.
   teilnehmerunterlagen: ["teilnehmer", "teamleiter", "trainer", "admin"],
@@ -37,9 +39,14 @@ export async function GET(
     return NextResponse.json({ error: "Unbekannter Download-Typ" }, { status: 404 });
   }
 
-  // Dateiname streng validieren (verhindert Path-Traversal): nur MXX/VAXX.pdf/.pptx/.xlsx
-  // (Berater-Track M01–M24, Vertriebsassistenz-Track VA00–VA09)
-  const match = /^((?:M|VA)\d{2})\.(pdf|pptx|xlsx)$/.exec(file);
+  // Dateiname streng validieren (verhindert Path-Traversal).
+  // Modul-Downloads: nur MXX/VAXX.pdf/.pptx/.xlsx (Berater M01–M24, Assistenz VA00–VA11).
+  // Generisches Teamleiter-Material: sicherer Slug (Buchstaben/Ziffern/Bindestrich) + .pdf,
+  // keine Punkte/Schrägstriche im Basenamen → traversal-sicher.
+  const match =
+    type === "teamleiter-material"
+      ? /^([A-Za-z][A-Za-z0-9-]{1,60})\.(pdf)$/.exec(file)
+      : /^((?:M|VA)\d{2})\.(pdf|pptx|xlsx)$/.exec(file);
   if (!match) {
     return NextResponse.json({ error: "Ungültiger Dateiname" }, { status: 400 });
   }

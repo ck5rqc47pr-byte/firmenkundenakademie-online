@@ -69,6 +69,30 @@ export default async function CockpitPage() {
 
       <div className="max-w-[1200px] mx-auto px-4 sm:px-8 py-8 space-y-8">
 
+        {/* Kickoff-Leitfaden (Onboarding) */}
+        <section className="bg-white border border-line p-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+          <div>
+            <div className="font-mono text-[10px] uppercase tracking-[0.1em] text-ink-3 mb-1">
+              Bevor es losgeht
+            </div>
+            <h2 className="font-serif text-lg text-ink mb-1">
+              Kickoff-Leitfaden: Ihr Team mitnehmen
+            </h2>
+            <p className="text-sm text-ink-2 max-w-2xl leading-relaxed">
+              Wie Sie das Programm einführen – WHY-Ansprache in drei Schichten, Einwand-Spickzettel
+              und die typischen Stolpersteine. Damit aus „gebucht" auch „gewollt" wird.
+            </p>
+          </div>
+          <a
+            href="/api/downloads/teamleiter-material/Kickoff-WHY-Leitfaden.pdf"
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.08em] bg-primary text-white px-5 py-3 hover:bg-primary/90 transition shrink-0"
+          >
+            Leitfaden öffnen ↓
+          </a>
+        </section>
+
         {/* KPIs */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
           <div className="bg-white border border-line p-4">
