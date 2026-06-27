@@ -6,11 +6,14 @@ import { ModuleGrid } from "@/components/ModuleGrid";
 import { WelcomeBanner } from "@/components/WelcomeBanner";
 import { getAllModules, getKompetenzfelder, TRACKS } from "@/lib/modules";
 
+export const dynamic = "force-dynamic";
+
 export default async function ModulesPage() {
   const session = await getServerSession(authOptions);
   const role = (session?.user as { role?: string })?.role ?? "";
-  // Willkommens-/Onboarding-Sicht gezielt für Teilnehmer (nicht für Verwaltungsrollen).
-  const showWelcome = role === "teilnehmer";
+  // Willkommens-/Onboarding-Sicht für Teilnehmer. Fail-open: für Verwaltungsrollen
+  // ausblenden, sonst zeigen (auch wenn die Rolle unerwartet leer/anders ist).
+  const showWelcome = role !== "admin" && role !== "trainer" && role !== "teamleiter";
 
   const modules = getAllModules();
   const kompetenzfelder = getKompetenzfelder();

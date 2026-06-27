@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 
-const STORAGE_KEY = "fkb-welcome-dismissed-v1";
+const STORAGE_KEY = "fkb-welcome-dismissed-v2";
 
 /**
  * „Warum dieser Campus?" – kurze, TN-perspektivische Willkommens-/Onboarding-Sicht
