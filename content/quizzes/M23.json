@@ -1,0 +1,62 @@
+[
+  {
+    "id": "M23-Q1",
+    "question": "Über welche drei Schnittstellen sind GuV, Bilanz und Cashflow im integrierten Planungsmodell miteinander verknüpft?",
+    "options": [
+      "A) Umsatz → Bilanz, Steuern → GuV, Zinsen → Cashflow",
+      "B) Jahresergebnis → Eigenkapital (Bilanz), Investitionen/Finanzierung → Investitions-/Finanzierungs-Cashflow, Working-Capital-Veränderung → operativer Cashflow",
+      "C) Materialaufwand → Cashflow, AfA → Bilanz, Personalaufwand → GuV",
+      "D) Es gibt keine festen Schnittstellen – die drei Rechenwerke werden unabhängig voneinander geplant"
+    ],
+    "correctIndex": 1,
+    "explanation": "Die Integration entsteht über drei Brücken: Das Jahresergebnis fließt ins Eigenkapital der Bilanz, Investitions- und Finanzierungsvorgänge in den jeweiligen Cashflow, und die Working-Capital-Veränderung korrigiert den operativen Cashflow. Nur so bleibt das Modell konsistent und die Bilanz gleicht sich aus."
+  },
+  {
+    "id": "M23-Q2",
+    "question": "Ein Unternehmen weist einen freien Cashflow von 240 TEUR aus, der Zinsaufwand beträgt 100 TEUR und die Tilgung 120 TEUR. Wie hoch ist der DSCR – und wie ist er einzuordnen?",
+    "options": [
+      "A) 2,40 – komfortabel über dem Mindeststandard",
+      "B) 1,09 – unter dem üblichen Mindeststandard von 1,20, daher kritisch",
+      "C) 1,20 – genau am Mindeststandard",
+      "D) 0,92 – der Kapitaldienst ist nicht gedeckt"
+    ],
+    "correctIndex": 1,
+    "explanation": "DSCR = freier Cashflow / Kapitaldienst = 240 / (100 + 120) = 240 / 220 = 1,09. Das liegt unter dem üblichen Mindeststandard von 1,20 – der Kapitaldienst ist nicht mit ausreichendem Sicherheitspuffer aus dem Cashflow tragbar."
+  },
+  {
+    "id": "M23-Q3",
+    "question": "Warum werden beim agree-Mapping Zwischensummen (z. B. „Sachanlagen gesamt“) bewusst NICHT mit dem Modell verknüpft?",
+    "options": [
+      "A) Weil agree keine Zwischensummen exportiert",
+      "B) Weil das Modell die Einzelpositionen selbst neu summiert – eine zusätzlich verlinkte Zwischensumme würde zur Doppelzählung führen und die Bilanzsumme verfälschen",
+      "C) Weil sich Zwischensummen jedes Jahr ändern",
+      "D) Weil das Modell ausschließlich Passivpositionen übernimmt"
+    ],
+    "correctIndex": 1,
+    "explanation": "Verlinkt werden nur Einzelpositionen; das Modell summiert sie selbst neu. Würde zusätzlich die agree-Zwischensumme übernommen, wären die Einzelpositionen doppelt erfasst und die Bilanzsumme verfälscht."
+  },
+  {
+    "id": "M23-Q4",
+    "question": "Ein Unternehmen plant einen Investitionssprung und hat eine Eigenkapitalquote von nur 2 %, aber eine gute EBITDA-Marge. Warum ist diese Konstellation kritisch?",
+    "options": [
+      "A) Eine gute EBITDA-Marge gleicht jede Eigenkapitalschwäche zuverlässig aus",
+      "B) Es fehlt der Verlustpuffer: Jede Planabweichung schlägt sofort auf die Bonität durch, und zusätzliches Fremdkapital erhöht den Kapitaldienst überproportional",
+      "C) Die Eigenkapitalquote ist für Investitionsentscheidungen ohne Bedeutung",
+      "D) Eine niedrige Eigenkapitalquote senkt automatisch die Risikokosten der Bank"
+    ],
+    "correctIndex": 1,
+    "explanation": "Bei 2 % Eigenkapital fehlt jeder Verlustpuffer. Eine gute Marge schützt nicht vor Planabweichungen – diese treffen die dünne Eigenkapitaldecke sofort. Zusätzliches Fremdkapital für die Investition erhöht den Kapitaldienst, während der DSCR-Puffer schrumpft."
+  },
+  {
+    "id": "M23-Q5",
+    "question": "Welche Cashflow-Größe wird im DSCR als Zähler verwendet?",
+    "options": [
+      "A) Der operative Cashflow (Stufe 1)",
+      "B) Der freie Cashflow (Stufe 2: operativer Cashflow abzüglich Capex)",
+      "C) Der Cashflow nach Kapitaldienst (Stufe 3)",
+      "D) Das Jahresergebnis nach Steuern"
+    ],
+    "correctIndex": 1,
+    "explanation": "Der DSCR = freier Cashflow (Stufe 2 = operativer Cashflow − Capex) / (Zins + Tilgung). Er zeigt, ob die für den Kapitaldienst verfügbare Stufe 2 ausreicht, um Stufe 3 (Cashflow nach Kapitaldienst) positiv zu halten."
+  }
+]

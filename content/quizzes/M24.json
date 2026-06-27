@@ -1,0 +1,62 @@
+[
+  {
+    "id": "M24-Q1",
+    "question": "Welche drei Verfahrensfamilien der Unternehmensbewertung unterscheidet das Modul?",
+    "options": [
+      "A) Ertragswert (IDW S 1), DCF und Multiples",
+      "B) Substanzwert, Liquidationswert und Buchwert",
+      "C) Bilanzwert, Marktwert und Steuerwert",
+      "D) Anschaffungswert, Zeitwert und Wiederbeschaffungswert"
+    ],
+    "correctIndex": 0,
+    "explanation": "Die drei Verfahrensfamilien sind Ertragswert (IDW S 1, Standard im deutschen Mittelstand), DCF (international, größere Transaktionen) und Multiples (schnelle KMU-Markteinschätzung). Sie konvergieren nie exakt – die Leistung des Beraters ist nicht die eine Zahl, sondern die begründete Bandbreite."
+  },
+  {
+    "id": "M24-Q2",
+    "question": "Welche KMU-typische Korrektur senkt den übertragbaren Unternehmenswert und fließt in den Risikozuschlag des Kapitalisierungszinses ein?",
+    "options": [
+      "A) Der Ansatz eines kalkulatorischen Unternehmerlohns",
+      "B) Die separate Addition des nicht betriebsnotwendigen Vermögens",
+      "C) Die Personenabhängigkeit – der Erfolg hängt stark am Inhaber",
+      "D) Die Bereinigung einmaliger Sondereffekte in der GuV"
+    ],
+    "correctIndex": 2,
+    "explanation": "Die Personenabhängigkeit senkt den übertragbaren Wert und wird über einen höheren Risikozuschlag im Kapitalisierungszins abgebildet. Der kalkulatorische Unternehmerlohn (der den Ertrag sonst verzerrt) und das nicht betriebsnotwendige Vermögen (separat addiert) sind ebenfalls Korrekturen, wirken aber an anderer Stelle."
+  },
+  {
+    "id": "M24-Q3",
+    "question": "Bereinigtes EBIT 600 TEUR, Steuersatz 30 %, Kapitalisierungszins 10 %, nicht betriebsnotwendiges Vermögen 300 TEUR. Wie hoch ist der Ertragswert (gesamt)?",
+    "options": [
+      "A) 4.500 TEUR",
+      "B) 6.000 TEUR",
+      "C) 4.200 TEUR",
+      "D) 3.000 TEUR"
+    ],
+    "correctIndex": 0,
+    "explanation": "Netto-Überschuss = 600 × (1 − 0,30) = 420 TEUR. Ertragswert betriebsnotwendig = 420 / 0,10 = 4.200 TEUR. Plus nicht betriebsnotwendiges Vermögen (300) ergibt den Ertragswert gesamt = 4.500 TEUR."
+  },
+  {
+    "id": "M24-Q4",
+    "question": "Warum liefert ein Marktmultiple häufig einen niedrigeren Wert als der Ertragswert?",
+    "options": [
+      "A) Weil das Multiple die Steuern doppelt abzieht",
+      "B) Weil das Marktmultiple reale Personenabhängigkeit und Transaktionsabschläge einpreist, die der theoretische Ertragswert ausblendet",
+      "C) Weil Multiples das nicht betriebsnotwendige Vermögen grundsätzlich ignorieren",
+      "D) Weil der Ertragswert den Unternehmerlohn nie berücksichtigt"
+    ],
+    "correctIndex": 1,
+    "explanation": "Der Ertragswert unterstellt einen theoretischen, personenunabhängig fortgeführten Erfolg. Das Marktmultiple bildet dagegen den real gezahlten Preis ab – inklusive Abschlägen für Personenabhängigkeit und Transaktionsrisiken. Genau diese Differenz ist der Gesprächsanlass (geordnete Übergabe, Earn-out)."
+  },
+  {
+    "id": "M24-Q5",
+    "question": "Welche Rolle hat der Firmenkundenberater im Nachfolgeprozess – und welche nicht?",
+    "options": [
+      "A) Er erstellt das WP-Bewertungsgutachten selbst",
+      "B) Er ist Initiator, Übersetzer der Wertbandbreite und Verbundpartner-Vermittler – ersetzt aber nicht WP, Steuerberater oder M&A-Berater",
+      "C) Er führt die M&A-Transaktion eigenständig durch",
+      "D) Er übernimmt die steuerliche Gestaltung der Übergabe"
+    ],
+    "correctIndex": 1,
+    "explanation": "Der Berater ist Initiator (erkennt und spricht das Thema an), Übersetzer (erklärt die Wertbandbreite) und Verbundpartner-Vermittler (DZ Bank M&A, Steuerberater/WP, R+V flankierend). Bewertungsgutachten, Transaktionsführung und Steuergestaltung bleiben bei den jeweiligen Spezialisten."
+  }
+]
