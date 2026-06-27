@@ -31,7 +31,7 @@ export async function POST(req: NextRequest) {
 
   // E-Mail-Benachrichtigung (optional – benötigt RESEND_API_KEY in Vercel env)
   const resendKey = process.env.RESEND_API_KEY;
-  const notifyEmail = process.env.NOTIFY_EMAIL ?? "kreisel-sendung7x@icloud.com";
+  const notifyEmail = process.env.NOTIFY_EMAIL ?? "hello@fkb-campus.de";
   if (resendKey) {
     try {
       await fetch("https://api.resend.com/emails", {
