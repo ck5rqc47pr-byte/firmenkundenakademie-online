@@ -1,10 +1,17 @@
 import { Suspense } from "react";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/lib/auth";
 import { FilterBar } from "@/components/FilterBar";
 import { ModuleGrid } from "@/components/ModuleGrid";
 import { WelcomeBanner } from "@/components/WelcomeBanner";
 import { getAllModules, getKompetenzfelder, TRACKS } from "@/lib/modules";
 
-export default function ModulesPage() {
+export default async function ModulesPage() {
+  const session = await getServerSession(authOptions);
+  const role = (session?.user as { role?: string })?.role ?? "";
+  // Willkommens-/Onboarding-Sicht gezielt für Teilnehmer (nicht für Verwaltungsrollen).
+  const showWelcome = role === "teilnehmer";
+
   const modules = getAllModules();
   const kompetenzfelder = getKompetenzfelder();
 
@@ -21,8 +28,8 @@ export default function ModulesPage() {
 
   return (
     <div>
-      {/* Willkommens-/Onboarding-Sicht „Warum dieser Campus?" (dismissbar) */}
-      <WelcomeBanner />
+      {/* Willkommens-/Onboarding-Sicht „Warum dieser Campus?" (nur Teilnehmer, dismissbar) */}
+      {showWelcome && <WelcomeBanner />}
 
       {/* Heading block */}
       <section className="border-b border-ink px-6 lg:px-14 py-20 mx-auto max-w-content">

@@ -7,7 +7,9 @@ import { useState, Suspense } from "react";
 function LoginForm() {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const callbackUrl = searchParams.get("callbackUrl") ?? "/";
+  // Eingeloggte landen standardmäßig auf der Campus-Übersicht (dort u. a. die
+  // Teilnehmer-Willkommens-Sicht), nicht auf der öffentlichen Startseite.
+  const callbackUrl = searchParams.get("callbackUrl") ?? "/module";
 
   const [login, setLogin] = useState("");
   const [password, setPassword] = useState("");
