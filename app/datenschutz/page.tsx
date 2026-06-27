@@ -115,9 +115,9 @@ export default function DatenschutzPage() {
             <p>
               <strong className="text-ink">Sichtbarkeit:</strong> Diese Lerndaten sind innerhalb der
               Plattform für die Rollen Teamleiter, Trainer und Admin einsehbar (Cockpit-/Auswertungs-Ansichten),
-              um den Lernfortschritt zu begleiten. Eine Einschränkung, sodass ein Teamleiter bzw.
-              Trainer ausschließlich die Teilnehmer seiner eigenen Bank/Gruppe sieht
-              (Mandantentrennung), wird derzeit umgesetzt.
+              um den Lernfortschritt zu begleiten. Dabei gilt eine Mandantentrennung: Teamleiter und
+              Trainer sehen ausschließlich die Teilnehmerinnen und Teilnehmer ihrer eigenen
+              Bank/Gruppe. Nur die Rolle Admin hat einen bank-/gruppenübergreifenden Zugriff.
             </p>
             <p>
               Rechtsgrundlage: <PH>Art. 6 Abs. 1 lit. b / lit. f DSGVO – prüfen</PH>.

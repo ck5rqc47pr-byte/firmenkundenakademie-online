@@ -11,11 +11,12 @@ export async function actionCreateUser(formData: FormData) {
   const login = (formData.get("login") as string).trim().toLowerCase();
   const password = (formData.get("password") as string);
   const role = formData.get("role") as UserRole;
+  const bank = ((formData.get("bank") as string) ?? "").trim() || null;
 
   if (!name || !login || !password || !role) throw new Error("Alle Felder erforderlich");
 
   const passwordHash = await bcrypt.hash(password, 10);
-  await createUser(name, login, passwordHash, role);
+  await createUser(name, login, passwordHash, role, bank);
   revalidatePath("/admin/users");
 }
 
@@ -24,6 +25,14 @@ export async function actionUpdateRole(formData: FormData) {
   const id = formData.get("id") as string;
   const role = formData.get("role") as UserRole;
   await updateUser(id, { role });
+  revalidatePath("/admin/users");
+}
+
+export async function actionUpdateBank(formData: FormData) {
+  await requireAdmin();
+  const id = formData.get("id") as string;
+  const bank = ((formData.get("bank") as string) ?? "").trim() || null;
+  await updateUser(id, { bank });
   revalidatePath("/admin/users");
 }
 

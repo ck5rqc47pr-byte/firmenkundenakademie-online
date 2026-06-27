@@ -2,8 +2,8 @@ import { redirect } from "next/navigation";
 import { getServerSession } from "next-auth";
 import Link from "next/link";
 import { authOptions } from "@/lib/auth";
-import { getAllUsers, type UserRole } from "@/lib/db";
-import { actionCreateUser, actionUpdateRole, actionResetPassword } from "./actions";
+import { getAllUsers, getDistinctBanks, ensureUsersBankColumn, type UserRole } from "@/lib/db";
+import { actionCreateUser, actionUpdateRole, actionResetPassword, actionUpdateBank } from "./actions";
 import { DeleteUserButton } from "./DeleteUserButton";
 
 export const dynamic = "force-dynamic";
@@ -27,7 +27,8 @@ export default async function UsersPage() {
   const role = (session?.user as { role?: string })?.role ?? "";
   if (!session || role !== "admin") redirect("/login?callbackUrl=/admin/users");
 
-  const users = await getAllUsers();
+  await ensureUsersBankColumn();
+  const [users, banks] = await Promise.all([getAllUsers(), getDistinctBanks()]);
 
   return (
     <div className="min-h-screen bg-bg-2">
@@ -60,17 +61,22 @@ export default async function UsersPage() {
           <h2 className="font-mono text-[11px] uppercase tracking-[0.12em] text-ink-2 font-semibold mb-4">
             Aktive Nutzer ({users.length})
           </h2>
+          <datalist id="bank-options">
+            {banks.map((b) => (
+              <option key={b} value={b} />
+            ))}
+          </datalist>
           <div className="bg-white border border-line overflow-hidden">
             <div className="overflow-x-auto">
-              <div className="grid grid-cols-[minmax(120px,1fr)_120px_90px_150px_150px] min-w-[640px] bg-primary text-white font-mono text-[10px] uppercase tracking-[0.08em]">
-                {["Name / Login", "Rolle", "Erstellt", "Rolle ändern", "Aktionen"].map((h) => (
+              <div className="grid grid-cols-[minmax(120px,1fr)_110px_150px_84px_140px_140px] min-w-[780px] bg-primary text-white font-mono text-[10px] uppercase tracking-[0.08em]">
+                {["Name / Login", "Rolle", "Bank / Gruppe", "Erstellt", "Rolle ändern", "Aktionen"].map((h) => (
                   <div key={h} className="px-4 py-3">{h}</div>
                 ))}
               </div>
               {users.map((u, i) => (
                 <div
                   key={u.id}
-                  className={`grid grid-cols-[minmax(120px,1fr)_120px_90px_150px_150px] min-w-[640px] border-t border-line items-center ${i % 2 === 0 ? "bg-white" : "bg-bg-2"}`}
+                  className={`grid grid-cols-[minmax(120px,1fr)_110px_150px_84px_140px_140px] min-w-[780px] border-t border-line items-center ${i % 2 === 0 ? "bg-white" : "bg-bg-2"}`}
                 >
                   <div className="px-4 py-3">
                     <div className="text-sm font-medium text-ink">{u.name}</div>
@@ -80,6 +86,25 @@ export default async function UsersPage() {
                     <span className={`font-mono text-[10px] uppercase tracking-[0.05em] px-2 py-0.5 border ${ROLE_COLORS[u.role]}`}>
                       {ROLE_LABELS[u.role]}
                     </span>
+                  </div>
+                  <div className="px-4 py-3">
+                    <form action={actionUpdateBank} className="flex gap-1.5">
+                      <input type="hidden" name="id" value={u.id} />
+                      <input
+                        type="text"
+                        name="bank"
+                        list="bank-options"
+                        defaultValue={u.bank ?? ""}
+                        placeholder="—"
+                        className="font-mono text-[10px] border border-line px-2 py-1 bg-white text-ink flex-1 min-w-0 w-full"
+                      />
+                      <button
+                        type="submit"
+                        className="font-mono text-[10px] uppercase tracking-[0.06em] px-2 py-1 bg-primary text-white hover:opacity-80 transition shrink-0"
+                      >
+                        OK
+                      </button>
+                    </form>
                   </div>
                   <div className="px-4 py-3">
                     <span className="font-mono text-[10px] text-ink-3">
@@ -167,6 +192,15 @@ export default async function UsersPage() {
                   <option value="trainer">Trainer</option>
                   <option value="admin">Admin</option>
                 </select>
+              </div>
+              <div className="flex flex-col gap-1.5 sm:col-span-2">
+                <label className="font-mono text-[10px] uppercase tracking-[0.08em] text-ink-3">
+                  Bank / Gruppe <span className="normal-case tracking-normal text-ink-3">(Mandantentrennung – Teamleiter/Trainer sehen nur ihre eigene)</span>
+                </label>
+                <input
+                  type="text" name="bank" list="bank-options" placeholder="z. B. VR-Bank Musterregion eG"
+                  className="border border-line px-3 py-2 text-sm bg-white text-ink focus:outline-none focus:border-primary font-mono"
+                />
               </div>
               <div className="sm:col-span-2">
                 <button type="submit" className="font-mono text-[11px] uppercase tracking-[0.08em] px-6 py-3 bg-primary text-white hover:opacity-90 transition">

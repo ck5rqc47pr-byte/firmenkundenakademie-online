@@ -11,12 +11,22 @@ export interface DbUser {
   login: string;
   password_hash: string;
   role: UserRole;
+  bank: string | null;
   created_at: string;
 }
 
+// Mandantentrennung: idempotent eine bank-Spalte (Tenant-/Gruppen-Label)
+// sicherstellen. Wie ensureSuggestionsTable einmal pro relevanter Seite aufrufen.
+export async function ensureUsersBankColumn(): Promise<void> {
+  await sql`ALTER TABLE users ADD COLUMN IF NOT EXISTS bank text`;
+}
+
 export async function findUserByLogin(login: string): Promise<DbUser | null> {
+  // Selbstheilende Migration: stellt sicher, dass die bank-Spalte existiert,
+  // bevor sie selektiert wird (idempotent, kein Migrations-Framework vorhanden).
+  await ensureUsersBankColumn();
   const rows = await sql`
-    SELECT id, name, login, password_hash, role, created_at
+    SELECT id, name, login, password_hash, role, bank, created_at
     FROM users
     WHERE login = ${login}
     LIMIT 1
@@ -26,30 +36,41 @@ export async function findUserByLogin(login: string): Promise<DbUser | null> {
 
 export async function getAllUsers(): Promise<DbUser[]> {
   const rows = await sql`
-    SELECT id, name, login, role, created_at
+    SELECT id, name, login, role, bank, created_at
     FROM users
     ORDER BY created_at ASC
   `;
   return rows as DbUser[];
 }
 
+/** Distinkte, gesetzte Bank-/Gruppen-Labels – für Autovervollständigung im Admin. */
+export async function getDistinctBanks(): Promise<string[]> {
+  const rows = await sql`
+    SELECT DISTINCT bank FROM users
+    WHERE bank IS NOT NULL AND bank <> ''
+    ORDER BY bank
+  `;
+  return (rows as { bank: string }[]).map((r) => r.bank);
+}
+
 export async function createUser(
   name: string,
   login: string,
   passwordHash: string,
-  role: UserRole
+  role: UserRole,
+  bank: string | null = null
 ): Promise<DbUser> {
   const rows = await sql`
-    INSERT INTO users (name, login, password_hash, role)
-    VALUES (${name}, ${login}, ${passwordHash}, ${role})
-    RETURNING id, name, login, role, created_at
+    INSERT INTO users (name, login, password_hash, role, bank)
+    VALUES (${name}, ${login}, ${passwordHash}, ${role}, ${bank})
+    RETURNING id, name, login, role, bank, created_at
   `;
   return rows[0] as DbUser;
 }
 
 export async function updateUser(
   id: string,
-  fields: { name?: string; role?: UserRole; passwordHash?: string }
+  fields: { name?: string; role?: UserRole; passwordHash?: string; bank?: string | null }
 ): Promise<void> {
   if (fields.name !== undefined) {
     await sql`UPDATE users SET name = ${fields.name} WHERE id = ${id}`;
@@ -59,6 +80,9 @@ export async function updateUser(
   }
   if (fields.passwordHash !== undefined) {
     await sql`UPDATE users SET password_hash = ${fields.passwordHash} WHERE id = ${id}`;
+  }
+  if (fields.bank !== undefined) {
+    await sql`UPDATE users SET bank = ${fields.bank} WHERE id = ${id}`;
   }
 }
 
@@ -187,23 +211,27 @@ export interface QuizStats {
   pass_rate: number | null;
 }
 
-export async function getQuizStats(): Promise<QuizStats[]> {
+export async function getQuizStats(bank: string | null = null): Promise<QuizStats[]> {
   const rows = await sql`
     SELECT
-      module_id,
+      qr.module_id,
       COUNT(*)::int AS count,
-      ROUND(AVG(score)::numeric, 1) AS avg_score,
-      ROUND(100.0 * SUM(CASE WHEN score >= 60 THEN 1 ELSE 0 END) / COUNT(*), 0) AS pass_rate
-    FROM quiz_results
-    GROUP BY module_id
-    ORDER BY module_id
+      ROUND(AVG(qr.score)::numeric, 1) AS avg_score,
+      ROUND(100.0 * SUM(CASE WHEN qr.score >= 60 THEN 1 ELSE 0 END) / COUNT(*), 0) AS pass_rate
+    FROM quiz_results qr
+    JOIN users u ON u.id = qr.user_id
+    WHERE (${bank}::text IS NULL OR u.bank = ${bank})
+    GROUP BY qr.module_id
+    ORDER BY qr.module_id
   `;
   return rows as QuizStats[];
 }
 
 // ── Team-Cockpit (Teamleiter-Sicht, Kirkpatrick L2/L3) ─────────────────────
-// Option 1 (ein Team): Die Rolle teamleiter sieht alle Teilnehmer.
-// Eine spätere Team-Zuordnung (teamleiter_id am Nutzer) wäre hier nur ein Filter.
+// Mandantentrennung: alle Cockpit-Queries akzeptieren einen optionalen
+// bank-Filter. bank = null bedeutet "kein Filter" (nur für Admin gedacht);
+// für teamleiter/trainer reicht das Cockpit immer ein konkretes Label durch,
+// sodass NULL-Banken (nicht zugeordnete Teilnehmer) nie mit ausgegeben werden.
 
 export interface TeamMemberProgress {
   user_id: string;
@@ -212,7 +240,7 @@ export interface TeamMemberProgress {
   last_activity: string | null;
 }
 
-export async function getTeamProgress(): Promise<TeamMemberProgress[]> {
+export async function getTeamProgress(bank: string | null = null): Promise<TeamMemberProgress[]> {
   const rows = await sql`
     SELECT u.id AS user_id, u.name AS user_name,
            COUNT(p.module_id)::int AS completed_count,
@@ -220,6 +248,7 @@ export async function getTeamProgress(): Promise<TeamMemberProgress[]> {
     FROM users u
     LEFT JOIN progress p ON p.user_id = u.id
     WHERE u.role = 'teilnehmer'
+      AND (${bank}::text IS NULL OR u.bank = ${bank})
     GROUP BY u.id, u.name
     ORDER BY u.name
   `;
@@ -232,16 +261,19 @@ export interface TeamQuizAvg {
   avg_best_score: number | null;
 }
 
-export async function getTeamQuizAverages(): Promise<TeamQuizAvg[]> {
+export async function getTeamQuizAverages(bank: string | null = null): Promise<TeamQuizAvg[]> {
   // Bester Versuch je Modul, davon der Durchschnitt je Nutzer
   const rows = await sql`
     SELECT user_id,
            COUNT(*)::int AS quiz_count,
            ROUND(AVG(best_score)::numeric, 0) AS avg_best_score
     FROM (
-      SELECT user_id, module_id, MAX(score) AS best_score
-      FROM quiz_results
-      GROUP BY user_id, module_id
+      SELECT qr.user_id, qr.module_id, MAX(qr.score) AS best_score
+      FROM quiz_results qr
+      JOIN users u ON u.id = qr.user_id
+      WHERE u.role = 'teilnehmer'
+        AND (${bank}::text IS NULL OR u.bank = ${bank})
+      GROUP BY qr.user_id, qr.module_id
     ) best
     GROUP BY user_id
   `;
@@ -253,11 +285,12 @@ export interface ModuleCompletionStat {
   completed_count: number;
 }
 
-export async function getModuleCompletionStats(): Promise<ModuleCompletionStat[]> {
+export async function getModuleCompletionStats(bank: string | null = null): Promise<ModuleCompletionStat[]> {
   const rows = await sql`
     SELECT p.module_id, COUNT(DISTINCT p.user_id)::int AS completed_count
     FROM progress p
     JOIN users u ON u.id = p.user_id AND u.role = 'teilnehmer'
+    WHERE (${bank}::text IS NULL OR u.bank = ${bank})
     GROUP BY p.module_id
     ORDER BY p.module_id
   `;

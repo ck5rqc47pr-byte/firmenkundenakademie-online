@@ -8,6 +8,7 @@ import {
   getTeamQuizAverages,
   getModuleCompletionStats,
   getQuizStats,
+  ensureUsersBankColumn,
 } from "@/lib/db";
 
 export const dynamic = "force-dynamic";
@@ -27,17 +28,28 @@ export default async function CockpitPage() {
     redirect("/login?callbackUrl=/cockpit");
   }
 
+  // Mandantentrennung: Admin sieht alle Banken (Filter null). Teamleiter/Trainer
+  // sehen ausschließlich ihre eigene Bank/Gruppe. Fehlt die Zuordnung, wird
+  // fail-closed nichts geladen (statt aller Teilnehmer).
+  const sessionBank = (session.user as { bank?: string | null })?.bank ?? null;
+  const isAdmin = role === "admin";
+  const bankFilter: string | null = isAdmin ? null : sessionBank;
+  const bankMissing = !isAdmin && !sessionBank;
+
   const alleModule = getAllModules();
   const moduleCount = alleModule.length;
   const stufen: Record<string, number> = {};
   for (const m of alleModule) stufen[m.stufe] = (stufen[m.stufe] ?? 0) + 1;
 
-  const [team, quizAvgs, completions, quizStats] = await Promise.all([
-    getTeamProgress(),
-    getTeamQuizAverages(),
-    getModuleCompletionStats(),
-    getQuizStats(),
-  ]);
+  await ensureUsersBankColumn();
+  const [team, quizAvgs, completions, quizStats] = bankMissing
+    ? [[], [], [], []]
+    : await Promise.all([
+        getTeamProgress(bankFilter),
+        getTeamQuizAverages(bankFilter),
+        getModuleCompletionStats(bankFilter),
+        getQuizStats(bankFilter),
+      ]);
   const quizByUser = new Map(quizAvgs.map((q) => [q.user_id, q]));
   const completionByModule = new Map(completions.map((c) => [c.module_id, c.completed_count]));
   const quizByModule = new Map(quizStats.map((q) => [q.module_id, q]));
@@ -60,6 +72,13 @@ export default async function CockpitPage() {
             <h1 className="font-serif text-2xl font-normal text-white tracking-[-0.02em]">
               Lernfortschritt im Team
             </h1>
+            <div className="font-mono text-[10px] uppercase tracking-[0.1em] text-white/60 mt-1.5">
+              {isAdmin
+                ? "Sicht: alle Banken / Gruppen"
+                : sessionBank
+                  ? `Sicht: ${sessionBank}`
+                  : "Sicht: keine Bank zugeordnet"}
+            </div>
           </div>
           <Link href="/module" className="font-mono text-[10px] uppercase tracking-[0.08em] text-white/60 hover:text-white transition-colors">
             Alle Module →
@@ -68,6 +87,14 @@ export default async function CockpitPage() {
       </div>
 
       <div className="max-w-[1200px] mx-auto px-4 sm:px-8 py-8 space-y-8">
+
+        {bankMissing && (
+          <div className="border border-amber-300 bg-amber-50 p-4 text-sm text-amber-900 leading-relaxed">
+            <strong>Noch keine Bank/Gruppe zugeordnet.</strong> Ihrem Konto ist bislang keine
+            Bank bzw. Gruppe zugewiesen – daher werden hier vorsorglich keine Teilnehmerdaten
+            angezeigt. Bitte wenden Sie sich an die Administration, um Ihre Zuordnung einzutragen.
+          </div>
+        )}
 
         {/* Kickoff-Leitfaden (Onboarding) */}
         <section className="bg-white border border-line p-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">

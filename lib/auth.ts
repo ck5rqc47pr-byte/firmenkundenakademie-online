@@ -20,7 +20,7 @@ export const authOptions: AuthOptions = {
         const valid = await bcrypt.compare(credentials.password, user.password_hash);
         if (!valid) return null;
 
-        return { id: user.id, name: user.name, email: user.login, role: user.role };
+        return { id: user.id, name: user.name, email: user.login, role: user.role, bank: user.bank };
       },
     }),
   ],
@@ -30,6 +30,7 @@ export const authOptions: AuthOptions = {
       if (user) {
         token.role = (user as { role?: UserRole }).role;
         token.uid = user.id;
+        token.bank = (user as { bank?: string | null }).bank ?? null;
       }
       return token;
     },
@@ -37,6 +38,7 @@ export const authOptions: AuthOptions = {
       if (session.user) {
         (session.user as { role?: UserRole; id?: string }).role = token.role as UserRole;
         (session.user as { id?: string }).id = token.uid as string;
+        (session.user as { bank?: string | null }).bank = (token.bank as string | null) ?? null;
       }
       return session;
     },
