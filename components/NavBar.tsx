@@ -10,6 +10,7 @@ import { useSession, signOut } from "next-auth/react";
 const NAV_PUBLIC = [
   { href: "/module",          label: "Campus" },
   { href: "/kompetenzmodell", label: "Kompetenzmodell" },
+  { href: "/prinzipien",      label: "Prinzipien" },
   { href: "/leitbild",        label: "Leitbild" },
 ];
 
