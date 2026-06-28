@@ -10,13 +10,13 @@ import { useSession, signOut } from "next-auth/react";
 const NAV_PUBLIC = [
   { href: "/module",          label: "Campus" },
   { href: "/kompetenzmodell", label: "Kompetenzmodell" },
-  { href: "/prinzipien",      label: "Prinzipien" },
   { href: "/leitbild",        label: "Leitbild" },
 ];
 
 // Nur für eingeloggte Nutzer (Mitte). Zertifikate liegt im Nutzer-Menü rechts.
 const NAV_AUTH = [
-  { href: "/kompass", label: "Kompass" },
+  { href: "/kompass",     label: "Kompass" },
+  { href: "/prinzipien",  label: "Prinzipien" },
 ];
 
 // Im Nutzer-Menü (rechts, am Namen) für eingeloggte Nutzer.

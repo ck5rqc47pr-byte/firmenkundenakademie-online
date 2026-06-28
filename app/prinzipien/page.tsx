@@ -1,5 +1,8 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { redirect } from "next/navigation";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/lib/auth";
 import { getModuleById } from "@/lib/modules";
 import {
   LEITPRINZIPIEN,
@@ -13,6 +16,9 @@ export const metadata: Metadata = {
   description:
     "Destillierte Handlungsprinzipien für den Beratungsalltag – die Brücke zwischen Modulwissen und dem nächsten Kundengespräch.",
 };
+
+// Geschützter Bereich: nur für angemeldete Nutzer.
+export const dynamic = "force-dynamic";
 
 function PrinzipItem({ nr, p }: { nr: string; p: Prinzip }) {
   const modul = p.moduleId ? getModuleById(p.moduleId) : null;
@@ -43,7 +49,10 @@ function PrinzipItem({ nr, p }: { nr: string; p: Prinzip }) {
   );
 }
 
-export default function PrinzipienPage() {
+export default async function PrinzipienPage() {
+  const session = await getServerSession(authOptions);
+  if (!session) redirect("/login?callbackUrl=/prinzipien");
+
   return (
     <div>
       {/* Header */}
