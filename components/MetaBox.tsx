@@ -140,7 +140,7 @@ export function MetaBox({ module, pdfUrl, trainerPdfUrl, beobachtungsbogenUrl, t
                 rel="noreferrer"
                 className="flex items-center justify-between gap-2 border border-line text-ink-2 px-4 py-3 font-mono text-[11px] uppercase tracking-[0.08em] hover:border-primary hover:text-primary transition"
               >
-                <span>Planungsmodell (XLSX)</span>
+                <span>Rechenmodell (XLSX)</span>
                 <span>↓</span>
               </a>
             )}
