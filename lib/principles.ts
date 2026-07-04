@@ -115,13 +115,143 @@ export const PRINZIP_GRUPPEN: PrinzipGruppe[] = [
       },
     ],
   },
+  {
+    slug: "branchenwissen",
+    titel: "Branchenwissen",
+    einleitung:
+      "Die Branche verstehen, bevor man über Zahlen und Finanzierung urteilt – jeder Sektor tickt anders.",
+    prinzipien: [
+      {
+        moduleId: "M06",
+        prinzip: "Beim Mittelständler sind Unternehmen und Unternehmer nicht zu trennen.",
+        warum:
+          "Eigentum, Leitung und Haftung liegen in einer Hand – wer den Menschen nicht versteht, versteht das Kreditrisiko nicht.",
+      },
+      {
+        moduleId: "M07",
+        prinzip: "Kenne die Spielregeln der Branche, bevor du über Finanzierung sprichst.",
+        warum:
+          "Freier Beruf ≠ Gewerbe, EÜR ≠ Bilanz, Praxiswert ≠ Substanzwert – branchenfremde Maßstäbe führen in die Irre.",
+      },
+      {
+        moduleId: "M08",
+        prinzip: "Der Beleihungswert ist kein Marktwert – verwechsle Sicherheit nicht mit Preis.",
+        warum:
+          "Nach BelWertV zählt der dauerhaft erzielbare Wert; wer den Marktpreis besichert, besichert die Übertreibung mit.",
+      },
+      {
+        moduleId: "M09",
+        prinzip: "Branchenkompetenz ist kein Wissen allein, sondern System plus Netzwerk.",
+        warum:
+          "Wer eine Branche mit Five Forces und PESTEL systematisch liest und vernetzt ist, wird vom Anbieter zum gefragten Gesprächspartner.",
+      },
+    ],
+  },
+  {
+    slug: "gespraechsfuehrung",
+    titel: "Gesprächsführung",
+    einleitung:
+      "Zuhören, die eigentliche Botschaft entschlüsseln und auf Augenhöhe fragen statt argumentieren.",
+    prinzipien: [
+      {
+        moduleId: "M10",
+        prinzip: "Hinter jeder Sachaussage steckt eine Botschaft – hör auf allen vier Ohren.",
+        warum:
+          "Der eigentliche Bedarf liegt selten in dem, was der Kunde sagt, sondern in dem, was er meint (Schulz von Thun).",
+      },
+      {
+        moduleId: "M11",
+        prinzip: "Der wichtigste Bedarf ist der, den der Kunde noch nicht ausgesprochen hat.",
+        warum:
+          "Explizite Wünsche bearbeitet jeder; latente Bedarfe mit SPIN-Fragen zu heben, unterscheidet den Berater vom Sachbearbeiter.",
+      },
+      {
+        moduleId: "M12",
+        prinzip: "Auf Augenhöhe fragt man – man argumentiert nicht.",
+        warum:
+          "Im CEO-Dialog öffnen zirkuläre Fragen und echte Neugier einen Raum, den kein Produktpitch je erreicht.",
+      },
+      {
+        moduleId: "M24",
+        prinzip: "Kommuniziere eine Bandbreite, keine Scheingenauigkeit.",
+        warum:
+          "Ein Unternehmenswert ist ein Urteil, kein Messwert – Ehrlichkeit über die Spanne schafft mehr Vertrauen als falsche Präzision.",
+      },
+    ],
+  },
+  {
+    slug: "vertrieb",
+    titel: "Vertrieb",
+    einleitung:
+      "Ertrag entsteht aus Bedarf und Fokus – nicht aus Volumen und Gießkanne.",
+    prinzipien: [
+      {
+        moduleId: "M13",
+        prinzip: "Cross-Selling beginnt beim Bedarf des Kunden, nicht bei der Produktliste der Bank.",
+        warum:
+          "Bedarfsorientiertes Cross-Selling (Pull) bindet und bringt Ertrag; Produkte drücken (Push) verbrennt Vertrauen.",
+      },
+      {
+        moduleId: "M14",
+        prinzip: "Nicht das Volumen zählt, sondern der Deckungsbeitrag.",
+        warum:
+          "Ein großer Kredit zu dünner Marge ist ein Verlustgeschäft – wer nur den Zinssatz kennt, verhandelt blind.",
+      },
+      {
+        moduleId: "M15",
+        prinzip: "Wer jeden Kunden gleich bedient, verzettelt seinen Markt.",
+        warum:
+          "Ein priorisiertes Zielsegment mit klarem Wertversprechen schlägt die Gießkanne – Fokus ist die Strategie.",
+      },
+      {
+        moduleId: "M16",
+        prinzip: "Steuere den Bestand über die eine Kennzahl, die alles bündelt: die Nettomarge.",
+        warum:
+          "Die NMZ zeigt, wo Ertrag verloren geht – die drei Kunden mit dem größten Hebel schlagen zwanzig Aktionen ohne Fokus.",
+      },
+    ],
+  },
+  {
+    slug: "digital",
+    titel: "Digital",
+    einleitung:
+      "Werkzeuge und Daten sollen Zeit fürs Gespräch schaffen – nicht es ersetzen.",
+    prinzipien: [
+      {
+        moduleId: "M17",
+        prinzip: "Das System soll dir Zeit fürs Gespräch schenken, nicht sie nehmen.",
+        warum:
+          "Wer agree für Vorbereitung und Dokumentation beherrscht, gewinnt Minuten je Termin zurück – für den Kunden.",
+      },
+      {
+        moduleId: "M18",
+        prinzip: "Ein Datenpunkt öffnet die Tür – das Gespräch bleibt menschlich.",
+        warum:
+          "Trigger aus agree machen aus dem Kaltanruf einen Anlass; die Beziehung entsteht trotzdem am Telefon, nicht in der Software.",
+      },
+    ],
+  },
+  {
+    slug: "fuehrung",
+    titel: "Führung",
+    einleitung:
+      "Wissen teilen und Beziehungen bauen, bevor man sie braucht.",
+    prinzipien: [
+      {
+        moduleId: "M19",
+        prinzip: "Wissen, das nur in einem Kopf liegt, ist ein Risiko – kein Vorsprung.",
+        warum:
+          "Erst geteiltes Wissen macht das Team stärker als die Summe seiner Berater; Transfer ist Führungsaufgabe.",
+      },
+      {
+        moduleId: "M20",
+        prinzip: "Beziehungen baut man, bevor man sie braucht.",
+        warum:
+          "Ein Netzwerk aus Brücken (nicht nur Kontakten) und gezielte Sichtbarkeit bringen Anfragen, bevor der Wettbewerb sie sieht.",
+      },
+    ],
+  },
 ];
 
-// Kompetenzfelder, die noch folgen (für die Vorschau auf der Seite).
-export const PRINZIP_GRUPPEN_GEPLANT = [
-  "Branchenwissen",
-  "Gesprächsführung",
-  "Vertrieb",
-  "Digital",
-  "Führung",
-];
+// Alle Kompetenzfelder sind ausgerollt – keine offenen mehr.
+export const PRINZIP_GRUPPEN_GEPLANT: string[] = [];

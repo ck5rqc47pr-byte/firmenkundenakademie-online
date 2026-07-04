@@ -120,23 +120,25 @@ export default async function PrinzipienPage() {
           </section>
         ))}
 
-        {/* Ausblick */}
-        <section className="border-t border-line pt-10">
-          <h2 className="font-serif text-xl font-normal text-ink mb-3">In Vorbereitung</h2>
-          <p className="text-sm text-ink-2 leading-relaxed max-w-2xl mb-4">
-            Prinzipien für die übrigen Kompetenzfelder werden derzeit aus den Modulen destilliert:
-          </p>
-          <div className="flex flex-wrap gap-2">
-            {PRINZIP_GRUPPEN_GEPLANT.map((f) => (
-              <span
-                key={f}
-                className="font-mono text-[10px] uppercase tracking-[0.08em] text-ink-3 border border-line bg-bg-2 px-2.5 py-1"
-              >
-                {f}
-              </span>
-            ))}
-          </div>
-        </section>
+        {/* Ausblick – nur solange noch Felder offen sind */}
+        {PRINZIP_GRUPPEN_GEPLANT.length > 0 && (
+          <section className="border-t border-line pt-10">
+            <h2 className="font-serif text-xl font-normal text-ink mb-3">In Vorbereitung</h2>
+            <p className="text-sm text-ink-2 leading-relaxed max-w-2xl mb-4">
+              Prinzipien für die übrigen Kompetenzfelder werden derzeit aus den Modulen destilliert:
+            </p>
+            <div className="flex flex-wrap gap-2">
+              {PRINZIP_GRUPPEN_GEPLANT.map((f) => (
+                <span
+                  key={f}
+                  className="font-mono text-[10px] uppercase tracking-[0.08em] text-ink-3 border border-line bg-bg-2 px-2.5 py-1"
+                >
+                  {f}
+                </span>
+              ))}
+            </div>
+          </section>
+        )}
       </div>
     </div>
   );
