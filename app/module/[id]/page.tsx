@@ -82,6 +82,7 @@ export default async function ModuleDetailPage({ params }: { params: { id: strin
             <nav className="lg:hidden flex flex-wrap gap-3 pt-2">
               {[
                 ["#ueberblick", "Überblick"],
+                ...(module.prinzipien.length > 0 ? [["#prinzipien", "Prinzipien"]] : []),
                 ...(module.ablauf.length > 0 ? [["#ablauf", "Ablauf"]] : []),
                 ["#workbook", "Workbook"],
                 ["#transfer", "Nach dem Workshop"],
@@ -116,6 +117,30 @@ export default async function ModuleDetailPage({ params }: { params: { id: strin
                 />
               )}
             </div>
+
+            {/* Prinzipien aus diesem Modul */}
+            {module.prinzipien.length > 0 && (
+              <div id="prinzipien" className="min-w-0 scroll-mt-28">
+                <div className="font-mono text-[10px] uppercase tracking-[0.1em] text-ink-3 flex items-center gap-2 mb-5">
+                  <span className="w-4 h-px bg-ink-3 inline-block" />
+                  Prinzipien aus diesem Modul
+                </div>
+                <div className="space-y-3">
+                  {module.prinzipien.map((p, i) => (
+                    <div key={i} className="border-l-2 border-accent bg-bg-2 px-5 py-4">
+                      <p className="font-serif text-lg text-ink leading-snug">{p.prinzip}</p>
+                      <p className="mt-1.5 text-sm text-ink-2 leading-relaxed">{p.warum}</p>
+                    </div>
+                  ))}
+                  <Link
+                    href="/prinzipien"
+                    className="inline-block font-mono text-[10px] uppercase tracking-[0.08em] text-ink-3 hover:text-accent-ink transition"
+                  >
+                    Alle Prinzipien →
+                  </Link>
+                </div>
+              </div>
+            )}
 
             {/* So läuft das Modul */}
             {module.ablauf.length > 0 && (

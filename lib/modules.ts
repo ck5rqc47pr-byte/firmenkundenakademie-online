@@ -100,6 +100,7 @@ export interface Module {
   sim_review: boolean;       // Workshop-Simulation + Verbesserungsvorschläge ins Modul eingearbeitet
   ergaenzung: boolean;       // Sec 2 + 3 + 6 fertig (Wissenschaft, Trainerhandbuch, Evaluation)
   lernziele: { text: string; bloom_stufe: 1 | 2 | 3 | 4 | 5 | 6 }[];
+  prinzipien: { prinzip: string; warum: string }[];   // Handlungsprinzipien (Phase 15)
   content: string;
   content_theorie: string;   // Sec 2 – Wissenschaftliche Einordnung (alle Rollen)
   content_trainer: string;   // Sec 3 + Sec 6 – nur Trainer / Admin
@@ -365,6 +366,16 @@ function normalizeLernziele(
   });
 }
 
+function normalizePrinzipien(value: unknown): Module["prinzipien"] {
+  if (!Array.isArray(value)) return [];
+  return value
+    .map((item) => {
+      const p = item as { prinzip?: unknown; warum?: unknown };
+      return { prinzip: String(p.prinzip ?? ""), warum: String(p.warum ?? "") };
+    })
+    .filter((p) => p.prinzip);
+}
+
 function getHighestBloomLevel(value: unknown): Module["lernziele"][number]["bloom_stufe"] {
   const matches = String(value ?? "").match(/[1-6]/g);
   const highest = matches ? Math.max(...matches.map(Number)) : 3;
@@ -440,6 +451,7 @@ function parseModule(filename: string): Module {
     sim_review: Boolean(data.sim_review),
     ergaenzung: Boolean(data.ergaenzung),
     lernziele: normalizeLernziele(data.lernziele, fallbackBloomLevel),
+    prinzipien: normalizePrinzipien(data.prinzipien),
     slug: String(data.id),
     content,
     content_theorie,

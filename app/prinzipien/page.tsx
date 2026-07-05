@@ -3,25 +3,37 @@ import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
-import { getModuleById } from "@/lib/modules";
-import {
-  LEITPRINZIPIEN,
-  PRINZIP_GRUPPEN,
-  PRINZIP_GRUPPEN_GEPLANT,
-  type Prinzip,
-} from "@/lib/principles";
+import { getModulesByZielrolle, TRACKS, type Zielrolle } from "@/lib/modules";
+import { LEITPRINZIPIEN, LEITPRINZIPIEN_ASSISTENZ, type Prinzip } from "@/lib/principles";
 
 export const metadata: Metadata = {
   title: "Prinzipien · FKB Campus",
   description:
-    "Destillierte Handlungsprinzipien für den Beratungsalltag – die Brücke zwischen Modulwissen und dem nächsten Kundengespräch.",
+    "Destillierte Handlungsprinzipien für den Alltag – die Brücke zwischen Modulwissen und dem nächsten Kundenkontakt.",
 };
 
 // Geschützter Bereich: nur für angemeldete Nutzer.
 export const dynamic = "force-dynamic";
 
-function PrinzipItem({ nr, p }: { nr: string; p: Prinzip }) {
-  const modul = p.moduleId ? getModuleById(p.moduleId) : null;
+type FeldItem = Prinzip & { moduleTitle?: string };
+type Feld = { slug: string; titel: string; prinzipien: FeldItem[] };
+
+// Modul-Prinzipien eines Tracks nach Kompetenzfeld (in Track-Reihenfolge) bündeln.
+function feldGruppen(zielrolle: Zielrolle): Feld[] {
+  const module = getModulesByZielrolle(zielrolle);
+  return TRACKS[zielrolle].felder
+    .map((feld) => {
+      const prinzipien = module
+        .filter((m) => m.kompetenzfeld_slug === feld.slug)
+        .flatMap((m) =>
+          m.prinzipien.map((p) => ({ ...p, moduleId: m.id, moduleTitle: m.title })),
+        );
+      return { slug: feld.slug, titel: feld.label, prinzipien };
+    })
+    .filter((g) => g.prinzipien.length > 0);
+}
+
+function PrinzipItem({ nr, p }: { nr: string; p: FeldItem }) {
   return (
     <div className="flex gap-5 sm:gap-7 border-t border-line py-7 first:border-t-0">
       <div className="font-serif text-2xl sm:text-3xl text-accent-ink/40 leading-none w-10 sm:w-14 shrink-0 tabular-nums">
@@ -31,16 +43,14 @@ function PrinzipItem({ nr, p }: { nr: string; p: Prinzip }) {
         <h3 className="font-serif text-xl sm:text-2xl font-normal leading-snug tracking-[-0.01em] text-ink">
           {p.prinzip}
         </h3>
-        <p className="mt-2 text-sm sm:text-[15px] text-ink-2 leading-relaxed max-w-2xl">
-          {p.warum}
-        </p>
-        {modul && (
+        <p className="mt-2 text-sm sm:text-[15px] text-ink-2 leading-relaxed max-w-2xl">{p.warum}</p>
+        {p.moduleId && (
           <Link
-            href={`/module/${modul.id}`}
+            href={`/module/${p.moduleId}`}
             className="inline-flex items-center gap-1.5 mt-3 font-mono text-[10px] uppercase tracking-[0.08em] text-ink-3 hover:text-accent-ink transition"
           >
-            <span className="bg-bg-2 border border-line px-1.5 py-0.5">{modul.id}</span>
-            {modul.title}
+            <span className="bg-bg-2 border border-line px-1.5 py-0.5">{p.moduleId}</span>
+            {p.moduleTitle}
             <span aria-hidden>→</span>
           </Link>
         )}
@@ -49,9 +59,66 @@ function PrinzipItem({ nr, p }: { nr: string; p: Prinzip }) {
   );
 }
 
+function TrackSection({
+  eyebrow,
+  titel,
+  leitsatz,
+  leitprinzipien,
+  gruppen,
+}: {
+  eyebrow: string;
+  titel: string;
+  leitsatz: string;
+  leitprinzipien: Prinzip[];
+  gruppen: Feld[];
+}) {
+  return (
+    <section className="space-y-14">
+      <div className="border-b border-ink pb-4">
+        <div className="font-mono text-[10px] uppercase tracking-[0.15em] text-accent-ink mb-2">
+          {eyebrow}
+        </div>
+        <h2 className="font-serif text-3xl lg:text-4xl font-normal tracking-[-0.02em] text-ink">
+          {titel}
+        </h2>
+        <p className="mt-3 max-w-2xl text-sm text-ink-2 leading-relaxed">{leitsatz}</p>
+      </div>
+
+      {/* Leitprinzipien */}
+      <div>
+        <h3 className="font-mono text-[11px] uppercase tracking-[0.12em] text-ink-3 mb-2">
+          Leitprinzipien
+        </h3>
+        <div>
+          {leitprinzipien.map((p, i) => (
+            <PrinzipItem key={i} nr={`${i + 1}`} p={p} />
+          ))}
+        </div>
+      </div>
+
+      {/* Felder */}
+      {gruppen.map((g) => (
+        <div key={g.slug}>
+          <h3 className="font-mono text-[11px] uppercase tracking-[0.12em] text-ink-3 mb-2">
+            {g.titel}
+          </h3>
+          <div>
+            {g.prinzipien.map((p, i) => (
+              <PrinzipItem key={i} nr={`${i + 1}`} p={p} />
+            ))}
+          </div>
+        </div>
+      ))}
+    </section>
+  );
+}
+
 export default async function PrinzipienPage() {
   const session = await getServerSession(authOptions);
   if (!session) redirect("/login?callbackUrl=/prinzipien");
+
+  const beraterGruppen = feldGruppen("berater");
+  const assistenzGruppen = feldGruppen("assistenz");
 
   return (
     <div>
@@ -62,83 +129,40 @@ export default async function PrinzipienPage() {
             Vom Wissen zum Handeln
           </div>
           <h1 className="font-serif text-4xl lg:text-5xl font-normal leading-tight tracking-[-0.03em] text-white">
-            Prinzipien für den Beratungsalltag
+            Prinzipien für den Arbeitsalltag
           </h1>
           <p className="mt-5 max-w-2xl text-white/70 leading-relaxed">
             Wissen wird erst wirksam, wenn es im Moment der Entscheidung abrufbar ist. Diese
-            Prinzipien destillieren die Module zu einprägsamen Leitsätzen – die Brücke zwischen
-            „im Workshop gelernt" und „Montag im Kundengespräch angewandt".
+            Prinzipien destillieren die Module zu einprägsamen Leitsätzen – je Rolle: als
+            Berater und im Innendienst der Vertriebsassistenz.
           </p>
         </div>
       </section>
 
-      <div className="mx-auto max-w-content px-6 lg:px-14 py-14 space-y-20">
+      <div className="mx-auto max-w-content px-6 lg:px-14 py-14 space-y-24">
         {/* Einordnung */}
         <p className="text-sm text-ink-3 leading-relaxed max-w-2xl border-l-2 border-accent pl-4">
           Inspiriert von der Idee, Erfahrung in klare Prinzipien zu fassen (u. a. Ray Dalio,
-          <em> Principles</em>, 2017). Jedes Prinzip ist aus den Lernzielen, Praxisfällen und
-          Handlungsempfehlungen eines Moduls abgeleitet und verlinkt zurück auf seine Quelle.
+          <em> Principles</em>, 2017). Jedes Feld-Prinzip ist aus den Lernzielen eines Moduls
+          abgeleitet und im Frontmatter des Moduls verankert – die Seite aggregiert sie nach
+          Track und Kompetenzfeld.
         </p>
 
-        {/* Leitprinzipien */}
-        <section>
-          <div className="flex items-baseline gap-4 mb-4">
-            <span className="font-mono text-[11px] uppercase tracking-[0.12em] text-accent-ink">
-              Teil I
-            </span>
-            <h2 className="font-serif text-2xl sm:text-3xl font-normal tracking-[-0.02em] text-ink">
-              Leitprinzipien
-            </h2>
-          </div>
-          <p className="text-sm text-ink-2 leading-relaxed max-w-2xl mb-6">
-            Die übergeordnete Haltung – sie gilt in jedem Gespräch, unabhängig vom Thema.
-          </p>
-          <div>
-            {LEITPRINZIPIEN.map((p, i) => (
-              <PrinzipItem key={i} nr={`${i + 1}`} p={p} />
-            ))}
-          </div>
-        </section>
+        <TrackSection
+          eyebrow="Track · Firmenkundenberater"
+          titel="Berater"
+          leitsatz="Vom Zahlenversteher zum Sparringspartner des Unternehmers."
+          leitprinzipien={LEITPRINZIPIEN}
+          gruppen={beraterGruppen}
+        />
 
-        {/* Feld-Gruppen */}
-        {PRINZIP_GRUPPEN.map((gruppe, gi) => (
-          <section key={gruppe.slug}>
-            <div className="flex items-baseline gap-4 mb-4">
-              <span className="font-mono text-[11px] uppercase tracking-[0.12em] text-accent-ink">
-                Teil {gi + 2}
-              </span>
-              <h2 className="font-serif text-2xl sm:text-3xl font-normal tracking-[-0.02em] text-ink">
-                {gruppe.titel}
-              </h2>
-            </div>
-            <p className="text-sm text-ink-2 leading-relaxed max-w-2xl mb-6">{gruppe.einleitung}</p>
-            <div>
-              {gruppe.prinzipien.map((p, i) => (
-                <PrinzipItem key={i} nr={`${gi + 2}.${i + 1}`} p={p} />
-              ))}
-            </div>
-          </section>
-        ))}
-
-        {/* Ausblick – nur solange noch Felder offen sind */}
-        {PRINZIP_GRUPPEN_GEPLANT.length > 0 && (
-          <section className="border-t border-line pt-10">
-            <h2 className="font-serif text-xl font-normal text-ink mb-3">In Vorbereitung</h2>
-            <p className="text-sm text-ink-2 leading-relaxed max-w-2xl mb-4">
-              Prinzipien für die übrigen Kompetenzfelder werden derzeit aus den Modulen destilliert:
-            </p>
-            <div className="flex flex-wrap gap-2">
-              {PRINZIP_GRUPPEN_GEPLANT.map((f) => (
-                <span
-                  key={f}
-                  className="font-mono text-[10px] uppercase tracking-[0.08em] text-ink-3 border border-line bg-bg-2 px-2.5 py-1"
-                >
-                  {f}
-                </span>
-              ))}
-            </div>
-          </section>
-        )}
+        <TrackSection
+          eyebrow="Track · Vertriebsassistenz"
+          titel="Vertriebsassistenz"
+          leitsatz="Der Innendienst als verlässliches Rückgrat – genau, mitdenkend, prüfsicher."
+          leitprinzipien={LEITPRINZIPIEN_ASSISTENZ}
+          gruppen={assistenzGruppen}
+        />
       </div>
     </div>
   );
