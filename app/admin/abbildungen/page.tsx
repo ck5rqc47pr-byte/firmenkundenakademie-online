@@ -155,6 +155,10 @@ const GRAFIKEN_MAP: Record<string, Array<{ bezeichnung: string; datei: string }>
     { bezeichnung: "Fristen priorisieren: Risikoart schlägt Zeitnähe", datei: "/grafiken/VA04-fristen-priorisierung.svg" },
     { bezeichnung: "Datenqualität: Was darf ich selbst ändern?", datei: "/grafiken/VA04-berechtigungstiefe.svg" },
   ],
+  VA05: [
+    { bezeichnung: "Die vier Seiten einer Nachricht (Schulz von Thun)", datei: "/grafiken/VA05-vier-seiten-nachricht.svg" },
+    { bezeichnung: "Das Servicetelefonat in vier Schritten (SERVQUAL)", datei: "/grafiken/VA05-telefon-vier-schritte.svg" },
+  ],
 };
 
 const STATUS_STYLE: Record<string, string> = {
