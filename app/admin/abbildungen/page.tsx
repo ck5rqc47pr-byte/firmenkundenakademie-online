@@ -174,6 +174,10 @@ const GRAFIKEN_MAP: Record<string, Array<{ bezeichnung: string; datei: string }>
     { bezeichnung: "Vertriebsanlässe: das Signal und der Bedarf dahinter", datei: "/grafiken/VA09-anlasstypen.svg" },
     { bezeichnung: "Signal oder Rauschen? – drei Prüffragen", datei: "/grafiken/VA09-signal-oder-rauschen.svg" },
   ],
+  VA10: [
+    { bezeichnung: "Legitimation und Kontenwahrheit: drei gesetzliche Säulen", datei: "/grafiken/VA10-legitimation.svg" },
+    { bezeichnung: "Wer darf handeln? Vertretung nach Rechtsform", datei: "/grafiken/VA10-vertretung-rechtsform.svg" },
+  ],
 };
 
 const STATUS_STYLE: Record<string, string> = {

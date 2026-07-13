@@ -1,0 +1,161 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 560" width="860" height="560">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;1,8..60,400&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap');
+      text { font-family: Georgia, serif; }
+      .mono { font-family: 'JetBrains Mono', 'Courier New', monospace; }
+      .serif { font-family: 'Source Serif 4', Georgia, serif; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="860" height="560" fill="#F8F8FA"/>
+
+  <!-- Eyebrow -->
+  <text x="40" y="30" class="mono" font-size="10" fill="#7A8099" letter-spacing="2">§§ 48–53 HGB · § 720 BGB N.F. (MOPEG) · MODUL VA10 · VERTRETUNGSBERECHTIGUNG PRÜFEN</text>
+  <line x1="40" y1="40" x2="820" y2="40" stroke="#E2E3E8" stroke-width="1"/>
+
+  <!-- Titel -->
+  <text x="40" y="70" class="serif" font-size="17" fill="#1F2C56" font-weight="500">Wer darf handeln? Vertretung nach Rechtsform</text>
+
+  <!-- ══════════════════════════════════════════════
+       TABELLE Rechtsform / Vertreter / Nachweis
+       Tabellenkopf (y=88–108)
+       ══════════════════════════════════════════════ -->
+
+  <!-- Tabellenkopf -->
+  <rect x="40"  y="88" width="254" height="22" fill="#1F2C56"/>
+  <rect x="296" y="88" width="280" height="22" fill="#1F2C56"/>
+  <rect x="578" y="88" width="242" height="22" fill="#1F2C56"/>
+  <text x="56"  y="103" class="mono" font-size="8" fill="#D9C089" letter-spacing="1.5">RECHTSFORM</text>
+  <text x="312" y="103" class="mono" font-size="8" fill="#D9C089" letter-spacing="1.5">WER VERTRITT</text>
+  <text x="594" y="103" class="mono" font-size="8" fill="#D9C089" letter-spacing="1.5">NACHWEIS / RECHTSGRUNDLAGE</text>
+
+  <!-- ZEILE 1: e.K. -->
+  <rect x="40"  y="110" width="254" height="34" fill="#EDEDF3" stroke="#C8CAD4" stroke-width="0.5"/>
+  <rect x="296" y="110" width="280" height="34" fill="#EDEDF3" stroke="#C8CAD4" stroke-width="0.5"/>
+  <rect x="578" y="110" width="242" height="34" fill="#EDEDF3" stroke="#C8CAD4" stroke-width="0.5"/>
+  <text x="56"  y="124" class="mono" font-size="8" fill="#1F2C56" letter-spacing="0.5" font-weight="500">Einzelkaufmann (e.K.)</text>
+  <text x="56"  y="137" class="mono" font-size="7" fill="#7A8099" letter-spacing="0.5">Kleingewerbetreibende analog</text>
+  <text x="312" y="124" class="mono" font-size="8" fill="#3D4460" letter-spacing="0.5">Inhaber selbst</text>
+  <text x="312" y="137" class="mono" font-size="7" fill="#7A8099" letter-spacing="0.5">Prokura möglich (ppa.)</text>
+  <text x="594" y="124" class="mono" font-size="8" fill="#3D4460" letter-spacing="0.5">HR-Auszug Abt. A</text>
+  <text x="594" y="137" class="mono" font-size="7" fill="#7A8099" letter-spacing="0.5">§§ 48 ff. HGB</text>
+
+  <!-- ZEILE 2: GbR -->
+  <rect x="40"  y="144" width="254" height="34" fill="#F8F8FA" stroke="#C8CAD4" stroke-width="0.5"/>
+  <rect x="296" y="144" width="280" height="34" fill="#F8F8FA" stroke="#C8CAD4" stroke-width="0.5"/>
+  <rect x="578" y="144" width="242" height="34" fill="#F8F8FA" stroke="#C8CAD4" stroke-width="0.5"/>
+  <text x="56"  y="158" class="mono" font-size="8" fill="#1F2C56" letter-spacing="0.5" font-weight="500">GbR (eGbR)</text>
+  <text x="56"  y="171" class="mono" font-size="7" fill="#7A8099" letter-spacing="0.5">seit MoPeG 01.01.2024</text>
+  <text x="312" y="158" class="mono" font-size="8" fill="#3D4460" letter-spacing="0.5">Alle Gesellschafter gemeinsam</text>
+  <text x="312" y="171" class="mono" font-size="7" fill="#7A8099" letter-spacing="0.5">Gesamtvertretung (Regelfall)</text>
+  <text x="594" y="158" class="mono" font-size="8" fill="#3D4460" letter-spacing="0.5">Gesellschaftsregister (eGbR)</text>
+  <text x="594" y="171" class="mono" font-size="7" fill="#7A8099" letter-spacing="0.5">§ 720 BGB n.F.</text>
+
+  <!-- ZEILE 3: OHG -->
+  <rect x="40"  y="178" width="254" height="34" fill="#EDEDF3" stroke="#C8CAD4" stroke-width="0.5"/>
+  <rect x="296" y="178" width="280" height="34" fill="#EDEDF3" stroke="#C8CAD4" stroke-width="0.5"/>
+  <rect x="578" y="178" width="242" height="34" fill="#EDEDF3" stroke="#C8CAD4" stroke-width="0.5"/>
+  <text x="56"  y="192" class="mono" font-size="8" fill="#1F2C56" letter-spacing="0.5" font-weight="500">OHG</text>
+  <text x="56"  y="205" class="mono" font-size="7" fill="#7A8099" letter-spacing="0.5">HR-Abt. A</text>
+  <text x="312" y="192" class="mono" font-size="8" fill="#3D4460" letter-spacing="0.5">Jeder Gesellschafter einzeln</text>
+  <text x="312" y="205" class="mono" font-size="7" fill="#7A8099" letter-spacing="0.5">Einzelvertretung (Regelfall)</text>
+  <text x="594" y="192" class="mono" font-size="8" fill="#3D4460" letter-spacing="0.5">HR-Auszug Abt. A</text>
+  <text x="594" y="205" class="mono" font-size="7" fill="#7A8099" letter-spacing="0.5">§§ 125 ff. HGB</text>
+
+  <!-- ZEILE 4: GmbH — AKZENT (häufigster Fall) -->
+  <rect x="40"  y="212" width="254" height="34" fill="#D9C089" stroke="#1F2C56" stroke-width="0.5"/>
+  <rect x="296" y="212" width="280" height="34" fill="#D9C089" stroke="#1F2C56" stroke-width="0.5"/>
+  <rect x="578" y="212" width="242" height="34" fill="#D9C089" stroke="#1F2C56" stroke-width="0.5"/>
+  <text x="56"  y="226" class="mono" font-size="8" fill="#1F2C56" letter-spacing="0.5" font-weight="500">GmbH</text>
+  <text x="56"  y="239" class="mono" font-size="7" fill="#3D5494" letter-spacing="0.5">Häufigste Rechtsform im FK</text>
+  <text x="312" y="226" class="mono" font-size="8" fill="#1F2C56" letter-spacing="0.5">Geschäftsführer</text>
+  <text x="312" y="239" class="mono" font-size="7" fill="#3D5494" letter-spacing="0.5">Einzel- oder Gesamtvertretung laut HR</text>
+  <text x="594" y="226" class="mono" font-size="8" fill="#1F2C56" letter-spacing="0.5">HR-Auszug Abt. B</text>
+  <text x="594" y="239" class="mono" font-size="7" fill="#3D5494" letter-spacing="0.5">§§ 35 ff. GmbHG</text>
+
+  <!-- ZEILE 5: GmbH & Co. KG -->
+  <rect x="40"  y="246" width="254" height="34" fill="#1F2C56" stroke="#D9C089" stroke-width="0.5"/>
+  <rect x="296" y="246" width="280" height="34" fill="#1F2C56" stroke="#D9C089" stroke-width="0.5"/>
+  <rect x="578" y="246" width="242" height="34" fill="#1F2C56" stroke="#D9C089" stroke-width="0.5"/>
+  <text x="56"  y="260" class="mono" font-size="8" fill="#D9C089" letter-spacing="0.5" font-weight="500">GmbH &amp; Co. KG</text>
+  <text x="56"  y="273" class="mono" font-size="7" fill="#8898C4" letter-spacing="0.5">Zwei Registerauszüge nötig</text>
+  <text x="312" y="260" class="mono" font-size="8" fill="rgba(248,248,250,0.90)" letter-spacing="0.5">Komplementär-GmbH</text>
+  <text x="312" y="273" class="mono" font-size="7" fill="#8898C4" letter-spacing="0.5">vertreten durch deren Geschäftsführer</text>
+  <text x="594" y="260" class="mono" font-size="8" fill="rgba(248,248,250,0.90)" letter-spacing="0.5">KG (Abt. A) + GmbH (Abt. B)</text>
+  <text x="594" y="273" class="mono" font-size="7" fill="#8898C4" letter-spacing="0.5">§§ 161 ff. HGB + §§ 35 ff. GmbHG</text>
+
+  <!-- ZEILE 6: AG -->
+  <rect x="40"  y="280" width="254" height="34" fill="#F8F8FA" stroke="#C8CAD4" stroke-width="0.5"/>
+  <rect x="296" y="280" width="280" height="34" fill="#F8F8FA" stroke="#C8CAD4" stroke-width="0.5"/>
+  <rect x="578" y="280" width="242" height="34" fill="#F8F8FA" stroke="#C8CAD4" stroke-width="0.5"/>
+  <text x="56"  y="294" class="mono" font-size="8" fill="#1F2C56" letter-spacing="0.5" font-weight="500">AG</text>
+  <text x="56"  y="307" class="mono" font-size="7" fill="#7A8099" letter-spacing="0.5">Im KMU-Umfeld selten</text>
+  <text x="312" y="294" class="mono" font-size="8" fill="#3D4460" letter-spacing="0.5">Vorstand</text>
+  <text x="312" y="307" class="mono" font-size="7" fill="#7A8099" letter-spacing="0.5">Einzel- oder Gesamtvertretung laut HR</text>
+  <text x="594" y="294" class="mono" font-size="8" fill="#3D4460" letter-spacing="0.5">HR-Auszug Abt. B</text>
+  <text x="594" y="307" class="mono" font-size="7" fill="#7A8099" letter-spacing="0.5">§§ 78 ff. AktG</text>
+
+  <!-- ══════════════════════════════════════════════
+       UNTERER BEREICH: Vertretungskette GmbH & Co. KG
+       + Prokura-Merkzettel (y=332–490)
+       ══════════════════════════════════════════════ -->
+
+  <text x="40" y="330" class="mono" font-size="9" fill="#7A8099" letter-spacing="2">VERTRETUNGSKETTE: GmbH &amp; Co. KG</text>
+  <line x1="40" y1="336" x2="820" y2="336" stroke="#E2E3E8" stroke-width="1"/>
+
+  <!-- Kettendiagramm (y=348–420) -->
+  <!-- Box 1: KG (Kunde) -->
+  <rect x="40"  y="348" width="170" height="56" fill="#1F2C56"/>
+  <rect x="40"  y="348" width="170" height="56" fill="none" stroke="#D9C089" stroke-width="1.5"/>
+  <text x="125" y="372" class="mono" font-size="9" fill="#D9C089" letter-spacing="1" text-anchor="middle" font-weight="500">KG</text>
+  <text x="125" y="386" class="mono" font-size="8" fill="rgba(248,248,250,0.85)" letter-spacing="0.5" text-anchor="middle">(Ihr Kunde)</text>
+  <text x="125" y="398" class="mono" font-size="7" fill="#8898C4" letter-spacing="0.5" text-anchor="middle">HR-Abt. A</text>
+
+  <!-- Pfeil 1 -->
+  <line x1="210" y1="376" x2="248" y2="376" stroke="#C8CAD4" stroke-width="1.5"/>
+  <polygon points="248,371 260,376 248,381" fill="#C8CAD4"/>
+  <text x="235" y="370" class="mono" font-size="7" fill="#7A8099" letter-spacing="0.5" text-anchor="middle">vertreten</text>
+  <text x="235" y="390" class="mono" font-size="7" fill="#7A8099" letter-spacing="0.5" text-anchor="middle">durch</text>
+
+  <!-- Box 2: Komplementär-GmbH -->
+  <rect x="260" y="348" width="200" height="56" fill="#3D5494"/>
+  <text x="360" y="368" class="mono" font-size="9" fill="#D9C089" letter-spacing="0.5" text-anchor="middle" font-weight="500">Komplementär-GmbH</text>
+  <text x="360" y="382" class="mono" font-size="8" fill="rgba(248,248,250,0.85)" letter-spacing="0.5" text-anchor="middle">(haftet unbeschränkt)</text>
+  <text x="360" y="396" class="mono" font-size="7" fill="#8898C4" letter-spacing="0.5" text-anchor="middle">HR-Abt. B</text>
+
+  <!-- Pfeil 2 -->
+  <line x1="460" y1="376" x2="498" y2="376" stroke="#C8CAD4" stroke-width="1.5"/>
+  <polygon points="498,371 510,376 498,381" fill="#C8CAD4"/>
+  <text x="485" y="370" class="mono" font-size="7" fill="#7A8099" letter-spacing="0.5" text-anchor="middle">vertreten</text>
+  <text x="485" y="390" class="mono" font-size="7" fill="#7A8099" letter-spacing="0.5" text-anchor="middle">durch</text>
+
+  <!-- Box 3: Geschäftsführer -->
+  <rect x="510" y="348" width="200" height="56" fill="#D9C089"/>
+  <rect x="510" y="348" width="200" height="56" fill="none" stroke="#1F2C56" stroke-width="1.5"/>
+  <text x="610" y="368" class="mono" font-size="9" fill="#1F2C56" letter-spacing="0.5" text-anchor="middle" font-weight="500">Geschäftsführer</text>
+  <text x="610" y="382" class="mono" font-size="8" fill="#3D5494" letter-spacing="0.5" text-anchor="middle">(der GmbH)</text>
+  <text x="610" y="396" class="mono" font-size="7" fill="#1F2C56" letter-spacing="0.5" text-anchor="middle">§§ 35 ff. GmbHG</text>
+
+  <!-- Hinweistext rechts von Box 3 -->
+  <text x="730" y="362" class="mono" font-size="8" fill="#3D4460" letter-spacing="0.5">Handelnde</text>
+  <text x="730" y="376" class="mono" font-size="8" fill="#3D4460" letter-spacing="0.5">Person</text>
+  <text x="730" y="392" class="mono" font-size="7" fill="#7A8099" letter-spacing="0.5">Zwei Auszüge</text>
+  <text x="730" y="404" class="mono" font-size="7" fill="#7A8099" letter-spacing="0.5">erforderlich</text>
+
+  <!-- Prokura-Merkzettel -->
+  <rect x="40" y="422" width="780" height="64" fill="#EAD9A8"/>
+  <rect x="40" y="422" width="780" height="64" fill="none" stroke="#D9C089" stroke-width="1"/>
+  <rect x="40" y="422" width="4"   height="64" fill="#D9C089"/>
+  <text x="58" y="440" class="mono" font-size="9" fill="#1F2C56" letter-spacing="1" font-weight="500">PROKURA: ppa. = per procura (§§ 48–53 HGB)</text>
+  <text x="58" y="456" class="mono" font-size="9" fill="#3D4460" letter-spacing="0.5">Einzel- vs. Gesamtprokura immer aus dem aktuellen HR-Auszug ablesen. Häufiger Fehler in der Praxis:</text>
+  <text x="58" y="470" class="mono" font-size="9" fill="#3D4460" letter-spacing="0.5">fehlender ppa.-Zusatz auf Vertragsunterlagen oder veralteter HR-Auszug ohne jüngste Änderungen.</text>
+
+  <!-- Baseline -->
+  <line x1="40" y1="504" x2="820" y2="504" stroke="#15192B" stroke-width="1"/>
+
+  <!-- Source -->
+  <text x="40" y="520" class="mono" font-size="9" fill="#B0B3C0" letter-spacing="0.5">§§ 48–53 HGB · § 720 BGB n.F. (MoPeG) · Modul VA10</text>
+  <text x="820" y="520" class="mono" font-size="9" fill="#B0B3C0" letter-spacing="0.5" text-anchor="end">Becker, J. &amp; Peppmeier, A. (2018). Bankbetriebslehre (11. Aufl.). NWB.</text>
+</svg>
