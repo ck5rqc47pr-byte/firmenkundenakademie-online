@@ -168,7 +168,7 @@ const GRAFIKEN_MAP: Record<string, Array<{ bezeichnung: string; datei: string }>
   ],
   VA07: [
     { bezeichnung: "Die Assistenz im Rollengeflecht (role set)", datei: "/grafiken/VA07-rollenstruktur.svg" },
-    { bezeichnung: "Wenn mehrere gleichzeitig „dringend" sagen", datei: "/grafiken/VA07-mehrfachanfragen.svg" },
+    { bezeichnung: "Wenn mehrere gleichzeitig „dringend“ sagen", datei: "/grafiken/VA07-mehrfachanfragen.svg" },
   ],
   VA08: [
     { bezeichnung: "Eisenhower-Matrix: Wichtig geht vor dringend", datei: "/grafiken/VA08-eisenhower-matrix.svg" },
