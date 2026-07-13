@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 520" width="860" height="520">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;1,8..60,400&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap');
+      text { font-family: Georgia, serif; }
+      .mono { font-family: 'JetBrains Mono', 'Courier New', monospace; }
+      .serif { font-family: 'Source Serif 4', Georgia, serif; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="860" height="520" fill="#F8F8FA"/>
+
+  <!-- Eyebrow -->
+  <text x="40" y="30" class="mono" font-size="10" fill="#7A8099" letter-spacing="2">SICHERHEITEN · § 766 BGB · § 1191 BGB · MODUL VA02 · SICHERHEITEN UND AUSZAHLUNG FORMAL KORREKT BEARBEITEN</text>
+  <line x1="40" y1="40" x2="820" y2="40" stroke="#E2E3E8" stroke-width="1"/>
+
+  <!-- Titel -->
+  <text x="40" y="70" class="serif" font-size="17" fill="#1F2C56" font-weight="500">Sicherheitenarten und ihre Unterlagen</text>
+
+  <!-- ══════════════════════════════════════════════
+       ZEILE 1: Kacheln 1 – 3  (y=88–210)
+       Breite: 3 Kacheln je 246 (K1,K2) + 262 (K3), Abstände 13
+       x: 40 / 299 / 558
+       ══════════════════════════════════════════════ -->
+
+  <!-- KACHEL 1: Grundschuld — AKZENT (Schwerpunkt) -->
+  <rect x="40"  y="88" width="246" height="130" fill="#1F2C56"/>
+  <rect x="40"  y="88" width="246" height="130" fill="none" stroke="#D9C089" stroke-width="1.5"/>
+  <text x="56"  y="113" class="mono" font-size="9" fill="#D9C089" letter-spacing="2">01 · GRUNDSCHULD</text>
+  <text x="56"  y="126" class="mono" font-size="8" fill="#8898C4" letter-spacing="1">REALSICHERHEIT — GRUNDPFANDRECHT</text>
+  <line x1="56" y1="133" x2="270" y2="133" stroke="#D9C089" stroke-width="0.5" opacity="0.4"/>
+  <text x="56"  y="152" class="mono" font-size="9" fill="rgba(248,248,250,0.90)" letter-spacing="0.5">· Grundschuldbestellung</text>
+  <text x="56"  y="168" class="mono" font-size="9" fill="rgba(248,248,250,0.90)" letter-spacing="0.5">· Grundbuchauszug (Rang!)</text>
+  <text x="56"  y="184" class="mono" font-size="9" fill="rgba(248,248,250,0.90)" letter-spacing="0.5">· Wertnachweis / Gutachten</text>
+  <text x="56"  y="200" class="mono" font-size="8" fill="#D9C089" letter-spacing="0.5">Rang im Grundbuch stets prüfen</text>
+
+  <!-- KACHEL 2: Bürgschaft — AKZENT (Schwerpunkt) -->
+  <rect x="299" y="88" width="246" height="130" fill="#D9C089"/>
+  <rect x="299" y="88" width="246" height="130" fill="none" stroke="#1F2C56" stroke-width="1.5"/>
+  <text x="315" y="113" class="mono" font-size="9" fill="#1F2C56" letter-spacing="2">02 · BÜRGSCHAFT</text>
+  <text x="315" y="126" class="mono" font-size="8" fill="#3D5494" letter-spacing="1">PERSONALSICHERHEIT · § 766 BGB</text>
+  <line x1="315" y1="133" x2="529" y2="133" stroke="#1F2C56" stroke-width="0.5" opacity="0.35"/>
+  <text x="315" y="152" class="mono" font-size="9" fill="#15192B" letter-spacing="0.5">· Bürgschaftserklärung (schriftlich)</text>
+  <text x="315" y="168" class="mono" font-size="9" fill="#15192B" letter-spacing="0.5">· Schriftform zwingend (§ 766 BGB)</text>
+  <text x="315" y="184" class="mono" font-size="9" fill="#15192B" letter-spacing="0.5">· Bonität des Bürgen prüfen</text>
+  <text x="315" y="200" class="mono" font-size="8" fill="#3D5494" letter-spacing="0.5">Ohne Schriftform: nichtig</text>
+
+  <!-- KACHEL 3: Sicherungsübereignung -->
+  <rect x="558" y="88" width="262" height="130" fill="#3D5494"/>
+  <text x="574" y="113" class="mono" font-size="9" fill="#D9C089" letter-spacing="2">03 · SICHERUNGSÜBEREIGNUNG</text>
+  <text x="574" y="126" class="mono" font-size="8" fill="#8898C4" letter-spacing="1">REALSICHERHEIT — BEWEGLICHE SACHE</text>
+  <line x1="574" y1="133" x2="804" y2="133" stroke="#D9C089" stroke-width="0.5" opacity="0.4"/>
+  <text x="574" y="152" class="mono" font-size="9" fill="rgba(248,248,250,0.90)" letter-spacing="0.5">· Übereignungsvertrag</text>
+  <text x="574" y="168" class="mono" font-size="9" fill="rgba(248,248,250,0.90)" letter-spacing="0.5">· Objektliste / Nachweis</text>
+  <text x="574" y="184" class="mono" font-size="9" fill="rgba(248,248,250,0.90)" letter-spacing="0.5">· Wertfeststellung</text>
+
+  <!-- ══════════════════════════════════════════════
+       ZEILE 2: Kacheln 4 – 5  (y=234–340)
+       Zwei breitere Kacheln + kleiner Zwischenraum
+       x: 40–390 / 430–820
+       ══════════════════════════════════════════════ -->
+
+  <!-- KACHEL 4: Forderungsabtretung -->
+  <rect x="40"  y="234" width="370" height="112" fill="#EDEDF3" stroke="#C8CAD4" stroke-width="1"/>
+  <text x="56"  y="257" class="mono" font-size="9" fill="#1F2C56" letter-spacing="2">04 · FORDERUNGSABTRETUNG</text>
+  <text x="56"  y="270" class="mono" font-size="8" fill="#7A8099" letter-spacing="1">FORDERUNGSSICHERHEIT</text>
+  <line x1="56" y1="277" x2="394" y2="277" stroke="#1F2C56" stroke-width="0.5" opacity="0.25"/>
+  <text x="56"  y="296" class="mono" font-size="9" fill="#3D4460" letter-spacing="0.5">· Abtretungsvertrag</text>
+  <text x="56"  y="312" class="mono" font-size="9" fill="#3D4460" letter-spacing="0.5">· Forderungsnachweis</text>
+  <text x="56"  y="328" class="mono" font-size="9" fill="#3D4460" letter-spacing="0.5">· ggf. Offenlegung gegenüber Drittschuldner</text>
+
+  <!-- KACHEL 5: Verpfändung -->
+  <rect x="430" y="234" width="390" height="112" fill="#EDEDF3" stroke="#C8CAD4" stroke-width="1"/>
+  <text x="446" y="257" class="mono" font-size="9" fill="#1F2C56" letter-spacing="2">05 · VERPFÄNDUNG (Z. B. GUTHABEN)</text>
+  <text x="446" y="270" class="mono" font-size="8" fill="#7A8099" letter-spacing="1">REALSICHERHEIT — PFANDRECHT</text>
+  <line x1="446" y1="277" x2="804" y2="277" stroke="#1F2C56" stroke-width="0.5" opacity="0.25"/>
+  <text x="446" y="296" class="mono" font-size="9" fill="#3D4460" letter-spacing="0.5">· Verpfändungserklärung</text>
+  <text x="446" y="312" class="mono" font-size="9" fill="#3D4460" letter-spacing="0.5">· Wertnachweis (z. B. Kontoauszug)</text>
+  <text x="446" y="328" class="mono" font-size="9" fill="#3D4460" letter-spacing="0.5">· Kontosperrvereinbarung</text>
+
+  <!-- ══════════════════════════════════════════════
+       MERKKASTEN  (y=362–428)
+       ══════════════════════════════════════════════ -->
+  <rect x="40" y="362" width="780" height="56" fill="#EAD9A8"/>
+  <rect x="40" y="362" width="780" height="56" fill="none" stroke="#D9C089" stroke-width="1"/>
+  <rect x="40" y="362" width="4"   height="56" fill="#D9C089"/>
+  <text x="58" y="381" class="mono" font-size="9" fill="#1F2C56" letter-spacing="1" font-weight="500">MERKREGEL ZUR DOKUMENTATION</text>
+  <text x="58" y="397" class="mono" font-size="9" fill="#3D4460" letter-spacing="0.5">Grundbuchauszug sollte nicht älter als 3 Monate sein — bei Grundschuld immer den Rang prüfen.</text>
+  <text x="58" y="413" class="mono" font-size="9" fill="#3D4460" letter-spacing="0.5">Bürgschaft ohne Schriftform (§ 766 BGB) ist nichtig — keine Ausnahmen. Bonität des Bürgen ist eigenständig zu prüfen.</text>
+
+  <!-- Baseline -->
+  <line x1="40" y1="440" x2="820" y2="440" stroke="#15192B" stroke-width="1"/>
+
+  <!-- Source -->
+  <text x="40" y="456" class="mono" font-size="9" fill="#B0B3C0" letter-spacing="0.5">§ 766 BGB · § 1191 BGB · Modul VA02</text>
+  <text x="820" y="456" class="mono" font-size="9" fill="#B0B3C0" letter-spacing="0.5" text-anchor="end">Grill, W. &amp; Perczynski, H. (2013). Wirtschaftslehre des Kreditwesens (44. Aufl.). Gehlen.</text>
+</svg>

@@ -143,6 +143,10 @@ const GRAFIKEN_MAP: Record<string, Array<{ bezeichnung: string; datei: string }>
     { bezeichnung: "Sechs Bereiche der Kreditakte", datei: "/grafiken/VA01-aktenstruktur.svg" },
     { bezeichnung: "Funktionstrennung Markt / Marktfolge", datei: "/grafiken/VA01-funktionstrennung.svg" },
   ],
+  VA02: [
+    { bezeichnung: "Sicherheitenarten und ihre Unterlagen", datei: "/grafiken/VA02-sicherheitenarten.svg" },
+    { bezeichnung: "Auszahlungsvoraussetzungen – Prüf-Gate", datei: "/grafiken/VA02-auszahlungsvoraussetzungen.svg" },
+  ],
 };
 
 const STATUS_STYLE: Record<string, string> = {
