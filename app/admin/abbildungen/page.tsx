@@ -178,6 +178,10 @@ const GRAFIKEN_MAP: Record<string, Array<{ bezeichnung: string; datei: string }>
     { bezeichnung: "Legitimation und Kontenwahrheit: drei gesetzliche Säulen", datei: "/grafiken/VA10-legitimation.svg" },
     { bezeichnung: "Wer darf handeln? Vertretung nach Rechtsform", datei: "/grafiken/VA10-vertretung-rechtsform.svg" },
   ],
+  VA11: [
+    { bezeichnung: "Beteiligungsstruktur lesen: Einheit bilden, wB durchrechnen", datei: "/grafiken/VA11-beteiligungsstruktur.svg" },
+    { bezeichnung: "Verdacht erkennen und richtig eskalieren", datei: "/grafiken/VA11-geldwaesche-eskalation.svg" },
+  ],
 };
 
 const STATUS_STYLE: Record<string, string> = {
