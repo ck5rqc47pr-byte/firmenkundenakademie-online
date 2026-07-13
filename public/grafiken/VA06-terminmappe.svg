@@ -1,0 +1,140 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 520" width="860" height="520">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;1,8..60,400&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap');
+      text { font-family: Georgia, serif; }
+      .mono { font-family: 'JetBrains Mono', 'Courier New', monospace; }
+      .serif { font-family: 'Source Serif 4', Georgia, serif; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="860" height="520" fill="#F8F8FA"/>
+
+  <!-- Eyebrow -->
+  <text x="40" y="30" class="mono" font-size="10" fill="#7A8099" letter-spacing="2">TERMINVORBEREITUNG · SERVQUAL (PARASURAMAN ET AL. 1988) · MODUL VA06</text>
+  <line x1="40" y1="40" x2="820" y2="40" stroke="#E2E3E8" stroke-width="1"/>
+
+  <!-- Titel -->
+  <text x="40" y="70" class="serif" font-size="17" fill="#1F2C56" font-weight="500">Die Terminmappe: verdichten statt sammeln</text>
+  <text x="40" y="87" class="mono" font-size="9" fill="#7A8099" letter-spacing="0.5">Fünf Bausteine einer entscheidungsreifen Mappe — und drei Anlasstypen, die nicht fehlen dürfen</text>
+
+  <!-- ══════════════════════════════════════════════
+       ZEILE 1: FÜNF BAUSTEINE (y=102–210)
+       Breite: 5 × 146 + 4 × 12 = 778 → x-Start 40
+       ══════════════════════════════════════════════ -->
+
+  <!-- KACHEL 1: Kurzprofil — Navy -->
+  <rect x="40"  y="102" width="146" height="112" fill="#1F2C56"/>
+  <text x="54"  y="124" class="mono" font-size="8" fill="#D9C089" letter-spacing="2">01 · KURZPROFIL</text>
+  <line x1="54" y1="131" x2="170" y2="131" stroke="#D9C089" stroke-width="0.5" opacity="0.4"/>
+  <text x="54"  y="148" class="mono" font-size="8" fill="rgba(248,248,250,0.85)" letter-spacing="0.5">· Branche, Größe</text>
+  <text x="54"  y="162" class="mono" font-size="8" fill="rgba(248,248,250,0.85)" letter-spacing="0.5">· Ansprechpartner</text>
+  <text x="54"  y="176" class="mono" font-size="8" fill="rgba(248,248,250,0.85)" letter-spacing="0.5">· Hausbankhistorie</text>
+  <text x="54"  y="200" class="mono" font-size="7" fill="#8898C4" letter-spacing="0.5">Kontext, 5 Zeilen</text>
+
+  <!-- KACHEL 2: Engagementübersicht — Mid-Primary -->
+  <rect x="198" y="102" width="146" height="112" fill="#3D5494"/>
+  <text x="212" y="124" class="mono" font-size="8" fill="#D9C089" letter-spacing="2">02 · ENGAGEMENT</text>
+  <line x1="212" y1="131" x2="328" y2="131" stroke="#D9C089" stroke-width="0.5" opacity="0.4"/>
+  <text x="212" y="148" class="mono" font-size="8" fill="rgba(248,248,250,0.85)" letter-spacing="0.5">· Konten, Kredite</text>
+  <text x="212" y="162" class="mono" font-size="8" fill="rgba(248,248,250,0.85)" letter-spacing="0.5">· Limite, Auslastung</text>
+  <text x="212" y="176" class="mono" font-size="8" fill="rgba(248,248,250,0.85)" letter-spacing="0.5">· Sicherheiten</text>
+  <text x="212" y="200" class="mono" font-size="7" fill="#8898C4" letter-spacing="0.5">Stand heute</text>
+
+  <!-- KACHEL 3: Kennzahlen — Light-Primary -->
+  <rect x="356" y="102" width="146" height="112" fill="#8898C4"/>
+  <text x="370" y="124" class="mono" font-size="8" fill="#1F2C56" letter-spacing="2">03 · KENNZAHLEN</text>
+  <line x1="370" y1="131" x2="486" y2="131" stroke="#1F2C56" stroke-width="0.5" opacity="0.4"/>
+  <text x="370" y="148" class="mono" font-size="8" fill="#15192B" letter-spacing="0.5">· Aktuelle Zahlen/BWA</text>
+  <text x="370" y="162" class="mono" font-size="8" fill="#15192B" letter-spacing="0.5">· Entwicklung Vorjahr</text>
+  <text x="370" y="176" class="mono" font-size="8" fill="#15192B" letter-spacing="0.5">· Auswertungen</text>
+  <text x="370" y="200" class="mono" font-size="7" fill="#1F2C56" letter-spacing="0.5">Trend sichtbar machen</text>
+
+  <!-- KACHEL 4: Offene Punkte — AKZENT-GOLD (wichtigste Kachel für Anlasstypen) -->
+  <rect x="514" y="102" width="146" height="112" fill="#D9C089"/>
+  <rect x="514" y="102" width="146" height="112" fill="none" stroke="#1F2C56" stroke-width="1.5"/>
+  <rect x="514" y="102" width="146" height="4" fill="#1F2C56"/>
+  <text x="528" y="124" class="mono" font-size="8" fill="#1F2C56" letter-spacing="2">04 · OFFENE PUNKTE</text>
+  <text x="528" y="136" class="mono" font-size="7" fill="#3D5494" letter-spacing="1">DREI ANLASSTYPEN</text>
+  <line x1="528" y1="143" x2="644" y2="143" stroke="#1F2C56" stroke-width="0.5" opacity="0.35"/>
+  <text x="528" y="159" class="mono" font-size="8" fill="#15192B" letter-spacing="0.5">· Handlungsbedarf</text>
+  <text x="528" y="173" class="mono" font-size="8" fill="#15192B" letter-spacing="0.5">· Kapazitätssignal</text>
+  <text x="528" y="187" class="mono" font-size="8" fill="#15192B" letter-spacing="0.5">· Kundensignal</text>
+  <text x="528" y="203" class="mono" font-size="7" fill="#3D5494" letter-spacing="0.5">Details s. unten</text>
+
+  <!-- KACHEL 5: Agenda — bg-2 / hell -->
+  <rect x="672" y="102" width="148" height="112" fill="#EDEDF3" stroke="#C8CAD4" stroke-width="1"/>
+  <text x="686" y="124" class="mono" font-size="8" fill="#1F2C56" letter-spacing="2">05 · AGENDA</text>
+  <line x1="686" y1="131" x2="804" y2="131" stroke="#1F2C56" stroke-width="0.5" opacity="0.25"/>
+  <text x="686" y="148" class="mono" font-size="8" fill="#3D4460" letter-spacing="0.5">· Gesprächsablauf</text>
+  <text x="686" y="162" class="mono" font-size="8" fill="#3D4460" letter-spacing="0.5">· Vorschlag, kein Skript</text>
+  <text x="686" y="176" class="mono" font-size="8" fill="#3D4460" letter-spacing="0.5">· Max. 3 Schwerpunkte</text>
+  <text x="686" y="200" class="mono" font-size="7" fill="#7A8099" letter-spacing="0.5">Rahmen geben</text>
+
+  <!-- Verbindungspfeile zwischen den Kacheln (gezeichnet, kein Sonderzeichen) -->
+  <!-- Pfeil 1→2 -->
+  <polygon points="187,158 196,154 196,162" fill="#C8CAD4"/>
+  <!-- Pfeil 2→3 -->
+  <polygon points="345,158 354,154 354,162" fill="#C8CAD4"/>
+  <!-- Pfeil 3→4 -->
+  <polygon points="503,158 512,154 512,162" fill="#C8CAD4"/>
+  <!-- Pfeil 4→5 -->
+  <polygon points="661,158 670,154 670,162" fill="#C8CAD4"/>
+
+  <!-- ══════════════════════════════════════════════
+       ANLASSTYPEN-BLOCK (y=232–356)
+       ══════════════════════════════════════════════ -->
+
+  <!-- Überschrift Block -->
+  <text x="40" y="230" class="mono" font-size="9" fill="#7A8099" letter-spacing="2">DREI ANLASSTYPEN FÜR BAUSTEIN 04 — OFFENE PUNKTE</text>
+  <line x1="40" y1="237" x2="820" y2="237" stroke="#E2E3E8" stroke-width="1"/>
+
+  <!-- ANLASSTYP A: Konkreter Handlungsbedarf — Navy -->
+  <rect x="40"  y="246" width="240" height="96" fill="#1F2C56"/>
+  <text x="56"  y="267" class="mono" font-size="8" fill="#D9C089" letter-spacing="2">A · HANDLUNGSBEDARF</text>
+  <line x1="56" y1="274" x2="264" y2="274" stroke="#D9C089" stroke-width="0.5" opacity="0.4"/>
+  <text x="56"  y="291" class="mono" font-size="8" fill="rgba(248,248,250,0.85)" letter-spacing="0.5">Konkreter Anlass, klar belegbar</text>
+  <text x="56"  y="309" class="mono" font-size="8" fill="#8898C4" letter-spacing="0.5">z. B. Zinsbindung läuft aus,</text>
+  <text x="56"  y="323" class="mono" font-size="8" fill="#8898C4" letter-spacing="0.5">Sicherheit befristet bis ...,</text>
+  <text x="56"  y="337" class="mono" font-size="8" fill="#8898C4" letter-spacing="0.5">Jahresabschluss angefordert</text>
+
+  <!-- ANLASSTYP B: Kapazitätssignal — Mid-Primary -->
+  <rect x="296" y="246" width="240" height="96" fill="#3D5494"/>
+  <text x="312" y="267" class="mono" font-size="8" fill="#D9C089" letter-spacing="2">B · KAPAZITÄTSSIGNAL</text>
+  <line x1="312" y1="274" x2="520" y2="274" stroke="#D9C089" stroke-width="0.5" opacity="0.4"/>
+  <text x="312" y="291" class="mono" font-size="8" fill="rgba(248,248,250,0.85)" letter-spacing="0.5">Systemdaten zeigen Auslastung</text>
+  <text x="312" y="309" class="mono" font-size="8" fill="#8898C4" letter-spacing="0.5">z. B. Linie zu 95 % ausgelastet,</text>
+  <text x="312" y="323" class="mono" font-size="8" fill="#8898C4" letter-spacing="0.5">Umsatz stark gestiegen,</text>
+  <text x="312" y="337" class="mono" font-size="8" fill="#8898C4" letter-spacing="0.5">Kontoüberziehung zunehmend</text>
+
+  <!-- ANLASSTYP C: Kundensignal — AKZENT-GOLD, fragilster Typ -->
+  <rect x="552" y="246" width="268" height="96" fill="#D9C089"/>
+  <rect x="552" y="246" width="268" height="96" fill="none" stroke="#1F2C56" stroke-width="1.5"/>
+  <rect x="552" y="246" width="268" height="4" fill="#1F2C56"/>
+  <text x="568" y="267" class="mono" font-size="8" fill="#1F2C56" letter-spacing="2">C · KUNDENSIGNAL</text>
+  <text x="568" y="279" class="mono" font-size="7" fill="#3D5494" letter-spacing="1">FRAGILSTER TYP — geht verloren</text>
+  <line x1="568" y1="286" x2="804" y2="286" stroke="#1F2C56" stroke-width="0.5" opacity="0.35"/>
+  <text x="568" y="303" class="mono" font-size="8" fill="#15192B" letter-spacing="0.5">Andeutung des Kunden im Gespräch</text>
+  <text x="568" y="320" class="mono" font-size="8" fill="#3D4460" letter-spacing="0.5">z. B. „nächstes Jahr vielleicht eine</text>
+  <text x="568" y="334" class="mono" font-size="8" fill="#3D4460" letter-spacing="0.5">Investition" — sofort notieren,</text>
+  <text x="568" y="348" class="mono" font-size="8" fill="#3D4460" letter-spacing="0.5">sonst im nächsten Termin vergessen</text>
+
+  <!-- ══════════════════════════════════════════════
+       MERKKASTEN (y=370–448)
+       ══════════════════════════════════════════════ -->
+  <rect x="40" y="370" width="780" height="66" fill="#EAD9A8"/>
+  <rect x="40" y="370" width="780" height="66" fill="none" stroke="#D9C089" stroke-width="1"/>
+  <rect x="40" y="370" width="4"   height="66" fill="#D9C089"/>
+  <text x="58" y="390" class="mono" font-size="9" fill="#1F2C56" letter-spacing="1" font-weight="500">WAS BRAUCHT DER BERATER ZUR ENTSCHEIDUNG? — nicht: Was gibt es alles?</text>
+  <text x="58" y="407" class="mono" font-size="9" fill="#3D4460" letter-spacing="0.5">Weglassen ist eine Leistung. Ein Berater mit zehn Minuten liest eine Seite, nicht zehn.</text>
+  <text x="58" y="424" class="mono" font-size="9" fill="#3D4460" letter-spacing="0.5">Die Terminmappe ist kein Archiv — sie ist ein Entscheidungsinstrument. Alles, was nicht</text>
+  <text x="58" y="441" class="mono" font-size="9" fill="#3D4460" letter-spacing="0.5">zur Entscheidung beiträgt, bleibt in agree, nicht in der Mappe.</text>
+
+  <!-- Baseline -->
+  <line x1="40" y1="462" x2="820" y2="462" stroke="#15192B" stroke-width="1"/>
+
+  <!-- Source -->
+  <text x="40" y="478" class="mono" font-size="9" fill="#B0B3C0" letter-spacing="0.5">Terminvorbereitung · SERVQUAL (Parasuraman et al. 1988) · Modul VA06</text>
+  <text x="820" y="478" class="mono" font-size="9" fill="#B0B3C0" letter-spacing="0.5" text-anchor="end">Parasuraman, A., Zeithaml, V. A. &amp; Berry, L. L. (1988). SERVQUAL. Journal of Retailing, 64(1).</text>
+</svg>

@@ -159,6 +159,9 @@ const GRAFIKEN_MAP: Record<string, Array<{ bezeichnung: string; datei: string }>
     { bezeichnung: "Die vier Seiten einer Nachricht (Schulz von Thun)", datei: "/grafiken/VA05-vier-seiten-nachricht.svg" },
     { bezeichnung: "Das Servicetelefonat in vier Schritten (SERVQUAL)", datei: "/grafiken/VA05-telefon-vier-schritte.svg" },
   ],
+  VA06: [
+    { bezeichnung: "Die Terminmappe: verdichten statt sammeln", datei: "/grafiken/VA06-terminmappe.svg" },
+  ],
 };
 
 const STATUS_STYLE: Record<string, string> = {
