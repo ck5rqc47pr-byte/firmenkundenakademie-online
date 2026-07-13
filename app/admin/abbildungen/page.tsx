@@ -162,6 +162,10 @@ const GRAFIKEN_MAP: Record<string, Array<{ bezeichnung: string; datei: string }>
   VA06: [
     { bezeichnung: "Die Terminmappe: verdichten statt sammeln", datei: "/grafiken/VA06-terminmappe.svg" },
   ],
+  VA07: [
+    { bezeichnung: "Die Assistenz im Rollengeflecht (role set)", datei: "/grafiken/VA07-rollenstruktur.svg" },
+    { bezeichnung: "Wenn mehrere gleichzeitig „dringend“ sagen", datei: "/grafiken/VA07-mehrfachanfragen.svg" },
+  ],
 };
 
 const STATUS_STYLE: Record<string, string> = {
