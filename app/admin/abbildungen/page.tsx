@@ -164,11 +164,15 @@ const GRAFIKEN_MAP: Record<string, Array<{ bezeichnung: string; datei: string }>
   ],
   VA07: [
     { bezeichnung: "Die Assistenz im Rollengeflecht (role set)", datei: "/grafiken/VA07-rollenstruktur.svg" },
-    { bezeichnung: "Wenn mehrere gleichzeitig „dringend“ sagen", datei: "/grafiken/VA07-mehrfachanfragen.svg" },
+    { bezeichnung: "Wenn mehrere gleichzeitig „dringend" sagen", datei: "/grafiken/VA07-mehrfachanfragen.svg" },
   ],
   VA08: [
     { bezeichnung: "Eisenhower-Matrix: Wichtig geht vor dringend", datei: "/grafiken/VA08-eisenhower-matrix.svg" },
     { bezeichnung: "Drei Gegenmittel gegen zerfasertes Arbeiten", datei: "/grafiken/VA08-zeitfresser-gegenmittel.svg" },
+  ],
+  VA09: [
+    { bezeichnung: "Vertriebsanlässe: das Signal und der Bedarf dahinter", datei: "/grafiken/VA09-anlasstypen.svg" },
+    { bezeichnung: "Signal oder Rauschen? – drei Prüffragen", datei: "/grafiken/VA09-signal-oder-rauschen.svg" },
   ],
 };
 

@@ -1,0 +1,154 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 520" width="860" height="520">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;1,8..60,400&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap');
+      text { font-family: Georgia, serif; }
+      .mono { font-family: 'JetBrains Mono', 'Courier New', monospace; }
+      .serif { font-family: 'Source Serif 4', Georgia, serif; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="860" height="520" fill="#F8F8FA"/>
+
+  <!-- Eyebrow -->
+  <text x="40" y="30" class="mono" font-size="10" fill="#7A8099" letter-spacing="2">SIGNAL-RAUSCHEN-BEWERTUNG · MODUL VA09 · VERTRIEBSANLÄSSE ERKENNEN UND AUFBEREITEN</text>
+  <line x1="40" y1="40" x2="820" y2="40" stroke="#E2E3E8" stroke-width="1"/>
+
+  <!-- Titel -->
+  <text x="40" y="70" class="serif" font-size="17" fill="#1F2C56" font-weight="500">Signal oder Rauschen? – drei Prüffragen</text>
+  <text x="40" y="87" class="mono" font-size="9" fill="#7A8099" letter-spacing="0.5">Aus vielen Datenpunkten wird durch drei Ja/Nein-Fragen ein echter, entscheidungsreifer Anlass</text>
+
+  <!-- ══════════════════════════════════════════════
+       EINGANGS-BOX: Datenpunkte  (x=40 y=102)
+       ══════════════════════════════════════════════ -->
+  <rect x="40" y="102" width="148" height="74" fill="#3D5494"/>
+  <text x="114" y="125" class="mono" font-size="8" fill="#D9C089" letter-spacing="1" text-anchor="middle">DATENPUNKTE</text>
+  <text x="114" y="139" class="mono" font-size="8" fill="#D9C089" letter-spacing="1" text-anchor="middle">IM PORTFOLIO</text>
+  <line x1="56" y1="148" x2="172" y2="148" stroke="#8898C4" stroke-width="0.5" opacity="0.5"/>
+  <text x="114" y="163" class="mono" font-size="7" fill="rgba(248,248,250,0.75)" letter-spacing="0.5" text-anchor="middle">Konto · Akte · Gespräch</text>
+
+  <!-- Pfeil Eingang zu Prüffragen -->
+  <!-- Linie -->
+  <line x1="188" y1="139" x2="218" y2="139" stroke="#C8CAD4" stroke-width="1.5"/>
+  <!-- Pfeilspitze -->
+  <polygon points="218,134 228,139 218,144" fill="#C8CAD4"/>
+
+  <!-- ══════════════════════════════════════════════
+       DREI PRÜFFRAGEN (Filter-Blöcke)
+       x=228, Fragen nebeneinander, je 176px breit, gap 8px
+       y=102–176
+       ══════════════════════════════════════════════ -->
+
+  <!-- FRAGE 1: Dauerhaft? -->
+  <rect x="228" y="102" width="170" height="74" fill="#1F2C56"/>
+  <rect x="228" y="102" width="170" height="4" fill="#D9C089"/>
+  <text x="313" y="121" class="mono" font-size="8" fill="#D9C089" letter-spacing="2" text-anchor="middle">FRAGE 1</text>
+  <text x="313" y="135" class="mono" font-size="9" fill="#F8F8FA" letter-spacing="0.5" text-anchor="middle" font-weight="500">Dauerhaft?</text>
+  <line x1="244" y1="142" x2="382" y2="142" stroke="#8898C4" stroke-width="0.5" opacity="0.4"/>
+  <text x="313" y="157" class="mono" font-size="7" fill="#8898C4" letter-spacing="0.5" text-anchor="middle">Oder einmalig / saisonal?</text>
+  <text x="313" y="169" class="mono" font-size="7" fill="#8898C4" letter-spacing="0.5" text-anchor="middle">(Weihnachtsgesch. = Rauschen)</text>
+
+  <!-- FRAGE 2: Situationspassend? -->
+  <rect x="406" y="102" width="170" height="74" fill="#1F2C56"/>
+  <rect x="406" y="102" width="170" height="4" fill="#D9C089"/>
+  <text x="491" y="121" class="mono" font-size="8" fill="#D9C089" letter-spacing="2" text-anchor="middle">FRAGE 2</text>
+  <text x="491" y="135" class="mono" font-size="9" fill="#F8F8FA" letter-spacing="0.5" text-anchor="middle" font-weight="500">Situationspassend?</text>
+  <line x1="422" y1="142" x2="560" y2="142" stroke="#8898C4" stroke-width="0.5" opacity="0.4"/>
+  <text x="491" y="157" class="mono" font-size="7" fill="#8898C4" letter-spacing="0.5" text-anchor="middle">Passt der Bedarf wirklich</text>
+  <text x="491" y="169" class="mono" font-size="7" fill="#8898C4" letter-spacing="0.5" text-anchor="middle">zu diesem Kunden?</text>
+
+  <!-- FRAGE 3: Jetzt relevant? -->
+  <rect x="584" y="102" width="170" height="74" fill="#1F2C56"/>
+  <rect x="584" y="102" width="170" height="4" fill="#D9C089"/>
+  <text x="669" y="121" class="mono" font-size="8" fill="#D9C089" letter-spacing="2" text-anchor="middle">FRAGE 3</text>
+  <text x="669" y="135" class="mono" font-size="9" fill="#F8F8FA" letter-spacing="0.5" text-anchor="middle" font-weight="500">Jetzt relevant?</text>
+  <line x1="600" y1="142" x2="738" y2="142" stroke="#8898C4" stroke-width="0.5" opacity="0.4"/>
+  <text x="669" y="157" class="mono" font-size="7" fill="#8898C4" letter-spacing="0.5" text-anchor="middle">Ist der Zeitpunkt richtig</text>
+  <text x="669" y="169" class="mono" font-size="7" fill="#8898C4" letter-spacing="0.5" text-anchor="middle">für ein Gespräch?</text>
+
+  <!-- Verbindungspfeil zw. Fragen 1 und 2 -->
+  <line x1="398" y1="139" x2="406" y2="139" stroke="#D9C089" stroke-width="1.5"/>
+  <!-- Verbindungspfeil zw. Fragen 2 und 3 -->
+  <line x1="576" y1="139" x2="584" y2="139" stroke="#D9C089" stroke-width="1.5"/>
+
+  <!-- ══════════════════════════════════════════════
+       ERGEBNIS-WEICHE
+       Vom Ende des dritten Filters gabelt sich der Weg:
+       Linie nach unten, dann Y-förmig zu zwei Ausgaben
+       ══════════════════════════════════════════════ -->
+
+  <!-- Vertikale Linie vom Ende der drei Filter nach unten zum Knotenpunkt -->
+  <!-- Wir führen eine gemeinsame Trennlinie durch alle drei Filter unten weiter -->
+  <!-- Knotenpunkt: x=430, y=212 (Mitte zwischen den zwei Ausgaben) -->
+
+  <!-- Linie von Frage 1 unten nach Knotenpunkt -->
+  <line x1="313" y1="176" x2="313" y2="204" stroke="#D9C089" stroke-width="1.5"/>
+  <!-- Linie von Frage 2 unten nach Knotenpunkt -->
+  <line x1="491" y1="176" x2="491" y2="204" stroke="#D9C089" stroke-width="1.5"/>
+  <!-- Linie von Frage 3 unten nach Knotenpunkt -->
+  <line x1="669" y1="176" x2="669" y2="204" stroke="#D9C089" stroke-width="1.5"/>
+  <!-- Horizontale Sammelleitung -->
+  <line x1="313" y1="204" x2="669" y2="204" stroke="#D9C089" stroke-width="1.5"/>
+  <!-- Knotenpunkt-Kreis -->
+  <circle cx="491" cy="204" r="4" fill="#D9C089"/>
+
+  <!-- Linker Ast: Ja-Pfad (echter Anlass) -->
+  <!-- Linie nach links-unten -->
+  <line x1="491" y1="204" x2="220" y2="240" stroke="#D9C089" stroke-width="1.5"/>
+  <!-- Pfeilspitze links -->
+  <polygon points="220,233 210,243 228,246" fill="#D9C089"/>
+
+  <!-- Rechter Ast: Nein-Pfad (Rauschen) -->
+  <!-- Linie nach rechts-unten -->
+  <line x1="491" y1="204" x2="750" y2="240" stroke="#7A8099" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <!-- Pfeilspitze rechts -->
+  <polygon points="750,233 760,243 742,246" fill="#7A8099"/>
+
+  <!-- LABEL für die Äste -->
+  <text x="340" y="232" class="mono" font-size="8" fill="#D9C089" letter-spacing="1" text-anchor="middle">ALLE DREI JA</text>
+  <text x="625" y="232" class="mono" font-size="8" fill="#7A8099" letter-spacing="1" text-anchor="middle">EIN NEIN</text>
+
+  <!-- ══════════════════════════════════════════════
+       LINKE AUSGABE: Echter Anlass  (y=246–378)
+       ══════════════════════════════════════════════ -->
+  <rect x="40" y="246" width="380" height="110" fill="#1F2C56"/>
+  <rect x="40" y="246" width="380" height="4" fill="#D9C089"/>
+  <text x="230" y="264" class="mono" font-size="8" fill="#D9C089" letter-spacing="2" text-anchor="middle">ECHTER ANLASS — AUFBEREITUNG FÜR DEN BERATER</text>
+  <line x1="56" y1="271" x2="404" y2="271" stroke="#D9C089" stroke-width="0.5" opacity="0.35"/>
+  <!-- Vier Bausteine der Aufbereitung -->
+  <text x="56" y="287" class="mono" font-size="8" fill="#D9C089" letter-spacing="1">01 KURZPROFIL</text>
+  <text x="56" y="300" class="mono" font-size="7" fill="rgba(248,248,250,0.80)" letter-spacing="0.5">Kunde, Engagement-Größe, Beziehungsdauer</text>
+  <text x="56" y="317" class="mono" font-size="8" fill="#D9C089" letter-spacing="1">02 BELEG (DATENPUNKT)</text>
+  <text x="56" y="330" class="mono" font-size="7" fill="rgba(248,248,250,0.80)" letter-spacing="0.5">Konkrete Zahl / Frist, z. B. „Limit 87 % ausgelastet"</text>
+  <text x="56" y="347" class="mono" font-size="8" fill="#D9C089" letter-spacing="1">03 EMPFEHLUNG / GESPRÄCHSANLASS</text>
+  <text x="56" y="360" class="mono" font-size="7" fill="rgba(248,248,250,0.80)" letter-spacing="0.5">Welches Produkt / welcher Verbundpartner?</text>
+  <text x="230" y="377" class="mono" font-size="8" fill="#D9C089" letter-spacing="1" text-anchor="middle">04 TIMING — WANN SPÄTESTENS?</text>
+
+  <!-- ══════════════════════════════════════════════
+       RECHTE AUSGABE: Datenrauschen  (y=246–356)
+       ══════════════════════════════════════════════ -->
+  <rect x="440" y="246" width="380" height="80" fill="#EDEDF3" stroke="#C8CAD4" stroke-width="1"/>
+  <text x="630" y="267" class="mono" font-size="8" fill="#7A8099" letter-spacing="2" text-anchor="middle">DATENRAUSCHEN — NICHT WEITERGEBEN</text>
+  <line x1="456" y1="273" x2="804" y2="273" stroke="#C8CAD4" stroke-width="0.5"/>
+  <text x="456" y="290" class="mono" font-size="7" fill="#3D4460" letter-spacing="0.5">Einmaliger Ausschlag (z. B. saisonale Mehrauslastung)</text>
+  <text x="456" y="305" class="mono" font-size="7" fill="#3D4460" letter-spacing="0.5">Kein passender Bedarf für diesen Kunden</text>
+  <text x="456" y="320" class="mono" font-size="7" fill="#3D4460" letter-spacing="0.5">Zeitpunkt ungünstig (laufendes Projekt, Sonderbelastung)</text>
+
+  <!-- ══════════════════════════════════════════════
+       MERKKASTEN  (y=392–450)
+       ══════════════════════════════════════════════ -->
+  <rect x="40" y="392" width="780" height="56" fill="#EAD9A8"/>
+  <rect x="40" y="392" width="780" height="56" fill="none" stroke="#D9C089" stroke-width="1"/>
+  <rect x="40" y="392" width="4"   height="56" fill="#D9C089"/>
+  <text x="58" y="411" class="mono" font-size="9" fill="#1F2C56" letter-spacing="1" font-weight="500">GRUNDSATZ: Das Aussortieren ist genauso wertvoll wie das Erkennen.</text>
+  <text x="58" y="427" class="mono" font-size="9" fill="#3D4460" letter-spacing="0.5">Der Innendienst reicht kein Datenrauschen weiter — der Berater bekommt nur entscheidungsreife Anlässe,</text>
+  <text x="58" y="441" class="mono" font-size="9" fill="#3D4460" letter-spacing="0.5">damit seine knappe Gesprächszeit wirklich auf echte Opportunitäten entfällt.</text>
+
+  <!-- Baseline -->
+  <line x1="40" y1="462" x2="820" y2="462" stroke="#15192B" stroke-width="1"/>
+
+  <!-- Source -->
+  <text x="40" y="478" class="mono" font-size="9" fill="#B0B3C0" letter-spacing="0.5">Signal-Rauschen-Bewertung · Modul VA09</text>
+  <text x="820" y="478" class="mono" font-size="9" fill="#B0B3C0" letter-spacing="0.5" text-anchor="end">FKB Campus (2025). Vertriebsassistenz-Track, Modul VA09.</text>
+</svg>
