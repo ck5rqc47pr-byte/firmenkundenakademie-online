@@ -138,6 +138,11 @@ const GRAFIKEN_MAP: Record<string, Array<{ bezeichnung: string; datei: string }>
     { bezeichnung: "Drei Verfahren → Wertbandbreite", datei: "/grafiken/M24-bewertungsverfahren.svg" },
     { bezeichnung: "Handlungsempfehlung (Wenn-Dann)", datei: "/grafiken/M24-handlungsempfehlung.svg" },
   ],
+  // ── VA-Track ────────────────────────────────────────────────────────────────
+  VA01: [
+    { bezeichnung: "Sechs Bereiche der Kreditakte", datei: "/grafiken/VA01-aktenstruktur.svg" },
+    { bezeichnung: "Funktionstrennung Markt / Marktfolge", datei: "/grafiken/VA01-funktionstrennung.svg" },
+  ],
 };
 
 const STATUS_STYLE: Record<string, string> = {
