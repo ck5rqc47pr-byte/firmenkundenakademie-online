@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 520" width="860" height="520">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;1,8..60,400&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap');
+      text { font-family: Georgia, serif; }
+      .mono { font-family: 'JetBrains Mono', 'Courier New', monospace; }
+      .serif { font-family: 'Source Serif 4', Georgia, serif; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="860" height="520" fill="#F8F8FA"/>
+
+  <!-- Eyebrow -->
+  <text x="40" y="30" class="mono" font-size="10" fill="#7A8099" letter-spacing="2">SELBSTORGANISATION · MODUL VA08 · PRIORITÄT NACH WIRKUNG – NICHT NACH LAUTSTÄRKE</text>
+  <line x1="40" y1="40" x2="820" y2="40" stroke="#E2E3E8" stroke-width="1"/>
+
+  <!-- Titel -->
+  <text x="40" y="68" class="serif" font-size="17" fill="#1F2C56" font-weight="500">Wichtig geht vor dringend – die Eisenhower-Matrix</text>
+  <text x="40" y="84" class="mono" font-size="9" fill="#7A8099" letter-spacing="0.5">Vier Felder · Handlungslogik + Innendienst-Beispiel</text>
+
+  <!-- ═══════════════════════════════════════════
+       ACHSEN-BESCHRIFTUNGEN
+       ═══════════════════════════════════════════ -->
+
+  <!-- Achse senkrecht: WICHTIGKEIT (links, zentriert) -->
+  <text x="16" y="298" class="mono" font-size="9" fill="#1F2C56" letter-spacing="1.5" text-anchor="middle"
+        transform="rotate(-90, 16, 298)">WICHTIGKEIT</text>
+  <!-- Pfeile für Wichtigkeit-Achse (oben = hoch) -->
+  <line x1="28" y1="102" x2="28" y2="384" stroke="#C8CAD4" stroke-width="1.5"/>
+  <polygon points="28,96 24,108 32,108" fill="#C8CAD4"/>
+  <text x="32" y="104" class="mono" font-size="8" fill="#7A8099" letter-spacing="0.5">hoch</text>
+  <text x="32" y="386" class="mono" font-size="8" fill="#7A8099" letter-spacing="0.5">niedrig</text>
+
+  <!-- Achse waagerecht: DRINGLICHKEIT (unten) -->
+  <text x="458" y="408" class="mono" font-size="9" fill="#1F2C56" letter-spacing="1.5" text-anchor="middle">DRINGLICHKEIT</text>
+  <line x1="43" y1="396" x2="874" y2="396" stroke="#C8CAD4" stroke-width="1.5"/>
+  <polygon points="875,396 863,392 863,400" fill="#C8CAD4"/>
+  <text x="48" y="406" class="mono" font-size="8" fill="#7A8099" letter-spacing="0.5">niedrig</text>
+  <text x="812" y="406" class="mono" font-size="8" fill="#7A8099" letter-spacing="0.5">hoch</text>
+
+  <!-- ═══════════════════════════════════════════
+       VIER FELDER  (Matrixursprung: x=44, y=96)
+       Breite je Feld: 390   Höhe je Feld: 142
+       Links oben: WICHTIG + NICHT DRINGEND
+       Rechts oben: WICHTIG + DRINGEND
+       Links unten: NICHT WICHTIG + NICHT DRINGEND
+       Rechts unten: NICHT WICHTIG + DRINGEND
+       ═══════════════════════════════════════════ -->
+
+  <!-- Trennlinie Mitte senkrecht -->
+  <line x1="449" y1="96" x2="449" y2="388" stroke="#C8CAD4" stroke-width="1.2"/>
+  <!-- Trennlinie Mitte waagerecht -->
+  <line x1="44" y1="242" x2="864" y2="242" stroke="#C8CAD4" stroke-width="1.2"/>
+
+  <!-- ─── FELD A: WICHTIG + DRINGEND (rechts oben) → Navy ─── -->
+  <rect x="449" y="96" width="415" height="146" fill="#1F2C56"/>
+  <!-- Akzent-Streifen oben -->
+  <rect x="449" y="96" width="415" height="4" fill="#D9C089"/>
+  <text x="464" y="118" class="mono" font-size="8" fill="#D9C089" letter-spacing="2">SOFORT SELBST TUN</text>
+  <line x1="464" y1="124" x2="848" y2="124" stroke="#D9C089" stroke-width="0.5" opacity="0.4"/>
+  <text x="464" y="141" class="mono" font-size="9" fill="#F8F8FA" letter-spacing="0.5" font-weight="500">Wichtig + dringend</text>
+  <text x="464" y="158" class="mono" font-size="8" fill="rgba(248,248,250,0.75)" letter-spacing="0.5">Sofort, vollständig, selbst.</text>
+  <text x="464" y="178" class="mono" font-size="8" fill="#D9C089" letter-spacing="0.5">Beispiel:</text>
+  <text x="464" y="192" class="mono" font-size="8" fill="rgba(248,248,250,0.80)" letter-spacing="0.5">Engagementübersicht bis 11:00</text>
+  <text x="464" y="205" class="mono" font-size="8" fill="rgba(248,248,250,0.80)" letter-spacing="0.5">für den Beratertermin fertigstellen</text>
+  <text x="464" y="222" class="mono" font-size="7" fill="#8898C4" letter-spacing="0.5">Frist + Kundenwirkung = Pflicht jetzt</text>
+
+  <!-- ─── FELD B: WICHTIG + NICHT DRINGEND (links oben) → Mid-Primary ─── -->
+  <rect x="44" y="96" width="405" height="146" fill="#3D5494"/>
+  <rect x="44" y="96" width="405" height="4" fill="#8898C4"/>
+  <text x="60" y="118" class="mono" font-size="8" fill="#D9C089" letter-spacing="2">TERMINIEREN / PLANEN</text>
+  <line x1="60" y1="124" x2="433" y2="124" stroke="#D9C089" stroke-width="0.5" opacity="0.4"/>
+  <text x="60" y="141" class="mono" font-size="9" fill="#F8F8FA" letter-spacing="0.5" font-weight="500">Wichtig + nicht dringend</text>
+  <text x="60" y="158" class="mono" font-size="8" fill="rgba(248,248,250,0.75)" letter-spacing="0.5">Festen Termin eintragen, nicht verschieben.</text>
+  <text x="60" y="178" class="mono" font-size="8" fill="#D9C089" letter-spacing="0.5">Beispiel:</text>
+  <text x="60" y="192" class="mono" font-size="8" fill="rgba(248,248,250,0.80)" letter-spacing="0.5">Quartals-Datenpflege in einen</text>
+  <text x="60" y="205" class="mono" font-size="8" fill="rgba(248,248,250,0.80)" letter-spacing="0.5">ruhigen Block legen (z. B. Montag 9–10)</text>
+  <text x="60" y="222" class="mono" font-size="7" fill="#8898C4" letter-spacing="0.5">Prozessqualität sichern – bevor die Frist drückt</text>
+
+  <!-- ─── FELD C: NICHT WICHTIG + DRINGEND (rechts unten) → Helles Bg mit Akzent-Rand ─── -->
+  <rect x="449" y="242" width="415" height="146" fill="#EDEDF3" stroke="#C8CAD4" stroke-width="1"/>
+  <rect x="449" y="242" width="415" height="4" fill="#C8CAD4"/>
+  <text x="464" y="264" class="mono" font-size="8" fill="#1F2C56" letter-spacing="2">DELEGIEREN / ABFANGEN</text>
+  <line x1="464" y1="270" x2="848" y2="270" stroke="#1F2C56" stroke-width="0.5" opacity="0.25"/>
+  <text x="464" y="287" class="mono" font-size="9" fill="#1F2C56" letter-spacing="0.5" font-weight="500">Nicht wichtig + dringend</text>
+  <text x="464" y="304" class="mono" font-size="8" fill="#3D4460" letter-spacing="0.5">Kurz halten, weiterleiten oder</text>
+  <text x="464" y="317" class="mono" font-size="8" fill="#3D4460" letter-spacing="0.5">Rückruf vereinbaren – keine Schwäche.</text>
+  <text x="464" y="337" class="mono" font-size="8" fill="#1F2C56" letter-spacing="0.5">Beispiel:</text>
+  <text x="464" y="351" class="mono" font-size="8" fill="#3D4460" letter-spacing="0.5">Klingelndes Telefon, Rückfragen des</text>
+  <text x="464" y="364" class="mono" font-size="8" fill="#3D4460" letter-spacing="0.5">Teams: Vertretung oder Rückruf</text>
+
+  <!-- ─── FELD D: NICHT WICHTIG + NICHT DRINGEND (links unten) → Canvas mit Grenzfarbe ─── -->
+  <rect x="44" y="242" width="405" height="146" fill="#F8F8FA" stroke="#E2E3E8" stroke-width="1"/>
+  <rect x="44" y="242" width="405" height="4" fill="#E2E3E8"/>
+  <text x="60" y="264" class="mono" font-size="8" fill="#7A8099" letter-spacing="2">WEGLASSEN</text>
+  <line x1="60" y1="270" x2="433" y2="270" stroke="#7A8099" stroke-width="0.5" opacity="0.4"/>
+  <text x="60" y="287" class="mono" font-size="9" fill="#7A8099" letter-spacing="0.5" font-weight="500">Nicht wichtig + nicht dringend</text>
+  <text x="60" y="304" class="mono" font-size="8" fill="#7A8099" letter-spacing="0.5">Bewusst streichen. Nicht aufschieben –</text>
+  <text x="60" y="317" class="mono" font-size="8" fill="#7A8099" letter-spacing="0.5">ablehnen oder aus dem System entfernen.</text>
+  <text x="60" y="337" class="mono" font-size="8" fill="#7A8099" letter-spacing="0.5">Zeitfresser:</text>
+  <text x="60" y="351" class="mono" font-size="8" fill="#7A8099" letter-spacing="0.5">Routinen ohne Mehrwert, Status-Mails</text>
+  <text x="60" y="364" class="mono" font-size="8" fill="#7A8099" letter-spacing="0.5">ohne Handlungsbedarf</text>
+
+  <!-- ═══════════════════════════════════════════
+       MERKKASTEN
+       ═══════════════════════════════════════════ -->
+  <rect x="40" y="418" width="780" height="46" fill="#EAD9A8"/>
+  <rect x="40" y="418" width="780" height="46" fill="none" stroke="#D9C089" stroke-width="1"/>
+  <rect x="40" y="418" width="4"   height="46" fill="#D9C089"/>
+  <text x="58" y="436" class="mono" font-size="9" fill="#1F2C56" letter-spacing="1" font-weight="500">GRUNDREGEL: Dringlichkeit kommt im Innendienst oft von außen.</text>
+  <text x="58" y="451" class="mono" font-size="8" fill="#3D4460" letter-spacing="0.5">Wichtigkeit bemisst sich an Auswirkung auf Fristen, Kunden, Prozessqualität und Haftung – nicht an Lautstärke.</text>
+
+  <!-- Baseline -->
+  <line x1="40" y1="474" x2="820" y2="474" stroke="#15192B" stroke-width="1"/>
+
+  <!-- Source -->
+  <text x="40" y="490" class="mono" font-size="9" fill="#B0B3C0" letter-spacing="0.5">Eisenhower-Prinzip · Modul VA08</text>
+  <text x="820" y="490" class="mono" font-size="9" fill="#B0B3C0" letter-spacing="0.5" text-anchor="end">Covey, S. R. (1989). The 7 Habits of Highly Effective People. Free Press.</text>
+</svg>
