@@ -147,6 +147,10 @@ const GRAFIKEN_MAP: Record<string, Array<{ bezeichnung: string; datei: string }>
     { bezeichnung: "Sicherheitenarten und ihre Unterlagen", datei: "/grafiken/VA02-sicherheitenarten.svg" },
     { bezeichnung: "Auszahlungsvoraussetzungen – Prüf-Gate", datei: "/grafiken/VA02-auszahlungsvoraussetzungen.svg" },
   ],
+  VA03: [
+    { bezeichnung: "agree als Single Source of Truth", datei: "/grafiken/VA03-agree-funktionsbereiche.svg" },
+    { bezeichnung: "Was ein Workaround wirklich kostet", datei: "/grafiken/VA03-workaround-kosten.svg" },
+  ],
 };
 
 const STATUS_STYLE: Record<string, string> = {
