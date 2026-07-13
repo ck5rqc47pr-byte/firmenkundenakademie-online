@@ -151,6 +151,10 @@ const GRAFIKEN_MAP: Record<string, Array<{ bezeichnung: string; datei: string }>
     { bezeichnung: "agree als Single Source of Truth", datei: "/grafiken/VA03-agree-funktionsbereiche.svg" },
     { bezeichnung: "Was ein Workaround wirklich kostet", datei: "/grafiken/VA03-workaround-kosten.svg" },
   ],
+  VA04: [
+    { bezeichnung: "Fristen priorisieren: Risikoart schlägt Zeitnähe", datei: "/grafiken/VA04-fristen-priorisierung.svg" },
+    { bezeichnung: "Datenqualität: Was darf ich selbst ändern?", datei: "/grafiken/VA04-berechtigungstiefe.svg" },
+  ],
 };
 
 const STATUS_STYLE: Record<string, string> = {
