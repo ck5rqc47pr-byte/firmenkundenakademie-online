@@ -1,0 +1,158 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 580" width="860" height="580">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;1,8..60,400&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap');
+      text { font-family: Georgia, serif; }
+      .mono { font-family: 'JetBrains Mono', 'Courier New', monospace; }
+      .serif { font-family: 'Source Serif 4', Georgia, serif; }
+    </style>
+  </defs>
+
+  <!-- Hintergrund -->
+  <rect width="860" height="580" fill="#F8F8FA"/>
+
+  <!-- Eyebrow -->
+  <text x="40" y="30" class="mono" font-size="10" fill="#7A8099" letter-spacing="2">KAPITALSTRUKTUR &amp; FINANZIERUNGSSTRATEGIE · MODUL M03 · DER STRATEGISCHE FINANZDIALOG</text>
+  <line x1="40" y1="40" x2="820" y2="40" stroke="#E2E3E8" stroke-width="1"/>
+
+  <!-- Titel -->
+  <text x="40" y="68" class="serif" font-size="17" fill="#1F2C56" font-weight="500">Die Finanzierungstreppe: wenn der Bankkredit an seine Grenze stößt</text>
+  <text x="40" y="86" class="mono" font-size="9" fill="#7A8099" letter-spacing="0.5">Erkenne, wann der Standard-Bankkredit endet – und öffne die nächste Tür</text>
+
+  <!-- ══════════════════════════════════════════════
+       ACHSEN-BESCHRIFTUNGEN (links unten / rechts oben)
+       ══════════════════════════════════════════════ -->
+
+  <!-- Achse unten links -->
+  <text x="42" y="420" class="mono" font-size="8" fill="#7A8099" letter-spacing="1">FREMDKAPITAL</text>
+  <text x="42" y="432" class="mono" font-size="8" fill="#7A8099" letter-spacing="0.5">günstig · hohe Kontrolle</text>
+
+  <!-- Achse oben rechts -->
+  <text x="690" y="116" class="mono" font-size="8" fill="#7A8099" letter-spacing="1" text-anchor="end">EIGENKAPITAL</text>
+  <text x="690" y="128" class="mono" font-size="8" fill="#7A8099" letter-spacing="0.5" text-anchor="end">teurer · geringere Kontrolle</text>
+
+  <!-- Diagonaler Richtungspfeil (Achse der Treppe) -->
+  <line x1="56" y1="398" x2="690" y2="108" stroke="#C8CAD4" stroke-width="1" stroke-dasharray="4 3"/>
+  <!-- Pfeilspitze oben rechts -->
+  <polygon points="690,108 678,116 683,106" fill="#C8CAD4"/>
+
+  <!-- ══════════════════════════════════════════════
+       TREPPENSTUFEN (5 Stufen, aufsteigend von links)
+       Stufe 1: x=42,  Boden y=392, Höhe 52, Breite 134
+       Stufe 2: x=176, Boden y=342, Höhe 52, Breite 134
+       Stufe 3: x=310, Boden y=292, Höhe 52, Breite 134  (Akzent-Gold)
+       Stufe 4: x=444, Boden y=242, Höhe 52, Breite 134  (Akzent-Gold)
+       Stufe 5: x=578, Boden y=152, Höhe 92, Breite 134  (Navy dunkel)
+       ══════════════════════════════════════════════ -->
+
+  <!-- STUFE 1: Innenfinanzierung / Thesaurierung -->
+  <rect x="42"  y="340" width="134" height="52" fill="#EDEDF3" stroke="#C8CAD4" stroke-width="1"/>
+  <rect x="42"  y="340" width="134" height="4" fill="#3D5494"/>
+  <text x="109" y="358" class="mono" font-size="8" fill="#1F2C56" letter-spacing="1" text-anchor="middle">01 · INNEN-</text>
+  <text x="109" y="369" class="mono" font-size="8" fill="#1F2C56" letter-spacing="1" text-anchor="middle">FINANZIERUNG</text>
+  <text x="109" y="381" class="mono" font-size="7" fill="#7A8099" letter-spacing="0.5" text-anchor="middle">Thesaurierung</text>
+
+  <!-- STUFE 2: Bankkredit (klassisch) -->
+  <rect x="176" y="290" width="134" height="52" fill="#3D5494"/>
+  <rect x="176" y="290" width="134" height="4" fill="#1F2C56"/>
+  <text x="243" y="308" class="mono" font-size="8" fill="#D9C089" letter-spacing="1" text-anchor="middle">02 · BANKKREDIT</text>
+  <text x="243" y="320" class="mono" font-size="8" fill="rgba(248,248,250,0.85)" letter-spacing="0.5" text-anchor="middle">klassisch</text>
+  <text x="243" y="333" class="mono" font-size="7" fill="#8898C4" letter-spacing="0.5" text-anchor="middle">Darlehen · Linie</text>
+
+  <!-- STUFE 3: Förderkredit (KfW / L-Bank) — AKZENT GOLD -->
+  <rect x="310" y="240" width="134" height="52" fill="#D9C089"/>
+  <rect x="310" y="240" width="134" height="4" fill="#1F2C56"/>
+  <text x="377" y="258" class="mono" font-size="8" fill="#1F2C56" letter-spacing="1" text-anchor="middle">03 · FÖRDERKREDIT</text>
+  <text x="377" y="270" class="mono" font-size="8" fill="#3D4460" letter-spacing="0.5" text-anchor="middle">KfW / L-Bank</text>
+  <text x="377" y="283" class="mono" font-size="7" fill="#1F2C56" letter-spacing="0.5" text-anchor="middle">subventionierter Zins</text>
+
+  <!-- STUFE 4: Mezzanine-Kapital — AKZENT GOLD heller -->
+  <rect x="444" y="190" width="134" height="52" fill="#EAD9A8"/>
+  <rect x="444" y="190" width="134" height="4" fill="#D9C089"/>
+  <text x="511" y="208" class="mono" font-size="8" fill="#1F2C56" letter-spacing="1" text-anchor="middle">04 · MEZZANINE</text>
+  <text x="511" y="220" class="mono" font-size="8" fill="#3D4460" letter-spacing="0.5" text-anchor="middle">EK-ähnlich</text>
+  <text x="511" y="233" class="mono" font-size="7" fill="#7A8099" letter-spacing="0.5" text-anchor="middle">keine Verwässerung</text>
+
+  <!-- STUFE 5: Private Equity / Beteiligung — Navy primär -->
+  <rect x="578" y="100" width="134" height="92" fill="#1F2C56"/>
+  <rect x="578" y="100" width="134" height="4" fill="#D9C089"/>
+  <text x="645" y="122" class="mono" font-size="8" fill="#D9C089" letter-spacing="1" text-anchor="middle">05 · BETEILIGUNG</text>
+  <text x="645" y="135" class="mono" font-size="8" fill="rgba(248,248,250,0.85)" letter-spacing="0.5" text-anchor="middle">Private Equity</text>
+  <text x="645" y="149" class="mono" font-size="7" fill="#8898C4" letter-spacing="0.5" text-anchor="middle">starkes EK · Netzwerk</text>
+  <text x="645" y="162" class="mono" font-size="7" fill="#8898C4" letter-spacing="0.5" text-anchor="middle">MBO / MBI</text>
+
+  <!-- ══════════════════════════════════════════════
+       TREPPENKONTUR (verbindende Linien zwischen Stufen)
+       ══════════════════════════════════════════════ -->
+  <!-- Treppe Boden durchgehend -->
+  <polyline points="42,392 176,392 176,342 310,342 310,292 444,292 444,242 578,242 578,192 712,192" fill="none" stroke="#C8CAD4" stroke-width="1"/>
+
+  <!-- ══════════════════════════════════════════════
+       DETAIL-KARTEN (je Stufe: Kurzcharakteristik + Einsatzfall)
+       Unterhalb der jeweiligen Stufe, als kompakte Info-Zeile
+       ══════════════════════════════════════════════ -->
+
+  <!-- Karte Stufe 1 -->
+  <rect x="42" y="395" width="134" height="42" fill="#FFFFFF" stroke="#E2E3E8" stroke-width="1"/>
+  <text x="50" y="408" class="mono" font-size="7" fill="#3D5494" letter-spacing="0.5">Keine Abhängigkeiten</text>
+  <text x="50" y="419" class="mono" font-size="7" fill="#7A8099" letter-spacing="0.5">begrenzt durch Ertragskraft</text>
+  <line x1="50" y1="424" x2="168" y2="424" stroke="#E2E3E8" stroke-width="0.5"/>
+  <text x="50" y="432" class="mono" font-size="7" fill="#1F2C56" letter-spacing="0.5">EK-Aufbau · Konsolidierung</text>
+
+  <!-- Karte Stufe 2 -->
+  <rect x="176" y="395" width="134" height="42" fill="#FFFFFF" stroke="#E2E3E8" stroke-width="1"/>
+  <text x="184" y="408" class="mono" font-size="7" fill="#3D5494" letter-spacing="0.5">günstig · strukturiert</text>
+  <text x="184" y="419" class="mono" font-size="7" fill="#7A8099" letter-spacing="0.5">Sicherheiten · Covenants</text>
+  <line x1="184" y1="424" x2="302" y2="424" stroke="#E2E3E8" stroke-width="0.5"/>
+  <text x="184" y="432" class="mono" font-size="7" fill="#1F2C56" letter-spacing="0.5">Investitionen · Betriebsmittel</text>
+
+  <!-- Karte Stufe 3 — Akzent-Rahmen -->
+  <rect x="310" y="395" width="134" height="42" fill="#FFFFFF" stroke="#D9C089" stroke-width="1.5"/>
+  <text x="318" y="408" class="mono" font-size="7" fill="#3D5494" letter-spacing="0.5">Haftungsfreistellung</text>
+  <text x="318" y="419" class="mono" font-size="7" fill="#7A8099" letter-spacing="0.5">Antrag VOR Auszahlung</text>
+  <line x1="318" y1="424" x2="436" y2="424" stroke="#D9C089" stroke-width="0.5"/>
+  <text x="318" y="432" class="mono" font-size="7" fill="#1F2C56" letter-spacing="0.5">Wachstum · Innovation</text>
+
+  <!-- Karte Stufe 4 — Akzent-Rahmen -->
+  <rect x="444" y="395" width="134" height="42" fill="#FFFFFF" stroke="#D9C089" stroke-width="1.5"/>
+  <text x="452" y="408" class="mono" font-size="7" fill="#3D5494" letter-spacing="0.5">EK-ähnlich · keine Verwässerung</text>
+  <text x="452" y="419" class="mono" font-size="7" fill="#7A8099" letter-spacing="0.5">teurer als FK · begrenzte Laufzeit</text>
+  <line x1="452" y1="424" x2="570" y2="424" stroke="#D9C089" stroke-width="0.5"/>
+  <text x="452" y="432" class="mono" font-size="7" fill="#1F2C56" letter-spacing="0.5">Wachstum · Nachfolge</text>
+
+  <!-- Karte Stufe 5 -->
+  <rect x="578" y="395" width="134" height="42" fill="#FFFFFF" stroke="#E2E3E8" stroke-width="1"/>
+  <text x="586" y="408" class="mono" font-size="7" fill="#3D5494" letter-spacing="0.5">starkes EK · Know-how</text>
+  <text x="586" y="419" class="mono" font-size="7" fill="#7A8099" letter-spacing="0.5">Kontrollverlust · Exit-Druck</text>
+  <line x1="586" y1="424" x2="704" y2="424" stroke="#E2E3E8" stroke-width="0.5"/>
+  <text x="586" y="432" class="mono" font-size="7" fill="#1F2C56" letter-spacing="0.5">Skalierung · MBO/MBI</text>
+
+  <!-- ══════════════════════════════════════════════
+       HINWEIS-BADGES: „nächste Tür" für Stufen 3 + 4
+       ══════════════════════════════════════════════ -->
+
+  <!-- Badge Stufe 3 -->
+  <rect x="316" y="222" width="90" height="14" fill="#1F2C56"/>
+  <text x="361" y="232" class="mono" font-size="7" fill="#D9C089" letter-spacing="0.5" text-anchor="middle">NÄCHSTE TÜR</text>
+
+  <!-- Badge Stufe 4 -->
+  <rect x="450" y="172" width="90" height="14" fill="#1F2C56"/>
+  <text x="495" y="182" class="mono" font-size="7" fill="#D9C089" letter-spacing="0.5" text-anchor="middle">NÄCHSTE TÜR</text>
+
+  <!-- ══════════════════════════════════════════════
+       MERKKASTEN
+       ══════════════════════════════════════════════ -->
+  <rect x="42" y="448" width="670" height="58" fill="#EAD9A8"/>
+  <rect x="42" y="448" width="670" height="58" fill="none" stroke="#D9C089" stroke-width="1"/>
+  <rect x="42" y="448" width="4"   height="58" fill="#D9C089"/>
+  <text x="60" y="466" class="mono" font-size="9" fill="#1F2C56" letter-spacing="1" font-weight="500">DIE STRATEGISCHE STÄRKE ZEIGT SICH DORT, WO DER STANDARDKREDIT ENDET.</text>
+  <text x="60" y="481" class="mono" font-size="9" fill="#3D4460" letter-spacing="0.5">Verbundpartner öffnen die nächste Tür: DZ BANK, L-Bank/KfW, R+V, Union Investment.</text>
+  <text x="60" y="496" class="mono" font-size="8" fill="#7A8099" letter-spacing="0.5">Stufen 3 und 4 (Förderkredit, Mezzanine) sind die häufigsten Anschluss-Lösungen im Firmenkundengeschäft.</text>
+
+  <!-- Baseline -->
+  <line x1="42" y1="520" x2="820" y2="520" stroke="#15192B" stroke-width="1"/>
+
+  <!-- Quelle -->
+  <text x="42" y="536" class="mono" font-size="9" fill="#B0B3C0" letter-spacing="0.5">Kapitalstruktur &amp; Finanzierungsstrategie · Modul M03</text>
+  <text x="820" y="536" class="mono" font-size="9" fill="#B0B3C0" letter-spacing="0.5" text-anchor="end">Perridon, Steiner &amp; Rathgeber (2017). Finanzwirtschaft der Unternehmung (17. Aufl.). Vahlen.</text>
+</svg>

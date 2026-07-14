@@ -59,6 +59,7 @@ const GRAFIKEN_MAP: Record<string, Array<{ bezeichnung: string; datei: string }>
   M03: [
     { bezeichnung: "Drei Gesprächsebenen", datei: "/grafiken/M03-finanzdialog-ebenen.svg" },
     { bezeichnung: "Werttreiberbaum", datei: "/grafiken/M03-werttreiberbaum.svg" },
+    { bezeichnung: "Finanzierungstreppe (5 Stufen)", datei: "/grafiken/M03-finanzierungstreppe.svg" },
   ],
   M04: [
     { bezeichnung: "Frühwarn-Ampelkarte", datei: "/grafiken/M04-fruehwarnampel.svg" },
@@ -168,7 +169,7 @@ const GRAFIKEN_MAP: Record<string, Array<{ bezeichnung: string; datei: string }>
   ],
   VA07: [
     { bezeichnung: "Die Assistenz im Rollengeflecht (role set)", datei: "/grafiken/VA07-rollenstruktur.svg" },
-    { bezeichnung: "Wenn mehrere gleichzeitig „dringend“ sagen", datei: "/grafiken/VA07-mehrfachanfragen.svg" },
+    { bezeichnung: "Wenn mehrere gleichzeitig „dringend" sagen", datei: "/grafiken/VA07-mehrfachanfragen.svg" },
   ],
   VA08: [
     { bezeichnung: "Eisenhower-Matrix: Wichtig geht vor dringend", datei: "/grafiken/VA08-eisenhower-matrix.svg" },
