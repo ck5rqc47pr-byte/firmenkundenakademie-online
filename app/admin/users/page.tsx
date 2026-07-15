@@ -3,7 +3,7 @@ import { getServerSession } from "next-auth";
 import Link from "next/link";
 import { authOptions } from "@/lib/auth";
 import { getAllUsers, getDistinctBanks, ensureUsersBankColumn, type UserRole } from "@/lib/db";
-import { actionCreateUser, actionUpdateRole, actionResetPassword, actionUpdateBank } from "./actions";
+import { actionCreateUser, actionUpdateRole, actionResetPassword, actionUpdateBank, actionUpdateTrack } from "./actions";
 import { DeleteUserButton } from "./DeleteUserButton";
 
 export const dynamic = "force-dynamic";
@@ -68,15 +68,15 @@ export default async function UsersPage() {
           </datalist>
           <div className="bg-white border border-line overflow-hidden">
             <div className="overflow-x-auto">
-              <div className="grid grid-cols-[minmax(120px,1fr)_110px_150px_84px_140px_140px] min-w-[780px] bg-primary text-white font-mono text-[10px] uppercase tracking-[0.08em]">
-                {["Name / Login", "Rolle", "Bank / Gruppe", "Erstellt", "Rolle ändern", "Aktionen"].map((h) => (
+              <div className="grid grid-cols-[minmax(120px,1fr)_100px_150px_130px_80px_130px_130px] min-w-[880px] bg-primary text-white font-mono text-[10px] uppercase tracking-[0.08em]">
+                {["Name / Login", "Rolle", "Bank / Gruppe", "Track", "Erstellt", "Rolle ändern", "Aktionen"].map((h) => (
                   <div key={h} className="px-4 py-3">{h}</div>
                 ))}
               </div>
               {users.map((u, i) => (
                 <div
                   key={u.id}
-                  className={`grid grid-cols-[minmax(120px,1fr)_110px_150px_84px_140px_140px] min-w-[780px] border-t border-line items-center ${i % 2 === 0 ? "bg-white" : "bg-bg-2"}`}
+                  className={`grid grid-cols-[minmax(120px,1fr)_100px_150px_130px_80px_130px_130px] min-w-[880px] border-t border-line items-center ${i % 2 === 0 ? "bg-white" : "bg-bg-2"}`}
                 >
                   <div className="px-4 py-3">
                     <div className="text-sm font-medium text-ink">{u.name}</div>
@@ -98,6 +98,26 @@ export default async function UsersPage() {
                         placeholder="—"
                         className="font-mono text-[10px] border border-line px-2 py-1 bg-white text-ink flex-1 min-w-0 w-full"
                       />
+                      <button
+                        type="submit"
+                        className="font-mono text-[10px] uppercase tracking-[0.06em] px-2 py-1 bg-primary text-white hover:opacity-80 transition shrink-0"
+                      >
+                        OK
+                      </button>
+                    </form>
+                  </div>
+                  <div className="px-4 py-3">
+                    <form action={actionUpdateTrack} className="flex gap-1.5">
+                      <input type="hidden" name="id" value={u.id} />
+                      <select
+                        name="track"
+                        defaultValue={u.track ?? ""}
+                        className="font-mono text-[10px] border border-line px-2 py-1 bg-white text-ink flex-1 min-w-0"
+                      >
+                        <option value="">— alle</option>
+                        <option value="berater">Berater</option>
+                        <option value="assistenz">Assistenz</option>
+                      </select>
                       <button
                         type="submit"
                         className="font-mono text-[10px] uppercase tracking-[0.06em] px-2 py-1 bg-primary text-white hover:opacity-80 transition shrink-0"
@@ -193,14 +213,24 @@ export default async function UsersPage() {
                   <option value="admin">Admin</option>
                 </select>
               </div>
-              <div className="flex flex-col gap-1.5 sm:col-span-2">
+              <div className="flex flex-col gap-1.5">
                 <label className="font-mono text-[10px] uppercase tracking-[0.08em] text-ink-3">
-                  Bank / Gruppe <span className="normal-case tracking-normal text-ink-3">(Mandantentrennung – Teamleiter/Trainer sehen nur ihre eigene)</span>
+                  Bank / Gruppe <span className="normal-case tracking-normal text-ink-3">(Mandantentrennung)</span>
                 </label>
                 <input
                   type="text" name="bank" list="bank-options" placeholder="z. B. VR-Bank Musterregion eG"
                   className="border border-line px-3 py-2 text-sm bg-white text-ink focus:outline-none focus:border-primary font-mono"
                 />
+              </div>
+              <div className="flex flex-col gap-1.5">
+                <label className="font-mono text-[10px] uppercase tracking-[0.08em] text-ink-3">
+                  Track <span className="normal-case tracking-normal text-ink-3">(sichtbarer Lernpfad – leer = alle)</span>
+                </label>
+                <select name="track" defaultValue="" className="border border-line px-3 py-2 text-sm bg-white text-ink focus:outline-none focus:border-primary">
+                  <option value="">— alle Tracks</option>
+                  <option value="berater">Firmenkundenberater</option>
+                  <option value="assistenz">Vertriebsassistenz</option>
+                </select>
               </div>
               <div className="sm:col-span-2">
                 <button type="submit" className="font-mono text-[11px] uppercase tracking-[0.08em] px-6 py-3 bg-primary text-white hover:opacity-90 transition">

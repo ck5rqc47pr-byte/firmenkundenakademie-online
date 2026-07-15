@@ -13,14 +13,29 @@ export default async function ModulesPage() {
   const role = (session?.user as { role?: string })?.role ?? "";
   // Willkommens-/Onboarding-Sicht für Teilnehmer. Fail-open: für Verwaltungsrollen
   // ausblenden, sonst zeigen (auch wenn die Rolle unerwartet leer/anders ist).
-  const showWelcome = role !== "admin" && role !== "trainer" && role !== "teamleiter";
+  const isPrivileged = role === "admin" || role === "trainer" || role === "teamleiter";
+  const showWelcome = !isPrivileged;
 
-  const modules = getAllModules();
-  const kompetenzfelder = getKompetenzfelder();
+  // Track-Restriktion (Phase 18): ein Teilnehmer mit zugewiesenem Track sieht nur
+  // diesen Lernpfad. Fail-open: Verwaltungsrollen und Nutzer ohne (gültigen) Track
+  // sehen alles. Nur bekannte Zielrollen restringieren.
+  const userTrack = (session?.user as { track?: string | null })?.track ?? null;
+  const restrictTrack =
+    !isPrivileged && (userTrack === "berater" || userTrack === "assistenz")
+      ? (userTrack as "berater" | "assistenz")
+      : null;
 
-  // Track-Struktur für den Filter: nur Tracks/Felder zeigen, die Module haben.
+  const allModules = getAllModules();
+  const modules = restrictTrack
+    ? allModules.filter((m) => m.zielrolle === restrictTrack)
+    : allModules;
+  const kompetenzfelder = getKompetenzfelder(restrictTrack ?? undefined);
+
+  // Track-Struktur für den Filter: nur Tracks/Felder zeigen, die Module haben –
+  // und bei Track-Restriktion nur den zugewiesenen Track.
   const usedSlugs = new Set(modules.map((m) => m.kompetenzfeld_slug));
   const tracks = Object.values(TRACKS)
+    .filter((track) => !restrictTrack || track.id === restrictTrack)
     .map((track) => ({
       id: track.id,
       label: track.label,

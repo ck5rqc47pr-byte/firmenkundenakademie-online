@@ -155,7 +155,18 @@ export default async function KompassPage({
 
   const userId = (session.user as { id?: string }).id!;
 
-  const track: Zielrolle = searchParams?.track === "assistenz" ? "assistenz" : "berater";
+  // Track-Restriktion (Phase 18): ein Teilnehmer mit zugewiesenem Track sieht nur
+  // seinen Kompass; der Umschalter entfällt. Verwaltungsrollen / kein Track = frei.
+  const role = (session.user as { role?: string }).role ?? "";
+  const isPrivileged = role === "admin" || role === "trainer" || role === "teamleiter";
+  const userTrack = (session.user as { track?: string | null }).track ?? null;
+  const restrictTrack =
+    !isPrivileged && (userTrack === "berater" || userTrack === "assistenz")
+      ? (userTrack as Zielrolle)
+      : null;
+
+  const requestedTrack: Zielrolle = searchParams?.track === "assistenz" ? "assistenz" : "berater";
+  const track: Zielrolle = restrictTrack ?? requestedTrack;
   const view = TRACK_VIEW[track];
   const ETAPPEN = view.etappen;
   const trackDef = TRACKS[track];
@@ -194,23 +205,25 @@ export default async function KompassPage({
           FKB Campus · Kompass
         </div>
 
-        {/* Track-Umschalter */}
-        <div className="flex flex-wrap gap-1 mb-8">
-          {(Object.keys(TRACKS) as Zielrolle[]).map((id) => {
-            const active = id === track;
-            return (
-              <Link
-                key={id}
-                href={id === "berater" ? "/kompass" : `/kompass?track=${id}`}
-                className={`font-mono text-[11px] uppercase tracking-[0.08em] px-4 py-2 border transition ${
-                  active ? "bg-ink text-bg border-ink" : "border-line text-ink-2 hover:border-ink-2 hover:text-ink"
-                }`}
-              >
-                {TRACKS[id].label}
-              </Link>
-            );
-          })}
-        </div>
+        {/* Track-Umschalter – entfällt bei Track-Restriktion (nur ein Lernpfad sichtbar) */}
+        {!restrictTrack && (
+          <div className="flex flex-wrap gap-1 mb-8">
+            {(Object.keys(TRACKS) as Zielrolle[]).map((id) => {
+              const active = id === track;
+              return (
+                <Link
+                  key={id}
+                  href={id === "berater" ? "/kompass" : `/kompass?track=${id}`}
+                  className={`font-mono text-[11px] uppercase tracking-[0.08em] px-4 py-2 border transition ${
+                    active ? "bg-ink text-bg border-ink" : "border-line text-ink-2 hover:border-ink-2 hover:text-ink"
+                  }`}
+                >
+                  {TRACKS[id].label}
+                </Link>
+              );
+            })}
+          </div>
+        )}
 
         <h1 lang="de" className="font-serif text-[clamp(36px,8vw,88px)] font-normal leading-[1.05] tracking-[-0.03em] mb-8 max-w-3xl hyphens-auto">
           Der{" "}

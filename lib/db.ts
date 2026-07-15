@@ -12,6 +12,7 @@ export interface DbUser {
   password_hash: string;
   role: UserRole;
   bank: string | null;
+  track: string | null;
   created_at: string;
 }
 
@@ -21,12 +22,20 @@ export async function ensureUsersBankColumn(): Promise<void> {
   await sql`ALTER TABLE users ADD COLUMN IF NOT EXISTS bank text`;
 }
 
+// Track-Zuordnung (Phase 18): idempotent eine track-Spalte sicherstellen.
+// NULL = kein Filter (Teilnehmer sieht alle Tracks); sonst ein Zielrolle-Slug
+// ("berater" | "assistenz" | ggf. "teamleiter"). Gleiche Mechanik wie bank.
+export async function ensureUsersTrackColumn(): Promise<void> {
+  await sql`ALTER TABLE users ADD COLUMN IF NOT EXISTS track text`;
+}
+
 export async function findUserByLogin(login: string): Promise<DbUser | null> {
-  // Selbstheilende Migration: stellt sicher, dass die bank-Spalte existiert,
-  // bevor sie selektiert wird (idempotent, kein Migrations-Framework vorhanden).
+  // Selbstheilende Migration: stellt sicher, dass bank- und track-Spalte
+  // existieren, bevor sie selektiert werden (idempotent, kein Migrations-Framework).
   await ensureUsersBankColumn();
+  await ensureUsersTrackColumn();
   const rows = await sql`
-    SELECT id, name, login, password_hash, role, bank, created_at
+    SELECT id, name, login, password_hash, role, bank, track, created_at
     FROM users
     WHERE login = ${login}
     LIMIT 1
@@ -35,8 +44,9 @@ export async function findUserByLogin(login: string): Promise<DbUser | null> {
 }
 
 export async function getAllUsers(): Promise<DbUser[]> {
+  await ensureUsersTrackColumn();
   const rows = await sql`
-    SELECT id, name, login, role, bank, created_at
+    SELECT id, name, login, role, bank, track, created_at
     FROM users
     ORDER BY created_at ASC
   `;
@@ -58,19 +68,21 @@ export async function createUser(
   login: string,
   passwordHash: string,
   role: UserRole,
-  bank: string | null = null
+  bank: string | null = null,
+  track: string | null = null
 ): Promise<DbUser> {
+  await ensureUsersTrackColumn();
   const rows = await sql`
-    INSERT INTO users (name, login, password_hash, role, bank)
-    VALUES (${name}, ${login}, ${passwordHash}, ${role}, ${bank})
-    RETURNING id, name, login, role, bank, created_at
+    INSERT INTO users (name, login, password_hash, role, bank, track)
+    VALUES (${name}, ${login}, ${passwordHash}, ${role}, ${bank}, ${track})
+    RETURNING id, name, login, role, bank, track, created_at
   `;
   return rows[0] as DbUser;
 }
 
 export async function updateUser(
   id: string,
-  fields: { name?: string; role?: UserRole; passwordHash?: string; bank?: string | null }
+  fields: { name?: string; role?: UserRole; passwordHash?: string; bank?: string | null; track?: string | null }
 ): Promise<void> {
   if (fields.name !== undefined) {
     await sql`UPDATE users SET name = ${fields.name} WHERE id = ${id}`;
@@ -83,6 +95,9 @@ export async function updateUser(
   }
   if (fields.bank !== undefined) {
     await sql`UPDATE users SET bank = ${fields.bank} WHERE id = ${id}`;
+  }
+  if (fields.track !== undefined) {
+    await sql`UPDATE users SET track = ${fields.track} WHERE id = ${id}`;
   }
 }
 

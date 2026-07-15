@@ -1,7 +1,8 @@
 import fs from "fs";
 import path from "path";
 import { NextRequest, NextResponse } from "next/server";
-import { getSessionRole } from "@/lib/auth";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/lib/auth";
 
 export const dynamic = "force-dynamic";
 
@@ -52,12 +53,30 @@ export async function GET(
   }
   const ext = match[2];
 
-  const role = await getSessionRole();
+  const session = await getServerSession(authOptions);
+  const role = (session?.user as { role?: string })?.role ?? "";
   if (!role) {
     return NextResponse.json({ error: "Nicht angemeldet" }, { status: 401 });
   }
   if (!allowedRoles.includes(role)) {
     return NextResponse.json({ error: "Keine Berechtigung" }, { status: 403 });
+  }
+
+  // Track-Restriktion (Phase 18): ein track-gebundener Teilnehmer darf nur
+  // Modul-Downloads seines Lernpfads abrufen (Modul-Track aus dem Präfix:
+  // VA→assistenz, M→berater). Fail-open: Verwaltungsrollen / kein Track / generisches
+  // Teamleiter-Material bleiben unberührt.
+  const isPrivileged = role === "admin" || role === "trainer" || role === "teamleiter";
+  const userTrack = (session?.user as { track?: string | null })?.track ?? null;
+  if (
+    !isPrivileged &&
+    type !== "teamleiter-material" &&
+    (userTrack === "berater" || userTrack === "assistenz")
+  ) {
+    const moduleTrack = match[1].startsWith("VA") ? "assistenz" : "berater";
+    if (moduleTrack !== userTrack) {
+      return NextResponse.json({ error: "Kein Zugriff auf diesen Track" }, { status: 403 });
+    }
   }
 
   const absolutePath = path.join(PROTECTED_DIR, type, file);

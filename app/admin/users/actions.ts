@@ -5,6 +5,13 @@ import bcrypt from "bcryptjs";
 import { createUser, updateUser, deleteUser, type UserRole } from "@/lib/db";
 import { requireAdmin } from "@/lib/auth";
 
+// Erlaubte Track-Werte (Phase 18); leer/ungültig → null = kein Filter (alle Tracks).
+const TRACK_SLUGS = ["berater", "assistenz", "teamleiter"];
+function normalizeTrack(raw: unknown): string | null {
+  const v = ((raw as string) ?? "").trim();
+  return TRACK_SLUGS.includes(v) ? v : null;
+}
+
 export async function actionCreateUser(formData: FormData) {
   await requireAdmin();
   const name = (formData.get("name") as string).trim();
@@ -12,11 +19,12 @@ export async function actionCreateUser(formData: FormData) {
   const password = (formData.get("password") as string);
   const role = formData.get("role") as UserRole;
   const bank = ((formData.get("bank") as string) ?? "").trim() || null;
+  const track = normalizeTrack(formData.get("track"));
 
   if (!name || !login || !password || !role) throw new Error("Alle Felder erforderlich");
 
   const passwordHash = await bcrypt.hash(password, 10);
-  await createUser(name, login, passwordHash, role, bank);
+  await createUser(name, login, passwordHash, role, bank, track);
   revalidatePath("/admin/users");
 }
 
@@ -33,6 +41,14 @@ export async function actionUpdateBank(formData: FormData) {
   const id = formData.get("id") as string;
   const bank = ((formData.get("bank") as string) ?? "").trim() || null;
   await updateUser(id, { bank });
+  revalidatePath("/admin/users");
+}
+
+export async function actionUpdateTrack(formData: FormData) {
+  await requireAdmin();
+  const id = formData.get("id") as string;
+  const track = normalizeTrack(formData.get("track"));
+  await updateUser(id, { track });
   revalidatePath("/admin/users");
 }
 
