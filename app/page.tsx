@@ -30,6 +30,33 @@ const ETAPPEN = [
   },
 ];
 
+const VA_ETAPPEN = [
+  {
+    nr: 1,
+    titel: "Sachbearbeitung",
+    sub: "Sachbearbeitung",
+    beschreibung:
+      "Die formale Grundlage: Kreditakte, Sicherheiten, Systeme, Legitimation. Sauber, vollständig, prüfsicher — hier entscheidet sich die Qualität jeder Kreditvorlage.",
+    module: ["Das eigene Haus kennen", "Kreditakte sicher führen", "agree im Innendienst", "Telefon & Schriftverkehr", "Selbstorganisation", "Neukunden anlegen"],
+  },
+  {
+    nr: 2,
+    titel: "Eigenständige Assistenz",
+    sub: "Eigenständige Assistenz",
+    beschreibung:
+      "Mitdenken statt abarbeiten: Fristen steuern, Termine so vorbereiten, dass der Berater sofort loslegt, und die Schnittstelle aktiv gestalten.",
+    module: ["Sicherheiten & Auszahlung", "Wiedervorlage & Fristen", "Termine vor- & nachbereiten", "Schnittstelle Berater–Assistenz", "Geldwäscheprävention"],
+  },
+  {
+    nr: 3,
+    titel: "Co-Pilot",
+    sub: "Co-Pilot",
+    beschreibung:
+      "Auf Augenhöhe mit dem Berater: Vertriebsanlässe aus den Bestandsdaten erkennen und entscheidungsreif aufbereiten — der Innendienst wird zum Frühwarnsystem.",
+    module: ["Vertriebsanlässe erkennen & aufbereiten"],
+  },
+];
+
 const MANIFEST = [
   ["I.", "Praxis trifft Evidenz", "Inhalte aus echten Fragestellungen — fachlich geprüft und wissenschaftlich fundiert."],
   ["II.", "Klarheit als Disziplin", "Komplexes verdichtet, damit es im Alltag anwendbar bleibt — ohne Tiefe zu verlieren."],
@@ -223,6 +250,89 @@ export default function HomePage() {
               );
             })}
           </div>
+        </div>
+      </section>
+
+      {/* ── VERTRIEBSASSISTENZ ────────────────────────────────────────────── */}
+      <section className="border-b border-ink bg-bg-2">
+        <div className="mx-auto max-w-content px-6 lg:px-14 pt-16 pb-10">
+          <div className="font-mono text-[10px] uppercase tracking-[0.1em] text-ink-3 mb-5 flex items-center gap-2">
+            <span className="w-4 h-px inline-block bg-ink-3" />
+            Zweiter Lernpfad · Innendienst
+          </div>
+          <h2 className="font-serif text-3xl lg:text-4xl font-normal tracking-[-0.02em] leading-tight max-w-2xl">
+            Vertriebsassistenz. Das{" "}
+            <em className="italic text-ink-2">Rückgrat</em> des Firmenkundengeschäfts.
+          </h2>
+          <p className="font-serif text-lg text-ink-2 leading-relaxed max-w-2xl mt-6 border-l-2 border-accent pl-5">
+            Starke Beratung braucht einen starken Innendienst. Der Assistenz-Track macht aus
+            formaler Sachbearbeitung eine mitdenkende, prüfsichere Assistenz — die den Berater
+            entlastet, Qualität und Compliance sichert und Vertriebschancen früh erkennt. Ein
+            eigener Lernweg mit drei Entwicklungsstufen.
+          </p>
+        </div>
+        <div className="mx-auto max-w-content border-t border-ink">
+          <div className="grid grid-cols-1 lg:grid-cols-3">
+            {VA_ETAPPEN.map((e, i) => {
+              const isDark   = i === 2;
+              const isAccent = i === 1;
+              const numerals = ["I.", "II.", "III."];
+              return (
+                <div
+                  key={e.nr}
+                  className={`px-8 lg:px-10 pt-10 pb-12 ${i < 2 ? "border-b lg:border-b-0 lg:border-r border-ink" : ""}`}
+                  style={{ background: isDark ? "var(--primary)" : isAccent ? "var(--accent)" : "var(--bg)" }}
+                >
+                  <div
+                    className="font-serif text-[54px] leading-none italic mb-5"
+                    style={{ color: isDark ? "var(--accent)" : "var(--primary)" }}
+                  >
+                    {numerals[i]}
+                  </div>
+                  <div className={`font-mono text-[9px] uppercase tracking-[0.1em] mb-2 ${isDark ? "text-white/40" : "text-ink-3"}`}>
+                    Stufe {e.nr}
+                  </div>
+                  <h3 className={`font-serif text-2xl font-normal tracking-[-0.01em] mb-1 ${isDark ? "text-white" : "text-ink"}`}>
+                    {e.titel}
+                  </h3>
+                  <div className={`font-mono text-[9px] uppercase tracking-[0.06em] mb-5 ${isDark ? "text-white/40" : "text-ink-3"}`}>
+                    {countByStufe(e.sub)} Module · Zielstufe: {e.sub}
+                  </div>
+                  <div className={`h-px mb-5 ${isDark ? "bg-white/15" : "bg-ink/20"}`} />
+                  <p className={`font-serif text-[15px] leading-relaxed mb-6 ${isDark ? "text-white/60" : "text-ink-2"}`}>
+                    {e.beschreibung}
+                  </p>
+                  <div className={`h-px mb-5 ${isDark ? "bg-white/15" : "bg-line"}`} />
+                  <div className="space-y-1.5">
+                    {e.module.slice(0, 4).map((m) => (
+                      <div key={m} className={`flex items-center gap-2 font-mono text-[10px] ${isDark ? "text-white/40" : "text-ink-3"}`}>
+                        <span>—</span><span>{m}</span>
+                      </div>
+                    ))}
+                    {e.module.length > 4 && (
+                      <div className={`font-mono text-[10px] font-medium ${isDark ? "text-white/30" : "text-ink-3"}`}>
+                        + {e.module.length - 4} weitere
+                      </div>
+                    )}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+        <div className="mx-auto max-w-content px-6 lg:px-14 py-8 flex flex-col sm:flex-row gap-4 border-t border-ink">
+          <Link
+            href="/kompass?track=assistenz"
+            className="inline-flex items-center gap-3 bg-primary text-white px-7 py-4 font-mono text-[11px] uppercase tracking-[0.08em] hover:bg-primary/90 transition-all"
+          >
+            Assistenz-Track ansehen →
+          </Link>
+          <Link
+            href="/module/VA00"
+            className="inline-flex items-center gap-3 border border-line px-7 py-4 font-mono text-[11px] uppercase tracking-[0.08em] text-ink-2 hover:border-ink hover:text-ink transition-all"
+          >
+            Einstiegsmodul „Das eigene Haus kennen"
+          </Link>
         </div>
       </section>
 
