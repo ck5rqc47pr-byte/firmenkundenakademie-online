@@ -150,11 +150,67 @@ export const ASSISTENZ_FIELDS: AssessmentField[] = [
   },
 ];
 
+export const TEAMLEITER_FIELDS: AssessmentField[] = [
+  {
+    slug: "k-f00",
+    label: "Selbst- & Rollenführung",
+    beschreibung: "Rollenwechsel, Führungshaltung & Selbstführung · TL00 · TL01",
+    stufen: [
+      { value: 1, label: "Teamleiter", sub: "Ich verstehe, dass mein Erfolg jetzt durch das Team entsteht, und trenne meine Führungsrolle bewusst von meiner früheren Beraterrolle." },
+      { value: 2, label: "Führungscoach", sub: "Ich handle aus einem klaren Führungsselbstverständnis, setze Prioritäten souverän und nehme mir bewusst Zeit für Führung statt für Fachaufgaben." },
+      { value: 3, label: "Strategische Führungskraft", sub: "Ich führe werteorientiert und dienend (Servant Leadership), bin für mein Team Vorbild und reflektiere meine Wirkung als Führungspersönlichkeit kontinuierlich." },
+    ],
+  },
+  {
+    slug: "k-f01",
+    label: "Führung & Teamentwicklung",
+    beschreibung: "Führungsstile, situatives Führen & Teamdynamik · TL02 · TL03",
+    stufen: [
+      { value: 1, label: "Teamleiter", sub: "Ich kenne die grundlegenden Führungsstile und passe meinen Stil bewusst an den Reifegrad des einzelnen Beraters an." },
+      { value: 2, label: "Führungscoach", sub: "Ich delegiere wirksam, motiviere situativ und erkenne, in welcher Entwicklungsphase mein Team steht." },
+      { value: 3, label: "Strategische Führungskraft", sub: "Ich entwickle mein Team transformational weiter, gestalte eine tragfähige Teamkultur und führe auch heterogene Teams zu gemeinsamer Leistung." },
+    ],
+  },
+  {
+    slug: "k-f02",
+    label: "Vertriebssteuerung & Cockpit",
+    beschreibung: "Ziele, Kennzahlen & Steuerungsgespräche · TL04 · TL05",
+    stufen: [
+      { value: 1, label: "Teamleiter", sub: "Ich lese das Cockpit sicher, unterscheide Aktivitäts- von Ergebniskennzahlen und erkenne Auffälligkeiten im Team." },
+      { value: 2, label: "Führungscoach", sub: "Ich leite aus Kennzahlen Hypothesen und Handlungen ab und führe Steuerungsgespräche, die entwickeln statt Druck zu machen." },
+      { value: 3, label: "Strategische Führungskraft", sub: "Ich verbinde Steuerung und Entwicklung zu einem stimmigen Führungssystem und richte die Vertriebssteuerung an der langfristigen Kundenbeziehung aus." },
+    ],
+  },
+  {
+    slug: "k-f03",
+    label: "Personalentwicklung & Coaching",
+    beschreibung: "Feedback-, Entwicklungsgespräche & Coaching · TL06 · TL07",
+    stufen: [
+      { value: 1, label: "Teamleiter", sub: "Ich gebe regelmäßig konkretes Feedback und führe strukturierte Entwicklungsgespräche mit meinen Beratern." },
+      { value: 2, label: "Führungscoach", sub: "Ich führe mit einer Coaching-Haltung (z. B. GROW), stelle entwicklungsfördernde Fragen statt vorschnelle Lösungen zu liefern." },
+      { value: 3, label: "Strategische Führungskraft", sub: "Ich erkenne und fördere Potenziale systematisch, begleite Berater am Arbeitsplatz und baue Nachfolge und Kompetenz im Team gezielt auf." },
+    ],
+  },
+  {
+    slug: "k-f04",
+    label: "Change & Kommunikation",
+    beschreibung: "Veränderung führen, schwierige Gespräche & Konflikt · TL08 · TL09 · TL10",
+    stufen: [
+      { value: 1, label: "Teamleiter", sub: "Ich kommuniziere Veränderungen klar und führe schwierige Gespräche sachlich und wertschätzend." },
+      { value: 2, label: "Führungscoach", sub: "Ich moderiere Konflikte im Team, bereite kritische Gespräche gezielt vor und begleite mein Team durch Veränderungen." },
+      { value: 3, label: "Strategische Führungskraft", sub: "Ich führe mein Team sicher durch Unsicherheit, gestalte Veränderungsprozesse aktiv mit und kommuniziere wirksam nach oben wie nach unten." },
+    ],
+  },
+];
+
 export const FIELDS_BY_TRACK: Record<string, AssessmentField[]> = {
   berater: BERATER_FIELDS,
   assistenz: ASSISTENZ_FIELDS,
+  teamleiter: TEAMLEITER_FIELDS,
 };
 
 export function getAssessmentFields(track?: string): AssessmentField[] {
-  return track === "assistenz" ? ASSISTENZ_FIELDS : BERATER_FIELDS;
+  if (track === "assistenz") return ASSISTENZ_FIELDS;
+  if (track === "teamleiter") return TEAMLEITER_FIELDS;
+  return BERATER_FIELDS;
 }

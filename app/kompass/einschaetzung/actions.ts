@@ -23,5 +23,11 @@ export async function actionSaveAssessment(formData: FormData) {
   }
 
   await upsertAssessment(userId, scores);
-  redirect(track === "assistenz" ? "/kompass?track=assistenz" : "/kompass");
+  redirect(
+    track === "assistenz"
+      ? "/kompass?track=assistenz"
+      : track === "teamleiter"
+      ? "/kompass?track=teamleiter"
+      : "/kompass",
+  );
 }

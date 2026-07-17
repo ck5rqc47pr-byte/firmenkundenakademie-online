@@ -71,6 +71,35 @@ const TRACK_VIEW: Record<Zielrolle, { heroLead: string; etappen: EtappeView[] }>
       },
     ],
   },
+  teamleiter: {
+    heroLead: "In drei Etappen vom Teamleiter zur strategischen Führungskraft.",
+    etappen: [
+      {
+        nr: 1,
+        stufe: "Teamleiter",
+        titel: "Teamleiter",
+        versprechen:
+          "Du kommst in der Rolle an. Du weißt, dass Erfolg jetzt durch dein Team entsteht — nicht durch dein eigenes Fachwissen. Du gibst Struktur, führst situativ und steuerst über das Cockpit.",
+        dark: false,
+      },
+      {
+        nr: 2,
+        stufe: "Führungscoach",
+        titel: "Führungscoach",
+        versprechen:
+          "Du entwickelst, statt nur anzuweisen. Du führst Feedback- und Steuerungsgespräche, die Menschen wachsen lassen, und passt deinen Stil an Reifegrad und Situation an.",
+        dark: false,
+      },
+      {
+        nr: 3,
+        stufe: "Strategische Führungskraft",
+        titel: "Strategische Führungskraft",
+        versprechen:
+          "Du gestaltest Veränderung. Du führst dein Team durch Unsicherheit, denkst über den eigenen Bereich hinaus und wirkst als werteorientierte, dienende Führungskraft im Sinne des genossenschaftlichen Auftrags.",
+        dark: true,
+      },
+    ],
+  },
 };
 
 function Station({
@@ -161,11 +190,17 @@ export default async function KompassPage({
   const isPrivileged = role === "admin" || role === "trainer" || role === "teamleiter";
   const userTrack = (session.user as { track?: string | null }).track ?? null;
   const restrictTrack =
-    !isPrivileged && (userTrack === "berater" || userTrack === "assistenz")
+    !isPrivileged &&
+    (userTrack === "berater" || userTrack === "assistenz" || userTrack === "teamleiter")
       ? (userTrack as Zielrolle)
       : null;
 
-  const requestedTrack: Zielrolle = searchParams?.track === "assistenz" ? "assistenz" : "berater";
+  const requestedTrack: Zielrolle =
+    searchParams?.track === "assistenz"
+      ? "assistenz"
+      : searchParams?.track === "teamleiter"
+      ? "teamleiter"
+      : "berater";
   const track: Zielrolle = restrictTrack ?? requestedTrack;
   const view = TRACK_VIEW[track];
   const ETAPPEN = view.etappen;
@@ -228,7 +263,11 @@ export default async function KompassPage({
         <h1 lang="de" className="font-serif text-[clamp(36px,8vw,88px)] font-normal leading-[1.05] tracking-[-0.03em] mb-8 max-w-3xl hyphens-auto">
           Der{" "}
           <em className="italic" style={{ color: "var(--ink-2)" }}>
-            {track === "assistenz" ? "Assistenzkompass" : "Firmenkundenkompass"}
+            {track === "assistenz"
+              ? "Assistenzkompass"
+              : track === "teamleiter"
+              ? "Führungskompass"
+              : "Firmenkundenkompass"}
           </em>
           .
         </h1>

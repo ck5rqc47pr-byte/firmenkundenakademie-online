@@ -12,15 +12,17 @@ export interface AblaufPhase {
 }
 
 // ── Track-Modell ───────────────────────────────────────────────────────────
-// Zwei parallele Lernpfade: Berater-Track (K-01…K-06) und Vertriebsassistenz-
-// Track (K-A01…K-A05). Diese Konstanten sind die *einzige* Quelle für Stufen-
-// und Kompetenzfeld-Definitionen je Track – Kompass, Einschätzungsbogen,
-// Modulübersicht, Admin und Trainer leiten ihre Listen daraus ab.
-export type Zielrolle = "berater" | "assistenz";
+// Drei parallele Lernpfade: Berater-Track (K-01…K-06), Vertriebsassistenz-
+// Track (K-A00…K-A06) und Führungs-/Teamleiter-Track (K-F00…K-F04). Diese
+// Konstanten sind die *einzige* Quelle für Stufen- und Kompetenzfeld-Definitionen
+// je Track – Kompass, Einschätzungsbogen, Modulübersicht, Admin und Trainer
+// leiten ihre Listen daraus ab.
+export type Zielrolle = "berater" | "assistenz" | "teamleiter";
 
 export type BeraterStufe = "Berater" | "Sparringspartner" | "Strategischer Partner";
 export type AssistenzStufe = "Sachbearbeitung" | "Eigenständige Assistenz" | "Co-Pilot";
-export type Stufe = BeraterStufe | AssistenzStufe;
+export type TeamleiterStufe = "Teamleiter" | "Führungscoach" | "Strategische Führungskraft";
+export type Stufe = BeraterStufe | AssistenzStufe | TeamleiterStufe;
 
 export interface KompetenzfeldDef {
   slug: string;
@@ -62,6 +64,18 @@ export const TRACKS: Record<Zielrolle, TrackDef> = {
       { slug: "k-a06", label: "Neugeschäft & gesetzliche Sorgfaltspflichten" },
     ],
   },
+  teamleiter: {
+    id: "teamleiter",
+    label: "Führung",
+    stufen: ["Teamleiter", "Führungscoach", "Strategische Führungskraft"],
+    felder: [
+      { slug: "k-f00", label: "Selbst- & Rollenführung" },
+      { slug: "k-f01", label: "Führung & Teamentwicklung" },
+      { slug: "k-f02", label: "Vertriebssteuerung & Cockpit" },
+      { slug: "k-f03", label: "Personalentwicklung & Coaching" },
+      { slug: "k-f04", label: "Change & Kommunikation" },
+    ],
+  },
 };
 
 const STUFE_TO_TRACK: Record<Stufe, Zielrolle> = {
@@ -71,6 +85,9 @@ const STUFE_TO_TRACK: Record<Stufe, Zielrolle> = {
   Sachbearbeitung: "assistenz",
   "Eigenständige Assistenz": "assistenz",
   "Co-Pilot": "assistenz",
+  Teamleiter: "teamleiter",
+  "Führungscoach": "teamleiter",
+  "Strategische Führungskraft": "teamleiter",
 };
 
 export interface Module {
@@ -300,12 +317,26 @@ function normalizeStufe(value: unknown): Module["stufe"] {
     return "Co-Pilot";
   }
 
+  // Führungs-/Teamleiter-Track
+  if (normalized === "teamleiter") {
+    return "Teamleiter";
+  }
+  if (normalized === "führungscoach" || normalized === "fuehrungscoach") {
+    return "Führungscoach";
+  }
+  if (
+    normalized === "strategische führungskraft" ||
+    normalized === "strategische fuehrungskraft"
+  ) {
+    return "Strategische Führungskraft";
+  }
+
   return "Strategischer Partner";
 }
 
 function normalizeZielrolle(value: unknown, stufe: Module["stufe"]): Zielrolle {
   const normalized = String(value ?? "").trim().toLowerCase();
-  if (normalized === "assistenz" || normalized === "berater") {
+  if (normalized === "assistenz" || normalized === "berater" || normalized === "teamleiter") {
     return normalized;
   }
   // Kein explizites Feld: aus der (bereits normalisierten) Stufe ableiten.

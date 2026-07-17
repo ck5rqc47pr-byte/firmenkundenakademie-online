@@ -15,7 +15,12 @@ export default async function EinschaetzungPage({
   const session = await getServerSession(authOptions);
   if (!session) redirect("/login?callbackUrl=/kompass/einschaetzung");
 
-  const track = searchParams?.track === "assistenz" ? "assistenz" : "berater";
+  const track =
+    searchParams?.track === "assistenz"
+      ? "assistenz"
+      : searchParams?.track === "teamleiter"
+      ? "teamleiter"
+      : "berater";
   const fields = getAssessmentFields(track);
 
   const userId = (session.user as { id?: string }).id!;
@@ -36,7 +41,7 @@ export default async function EinschaetzungPage({
         {/* Header */}
         <div className="font-mono text-[11px] uppercase tracking-[0.1em] text-ink-3 mb-7 flex items-center gap-3">
           <span className="w-6 h-px bg-ink-3 inline-block" />
-          FKB Campus · Kompass · Selbsteinschätzung{track === "assistenz" ? " · Vertriebsassistenz" : ""}
+          FKB Campus · Kompass · Selbsteinschätzung{track === "assistenz" ? " · Vertriebsassistenz" : track === "teamleiter" ? " · Führung" : ""}
         </div>
 
         <h1 className="font-serif text-[clamp(36px,6vw,64px)] font-normal leading-[1.05] tracking-[-0.03em] mb-6 max-w-2xl">

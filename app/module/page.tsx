@@ -21,8 +21,9 @@ export default async function ModulesPage() {
   // sehen alles. Nur bekannte Zielrollen restringieren.
   const userTrack = (session?.user as { track?: string | null })?.track ?? null;
   const restrictTrack =
-    !isPrivileged && (userTrack === "berater" || userTrack === "assistenz")
-      ? (userTrack as "berater" | "assistenz")
+    !isPrivileged &&
+    (userTrack === "berater" || userTrack === "assistenz" || userTrack === "teamleiter")
+      ? (userTrack as "berater" | "assistenz" | "teamleiter")
       : null;
 
   const allModules = getAllModules();

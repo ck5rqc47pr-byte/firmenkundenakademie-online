@@ -117,6 +117,7 @@ export default async function UsersPage() {
                         <option value="">— alle</option>
                         <option value="berater">Berater</option>
                         <option value="assistenz">Assistenz</option>
+                        <option value="teamleiter">Führung</option>
                       </select>
                       <button
                         type="submit"
@@ -230,6 +231,7 @@ export default async function UsersPage() {
                   <option value="">— alle Tracks</option>
                   <option value="berater">Firmenkundenberater</option>
                   <option value="assistenz">Vertriebsassistenz</option>
+                  <option value="teamleiter">Führung (Teamleiter)</option>
                 </select>
               </div>
               <div className="sm:col-span-2">

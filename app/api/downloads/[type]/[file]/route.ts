@@ -47,7 +47,7 @@ export async function GET(
   const match =
     type === "teamleiter-material"
       ? /^([A-Za-z][A-Za-z0-9-]{1,60})\.(pdf)$/.exec(file)
-      : /^((?:M|VA)\d{2})\.(pdf|pptx|xlsx)$/.exec(file);
+      : /^((?:M|VA|TL)\d{2})\.(pdf|pptx|xlsx)$/.exec(file);
   if (!match) {
     return NextResponse.json({ error: "Ungültiger Dateiname" }, { status: 400 });
   }
@@ -64,16 +64,20 @@ export async function GET(
 
   // Track-Restriktion (Phase 18): ein track-gebundener Teilnehmer darf nur
   // Modul-Downloads seines Lernpfads abrufen (Modul-Track aus dem Präfix:
-  // VA→assistenz, M→berater). Fail-open: Verwaltungsrollen / kein Track / generisches
-  // Teamleiter-Material bleiben unberührt.
+  // VA→assistenz, TL→teamleiter, M→berater). Fail-open: Verwaltungsrollen / kein Track /
+  // generisches Teamleiter-Material bleiben unberührt.
   const isPrivileged = role === "admin" || role === "trainer" || role === "teamleiter";
   const userTrack = (session?.user as { track?: string | null })?.track ?? null;
   if (
     !isPrivileged &&
     type !== "teamleiter-material" &&
-    (userTrack === "berater" || userTrack === "assistenz")
+    (userTrack === "berater" || userTrack === "assistenz" || userTrack === "teamleiter")
   ) {
-    const moduleTrack = match[1].startsWith("VA") ? "assistenz" : "berater";
+    const moduleTrack = match[1].startsWith("VA")
+      ? "assistenz"
+      : match[1].startsWith("TL")
+      ? "teamleiter"
+      : "berater";
     if (moduleTrack !== userTrack) {
       return NextResponse.json({ error: "Kein Zugriff auf diesen Track" }, { status: 403 });
     }

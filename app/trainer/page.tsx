@@ -14,6 +14,9 @@ const STUFE_ORDER: Record<Stufe, number> = {
   Sachbearbeitung: 1,
   "Eigenständige Assistenz": 2,
   "Co-Pilot": 3,
+  Teamleiter: 1,
+  "Führungscoach": 2,
+  "Strategische Führungskraft": 3,
 };
 
 const ALL_FELDER = Object.values(TRACKS).flatMap((t) => t.felder);
