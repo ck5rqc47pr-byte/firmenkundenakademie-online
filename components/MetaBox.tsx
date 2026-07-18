@@ -8,6 +8,7 @@ type Props = {
   beobachtungsbogenUrl?: string | null;
   teamleiterLeitfadenUrl?: string | null;
   arbeitsmaterialUrl?: string | null;
+  exkursUrl?: string | null;
   presentationUrl?: string | null;
   hasTheorie?: boolean;
   isTrainerOrAdmin?: boolean;
@@ -30,7 +31,7 @@ function Chip({ moduleId }: { moduleId: string }) {
   );
 }
 
-export function MetaBox({ module, pdfUrl, trainerPdfUrl, beobachtungsbogenUrl, teamleiterLeitfadenUrl, arbeitsmaterialUrl, presentationUrl, hasTheorie, isTrainerOrAdmin, className }: Props) {
+export function MetaBox({ module, pdfUrl, trainerPdfUrl, beobachtungsbogenUrl, teamleiterLeitfadenUrl, arbeitsmaterialUrl, exkursUrl, presentationUrl, hasTheorie, isTrainerOrAdmin, className }: Props) {
   return (
     <aside className={`space-y-8 ${className ?? ""}`}>
       {/* Auf dieser Seite – nur Desktop (Mobile hat eigene Leiste oben) */}
@@ -116,7 +117,7 @@ export function MetaBox({ module, pdfUrl, trainerPdfUrl, beobachtungsbogenUrl, t
           {module.kompetenzfeld} →
         </Link>
       </div>
-      {(pdfUrl || arbeitsmaterialUrl || beobachtungsbogenUrl || teamleiterLeitfadenUrl || (isTrainerOrAdmin && (trainerPdfUrl || presentationUrl))) && (
+      {(pdfUrl || arbeitsmaterialUrl || exkursUrl || beobachtungsbogenUrl || teamleiterLeitfadenUrl || (isTrainerOrAdmin && (trainerPdfUrl || presentationUrl))) && (
         <div>
           <div className="font-mono text-[10px] uppercase tracking-[0.08em] text-ink-3 pb-3 border-b border-ink mb-4">
             Downloads
@@ -141,6 +142,17 @@ export function MetaBox({ module, pdfUrl, trainerPdfUrl, beobachtungsbogenUrl, t
                 className="flex items-center justify-between gap-2 border border-line text-ink-2 px-4 py-3 font-mono text-[11px] uppercase tracking-[0.08em] hover:border-primary hover:text-primary transition"
               >
                 <span>Rechenmodell (XLSX)</span>
+                <span>↓</span>
+              </a>
+            )}
+            {exkursUrl && (
+              <a
+                href={exkursUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center justify-between gap-2 border border-line text-ink-2 px-4 py-3 font-mono text-[11px] uppercase tracking-[0.08em] hover:border-primary hover:text-primary transition"
+              >
+                <span>Exkurs: Finanzmodellierung (PDF)</span>
                 <span>↓</span>
               </a>
             )}

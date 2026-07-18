@@ -19,6 +19,9 @@ const ACCESS: Record<string, string[]> = {
   teilnehmerunterlagen: ["teilnehmer", "teamleiter", "trainer", "admin"],
   // Arbeitsmaterial (z. B. XLSX-Planungsmodell): jede angemeldete Rolle.
   arbeitsmaterial: ["teilnehmer", "teamleiter", "trainer", "admin"],
+  // Querschnitt-Exkurse (modul-unabhängige Referenz-PDFs, z. B. Finanzmodellierung):
+  // jede angemeldete Rolle; slug-basierter Dateiname (kein MXX-Präfix).
+  exkurs: ["teilnehmer", "teamleiter", "trainer", "admin"],
 };
 
 const CONTENT_TYPE: Record<string, string> = {
@@ -45,7 +48,7 @@ export async function GET(
   // Generisches Teamleiter-Material: sicherer Slug (Buchstaben/Ziffern/Bindestrich) + .pdf,
   // keine Punkte/Schrägstriche im Basenamen → traversal-sicher.
   const match =
-    type === "teamleiter-material"
+    type === "teamleiter-material" || type === "exkurs"
       ? /^([A-Za-z][A-Za-z0-9-]{1,60})\.(pdf)$/.exec(file)
       : /^((?:M|VA|TL)\d{2})\.(pdf|pptx|xlsx)$/.exec(file);
   if (!match) {
@@ -71,6 +74,7 @@ export async function GET(
   if (
     !isPrivileged &&
     type !== "teamleiter-material" &&
+    type !== "exkurs" &&
     (userTrack === "berater" || userTrack === "assistenz" || userTrack === "teamleiter")
   ) {
     const moduleTrack = match[1].startsWith("VA")

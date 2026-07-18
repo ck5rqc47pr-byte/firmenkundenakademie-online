@@ -230,6 +230,19 @@ export function getArbeitsmaterialUrl(moduleId: string): string | null {
   return `/api/downloads/arbeitsmaterial/${filename}`;
 }
 
+// Rechenmodell-Module, an denen der Querschnitt-Exkurs „Standards des
+// Finanzmodellierens" als Download erscheint (modul-unabhängiges Referenz-PDF).
+export const FINANZMODELLIERUNG_EXKURS_MODULES = ["M03", "M07", "M14", "M21", "M23"];
+
+export function getFinanzmodellierungExkursUrl(moduleId: string): string | null {
+  if (!FINANZMODELLIERUNG_EXKURS_MODULES.includes(moduleId.toUpperCase())) return null;
+  const absolutePath = path.join(
+    process.cwd(), "protected-downloads", "exkurs", "finanzmodellierung.pdf",
+  );
+  if (!fs.existsSync(absolutePath)) return null;
+  return "/api/downloads/exkurs/finanzmodellierung.pdf";
+}
+
 export function getTeamleiterLeitfadenPdfUrl(moduleId: string): string | null {
   const normalizedId = moduleId.toUpperCase();
   const filename = `${normalizedId}.pdf`;
