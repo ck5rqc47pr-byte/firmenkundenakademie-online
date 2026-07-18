@@ -55,12 +55,26 @@ const AGENTS: Agent[] = [
     beschreibung:
       "FK-Berater mit 25 Jahren Erfahrung bei einer VR-Bank in Süddeutschland. Prüft Alltagstauglichkeit, Verständlichkeit und Realismus der Praxisfälle aus Beratersicht.",
     zustaendig: ["Alltagstauglichkeit", "Verständlichkeit", "Praxisrelevanz", "Vollständigkeit aus Praxissicht"],
-    nicht_fuer: "Wissenschaftliche Standards, Quellenarbeit, Bloom/Dreyfus → Prof. Dr. Brandt",
+    nicht_fuer: "Wissenschaftliche Standards, Quellenarbeit, Bloom/Dreyfus → Prof. Dr. Brandt · Führungs-Module → Petra",
     model: "haiku",
     farbe: "#EDEDF3",
     textfarbe: "#15192B",
     initial: "A",
     datei: "praxis-reviewer.md",
+  },
+  {
+    id: "petra",
+    name: "Petra",
+    rolle: "Praxis-Reviewerin Führung",
+    beschreibung:
+      "Teamleiterin Firmenkunden mit ~10 Jahren Führungserfahrung (VR-Bank Süddeutschland), zuvor 12 Jahre FK-Beraterin. Prüft die Module des Führungs-/Teamleiter-Tracks (TL) auf Praxistauglichkeit aus Führungssicht: Realismus der Führungsfälle, Praktikabilität von kollegialer Fallberatung, Glaubwürdigkeit der Führungshaltung.",
+    zustaendig: ["Alltagstauglichkeit Führung", "Realismus der Führungsfälle", "Praktikabilität der Methodik", "Glaubwürdigkeit der Führungshaltung"],
+    nicht_fuer: "Berater-/Assistenz-Module → Armin · Wissenschaftliche Standards → Prof. Dr. Brandt",
+    model: "sonnet",
+    farbe: "#2E5A5E",
+    textfarbe: "#F8F8FA",
+    initial: "P",
+    datei: "praxis-reviewer-fuehrung.md",
   },
   {
     id: "dr-schreiber",

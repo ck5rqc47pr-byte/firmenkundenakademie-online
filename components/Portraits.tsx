@@ -298,3 +298,51 @@ export function PortraitPraktikant({ size = 200 }: { size?: number }) {
     </svg>
   );
 }
+
+export function PortraitPetra({ size = 200 }: { size?: number }) {
+  return (
+    <svg viewBox="0 0 200 200" width={size} height={size} fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Petra">
+      <defs>
+        <clipPath id="pr-petra"><circle cx="100" cy="100" r="99" /></clipPath>
+      </defs>
+      <circle cx="100" cy="100" r="100" fill="#2E5A5E" />
+      <g clipPath="url(#pr-petra)">
+        {/* Blazer */}
+        <path d="M6 206 C30 168 66 156 100 153 C134 156 170 168 194 206Z" fill="#333A4D" />
+        {/* Blouse / shell top */}
+        <path d="M87 152 L100 168 L113 152 C107 148 93 148 87 152Z" fill="#ECEAF2" />
+        {/* Blazer lapels */}
+        <path d="M89 153 L80 203 L95 167Z" fill="#3E4459" />
+        <path d="M111 153 L120 203 L105 167Z" fill="#3E4459" />
+        {/* Neck */}
+        <rect x="90" y="139" width="20" height="16" rx="2" fill={SKIN} />
+        {/* Head */}
+        <ellipse cx="100" cy="102" rx="47" ry="52" fill={SKIN} />
+        {/* Ears */}
+        <ellipse cx="54" cy="107" rx="6" ry="9" fill={SKIN_D} />
+        <ellipse cx="146" cy="107" rx="6" ry="9" fill={SKIN_D} />
+        {/* Earrings – subtle gold studs */}
+        <circle cx="55" cy="118" r="2.1" fill="#D9BF7A" />
+        <circle cx="145" cy="118" r="2.1" fill="#D9BF7A" />
+        {/* Shoulder-length bob framing the face */}
+        <path d="M52 94 C54 54 78 42 100 42 C122 42 146 54 148 94 C150 116 148 134 145 142 C142 128 139 110 133 100 C131 78 118 62 100 62 C82 62 69 78 67 100 C61 110 58 128 55 142 C52 134 50 116 52 94Z" fill={HAIR_BROWN} />
+        {/* Soft side-swept highlight */}
+        <path d="M70 60 Q84 50 100 49 Q86 55 74 63Z" fill={HAIR_SILVER} opacity="0.26" />
+        {/* Eyebrows */}
+        <path d="M73 96 Q82 92 91 95" stroke="#4A3520" strokeWidth="2.3" strokeLinecap="round" fill="none" />
+        <path d="M109 95 Q118 92 127 96" stroke="#4A3520" strokeWidth="2.3" strokeLinecap="round" fill="none" />
+        {/* Eyes – warm, steady */}
+        <ellipse cx="82" cy="106" rx="8.5" ry="7" fill="white" />
+        <circle cx="82" cy="107" r="4.7" fill="#3A2A18" />
+        <circle cx="83.7" cy="105.3" r="1.4" fill="white" />
+        <ellipse cx="118" cy="106" rx="8.5" ry="7" fill="white" />
+        <circle cx="118" cy="107" r="4.7" fill="#3A2A18" />
+        <circle cx="119.7" cy="105.3" r="1.4" fill="white" />
+        {/* Nose */}
+        <path d="M99 117 C97 123 96 128 99 130 Q100 131 101 130 C104 128 103 123 101 117Z" fill={SKIN_D} />
+        {/* Mouth – composed, approachable */}
+        <path d="M89 138 Q100 145 111 138" stroke="#A6605A" strokeWidth="2.2" strokeLinecap="round" fill="none" />
+      </g>
+    </svg>
+  );
+}
