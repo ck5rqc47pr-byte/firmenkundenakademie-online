@@ -1,0 +1,152 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 680" width="860" height="680">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;1,8..60,400&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap');
+      text { font-family: Georgia, serif; }
+      .mono { font-family: 'JetBrains Mono', 'Courier New', monospace; }
+      .serif { font-family: 'Source Serif 4', Georgia, serif; }
+    </style>
+  </defs>
+
+  <!-- Canvas -->
+  <rect width="860" height="680" fill="#F8F8FA"/>
+
+  <!-- Eyebrow -->
+  <text x="40" y="28" class="mono" font-size="10" fill="#7A8099" letter-spacing="2">VERTRIEBSSTEUERUNG · MODUL TL04 · COCKPIT</text>
+  <line x1="40" y1="38" x2="820" y2="38" stroke="#E2E3E8" stroke-width="1"/>
+
+  <!-- Titel -->
+  <text x="430" y="66" class="serif" font-size="18" font-weight="500" fill="#1F2C56" text-anchor="middle">Diagnose-Matrix: Aktivität × Ergebnis</text>
+  <text x="430" y="84" class="mono" font-size="9" fill="#7A8099" letter-spacing="1" text-anchor="middle">FRÜHINDIKATOREN STEUERN · SPÄTINDIKATOREN FOLGEN MIT ZEITVERZUG</text>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- ACHSEN                                                   -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+
+  <!-- Y-Achse Label: Ergebnis (Spätindikator) -->
+  <text x="14" y="310" class="mono" font-size="9" fill="#7A8099" letter-spacing="1" text-anchor="middle" transform="rotate(-90, 14, 310)">ERGEBNIS (SPÄTINDIKATOR)</text>
+  <!-- Y-Achse Beschriftungen -->
+  <text x="28" y="112" class="mono" font-size="8" fill="#7A8099" text-anchor="middle">hoch</text>
+  <text x="28" y="480" class="mono" font-size="8" fill="#7A8099" text-anchor="middle">niedrig</text>
+
+  <!-- X-Achse Label: Aktivität (Frühindikator) -->
+  <text x="460" y="514" class="mono" font-size="9" fill="#7A8099" letter-spacing="1" text-anchor="middle">AKTIVITÄT (FRÜHINDIKATOR)</text>
+  <!-- X-Achse Beschriftungen -->
+  <text x="108" y="528" class="mono" font-size="8" fill="#7A8099" text-anchor="middle">niedrig</text>
+  <text x="812" y="528" class="mono" font-size="8" fill="#7A8099" text-anchor="middle">hoch</text>
+
+  <!-- Achsen -->
+  <line x1="60" y1="100" x2="60" y2="495" stroke="#15192B" stroke-width="1.5"/>
+  <line x1="60" y1="495" x2="838" y2="495" stroke="#15192B" stroke-width="1.5"/>
+  <!-- Achsen-Pfeilspitzen -->
+  <polygon points="60,96 55,106 65,106" fill="#15192B"/>
+  <polygon points="842,495 832,490 832,500" fill="#15192B"/>
+
+  <!-- Mittellinie vertikal -->
+  <line x1="449" y1="100" x2="449" y2="495" stroke="#E2E3E8" stroke-width="1" stroke-dasharray="5,4"/>
+  <!-- Mittellinie horizontal -->
+  <line x1="60" y1="297" x2="838" y2="297" stroke="#E2E3E8" stroke-width="1" stroke-dasharray="5,4"/>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- QUADRANT oben-links: Niedrig Aktivität / Hoch Ergebnis  -->
+  <!-- → Pipeline-Risiko · Berater D                           -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <rect x="62" y="102" width="385" height="193" fill="#EDEDF3"/>
+  <rect x="62" y="102" width="385" height="4" fill="#8898C4"/>
+
+  <!-- Diagnose-Label -->
+  <text x="82" y="128" class="mono" font-size="9" fill="#7A8099" letter-spacing="1">NIEDRIGE AKTIVITÄT · HOHES ERGEBNIS</text>
+  <!-- Diagnose-Titel -->
+  <text x="254" y="155" class="serif" font-size="16" font-weight="500" fill="#1F2C56" text-anchor="middle">Pipeline-Risiko</text>
+  <!-- Trennlinie -->
+  <line x1="102" y1="163" x2="407" y2="163" stroke="#C8CAD4" stroke-width="0.5"/>
+  <!-- Führungshandlung -->
+  <text x="254" y="180" class="mono" font-size="8" fill="#3D5494" text-anchor="middle">Aktivitätsgespräch:</text>
+  <text x="254" y="194" class="mono" font-size="8" fill="#7A8099" text-anchor="middle">Mittelfristrisiko sichtbar machen,</text>
+  <text x="254" y="208" class="mono" font-size="8" fill="#7A8099" text-anchor="middle">Zeitlogik der Frühindikatoren erklären</text>
+  <!-- Berater-Badge -->
+  <rect x="194" y="248" width="120" height="22" fill="#3D5494"/>
+  <text x="254" y="263" class="mono" font-size="9" fill="#F8F8FA" text-anchor="middle" letter-spacing="1">BERATER D</text>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- QUADRANT oben-rechts: Hoch Aktivität / Hoch Ergebnis   -->
+  <!-- → Zielerfüllung · Berater C — ACCENT (Gold)            -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <rect x="451" y="102" width="385" height="193" fill="#1F2C56"/>
+  <rect x="451" y="102" width="385" height="4" fill="#D9C089"/>
+
+  <!-- Diagnose-Label -->
+  <text x="471" y="128" class="mono" font-size="9" fill="#8898C4" letter-spacing="1">HOHE AKTIVITÄT · HOHES ERGEBNIS</text>
+  <!-- Diagnose-Titel -->
+  <text x="643" y="155" class="serif" font-size="16" font-weight="500" fill="#D9C089" text-anchor="middle">Zielerfüllung</text>
+  <!-- Trennlinie -->
+  <line x1="491" y1="163" x2="796" y2="163" stroke="#8898C4" stroke-width="0.5"/>
+  <!-- Führungshandlung -->
+  <text x="643" y="180" class="mono" font-size="8" fill="#EAD9A8" text-anchor="middle">Anerkennen + Spielraum erweitern:</text>
+  <text x="643" y="194" class="mono" font-size="8" fill="#8898C4" text-anchor="middle">Proaktives Entwicklungsgespräch</text>
+  <text x="643" y="208" class="mono" font-size="8" fill="#8898C4" text-anchor="middle">Leistungsträger-Falle vermeiden!</text>
+  <!-- Berater-Badge (Gold auf Dark) -->
+  <rect x="583" y="248" width="120" height="22" fill="#D9C089"/>
+  <text x="643" y="263" class="mono" font-size="9" fill="#1F2C56" text-anchor="middle" letter-spacing="1">BERATER C</text>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- QUADRANT unten-links: Niedrig Aktivität / Niedrig Erg. -->
+  <!-- → Strukturproblem · Berater B                          -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <rect x="62" y="299" width="385" height="194" fill="#F8F8FA" stroke="#E2E3E8" stroke-width="1"/>
+  <rect x="62" y="489" width="385" height="4" fill="#3D5494"/>
+
+  <!-- Diagnose-Label -->
+  <text x="82" y="322" class="mono" font-size="9" fill="#7A8099" letter-spacing="1">NIEDRIGE AKTIVITÄT · NIEDRIG ERGEBNIS</text>
+  <!-- Diagnose-Titel -->
+  <text x="254" y="348" class="serif" font-size="16" font-weight="500" fill="#1F2C56" text-anchor="middle">Strukturproblem</text>
+  <!-- Trennlinie -->
+  <line x1="102" y1="356" x2="407" y2="356" stroke="#C8CAD4" stroke-width="0.5"/>
+  <!-- Führungshandlung -->
+  <text x="254" y="374" class="mono" font-size="8" fill="#3D5494" text-anchor="middle">Klärungsgespräch:</text>
+  <text x="254" y="388" class="mono" font-size="8" fill="#7A8099" text-anchor="middle">Ursachen verstehen: Kapazität,</text>
+  <text x="254" y="402" class="mono" font-size="8" fill="#7A8099" text-anchor="middle">Motivation, Kompetenz, Priorisierung</text>
+  <!-- Berater-Badge -->
+  <rect x="194" y="441" width="120" height="22" fill="#3D5494"/>
+  <text x="254" y="456" class="mono" font-size="9" fill="#F8F8FA" text-anchor="middle" letter-spacing="1">BERATER B</text>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- QUADRANT unten-rechts: Hoch Aktivität / Niedrig Erg.   -->
+  <!-- → Qualitätsproblem · Berater A                         -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <rect x="451" y="299" width="385" height="194" fill="#EDEDF3"/>
+  <rect x="451" y="489" width="385" height="4" fill="#3D5494"/>
+
+  <!-- Diagnose-Label -->
+  <text x="471" y="322" class="mono" font-size="9" fill="#7A8099" letter-spacing="1">HOHE AKTIVITÄT · NIEDRIGES ERGEBNIS</text>
+  <!-- Diagnose-Titel -->
+  <text x="643" y="348" class="serif" font-size="16" font-weight="500" fill="#1F2C56" text-anchor="middle">Qualitätsproblem</text>
+  <!-- Trennlinie -->
+  <line x1="491" y1="356" x2="796" y2="356" stroke="#C8CAD4" stroke-width="0.5"/>
+  <!-- Führungshandlung -->
+  <text x="643" y="374" class="mono" font-size="8" fill="#3D5494" text-anchor="middle">Entwicklungsgespräch:</text>
+  <text x="643" y="388" class="mono" font-size="8" fill="#7A8099" text-anchor="middle">Gesprächsstruktur, Bedarfsanalyse,</text>
+  <text x="643" y="402" class="mono" font-size="8" fill="#7A8099" text-anchor="middle">Abschlussphase gemeinsam prüfen</text>
+  <!-- Berater-Badge -->
+  <rect x="583" y="441" width="120" height="22" fill="#3D5494"/>
+  <text x="643" y="456" class="mono" font-size="9" fill="#F8F8FA" text-anchor="middle" letter-spacing="1">BERATER A</text>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- LEITPRINZIP-BANNER                                      -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <line x1="40" y1="548" x2="820" y2="548" stroke="#E2E3E8" stroke-width="1"/>
+
+  <!-- Leitprinzip-Label -->
+  <text x="40" y="566" class="mono" font-size="9" fill="#7A8099" letter-spacing="2">LEITPRINZIP</text>
+
+  <!-- Leitprinzip-Text -->
+  <text x="40" y="584" class="serif" font-size="13" font-weight="500" fill="#1F2C56">steuern UND entwickeln</text>
+  <text x="230" y="584" class="mono" font-size="9" fill="#7A8099"> – Frühindikatoren (Aktivität) steuern; Spätindikatoren (Ergebnis) folgen mit Zeitverzug.</text>
+
+  <!-- Baseline -->
+  <line x1="40" y1="656" x2="820" y2="656" stroke="#15192B" stroke-width="1"/>
+
+  <!-- Quellenzeile -->
+  <text x="40" y="668" class="mono" font-size="9" fill="#B0B3C0" letter-spacing="0.5">Kaplan, R. S. &amp; Norton, D. P. (1996). The Balanced Scorecard. Harvard Business School Press.</text>
+
+</svg>
