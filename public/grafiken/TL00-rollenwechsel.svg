@@ -1,0 +1,231 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 620" width="900" height="620">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;1,8..60,400&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap');
+      text { font-family: Georgia, serif; }
+      .mono { font-family: 'JetBrains Mono', 'Courier New', monospace; }
+      .serif { font-family: 'Source Serif 4', Georgia, serif; }
+    </style>
+  </defs>
+
+  <!-- Canvas -->
+  <rect width="900" height="620" fill="#F8F8FA"/>
+
+  <!-- Eyebrow -->
+  <text x="40" y="28" class="mono" font-size="10" fill="#7A8099" letter-spacing="2">ROLLENWECHSEL · MODUL TL00 · SELBST- &amp; ROLLENFÜHRUNG</text>
+  <line x1="40" y1="38" x2="860" y2="38" stroke="#E2E3E8" stroke-width="1"/>
+
+  <!-- Haupttitel -->
+  <text x="40" y="68" class="serif" font-size="20" font-weight="500" fill="#1F2C56">Drei Dimensionen des Rollenwechsels</text>
+  <text x="40" y="88" class="mono" font-size="9" fill="#7A8099" letter-spacing="1">Wer nur eine Dimension reflektiert, bleibt halb fertig.</text>
+
+  <!-- ══════════════════════════════════════════════════════════════════ -->
+  <!-- PANEL 1: DIMENSION 1 – DIE ERFOLGSLOGIK                         -->
+  <!-- ══════════════════════════════════════════════════════════════════ -->
+
+  <!-- Panel-Rahmen -->
+  <rect x="40" y="104" width="258" height="456" fill="#EDEDF3"/>
+  <!-- Accent-Streifen oben -->
+  <rect x="40" y="104" width="258" height="4" fill="#3D5494"/>
+
+  <!-- Dimensions-Nummer -->
+  <text x="58" y="138" class="serif" font-size="32" font-style="italic" fill="#1F2C56" opacity="0.18">1</text>
+
+  <!-- Dimensionstitel -->
+  <text x="169" y="130" class="mono" font-size="9" fill="#3D5494" text-anchor="middle" letter-spacing="1.5">DIMENSION 1</text>
+  <text x="169" y="148" class="serif" font-size="15" font-weight="500" fill="#1F2C56" text-anchor="middle">Die Erfolgslogik</text>
+  <line x1="60" y1="158" x2="278" y2="158" stroke="#C8CAD4" stroke-width="0.75"/>
+
+  <!-- BERATERROLLE Block -->
+  <rect x="56" y="166" width="226" height="138" fill="#F8F8FA" stroke="#E2E3E8" stroke-width="1"/>
+  <rect x="56" y="166" width="226" height="3" fill="#8898C4"/>
+  <text x="169" y="183" class="mono" font-size="8" fill="#7A8099" text-anchor="middle" letter-spacing="1">BERATERROLLE</text>
+  <line x1="70" y1="190" x2="268" y2="190" stroke="#E2E3E8" stroke-width="0.5"/>
+  <!-- Bullets -->
+  <circle cx="66" cy="204" r="2.5" fill="#8898C4"/>
+  <text x="76" y="208" class="mono" font-size="8.5" fill="#1F2C56">Ich löse das Problem selbst</text>
+  <circle cx="66" cy="222" r="2.5" fill="#8898C4"/>
+  <text x="76" y="226" class="mono" font-size="8.5" fill="#1F2C56">Fachkompetenz = Autorität</text>
+  <circle cx="66" cy="240" r="2.5" fill="#8898C4"/>
+  <text x="76" y="244" class="mono" font-size="8.5" fill="#1F2C56">Selbstwirksamkeit direkt</text>
+  <text x="76" y="256" class="mono" font-size="8.5" fill="#1F2C56">erlebbar</text>
+  <circle cx="66" cy="271" r="2.5" fill="#8898C4"/>
+  <text x="76" y="275" class="mono" font-size="8.5" fill="#1F2C56">Kreditakte = abgeschlossen</text>
+  <text x="76" y="287" class="mono" font-size="8.5" fill="#1F2C56">= fertig</text>
+
+  <!-- Pfeil nach unten -->
+  <line x1="169" y1="306" x2="169" y2="326" stroke="#D9C089" stroke-width="2"/>
+  <polygon points="169,332 163,322 175,322" fill="#D9C089"/>
+
+  <!-- FÜHRUNGSROLLE Block -->
+  <rect x="56" y="334" width="226" height="138" fill="#1F2C56"/>
+  <rect x="56" y="334" width="226" height="3" fill="#D9C089"/>
+  <text x="169" y="351" class="mono" font-size="8" fill="#D9C089" text-anchor="middle" letter-spacing="1">FÜHRUNGSROLLE</text>
+  <line x1="70" y1="358" x2="268" y2="358" stroke="#3D5494" stroke-width="0.5"/>
+  <!-- Bullets -->
+  <circle cx="66" cy="372" r="2.5" fill="#D9C089"/>
+  <text x="76" y="376" class="mono" font-size="8.5" fill="#F8F8FA">Ich schaffe Bedingungen,</text>
+  <text x="76" y="388" class="mono" font-size="8.5" fill="#F8F8FA">damit das Team löst</text>
+  <circle cx="66" cy="403" r="2.5" fill="#D9C089"/>
+  <text x="76" y="407" class="mono" font-size="8.5" fill="#F8F8FA">Autorität durch Rolle</text>
+  <text x="76" y="419" class="mono" font-size="8.5" fill="#F8F8FA">&amp; Vertrauen</text>
+  <circle cx="66" cy="434" r="2.5" fill="#D9C089"/>
+  <text x="76" y="438" class="mono" font-size="8.5" fill="#F8F8FA">Selbstwirksamkeit vermittelt,</text>
+  <text x="76" y="450" class="mono" font-size="8.5" fill="#F8F8FA">zeitverzögert</text>
+  <circle cx="66" cy="465" r="2.5" fill="#D9C089"/>
+  <text x="76" y="469" class="mono" font-size="8.5" fill="#F8F8FA">Führung ist Prozess,</text>
+  <text x="76" y="481" class="mono" font-size="8.5" fill="#8898C4">kein abschließbares Projekt</text>
+
+  <!-- ══════════════════════════════════════════════════════════════════ -->
+  <!-- PANEL 2: DIMENSION 2 – DIE IDENTITÄT                            -->
+  <!-- ══════════════════════════════════════════════════════════════════ -->
+
+  <!-- Panel-Rahmen -->
+  <rect x="321" y="104" width="258" height="456" fill="#EDEDF3"/>
+  <!-- Accent-Streifen oben -->
+  <rect x="321" y="104" width="258" height="4" fill="#3D5494"/>
+
+  <!-- Dimensions-Nummer -->
+  <text x="339" y="138" class="serif" font-size="32" font-style="italic" fill="#1F2C56" opacity="0.18">2</text>
+
+  <!-- Dimensionstitel -->
+  <text x="450" y="130" class="mono" font-size="9" fill="#3D5494" text-anchor="middle" letter-spacing="1.5">DIMENSION 2</text>
+  <text x="450" y="148" class="serif" font-size="15" font-weight="500" fill="#1F2C56" text-anchor="middle">Die Identität</text>
+  <line x1="341" y1="158" x2="559" y2="158" stroke="#C8CAD4" stroke-width="0.75"/>
+
+  <!-- BERATERROLLE Block -->
+  <rect x="337" y="166" width="226" height="138" fill="#F8F8FA" stroke="#E2E3E8" stroke-width="1"/>
+  <rect x="337" y="166" width="226" height="3" fill="#8898C4"/>
+  <text x="450" y="183" class="mono" font-size="8" fill="#7A8099" text-anchor="middle" letter-spacing="1">ALTER IDENTITÄTSANKER</text>
+  <line x1="351" y1="190" x2="549" y2="190" stroke="#E2E3E8" stroke-width="0.5"/>
+
+  <!-- Großes Zitat -->
+  <text x="450" y="225" class="serif" font-size="13" font-style="italic" fill="#1F2C56" text-anchor="middle">„Ich bin der Experte –</text>
+  <text x="450" y="244" class="serif" font-size="13" font-style="italic" fill="#1F2C56" text-anchor="middle">mein Urteil zählt."</text>
+  <line x1="381" y1="258" x2="519" y2="258" stroke="#C8CAD4" stroke-width="0.5"/>
+  <text x="450" y="272" class="mono" font-size="8" fill="#7A8099" text-anchor="middle">Anerkennung durch Fachurteil</text>
+  <text x="450" y="285" class="mono" font-size="8" fill="#7A8099" text-anchor="middle">Vertrauen der Kunden</text>
+  <text x="450" y="298" class="mono" font-size="8" fill="#7A8099" text-anchor="middle">Sichtbarer Expertenstatus</text>
+
+  <!-- Pfeil nach unten mit Verlust-Hinweis -->
+  <line x1="450" y1="306" x2="450" y2="322" stroke="#D9C089" stroke-width="2"/>
+  <polygon points="450,332 444,322 456,322" fill="#D9C089"/>
+  <text x="450" y="320" class="mono" font-size="7.5" fill="#7A8099" text-anchor="middle">Anker löst sich zunächst</text>
+
+  <!-- FÜHRUNGSROLLE Block -->
+  <rect x="337" y="334" width="226" height="138" fill="#1F2C56"/>
+  <rect x="337" y="334" width="226" height="3" fill="#D9C089"/>
+  <text x="450" y="351" class="mono" font-size="8" fill="#D9C089" text-anchor="middle" letter-spacing="1">NEUER IDENTITÄTSANKER</text>
+  <line x1="351" y1="358" x2="549" y2="358" stroke="#3D5494" stroke-width="0.5"/>
+
+  <!-- Großes Zitat Führungsrolle -->
+  <text x="450" y="395" class="serif" font-size="13" font-style="italic" fill="#EAD9A8" text-anchor="middle">„Ich bin gut darin,</text>
+  <text x="450" y="414" class="serif" font-size="13" font-style="italic" fill="#D9C089" text-anchor="middle">andere besser</text>
+  <text x="450" y="433" class="serif" font-size="13" font-style="italic" fill="#EAD9A8" text-anchor="middle">zu machen."</text>
+  <line x1="381" y1="447" x2="519" y2="447" stroke="#3D5494" stroke-width="0.5"/>
+  <text x="450" y="461" class="mono" font-size="8" fill="#8898C4" text-anchor="middle">Servant Leadership</text>
+  <text x="450" y="474" class="mono" font-size="8" fill="#8898C4" text-anchor="middle">Wachstum des Teams als</text>
+  <text x="450" y="487" class="mono" font-size="8" fill="#8898C4" text-anchor="middle">eigentliche Leistung</text>
+
+  <!-- Servant-Leadership-Label -->
+  <rect x="381" y="497" width="138" height="18" fill="#3D5494"/>
+  <text x="450" y="509" class="mono" font-size="8" fill="#EAD9A8" text-anchor="middle" letter-spacing="0.5">GREENLEAF, 1977</text>
+
+  <!-- ══════════════════════════════════════════════════════════════════ -->
+  <!-- PANEL 3: DIMENSION 3 – DIE ZEIT                                 -->
+  <!-- ══════════════════════════════════════════════════════════════════ -->
+
+  <!-- Panel-Rahmen -->
+  <rect x="602" y="104" width="258" height="456" fill="#EDEDF3"/>
+  <!-- Accent-Streifen oben -->
+  <rect x="602" y="104" width="258" height="4" fill="#3D5494"/>
+
+  <!-- Dimensions-Nummer -->
+  <text x="620" y="138" class="serif" font-size="32" font-style="italic" fill="#1F2C56" opacity="0.18">3</text>
+
+  <!-- Dimensionstitel -->
+  <text x="731" y="130" class="mono" font-size="9" fill="#3D5494" text-anchor="middle" letter-spacing="1.5">DIMENSION 3</text>
+  <text x="731" y="148" class="serif" font-size="15" font-weight="500" fill="#1F2C56" text-anchor="middle">Die Zeit</text>
+  <line x1="622" y1="158" x2="840" y2="158" stroke="#C8CAD4" stroke-width="0.75"/>
+
+  <!-- Legende -->
+  <rect x="622" y="165" width="10" height="10" fill="#8898C4"/>
+  <text x="636" y="174" class="mono" font-size="8" fill="#7A8099">Beraterrolle</text>
+  <rect x="710" y="165" width="10" height="10" fill="#D9C089"/>
+  <text x="724" y="174" class="mono" font-size="8" fill="#7A8099">Führungsrolle</text>
+
+  <!-- Balkendiagramm Zeile 1: Kundengespräche -->
+  <text x="622" y="196" class="mono" font-size="8" fill="#1F2C56">Kundengespräche</text>
+  <!-- Berater-Balken: 55% ~ 176px -->
+  <rect x="622" y="200" width="176" height="16" fill="#8898C4"/>
+  <text x="802" y="212" class="mono" font-size="8" fill="#3D5494">50–60 %</text>
+  <!-- Führungs-Balken: 15% ~ 48px -->
+  <rect x="622" y="218" width="48" height="16" fill="#D9C089"/>
+  <text x="674" y="230" class="mono" font-size="8" fill="#7A8099">10–20 %</text>
+
+  <!-- Trennlinie -->
+  <line x1="622" y1="242" x2="840" y2="242" stroke="#E2E3E8" stroke-width="0.5"/>
+
+  <!-- Balkendiagramm Zeile 2: Facharbeit -->
+  <text x="622" y="258" class="mono" font-size="8" fill="#1F2C56">Facharbeit / Kreditbearbeitung</text>
+  <!-- Berater-Balken: 30% ~ 96px -->
+  <rect x="622" y="262" width="96" height="16" fill="#8898C4"/>
+  <text x="722" y="274" class="mono" font-size="8" fill="#3D5494">ca. 30 %</text>
+  <!-- Führungs-Balken: 7% ~ 22px -->
+  <rect x="622" y="280" width="22" height="16" fill="#D9C089"/>
+  <text x="648" y="292" class="mono" font-size="8" fill="#7A8099">5–10 %</text>
+
+  <!-- Trennlinie -->
+  <line x1="622" y1="304" x2="840" y2="304" stroke="#E2E3E8" stroke-width="0.5"/>
+
+  <!-- Balkendiagramm Zeile 3: Führung/Steuerung -->
+  <text x="622" y="320" class="mono" font-size="8" fill="#1F2C56">Führung, Steuerung, Planung</text>
+  <!-- Berater-Balken: 5% ~ 16px -->
+  <rect x="622" y="324" width="16" height="16" fill="#8898C4"/>
+  <text x="642" y="336" class="mono" font-size="8" fill="#3D5494">ca. 5 %</text>
+  <!-- Führungs-Balken: 45% ~ 144px -->
+  <rect x="622" y="342" width="144" height="16" fill="#1F2C56"/>
+  <rect x="622" y="342" width="2" height="16" fill="#D9C089"/>
+  <text x="770" y="354" class="mono" font-size="8" fill="#D9C089">40–50 %</text>
+
+  <!-- Trennlinie -->
+  <line x1="622" y1="366" x2="840" y2="366" stroke="#E2E3E8" stroke-width="0.5"/>
+
+  <!-- Balkendiagramm Zeile 4: Abstimmung -->
+  <text x="622" y="382" class="mono" font-size="8" fill="#1F2C56">Abstimmung nach oben</text>
+  <!-- Berater-Balken: 5% ~ 16px -->
+  <rect x="622" y="386" width="16" height="16" fill="#8898C4"/>
+  <text x="642" y="398" class="mono" font-size="8" fill="#3D5494">ca. 5 %</text>
+  <!-- Führungs-Balken: 25% ~ 80px -->
+  <rect x="622" y="404" width="80" height="16" fill="#1F2C56"/>
+  <rect x="622" y="404" width="2" height="16" fill="#D9C089"/>
+  <text x="706" y="416" class="mono" font-size="8" fill="#D9C089">20–30 %</text>
+
+  <!-- Trennlinie -->
+  <line x1="622" y1="428" x2="840" y2="428" stroke="#E2E3E8" stroke-width="0.5"/>
+
+  <!-- Kernerkenntnis im Panel 3 -->
+  <rect x="622" y="436" width="218" height="60" fill="#1F2C56"/>
+  <text x="731" y="455" class="serif" font-size="11" font-style="italic" fill="#EAD9A8" text-anchor="middle">Die Zeit verteilt sich neu –</text>
+  <text x="731" y="471" class="serif" font-size="11" font-style="italic" fill="#EAD9A8" text-anchor="middle">nicht weniger Arbeit,</text>
+  <text x="731" y="487" class="serif" font-size="11" font-style="italic" fill="#D9C089" text-anchor="middle">andere Arbeit.</text>
+
+  <!-- Hinweis doppelte Loyalität -->
+  <text x="622" y="514" class="mono" font-size="7.5" fill="#7A8099">Doppelte Loyalität: nach oben</text>
+  <text x="622" y="526" class="mono" font-size="7.5" fill="#7A8099">&amp; nach unten gleichzeitig.</text>
+  <text x="622" y="541" class="mono" font-size="7.5" fill="#7A8099">Abstimmung ≠ Ja-Sagen:</text>
+  <text x="622" y="553" class="mono" font-size="7.5" fill="#7A8099">Sie vertreten Ihr Team.</text>
+
+  <!-- ══════════════════════════════════════════════════════════════════ -->
+  <!-- BASELINE + QUELLENZEILE                                          -->
+  <!-- ══════════════════════════════════════════════════════════════════ -->
+
+  <line x1="40" y1="576" x2="860" y2="576" stroke="#15192B" stroke-width="1"/>
+
+  <!-- Kernbotschaft -->
+  <text x="40" y="591" class="mono" font-size="9" fill="#3D5494" letter-spacing="0.5" font-style="italic">Rollenwechsel = gleichzeitige Transformation auf allen drei Ebenen.</text>
+
+  <!-- Quellenzeile -->
+  <text x="40" y="608" class="mono" font-size="9" fill="#B0B3C0" letter-spacing="0.5">Greenleaf, R. K. (1977). Servant Leadership. Paulist Press. · Yukl, G. (2002). Leadership in Organizations. Prentice Hall. · Hill, L. A. (2003). Becoming a Manager. HBS Press.</text>
+
+</svg>
