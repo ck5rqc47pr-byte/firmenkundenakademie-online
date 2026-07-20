@@ -12,16 +12,16 @@
   <rect width="860" height="540" fill="#F8F8FA"/>
 
   <!-- Eyebrow -->
-  <text x="40" y="30" class="mono" font-size="10" fill="#7A8099" letter-spacing="2">NETTOMARGENBEITRAG (NMZ) · MODUL 16 · ERTRAGSORIENTIERTE STEUERUNG</text>
+  <text x="40" y="30" class="mono" font-size="10" fill="#7A8099" letter-spacing="2">KUNDENNETTOMARGE (KNM) · MODUL 16 · ERTRAGSORIENTIERTE STEUERUNG</text>
   <line x1="40" y1="40" x2="820" y2="40" stroke="#E2E3E8" stroke-width="1"/>
 
   <!-- Formula box -->
   <rect x="40" y="60" width="780" height="74" fill="#1F2C56"/>
-  <text x="430" y="95" class="serif" font-size="18" fill="#F8F8FA" text-anchor="middle">NMZ (%)  =  DB II  ×  100  /  Kreditvolumen</text>
+  <text x="430" y="95" class="serif" font-size="18" fill="#F8F8FA" text-anchor="middle">KNM (%)  =  DB II  ×  100  /  Kreditvolumen</text>
   <text x="430" y="118" class="mono" font-size="8" fill="#8898C4" text-anchor="middle" letter-spacing="1">DECKUNGSBEITRAG II INS VERHÄLTNIS ZUM EINGESETZTEN KREDITVOLUMEN</text>
 
   <!-- Section heading -->
-  <text x="40" y="168" class="mono" font-size="9" fill="#7A8099" letter-spacing="1">ERTRAGSHEBEL — BEITRAG ZUM NMZ</text>
+  <text x="40" y="168" class="mono" font-size="9" fill="#7A8099" letter-spacing="1">ERTRAGSHEBEL — BEITRAG ZUR KNM</text>
 
   <!-- ROW 1: Zinsmarge -->
   <text x="40" y="200" class="serif" font-size="13" fill="#1F2C56" font-weight="500">Zinsmarge</text>
@@ -48,7 +48,7 @@
   <text x="680" y="350" class="mono" font-size="8" fill="#B0B3C0" text-anchor="end">höherer Beitrag</text>
 
   <!-- Benchmark scale -->
-  <text x="40" y="396" class="mono" font-size="9" fill="#7A8099" letter-spacing="1">BENCHMARK NMZ</text>
+  <text x="40" y="396" class="mono" font-size="9" fill="#7A8099" letter-spacing="1">BENCHMARK KNM</text>
   <rect x="40" y="408" width="240" height="40" fill="#ef4444"/>
   <rect x="280" y="408" width="240" height="40" fill="#f59e0b"/>
   <rect x="520" y="408" width="300" height="40" fill="#22c55e"/>
@@ -60,5 +60,5 @@
   <text x="670" y="440" class="mono" font-size="8" fill="#FFFFFF" text-anchor="middle">sehr guter Kundenwert</text>
 
   <!-- Source -->
-  <text x="40" y="492" class="mono" font-size="9" fill="#B0B3C0" letter-spacing="0.5">zeb (2021) zu Kundenwertrechnung · NMZ als zentrale Steuerungsgröße im Firmenkundengeschäft</text>
+  <text x="40" y="492" class="mono" font-size="9" fill="#B0B3C0" letter-spacing="0.5">zeb (2021) zu Kundenwertrechnung · KNM als zentrale Steuerungsgröße im Firmenkundengeschäft</text>
 </svg>

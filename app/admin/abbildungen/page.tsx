@@ -106,7 +106,7 @@ const GRAFIKEN_MAP: Record<string, Array<{ bezeichnung: string; datei: string }>
     { bezeichnung: "Strategie-Landkarte", datei: "/grafiken/M15-strategie-landkarte.svg" },
   ],
   M16: [
-    { bezeichnung: "Nettomargenbeitrag (NMZ)", datei: "/grafiken/M16-nmz.svg" },
+    { bezeichnung: "Kundennettomarge (KNM) – Komponenten und Optimierungshebel", datei: "/grafiken/M16-nmz.svg" },
   ],
   M17: [
     { bezeichnung: "agree21 Kernbereiche", datei: "/grafiken/M17-agree-kernbereiche.svg" },
