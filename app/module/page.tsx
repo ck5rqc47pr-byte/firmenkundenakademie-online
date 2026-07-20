@@ -26,10 +26,13 @@ export default async function ModulesPage() {
       ? (userTrack as "berater" | "assistenz" | "teamleiter")
       : null;
 
+  // Entwürfe (status: draft) sind nur für Admins sichtbar und werden dort geflaggt.
+  const isAdmin = role === "admin";
   const allModules = getAllModules();
-  const modules = restrictTrack
+  const modules = (restrictTrack
     ? allModules.filter((m) => m.zielrolle === restrictTrack)
-    : allModules;
+    : allModules
+  ).filter((m) => m.status !== "draft" || isAdmin);
   const kompetenzfelder = getKompetenzfelder(restrictTrack ?? undefined);
 
   // Track-Struktur für den Filter: nur Tracks/Felder zeigen, die Module haben –

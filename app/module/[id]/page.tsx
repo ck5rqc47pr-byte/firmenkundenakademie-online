@@ -35,6 +35,9 @@ export default async function ModuleDetailPage({ params }: { params: { id: strin
   const isTrainerOrAdmin = role === "trainer" || role === "admin";
   const canSeeBeobachtungsbogen = role === "teamleiter" || role === "trainer" || role === "admin";
 
+  // Entwürfe (status: draft) sind nur für Admins zugänglich – auch per Direkt-URL.
+  if (module.status === "draft" && role !== "admin") notFound();
+
   const progress = userId ? await getProgressForUser(userId) : [];
   const isCompleted = progress.some((p) => p.module_id === module.id);
   const existingFeedback = userId && isCompleted ? await getFeedbackForUser(userId, module.id) : null;

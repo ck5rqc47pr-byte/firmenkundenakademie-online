@@ -144,11 +144,17 @@ function Station({
       >
         {shortTitle}
       </div>
+      {m.status === "draft" && (
+        <span className="font-mono text-[8px] uppercase tracking-[0.06em] border border-dashed border-current px-1 leading-tight opacity-70">
+          Entwurf
+        </span>
+      )}
 
       {/* Tooltip – nur Desktop */}
       <div className="hidden sm:block absolute bottom-full left-1/2 -translate-x-1/2 mb-3 w-60 bg-bg border border-line p-3.5 opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-opacity pointer-events-none z-30 shadow-lg text-left">
         <div className="font-mono text-[9px] uppercase tracking-[0.08em] text-ink-3 mb-1.5">
           {m.id} · {m.stufe} · {m.dauer}
+          {m.status === "draft" && " · Entwurf (nur Admin)"}
         </div>
         <div className="font-serif text-sm font-medium text-ink mb-2.5 leading-snug">
           {m.title}
@@ -206,8 +212,13 @@ export default async function KompassPage({
   const ETAPPEN = view.etappen;
   const trackDef = TRACKS[track];
 
+  // Drafts sind nur für Admins sichtbar (und werden als „Entwurf" geflaggt);
+  // alle anderen Nutzer sehen ausschließlich freigegebene Module.
+  const isAdmin = role === "admin";
   const allModules = getAllModules().filter(
-    (m) => m.status === "freigegeben" && m.zielrolle === track,
+    (m) =>
+      m.zielrolle === track &&
+      (m.status === "freigegeben" || (isAdmin && m.status === "draft")),
   );
   const [progress, assessment] = await Promise.all([
     getProgressForUser(userId),

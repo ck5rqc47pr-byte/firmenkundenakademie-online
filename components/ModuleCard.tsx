@@ -35,6 +35,11 @@ export function ModuleCard({ module }: { module: Module }) {
               Premium
             </span>
           )}
+          {module.status === "draft" && (
+            <span className="font-mono text-[9px] uppercase tracking-[0.08em] border border-dashed border-ink text-ink px-1.5 py-0.5 leading-none whitespace-nowrap">
+              Entwurf
+            </span>
+          )}
         </span>
         <span className="font-mono text-[10px] uppercase tracking-[0.06em] text-ink-3 whitespace-nowrap">
           {module.stufe === "Sparringspartner" ? "Sparring" : module.stufe}
