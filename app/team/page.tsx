@@ -129,6 +129,7 @@ const TEAM: TeamMember[] = [
     avatarBg: "#2E5A5E",
     avatarFg: "#F8F8FA",
     Portrait: PortraitPetra,
+    photo: "/team/petra.webp",
     typ: "KI-Agent",
     rolle: "Praxis-Reviewerin Führung",
     eigenschaften: [
