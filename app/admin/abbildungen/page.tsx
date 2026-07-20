@@ -196,6 +196,9 @@ const GRAFIKEN_MAP: Record<string, Array<{ bezeichnung: string; datei: string }>
   TL02: [
     { bezeichnung: "Reifegrad-Matrix (situatives Führen D1–D4 × S1–S4)", datei: "/grafiken/TL02-reifegrad-matrix.svg" },
   ],
+  TL03: [
+    { bezeichnung: "Teamphasenuhr (Tuckman: Forming/Storming/Norming/Performing)", datei: "/grafiken/TL03-teamphasenuhr.svg" },
+  ],
   TL04: [
     { bezeichnung: "Diagnose-Matrix (Aktivität × Ergebnis, 4 Steuerungsmuster)", datei: "/grafiken/TL04-diagnose-matrix.svg" },
   ],
