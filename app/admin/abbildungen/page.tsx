@@ -190,6 +190,9 @@ const GRAFIKEN_MAP: Record<string, Array<{ bezeichnung: string; datei: string }>
   TL00: [
     { bezeichnung: "Drei Dimensionen des Rollenwechsels (Berater → Führungskraft)", datei: "/grafiken/TL00-rollenwechsel.svg" },
   ],
+  TL01: [
+    { bezeichnung: "Eisenhower-Matrix (Wichtig × Dringend, Quadrant II als Führungsquadrant)", datei: "/grafiken/TL01-eisenhower-matrix.svg" },
+  ],
   TL02: [
     { bezeichnung: "Reifegrad-Matrix (situatives Führen D1–D4 × S1–S4)", datei: "/grafiken/TL02-reifegrad-matrix.svg" },
   ],
