@@ -205,6 +205,9 @@ const GRAFIKEN_MAP: Record<string, Array<{ bezeichnung: string; datei: string }>
   TL04: [
     { bezeichnung: "Diagnose-Matrix (Aktivität × Ergebnis, 4 Steuerungsmuster)", datei: "/grafiken/TL04-diagnose-matrix.svg" },
   ],
+  TL05: [
+    { bezeichnung: "5-Schritte-Struktur des Steuerungs-/Zielgesprächs", datei: "/grafiken/TL05-gespraechsstruktur.svg" },
+  ],
 };
 
 const STATUS_STYLE: Record<string, string> = {
