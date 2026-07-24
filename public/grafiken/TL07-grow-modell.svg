@@ -1,0 +1,234 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 700" width="860" height="700">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;1,8..60,400&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap');
+      text { font-family: Georgia, serif; }
+      .mono { font-family: 'JetBrains Mono', 'Courier New', monospace; }
+      .serif { font-family: 'Source Serif 4', Georgia, serif; }
+    </style>
+  </defs>
+
+  <!-- Canvas -->
+  <rect width="860" height="700" fill="#F8F8FA"/>
+
+  <!-- Eyebrow -->
+  <text x="40" y="28" class="mono" font-size="10" fill="#7A8099" letter-spacing="2">COACHING · MODUL TL07 · GROW</text>
+  <line x1="40" y1="38" x2="820" y2="38" stroke="#E2E3E8" stroke-width="1"/>
+
+  <!-- Titel + Untertitel -->
+  <text x="430" y="66" class="serif" font-size="18" font-weight="500" fill="#1F2C56" text-anchor="middle">Das GROW-Modell – Struktur des Coaching-Gesprächs</text>
+  <text x="430" y="82" class="mono" font-size="9" fill="#7A8099" letter-spacing="1" text-anchor="middle">DIE FÜHRUNGSKRAFT COACHT DURCH FRAGEN – UND WEISS, WANN ANLEITEN DAS RICHTIGE INSTRUMENT IST</text>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- KLAMMER-BOGEN: coachende Grundhaltung                  -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <path d="M 60 106 Q 430 90 800 106" fill="none" stroke="#D9C089" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="430" y="102" class="mono" font-size="8" fill="#D9C089" letter-spacing="1.5" text-anchor="middle">COACHENDE GRUNDHALTUNG: FRAGEN STATT SAGEN</text>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- PFEILE ZWISCHEN DEN PHASEN                             -->
+  <!-- Spaltenbreite 178px, Lücke 12px, Start x=60           -->
+  <!-- Spalten: G=60, R=250, O=440, W=630                    -->
+  <!-- Pfeile bei x=238→250, x=428→440, x=618→630            -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+
+  <!-- Pfeil G→R -->
+  <polygon points="240,258 252,250 252,266" fill="#C8CAD4"/>
+  <!-- Pfeil R→O -->
+  <polygon points="430,258 442,250 442,266" fill="#C8CAD4"/>
+  <!-- Pfeil O→W (Gold, Übergang zur Umsetzung) -->
+  <polygon points="620,258 632,242 632,274" fill="#D9C089"/>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- PHASE G – GOAL                                          -->
+  <!-- x=60, w=178                                            -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <rect x="60" y="116" width="178" height="296" fill="#EDEDF3"/>
+  <rect x="60" y="116" width="178" height="5" fill="#3D5494"/>
+
+  <!-- Buchstabe gross -->
+  <text x="149" y="168" class="serif" font-size="54" font-style="italic" fill="#8898C4" text-anchor="middle" opacity="0.45">G</text>
+
+  <!-- Phase-Label + Titel -->
+  <text x="149" y="190" class="mono" font-size="8" fill="#3D5494" text-anchor="middle" letter-spacing="1">PHASE 1</text>
+  <text x="149" y="210" class="serif" font-size="15" font-weight="500" fill="#1F2C56" text-anchor="middle">Goal – Ziel</text>
+  <line x1="80" y1="218" x2="218" y2="218" stroke="#C8CAD4" stroke-width="0.5"/>
+
+  <!-- Kernfrage -->
+  <text x="149" y="236" class="mono" font-size="8" fill="#3D5494" text-anchor="middle">KERNFRAGE:</text>
+  <text x="149" y="250" class="serif" font-size="10" font-weight="500" fill="#1F2C56" text-anchor="middle">Was willst du erreichen?</text>
+  <line x1="80" y1="258" x2="218" y2="258" stroke="#E2E3E8" stroke-width="0.5"/>
+
+  <!-- Leitfragen -->
+  <text x="149" y="275" class="mono" font-size="7.5" fill="#7A8099" text-anchor="middle">„Was beschäftigt dich an dieser</text>
+  <text x="149" y="288" class="mono" font-size="7.5" fill="#7A8099" text-anchor="middle">Situation am meisten?"</text>
+  <text x="149" y="308" class="mono" font-size="7.5" fill="#7A8099" text-anchor="middle">„Welches Ergebnis wäre das</text>
+  <text x="149" y="321" class="mono" font-size="7.5" fill="#7A8099" text-anchor="middle">beste für dich heute?"</text>
+
+  <!-- Coaching-Fehler -->
+  <line x1="80" y1="334" x2="218" y2="334" stroke="#E2E3E8" stroke-width="0.5"/>
+  <text x="149" y="349" class="mono" font-size="7" fill="#3D5494" text-anchor="middle" letter-spacing="0.5">TYPISCHER FEHLER:</text>
+  <text x="149" y="362" class="mono" font-size="7" fill="#7A8099" text-anchor="middle">TL setzt Ziel statt</text>
+  <text x="149" y="374" class="mono" font-size="7" fill="#7A8099" text-anchor="middle">es zu erfragen</text>
+
+  <!-- Phasen-Badge -->
+  <rect x="74" y="388" width="150" height="20" fill="#3D5494"/>
+  <text x="149" y="402" class="mono" font-size="7.5" fill="#EAD9A8" text-anchor="middle">Thema öffnen</text>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- PHASE R – REALITY                                       -->
+  <!-- x=250, w=178                                           -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <rect x="250" y="116" width="178" height="296" fill="#EDEDF3"/>
+  <rect x="250" y="116" width="178" height="5" fill="#3D5494"/>
+
+  <text x="339" y="168" class="serif" font-size="54" font-style="italic" fill="#8898C4" text-anchor="middle" opacity="0.45">R</text>
+
+  <text x="339" y="190" class="mono" font-size="8" fill="#3D5494" text-anchor="middle" letter-spacing="1">PHASE 2</text>
+  <text x="339" y="210" class="serif" font-size="15" font-weight="500" fill="#1F2C56" text-anchor="middle">Reality – Realität</text>
+  <line x1="270" y1="218" x2="408" y2="218" stroke="#C8CAD4" stroke-width="0.5"/>
+
+  <text x="339" y="236" class="mono" font-size="8" fill="#3D5494" text-anchor="middle">KERNFRAGE:</text>
+  <text x="339" y="250" class="serif" font-size="10" font-weight="500" fill="#1F2C56" text-anchor="middle">Was ist die Ausgangslage?</text>
+  <line x1="270" y1="258" x2="408" y2="258" stroke="#E2E3E8" stroke-width="0.5"/>
+
+  <text x="339" y="275" class="mono" font-size="7.5" fill="#7A8099" text-anchor="middle">„Was passiert gerade genau –</text>
+  <text x="339" y="288" class="mono" font-size="7.5" fill="#7A8099" text-anchor="middle">was hast du beobachtet?"</text>
+  <text x="339" y="308" class="mono" font-size="7.5" fill="#7A8099" text-anchor="middle">„Was hast du schon versucht –</text>
+  <text x="339" y="321" class="mono" font-size="7.5" fill="#7A8099" text-anchor="middle">was hält dich zurück?"</text>
+
+  <line x1="270" y1="334" x2="408" y2="334" stroke="#E2E3E8" stroke-width="0.5"/>
+  <text x="339" y="349" class="mono" font-size="7" fill="#3D5494" text-anchor="middle" letter-spacing="0.5">TYPISCHER FEHLER:</text>
+  <text x="339" y="362" class="mono" font-size="7" fill="#7A8099" text-anchor="middle">TL filtert Realität</text>
+  <text x="339" y="374" class="mono" font-size="7" fill="#7A8099" text-anchor="middle">durch eigene Analyse</text>
+
+  <rect x="264" y="388" width="150" height="20" fill="#3D5494"/>
+  <text x="339" y="402" class="mono" font-size="7.5" fill="#EAD9A8" text-anchor="middle">Situation explorieren</text>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- PHASE O – OPTIONS                                       -->
+  <!-- x=440, w=178                                           -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <rect x="440" y="116" width="178" height="296" fill="#EDEDF3"/>
+  <rect x="440" y="116" width="178" height="5" fill="#3D5494"/>
+
+  <text x="529" y="168" class="serif" font-size="54" font-style="italic" fill="#8898C4" text-anchor="middle" opacity="0.45">O</text>
+
+  <text x="529" y="190" class="mono" font-size="8" fill="#3D5494" text-anchor="middle" letter-spacing="1">PHASE 3</text>
+  <text x="529" y="210" class="serif" font-size="15" font-weight="500" fill="#1F2C56" text-anchor="middle">Options – Optionen</text>
+  <line x1="460" y1="218" x2="598" y2="218" stroke="#C8CAD4" stroke-width="0.5"/>
+
+  <text x="529" y="236" class="mono" font-size="8" fill="#3D5494" text-anchor="middle">KERNFRAGE:</text>
+  <text x="529" y="250" class="serif" font-size="10" font-weight="500" fill="#1F2C56" text-anchor="middle">Welche Möglichkeiten hast du?</text>
+  <line x1="460" y1="258" x2="598" y2="258" stroke="#E2E3E8" stroke-width="0.5"/>
+
+  <text x="529" y="275" class="mono" font-size="7.5" fill="#7A8099" text-anchor="middle">„Welche Alternativen siehst du –</text>
+  <text x="529" y="288" class="mono" font-size="7.5" fill="#7A8099" text-anchor="middle">auch unwahrscheinliche?"</text>
+  <text x="529" y="308" class="mono" font-size="7.5" fill="#7A8099" text-anchor="middle">„Was, wenn es keine</text>
+  <text x="529" y="321" class="mono" font-size="7.5" fill="#7A8099" text-anchor="middle">Hürden gäbe?"</text>
+
+  <line x1="460" y1="334" x2="598" y2="334" stroke="#E2E3E8" stroke-width="0.5"/>
+  <text x="529" y="349" class="mono" font-size="7" fill="#3D5494" text-anchor="middle" letter-spacing="0.5">TYPISCHER FEHLER:</text>
+  <text x="529" y="362" class="mono" font-size="7" fill="#7A8099" text-anchor="middle">TL nennt Lösung</text>
+  <text x="529" y="374" class="mono" font-size="7" fill="#7A8099" text-anchor="middle">zu früh</text>
+
+  <rect x="454" y="388" width="150" height="20" fill="#3D5494"/>
+  <text x="529" y="402" class="mono" font-size="7.5" fill="#EAD9A8" text-anchor="middle">Möglichkeitsraum aufspannen</text>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- PHASE W – WILL (Gold, Zielhaltung)                     -->
+  <!-- x=630, w=190                                           -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <rect x="630" y="116" width="190" height="296" fill="#1F2C56"/>
+  <rect x="630" y="116" width="190" height="5" fill="#D9C089"/>
+
+  <text x="725" y="168" class="serif" font-size="54" font-style="italic" fill="#D9C089" text-anchor="middle" opacity="0.7">W</text>
+
+  <text x="725" y="190" class="mono" font-size="8" fill="#8898C4" text-anchor="middle" letter-spacing="1">PHASE 4</text>
+  <text x="725" y="210" class="serif" font-size="15" font-weight="500" fill="#D9C089" text-anchor="middle">Will – Umsetzung</text>
+  <line x1="650" y1="218" x2="800" y2="218" stroke="#8898C4" stroke-width="0.5"/>
+
+  <text x="725" y="236" class="mono" font-size="8" fill="#8898C4" text-anchor="middle">KERNFRAGE:</text>
+  <text x="725" y="250" class="serif" font-size="10" font-weight="500" fill="#EAD9A8" text-anchor="middle">Was tust du – bis wann?</text>
+  <line x1="650" y1="258" x2="800" y2="258" stroke="#3D5494" stroke-width="0.5"/>
+
+  <text x="725" y="275" class="mono" font-size="7.5" fill="#8898C4" text-anchor="middle">„Was wirst du konkret tun –</text>
+  <text x="725" y="288" class="mono" font-size="7.5" fill="#8898C4" text-anchor="middle">und bis wann?"</text>
+  <text x="725" y="308" class="mono" font-size="7.5" fill="#8898C4" text-anchor="middle">„Wie verbindlich ist das?</text>
+  <text x="725" y="321" class="mono" font-size="7.5" fill="#8898C4" text-anchor="middle">Was ist der erste Schritt?"</text>
+
+  <line x1="650" y1="334" x2="800" y2="334" stroke="#3D5494" stroke-width="0.5"/>
+  <text x="725" y="349" class="mono" font-size="7" fill="#8898C4" text-anchor="middle" letter-spacing="0.5">TYPISCHER FEHLER:</text>
+  <text x="725" y="362" class="mono" font-size="7" fill="#8898C4" text-anchor="middle">TL gibt Auftrag statt</text>
+  <text x="725" y="374" class="mono" font-size="7" fill="#8898C4" text-anchor="middle">Entscheidung zu erfragen</text>
+
+  <rect x="644" y="388" width="162" height="20" fill="#D9C089"/>
+  <text x="725" y="402" class="mono" font-size="7.5" fill="#1F2C56" text-anchor="middle">Commitment aktivieren</text>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- TRENNLINIE                                              -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <line x1="40" y1="426" x2="820" y2="426" stroke="#E2E3E8" stroke-width="1"/>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- ENTSCHEIDUNGSELEMENT: COACHING vs. ANLEITEN            -->
+  <!-- Zwei-Spalten-Layout ab y=436                           -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <text x="430" y="446" class="mono" font-size="9" fill="#7A8099" letter-spacing="2" text-anchor="middle">WANN COACHEN – WANN ANLEITEN?</text>
+  <line x1="40" y1="453" x2="820" y2="453" stroke="#E2E3E8" stroke-width="0.5"/>
+
+  <!-- Linke Spalte: Coaching (Gold-Rahmen) -->
+  <rect x="40" y="462" width="378" height="136" fill="#EDEDF3"/>
+  <rect x="40" y="462" width="378" height="3" fill="#D9C089"/>
+
+  <text x="229" y="481" class="mono" font-size="9" fill="#D9C089" text-anchor="middle" letter-spacing="1.5">COACHING (FRAGEN)</text>
+  <text x="229" y="494" class="mono" font-size="8" fill="#7A8099" text-anchor="middle">Zielhaltung – der Regelfall für strategische Führungskräfte</text>
+  <line x1="60" y1="500" x2="398" y2="500" stroke="#E2E3E8" stroke-width="0.5"/>
+
+  <!-- Bullet-Punkte Coaching -->
+  <rect x="60" y="510" width="5" height="5" fill="#D9C089"/>
+  <text x="73" y="518" class="mono" font-size="8" fill="#1F2C56">Kompetenz vorhanden – Reflexionsraum fehlt</text>
+  <rect x="60" y="526" width="5" height="5" fill="#D9C089"/>
+  <text x="73" y="534" class="mono" font-size="8" fill="#1F2C56">Berater sucht eigenen Weg, Eigenverantwortung soll wachsen</text>
+  <rect x="60" y="542" width="5" height="5" fill="#D9C089"/>
+  <text x="73" y="550" class="mono" font-size="8" fill="#1F2C56">Komplexe Entscheidung, Zeit für Exploration vorhanden</text>
+  <rect x="60" y="558" width="5" height="5" fill="#D9C089"/>
+  <text x="73" y="566" class="mono" font-size="8" fill="#1F2C56">Bereitschaft zur eigenverantwortlichen Reflexion gegeben</text>
+
+  <text x="60" y="588" class="mono" font-size="7.5" fill="#D9C089">Deci &amp; Ryan (2000): Autonomie, Kompetenz, Eingebundenheit</text>
+
+  <!-- Rechte Spalte: Anleiten (dezent, #3D5494) -->
+  <rect x="440" y="462" width="378" height="136" fill="#EDEDF3"/>
+  <rect x="440" y="462" width="378" height="3" fill="#3D5494"/>
+
+  <text x="629" y="481" class="mono" font-size="9" fill="#3D5494" text-anchor="middle" letter-spacing="1.5">ANLEITEN (SAGEN)</text>
+  <text x="629" y="494" class="mono" font-size="8" fill="#7A8099" text-anchor="middle">Situative Ausnahme – bewusst und begründet einsetzen</text>
+  <line x1="460" y1="500" x2="798" y2="500" stroke="#E2E3E8" stroke-width="0.5"/>
+
+  <!-- Bullet-Punkte Anleiten -->
+  <rect x="460" y="510" width="5" height="5" fill="#3D5494"/>
+  <text x="473" y="518" class="mono" font-size="8" fill="#1F2C56">Neue Mitarbeitende – Wissensgrundlage fehlt</text>
+  <rect x="460" y="526" width="5" height="5" fill="#3D5494"/>
+  <text x="473" y="534" class="mono" font-size="8" fill="#1F2C56">Sicherheitsrelevante Compliance-Situation – Klarheit vor Reflexion</text>
+  <rect x="460" y="542" width="5" height="5" fill="#3D5494"/>
+  <text x="473" y="550" class="mono" font-size="8" fill="#1F2C56">Akute Krise – Zeitdruck macht Exploration schädlich</text>
+  <rect x="460" y="558" width="5" height="5" fill="#3D5494"/>
+  <text x="473" y="566" class="mono" font-size="8" fill="#1F2C56">Keine Veränderungsbereitschaft – Coaching kann nicht erzwungen werden</text>
+
+  <text x="460" y="588" class="mono" font-size="7.5" fill="#3D5494">Whitmore (2017): Coaching setzt Kompetenz und Bereitschaft voraus</text>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- LEITPRINZIP                                             -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <line x1="40" y1="612" x2="820" y2="612" stroke="#E2E3E8" stroke-width="1"/>
+  <text x="40" y="631" class="mono" font-size="9" fill="#7A8099" letter-spacing="2">LEITPRINZIP</text>
+  <text x="160" y="631" class="serif" font-size="13" font-weight="500" fill="#1F2C56"> Die nächste Frage ist stärker als die nächste Antwort.</text>
+  <text x="660" y="631" class="mono" font-size="8" fill="#7A8099"> – Whitmore, 2017</text>
+
+  <!-- Baseline -->
+  <line x1="40" y1="672" x2="820" y2="672" stroke="#15192B" stroke-width="1"/>
+
+  <!-- Quellenzeile -->
+  <text x="40" y="686" class="mono" font-size="9" fill="#B0B3C0" letter-spacing="0.5">Whitmore, J. (2017). Coaching for Performance. Nicholas Brealey Publishing.</text>
+
+</svg>
