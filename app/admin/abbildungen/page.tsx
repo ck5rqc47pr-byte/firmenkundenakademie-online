@@ -211,6 +211,9 @@ const GRAFIKEN_MAP: Record<string, Array<{ bezeichnung: string; datei: string }>
   TL06: [
     { bezeichnung: "SBI-Feedback-Modell (Situation–Behavior–Impact)", datei: "/grafiken/TL06-sbi-feedback.svg" },
   ],
+  TL08: [
+    { bezeichnung: "Glasl-Konflikteskalation (9 Stufen, 3 Phasen)", datei: "/grafiken/TL08-glasl-eskalation.svg" },
+  ],
 };
 
 const STATUS_STYLE: Record<string, string> = {

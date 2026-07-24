@@ -1,0 +1,170 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 720" width="860" height="720">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;1,8..60,400&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap');
+      text { font-family: Georgia, serif; }
+      .mono { font-family: 'JetBrains Mono', 'Courier New', monospace; }
+      .serif { font-family: 'Source Serif 4', Georgia, serif; }
+    </style>
+  </defs>
+
+  <!-- Canvas -->
+  <rect width="860" height="720" fill="#F8F8FA"/>
+
+  <!-- Eyebrow -->
+  <text x="40" y="28" class="mono" font-size="10" fill="#7A8099" letter-spacing="2">KONFLIKT · MODUL TL08 · ESKALATION &amp; MODERATION</text>
+  <line x1="40" y1="38" x2="820" y2="38" stroke="#E2E3E8" stroke-width="1"/>
+
+  <!-- Titel -->
+  <text x="430" y="66" class="serif" font-size="18" font-weight="500" fill="#1F2C56" text-anchor="middle">Glasls Konflikteskalationsmodell – Neun Stufen in drei Phasen</text>
+  <text x="430" y="82" class="mono" font-size="9" fill="#7A8099" letter-spacing="1" text-anchor="middle">KONFLIKTE ESKALIEREN IN STUFEN – DIE FÜHRUNGSKRAFT ERKENNT, WANN SIE MODERIEREN KANN UND WANN SIE HILFE HOLEN MUSS</text>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <!-- TREPPENGRAFIK: abwärts, 9 Stufen, Stufe 1 oben links                 -->
+  <!-- Gesamtbereich: x=40–500, y=100–640                                    -->
+  <!-- Jede Stufe: Breite 50px, Höhe 60px; Treppenversatz je 45px rechts    -->
+  <!-- Stufenköpfe bei: x0=40, y0=100; jede weitere Stufe: +45px x, +54px y -->
+  <!-- Treppe füllt von links nach unten durch; Beschriftung im Stufenkörper -->
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+
+  <!-- ─── PHASE 1 – WIN-WIN (Stufen 1–3) · Farbe: #EDEDF3 / Akzent #3D5494 ─── -->
+
+  <!-- Stufe 1: x=40, y=100, w=462, h=54 (volle Breite oben) -->
+  <rect x="40" y="100" width="462" height="54" fill="#EDEDF3"/>
+  <rect x="40" y="100" width="4" height="54" fill="#3D5494"/>
+  <!-- Stufennummer -->
+  <text x="64" y="133" class="serif" font-size="28" font-style="italic" fill="#8898C4" opacity="0.55">1</text>
+  <!-- Stufenname -->
+  <text x="100" y="122" class="mono" font-size="8" fill="#3D5494" letter-spacing="1">STUFE 1</text>
+  <text x="100" y="138" class="serif" font-size="13" font-weight="500" fill="#1F2C56">Verhärtung</text>
+  <!-- Kurzbeschreibung -->
+  <text x="230" y="126" class="mono" font-size="8" fill="#7A8099">Gelegentliche Spannungen, noch kein Dauerkonflikt;</text>
+  <text x="230" y="140" class="mono" font-size="8" fill="#7A8099">Sachlichkeit möglich, Gesprächsbereitschaft vorhanden</text>
+
+  <!-- Stufe 2: x=40, y=154, w=414, h=54 -->
+  <rect x="40" y="154" width="414" height="54" fill="#EDEDF3"/>
+  <rect x="40" y="154" width="4" height="54" fill="#3D5494"/>
+  <text x="64" y="187" class="serif" font-size="28" font-style="italic" fill="#8898C4" opacity="0.55">2</text>
+  <text x="100" y="176" class="mono" font-size="8" fill="#3D5494" letter-spacing="1">STUFE 2</text>
+  <text x="100" y="192" class="serif" font-size="13" font-weight="500" fill="#1F2C56">Debatte &amp; Polemik</text>
+  <text x="230" y="180" class="mono" font-size="8" fill="#7A8099">Verbale Auseinandersetzungen, Positionen verhärten sich;</text>
+  <text x="230" y="194" class="mono" font-size="8" fill="#7A8099">beide suchen noch nach Argumenten, nicht nach Koalitionen</text>
+
+  <!-- Stufe 3: x=40, y=208, w=366, h=54 -->
+  <rect x="40" y="208" width="366" height="54" fill="#EDEDF3"/>
+  <rect x="40" y="208" width="4" height="54" fill="#3D5494"/>
+  <text x="64" y="241" class="serif" font-size="28" font-style="italic" fill="#8898C4" opacity="0.55">3</text>
+  <text x="100" y="230" class="mono" font-size="8" fill="#3D5494" letter-spacing="1">STUFE 3</text>
+  <text x="100" y="246" class="serif" font-size="13" font-weight="500" fill="#1F2C56">Taten statt Worte</text>
+  <text x="230" y="234" class="mono" font-size="8" fill="#7A8099">Kommunikationsabbruch, Vermeidungsverhalten;</text>
+  <text x="230" y="248" class="mono" font-size="8" fill="#7A8099">Handlungen ersetzen das Gespräch</text>
+
+  <!-- Phase-1-Beschriftung rechts (Interventionspanel) -->
+  <rect x="510" y="100" width="310" height="162" fill="#1F2C56"/>
+  <rect x="510" y="100" width="310" height="4" fill="#3D5494"/>
+  <text x="665" y="130" class="mono" font-size="8" fill="#8898C4" text-anchor="middle" letter-spacing="1.5">PHASE 1 · WIN-WIN</text>
+  <line x1="526" y1="138" x2="804" y2="138" stroke="#3D5494" stroke-width="0.5"/>
+  <text x="665" y="157" class="serif" font-size="13" font-weight="500" fill="#EAD9A8" text-anchor="middle">Führungskraft moderiert selbst</text>
+  <text x="526" y="176" class="mono" font-size="8" fill="#8898C4">· Allparteiliche Moderation (kein Schiedsrichter)</text>
+  <text x="526" y="191" class="mono" font-size="8" fill="#8898C4">· Einzelgespräche vorab, dann gemeinsame Runde</text>
+  <text x="526" y="206" class="mono" font-size="8" fill="#8898C4">· Vereinbarung mit Folgetermin schriftlich fixieren</text>
+  <text x="526" y="221" class="mono" font-size="8" fill="#D9C089">→ Stufen 1–3: eigene Moderation wirksam</text>
+  <text x="526" y="237" class="mono" font-size="8" fill="#D9C089">→ Früh eingreifen – nicht auf Stufe 4 warten</text>
+  <text x="526" y="252" class="mono" font-size="8" fill="#D9C089">→ Ziel: Vereinbarung, kein Urteil</text>
+
+  <!-- ─── INTERVENTIONSSCHWELLE ─── -->
+  <!-- Goldene Trennlinie zwischen Phase 1 und Phase 2 -->
+  <line x1="40" y1="262" x2="820" y2="262" stroke="#D9C089" stroke-width="2.5"/>
+  <!-- Schwellen-Label -->
+  <rect x="180" y="255" width="310" height="16" fill="#D9C089"/>
+  <text x="335" y="267" class="mono" font-size="8" fill="#1F2C56" text-anchor="middle" letter-spacing="1">INTERVENTIONSSCHWELLE – AB HIER EXTERNE HILFE</text>
+
+  <!-- ─── PHASE 2 – WIN-LOSE (Stufen 4–6) · Farbe: #3D5494 dunkel ─── -->
+
+  <!-- Stufe 4: x=40, y=278, w=318, h=54 -->
+  <rect x="40" y="278" width="318" height="54" fill="#3D5494"/>
+  <rect x="40" y="278" width="4" height="54" fill="#D9C089"/>
+  <text x="64" y="311" class="serif" font-size="28" font-style="italic" fill="#8898C4" opacity="0.6">4</text>
+  <text x="100" y="300" class="mono" font-size="8" fill="#8898C4" letter-spacing="1">STUFE 4</text>
+  <text x="100" y="316" class="serif" font-size="13" font-weight="500" fill="#EAD9A8">Images &amp; Koalitionen</text>
+  <text x="216" y="302" class="mono" font-size="7.5" fill="#8898C4">Lagerbildung; Dritte werden aktiv</text>
+  <text x="216" y="316" class="mono" font-size="7.5" fill="#8898C4">einbezogen; Sachebene kaum erreichbar</text>
+
+  <!-- Stufe 5: x=40, y=332, w=270, h=54 -->
+  <rect x="40" y="332" width="270" height="54" fill="#3D5494"/>
+  <rect x="40" y="332" width="4" height="54" fill="#D9C089"/>
+  <text x="64" y="365" class="serif" font-size="28" font-style="italic" fill="#8898C4" opacity="0.6">5</text>
+  <text x="100" y="354" class="mono" font-size="8" fill="#8898C4" letter-spacing="1">STUFE 5</text>
+  <text x="100" y="370" class="serif" font-size="13" font-weight="500" fill="#EAD9A8">Gesichtsverlust</text>
+  <text x="190" y="356" class="mono" font-size="7.5" fill="#8898C4">Öffentliche Beschädigung</text>
+  <text x="190" y="370" class="mono" font-size="7.5" fill="#8898C4">des Gegenübers</text>
+
+  <!-- Stufe 6: x=40, y=386, w=222, h=54 -->
+  <rect x="40" y="386" width="222" height="54" fill="#3D5494"/>
+  <rect x="40" y="386" width="4" height="54" fill="#D9C089"/>
+  <text x="64" y="419" class="serif" font-size="28" font-style="italic" fill="#8898C4" opacity="0.6">6</text>
+  <text x="100" y="408" class="mono" font-size="8" fill="#8898C4" letter-spacing="1">STUFE 6</text>
+  <text x="100" y="424" class="serif" font-size="13" font-weight="500" fill="#EAD9A8">Drohstrategien</text>
+  <text x="175" y="410" class="mono" font-size="7.5" fill="#8898C4">Explizite Drohungen,</text>
+  <text x="175" y="424" class="mono" font-size="7.5" fill="#8898C4">Machteinsatz</text>
+
+  <!-- Phase-2-Beschriftung rechts -->
+  <rect x="370" y="278" width="450" height="162" fill="#2A3D6E"/>
+  <rect x="370" y="278" width="450" height="4" fill="#D9C089"/>
+  <text x="595" y="308" class="mono" font-size="8" fill="#8898C4" text-anchor="middle" letter-spacing="1.5">PHASE 2 · WIN-LOSE</text>
+  <line x1="386" y1="316" x2="804" y2="316" stroke="#3D5494" stroke-width="0.5"/>
+  <text x="595" y="335" class="serif" font-size="13" font-weight="500" fill="#D9C089" text-anchor="middle">Externe Moderation / HR einbeziehen</text>
+  <text x="386" y="354" class="mono" font-size="8" fill="#8898C4">· Allparteiliche TL-Moderation verliert Wirksamkeit</text>
+  <text x="386" y="369" class="mono" font-size="8" fill="#8898C4">· Professionelle Mediation oder HR-Einbeziehung</text>
+  <text x="386" y="384" class="mono" font-size="8" fill="#8898C4">· Sachebene nur über neutrale Dritte erreichbar</text>
+  <text x="386" y="403" class="mono" font-size="8" fill="#D9C089">→ TL erkennt Lagerbildung als Warnsignal (Stufe 4)</text>
+  <text x="386" y="419" class="mono" font-size="8" fill="#D9C089">→ Sofort HR informieren, nicht weiter selbst moderieren</text>
+
+  <!-- ─── PHASE 3 – LOSE-LOSE (Stufen 7–9) · Farbe: #1F2C56 dunkelst ─── -->
+
+  <!-- Stufe 7: x=40, y=440, w=174, h=54 -->
+  <rect x="40" y="440" width="174" height="54" fill="#1F2C56"/>
+  <rect x="40" y="440" width="4" height="54" fill="#7A8099"/>
+  <text x="64" y="473" class="serif" font-size="28" font-style="italic" fill="#3D5494" opacity="0.8">7</text>
+  <text x="100" y="462" class="mono" font-size="8" fill="#3D5494" letter-spacing="1">STUFE 7</text>
+  <text x="100" y="478" class="serif" font-size="11" font-weight="500" fill="#8898C4">Beg. Vernichtung</text>
+
+  <!-- Stufe 8: x=40, y=494, w=126, h=54 -->
+  <rect x="40" y="494" width="126" height="54" fill="#1F2C56"/>
+  <rect x="40" y="494" width="4" height="54" fill="#7A8099"/>
+  <text x="64" y="527" class="serif" font-size="28" font-style="italic" fill="#3D5494" opacity="0.8">8</text>
+  <text x="100" y="516" class="mono" font-size="8" fill="#3D5494" letter-spacing="1">STUFE 8</text>
+  <text x="100" y="532" class="serif" font-size="11" font-weight="500" fill="#8898C4">Zersplitterung</text>
+
+  <!-- Stufe 9: x=40, y=548, w=78, h=54 -->
+  <rect x="40" y="548" width="78" height="54" fill="#15192B"/>
+  <rect x="40" y="548" width="4" height="54" fill="#7A8099"/>
+  <text x="64" y="581" class="serif" font-size="28" font-style="italic" fill="#3D5494" opacity="0.8">9</text>
+  <text x="52" y="567" class="mono" font-size="7" fill="#3D5494" letter-spacing="0.5">STUFE 9</text>
+  <text x="52" y="582" class="serif" font-size="9.5" font-weight="500" fill="#7A8099">Abgrund</text>
+
+  <!-- Phase-3-Beschriftung rechts -->
+  <rect x="222" y="440" width="598" height="162" fill="#1F2C56"/>
+  <rect x="222" y="440" width="598" height="4" fill="#7A8099"/>
+  <text x="521" y="470" class="mono" font-size="8" fill="#3D5494" text-anchor="middle" letter-spacing="1.5">PHASE 3 · LOSE-LOSE</text>
+  <line x1="238" y1="478" x2="804" y2="478" stroke="#3D5494" stroke-width="0.5"/>
+  <text x="521" y="497" class="serif" font-size="13" font-weight="500" fill="#8898C4" text-anchor="middle">Nur noch Machteingriff von außen / Trennung</text>
+  <text x="238" y="518" class="mono" font-size="8" fill="#3D5494">· Vernichtungsabsicht überwiegt; arbeitsrechtliche Schritte unausweichlich</text>
+  <text x="238" y="533" class="mono" font-size="8" fill="#3D5494">· Kein Handlungsrahmen mehr für betriebliche Konfliktmoderation</text>
+  <text x="238" y="552" class="mono" font-size="8" fill="#7A8099">→ Konsequente HR- und Rechtsabteilung einbeziehen</text>
+  <text x="238" y="567" class="mono" font-size="8" fill="#7A8099">→ Ggf. Trennung als einzige verbleibende Handlungsoption</text>
+  <text x="238" y="582" class="mono" font-size="8" fill="#7A8099">→ Stufen 7–9 liegen außerhalb des Führungshandelns</text>
+
+  <!-- ─── LEITPRINZIP-BANNER ─── -->
+  <line x1="40" y1="622" x2="820" y2="622" stroke="#E2E3E8" stroke-width="1"/>
+  <text x="40" y="642" class="mono" font-size="9" fill="#7A8099" letter-spacing="2">LEITPRINZIP</text>
+  <text x="40" y="660" class="serif" font-size="13" font-weight="500" fill="#1F2C56">Frühes Eingreifen ist eine Kompetenz, keine Überreaktion</text>
+  <text x="418" y="660" class="mono" font-size="8.5" fill="#7A8099"> – wer wartet bis Lagerbildung sichtbar ist (Stufe 4), hat das Fenster für eigenständige Moderation bereits geschlossen.</text>
+
+  <!-- Baseline -->
+  <line x1="40" y1="690" x2="820" y2="690" stroke="#15192B" stroke-width="1"/>
+
+  <!-- Quellenzeile -->
+  <text x="40" y="706" class="mono" font-size="9" fill="#B0B3C0" letter-spacing="0.5">Glasl, F. (2017). Konfliktmanagement. Freies Geistesleben / Haupt Verlag.</text>
+
+</svg>
