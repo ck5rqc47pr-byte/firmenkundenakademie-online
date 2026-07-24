@@ -1,0 +1,190 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 680" width="860" height="680">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;1,8..60,400&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap');
+      text { font-family: Georgia, serif; }
+      .mono { font-family: 'JetBrains Mono', 'Courier New', monospace; }
+      .serif { font-family: 'Source Serif 4', Georgia, serif; }
+    </style>
+  </defs>
+
+  <!-- Canvas -->
+  <rect width="860" height="680" fill="#F8F8FA"/>
+
+  <!-- Eyebrow -->
+  <text x="40" y="28" class="mono" font-size="10" fill="#7A8099" letter-spacing="2">FEEDBACK · MODUL TL06 · ENTWICKLUNGSGESPRÄCH</text>
+  <line x1="40" y1="38" x2="820" y2="38" stroke="#E2E3E8" stroke-width="1"/>
+
+  <!-- Titel + Untertitel -->
+  <text x="430" y="66" class="serif" font-size="18" font-weight="500" fill="#1F2C56" text-anchor="middle">Das SBI-Feedback-Modell</text>
+  <text x="430" y="83" class="mono" font-size="9" fill="#7A8099" letter-spacing="1" text-anchor="middle">VERHALTEN BESCHREIBEN, NICHT DIE PERSON BEWERTEN – KONKRET, ZEITNAH, WIRKUNGSBEZOGEN</text>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- DREI STUFEN: S · B · I                     -->
+  <!-- Breite je Block: 220px, Abstand: 12px      -->
+  <!-- Positionen x-Start: 40 · 272 · 504         -->
+  <!-- Höhe: y=108 bis y=420                      -->
+  <!-- ═══════════════════════════════════════════ -->
+
+  <!-- Verbindungspfeile S→B und B→I -->
+  <polygon points="264,264 272,256 272,272" fill="#C8CAD4"/>
+  <polygon points="496,264 504,256 504,272" fill="#D9C089"/>
+
+  <!-- ─── BLOCK S: SITUATION ─── -->
+  <rect x="40" y="108" width="220" height="312" fill="#EDEDF3"/>
+  <!-- Akzentbalken oben -->
+  <rect x="40" y="108" width="220" height="4" fill="#3D5494"/>
+
+  <!-- Großer Buchstabe -->
+  <text x="150" y="178" class="serif" font-size="64" font-style="italic" fill="#3D5494" text-anchor="middle" opacity="0.18">S</text>
+
+  <!-- Label -->
+  <text x="150" y="154" class="mono" font-size="8" fill="#3D5494" text-anchor="middle" letter-spacing="1.5">SCHRITT 1</text>
+  <!-- Titel -->
+  <text x="150" y="178" class="serif" font-size="16" font-weight="500" fill="#1F2C56" text-anchor="middle">Situation</text>
+  <line x1="60" y1="187" x2="240" y2="187" stroke="#C8CAD4" stroke-width="0.5"/>
+
+  <!-- Frage -->
+  <text x="150" y="207" class="mono" font-size="8.5" fill="#3D5494" text-anchor="middle">Wann und wo genau?</text>
+
+  <!-- Inhalt-Beschreibung -->
+  <text x="150" y="229" class="mono" font-size="8" fill="#7A8099" text-anchor="middle">Konkreter Anlass, benennbar</text>
+  <text x="150" y="243" class="mono" font-size="8" fill="#7A8099" text-anchor="middle">und nachvollziehbar –</text>
+  <text x="150" y="257" class="mono" font-size="8" fill="#7A8099" text-anchor="middle">kein „immer" oder „nie"</text>
+
+  <!-- Trennlinie -->
+  <line x1="60" y1="272" x2="240" y2="272" stroke="#C8CAD4" stroke-width="0.5"/>
+
+  <!-- FK-Beispiel -->
+  <text x="150" y="292" class="mono" font-size="8" fill="#3D5494" text-anchor="middle" letter-spacing="0.5">BEISPIEL</text>
+  <text x="150" y="309" class="serif" font-size="9.5" fill="#1F2C56" text-anchor="middle" font-style="italic">„Im Kundengespräch am</text>
+  <text x="150" y="323" class="serif" font-size="9.5" fill="#1F2C56" text-anchor="middle" font-style="italic">Dienstag mit Firma Mayer GmbH,</text>
+  <text x="150" y="337" class="serif" font-size="9.5" fill="#1F2C56" text-anchor="middle" font-style="italic">gegen 10 Uhr …"</text>
+
+  <!-- Badge -->
+  <rect x="54" y="375" width="192" height="33" fill="#3D5494"/>
+  <text x="150" y="387" class="mono" font-size="7.5" fill="#8898C4" text-anchor="middle" letter-spacing="0.5">SCHLÜSSELFRAGE:</text>
+  <text x="150" y="401" class="mono" font-size="7.5" fill="#EAD9A8" text-anchor="middle">Wann genau, wer war dabei?</text>
+
+  <!-- ─── BLOCK B: BEHAVIOR ─── -->
+  <rect x="272" y="108" width="220" height="312" fill="#EDEDF3"/>
+  <rect x="272" y="108" width="220" height="4" fill="#3D5494"/>
+
+  <text x="382" y="178" class="serif" font-size="64" font-style="italic" fill="#3D5494" text-anchor="middle" opacity="0.18">B</text>
+
+  <text x="382" y="154" class="mono" font-size="8" fill="#3D5494" text-anchor="middle" letter-spacing="1.5">SCHRITT 2</text>
+  <text x="382" y="178" class="serif" font-size="16" font-weight="500" fill="#1F2C56" text-anchor="middle">Behavior</text>
+  <line x1="292" y1="187" x2="472" y2="187" stroke="#C8CAD4" stroke-width="0.5"/>
+
+  <text x="382" y="207" class="mono" font-size="8.5" fill="#3D5494" text-anchor="middle">Was war beobachtbar?</text>
+
+  <text x="382" y="229" class="mono" font-size="8" fill="#7A8099" text-anchor="middle">Verhaltensbezogen –</text>
+  <text x="382" y="243" class="mono" font-size="8" fill="#7A8099" text-anchor="middle">keine Person, kein Charakter,</text>
+  <text x="382" y="257" class="mono" font-size="8" fill="#7A8099" text-anchor="middle">keine Interpretation</text>
+
+  <line x1="292" y1="272" x2="472" y2="272" stroke="#C8CAD4" stroke-width="0.5"/>
+
+  <text x="382" y="292" class="mono" font-size="8" fill="#3D5494" text-anchor="middle" letter-spacing="0.5">BEISPIEL</text>
+  <text x="382" y="309" class="serif" font-size="9.5" fill="#1F2C56" text-anchor="middle" font-style="italic">„… hast du die Frage nach</text>
+  <text x="382" y="323" class="serif" font-size="9.5" fill="#1F2C56" text-anchor="middle" font-style="italic">den Liquiditätsreserven nicht</text>
+  <text x="382" y="337" class="serif" font-size="9.5" fill="#1F2C56" text-anchor="middle" font-style="italic">angesprochen …"</text>
+
+  <rect x="286" y="375" width="192" height="33" fill="#3D5494"/>
+  <text x="382" y="387" class="mono" font-size="7.5" fill="#8898C4" text-anchor="middle" letter-spacing="0.5">SCHLÜSSELFRAGE:</text>
+  <text x="382" y="401" class="mono" font-size="7.5" fill="#EAD9A8" text-anchor="middle">Was habe ich gesehen / gehört?</text>
+
+  <!-- ─── BLOCK I: IMPACT – GOLD ─── -->
+  <rect x="504" y="108" width="220" height="312" fill="#1F2C56"/>
+  <rect x="504" y="108" width="220" height="4" fill="#D9C089"/>
+
+  <text x="614" y="178" class="serif" font-size="64" font-style="italic" fill="#D9C089" text-anchor="middle" opacity="0.22">I</text>
+
+  <text x="614" y="154" class="mono" font-size="8" fill="#8898C4" text-anchor="middle" letter-spacing="1.5">SCHRITT 3</text>
+  <text x="614" y="178" class="serif" font-size="16" font-weight="500" fill="#D9C089" text-anchor="middle">Impact</text>
+  <line x1="524" y1="187" x2="704" y2="187" stroke="#3D5494" stroke-width="0.5"/>
+
+  <text x="614" y="207" class="mono" font-size="8.5" fill="#EAD9A8" text-anchor="middle">Welche Wirkung hatte es?</text>
+
+  <text x="614" y="229" class="mono" font-size="8" fill="#8898C4" text-anchor="middle">Auswirkung auf mich,</text>
+  <text x="614" y="243" class="mono" font-size="8" fill="#8898C4" text-anchor="middle">das Team oder den Kunden –</text>
+  <text x="614" y="257" class="mono" font-size="8" fill="#8898C4" text-anchor="middle">konkret und beobachtbar</text>
+
+  <line x1="524" y1="272" x2="704" y2="272" stroke="#3D5494" stroke-width="0.5"/>
+
+  <text x="614" y="292" class="mono" font-size="8" fill="#D9C089" text-anchor="middle" letter-spacing="0.5">BEISPIEL</text>
+  <text x="614" y="309" class="serif" font-size="9.5" fill="#EAD9A8" text-anchor="middle" font-style="italic">„Das hat dazu geführt, dass</text>
+  <text x="614" y="323" class="serif" font-size="9.5" fill="#EAD9A8" text-anchor="middle" font-style="italic">wir keine vollständige Risiko-</text>
+  <text x="614" y="337" class="serif" font-size="9.5" fill="#EAD9A8" text-anchor="middle" font-style="italic">einschätzung haben."</text>
+
+  <rect x="518" y="375" width="192" height="33" fill="#D9C089"/>
+  <text x="614" y="387" class="mono" font-size="7.5" fill="#1F2C56" text-anchor="middle" letter-spacing="0.5">SCHLÜSSELFRAGE:</text>
+  <text x="614" y="401" class="mono" font-size="7.5" fill="#1F2C56" text-anchor="middle">Was hat das ausgelöst?</text>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- MERKSATZ                                   -->
+  <!-- ═══════════════════════════════════════════ -->
+  <rect x="744" y="108" width="116" height="312" fill="#F8F8FA" stroke="#E2E3E8" stroke-width="1"/>
+  <rect x="744" y="108" width="116" height="4" fill="#D9C089"/>
+  <text x="802" y="154" class="mono" font-size="8" fill="#7A8099" text-anchor="middle" letter-spacing="1">MERKSATZ</text>
+  <line x1="754" y1="161" x2="850" y2="161" stroke="#E2E3E8" stroke-width="0.5"/>
+  <text x="802" y="183" class="serif" font-size="11" font-style="italic" fill="#1F2C56" text-anchor="middle">SBI beschreibt,</text>
+  <text x="802" y="200" class="serif" font-size="11" font-style="italic" fill="#1F2C56" text-anchor="middle">was ich gesehen</text>
+  <text x="802" y="217" class="serif" font-size="11" font-style="italic" fill="#1F2C56" text-anchor="middle">habe –</text>
+  <text x="802" y="246" class="serif" font-size="11" font-style="italic" fill="#7A8099" text-anchor="middle">nicht, was ich</text>
+  <text x="802" y="263" class="serif" font-size="11" font-style="italic" fill="#7A8099" text-anchor="middle">darüber denke,</text>
+  <text x="802" y="280" class="serif" font-size="11" font-style="italic" fill="#7A8099" text-anchor="middle">wer du bist.</text>
+  <line x1="754" y1="297" x2="850" y2="297" stroke="#E2E3E8" stroke-width="0.5"/>
+  <text x="802" y="317" class="mono" font-size="7.5" fill="#D9C089" text-anchor="middle">CCL</text>
+  <text x="802" y="333" class="mono" font-size="7" fill="#7A8099" text-anchor="middle">Center for</text>
+  <text x="802" y="346" class="mono" font-size="7" fill="#7A8099" text-anchor="middle">Creative</text>
+  <text x="802" y="359" class="mono" font-size="7" fill="#7A8099" text-anchor="middle">Leadership</text>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- KONTRAST-PANEL: SBI vs. Bewertung          -->
+  <!-- ═══════════════════════════════════════════ -->
+  <line x1="40" y1="452" x2="820" y2="452" stroke="#E2E3E8" stroke-width="1"/>
+  <text x="40" y="470" class="mono" font-size="9" fill="#7A8099" letter-spacing="2">KONTRAST: BESCHREIBENDES FEEDBACK vs. BEWERTUNG / URTEIL</text>
+  <line x1="40" y1="478" x2="820" y2="478" stroke="#E2E3E8" stroke-width="0.5"/>
+
+  <!-- Spalten-Header -->
+  <rect x="40" y="484" width="370" height="22" fill="#EDEDF3"/>
+  <text x="225" y="499" class="mono" font-size="8.5" fill="#3D5494" text-anchor="middle" letter-spacing="1">SBI – BESCHREIBENDES FEEDBACK (ZIELZUSTAND)</text>
+
+  <rect x="420" y="484" width="400" height="22" fill="#F8F8FA" stroke="#E2E3E8" stroke-width="1"/>
+  <text x="620" y="499" class="mono" font-size="8.5" fill="#7A8099" text-anchor="middle" letter-spacing="1">BEWERTUNG / URTEIL (ANTI-MUSTER)</text>
+
+  <!-- Trennstreifen Mitte -->
+  <rect x="412" y="484" width="6" height="110" fill="#E2E3E8"/>
+
+  <!-- Zeile 1 -->
+  <rect x="40" y="508" width="6" height="18" fill="#D9C089"/>
+  <text x="56" y="521" class="serif" font-size="10" font-style="italic" fill="#1F2C56">„Im gestrigen Teamgespräch hast du das Wort nicht ergriffen,</text>
+  <text x="56" y="535" class="serif" font-size="10" font-style="italic" fill="#1F2C56">obwohl du relevante Erfahrungen hast."</text>
+
+  <rect x="420" y="508" width="4" height="18" fill="#C8CAD4"/>
+  <text x="432" y="521" class="serif" font-size="10" font-style="italic" fill="#7A8099">„Du bist zu passiv."</text>
+
+  <!-- Zeile 2 -->
+  <line x1="40" y1="548" x2="410" y2="548" stroke="#E2E3E8" stroke-width="0.5"/>
+  <line x1="420" y1="548" x2="820" y2="548" stroke="#E2E3E8" stroke-width="0.5"/>
+  <rect x="40" y="554" width="6" height="18" fill="#D9C089"/>
+  <text x="56" y="567" class="serif" font-size="10" font-style="italic" fill="#1F2C56">„Das Protokoll enthält keine Risikobewertung,</text>
+  <text x="56" y="581" class="serif" font-size="10" font-style="italic" fill="#1F2C56">obwohl wir das vereinbart hatten."</text>
+
+  <rect x="420" y="554" width="4" height="18" fill="#C8CAD4"/>
+  <text x="432" y="567" class="serif" font-size="10" font-style="italic" fill="#7A8099">„Du nimmst Vereinbarungen</text>
+  <text x="432" y="581" class="serif" font-size="10" font-style="italic" fill="#7A8099">nicht ernst."</text>
+
+  <!-- Fußzeile Kontrast -->
+  <line x1="40" y1="596" x2="820" y2="596" stroke="#E2E3E8" stroke-width="0.5"/>
+  <text x="40" y="610" class="mono" font-size="8" fill="#D9C089">SBI</text>
+  <text x="60" y="610" class="mono" font-size="8" fill="#7A8099">adressiert Aufgaben- und Prozessebene → öffnet Reflexion.</text>
+  <text x="450" y="610" class="mono" font-size="8" fill="#7A8099">Bewertung adressiert Selbstebene → löst Abwehr aus (Kluger &amp; DeNisi, 1996).</text>
+
+  <!-- Baseline -->
+  <line x1="40" y1="650" x2="820" y2="650" stroke="#15192B" stroke-width="1"/>
+
+  <!-- Quellenzeile -->
+  <text x="40" y="664" class="mono" font-size="9" fill="#B0B3C0" letter-spacing="0.5">Center for Creative Leadership. The SBI Feedback Model. · Hattie, J. &amp; Timperley, H. (2007). The Power of Feedback. Review of Educational Research, 77(1), 81–112.</text>
+
+</svg>

@@ -208,6 +208,9 @@ const GRAFIKEN_MAP: Record<string, Array<{ bezeichnung: string; datei: string }>
   TL05: [
     { bezeichnung: "5-Schritte-Struktur des Steuerungs-/Zielgesprächs", datei: "/grafiken/TL05-gespraechsstruktur.svg" },
   ],
+  TL06: [
+    { bezeichnung: "SBI-Feedback-Modell (Situation–Behavior–Impact)", datei: "/grafiken/TL06-sbi-feedback.svg" },
+  ],
 };
 
 const STATUS_STYLE: Record<string, string> = {
