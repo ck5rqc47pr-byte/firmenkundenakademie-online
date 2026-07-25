@@ -217,6 +217,9 @@ const GRAFIKEN_MAP: Record<string, Array<{ bezeichnung: string; datei: string }>
   TL08: [
     { bezeichnung: "Glasl-Konflikteskalation (9 Stufen, 3 Phasen)", datei: "/grafiken/TL08-glasl-eskalation.svg" },
   ],
+  TL09: [
+    { bezeichnung: "Change-Modelle im Vergleich (Lewin · Kotter · Bridges)", datei: "/grafiken/TL09-change-modelle.svg" },
+  ],
 };
 
 const STATUS_STYLE: Record<string, string> = {
