@@ -220,6 +220,9 @@ const GRAFIKEN_MAP: Record<string, Array<{ bezeichnung: string; datei: string }>
   TL09: [
     { bezeichnung: "Change-Modelle im Vergleich (Lewin · Kotter · Bridges)", datei: "/grafiken/TL09-change-modelle.svg" },
   ],
+  TL10: [
+    { bezeichnung: "Report nach oben – Drei Bausteine und doppelte Loyalität (Gabarro &amp; Kotter)", datei: "/grafiken/TL10-report-nach-oben.svg" },
+  ],
 };
 
 const STATUS_STYLE: Record<string, string> = {

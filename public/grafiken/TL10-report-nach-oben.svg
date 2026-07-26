@@ -1,0 +1,218 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 740" width="860" height="740">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;1,8..60,400&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap');
+      text { font-family: Georgia, serif; }
+      .mono { font-family: 'JetBrains Mono', 'Courier New', monospace; }
+      .serif { font-family: 'Source Serif 4', Georgia, serif; }
+    </style>
+  </defs>
+
+  <!-- Canvas -->
+  <rect width="860" height="740" fill="#F8F8FA"/>
+
+  <!-- Eyebrow -->
+  <text x="40" y="28" class="mono" font-size="10" fill="#7A8099" letter-spacing="2">FÜHREN IN UNSICHERHEIT · MODUL TL10 · KOMMUNIKATION NACH OBEN</text>
+  <line x1="40" y1="38" x2="820" y2="38" stroke="#E2E3E8" stroke-width="1"/>
+
+  <!-- Titel -->
+  <text x="430" y="66" class="serif" font-size="18" font-weight="500" fill="#1F2C56" text-anchor="middle">Wirksamer Report nach oben – und doppelte Loyalität</text>
+  <text x="430" y="82" class="mono" font-size="9" fill="#7A8099" letter-spacing="1" text-anchor="middle">STRUKTUR · EHRLICHKEIT · VERANTWORTUNG IN DER MITTLEREN FÜHRUNGSROLLE (GABARRO &amp; KOTTER)</text>
+
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <!-- EBENE OBEN: VORSTAND / BEREICHSLEITUNG                     -->
+  <!-- y: 102–192                                                 -->
+  <!-- ═══════════════════════════════════════════════════════════ -->
+
+  <!-- Rahmen Führungsebene -->
+  <rect x="40" y="102" width="780" height="90" fill="#1F2C56"/>
+  <rect x="40" y="102" width="780" height="4" fill="#D9C089"/>
+
+  <!-- Label -->
+  <text x="430" y="122" class="mono" font-size="8" fill="#8898C4" text-anchor="middle" letter-spacing="2">FÜHRUNGSEBENE</text>
+  <text x="430" y="138" class="serif" font-size="13" font-weight="500" fill="#F8F8FA" text-anchor="middle">Vorstand · Bereichsleitung</text>
+  <text x="430" y="154" class="mono" font-size="8" fill="#8898C4" text-anchor="middle">Erwartet: klare Lageeinschätzung, keine Beschönigung, konkrete Ressourcenbitten</text>
+
+  <!-- Kontrast-Hinweis -->
+  <line x1="80" y1="163" x2="780" y2="163" stroke="#3D5494" stroke-width="0.5"/>
+  <!-- Vollzugsmeldung (rot/gestrichen) -->
+  <rect x="80" y="170" width="290" height="16" fill="#3D5494"/>
+  <text x="225" y="182" class="mono" font-size="8" fill="#8898C4" text-anchor="middle" letter-spacing="0.5">VOLLZUGSMELDUNG / BESCHÖNIGUNG – unwirksam</text>
+  <!-- Trenner -->
+  <text x="390" y="182" class="mono" font-size="10" fill="#D9C089" text-anchor="middle">vs.</text>
+  <!-- Strukturierter Report (gold) -->
+  <rect x="450" y="170" width="310" height="16" fill="#D9C089"/>
+  <text x="605" y="182" class="mono" font-size="8" fill="#1F2C56" text-anchor="middle" letter-spacing="0.5">STRUKTURIERTER RISIKO-EHRLICHER REPORT – wirksam</text>
+
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <!-- DREI REPORT-BAUSTEINE: Verbindungszone oben → Mitte        -->
+  <!-- y: 198–318                                                 -->
+  <!-- ═══════════════════════════════════════════════════════════ -->
+
+  <!-- Verbindungspfeil: Führungsebene nach unten zur Teamleiterin (Pfeil nach UNTEN = von Führungsebene kommt Auftrag) -->
+  <!-- Linker Pfeil-Stiel -->
+  <line x1="430" y1="192" x2="430" y2="208" stroke="#C8CAD4" stroke-width="1.5" stroke-dasharray="4,3"/>
+
+  <!-- Horizontale Verbindungslinie für 3 Bausteine -->
+  <line x1="152" y1="208" x2="708" y2="208" stroke="#C8CAD4" stroke-width="1"/>
+  <!-- Senkrechte Linien zu den 3 Baustein-Boxen -->
+  <line x1="152" y1="208" x2="152" y2="224" stroke="#C8CAD4" stroke-width="1"/>
+  <line x1="430" y1="208" x2="430" y2="224" stroke="#C8CAD4" stroke-width="1"/>
+  <line x1="708" y1="208" x2="708" y2="224" stroke="#C8CAD4" stroke-width="1"/>
+
+  <!-- BAUSTEIN 1: FORTSCHRITT -->
+  <rect x="40" y="224" width="224" height="88" fill="#EDEDF3"/>
+  <rect x="40" y="224" width="4" height="88" fill="#3D5494"/>
+  <!-- Große Ziffer -->
+  <text x="60" y="280" class="serif" font-size="42" font-style="italic" fill="#8898C4" opacity="0.4">1</text>
+  <text x="100" y="244" class="mono" font-size="8" fill="#3D5494" letter-spacing="1.5">BAUSTEIN 1</text>
+  <text x="100" y="260" class="serif" font-size="14" font-weight="500" fill="#1F2C56">Fortschritt</text>
+  <line x1="56" y1="268" x2="254" y2="268" stroke="#C8CAD4" stroke-width="0.5"/>
+  <text x="56" y="281" class="mono" font-size="7.5" fill="#7A8099">Was ist erreicht worden?</text>
+  <text x="56" y="293" class="mono" font-size="7.5" fill="#7A8099">Fakten, Meilensteine, Zahlen —</text>
+  <text x="56" y="305" class="mono" font-size="7.5" fill="#7A8099">ohne Überinformation</text>
+
+  <!-- BAUSTEIN 2: RISIKEN -->
+  <rect x="318" y="224" width="224" height="88" fill="#3D5494"/>
+  <rect x="318" y="224" width="4" height="88" fill="#D9C089"/>
+  <text x="338" y="280" class="serif" font-size="42" font-style="italic" fill="#8898C4" opacity="0.4">2</text>
+  <text x="378" y="244" class="mono" font-size="8" fill="#8898C4" letter-spacing="1.5">BAUSTEIN 2</text>
+  <text x="378" y="260" class="serif" font-size="14" font-weight="500" fill="#D9C089">Risiken</text>
+  <line x1="334" y1="268" x2="532" y2="268" stroke="#8898C4" stroke-width="0.5"/>
+  <text x="334" y="281" class="mono" font-size="7.5" fill="#8898C4">Was ist unsicher oder gefährdet?</text>
+  <text x="334" y="293" class="mono" font-size="7.5" fill="#8898C4">Ehrliche Benennung — auch dann,</text>
+  <text x="334" y="305" class="mono" font-size="7.5" fill="#8898C4">wenn es unbequem ist</text>
+
+  <!-- BAUSTEIN 3: UNTERSTÜTZUNG -->
+  <rect x="596" y="224" width="224" height="88" fill="#EDEDF3"/>
+  <rect x="596" y="224" width="4" height="88" fill="#D9C089"/>
+  <text x="616" y="280" class="serif" font-size="42" font-style="italic" fill="#8898C4" opacity="0.4">3</text>
+  <text x="656" y="244" class="mono" font-size="8" fill="#3D5494" letter-spacing="1.5">BAUSTEIN 3</text>
+  <text x="656" y="260" class="serif" font-size="14" font-weight="500" fill="#1F2C56">Unterstützung</text>
+  <line x1="612" y1="268" x2="810" y2="268" stroke="#C8CAD4" stroke-width="0.5"/>
+  <text x="612" y="281" class="mono" font-size="7.5" fill="#7A8099">Was brauche ich von oben?</text>
+  <text x="612" y="293" class="mono" font-size="7.5" fill="#7A8099">Konkrete Ressourcen- oder</text>
+  <text x="612" y="305" class="mono" font-size="7.5" fill="#7A8099">Entscheidungsbitte — klar benannt</text>
+
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <!-- MITTLERE EBENE: TEAMLEITERIN                               -->
+  <!-- y: 328–428                                                 -->
+  <!-- ═══════════════════════════════════════════════════════════ -->
+
+  <!-- Verbindungspfeil von Bausteinen nach unten zur TL-Box -->
+  <line x1="152" y1="312" x2="152" y2="326" stroke="#C8CAD4" stroke-width="1"/>
+  <line x1="430" y1="312" x2="430" y2="326" stroke="#C8CAD4" stroke-width="1"/>
+  <line x1="708" y1="312" x2="708" y2="326" stroke="#C8CAD4" stroke-width="1"/>
+  <line x1="152" y1="326" x2="708" y2="326" stroke="#C8CAD4" stroke-width="1"/>
+  <!-- Pfeilspitze nach unten in die TL-Box -->
+  <polygon points="430,342 424,330 436,330" fill="#C8CAD4"/>
+
+  <!-- TL-Box -->
+  <rect x="240" y="342" width="380" height="80" fill="#1F2C56"/>
+  <rect x="240" y="342" width="380" height="4" fill="#D9C089"/>
+
+  <!-- TL Label -->
+  <text x="430" y="364" class="mono" font-size="8" fill="#8898C4" text-anchor="middle" letter-spacing="2">MITTLERE FÜHRUNGSEBENE</text>
+  <text x="430" y="382" class="serif" font-size="15" font-weight="500" fill="#D9C089" text-anchor="middle">Teamleiterin Firmenkunden</text>
+  <line x1="260" y1="389" x2="600" y2="389" stroke="#3D5494" stroke-width="0.5"/>
+  <text x="430" y="403" class="mono" font-size="8" fill="#8898C4" text-anchor="middle">Verantwortet: Führungsauftrag nach OBEN und nach UNTEN</text>
+  <text x="430" y="416" class="mono" font-size="8" fill="#8898C4" text-anchor="middle">Vertrauenskapital zu beiden Seiten aufbauen und erhalten</text>
+
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <!-- DOPPELPFEIL-LOYALITÄT LINKS/RECHTS DER TL-BOX             -->
+  <!-- ═══════════════════════════════════════════════════════════ -->
+
+  <!-- Linker Loyalitäts-Pfeil (nach oben) -->
+  <line x1="160" y1="382" x2="238" y2="382" stroke="#D9C089" stroke-width="2"/>
+  <polygon points="240,382 230,377 230,387" fill="#D9C089"/>
+  <text x="148" y="372" class="mono" font-size="7.5" fill="#D9C089" text-anchor="middle">Loyalität</text>
+  <text x="148" y="384" class="mono" font-size="7.5" fill="#D9C089" text-anchor="middle">nach oben</text>
+  <text x="148" y="396" class="mono" font-size="7" fill="#8898C4" text-anchor="middle">Rechenschaft,</text>
+  <text x="148" y="407" class="mono" font-size="7" fill="#8898C4" text-anchor="middle">Verlässlichkeit</text>
+
+  <!-- Rechter Loyalitäts-Pfeil (nach unten) -->
+  <line x1="622" y1="382" x2="700" y2="382" stroke="#3D5494" stroke-width="2"/>
+  <polygon points="700,382 690,377 690,387" fill="#3D5494"/>
+  <!-- Pfeilspitze auch nach links zur TL-Box (Doppelpfeil) -->
+  <polygon points="622,382 632,377 632,387" fill="#3D5494"/>
+  <text x="712" y="372" class="mono" font-size="7.5" fill="#3D5494" text-anchor="middle">Loyalität</text>
+  <text x="712" y="384" class="mono" font-size="7.5" fill="#3D5494" text-anchor="middle">nach unten</text>
+  <text x="712" y="396" class="mono" font-size="7" fill="#7A8099" text-anchor="middle">Schutz,</text>
+  <text x="712" y="407" class="mono" font-size="7" fill="#7A8099" text-anchor="middle">Entwicklung</text>
+
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <!-- VERBINDUNGSPFEIL TL → TEAM (nach unten)                   -->
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <line x1="430" y1="422" x2="430" y2="446" stroke="#C8CAD4" stroke-width="1.5"/>
+  <polygon points="430,448 424,438 436,438" fill="#C8CAD4"/>
+
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <!-- UNTERE EBENE: TEAM                                         -->
+  <!-- y: 450–514                                                 -->
+  <!-- ═══════════════════════════════════════════════════════════ -->
+
+  <rect x="40" y="450" width="780" height="64" fill="#EDEDF3"/>
+  <rect x="40" y="450" width="780" height="4" fill="#3D5494"/>
+
+  <text x="430" y="470" class="mono" font-size="8" fill="#3D5494" text-anchor="middle" letter-spacing="2">TEAM</text>
+  <text x="430" y="486" class="serif" font-size="13" font-weight="500" fill="#1F2C56" text-anchor="middle">Firmenkundenberater · Teamassistenz</text>
+  <line x1="80" y1="492" x2="780" y2="492" stroke="#C8CAD4" stroke-width="0.5"/>
+  <text x="430" y="505" class="mono" font-size="7.5" fill="#7A8099" text-anchor="middle">Erwartet: Orientierung, Schutz vor Überlastung, ehrliche Informationen über den Kontext</text>
+
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <!-- KONTRAST-ZEILE: Vollzugsmeldung vs. Strukturierter Report  -->
+  <!-- y: 524–578                                                 -->
+  <!-- ═══════════════════════════════════════════════════════════ -->
+
+  <line x1="40" y1="524" x2="820" y2="524" stroke="#E2E3E8" stroke-width="1"/>
+
+  <!-- Linke Seite: Beschönigung -->
+  <rect x="40" y="534" width="370" height="40" fill="#EDEDF3"/>
+  <rect x="40" y="534" width="4" height="40" fill="#7A8099"/>
+  <text x="56" y="551" class="mono" font-size="8" fill="#7A8099" letter-spacing="1">BESCHÖNIGUNG / VOLLZUGSMELDUNG</text>
+  <text x="56" y="566" class="mono" font-size="8" fill="#7A8099">"Läuft alles nach Plan" — Probleme werden gefiltert, Risiken verschwiegen</text>
+
+  <!-- Trennzeichen -->
+  <line x1="415" y1="530" x2="415" y2="578" stroke="#C8CAD4" stroke-width="1"/>
+  <text x="430" y="558" class="serif" font-size="14" font-style="italic" fill="#C8CAD4" text-anchor="middle">vs.</text>
+
+  <!-- Rechte Seite: Strukturierter Report -->
+  <rect x="450" y="534" width="370" height="40" fill="#1F2C56"/>
+  <rect x="450" y="534" width="4" height="40" fill="#D9C089"/>
+  <text x="466" y="551" class="mono" font-size="8" fill="#D9C089" letter-spacing="1">STRUKTURIERTER RISIKO-EHRLICHER REPORT</text>
+  <text x="466" y="566" class="mono" font-size="8" fill="#8898C4">Fortschritt + Risiken + Unterstützungsbedarf — klar, vollständig, mutig</text>
+
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <!-- LEITPRINZIP-BANNER                                         -->
+  <!-- y: 586–648                                                 -->
+  <!-- ═══════════════════════════════════════════════════════════ -->
+
+  <rect x="40" y="586" width="780" height="62" fill="#1F2C56"/>
+  <rect x="40" y="586" width="780" height="3" fill="#D9C089"/>
+
+  <text x="430" y="604" class="mono" font-size="8" fill="#8898C4" text-anchor="middle" letter-spacing="2">LEITPRINZIP TL10</text>
+  <line x1="80" y1="609" x2="780" y2="609" stroke="#3D5494" stroke-width="0.5"/>
+  <text x="430" y="628" class="serif" font-size="15" font-weight="500" fill="#D9C089" text-anchor="middle">Wer nach oben beschönigt, verliert das Vertrauen beider Seiten</text>
+  <text x="430" y="643" class="mono" font-size="8" fill="#8898C4" text-anchor="middle">Mittlere Führung ist dann wirksam, wenn sie Führungsebene UND Team mit Klarheit, Mut und Loyalität bedient.</text>
+
+  <!-- Baseline -->
+  <line x1="40" y1="718" x2="820" y2="718" stroke="#15192B" stroke-width="1"/>
+
+  <!-- Legende Farbkodierung -->
+  <line x1="40" y1="658" x2="820" y2="658" stroke="#E2E3E8" stroke-width="1"/>
+  <text x="40" y="672" class="mono" font-size="8" fill="#7A8099" letter-spacing="1">FARBKODIERUNG</text>
+  <rect x="130" y="664" width="10" height="10" fill="#3D5494"/>
+  <text x="146" y="673" class="mono" font-size="7.5" fill="#7A8099">Loyalität nach unten / Team</text>
+  <rect x="310" y="664" width="10" height="10" fill="#D9C089"/>
+  <text x="326" y="673" class="mono" font-size="7.5" fill="#7A8099">Loyalität nach oben / Risiko-Ehrlichkeit</text>
+  <rect x="530" y="664" width="10" height="10" fill="#1F2C56"/>
+  <text x="546" y="673" class="mono" font-size="7.5" fill="#7A8099">Führungsebene / TL-Position</text>
+  <rect x="690" y="664" width="10" height="10" fill="#EDEDF3" stroke="#C8CAD4" stroke-width="1"/>
+  <text x="706" y="673" class="mono" font-size="7.5" fill="#7A8099">Bausteine / Team</text>
+
+  <text x="40" y="689" class="mono" font-size="7.5" fill="#7A8099" letter-spacing="0.5">QUELLE: Die Report-nach-oben-Struktur (Fortschritt · Risiken · Unterstützung) folgt dem Prinzip des Managing-your-boss-Konzepts von Gabarro &amp; Kotter (1993).</text>
+
+  <!-- Quellenzeile -->
+  <text x="40" y="730" class="mono" font-size="9" fill="#B0B3C0" letter-spacing="0.5">Gabarro, J. J., &amp; Kotter, J. P. (1993). Managing your boss. Harvard Business Review, 71(3), 150–157.</text>
+
+</svg>
