@@ -1,0 +1,156 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 700" width="860" height="700">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;1,8..60,400&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap');
+      text { font-family: Georgia, serif; }
+      .mono { font-family: 'JetBrains Mono', 'Courier New', monospace; }
+      .serif { font-family: 'Source Serif 4', Georgia, serif; }
+    </style>
+  </defs>
+
+  <!-- Canvas -->
+  <rect width="860" height="700" fill="#F8F8FA"/>
+
+  <!-- Eyebrow -->
+  <text x="40" y="28" class="mono" font-size="10" fill="#7A8099" letter-spacing="2">TEAMAUFBAU · MODUL TL11 · EINSTELLUNGSENTSCHEIDUNG</text>
+  <line x1="40" y1="38" x2="820" y2="38" stroke="#E2E3E8" stroke-width="1"/>
+
+  <!-- Titel -->
+  <text x="430" y="66" class="serif" font-size="18" font-weight="500" fill="#1F2C56" text-anchor="middle">Haltung × Fachkompetenz – Auswahlmatrix</text>
+  <text x="430" y="84" class="mono" font-size="9" fill="#7A8099" letter-spacing="1" text-anchor="middle">HIRE FOR THE SOUL · TRAIN FOR THE ROLE (DAN MARTELL)</text>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- ACHSEN                                                  -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+
+  <!-- Y-Achse Label: Haltung / Werte-Passung -->
+  <text x="14" y="305" class="mono" font-size="9" fill="#7A8099" letter-spacing="1" text-anchor="middle" transform="rotate(-90, 14, 305)">HALTUNG / WERTE-PASSUNG</text>
+  <!-- Y-Achse Extrembeschriftungen -->
+  <text x="30" y="112" class="mono" font-size="8" fill="#7A8099" text-anchor="middle">hoch</text>
+  <text x="30" y="492" class="mono" font-size="8" fill="#7A8099" text-anchor="middle">gering</text>
+
+  <!-- X-Achse Label: Fachkompetenz -->
+  <text x="450" y="524" class="mono" font-size="9" fill="#7A8099" letter-spacing="1" text-anchor="middle">FACHKOMPETENZ</text>
+  <!-- X-Achse Extrembeschriftungen -->
+  <text x="112" y="538" class="mono" font-size="8" fill="#7A8099" text-anchor="middle">gering</text>
+  <text x="810" y="538" class="mono" font-size="8" fill="#7A8099" text-anchor="middle">hoch</text>
+
+  <!-- Achsen -->
+  <line x1="62" y1="100" x2="62" y2="500" stroke="#15192B" stroke-width="1.5"/>
+  <line x1="62" y1="500" x2="838" y2="500" stroke="#15192B" stroke-width="1.5"/>
+  <!-- Achsen-Pfeilspitzen -->
+  <polygon points="62,96 57,106 67,106" fill="#15192B"/>
+  <polygon points="842,500 832,495 832,505" fill="#15192B"/>
+
+  <!-- Mittellinie vertikal -->
+  <line x1="450" y1="100" x2="450" y2="500" stroke="#E2E3E8" stroke-width="1" stroke-dasharray="5,4"/>
+  <!-- Mittellinie horizontal -->
+  <line x1="62" y1="300" x2="838" y2="300" stroke="#E2E3E8" stroke-width="1" stroke-dasharray="5,4"/>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- QUADRANT oben-links: hoch Haltung / gering Fach        -->
+  <!-- KERN-QUADRANT – hervorgehoben mit #1F2C56 + Gold       -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <rect x="64" y="102" width="384" height="196" fill="#1F2C56"/>
+  <rect x="64" y="102" width="384" height="4" fill="#D9C089"/>
+
+  <!-- Zier-Numeral -->
+  <text x="76" y="174" class="serif" font-size="54" font-style="italic" fill="#3D5494" opacity="0.5">↑</text>
+
+  <!-- Diagnose-Label -->
+  <text x="116" y="126" class="mono" font-size="9" fill="#8898C4" letter-spacing="1">HOCH HALTUNG · GERING FACH</text>
+  <!-- KERN-Badge -->
+  <rect x="116" y="132" width="96" height="16" fill="#D9C089"/>
+  <text x="164" y="144" class="mono" font-size="8" fill="#1F2C56" text-anchor="middle" letter-spacing="1">KERN-QUADRANT</text>
+  <!-- Diagnose-Titel -->
+  <text x="256" y="174" class="serif" font-size="16" font-weight="500" fill="#D9C089" text-anchor="middle">Einstellen und entwickeln</text>
+  <!-- Trennlinie -->
+  <line x1="104" y1="182" x2="408" y2="182" stroke="#3D5494" stroke-width="0.5"/>
+  <!-- Subtext -->
+  <text x="256" y="199" class="mono" font-size="8" fill="#EAD9A8" text-anchor="middle">Train for the Role:</text>
+  <text x="256" y="213" class="mono" font-size="8" fill="#8898C4" text-anchor="middle">Fachliches ist lernbar – die Haltung</text>
+  <text x="256" y="227" class="mono" font-size="8" fill="#8898C4" text-anchor="middle">bringt sie bereits mit.</text>
+  <!-- Empfehlung-Badge -->
+  <rect x="176" y="254" width="160" height="22" fill="#D9C089"/>
+  <text x="256" y="269" class="mono" font-size="9" fill="#1F2C56" text-anchor="middle" letter-spacing="1">EINSTELLEN</text>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- QUADRANT oben-rechts: hoch Haltung / hoch Fach         -->
+  <!-- Idealbesetzung – mid-primary Akzent                    -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <rect x="452" y="102" width="384" height="196" fill="#EDEDF3"/>
+  <rect x="452" y="102" width="384" height="4" fill="#3D5494"/>
+
+  <!-- Diagnose-Label -->
+  <text x="472" y="126" class="mono" font-size="9" fill="#7A8099" letter-spacing="1">HOCH HALTUNG · HOCH FACH</text>
+  <!-- Diagnose-Titel -->
+  <text x="644" y="168" class="serif" font-size="16" font-weight="500" fill="#1F2C56" text-anchor="middle">Idealbesetzung</text>
+  <!-- Trennlinie -->
+  <line x1="492" y1="176" x2="796" y2="176" stroke="#C8CAD4" stroke-width="0.5"/>
+  <!-- Subtext -->
+  <text x="644" y="193" class="mono" font-size="8" fill="#3D5494" text-anchor="middle">Passung auf beiden Dimensionen –</text>
+  <text x="644" y="207" class="mono" font-size="8" fill="#7A8099" text-anchor="middle">sofort wirksam, selten zu finden.</text>
+  <text x="644" y="221" class="mono" font-size="8" fill="#7A8099" text-anchor="middle">Angebot prüfen und schnell handeln.</text>
+  <!-- Empfehlung-Badge -->
+  <rect x="564" y="254" width="160" height="22" fill="#3D5494"/>
+  <text x="644" y="269" class="mono" font-size="9" fill="#F8F8FA" text-anchor="middle" letter-spacing="1">EINSTELLEN</text>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- QUADRANT unten-links: gering Haltung / gering Fach     -->
+  <!-- Absage – neutral/muted                                 -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <rect x="64" y="302" width="384" height="196" fill="#F8F8FA" stroke="#E2E3E8" stroke-width="1"/>
+  <rect x="64" y="494" width="384" height="4" fill="#C8CAD4"/>
+
+  <!-- Diagnose-Label -->
+  <text x="84" y="326" class="mono" font-size="9" fill="#7A8099" letter-spacing="1">GERING HALTUNG · GERING FACH</text>
+  <!-- Diagnose-Titel -->
+  <text x="256" y="368" class="serif" font-size="16" font-weight="500" fill="#1F2C56" text-anchor="middle">Absage</text>
+  <!-- Trennlinie -->
+  <line x1="104" y1="376" x2="408" y2="376" stroke="#C8CAD4" stroke-width="0.5"/>
+  <!-- Subtext -->
+  <text x="256" y="393" class="mono" font-size="8" fill="#7A8099" text-anchor="middle">Weder Haltung noch Fachwissen</text>
+  <text x="256" y="407" class="mono" font-size="8" fill="#7A8099" text-anchor="middle">vorhanden – kein Entwicklungspotenzial</text>
+  <text x="256" y="421" class="mono" font-size="8" fill="#7A8099" text-anchor="middle">für die Stelle erkennbar.</text>
+  <!-- Empfehlung-Badge -->
+  <rect x="176" y="452" width="160" height="22" fill="#C8CAD4"/>
+  <text x="256" y="467" class="mono" font-size="9" fill="#15192B" text-anchor="middle" letter-spacing="1">NICHT EINSTELLEN</text>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- QUADRANT unten-rechts: gering Haltung / hoch Fach      -->
+  <!-- Warnung – akzentuiert mit Muted/Amber                  -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <rect x="452" y="302" width="384" height="196" fill="#EDEDF3"/>
+  <rect x="452" y="494" width="384" height="4" fill="#7A8099"/>
+
+  <!-- Diagnose-Label -->
+  <text x="472" y="326" class="mono" font-size="9" fill="#7A8099" letter-spacing="1">GERING HALTUNG · HOCH FACH</text>
+  <!-- Diagnose-Titel -->
+  <text x="644" y="362" class="serif" font-size="16" font-weight="500" fill="#1F2C56" text-anchor="middle">Vorsicht: haltungsfern</text>
+  <!-- Trennlinie -->
+  <line x1="492" y1="370" x2="796" y2="370" stroke="#C8CAD4" stroke-width="0.5"/>
+  <!-- Subtext -->
+  <text x="644" y="387" class="mono" font-size="8" fill="#3D5494" text-anchor="middle">Fachlich brillant, aber Werte-Passung</text>
+  <text x="644" y="401" class="mono" font-size="8" fill="#7A8099" text-anchor="middle">fehlt. Haltung ist nicht trainierbar –</text>
+  <text x="644" y="415" class="mono" font-size="8" fill="#7A8099" text-anchor="middle">langfristiges Kulturrisiko.</text>
+  <!-- Empfehlung-Badge -->
+  <rect x="564" y="452" width="160" height="22" fill="#7A8099"/>
+  <text x="644" y="467" class="mono" font-size="9" fill="#F8F8FA" text-anchor="middle" letter-spacing="1">NICHT EINSTELLEN</text>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- LEITPRINZIP-BANNER                                      -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <line x1="40" y1="550" x2="820" y2="550" stroke="#E2E3E8" stroke-width="1"/>
+
+  <!-- Leitprinzip-Text -->
+  <text x="430" y="570" class="mono" font-size="8" fill="#7A8099" text-anchor="middle" letter-spacing="2">LEITPRINZIP</text>
+  <text x="40" y="592" class="serif" font-size="14" font-weight="500" fill="#1F2C56">Hire for the Soul, Train for the Role</text>
+  <text x="290" y="592" class="mono" font-size="9" fill="#7A8099"> – Haltung ist schwerer zu entwickeln als Fachwissen.</text>
+
+  <!-- Baseline -->
+  <line x1="40" y1="664" x2="820" y2="664" stroke="#15192B" stroke-width="1"/>
+
+  <!-- Quellenzeile -->
+  <text x="40" y="676" class="mono" font-size="9" fill="#B0B3C0" letter-spacing="0.5">Martell, D. (2023). Buy Back Your Time. Portfolio/Penguin. | Dreyfus, S. E., &amp; Dreyfus, H. L. (1980). A five-stage model of the mental activities involved in directed skill acquisition.</text>
+
+</svg>

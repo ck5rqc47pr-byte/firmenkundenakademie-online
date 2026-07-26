@@ -223,6 +223,9 @@ const GRAFIKEN_MAP: Record<string, Array<{ bezeichnung: string; datei: string }>
   TL10: [
     { bezeichnung: "Report nach oben – Drei Bausteine und doppelte Loyalität (Gabarro &amp; Kotter)", datei: "/grafiken/TL10-report-nach-oben.svg" },
   ],
+  TL11: [
+    { bezeichnung: "Haltung × Fachkompetenz – Auswahlmatrix (Hire for the Soul, Train for the Role)", datei: "/grafiken/TL11-haltung-fach-matrix.svg" },
+  ],
 };
 
 const STATUS_STYLE: Record<string, string> = {
