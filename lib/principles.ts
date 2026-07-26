@@ -76,3 +76,32 @@ export const LEITPRINZIPIEN_ASSISTENZ: Prinzip[] = [
       "Nachvollziehbarkeit schützt – die Bank, den Kunden und dich selbst.",
   },
 ];
+
+// Führungs-/Teamleiter-Track: genossenschaftliches Führungsverständnis (Servant Leadership).
+export const LEITPRINZIPIEN_FUEHRUNG: Prinzip[] = [
+  {
+    prinzip: "Dein Erfolg ist die Leistung deines Teams – nicht deine eigene.",
+    warum:
+      "Der Rollenwechsel vom Fachexperten zur Führungskraft ist die Grundentscheidung: Wer der beste Berater bleiben will, führt nicht.",
+  },
+  {
+    prinzip: "Führen heißt ermöglichen, nicht anweisen.",
+    warum:
+      "Dienende Führung (Servant Leadership) entwickelt Menschen, statt sie zu kontrollieren – das passt zum genossenschaftlichen Förderauftrag.",
+  },
+  {
+    prinzip: "Steuere UND entwickle – nie nur das eine.",
+    warum:
+      "Kennzahlen und Cockpit sind Handwerk, kein Führungsideal. Steuerung ohne Entwicklung erzeugt Zahlen, keine Wirkung.",
+  },
+  {
+    prinzip: "Führe nach oben so ehrlich wie nach unten.",
+    warum:
+      "Die mittlere Führungskraft trägt eine doppelte Loyalität: Wer nach oben beschönigt, verliert das Vertrauen beider Seiten.",
+  },
+  {
+    prinzip: "Gib Orientierung, ohne Sicherheit vorzutäuschen.",
+    warum:
+      "In Unsicherheit braucht das Team Halt und Ehrlichkeit zugleich – Pseudosicherheit zerstört die Glaubwürdigkeit.",
+  },
+];

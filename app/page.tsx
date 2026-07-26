@@ -57,6 +57,33 @@ const VA_ETAPPEN = [
   },
 ];
 
+const TL_ETAPPEN = [
+  {
+    nr: 1,
+    titel: "Teamleiter",
+    sub: "Teamleiter",
+    beschreibung:
+      "Der Rollenwechsel vom Fachexperten zur Führungskraft: rollenbewusst, strukturgebend, situativ führend — und mit dem Cockpit steuern, ohne die Entwicklung zu vergessen.",
+    module: ["Rollenwechsel", "Selbst- & Zeitführung", "Situatives Führen", "Vertriebssteuerung mit dem Cockpit"],
+  },
+  {
+    nr: 2,
+    titel: "Führungscoach",
+    sub: "Führungscoach",
+    beschreibung:
+      "Entwickelnd und dialogorientiert führen: delegieren und motivieren, Ziel- und Feedbackgespräche wirksam führen — und Konflikte klären, bevor sie eskalieren.",
+    module: ["Delegation & Motivation", "Ziel- & Steuerungsgespräche", "Feedback- & Entwicklungsgespräche", "Schwierige Gespräche & Konflikte"],
+  },
+  {
+    nr: 3,
+    titel: "Strategische Führungskraft",
+    sub: "Strategische Führungskraft",
+    beschreibung:
+      "Transformational und veränderungsstark: coachend führen (GROW), Veränderung im Team gestalten und in Unsicherheit Orientierung geben — ehrlich nach oben wie nach unten.",
+    module: ["Die coachende Führungskraft (GROW)", "Veränderung im Team führen", "Führen in Unsicherheit & Kommunikation nach oben"],
+  },
+];
+
 const MANIFEST = [
   ["I.", "Praxis trifft Evidenz", "Inhalte aus echten Fragestellungen — fachlich geprüft und wissenschaftlich fundiert."],
   ["II.", "Klarheit als Disziplin", "Komplexes verdichtet, damit es im Alltag anwendbar bleibt — ohne Tiefe zu verlieren."],
@@ -71,7 +98,8 @@ export default function HomePage() {
     alleModule.filter((m) => m.stufe === stufe).length;
   const felderBerater = getKompetenzfelder("berater");
   const felderAssistenz = getKompetenzfelder("assistenz");
-  const feldZahl = felderBerater.length + felderAssistenz.length;
+  const felderTeamleiter = getKompetenzfelder("teamleiter");
+  const feldZahl = felderBerater.length + felderAssistenz.length + felderTeamleiter.length;
 
   return (
     <div>
@@ -336,6 +364,90 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ── FÜHRUNG / TEAMLEITER ──────────────────────────────────────────── */}
+      <section className="border-b border-ink">
+        <div className="mx-auto max-w-content px-6 lg:px-14 pt-16 pb-10">
+          <div className="font-mono text-[10px] uppercase tracking-[0.1em] text-ink-3 mb-5 flex items-center gap-2">
+            <span className="w-4 h-px inline-block bg-ink-3" />
+            Dritter Lernpfad · Führung
+          </div>
+          <h2 className="font-serif text-3xl lg:text-4xl font-normal tracking-[-0.02em] leading-tight max-w-2xl">
+            Vom besten Berater zur{" "}
+            <em className="italic text-ink-2">Führungskraft</em>, die das Team stark macht.
+          </h2>
+          <p className="font-serif text-lg text-ink-2 leading-relaxed max-w-2xl mt-6 border-l-2 border-accent pl-5">
+            Der Teamleiter Firmenkunden ist kein „bester Berater mit Personalverantwortung" — er
+            führt, entwickelt und steuert. Der Führungs-Track begleitet den Weg vom Rollenwechsel
+            über die coachende Führung bis zur strategischen Führungskraft. Leitbild ist die
+            dienende Führung (Servant Leadership): ermöglichen und entwickeln statt anweisen —
+            steuern UND entwickeln.
+          </p>
+        </div>
+        <div className="mx-auto max-w-content border-t border-ink">
+          <div className="grid grid-cols-1 lg:grid-cols-3">
+            {TL_ETAPPEN.map((e, i) => {
+              const isDark   = i === 2;
+              const isAccent = i === 1;
+              const numerals = ["I.", "II.", "III."];
+              return (
+                <div
+                  key={e.nr}
+                  className={`px-8 lg:px-10 pt-10 pb-12 ${i < 2 ? "border-b lg:border-b-0 lg:border-r border-ink" : ""}`}
+                  style={{ background: isDark ? "var(--primary)" : isAccent ? "var(--accent)" : "var(--bg-2)" }}
+                >
+                  <div
+                    className="font-serif text-[54px] leading-none italic mb-5"
+                    style={{ color: isDark ? "var(--accent)" : "var(--primary)" }}
+                  >
+                    {numerals[i]}
+                  </div>
+                  <div className={`font-mono text-[9px] uppercase tracking-[0.1em] mb-2 ${isDark ? "text-white/40" : "text-ink-3"}`}>
+                    Stufe {e.nr}
+                  </div>
+                  <h3 className={`font-serif text-2xl font-normal tracking-[-0.01em] mb-1 ${isDark ? "text-white" : "text-ink"}`}>
+                    {e.titel}
+                  </h3>
+                  <div className={`font-mono text-[9px] uppercase tracking-[0.06em] mb-5 ${isDark ? "text-white/40" : "text-ink-3"}`}>
+                    {countByStufe(e.sub)} Module · Zielstufe: {e.sub}
+                  </div>
+                  <div className={`h-px mb-5 ${isDark ? "bg-white/15" : "bg-ink/20"}`} />
+                  <p className={`font-serif text-[15px] leading-relaxed mb-6 ${isDark ? "text-white/60" : "text-ink-2"}`}>
+                    {e.beschreibung}
+                  </p>
+                  <div className={`h-px mb-5 ${isDark ? "bg-white/15" : "bg-line"}`} />
+                  <div className="space-y-1.5">
+                    {e.module.slice(0, 4).map((m) => (
+                      <div key={m} className={`flex items-center gap-2 font-mono text-[10px] ${isDark ? "text-white/40" : "text-ink-3"}`}>
+                        <span>—</span><span>{m}</span>
+                      </div>
+                    ))}
+                    {e.module.length > 4 && (
+                      <div className={`font-mono text-[10px] font-medium ${isDark ? "text-white/30" : "text-ink-3"}`}>
+                        + {e.module.length - 4} weitere
+                      </div>
+                    )}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+        <div className="mx-auto max-w-content px-6 lg:px-14 py-8 flex flex-col sm:flex-row gap-4 border-t border-ink">
+          <Link
+            href="/kompass?track=teamleiter"
+            className="inline-flex items-center gap-3 bg-primary text-white px-7 py-4 font-mono text-[11px] uppercase tracking-[0.08em] hover:bg-primary/90 transition-all"
+          >
+            Führungs-Track ansehen →
+          </Link>
+          <Link
+            href="/module/TL00"
+            className="inline-flex items-center gap-3 border border-line px-7 py-4 font-mono text-[11px] uppercase tracking-[0.08em] text-ink-2 hover:border-ink hover:text-ink transition-all"
+          >
+            Einstiegsmodul „Vom Berater zur Führungskraft"
+          </Link>
+        </div>
+      </section>
+
       {/* ── MANIFEST ──────────────────────────────────────────────────────── */}
       <section className="border-b border-ink">
         <div className="mx-auto max-w-content px-6 lg:px-14 py-20">
@@ -377,17 +489,19 @@ export default function HomePage() {
             § Kompetenzfelder
           </div>
           <h2 className="font-serif text-4xl lg:text-6xl font-normal leading-tight tracking-[-0.03em] mb-4">
-            Zwei Lernpfade.{" "}
+            Drei Lernpfade.{" "}
             <em style={{ fontStyle: "italic", color: "var(--primary)" }}>Ihre Kompetenzfelder.</em>
           </h2>
           <p className="font-serif text-lg text-ink-2 leading-relaxed max-w-2xl mb-12">
-            Ein eigener Entwicklungspfad für Firmenkundenberater – und ein paralleler Track für
-            die Vertriebsassistenz im Innendienst. Jedes Feld ein klar abgegrenzter Lernweg.
+            Ein eigener Entwicklungspfad für Firmenkundenberater, ein paralleler Track für die
+            Vertriebsassistenz im Innendienst – und ein dritter für die Führung als Teamleiter.
+            Jedes Feld ein klar abgegrenzter Lernweg.
           </p>
 
           {[
             { label: "Firmenkundenberater", felder: felderBerater },
             { label: "Vertriebsassistenz", felder: felderAssistenz },
+            { label: "Führung / Teamleiter", felder: felderTeamleiter },
           ].map((track) => (
             <div key={track.label} className="mb-12 last:mb-0">
               <div className="font-mono text-[11px] uppercase tracking-[0.08em] text-ink-2 mb-4 flex items-center gap-2">

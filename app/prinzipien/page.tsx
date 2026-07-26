@@ -4,7 +4,12 @@ import { redirect } from "next/navigation";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
 import { getModulesByZielrolle, TRACKS, type Zielrolle } from "@/lib/modules";
-import { LEITPRINZIPIEN, LEITPRINZIPIEN_ASSISTENZ, type Prinzip } from "@/lib/principles";
+import {
+  LEITPRINZIPIEN,
+  LEITPRINZIPIEN_ASSISTENZ,
+  LEITPRINZIPIEN_FUEHRUNG,
+  type Prinzip,
+} from "@/lib/principles";
 
 export const metadata: Metadata = {
   title: "Prinzipien · FKB Campus",
@@ -119,6 +124,7 @@ export default async function PrinzipienPage() {
 
   const beraterGruppen = feldGruppen("berater");
   const assistenzGruppen = feldGruppen("assistenz");
+  const teamleiterGruppen = feldGruppen("teamleiter");
 
   return (
     <div>
@@ -134,7 +140,7 @@ export default async function PrinzipienPage() {
           <p className="mt-5 max-w-2xl text-white/70 leading-relaxed">
             Wissen wird erst wirksam, wenn es im Moment der Entscheidung abrufbar ist. Diese
             Prinzipien destillieren die Module zu einprägsamen Leitsätzen – je Rolle: als
-            Berater und im Innendienst der Vertriebsassistenz.
+            Berater, im Innendienst der Vertriebsassistenz und in der Führung als Teamleiter.
           </p>
         </div>
       </section>
@@ -162,6 +168,14 @@ export default async function PrinzipienPage() {
           leitsatz="Der Innendienst als verlässliches Rückgrat – genau, mitdenkend, prüfsicher."
           leitprinzipien={LEITPRINZIPIEN_ASSISTENZ}
           gruppen={assistenzGruppen}
+        />
+
+        <TrackSection
+          eyebrow="Track · Führung / Teamleiter"
+          titel="Führung"
+          leitsatz="Vom Fachexperten zur Führungskraft: ermöglichen und entwickeln statt anweisen – steuern UND entwickeln."
+          leitprinzipien={LEITPRINZIPIEN_FUEHRUNG}
+          gruppen={teamleiterGruppen}
         />
       </div>
     </div>
