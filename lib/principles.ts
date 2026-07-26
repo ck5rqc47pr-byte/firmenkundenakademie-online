@@ -80,6 +80,13 @@ export const LEITPRINZIPIEN_ASSISTENZ: Prinzip[] = [
 // Führungs-/Teamleiter-Track: genossenschaftliches Führungsverständnis (Servant Leadership).
 export const LEITPRINZIPIEN_FUEHRUNG: Prinzip[] = [
   {
+    prinzip: "Entwickle die Menschen – die Menschen entwickeln das Geschäft.",
+    warum:
+      "„Build the people, the people build the company“ (Dan Martell): Führung investiert zuerst in " +
+      "Menschen – ein starkes, entwickeltes Team trägt Geschäft und Genossenschaft. Der genossenschaftliche " +
+      "Förderauftrag in Führungssprache.",
+  },
+  {
     prinzip: "Dein Erfolg ist die Leistung deines Teams – nicht deine eigene.",
     warum:
       "Der Rollenwechsel vom Fachexperten zur Führungskraft ist die Grundentscheidung: Wer der beste Berater bleiben will, führt nicht.",
