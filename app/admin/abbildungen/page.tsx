@@ -111,6 +111,10 @@ const GRAFIKEN_MAP: Record<string, Array<{ bezeichnung: string; datei: string }>
   M25: [
     { bezeichnung: "Nettomarktzeit – Zeitverwendung Vorher/Nachher (NMZ-Hebel)", datei: "/grafiken/M25-nettomarktzeit.svg" },
   ],
+  M26: [
+    { bezeichnung: "Wirkungskette ESG-Ereignis bis Rating/PD", datei: "/grafiken/M26-wirkungskette.svg" },
+    { bezeichnung: "Handlungsempfehlung (Wenn-Dann)", datei: "/grafiken/M26-handlungsempfehlung.svg" },
+  ],
   M17: [
     { bezeichnung: "agree21 Kernbereiche", datei: "/grafiken/M17-agree-kernbereiche.svg" },
   ],
