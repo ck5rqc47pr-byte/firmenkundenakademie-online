@@ -32,6 +32,19 @@ const CONTENT_TYPE: Record<string, string> = {
 
 const PROTECTED_DIR = path.join(process.cwd(), "protected-downloads");
 
+// Bank-Profil-Overlay (Mandant): Nutzer mit zugeordneter Bank erhalten – sofern vorhanden –
+// die haus-getailorte Workbook-Variante aus dem Unterordner <variant>/. Das `bank`-Feld ist
+// freier Text; hier auf die Varianten-Ordner-ID normalisiert. Neue Bank = eine Zeile ergänzen.
+const BANK_VARIANT: Record<string, string> = {
+  vrnu: "vrnu",
+  "vr-bank neu-ulm": "vrnu",
+  "vr-bank neu-ulm eg": "vrnu",
+};
+
+function bankVariant(bank: string | null | undefined): string | undefined {
+  return BANK_VARIANT[(bank ?? "").toLowerCase().replace(/\s+/g, " ").trim()];
+}
+
 export async function GET(
   _req: NextRequest,
   { params }: { params: { type: string; file: string } },
@@ -87,9 +100,27 @@ export async function GET(
     }
   }
 
-  const absolutePath = path.join(PROTECTED_DIR, type, file);
+  let baseDir = path.join(PROTECTED_DIR, type);
+  let absolutePath = path.join(baseDir, file);
+
+  // Bank-Variante bevorzugen: Workbook aus dem Mandanten-Unterordner ausliefern,
+  // falls der Nutzer einer Bank mit eigener Variante zugeordnet ist und die Datei existiert.
+  // Fail-open: keine Bank / keine Variante / Datei fehlt → neutrale Akademie-Fassung.
+  if (type === "teilnehmerunterlagen") {
+    const userBank = (session?.user as { bank?: string | null })?.bank ?? null;
+    const variant = bankVariant(userBank);
+    if (variant) {
+      const variantDir  = path.join(PROTECTED_DIR, type, variant);
+      const variantPath = path.join(variantDir, file);
+      if (variantPath.startsWith(variantDir + path.sep) && fs.existsSync(variantPath)) {
+        baseDir = variantDir;
+        absolutePath = variantPath;
+      }
+    }
+  }
+
   // Doppelt absichern: aufgelöster Pfad muss im erlaubten Verzeichnis bleiben.
-  if (!absolutePath.startsWith(path.join(PROTECTED_DIR, type) + path.sep)) {
+  if (!absolutePath.startsWith(baseDir + path.sep)) {
     return NextResponse.json({ error: "Ungültiger Pfad" }, { status: 400 });
   }
   if (!fs.existsSync(absolutePath)) {
