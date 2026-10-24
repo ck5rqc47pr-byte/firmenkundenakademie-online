@@ -15,6 +15,7 @@ import {
   getTeamleiterLeitfadenPdfUrl,
   getArbeitsmaterialUrl,
   getFinanzmodellierungExkursUrl,
+  getWerkzeuge,
   getPresentationPptxUrl,
 } from "@/lib/modules";
 import { getProgressForUser, getFeedbackForUser, getLatestQuizResult } from "@/lib/db";
@@ -57,6 +58,7 @@ export default async function ModuleDetailPage({ params }: { params: { id: strin
   const teamleiterLeitfadenUrl = getTeamleiterLeitfadenPdfUrl(module.id);
   const arbeitsmaterialUrl = getArbeitsmaterialUrl(module.id);
   const exkursUrl = getFinanzmodellierungExkursUrl(module.id);
+  const werkzeuge = getWerkzeuge(module.id);
   const presentationUrl = getPresentationPptxUrl(module.id);
 
   // Content in Abschnitte aufteilen (sync_akademie.py trennt mit SECTION_BREAK):
@@ -78,6 +80,7 @@ export default async function ModuleDetailPage({ params }: { params: { id: strin
             teamleiterLeitfadenUrl={canSeeBeobachtungsbogen ? teamleiterLeitfadenUrl : null}
             arbeitsmaterialUrl={userId ? arbeitsmaterialUrl : null}
             exkursUrl={userId ? exkursUrl : null}
+            werkzeuge={userId ? werkzeuge : []}
             presentationUrl={isTrainerOrAdmin ? presentationUrl : null}
             hasTheorie={!!module.content_theorie}
             isTrainerOrAdmin={isTrainerOrAdmin}

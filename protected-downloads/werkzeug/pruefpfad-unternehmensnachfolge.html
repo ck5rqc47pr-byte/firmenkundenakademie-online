@@ -1,0 +1,661 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Prüfpfad Unternehmensnachfolge</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400;1,8..60,500&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: FKB-Campus-Redaktionsstil. Eine Lesespalte, Kopfzeile wie die Website, Prüffelder als Blätter mit Haarlinien, Status nur in Sand. Bewusst nur helles Thema wie FKB Campus. */
+:root{
+  --bg:oklch(0.985 0.003 240); --bg-2:oklch(0.965 0.005 240);
+  --ink:oklch(0.18 0.02 250); --ink-2:oklch(0.38 0.02 250); --ink-3:oklch(0.56 0.02 250);
+  --line:oklch(0.90 0.01 240); --line-2:oklch(0.82 0.015 240);
+  --primary:oklch(0.32 0.08 250); --primary-ink:oklch(0.98 0.003 240);
+  --accent:oklch(0.78 0.05 75); --accent-ink:oklch(0.22 0.03 75); --accent-soft:oklch(0.93 0.05 75); --accent-line:oklch(0.85 0.05 75);
+  --lv1:var(--primary); --lv2:oklch(0.58 0.06 250); --lv3:var(--accent); --lv4:oklch(0.55 0.13 30);
+  --crit-soft:oklch(0.95 0.03 30); --crit-ink:oklch(0.38 0.10 30);
+  --serif:"Source Serif 4","Iowan Old Style",Georgia,serif;
+  --sans:"Inter Tight",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased}
+::selection{background:var(--primary);color:var(--primary-ink)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--bg)}
+
+.site{border-bottom:1px solid var(--line);background:var(--bg)}
+.nav{max-width:820px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:16px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:inline-flex;align-items:center;gap:10px;color:var(--ink);font-weight:600;font-size:15px;letter-spacing:-.01em}
+.brand svg{display:block}
+.nav-tag{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3)}
+
+.wrap{max-width:820px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:44px 72px}
+
+.eyebrow{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
+h1,h2,h3{font-family:var(--serif);font-weight:400;margin:0;text-wrap:balance;letter-spacing:-.01em;color:var(--ink)}
+h1{font-size:clamp(2rem,5.5vw,3rem);line-height:1.08}
+h2{font-size:clamp(1.55rem,4vw,2rem);line-height:1.15}
+h3{font-size:1.22rem;line-height:1.25;font-weight:600}
+h1 em,h2 em{font-style:italic;color:var(--primary)}
+
+header.hero{display:grid;gap:14px;padding-bottom:28px;border-bottom:1px solid var(--line);margin-bottom:0}
+.lede{color:var(--ink-2);max-width:60ch;margin:0;font-size:16px}
+.case{display:grid;gap:6px;margin-top:10px;max-width:520px}
+.lbl{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3)}
+input[type=text],textarea{font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line-2);border-radius:0;padding:10px 12px;width:100%}
+input[type=text]:focus,textarea:focus{outline:2px solid var(--primary);outline-offset:0;border-color:var(--primary)}
+textarea{min-height:2.8rem;resize:vertical;font-size:14px}
+
+.switch{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:var(--bg);border-bottom:1px solid var(--line);display:grid;grid-auto-flow:column;grid-auto-columns:minmax(124px,1fr);overflow-x:auto;margin-bottom:36px}
+.switch a.nb{min-width:0;text-decoration:none;color:var(--ink);padding:14px 14px 12px 0;display:grid;gap:7px}
+.switch .navblk+.navblk a.nb{border-left:1px solid var(--line);padding-left:14px}
+.switch a:focus-visible{outline:2px solid var(--primary);outline-offset:-2px}
+.switch .t{font-family:var(--serif);font-size:16px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.switch .t b{font-family:var(--mono);font-weight:500;font-size:11.5px;color:var(--ink-3);margin-right:8px;letter-spacing:.04em}
+.bar{height:3px;background:var(--line)}
+.bar i{display:block;height:100%;background:var(--accent);width:0;transition:width .25s}
+.count{font-family:var(--mono);font-size:11px;color:var(--ink-3);font-variant-numeric:tabular-nums}
+
+.block{display:grid;gap:22px;margin-bottom:56px;scroll-margin-top:96px}
+.block-head{display:grid;gap:10px;padding:26px 22px 24px;background:var(--bg-2);border:1px solid var(--line);
+  background-image:repeating-linear-gradient(135deg,transparent 0 7px,oklch(0.90 0.01 240 / .55) 7px 8px)}
+.block-head p{margin:0;color:var(--ink-2);max-width:60ch;background:var(--bg-2);justify-self:start;padding:2px 0}
+.block-head .eyebrow,.block-head h2{background:var(--bg-2);justify-self:start}
+
+.field{background:var(--bg);border-top:1px solid var(--ink);padding-top:18px;display:grid;gap:14px}
+.field-head{display:flex;gap:12px;align-items:baseline}
+.pill{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.04em;color:var(--ink);border:1px solid var(--line-2);padding:2px 8px;flex:none;border-radius:999px;background:var(--bg)}
+.field-progress{margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--ink-3);font-variant-numeric:tabular-nums;flex:none}
+.why{margin:0;font-size:14.5px;color:var(--ink-2);max-width:62ch;font-family:var(--serif);font-style:italic}
+.why b{font-style:normal;font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);margin-right:6px}
+
+ol.qs{list-style:none;margin:0;padding:0;display:grid}
+.q{border-top:1px solid var(--line);padding-block:12px 10px;display:grid;gap:6px}
+.q-row{display:flex;gap:12px;align-items:flex-start}
+.q-row input[type=checkbox]{appearance:none;-webkit-appearance:none;width:18px;height:18px;margin:3px 0 0;border:1px solid var(--line-2);background:var(--bg);flex:none;cursor:pointer;display:grid;place-content:center}
+.q-row input[type=checkbox]:checked{background:var(--accent);border-color:var(--accent)}
+.q-row input[type=checkbox]:checked::after{content:"";width:9px;height:5px;border-left:1.5px solid var(--accent-ink);border-bottom:1.5px solid var(--accent-ink);transform:rotate(-45deg) translate(1px,-1px)}
+.q-row input[type=checkbox]:focus-visible{outline:2px solid var(--primary);outline-offset:2px}
+.q-row label{min-width:0;cursor:pointer}
+.q.done .q-row label{color:var(--ink-3)}
+.hint{font-size:13px;color:var(--ink-3);margin:4px 0 0}
+.hint::before{content:"→ ";color:var(--accent-ink)}
+.note-toggle{font-family:var(--mono);font-size:11px;letter-spacing:.04em;text-transform:uppercase;color:var(--primary);background:none;border:0;padding:0 0 0 30px;cursor:pointer;justify-self:start}
+.note-toggle:focus-visible{outline:2px solid var(--primary);outline-offset:2px}
+.q textarea{margin-left:30px;width:calc(100% - 30px)}
+
+.extras{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line)}
+@media (max-width:600px){.extras{grid-template-columns:1fr}.extras .box+.box{border-left:0;border-top:1px solid var(--line)}}
+.box{padding:14px 16px;font-size:13.5px;min-width:0}
+.box+.box{border-left:1px solid var(--line)}
+.box h4{margin:0 0 8px;font-family:var(--mono);font-weight:500;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
+.box ul{margin:0;padding:0;list-style:none;display:grid;gap:4px}
+.box li{padding-left:16px;position:relative}
+.box li::before{content:"–";position:absolute;left:0;color:var(--ink-3)}
+.flags{background:var(--accent-soft)}
+.flags h4{color:var(--accent-ink)}
+.flags li::before{color:var(--accent-ink)}
+
+.export{border:1px solid var(--ink);padding:24px 22px;display:grid;gap:14px;background:var(--bg)}
+.export p{margin:0;color:var(--ink-2);font-size:14.5px;max-width:60ch}
+.btns{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+button.b{font-family:var(--sans);font-weight:500;font-size:14px;border-radius:0;padding:11px 18px;cursor:pointer;border:1px solid var(--primary)}
+button.primary{background:var(--primary);color:var(--primary-ink)}
+button.ghost{background:transparent;color:var(--ink);border-color:var(--line-2)}
+button.b:hover{filter:brightness(1.08)}
+button.b:focus-visible{outline:2px solid var(--primary);outline-offset:2px}
+.status{font-family:var(--mono);font-size:12px;color:var(--ink-2)}
+#exportText{font-family:var(--mono);font-size:12px;min-height:10rem;background:var(--bg-2)}
+.confirm{display:flex;gap:10px;align-items:center;flex-wrap:wrap;font-size:14px}
+footer{margin-top:36px;padding-top:16px;border-top:1px solid var(--line);font-size:12.5px;color:var(--ink-3);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+footer span:first-child{font-family:var(--mono);letter-spacing:.04em}
+/* Bewertung je Prüffeld */
+.rate{padding-top:16px;border-top:1px dashed var(--line-2);display:grid;gap:10px;min-width:0}
+.rate-top{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
+.opts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--line-2);border:1px solid var(--line-2)}
+@media (max-width:680px){.opts{grid-template-columns:1fr 1fr}}
+@media (max-width:420px){.opts{grid-template-columns:1fr}}
+.opt{position:relative;display:grid;grid-template-columns:auto minmax(0,1fr);gap:10px;align-items:start;padding:12px;cursor:pointer;font-size:13px;line-height:1.4;color:var(--ink-2);background:var(--bg);min-width:0}
+.opt.lv1{--lvc:var(--lv1)}.opt.lv2{--lvc:var(--lv2)}.opt.lv3{--lvc:var(--lv3)}.opt.lv4{--lvc:var(--lv4)}
+.opt input{position:absolute;opacity:0;pointer-events:none}
+.opt:hover{background:var(--bg-2)}
+.num{font-family:var(--serif);font-size:17px;line-height:1;color:var(--ink-3);width:28px;height:28px;display:grid;place-items:center;border:1px solid var(--line-2);border-radius:50%;font-variant-numeric:tabular-nums}
+.otx b{display:block;font-family:var(--mono);font-size:10.5px;font-weight:500;letter-spacing:.07em;text-transform:uppercase;color:var(--ink);margin-bottom:3px}
+.opt:has(input:checked){background:var(--bg-2);color:var(--ink);box-shadow:inset 0 3px 0 var(--lvc)}
+.opt:has(input:checked) .num{background:var(--lvc);border-color:var(--lvc);color:var(--primary-ink)}
+.opt.lv3:has(input:checked) .num{color:var(--accent-ink)}
+.opt:has(input:focus-visible){outline:2px solid var(--primary);outline-offset:-2px;z-index:1}
+.rate-clear{font-family:var(--mono);font-size:11px;letter-spacing:.04em;text-transform:uppercase;color:var(--primary);background:none;border:0;padding:0;cursor:pointer}
+.rate[data-r=""] .rate-clear{visibility:hidden}
+.rate-clear:focus-visible{outline:2px solid var(--primary);outline-offset:2px}
+
+/* Gesamtbild */
+.overview{display:grid;gap:18px;margin-bottom:56px;scroll-margin-top:96px}
+.overview>p{margin:0;color:var(--ink-2);max-width:60ch}
+.verdict{border:1px solid var(--ink);padding:20px 22px;display:grid;gap:10px;background:var(--bg)}
+.v-main{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap}
+.v-num{font-family:var(--serif);font-size:clamp(2.4rem,7vw,3.4rem);line-height:1;font-variant-numeric:tabular-nums}
+.v-band{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;padding:4px 10px;border-radius:999px;border:1px solid}
+.b1{color:var(--lv1);border-color:var(--lv1)}
+.b2{color:var(--lv2);border-color:var(--lv2)}
+.b3{color:var(--accent-ink);background:var(--accent-soft);border-color:var(--accent-line)}
+.b4{color:var(--crit-ink);background:var(--crit-soft);border-color:var(--lv4)}
+.v-meta{font-family:var(--mono);font-size:11.5px;color:var(--ink-3)}
+.v-blocks{display:flex;gap:8px 24px;flex-wrap:wrap;font-size:14px;color:var(--ink-2);font-variant-numeric:tabular-nums}
+.v-blocks b{font-family:var(--serif);font-weight:400;color:var(--ink)}
+.v-empty{margin:0;color:var(--ink-2)}
+.prof{--cw:58px;overflow-x:auto}
+@media (max-width:540px){.prof{--cw:38px}.prof-head small{display:none}}
+.prof-head,.pr{display:grid;grid-template-columns:minmax(0,1fr) repeat(4,var(--cw)) 40px;align-items:center}
+.prof-head{padding-bottom:8px}
+.prof-head span{text-align:center;font-family:var(--mono);font-size:11px;color:var(--ink-3);line-height:1.3}
+.prof-head small{display:block;font-size:9.5px;letter-spacing:.05em;text-transform:uppercase}
+.prof-body{position:relative}
+.pr{height:44px;border-top:1px solid var(--line)}
+.pr:last-child{border-bottom:1px solid var(--line)}
+.pr-g span{grid-column:1/-1;font-family:var(--serif);font-size:15px;color:var(--ink)}
+.pr-g span b{font-family:var(--mono);font-weight:500;font-size:11px;color:var(--ink-3);margin-right:8px}
+.pr-l{display:flex;align-items:center;gap:8px;min-width:0;font-size:13.5px;line-height:1.25;padding-right:8px}
+.pr-l .nm{min-width:0;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.pill.sm{font-size:10px;padding:1px 6px}
+.pr-c{height:100%;display:grid;place-items:center;border-left:1px dashed var(--line)}
+.pr-v{text-align:right;font-family:var(--mono);font-size:13px;font-variant-numeric:tabular-nums;color:var(--ink)}
+.dot{position:relative;z-index:1;width:14px;height:14px;border-radius:50%;background:var(--lvc);box-shadow:0 0 0 3px var(--bg)}
+.dot.lv1{--lvc:var(--lv1)}.dot.lv2{--lvc:var(--lv2)}.dot.lv3{--lvc:var(--lv3)}.dot.lv4{--lvc:var(--lv4)}
+.prof-line{position:absolute;top:0;right:40px;width:calc(var(--cw) * 4);height:100%;pointer-events:none;overflow:visible}
+.prof-line polyline{fill:none;stroke:var(--ink-3);stroke-width:1.5;vector-effect:non-scaling-stroke}
+ul.hints{margin:0;padding:0;list-style:none;display:grid;gap:8px}
+ul.hints li{padding:10px 14px;background:var(--bg-2);border-left:2px solid var(--line-2);font-size:14px;max-width:70ch}
+ul.hints li.crit{background:var(--crit-soft);border-left-color:var(--lv4)}
+ul.hints li.warn{background:var(--accent-soft);border-left-color:var(--accent)}
+.scale-note{font-size:12.5px;color:var(--ink-3);margin:0;max-width:70ch}
+/* Rechenhilfen */
+.calc{border:1px solid var(--line);background:var(--bg-2);padding:14px 16px;display:grid;gap:6px;min-width:0}
+.calc h4{margin:0 0 4px;font-family:var(--mono);font-weight:500;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
+.crow{display:grid;grid-template-columns:minmax(0,1fr) 128px;gap:12px;align-items:center;font-size:13.5px;color:var(--ink-2)}
+.crow input{text-align:right;font-family:var(--mono);font-size:13px;padding:6px 8px;font-variant-numeric:tabular-nums;background:var(--bg)}
+.crow.out{border-top:1px solid var(--line-2);padding-top:7px;margin-top:2px;color:var(--ink);font-weight:600}
+.crow.out+.crow.out{border-top:0;padding-top:0;margin-top:0}
+.cval{text-align:right;font-family:var(--mono);font-size:13px;font-variant-numeric:tabular-nums;padding:3px 8px;justify-self:end;min-width:72px}
+.cval.k-good{color:var(--lv1);box-shadow:inset 0 -2px 0 var(--lv1)}
+.cval.k-warn{color:var(--accent-ink);background:var(--accent-soft)}
+.cval.k-crit{color:var(--crit-ink);background:var(--crit-soft)}
+.calc-note{margin:6px 0 0;font-size:12.5px;color:var(--ink-3);max-width:68ch}
+@media (max-width:420px){.crow{grid-template-columns:minmax(0,1fr) 104px}}
+.v-kpis{display:flex;gap:6px 20px;flex-wrap:wrap;font-family:var(--mono);font-size:12px;color:var(--ink-2);font-variant-numeric:tabular-nums}
+/* Seitennavigation (Desktop) */
+.navf{display:none;list-style:none;margin:10px 0 0;padding:0;gap:1px}
+.nf{display:grid;grid-template-columns:auto minmax(0,1fr) 22px;gap:8px;align-items:center;padding:5px 6px;text-decoration:none;color:var(--ink-2);font-size:13px;border-left:2px solid transparent}
+.nf:hover{background:var(--bg-2);color:var(--ink)}
+.nf.on{border-left-color:var(--primary);background:var(--bg-2);color:var(--ink)}
+.nn{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.nr{font-style:normal;font-family:var(--mono);font-size:11px;width:22px;height:22px;display:grid;place-items:center;border-radius:50%;border:1px dashed var(--line-2);color:var(--ink-3)}
+.nr.lv1{background:var(--lv1);border:0;color:var(--primary-ink)}
+.nr.lv2{background:var(--lv2);border:0;color:var(--primary-ink)}
+.nr.lv3{background:var(--lv3);border:0;color:var(--accent-ink)}
+.nr.lv4{background:var(--lv4);border:0;color:var(--primary-ink)}
+.navavg{font-family:var(--serif);font-size:15px;font-variant-numeric:tabular-nums;color:var(--ink)}
+.field{scroll-margin-top:96px}
+@media (min-width:1080px){
+  .wrap{max-width:1320px;display:grid;grid-template-columns:270px minmax(0,1fr);column-gap:56px;align-items:start}
+  .wrap>header.hero,.wrap>footer{grid-column:1/-1}
+  .wrap>main,.wrap>.overview,.wrap>.export{grid-column:2;min-width:0}
+  .wrap>main{margin-top:40px}
+  .switch{grid-column:1;grid-row:2/span 3;position:sticky;top:calc(env(safe-area-inset-top,0px) + 24px);display:flex;flex-direction:column;gap:22px;border-bottom:0;margin:40px 0 0;max-height:calc(100vh - 48px);overflow-y:auto;overflow-x:hidden;padding-right:6px}
+  .switch a.nb,.switch .navblk+.navblk a.nb{padding:0 0 0 8px;border-left:0}
+  .navf{display:grid;margin-top:6px}
+  .nf{padding:3px 6px}
+  .switch{gap:14px}
+  .switch a.nb{gap:5px}
+  .switch .navblk:last-child{order:-1;padding-bottom:14px;border-bottom:1px solid var(--line)}
+  .switch .navblk:last-child a.nb{grid-template-columns:minmax(0,1fr) auto;align-items:baseline;column-gap:10px}
+  .switch .navblk:last-child .bar,.switch .navblk:last-child .count{grid-column:1/-1}
+  .navavg{font-size:24px;line-height:1}
+  .field,.block{scroll-margin-top:24px}
+  .field{grid-template-columns:minmax(0,1fr) 300px;column-gap:32px}
+  .field>*{grid-column:1/-1}
+  .field>ol.qs{grid-column:1;grid-row:3}
+  .field>.extras{grid-column:2;grid-row:3;grid-template-columns:1fr;align-self:start}
+  .field>.extras .box+.box{border-left:0;border-top:1px solid var(--line)}
+  .calc{max-width:780px}
+  .prof{--cw:80px}
+  .hero .lede{font-size:17px}
+}
+@media (prefers-reduced-motion:reduce){.bar i{transition:none}html{scroll-behavior:auto}}
+</style>
+
+<div class="site"><div class="nav">
+  <span class="brand"><svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><rect x="1" y="1" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M6 15 L11 6 L16 15" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="11" cy="6" r="1.6" fill="oklch(0.78 0.05 75)"/></svg>FKB Campus</span>
+  <span class="nav-tag">Werkzeug · Kredit</span>
+</div></div>
+
+<div class="wrap">
+  <header class="hero">
+    <span class="eyebrow">§ Prüfpfad · Für Firmenkundenberater</span>
+    <h1>Prüfpfad <em>Unternehmensnachfolge</em></h1>
+    <p class="lede">Für Finanzierungsanfragen, bei denen jemand ein bestehendes Unternehmen kaufen will. Erst die Person, dann der Deal, dann das Unternehmen dahinter und zum Schluss die Finanzierung. Die Fragen geben die Reihenfolge vor, die Bewertung je Prüffeld triffst du selbst.</p>
+    <div class="case">
+      <label class="lbl" for="caseName">Fall / Kunde · bleibt nur in diesem Browser</label>
+      <input type="text" id="caseName" placeholder="z. B. Übernahme Metallbau Muster GmbH">
+    </div>
+  </header>
+
+  <nav class="switch" id="switch" aria-label="Prüfblöcke"></nav>
+  <main id="blocks"></main>
+
+  <section class="overview" id="gesamt" aria-labelledby="ovH">
+    <span class="eyebrow">V. Gesamtbild</span>
+    <h2 id="ovH">Stärken-Schwächen-<em>Profil</em></h2>
+    <p>Jedes Prüffeld wird von 1 (stark) bis 4 (kritisch) bewertet. Die Gesamtnote ist der Durchschnitt aller bewerteten Felder. Das Profil zeigt, wo das Vorhaben trägt und wo es wackelt.</p>
+    <div class="verdict" id="verdict"></div>
+    <ul class="hints" id="hints"></ul>
+    <div class="prof" id="profile"></div>
+    <p class="scale-note">Orientierung für Gespräch und Votum. Ersetzt weder VR-Rating noch Kreditentscheidung. Einstufung nach Durchschnitt: bis 1,75 tragfähig · bis 2,5 tragfähig mit offenen Punkten · bis 3,25 nur mit Nachbesserung · darüber kritisch.</p>
+  </section>
+
+  <section class="export" aria-labelledby="exH">
+    <span class="eyebrow">§ Ergebnis</span>
+    <h2 id="exH">Ergebnis <em>mitnehmen</em></h2>
+    <p>Fasst deine Notizen und alle noch offenen Fragen als Text zusammen. Den kannst du in die Gesprächsnotiz oder eine Mail an den Kunden übernehmen.</p>
+    <div class="btns">
+      <button class="b primary" id="build" type="button">Zusammenfassung erstellen →</button>
+      <button class="b ghost" id="copy" type="button" hidden>Text kopieren</button>
+      <span class="status" id="copied" role="status"></span>
+    </div>
+    <textarea id="exportText" hidden readonly aria-label="Zusammenfassung"></textarea>
+    <div class="btns">
+      <button class="b ghost" id="reset" type="button">Alles zurücksetzen</button>
+      <span class="confirm" id="confirmBox" hidden>Alle Häkchen und Notizen löschen?
+        <button class="b primary" id="resetYes" type="button">Ja, löschen</button>
+        <button class="b ghost" id="resetNo" type="button">Abbrechen</button>
+      </span>
+    </div>
+  </section>
+
+  <footer><span>Version 4 · Käufer, Vorhaben, Unternehmen, Finanzierung</span><span>Orientierungswerte sind Vorschläge. Hausvorgaben und Kreditrichtlinie gehen vor.</span></footer>
+</div>
+
+<script>
+const DATA=[
+ {id:"A",roman:"I.",title:"Der <em>Käufer</em>",short:"Käufer",
+  intro:"Bei einer Nachfolge finanzieren wir vor allem die Person. Das Unternehmen hat bisher funktioniert, weil jemand anderes es geführt hat. Die Frage ist, ob dieser Mensch es weiterführen kann.",
+  fields:[
+   {code:"A1",title:"Ausbildung und Werdegang",
+    why:"<b>Warum</b> Der Lebenslauf zeigt, ob die fachliche Basis zur Branche passt und ob der Käufer Dinge zu Ende bringt.",
+    qs:[
+     ["Welche Ausbildung oder welches Studium hat er, und passt das zur Branche des Zielunternehmens?",""],
+     ["Wo hat er bisher gearbeitet, in welcher Funktion und wie lange?","Kurze Stationen nacheinander ansprechen und erklären lassen."],
+     ["Gibt es Lücken oder Brüche im Lebenslauf? Wie erklärt er sie?",""],
+     ["Kennt er die Branche von innen, oder kommt er von außen?","Quereinsteiger sind kein Ausschluss, brauchen aber ein starkes Team darunter."]
+    ],
+    docs:["Lebenslauf","Zeugnisse, Meister- oder Studienabschluss","ggf. Arbeitszeugnisse"],
+    flags:["Lebenslauf bleibt auf Nachfrage vage","Keinerlei Branchenbezug und kein Plan, das auszugleichen"]},
+   {code:"A2",title:"Führungserfahrung",
+    why:"<b>Warum</b> Die Belegschaft ist auf den Altinhaber eingestellt. Wenn Schlüsselleute gehen, geht oft der Wert mit.",
+    qs:[
+     ["Wie viele Mitarbeitende hat er bisher geführt, disziplinarisch oder nur fachlich?",""],
+     ["Hat er schon unangenehme Personalentscheidungen getroffen, etwa Kündigungen oder Konfliktgespräche?","Nach einem konkreten Beispiel fragen, nicht nach einer Einschätzung."],
+     ["Wie will er die ersten 100 Tage mit der Belegschaft gestalten?",""],
+     ["Wer sind die Schlüsselpersonen im Unternehmen, und hat er schon mit ihnen gesprochen?",""]
+    ],
+    docs:["Organigramm des Zielunternehmens","Liste der Schlüsselpersonen mit Funktion"],
+    flags:["Noch nie disziplinarisch geführt, Ziel hat aber 20+ Mitarbeitende","Schlüsselpersonen wissen noch nichts vom Verkauf"]},
+   {code:"A3",title:"Technische und fachliche Expertise",
+    why:"<b>Warum</b> Wer das Produkt nicht beurteilen kann, kann weder Preise verhandeln noch Qualität sichern.",
+    qs:[
+     ["Kann er die Kernleistung des Unternehmens selbst beurteilen oder erbringen?",""],
+     ["Wo liegt das technische Know-how heute: beim Altinhaber, bei Mitarbeitenden oder in Prozessen?",""],
+     ["Braucht es eine formale Qualifikation, etwa Meisterpflicht, Zulassung oder Zertifizierung? Hat er sie?",""],
+     ["Wie lange begleitet der Altinhaber die Übergabe, und ist das vertraglich geregelt?",""]
+    ],
+    docs:["Nachweis Meister / Zulassung, falls nötig","Übergabe- oder Beratervertrag mit dem Altinhaber"],
+    flags:["Zulassung fehlt und ist nicht kurzfristig zu bekommen","Know-how hängt allein am Altinhaber, Übergabe ist nicht geregelt"]},
+   {code:"A4",title:"Kaufmännische Expertise",
+    why:"<b>Warum</b> Ab dem ersten Tag muss er Liquidität steuern und mit uns über Zahlen sprechen können.",
+    qs:[
+     ["Kann er eine BWA und einen Jahresabschluss lesen und erklären?","Einfach eine Position aus der Planung erklären lassen."],
+     ["Hat er die Planzahlen selbst erstellt oder ein Berater? Kann er die Annahmen begründen?",""],
+     ["Wie plant er die Liquidität in den ersten 12 Monaten?",""],
+     ["Wer macht künftig Buchhaltung, Controlling und Steuern?",""]
+    ],
+    docs:["Businessplan mit Planbilanz, Plan-GuV und Liquiditätsplanung","Name des Steuerberaters"],
+    flags:["Kann die eigene Planung nicht erklären","Umsatzplanung steigt ohne Begründung deutlich über das Ist"]},
+   {code:"A5",title:"Mindset und Tragfähigkeit",
+    why:"<b>Warum</b> Hier geht es oft um mehr Geld, als der Käufer je bewegt hat. Wir wollen sehen, ob er die Größenordnung und das Risiko wirklich erfasst.",
+    qs:[
+     ["Hat er ein Gefühl für die Summen? Kann er Kaufpreis, Kapitaldienst und Entnahme ungefähr aus dem Kopf nennen?",""],
+     ["Was macht er, wenn der Umsatz im ersten Jahr 20 % unter Plan liegt?","Stressfrage. Achte darauf, ob er ruhig und konkret antwortet."],
+     ["Wie viel Eigenkapital bringt er ein, und woher stammt es?","Eigenes Geld zeigt Überzeugung. Herkunft dokumentieren lassen."],
+     ["Wie hoch ist sein privater Entnahmebedarf?",""],
+     ["Steht das private Umfeld hinter der Entscheidung, auch zeitlich?",""],
+     ["Versteht er, was eine persönliche Bürgschaft oder Haftung für ihn bedeutet?","Die Werthaltigkeit der Bürgschaft wird in D4 geprüft."]
+    ],
+    docs:["Selbstauskunft mit Vermögens- und Schuldenübersicht","Nachweis Eigenkapital","Aufstellung privater Lebenshaltungskosten"],
+    flags:["Spricht nur über Chancen, nie über Risiken","Eigenkapital ist selbst geliehen","Entnahmebedarf passt nicht zum geplanten Ergebnis"]}
+  ]},
+ {id:"B",roman:"II.",title:"Das <em>Vorhaben</em>",short:"Vorhaben",
+  intro:"Jetzt der Deal selbst. Wir wollen verstehen, was genau gekauft wird, wie die Bilanz danach aussieht und wofür das Geld der Bank eigentlich steht.",
+  fields:[
+   {code:"B1",title:"Art des Deals: Asset oder Share",
+    why:"<b>Warum</b> Die Dealform entscheidet, welche Risiken mitkommen, wer Kreditnehmer ist und was sich steuerlich abschreiben lässt.",
+    qs:[
+     ["Kauft er einzelne Wirtschaftsgüter (Asset Deal) oder Gesellschaftsanteile (Share Deal)?",""],
+     ["Share Deal: Welche Altlasten gehen mit über, etwa Steuerrisiken, Pensionszusagen, Gewährleistungen, laufende Verträge?",""],
+     ["Share Deal mit Grundbesitz: Werden 90 % oder mehr der Anteile erworben? Dann kann Grunderwerbsteuer anfallen (§ 1 Abs. 3 GrEStG). Ist das steuerlich geprüft?","In Bayern 3,5 % auf den Grundbesitzwert. Eine Struktur unter 90 % kann den Anfall vermeiden, erfordert aber frühzeitige Beratung."],
+     ["Asset Deal: Gehen Mitarbeitende, Kunden- und Lieferantenverträge, Mietverträge und Genehmigungen sauber über?","Beim Betriebsübergang gehen Arbeitsverhältnisse grundsätzlich mit über (§ 613a BGB). Change-of-Control-Klauseln können auch beim Asset Deal greifen, da das wirtschaftliche Eigentum wechselt – wesentliche Verträge prüfen lassen."],
+     ["Kauft er direkt oder über eine neue Holding? Wer ist damit unser Kreditnehmer?",""],
+     ["Gab es eine Due Diligence? Wer hat sie gemacht, und was kam heraus?",""]
+    ],
+    docs:["Kaufvertragsentwurf oder Letter of Intent","Due-Diligence-Bericht, falls vorhanden","Gesellschafts- und Strukturübersicht"],
+    flags:["Kein Kaufvertragsentwurf, nur mündliche Einigung","Share Deal ohne jede Prüfung der Altlasten","Share Deal mit Grundbesitz, aber kein Steuerberater-Testat zu GrEStG-Risiken"]},
+   {code:"B2",title:"Cash free / Debt free",
+    why:"<b>Warum</b> Der Kaufpreis wird meist für ein Unternehmen ohne Kasse und ohne Finanzschulden vereinbart. Was das genau heißt, steht im Vertrag, und daran hängt, was am Ende wirklich zu zahlen ist.",
+    qs:[
+     ["Ist der Kaufpreis cash free / debt free vereinbart?",""],
+     ["Wie sind Cash und Debt im Vertrag definiert? Zählen etwa Pensionsrückstellungen oder Gesellschafterdarlehen dazu?",""],
+     ["Welche Finanzverbindlichkeiten hat das Zielunternehmen heute, und werden sie beim Closing abgelöst?",""],
+     ["Ist ein normales Working Capital vereinbart? Wer trägt Abweichungen?",""],
+     ["Wird der Preis über eine Locked Box oder über Closing Accounts angepasst?",""]
+    ],
+    docs:["Darlehensübersicht des Zielunternehmens","Kaufpreismechanik aus dem Vertragsentwurf"],
+    flags:["Begriffe im Vertrag nicht definiert","Verkäufer zieht vor Closing Liquidität ab, ohne dass das geregelt ist"]},
+   {code:"B3",title:"Bilanzrelationen vorher und nachher",
+    why:"<b>Warum</b> Die Bilanz des Zielunternehmens sieht vor dem Kauf oft solide aus. Nach dem Kauf liegt die Akquisitionsschuld obendrauf, beim Käufer oder in der Holding.",
+    qs:[
+     ["Wie sehen Eigenkapitalquote und Verschuldung des Zielunternehmens heute aus?",""],
+     ["Wie sieht die Bilanz nach der Transaktion aus? Gibt es eine Pro-forma-Bilanz?","Bei Holding-Strukturen die konsolidierte Sicht verlangen."],
+     ["Wo liegt der Kapitaldienst: im Zielunternehmen oder beim Käufer bzw. in der Holding?",""],
+     ["Wie kommt das Geld für den Kapitaldienst nach oben, etwa über Ausschüttungen oder Ergebnisabführung?",""],
+     ["Wie verändert sich die Verschuldung im Verhältnis zum operativen Ergebnis (z. B. Nettofinanzverschuldung / EBITDA)?",""]
+    ],
+    docs:["Jahresabschlüsse der letzten drei Jahre","Aktuelle BWA mit Summen- und Saldenliste","Pro-forma-Bilanz nach Closing"],
+    flags:["Eigenkapitalquote nach dem Kauf negativ oder nahe null","Kapitaldienst liegt in der Holding, Ausschüttungen sind aber nicht gesichert","Betriebsaufspaltung: Betriebsimmobilie verbleibt beim Altinhaber – Mietvertrag und Laufzeit prüfen"]},
+   {code:"B4",title:"Was wird mit dem Kaufpreis finanziert?",
+    why:"<b>Warum</b> Anlagevermögen bleibt als Wert und oft als Sicherheit stehen. Goodwill und Markenwert existieren nur, solange das Geschäft läuft. Je höher dieser Anteil, desto mehr hängt alles an der Person aus Block A.",
+    qs:[
+     ["Wie teilt sich der Kaufpreis auf: Substanz (Anlagevermögen, Vorräte) gegenüber Goodwill und Markenwert?",""],
+     ["Wie wurde der Kaufpreis ermittelt: Ertragswert, Multiplikator oder Verhandlung? Wer hat bewertet?",""],
+     ["Was ist das Anlagevermögen wirklich wert? Alter, Zustand, Investitionsstau?","Investitionsstau erhöht faktisch den Kaufpreis."],
+     ["Hängt der Goodwill an der Person des Altinhabers, etwa an persönlichen Kundenbeziehungen?",""],
+     ["Wie hoch ist der Teil des Kaufpreises, dem keine Substanz gegenübersteht?",""],
+     ["Trägt der Verkäufer einen Teil des Risikos mit, etwa über Verkäuferdarlehen oder Earn-out?",""]
+    ],
+    docs:["Bewertungsgutachten oder Kaufpreisherleitung","Anlagenspiegel","Kundenliste mit Umsatzanteilen"],
+    flags:["Kaufpreis besteht überwiegend aus Goodwill, Übergabe an Kunden ist ungeklärt","Wenige Kunden mit hohem Umsatzanteil","Verkäufer will sofort voll ausbezahlt werden und raus"]}
+  ]},
+ {id:"C",roman:"III.",title:"Das <em>Zielunternehmen</em>",short:"Unternehmen",
+  intro:"Was wird eigentlich gekauft? Ein Unternehmen ist so viel wert wie das Ergebnis, das es ohne den Altinhaber nachhaltig erwirtschaftet. Genau dieses Ergebnis muss später den Kaufpreis zurückzahlen.",
+  fields:[
+   {code:"C1",title:"Ertragskraft und Ergebnisbereinigung",calc:true,
+    why:"<b>Warum</b> Unter dem Altinhaber sieht das Ergebnis oft besser oder schlechter aus, als es unter dem Käufer sein wird. Erst das bereinigte Ergebnis zeigt, was für Kapitaldienst und Lebensunterhalt wirklich übrig bleibt.",
+    qs:[
+     ["Wie haben sich Umsatz und Ergebnis in den letzten drei bis fünf Jahren entwickelt? Gab es Sondereffekte?",""],
+     ["Hat der Altinhaber einen marktüblichen Unternehmerlohn bezogen?","Bei Einzelunternehmen und Personengesellschaften steht in der GuV gar kein Unternehmerlohn. Das Ergebnis wirkt dann zu hoch."],
+     ["Laufen private oder nicht betriebsnotwendige Aufwendungen über die Firma, etwa Fahrzeuge oder Gehälter von Angehörigen?",""],
+     ["Zahlt die Firma Miete oder Pacht an den Altinhaber? Ist sie marktüblich, und bleibt der Vertrag nach dem Verkauf bestehen?",""],
+     ["Welche Einmaleffekte stecken im Ergebnis, etwa ein Großauftrag, Fördermittel oder Erlöse aus Anlagenverkäufen?",""],
+     ["Bestätigt die aktuelle BWA den Trend der Jahresabschlüsse?",""]
+    ],
+    docs:["Jahresabschlüsse der letzten drei bis fünf Jahre","Aktuelle BWA mit Vorjahresvergleich","Übersicht Bezüge Altinhaber und Angehörige","Miet- und Pachtverträge mit Gesellschaftern"],
+    flags:["Ergebnis steigt im Jahr vor dem Verkauf auffällig","Altinhaber arbeitet ohne angemessenes Gehalt","Betriebsimmobilie gehört dem Verkäufer, Mietvertrag ungeklärt"]},
+   {code:"C2",title:"Abhängigkeiten von Kunden, Lieferanten und Personen",
+    why:"<b>Warum</b> Bei einer Übergabe zeigt sich, woran der Umsatz wirklich hängt. Was am Altinhaber persönlich hängt, kann mit ihm gehen.",
+    qs:[
+     ["Wie hoch ist der Umsatzanteil des größten Kunden und der fünf größten Kunden?",""],
+     ["Hängen wichtige Kunden persönlich am Altinhaber? Kennen sie den Käufer schon?",""],
+     ["Gibt es Abhängigkeiten von Lieferanten, Exklusivverträge oder Klauseln für den Fall eines Inhaberwechsels (Change of Control)?",""],
+     ["Wer sind die Schlüsselmitarbeitenden, wie alt sind sie, und bleiben sie?",""],
+     ["Sind Genehmigungen, Zertifikate oder Listungen an die Person des Altinhabers gebunden?",""]
+    ],
+    docs:["Kundenliste mit Umsatzanteilen der letzten drei Jahre","Wesentliche Kunden- und Lieferantenverträge","Mitarbeiterliste (Alter, Funktion, Betriebszugehörigkeit – aggregiert/anonymisiert; Einzelnamen nur unter NDA und nach DSGVO-Abklärung, Art. 4 DSGVO)"],
+    flags:["Ein Kunde steht für mehr als ein Viertel des Umsatzes","Der Altinhaber ist der einzige Ansprechpartner der Kunden","Wesentliche Verträge mit Change-of-Control-Klausel"]},
+   {code:"C3",title:"Markt, Investitionsbedarf und Zukunftsfähigkeit",
+    why:"<b>Warum</b> Viele Altinhaber investieren in den letzten Jahren vor dem Verkauf kaum noch. Diesen Nachholbedarf kauft der Käufer mit, und er belastet die ersten Jahre zusätzlich zum Kapitaldienst.",
+    qs:[
+     ["Wie entwickeln sich Branche, Markt und Wettbewerb in der Region?",""],
+     ["Gibt es einen Investitionsstau bei Maschinen, Gebäude, IT oder Fuhrpark? Was muss in den nächsten drei Jahren investiert werden?","Vergleiche Abschreibungen und Investitionen der letzten Jahre."],
+     ["Wie sieht die Altersstruktur der Belegschaft aus? Gibt es Nachwuchs und Auszubildende?",""],
+     ["Welche ESG- und regulatorischen Anforderungen kommen auf das Unternehmen zu, etwa beim Energieverbrauch?","Notizen hier helfen, später die ESG-Vorabanalyse zu strukturieren: Energiekostenquote, geplante Effizienzinvestitionen, Compliance-Pflichten (z. B. CBAM, CSRD-Berichtspflicht ab Schwellenwert)."],
+     ["Was will der Käufer anders machen als der Altinhaber, und ist das realistisch?",""]
+    ],
+    docs:["Anlagenspiegel","Investitionsplanung für drei bis fünf Jahre","Angaben zu Energiekostenquote, geplanten Effizienzinvestitionen und offenen Compliance-Anforderungen"],
+    flags:["Abschreibungen liegen seit Jahren über den Investitionen","Belegschaft überaltert, kein Nachwuchs","Geschäftsmodell durch Regulierung oder Technologie unter Druck"]}
+  ]},
+ {id:"D",roman:"IV.",title:"Finanzierung und <em>Kapitaldienst</em>",short:"Finanzierung",
+  intro:"Erst jetzt wird gerechnet. Die Struktur muss so gebaut sein, dass das Unternehmen den Kaufpreis aus eigener Kraft zurückzahlt und der Käufer trotzdem davon leben kann.",
+  fields:[
+   {code:"D1",title:"Mittelbedarf und Eigenkapital",
+    why:"<b>Warum</b> Viele Planungen enthalten nur den Kaufpreis. Nebenkosten, Betriebsmittel und eine Reserve fehlen, und genau daran wird es im ersten Jahr eng.",
+    qs:[
+     ["Ist der Gesamtbedarf vollständig: Kaufpreis, Nebenkosten (Notar, Berater, ggf. Grunderwerbsteuer), Sofortinvestitionen, Betriebsmittel?","Typische Nebenkosten: Notar (GNotKG), Grunderwerbsteuer (Bayern 3,5 %), Due Diligence (Steuer-/Rechtsberater), Finanzierungsnebenkosten (Bearbeitung, Bereitstellungszins), Sicherheitenbestellung, ggf. M&A-Berater – in Summe 3–7 % des Kaufpreises."],
+     ["Wie hoch ist der Betriebsmittelbedarf nach der Übergabe?","Lieferanten verkürzen beim Inhaberwechsel oft die Zahlungsziele oder verlangen Vorkasse."],
+     ["Wie hoch ist der Eigenkapitalanteil am Gesamtbedarf, und wie viel davon ist wirklich eigenes Geld?","Abgleich mit A5."],
+     ["Gibt es eine Reserve für Anlaufverluste oder Abweichungen vom Plan?",""]
+    ],
+    docs:["Plan zu Mittelverwendung und Mittelherkunft","Nachweis Eigenkapital","Betriebsmittelplanung"],
+    flags:["Betriebsmittel fehlen im Plan","Eigenkapital stammt aus Darlehen Dritter","Keine Reserve, Finanzierung auf Kante genäht"]},
+   {code:"D2",title:"Risikoteilung: Förderung, Bürgschaft, Verkäufer",
+    why:"<b>Warum</b> Bei einem hohen Goodwill-Anteil sollte die Bank das Risiko nicht allein tragen. Förderbanken, Bürgschaftsbank und der Verkäufer selbst können einen Teil übernehmen.",
+    qs:[
+     ["Sind passende Förderprogramme geprüft, etwa von KfW oder LfA Förderbank Bayern?","Förderanträge müssen in der Regel vor Beginn des Vorhabens gestellt werden. Ein vorher unterschriebener Kaufvertrag kann die Förderung verbauen."],
+     ["Ist eine Ausfallbürgschaft der Bürgschaftsbank Bayern sinnvoll?",""],
+     ["Kommt Beteiligungskapital als Ergänzung zum Eigenkapital infrage?",""],
+     ["Gibt es ein Verkäuferdarlehen? Wie hoch, mit welcher Laufzeit, mit Rangrücktritt und Tilgung erst nach der Bank?",""],
+     ["Ist ein Earn-out vereinbart? An welcher Größe wird er gemessen, und wie streitanfällig ist das?",""]
+    ],
+    docs:["Förderanfragen und Konditionen","Konditionen des Verkäuferdarlehens","Entwurf Rangrücktritt"],
+    flags:["Kaufvertrag vor dem Förderantrag unterschrieben","Verkäuferdarlehen wird parallel zur oder vor der Bank getilgt","Bank trägt das Goodwill-Risiko allein"]},
+   {code:"D3",title:"Kapitaldienstfähigkeit",calc:true,
+    why:"<b>Warum</b> Das ist die Frage, an der die Finanzierung hängt. Gerechnet wird mit dem bereinigten Ergebnis aus C1, nicht mit den Zahlen des Altinhabers.",
+    qs:[
+     ["Ist der Kapitaldienst aus dem bereinigten Ergebnis gedeckt?",""],
+     ["Sind alle Darlehen im Kapitaldienst enthalten, auch das Verkäuferdarlehen, Earn-out-Zahlungen (soweit hinreichend sicher) und die Tilgung nach tilgungsfreien Jahren?",""],
+     ["Sind Steuern, Ersatzinvestitionen und der Lebensunterhalt des Käufers berücksichtigt?","Abgleich mit A5 und C3."],
+     ["Hält die Kapitaldienstfähigkeit, wenn das Ergebnis 20 % unter Plan liegt?",""],
+     ["Passt die Laufzeit zum Finanzierungsgegenstand? Der Goodwill-Anteil sollte schneller getilgt werden als die Substanz.",""]
+    ],
+    docs:["Kapitaldienstberechnung","Planrechnung für drei bis fünf Jahre","Tilgungspläne aller Darlehen"],
+    flags:["Kapitaldienst nur mit Planzahlen über dem Ist gedeckt","Tilgungsfreie Jahre verdecken eine Lücke","Verschuldung über dem Vierfachen des bereinigten EBITDA"]},
+   {code:"D4",title:"Sicherheiten und Absicherung der Person",
+    why:"<b>Warum</b> Bei einer Nachfolge ist der Blankoanteil oft hoch, weil der Goodwill keine Sicherheit ist. Umso wichtiger ist, dass der Ausfall der Person abgesichert ist.",
+    qs:[
+     ["Welche Sicherheiten stehen zur Verfügung, etwa Grundschulden, Sicherungsübereignung, Abtretungen oder die Verpfändung der Geschäftsanteile?",""],
+     ["Wie hoch ist der Blankoanteil nach Sicherheitenbewertung, und passt er zur Bonität?",""],
+     ["Ist eine persönliche Bürgschaft des Käufers vereinbart, und ist sie werthaltig?",""],
+     ["Ist der Ausfall der Person abgesichert, etwa über Risikolebens- oder Berufsunfähigkeitsversicherung?",""],
+     ["Welche Informationspflichten vereinbaren wir, zum Beispiel eine quartalsweise BWA?",""]
+    ],
+    docs:["Sicherheitenübersicht mit Bewertung","Versicherungsnachweise","Entwurf Bürgschaft"],
+    flags:["Hoher Blankoanteil bei hohem Goodwill-Anteil","Keine Absicherung der Person, obwohl alles an ihr hängt","Anteilsverpfändung ist die einzige Sicherheit"]}
+  ]}
+];
+
+const LEVELS=["Stark","Tragfähig","Schwach","Kritisch"];
+const SCALES={
+ A1:{name:"Ausbildung & Werdegang",a:["Passende Ausbildung, mehrjährige Branchenerfahrung, stringenter Werdegang","Passende Grundausbildung, Branchenbezug teilweise vorhanden","Branchenfremd oder lückenhaft, Ausgleich nur angedacht","Keine passende Qualifikation, Werdegang nicht nachvollziehbar"]},
+ A2:{name:"Führungserfahrung",a:["Hat Teams vergleichbarer Größe disziplinarisch geführt, konkreter Plan für den Übergang","Führungserfahrung in kleinerem Rahmen, Plan für die Belegschaft vorhanden","Nur fachliche Führung, Schlüsselpersonen ungeklärt","Keine Führungserfahrung, kein Plan für die Belegschaft"]},
+ A3:{name:"Technische Expertise",a:["Beherrscht die Kernleistung selbst, Qualifikation vorhanden, Übergabe vertraglich geregelt","Kann die Kernleistung beurteilen, Know-how im Team gesichert","Abhängig vom Altinhaber oder Einzelnen, Übergabe nur mündlich","Pflichtqualifikation fehlt oder Know-how geht mit dem Altinhaber"]},
+ A4:{name:"Kaufmännische Expertise",a:["Erklärt Planung und Annahmen sicher, Liquiditätsplanung und Controlling organisiert","Versteht die Zahlen, Planung mit Berater erstellt und nachvollzogen","Kann die Planung nur teilweise erklären, Annahmen ambitioniert","Versteht die eigene Planung nicht, Zahlen nicht plausibel"]},
+ A5:{name:"Mindset & Tragfähigkeit",a:["Kennt die Summen, denkt Risiken durch, angemessenes Eigenkapital aus eigenen Mitteln","Realistisches Bild, Eigenkapital knapp oder teils fremdfinanziert","Unterschätzt Risiken, Entnahmebedarf hoch im Verhältnis zum Ergebnis","Kein Gefühl für die Größenordnung, kein eigenes Kapital"]},
+ B1:{name:"Asset- oder Share-Deal",a:["Struktur klar, Vertragsentwurf liegt vor, Due Diligence ohne wesentliche Befunde","Struktur klar, Prüfung teilweise erfolgt, Restpunkte benennbar","Struktur noch offen oder Altlasten nur oberflächlich geprüft","Kein Vertragsentwurf, Altlasten ungeprüft, Kreditnehmer unklar"]},
+ B2:{name:"Cash free / Debt free",a:["Kaufpreismechanik sauber definiert, Ablösung der Altschulden geregelt","Mechanik vereinbart, einzelne Definitionen noch offen","Begriffe unklar, Working Capital nicht geregelt","Mechanik ungeregelt, Liquiditätsabzug vor Closing möglich"]},
+ B3:{name:"Bilanzrelationen",a:["Solide Eigenkapitalquote auch nach Closing, Kapitaldienst fließt gesichert","Eigenkapital nach Closing spürbar geringer, aber positiv, Verschuldung vertretbar","Dünne Eigenkapitaldecke, Ausschüttungen an die Holding nicht abgesichert","Eigenkapital nach Closing negativ oder Kapitaldienst strukturell nicht darstellbar"]},
+ B4:{name:"Kaufpreisverwendung",a:["Kaufpreis überwiegend durch Substanz gedeckt, Bewertung nachvollziehbar","Goodwill-Anteil spürbar, aber breite Kundenbasis und geregelte Übergabe","Hoher Goodwill-Anteil, Kundenbeziehungen hängen am Altinhaber","Kaufpreis kaum durch Substanz oder Ertrag gedeckt, Verkäufer trägt kein Risiko"]},
+ C1:{name:"Ertragskraft & Bereinigung",a:["Stabile Ergebnisse, Bereinigung gering und nachvollziehbar","Leichte Schwankungen, Bereinigung erklärbar","Volatil oder stark bereinigungsbedürftig, bereinigtes Ergebnis knapp","Nach Bereinigung kaum Ergebnis, Trend negativ"]},
+ C2:{name:"Abhängigkeiten",a:["Breite Kundenbasis, Beziehungen im Team verankert","Einzelne größere Kunden, Übergabe an den Käufer geplant","Hohe Konzentration oder Kunden hängen am Altinhaber","Unternehmen hängt an wenigen Kunden oder am Altinhaber, Übergang ungesichert"]},
+ C3:{name:"Markt & Investitionsbedarf",a:["Stabiler Markt, Anlagen aktuell, Belegschaft gut gemischt","Moderater Investitionsbedarf, in der Planung enthalten","Erheblicher Investitionsstau oder Marktdruck, kaum eingeplant","Geschäftsmodell absehbar unter Druck, Investitionsbedarf nicht finanzierbar"]},
+ D1:{name:"Mittelbedarf & Eigenkapital",a:["Bedarf vollständig, substanzielles eigenes Kapital, Reserve vorhanden","Bedarf vollständig, Eigenkapital knapp, aber eigenes Geld","Lücken im Bedarf oder Eigenkapital überwiegend fremd","Bedarf unvollständig, kein belastbares Eigenkapital"]},
+ D2:{name:"Risikoteilung",a:["Risiko sinnvoll verteilt: Förderung, Bürgschaft oder Verkäufer beteiligt","Teilweise geteilt, Optionen geprüft","Kaum geteilt, Optionen nicht geprüft","Bank trägt das Risiko allein, Förderung durch falsche Reihenfolge verbaut"]},
+ D3:{name:"Kapitaldienstfähigkeit",a:["Deutliche Überdeckung, auch im Stressfall","Ausreichende Überdeckung, im Stressfall knapp","Knapp gedeckt, im Stressfall Unterdeckung","Kapitaldienst schon im Basisfall nicht gedeckt"]},
+ D4:{name:"Sicherheiten & Absicherung",a:["Blankoanteil gering oder verbürgt, Person abgesichert","Blankoanteil vertretbar, Absicherung der Person vorhanden","Hoher Blankoanteil, Absicherung der Person lückenhaft","Kaum werthaltige Sicherheiten, keine Absicherung"]}
+};
+const CALC={
+ C1:{title:"Rechenhilfe Ergebnisbereinigung · in TEUR p. a.",items:[
+  ["in","ebitda","EBITDA laut Abschluss (bei EÜR: Gewinn vor Steuern + AfA, Ø 3 Jahre)"],["in","bezAlt","+ Bezüge Altinhaber und Angehörige in der GuV"],["in","priv","+ Privat- und nicht betriebsnotwendiger Aufwand"],["in","gf","− Marktüblicher Geschäftsführerlohn inkl. Nebenkosten"],["in","miete","− Mehraufwand Miete/Pacht auf Marktniveau"],["in","einm","− Einmal- und Sondererträge"],["out","adj","= Bereinigtes EBITDA"]],
+  note:"Einzelunternehmen und Personengesellschaften: Bezüge Altinhaber meist 0 (Gewinn wird als Entnahme gebucht und taucht nicht in der GuV auf) – marktüblichen GF-Lohn trotzdem voll abziehen; er ersetzt die Entnahme des Käufers. Bei GmbH & Co. KG und Strukturen mit GF-Vergütung als Personalaufwand: nur die Differenz zum Marktniveau ansetzen, nicht den vollen GF-Lohn (sonst Doppelabzug). Bei EÜR: Gewinn aus dem Steuerbescheid zuzüglich AfA (AfA-Übersicht des Steuerberaters anfordern)."},
+ D3:{title:"Rechenhilfe Kapitaldienst · in TEUR",items:[
+  ["out","adj","Bereinigtes EBITDA aus C1"],["in","steu","− Ertragsteuern p. a."],["in","inv","− Ersatzinvestitionen p. a."],["in","entnahme","− Entnahme über GF-Lohn hinaus (Differenz zu A5)"],["out","cf","= Cashflow für den Kapitaldienst"],
+  ["in","kd","Kapitaldienst p. a. (Zins und Tilgung aller Darlehen inkl. Verkäuferdarlehen)"],["out","dscr","Kapitaldienstdeckung"],["out","stress","Stressfall: EBITDA −20 %"],
+  ["in","kp","Kaufpreis"],["in","fin","Finanzverbindlichkeiten nach Closing (inkl. Verkäuferdarlehen)"],["in","liq","− Liquide Mittel nach Closing"],["out","mult","Kaufpreis / bereinigtes EBITDA"],["out","lev","Nettofinanzverschuldung / bereinigtes EBITDA"]],
+  note:"Finanzverbindlichkeiten = alle verzinslichen Schulden nach Closing (Bankdarlehen, Verkäuferdarlehen, Gesellschafterdarlehen), ohne operative Verbindlichkeiten (Lieferanten). Übersteigt der private Lebenshaltungsbedarf den in C1 abgezogenen marktüblichen GF-Lohn, ist die Differenz als Entnahme hier zusätzlich abzuziehen (Abgleich mit A5). Der Stressfall kürzt EBITDA und Steuern um 20 %, Investitionen und Entnahme bleiben konstant (konservativ). „Kaufpreis / EBITDA“ ist der Equity-Multiplikator; Markttransaktionen werden üblicherweise als EV/EBITDA verglichen (EV = Kaufpreis + übernommene Nettoverschuldung) – diese ist separat als Nettofinanzverschuldung / EBITDA ausgewiesen. Orientierung, keine Hausvorgabe: Kapitaldienstdeckung ab 1,3 komfortabel, 1,1 bis 1,3 knapp, darunter kritisch; Verschuldung bis zum Dreifachen des EBITDA vertretbar, bis zum Vierfachen erhöht, darüber hoch. Hausvorgaben der Bank und Anforderungen von Förderinstituten (KfW, LfA) können abweichen und gehen vor."}
+};
+function calcHTML(code){const c=CALC[code];return `<div class="calc"><h4>${c.title}</h4>${c.items.map(([t,k,l])=>t==="in"?`<div class="crow"><label for="k-${code}-${k}">${l}</label><input type="text" inputmode="decimal" id="k-${code}-${k}" data-k="${k}" placeholder="0"></div>`:`<div class="crow out"><span>${l}</span><span class="cval" data-o="${k}">–</span></div>`).join("")}<p class="calc-note">${c.note}</p></div>`}
+const num=v=>{if(v==null||String(v).trim()==="")return null;const n=parseFloat(String(v).replace(/\s/g,"").replace(/\./g,"").replace(",","."));return isNaN(n)?null:n};
+const fmtN=(x,d=0)=>x.toLocaleString("de-DE",{minimumFractionDigits:d,maximumFractionDigits:d});
+function compute(){const k=state.k,g=x=>num(k[x])||0,o={};
+  o.adj=num(k.ebitda)==null?null:g("ebitda")+g("bezAlt")+g("priv")-g("gf")-g("miete")-g("einm");
+  o.cf=o.adj==null?null:o.adj-g("steu")-g("inv")-g("entnahme");
+  const kd=num(k.kd);
+  o.dscr=o.cf!=null&&kd>0?o.cf/kd:null;
+  o.stress=o.adj!=null&&kd>0?(o.adj*0.8-g("steu")*0.8-g("inv")-g("entnahme"))/kd:null;
+  o.mult=o.adj>0&&num(k.kp)?num(k.kp)/o.adj:null;
+  o.lev=o.adj>0&&num(k.fin)!=null?(num(k.fin)-g("liq"))/o.adj:null;
+  return o}
+const KCLS={dscr:x=>x>=1.3?"k-good":x>=1.1?"k-warn":"k-crit",stress:x=>x>=1.3?"k-good":x>=1.1?"k-warn":"k-crit",lev:x=>x<=3?"k-good":x<=4?"k-warn":"k-crit"};
+function kText(key,v){if(v==null)return"–";return(key==="adj"||key==="cf")?fmtN(v)+" TEUR":fmtN(v,2).replace(/0$/,"")+"×"}
+function renderCalc(){const o=compute();document.querySelectorAll("[data-o]").forEach(el=>{const key=el.dataset.o,v=o[key];el.textContent=kText(key,v);el.className="cval"+(v!=null&&KCLS[key]?" "+KCLS[key](v):"")});renderOverview()}
+function calcLines(code){const o=compute();return code==="C1"?[`Bereinigtes EBITDA: ${kText("adj",o.adj)}`]:[`Cashflow für Kapitaldienst: ${kText("cf",o.cf)}`,`Kapitaldienstdeckung: ${kText("dscr",o.dscr)} · Stressfall: ${kText("stress",o.stress)}`,`Kaufpreis / ber. EBITDA: ${kText("mult",o.mult)} · Nettoverschuldung / ber. EBITDA: ${kText("lev",o.lev)}`]}
+function ratingHTML(f){const s=SCALES[f.code];return `<div class="rate" role="radiogroup" aria-labelledby="rl-${f.code}" data-code="${f.code}" data-r=""><div class="rate-top"><span class="lbl" id="rl-${f.code}">Bewertung ${f.code} · 1 stark – 4 kritisch</span><button type="button" class="rate-clear" data-code="${f.code}">Bewertung entfernen</button></div><div class="opts">${s.a.map((t,i)=>`<label class="opt lv${i+1}" for="r-${f.code}-${i+1}"><input type="radio" name="r-${f.code}" id="r-${f.code}-${i+1}" value="${i+1}" data-code="${f.code}"><span class="num">${i+1}</span><span class="otx"><b>${LEVELS[i]}</b>${t}</span></label>`).join("")}</div><label class="lbl" for="b-${f.code}">Begründung</label><textarea id="b-${f.code}" data-b="${f.code}" placeholder="Kurz: Warum diese Note?"></textarea></div>`}
+const fmt=x=>x.toLocaleString("de-DE",{minimumFractionDigits:1,maximumFractionDigits:1});
+function avg(codes){const v=codes.map(c=>state.r[c]).filter(Boolean);return v.length?v.reduce((a,b)=>a+b,0)/v.length:null}
+function band(x){return x<=1.75?["Tragfähiges Vorhaben","b1"]:x<=2.5?["Tragfähig mit offenen Punkten","b2"]:x<=3.25?["Nur mit Nachbesserung","b3"]:["Kritisch","b4"]}
+const KEY="nachfolge-pruefpfad-v1";
+let state={case:"",q:{}};
+try{const s=JSON.parse(localStorage.getItem(KEY)||"null");if(s&&s.q)state=s}catch(e){}
+state.r=state.r||{};state.b=state.b||{};state.k=state.k||{};
+function save(){try{localStorage.setItem(KEY,JSON.stringify(state))}catch(e){}}
+const qid=(f,i)=>f.code+"-"+(i+1);
+const esc=s=>s.replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+const sw=document.getElementById("switch"), root=document.getElementById("blocks");
+DATA.forEach(b=>{
+  sw.insertAdjacentHTML("beforeend",`<div class="navblk"><a class="nb" href="#${b.id}"><span class="t"><b>${b.roman}</b>${b.short}</span><span class="bar"><i id="bar-${b.id}"></i></span><span class="count" id="cnt-${b.id}"></span></a><ol class="navf">${b.fields.map(f=>`<li><a class="nf" href="#f-${f.code}"><span class="pill sm">${f.code}</span><span class="nn">${SCALES[f.code].name}</span><i class="nr" id="nr-${f.code}"></i></a></li>`).join("")}</ol></div>`);
+  let h=`<section class="block" id="${b.id}"><div class="block-head"><span class="eyebrow">${b.roman} Block ${b.id}</span><h2>${b.title}</h2><p>${b.intro}</p></div>`;
+  b.fields.forEach(f=>{
+    h+=`<article class="field" id="f-${f.code}"><div class="field-head"><span class="pill">${f.code}</span><h3>${f.title}</h3><span class="field-progress" id="fp-${f.code}"></span></div><p class="why">${f.why}</p><ol class="qs">`;
+    f.qs.forEach(([q,hint],i)=>{
+      const id=qid(f,i);
+      h+=`<li class="q" data-id="${id}"><div class="q-row"><input type="checkbox" id="c-${id}"><label for="c-${id}">${q}${hint?`<p class="hint">${hint}</p>`:""}</label></div>
+      <button type="button" class="note-toggle" aria-controls="n-${id}">+ Notiz</button>
+      <textarea id="n-${id}" hidden placeholder="Was hat der Kunde gesagt? Was fehlt noch?"></textarea></li>`;
+    });
+    h+=`</ol><div class="extras"><div class="box docs"><h4>Unterlagen anfordern</h4><ul>${f.docs.map(d=>`<li>${d}</li>`).join("")}</ul></div><div class="box flags"><h4>Genauer hinsehen, wenn</h4><ul>${f.flags.map(d=>`<li>${d}</li>`).join("")}</ul></div></div>${f.calc?calcHTML(f.code):""}${ratingHTML(f)}</article>`;
+  });
+  root.insertAdjacentHTML("beforeend",h+"</section>");
+});
+
+sw.insertAdjacentHTML("beforeend",`<div class="navblk"><a class="nb" href="#gesamt"><span class="t"><b>V.</b>Gesamtbild</span><span class="navavg" id="nav-avg"></span><span class="bar"><i id="bar-G"></i></span><span class="count" id="cnt-G"></span></a></div>`);
+const ALL=DATA.flatMap(b=>b.fields.map(f=>f.code));
+function renderOverview(){
+  const rated=ALL.filter(c=>state.r[c]),n=rated.length,o=avg(ALL);
+  ALL.forEach(c=>{const el=document.getElementById("nr-"+c),r=state.r[c];el.textContent=r||"";el.className="nr"+(r?" lv"+r:"")});
+  document.getElementById("nav-avg").textContent=n?"Ø "+fmt(o):"";
+  document.getElementById("bar-G").style.width=(n/ALL.length*100)+"%";
+  document.getElementById("cnt-G").textContent=`${n} von ${ALL.length} bewertet`;
+  const V=document.getElementById("verdict"),H=document.getElementById("hints");
+  if(!n){V.innerHTML=`<p class="v-empty">Noch keine Bewertung. Bewerte die Prüffelder in den Blöcken I bis IV, dann erscheinen hier Gesamtnote und Profil.</p>`}
+  else{const [lab,cls]=band(o);
+    V.innerHTML=`<div class="v-main"><span class="v-num">Ø ${fmt(o)}</span><span class="v-band ${cls}">${lab}</span></div>
+    <div class="v-meta">${n} von ${ALL.length} Feldern bewertet${n<ALL.length?" · vorläufig":""}</div>
+    ${kpiHTML()}<div class="v-blocks">${DATA.map(b=>{const a=avg(b.fields.map(f=>f.code));return `<span><b>${b.roman} ${b.short}</b> Ø ${a?fmt(a):"–"}</span>`}).join("")}</div>`}
+  const hs=[],fours=rated.filter(c=>state.r[c]===4);
+  if(fours.length)hs.push(["crit",`${fours.join(", ")} ${fours.length>1?"sind":"ist"} mit 4 bewertet. Der Durchschnitt glättet das. Vor einer Empfehlung klären, ob das Vorhaben daran scheitert.`]);
+  const R_=state.r,ko=compute();
+  if(R_.D3>=3)hs.push(["crit","Die Kapitaldienstfähigkeit (D3) ist schwach. Eine gute Durchschnittsnote ändert daran nichts, D3 entscheidet die Einordnung mit."]);
+  if(ko.dscr!=null&&ko.dscr<1.1&&!(R_.D3>=3))hs.push(["warn",`Die Rechenhilfe in D3 ergibt eine Kapitaldienstdeckung von ${kText("dscr",ko.dscr)}. Passt die Bewertung von D3 dazu?`]);
+  if(R_.C1>=3&&R_.B4>=3)hs.push(["warn","Der Kaufpreis besteht überwiegend aus Goodwill, das bereinigte Ergebnis trägt ihn aber kaum. Kaufpreis oder Verkäuferbeteiligung nachverhandeln."]);
+  if(R_.B4>=3&&R_.D2>=3)hs.push(["warn","Hoher Goodwill-Anteil, aber die Bank trägt das Risiko weitgehend allein. Verkäuferdarlehen oder Bürgschaftsbank ansprechen."]);
+  const aA=avg(DATA[0].fields.map(f=>f.code));
+  if(state.r.B4>=3&&aA&&aA>2.5)hs.push(["warn","Hoher Goodwill-Anteil trifft auf eine schwache Bewertung des Käufers. Gerade dann hängt der Wert an der Person."]);
+  if(n&&n<ALL.length)hs.push(["",`Noch nicht bewertet: ${ALL.filter(c=>!state.r[c]).join(", ")}.`]);
+  H.innerHTML=hs.map(([c,t])=>`<li class="${c}">${t}</li>`).join("");H.hidden=!hs.length;
+  let rows="",i=0,lines=[];
+  DATA.forEach(b=>{rows+=`<div class="pr pr-g"><span><b>${b.roman}</b>${b.short}</span></div>`;i++;let seg=[];
+    b.fields.forEach(f=>{const r=state.r[f.code];
+      rows+=`<div class="pr"><span class="pr-l"><span class="pill sm">${f.code}</span><span class="nm">${SCALES[f.code].name}</span></span>${[1,2,3,4].map(k=>`<span class="pr-c">${r===k?`<i class="dot lv${k}" title="${LEVELS[k-1]}"></i>`:""}</span>`).join("")}<span class="pr-v">${r||"–"}</span></div>`;
+      if(r)seg.push(`${r-0.5},${i+0.5}`);else{if(seg.length>1)lines.push(seg);seg=[]}i++});
+    if(seg.length>1)lines.push(seg)});
+  document.getElementById("profile").innerHTML=`<div class="prof-head"><span></span>${LEVELS.map((l,k)=>`<span>${k+1}<small>${l}</small></span>`).join("")}<span>Note</span></div><div class="prof-body">${rows}<svg class="prof-line" viewBox="0 0 4 ${i}" preserveAspectRatio="none" aria-hidden="true">${lines.map(p=>`<polyline points="${p.join(" ")}"/>`).join("")}</svg></div>`;
+}
+function kpiHTML(){const o=compute(),parts=[];if(o.dscr!=null)parts.push(`Kapitaldienstdeckung ${kText("dscr",o.dscr)}`);if(o.stress!=null)parts.push(`Stressfall ${kText("stress",o.stress)}`);if(o.mult!=null)parts.push(`Kaufpreis ${kText("mult",o.mult)} EBITDA`);if(o.lev!=null)parts.push(`Verschuldung ${kText("lev",o.lev)} EBITDA`);return parts.length?`<div class="v-kpis">${parts.map(x=>`<span>${x}</span>`).join("")}</div>`:""}
+function setRating(code,n){state.r[code]=n;save();document.querySelector(`.rate[data-code="${code}"]`).dataset.r=n;renderOverview()}
+function summaryLines(){const o=avg(ALL),n=ALL.filter(c=>state.r[c]).length;if(!n)return["Gesamtbild: noch keine Bewertung"];
+  return[`Gesamtbild: Ø ${fmt(o)} – ${band(o)[0]} (${n} von ${ALL.length} Feldern bewertet)`,...DATA.map(b=>{const a=avg(b.fields.map(f=>f.code));return `  ${b.roman} ${b.short}: Ø ${a?fmt(a):"–"}`}),"  Profil: "+ALL.map(c=>`${c}=${state.r[c]||"–"}`).join("  "),"  "+calcLines("D3").join(" · ")]}
+const caseEl=document.getElementById("caseName");
+function hydrate(){
+  caseEl.value=state.case||"";
+  document.querySelectorAll(".q").forEach(li=>{
+    const id=li.dataset.id, s=state.q[id]||{}, cb=li.querySelector("input"), ta=li.querySelector("textarea"), bt=li.querySelector(".note-toggle");
+    cb.checked=!!s.d; li.classList.toggle("done",!!s.d);
+    ta.value=s.n||""; ta.hidden=!s.n; bt.textContent=s.n?"Notiz ausblenden":"+ Notiz";
+  });
+  document.querySelectorAll('.rate input[type=radio]').forEach(r=>{r.checked=state.r[r.dataset.code]===+r.value});
+  document.querySelectorAll('textarea[data-b]').forEach(t=>{t.value=state.b[t.dataset.b]||""});
+  document.querySelectorAll('.rate').forEach(fs=>{fs.dataset.r=state.r[fs.dataset.code]||""});
+  document.querySelectorAll('input[data-k]').forEach(i=>{i.value=state.k[i.dataset.k]||""});
+  progress();renderCalc();
+}
+function progress(){
+  DATA.forEach(b=>{
+    let t=0,d=0;b.fields.forEach(f=>{let fd=0;f.qs.forEach((_,i)=>{t++;if(state.q[qid(f,i)]?.d){d++;fd++}});document.getElementById("fp-"+f.code).textContent=`${fd}/${f.qs.length}`});
+    document.getElementById("bar-"+b.id).style.width=(d/t*100)+"%";
+    document.getElementById("cnt-"+b.id).textContent=`${d} von ${t} geklärt`;
+  });
+}
+caseEl.addEventListener("input",()=>{state.case=caseEl.value;save()});
+root.addEventListener("change",e=>{
+  if(e.target.type==="radio"){setRating(e.target.dataset.code,+e.target.value);return}
+  if(e.target.type!=="checkbox")return;
+  const li=e.target.closest(".q"),id=li.dataset.id;
+  state.q[id]={...(state.q[id]||{}),d:e.target.checked};
+  li.classList.toggle("done",e.target.checked);save();progress();
+});
+root.addEventListener("input",e=>{
+  if(e.target.dataset.k){state.k[e.target.dataset.k]=e.target.value;save();renderCalc();return}
+  if(e.target.tagName!=="TEXTAREA")return;
+  if(e.target.dataset.b){state.b[e.target.dataset.b]=e.target.value;save();return}
+  const id=e.target.closest(".q").dataset.id;
+  state.q[id]={...(state.q[id]||{}),n:e.target.value};save();
+});
+root.addEventListener("click",e=>{
+  const cr=e.target.closest(".rate-clear");if(cr){delete state.r[cr.dataset.code];save();hydrate();return}
+  const bt=e.target.closest(".note-toggle");if(!bt)return;
+  const ta=bt.parentElement.querySelector("textarea");
+  ta.hidden=!ta.hidden;bt.textContent=ta.hidden?"+ Notiz":"Notiz ausblenden";
+  if(!ta.hidden)ta.focus();
+});
+
+const out=document.getElementById("exportText"),copyBtn=document.getElementById("copy"),copied=document.getElementById("copied");
+document.getElementById("build").addEventListener("click",()=>{
+  const L=[];L.push("Prüfpfad Unternehmensnachfolge"+(state.case?" – "+state.case:""));L.push("Stand: "+new Date().toLocaleDateString("de-DE"));L.push("");L.push(...summaryLines());
+  DATA.forEach(b=>{
+    L.push("");L.push(`BLOCK ${b.id}: ${b.title.replace(/<[^>]+>/g,"").toUpperCase()}`);
+    b.fields.forEach(f=>{
+      const notes=[],open=[];
+      f.qs.forEach(([q],i)=>{const s=state.q[qid(f,i)]||{};if(s.n&&s.n.trim())notes.push(`- ${q}\n  → ${s.n.trim().replace(/\n/g,"\n    ")}`);if(!s.d)open.push(`- ${q}`)});
+      L.push("");L.push(`${f.code} ${f.title}`);{const r=state.r[f.code];L.push("Bewertung: "+(r?`${r} (${LEVELS[r-1]})`:"nicht bewertet"));if(state.b[f.code]&&state.b[f.code].trim())L.push("Begründung: "+state.b[f.code].trim());if(f.calc)L.push(...calcLines(f.code))}
+      if(notes.length){L.push("Notizen:");L.push(...notes)}
+      if(open.length){L.push("Noch offen:");L.push(...open)}else L.push("Alle Fragen geklärt.");
+    });
+  });
+  out.value=L.join("\n");out.hidden=false;copyBtn.hidden=false;copied.textContent="";
+});
+copyBtn.addEventListener("click",()=>{
+  const fallback=()=>{out.focus();out.select();copied.textContent="Text markiert, bitte manuell kopieren."};
+  try{navigator.clipboard.writeText(out.value).then(()=>{copied.textContent="Kopiert."},fallback)}catch(e){fallback()}
+});
+const cb=document.getElementById("confirmBox");
+document.getElementById("reset").addEventListener("click",()=>{cb.hidden=false});
+document.getElementById("resetNo").addEventListener("click",()=>{cb.hidden=true});
+document.getElementById("resetYes").addEventListener("click",()=>{
+  state={case:"",q:{},r:{},b:{},k:{}};save();hydrate();cb.hidden=true;out.hidden=true;copyBtn.hidden=true;out.value="";
+});
+hydrate();
+const spyEls=[...document.querySelectorAll(".field")];
+function spy(){let cur=null;for(const el of spyEls){if(el.getBoundingClientRect().top<200)cur=el.id;else break}document.querySelectorAll(".nf").forEach(a=>a.classList.toggle("on",a.getAttribute("href")==="#"+cur))}
+addEventListener("scroll",()=>requestAnimationFrame(spy),{passive:true});spy();
+</script>
+
+</body></html>

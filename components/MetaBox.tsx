@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { getModuleById, type Module } from "@/lib/modules";
+import { getModuleById, type Module, type Werkzeug } from "@/lib/modules";
 
 type Props = {
   module: Module;
@@ -9,6 +9,7 @@ type Props = {
   teamleiterLeitfadenUrl?: string | null;
   arbeitsmaterialUrl?: string | null;
   exkursUrl?: string | null;
+  werkzeuge?: Werkzeug[];
   presentationUrl?: string | null;
   hasTheorie?: boolean;
   isTrainerOrAdmin?: boolean;
@@ -31,7 +32,7 @@ function Chip({ moduleId }: { moduleId: string }) {
   );
 }
 
-export function MetaBox({ module, pdfUrl, trainerPdfUrl, beobachtungsbogenUrl, teamleiterLeitfadenUrl, arbeitsmaterialUrl, exkursUrl, presentationUrl, hasTheorie, isTrainerOrAdmin, className }: Props) {
+export function MetaBox({ module, pdfUrl, trainerPdfUrl, beobachtungsbogenUrl, teamleiterLeitfadenUrl, arbeitsmaterialUrl, exkursUrl, werkzeuge = [], presentationUrl, hasTheorie, isTrainerOrAdmin, className }: Props) {
   return (
     <aside className={`space-y-8 ${className ?? ""}`}>
       {/* Auf dieser Seite – nur Desktop (Mobile hat eigene Leiste oben) */}
@@ -117,7 +118,7 @@ export function MetaBox({ module, pdfUrl, trainerPdfUrl, beobachtungsbogenUrl, t
           {module.kompetenzfeld} →
         </Link>
       </div>
-      {(pdfUrl || arbeitsmaterialUrl || exkursUrl || beobachtungsbogenUrl || teamleiterLeitfadenUrl || (isTrainerOrAdmin && (trainerPdfUrl || presentationUrl))) && (
+      {(pdfUrl || arbeitsmaterialUrl || exkursUrl || werkzeuge.length > 0 || beobachtungsbogenUrl || teamleiterLeitfadenUrl || (isTrainerOrAdmin && (trainerPdfUrl || presentationUrl))) && (
         <div>
           <div className="font-mono text-[10px] uppercase tracking-[0.08em] text-ink-3 pb-3 border-b border-ink mb-4">
             Downloads
@@ -156,6 +157,18 @@ export function MetaBox({ module, pdfUrl, trainerPdfUrl, beobachtungsbogenUrl, t
                 <span>↓</span>
               </a>
             )}
+            {werkzeuge.map((w) => (
+              <a
+                key={w.slug}
+                href={`/werkzeuge/${w.slug}`}
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center justify-between gap-2 border border-line text-ink-2 px-4 py-3 font-mono text-[11px] uppercase tracking-[0.08em] hover:border-primary hover:text-primary transition"
+              >
+                <span>Werkzeug: {w.label}</span>
+                <span>↗</span>
+              </a>
+            ))}
             {beobachtungsbogenUrl && (
               <a
                 href={beobachtungsbogenUrl}

@@ -243,6 +243,24 @@ export function getFinanzmodellierungExkursUrl(moduleId: string): string | null 
   return "/api/downloads/exkurs/finanzmodellierung.pdf";
 }
 
+// Interaktive FKB-Campus-Werkzeuge je Modul (eigenständige HTML-Tools, Daten nur im
+// Browser). Ausgeliefert über die auth-geschützte Route /werkzeuge/<slug> (teilnehmer+).
+// Ablage: protected-downloads/werkzeug/<slug>.html. Neues Werkzeug = eine Zeile + Datei.
+export interface Werkzeug {
+  slug: string;
+  label: string;
+}
+export const MODUL_WERKZEUGE: Record<string, Werkzeug[]> = {
+  M24: [{ slug: "pruefpfad-unternehmensnachfolge", label: "Prüfpfad Unternehmensnachfolge" }],
+};
+
+export function getWerkzeuge(moduleId: string): Werkzeug[] {
+  const list = MODUL_WERKZEUGE[moduleId.toUpperCase()] ?? [];
+  return list.filter((w) =>
+    fs.existsSync(path.join(process.cwd(), "protected-downloads", "werkzeug", `${w.slug}.html`)),
+  );
+}
+
 export function getTeamleiterLeitfadenPdfUrl(moduleId: string): string | null {
   const normalizedId = moduleId.toUpperCase();
   const filename = `${normalizedId}.pdf`;
