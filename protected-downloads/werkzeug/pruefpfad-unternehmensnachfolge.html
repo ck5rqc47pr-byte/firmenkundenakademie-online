@@ -231,21 +231,6 @@ ul.hints li.warn{background:var(--accent-soft);border-left-color:var(--accent)}
 .embed .site{display:none}
 .embed .wrap{padding-block:4px 40px}
 html.embed,.embed body{background:transparent}
-/* PDF-/Druckansicht: nur die Zusammenfassung drucken */
-#printView{display:none}
-@media print{
-  .site,.wrap{display:none!important}
-  #printView{display:block!important;font-family:var(--sans);color:#000;max-width:none;margin:0;padding:0}
-  #printView h1{font-family:var(--serif);font-size:20pt;margin:0 0 2pt}
-  #printView h2{font-family:var(--serif);font-size:13pt;margin:15pt 0 4pt;border-bottom:1px solid #999;padding-bottom:2pt}
-  #printView h3{font-size:11pt;margin:9pt 0 1pt}
-  #printView .meta{font-size:9pt;color:#555;margin-bottom:8pt}
-  #printView .pv-field{margin:5pt 0;break-inside:avoid}
-  #printView .pv-note{white-space:pre-wrap;color:#333;font-size:9.5pt;margin-left:8pt}
-  #printView .pv-open{color:#555;font-size:9.5pt;margin-left:8pt}
-  #printView>div{font-size:10pt}
-  @page{margin:18mm 16mm}
-}
 </style>
 <div class="site"><div class="nav">
   <span class="brand"><svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><rect x="1" y="1" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M6 15 L11 6 L16 15" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="11" cy="6" r="1.6" fill="oklch(0.78 0.05 75)"/></svg>FKB Campus</span>
@@ -298,7 +283,6 @@ html.embed,.embed body{background:transparent}
 
   <footer><span>Version 4 · Käufer, Vorhaben, Unternehmen, Finanzierung</span><span>Orientierungswerte sind Vorschläge. Hausvorgaben und Kreditrichtlinie gehen vor.</span></footer>
 </div>
-<div id="printView" aria-hidden="true"></div>
 
 <script>
 const DATA=[
@@ -650,7 +634,7 @@ root.addEventListener("click",e=>{
   if(!ta.hidden)ta.focus();
 });
 
-const out=document.getElementById("exportText"),copyBtn=document.getElementById("copy"),copied=document.getElementById("copied"),pdfBtn=document.getElementById("pdf"),printView=document.getElementById("printView");
+const out=document.getElementById("exportText"),copyBtn=document.getElementById("copy"),copied=document.getElementById("copied"),pdfBtn=document.getElementById("pdf");
 function assembleText(){
   const L=[];L.push("Prüfpfad Unternehmensnachfolge"+(state.case?" – "+state.case:""));L.push("Stand: "+new Date().toLocaleDateString("de-DE"));L.push("");L.push(...summaryLines());
   DATA.forEach(b=>{
@@ -692,7 +676,22 @@ copyBtn.addEventListener("click",()=>{
   const fallback=()=>{out.focus();out.select();copied.textContent="Text markiert, bitte manuell kopieren."};
   try{navigator.clipboard.writeText(out.value).then(()=>{copied.textContent="Kopiert."},fallback)}catch(e){fallback()}
 });
-pdfBtn.addEventListener("click",()=>{printView.innerHTML=assembleHTML();window.print()});
+pdfBtn.addEventListener("click",()=>{
+  let body;try{body=assembleHTML()}catch(e){alert("Zusammenfassung konnte nicht erstellt werden.");return}
+  const title="Prüfpfad Unternehmensnachfolge"+(state.case?" – "+state.case:"");
+  const doc='<!doctype html><html lang="de"><head><meta charset="utf-8"><title>'+esc(title)+'</title><style>'+
+    '@page{margin:18mm 16mm}'+
+    'body{font:11pt/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;color:#111;margin:0}'+
+    'h1{font-size:19pt;margin:0 0 2pt}h2{font-size:13pt;margin:16pt 0 4pt;border-bottom:1px solid #999;padding-bottom:2pt}'+
+    'h3{font-size:11pt;margin:9pt 0 1pt}.meta{font-size:9pt;color:#555;margin-bottom:10pt}'+
+    '.pv-field{margin:5pt 0;break-inside:avoid}.pv-note{white-space:pre-wrap;color:#333;font-size:9.5pt;margin-left:8pt}'+
+    '.pv-open{color:#555;font-size:9.5pt;margin-left:8pt}body>div{font-size:10pt}'+
+    '</style></head><body>'+body+'</body></html>';
+  const win=window.open("","_blank");
+  if(!win){alert("Bitte Pop-ups für diese Seite erlauben, damit das PDF erstellt werden kann.");return}
+  win.document.open();win.document.write(doc);win.document.close();win.focus();
+  setTimeout(()=>{try{win.print()}catch(e){}},350);
+});
 const cb=document.getElementById("confirmBox");
 document.getElementById("reset").addEventListener("click",()=>{cb.hidden=false});
 document.getElementById("resetNo").addEventListener("click",()=>{cb.hidden=true});
