@@ -270,6 +270,20 @@ export function getWerkzeugBySlug(slug: string): (Werkzeug & { moduleId: string 
   return null;
 }
 
+// Alle verfügbaren Werkzeuge (für die Übersichtsseite /werkzeuge), mit Modulbezug.
+export function getAllWerkzeuge(): (Werkzeug & { moduleId: string; moduleTitle: string })[] {
+  const out: (Werkzeug & { moduleId: string; moduleTitle: string })[] = [];
+  for (const [moduleId, list] of Object.entries(MODUL_WERKZEUGE)) {
+    const mod = getModuleById(moduleId);
+    for (const w of list) {
+      if (fs.existsSync(path.join(process.cwd(), "protected-downloads", "werkzeug", `${w.slug}.html`))) {
+        out.push({ ...w, moduleId, moduleTitle: mod?.title ?? moduleId });
+      }
+    }
+  }
+  return out;
+}
+
 export function getTeamleiterLeitfadenPdfUrl(moduleId: string): string | null {
   const normalizedId = moduleId.toUpperCase();
   const filename = `${normalizedId}.pdf`;

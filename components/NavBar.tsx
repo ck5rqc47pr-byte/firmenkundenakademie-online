@@ -17,6 +17,7 @@ const NAV_PUBLIC = [
 const NAV_AUTH = [
   { href: "/kompass",     label: "Kompass" },
   { href: "/prinzipien",  label: "Prinzipien" },
+  { href: "/werkzeuge",   label: "Werkzeuge" },
 ];
 
 // Im Nutzer-Menü (rechts, am Namen) für eingeloggte Nutzer.

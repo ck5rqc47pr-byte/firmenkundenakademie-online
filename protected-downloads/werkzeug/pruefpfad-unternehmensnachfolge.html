@@ -226,6 +226,27 @@ ul.hints li.warn{background:var(--accent-soft);border-left-color:var(--accent)}
 @media (prefers-reduced-motion:reduce){.bar i{transition:none}html{scroll-behavior:auto}}
 </style>
 
+<style>
+/* Embed-Modus (eingebettet im FKB-Campus-Layout): eigene Kopfleiste aus, nahtlos */
+.embed .site{display:none}
+.embed .wrap{padding-block:4px 40px}
+html.embed,.embed body{background:transparent}
+/* PDF-/Druckansicht: nur die Zusammenfassung drucken */
+#printView{display:none}
+@media print{
+  .site,.wrap{display:none!important}
+  #printView{display:block!important;font-family:var(--sans);color:#000;max-width:none;margin:0;padding:0}
+  #printView h1{font-family:var(--serif);font-size:20pt;margin:0 0 2pt}
+  #printView h2{font-family:var(--serif);font-size:13pt;margin:15pt 0 4pt;border-bottom:1px solid #999;padding-bottom:2pt}
+  #printView h3{font-size:11pt;margin:9pt 0 1pt}
+  #printView .meta{font-size:9pt;color:#555;margin-bottom:8pt}
+  #printView .pv-field{margin:5pt 0;break-inside:avoid}
+  #printView .pv-note{white-space:pre-wrap;color:#333;font-size:9.5pt;margin-left:8pt}
+  #printView .pv-open{color:#555;font-size:9.5pt;margin-left:8pt}
+  #printView>div{font-size:10pt}
+  @page{margin:18mm 16mm}
+}
+</style>
 <div class="site"><div class="nav">
   <span class="brand"><svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><rect x="1" y="1" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M6 15 L11 6 L16 15" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="11" cy="6" r="1.6" fill="oklch(0.78 0.05 75)"/></svg>FKB Campus</span>
   <span class="nav-tag">Werkzeug · Kredit</span>
@@ -262,6 +283,7 @@ ul.hints li.warn{background:var(--accent-soft);border-left-color:var(--accent)}
     <div class="btns">
       <button class="b primary" id="build" type="button">Zusammenfassung erstellen →</button>
       <button class="b ghost" id="copy" type="button" hidden>Text kopieren</button>
+      <button class="b ghost" id="pdf" type="button" hidden>Als PDF speichern</button>
       <span class="status" id="copied" role="status"></span>
     </div>
     <textarea id="exportText" hidden readonly aria-label="Zusammenfassung"></textarea>
@@ -276,6 +298,7 @@ ul.hints li.warn{background:var(--accent-soft);border-left-color:var(--accent)}
 
   <footer><span>Version 4 · Käufer, Vorhaben, Unternehmen, Finanzierung</span><span>Orientierungswerte sind Vorschläge. Hausvorgaben und Kreditrichtlinie gehen vor.</span></footer>
 </div>
+<div id="printView" aria-hidden="true"></div>
 
 <script>
 const DATA=[
@@ -627,8 +650,8 @@ root.addEventListener("click",e=>{
   if(!ta.hidden)ta.focus();
 });
 
-const out=document.getElementById("exportText"),copyBtn=document.getElementById("copy"),copied=document.getElementById("copied");
-document.getElementById("build").addEventListener("click",()=>{
+const out=document.getElementById("exportText"),copyBtn=document.getElementById("copy"),copied=document.getElementById("copied"),pdfBtn=document.getElementById("pdf"),printView=document.getElementById("printView");
+function assembleText(){
   const L=[];L.push("Prüfpfad Unternehmensnachfolge"+(state.case?" – "+state.case:""));L.push("Stand: "+new Date().toLocaleDateString("de-DE"));L.push("");L.push(...summaryLines());
   DATA.forEach(b=>{
     L.push("");L.push(`BLOCK ${b.id}: ${b.title.replace(/<[^>]+>/g,"").toUpperCase()}`);
@@ -640,22 +663,57 @@ document.getElementById("build").addEventListener("click",()=>{
       if(open.length){L.push("Noch offen:");L.push(...open)}else L.push("Alle Fragen geklärt.");
     });
   });
-  out.value=L.join("\n");out.hidden=false;copyBtn.hidden=false;copied.textContent="";
+  return L;
+}
+function assembleHTML(){
+  let h=`<h1>Prüfpfad Unternehmensnachfolge</h1><div class="meta">${state.case?esc(state.case)+" · ":""}Stand: ${new Date().toLocaleDateString("de-DE")}</div>`;
+  h+=`<h2>Gesamtbild</h2>`+summaryLines().map(l=>`<div>${esc(l)}</div>`).join("");
+  DATA.forEach(b=>{
+    h+=`<h2>${b.roman} ${esc(b.short)}</h2>`;
+    b.fields.forEach(f=>{
+      const r=state.r[f.code];
+      h+=`<div class="pv-field"><h3>${f.code} ${esc(f.title)}</h3>`;
+      h+=`<div>Bewertung: ${r?r+" ("+esc(LEVELS[r-1])+")":"nicht bewertet"}</div>`;
+      if(state.b[f.code]&&state.b[f.code].trim())h+=`<div class="pv-note">Begründung: ${esc(state.b[f.code].trim())}</div>`;
+      if(f.calc)h+=calcLines(f.code).map(l=>`<div>${esc(l)}</div>`).join("");
+      const notes=[],open=[];
+      f.qs.forEach(([q],i)=>{const s=state.q[qid(f,i)]||{};if(s.n&&s.n.trim())notes.push(`${esc(q)} → ${esc(s.n.trim())}`);if(!s.d)open.push(esc(q))});
+      if(notes.length)h+=`<div>Notizen:</div>`+notes.map(n=>`<div class="pv-note">– ${n}</div>`).join("");
+      if(open.length)h+=`<div>Noch offen:</div>`+open.map(o=>`<div class="pv-open">– ${o}</div>`).join("");else h+=`<div class="pv-open">Alle Fragen geklärt.</div>`;
+      h+=`</div>`;
+    });
+  });
+  return h;
+}
+document.getElementById("build").addEventListener("click",()=>{
+  out.value=assembleText().join("\n");out.hidden=false;copyBtn.hidden=false;pdfBtn.hidden=false;copied.textContent="";
 });
 copyBtn.addEventListener("click",()=>{
   const fallback=()=>{out.focus();out.select();copied.textContent="Text markiert, bitte manuell kopieren."};
   try{navigator.clipboard.writeText(out.value).then(()=>{copied.textContent="Kopiert."},fallback)}catch(e){fallback()}
 });
+pdfBtn.addEventListener("click",()=>{printView.innerHTML=assembleHTML();window.print()});
 const cb=document.getElementById("confirmBox");
 document.getElementById("reset").addEventListener("click",()=>{cb.hidden=false});
 document.getElementById("resetNo").addEventListener("click",()=>{cb.hidden=true});
 document.getElementById("resetYes").addEventListener("click",()=>{
-  state={case:"",q:{},r:{},b:{},k:{}};save();hydrate();cb.hidden=true;out.hidden=true;copyBtn.hidden=true;out.value="";
+  state={case:"",q:{},r:{},b:{},k:{}};save();hydrate();cb.hidden=true;out.hidden=true;copyBtn.hidden=true;pdfBtn.hidden=true;out.value="";
 });
 hydrate();
 const spyEls=[...document.querySelectorAll(".field")];
 function spy(){let cur=null;for(const el of spyEls){if(el.getBoundingClientRect().top<200)cur=el.id;else break}document.querySelectorAll(".nf").forEach(a=>a.classList.toggle("on",a.getAttribute("href")==="#"+cur))}
 addEventListener("scroll",()=>requestAnimationFrame(spy),{passive:true});spy();
+
+/* Embed-Modus: im FKB-Campus-Layout eingebettet (iframe). Eigene Kopfleiste ausblenden
+   und laufend die Inhaltshöhe an das umgebende Layout melden (nahtlose Auto-Höhe). */
+(function(){
+  const embedded = new URLSearchParams(location.search).get("embed")==="1" || window.self!==window.top;
+  if(!embedded) return;
+  document.documentElement.classList.add("embed");
+  const post=()=>{try{parent.postMessage({type:"fkb-werkzeug-height",height:Math.ceil(document.documentElement.scrollHeight)},"*")}catch(e){}};
+  if(window.ResizeObserver) new ResizeObserver(post).observe(document.body);
+  addEventListener("load",post); addEventListener("resize",post); setTimeout(post,200); setTimeout(post,800);
+})();
 </script>
 
 </body></html>
