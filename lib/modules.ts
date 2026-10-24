@@ -261,6 +261,15 @@ export function getWerkzeuge(moduleId: string): Werkzeug[] {
   );
 }
 
+// Umgekehrter Lookup für die Werkzeug-Seite /werkzeuge/<slug>: Label + zugehöriges Modul.
+export function getWerkzeugBySlug(slug: string): (Werkzeug & { moduleId: string }) | null {
+  for (const [moduleId, list] of Object.entries(MODUL_WERKZEUGE)) {
+    const w = list.find((x) => x.slug === slug);
+    if (w) return { ...w, moduleId };
+  }
+  return null;
+}
+
 export function getTeamleiterLeitfadenPdfUrl(moduleId: string): string | null {
   const normalizedId = moduleId.toUpperCase();
   const filename = `${normalizedId}.pdf`;
