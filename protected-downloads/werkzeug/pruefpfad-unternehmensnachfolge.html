@@ -649,24 +649,55 @@ function assembleText(){
   });
   return L;
 }
+const PV_LV=["#2b3f5f","#6f86a8","#c9b48f","#a8533f"];
+function pvRate(r){return r?`<span class="pill"><i style="background:${PV_LV[r-1]}"></i>${r} · ${esc(LEVELS[r-1])}</span>`:`<span class="pill none">nicht bewertet</span>`}
+function pvScale(x){if(!x)return `<span class="scale empty"></span>`;const p=((x-1)/3)*100;return `<span class="scale"><i style="left:${p}%"></i></span>`}
+function pvProfile(){
+  const W=600,RH=17,HD=30,cx=k=>352+(k-1)*62,rows=[];
+  DATA.forEach(b=>{rows.push({g:b});b.fields.forEach(f=>rows.push({f}))});
+  const H=HD+rows.length*RH+4;
+  let s=`<svg class="profsvg" viewBox="0 0 ${W} ${H}" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter Tight,system-ui,sans-serif">`;
+  [1,2,3,4].forEach(k=>{s+=`<rect x="${cx(k)-31}" y="${HD-6}" width="62" height="${H-HD+6}" fill="${PV_LV[k-1]}" fill-opacity="${k%2?0.05:0.09}"/>`;
+    s+=`<text x="${cx(k)}" y="11" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" fill="#7a8394">${k}</text><text x="${cx(k)}" y="22" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7.5" letter-spacing=".6" fill="#7a8394">${LEVELS[k-1].toUpperCase()}</text>`});
+  s+=`<text x="${W}" y="22" text-anchor="end" font-family="JetBrains Mono,monospace" font-size="7.5" letter-spacing=".6" fill="#7a8394">NOTE</text>`;
+  let seg=[],lines=[],dots="";
+  rows.forEach((row,i)=>{const y=HD+i*RH,m=y+RH/2+3.5;
+    if(row.g){if(seg.length>1)lines.push(seg);seg=[];
+      s+=`<line x1="0" x2="${W}" y1="${y}" y2="${y}" stroke="#1f2a3d" stroke-width=".6"/><text x="0" y="${m}" font-family="'Source Serif 4',Georgia,serif" font-size="11.5" fill="#1f2a3d"><tspan font-family="JetBrains Mono,monospace" font-size="8.5" fill="#7a8394">${row.g.roman}  </tspan>${esc(row.g.short)}</text>`;
+      const a=avg(row.g.fields.map(f=>f.code));if(a)s+=`<text x="${W}" y="${m}" text-anchor="end" font-family="JetBrains Mono,monospace" font-size="9" fill="#7a8394">Ø ${fmt(a)}</text>`;return}
+    const f=row.f,r=state.r[f.code];
+    s+=`<line x1="18" x2="${W}" y1="${y}" y2="${y}" stroke="#e6e9ee" stroke-width=".5"/><text x="18" y="${m}" font-family="JetBrains Mono,monospace" font-size="8.5" fill="#7a8394">${f.code}</text><text x="44" y="${m}" font-size="10" fill="#1f2a3d">${esc(SCALES[f.code].name)}</text><text x="${W}" y="${m}" text-anchor="end" font-size="10" font-weight="600" fill="${r?"#1f2a3d":"#b0b6c0"}">${r||"–"}</text>`;
+    if(r){seg.push(`${cx(r)},${y+RH/2}`);dots+=`<circle cx="${cx(r)}" cy="${y+RH/2}" r="4.6" fill="${PV_LV[r-1]}" stroke="#fff" stroke-width="1.2"/>`}else{if(seg.length>1)lines.push(seg);seg=[]}});
+  if(seg.length>1)lines.push(seg);
+  s+=lines.map(p=>`<polyline points="${p.join(" ")}" fill="none" stroke="#7a8394" stroke-width="1.1"/>`).join("")+dots+`</svg>`;
+  return `<section class="profile"><h2>Stärken-Schwächen-Profil</h2>${s}</section>`;
+}
 function assembleHTML(){
-  let h=`<h1>Prüfpfad Unternehmensnachfolge</h1><div class="meta">${state.case?esc(state.case)+" · ":""}Stand: ${new Date().toLocaleDateString("de-DE")}</div>`;
-  h+=`<h2>Gesamtbild</h2>`+summaryLines().map(l=>`<div>${esc(l)}</div>`).join("");
+  const n=ALL.filter(c=>state.r[c]).length,o=avg(ALL),date=new Date().toLocaleDateString("de-DE");
+  let h=`<header class="top"><span class="brand"><svg width="18" height="18" viewBox="0 0 22 22"><rect x="1" y="1" width="20" height="20" fill="none" stroke="#1f2a3d" stroke-width="1.5"/><path d="M6 15 L11 6 L16 15" fill="none" stroke="#1f2a3d" stroke-width="1.5"/><circle cx="11" cy="6" r="1.6" fill="#c9b48f"/></svg>FKB Campus</span><span class="mono">Prüfprotokoll · M24</span></header>`;
+  h+=`<div class="mono eyebrow">Prüfpfad Unternehmensnachfolge</div><h1>${state.case?esc(state.case):"Nachfolgevorhaben"}</h1>`;
+  h+=`<div class="meta"><span>Stand ${date}</span><span>${n} von ${ALL.length} Feldern bewertet</span></div>`;
+  h+=`<section class="summary"><div class="score"><div class="mono">Gesamtbild</div><div class="big">${o?"Ø "+fmt(o):"–"}</div><div class="band">${o?esc(band(o)[0]):"Noch keine Bewertung"}</div></div><table>`;
+  DATA.forEach(b=>{const a=avg(b.fields.map(f=>f.code));h+=`<tr><td class="mono">${b.roman}</td><td>${esc(b.short)}</td><td>${pvScale(a)}</td><td class="num">${a?fmt(a):"–"}</td></tr>`});
+  h+=`</table><div class="legend mono"><span>1 stark</span><span>4 kritisch</span></div></section>`;
+  h+=pvProfile();
   DATA.forEach(b=>{
-    h+=`<h2>${b.roman} ${esc(b.short)}</h2>`;
+    const a=avg(b.fields.map(f=>f.code));
+    h+=`<section class="block"><h2><span class="mono">${b.roman}</span> ${esc(b.short)}<span class="avg mono">${a?"Ø "+fmt(a):""}</span></h2>`;
     b.fields.forEach(f=>{
-      const r=state.r[f.code];
-      h+=`<div class="pv-field"><h3>${f.code} ${esc(f.title)}</h3>`;
-      h+=`<div>Bewertung: ${r?r+" ("+esc(LEVELS[r-1])+")":"nicht bewertet"}</div>`;
-      if(state.b[f.code]&&state.b[f.code].trim())h+=`<div class="pv-note">Begründung: ${esc(state.b[f.code].trim())}</div>`;
-      if(f.calc)h+=calcLines(f.code).map(l=>`<div>${esc(l)}</div>`).join("");
+      const r=state.r[f.code],bg=state.b[f.code]&&state.b[f.code].trim();
+      h+=`<div class="field"><div class="fh"><span class="mono code">${f.code}</span><h3>${esc(f.title)}</h3>${pvRate(r)}</div>`;
+      if(bg)h+=`<p class="reason">${esc(bg)}</p>`;
+      if(f.calc)h+=`<div class="calc">`+calcLines(f.code).map(l=>`<div>${esc(l)}</div>`).join("")+`</div>`;
       const notes=[],open=[];
-      f.qs.forEach(([q],i)=>{const s=state.q[qid(f,i)]||{};if(s.n&&s.n.trim())notes.push(`${esc(q)} → ${esc(s.n.trim())}`);if(!s.d)open.push(esc(q))});
-      if(notes.length)h+=`<div>Notizen:</div>`+notes.map(n=>`<div class="pv-note">– ${n}</div>`).join("");
-      if(open.length)h+=`<div>Noch offen:</div>`+open.map(o=>`<div class="pv-open">– ${o}</div>`).join("");else h+=`<div class="pv-open">Alle Fragen geklärt.</div>`;
+      f.qs.forEach(([q],i)=>{const s=state.q[qid(f,i)]||{};if(s.n&&s.n.trim())notes.push(`<li><b>${esc(q)}</b><span>${esc(s.n.trim())}</span></li>`);if(!s.d)open.push(`<li>${esc(q)}</li>`)});
+      if(notes.length)h+=`<div class="mono sub">Notizen</div><ul class="notes">${notes.join("")}</ul>`;
+      h+=open.length?`<div class="mono sub">Noch offen (${open.length})</div><ul class="open">${open.join("")}</ul>`:`<div class="done">✓ Alle Prüffragen geklärt</div>`;
       h+=`</div>`;
     });
+    h+=`</section>`;
   });
+  h+=`<footer class="foot">Arbeitshilfe zur Strukturierung der Prüfung – ersetzt nicht die Kreditentscheidung nach den Vorgaben Ihres Hauses.</footer>`;
   return h;
 }
 document.getElementById("build").addEventListener("click",()=>{
@@ -676,21 +707,48 @@ copyBtn.addEventListener("click",()=>{
   const fallback=()=>{out.focus();out.select();copied.textContent="Text markiert, bitte manuell kopieren."};
   try{navigator.clipboard.writeText(out.value).then(()=>{copied.textContent="Kopiert."},fallback)}catch(e){fallback()}
 });
+const PV_CSS=`@page{size:A4;margin:16mm 16mm 18mm;@bottom-left{content:"FKB Campus · Prüfpfad Unternehmensnachfolge";font:7.5pt "JetBrains Mono",monospace;color:#8a93a3}@bottom-right{content:counter(page) " / " counter(pages);font:7.5pt "JetBrains Mono",monospace;color:#8a93a3}}
+*{box-sizing:border-box}html{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+body{font:9.5pt/1.5 "Inter Tight",system-ui,sans-serif;color:#1f2a3d;margin:0;background:#fff}
+.mono{font-family:"JetBrains Mono",ui-monospace,monospace;font-size:7.5pt;letter-spacing:.07em;text-transform:uppercase;color:#7a8394}
+.top{display:flex;justify-content:space-between;align-items:center;padding-bottom:8pt;border-bottom:.75pt solid #d5dae2;margin-bottom:22pt}
+.brand{display:inline-flex;align-items:center;gap:7pt;font-weight:600;font-size:10pt}
+h1,h2,h3{font-family:"Source Serif 4",Georgia,serif;font-weight:400;margin:0;color:#1f2a3d}
+.eyebrow{margin-bottom:4pt}h1{font-size:24pt;line-height:1.1;letter-spacing:-.01em}
+.meta{display:flex;gap:14pt;margin:6pt 0 16pt;color:#5b6577;font-size:8.5pt}
+.summary{display:grid;grid-template-columns:42mm 1fr;gap:0 16pt;border-top:1.5pt solid #2b3f5f;border-bottom:.75pt solid #d5dae2;padding:12pt 0;margin-bottom:6pt;break-inside:avoid}
+.score .big{font-family:"Source Serif 4",serif;font-size:26pt;line-height:1.1;margin-top:4pt}.score .band{font-size:9pt;color:#5b6577}
+table{width:100%;border-collapse:collapse}td{padding:3.5pt 0;border-bottom:.5pt solid #e6e9ee;vertical-align:middle}td.mono{width:9mm}td.num{width:12mm;text-align:right;font-variant-numeric:tabular-nums}td:nth-child(3){width:40%;padding:0 10pt}
+.scale{display:block;position:relative;height:4pt;background:linear-gradient(90deg,#2b3f5f,#6f86a8,#c9b48f,#a8533f);opacity:.9}.scale.empty{background:#eceff3}
+.scale i{position:absolute;top:-3pt;width:2pt;height:10pt;margin-left:-1pt;background:#1f2a3d}
+.legend{grid-column:2;display:flex;justify-content:space-between;margin-top:4pt;padding-left:calc(9mm + 40% * 0)}
+.profile{margin-top:18pt;break-inside:avoid}.profile h2{font-size:15pt;margin:0 0 8pt;padding-bottom:5pt;border-bottom:.75pt solid #1f2a3d}.profsvg{display:block}
+.block h2{font-size:15pt;margin:20pt 0 2pt;padding-bottom:5pt;border-bottom:.75pt solid #1f2a3d;display:flex;align-items:baseline;gap:8pt;break-after:avoid}
+.block h2 .avg{margin-left:auto}
+.field{padding:9pt 0 10pt;border-bottom:.5pt solid #e6e9ee;break-inside:avoid}
+.fh{display:flex;align-items:baseline;gap:8pt}.fh .code{width:7mm;flex:none}.fh h3{font-size:11pt;font-weight:600;flex:1}
+.pill{display:inline-flex;align-items:center;gap:5pt;font-size:8pt;padding:1.5pt 7pt;border:.5pt solid #d5dae2;border-radius:10pt;white-space:nowrap}.pill i{width:6pt;height:6pt;border-radius:50%}.pill.none{color:#8a93a3}
+.field>*:not(.fh){margin-left:15mm}
+.reason{font-family:"Source Serif 4",serif;font-style:italic;font-size:10pt;margin-top:4pt;margin-bottom:0;white-space:pre-wrap;color:#2f3a4d}
+.calc{margin-top:5pt;padding:5pt 8pt;background:#f4f1ea;border-left:2pt solid #c9b48f;font-size:8.5pt;font-variant-numeric:tabular-nums}
+.sub{margin-top:7pt}ul{margin:2pt 0 0;padding:0;list-style:none}
+.notes li{margin:2pt 0;font-size:8.5pt}.notes b{font-weight:500;display:block}.notes span{white-space:pre-wrap;color:#3a4558}
+.open li{font-size:8.5pt;color:#4a5466;padding-left:11pt;position:relative;margin:1.5pt 0}.open li::before{content:"";position:absolute;left:0;top:3pt;width:6pt;height:6pt;border:.75pt solid #9aa2b0}
+.done{margin-top:6pt;font-size:8.5pt;color:#2b3f5f}
+.foot{margin-top:18pt;padding-top:6pt;border-top:.5pt solid #d5dae2;font-size:7.5pt;color:#8a93a3}`;
 pdfBtn.addEventListener("click",()=>{
   let body;try{body=assembleHTML()}catch(e){alert("Zusammenfassung konnte nicht erstellt werden.");return}
   const title="Prüfpfad Unternehmensnachfolge"+(state.case?" – "+state.case:"");
-  const doc='<!doctype html><html lang="de"><head><meta charset="utf-8"><title>'+esc(title)+'</title><style>'+
-    '@page{margin:18mm 16mm}'+
-    'body{font:11pt/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;color:#111;margin:0}'+
-    'h1{font-size:19pt;margin:0 0 2pt}h2{font-size:13pt;margin:16pt 0 4pt;border-bottom:1px solid #999;padding-bottom:2pt}'+
-    'h3{font-size:11pt;margin:9pt 0 1pt}.meta{font-size:9pt;color:#555;margin-bottom:10pt}'+
-    '.pv-field{margin:5pt 0;break-inside:avoid}.pv-note{white-space:pre-wrap;color:#333;font-size:9.5pt;margin-left:8pt}'+
-    '.pv-open{color:#555;font-size:9.5pt;margin-left:8pt}body>div{font-size:10pt}'+
-    '</style></head><body>'+body+'</body></html>';
+  const doc='<!doctype html><html lang="de"><head><meta charset="utf-8"><title>'+esc(title)+'</title>'+
+    '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">'+
+    '<style>'+PV_CSS+'</style></head><body>'+body+'</body></html>';
   const win=window.open("","_blank");
   if(!win){alert("Bitte Pop-ups für diese Seite erlauben, damit das PDF erstellt werden kann.");return}
   win.document.open();win.document.write(doc);win.document.close();win.focus();
-  setTimeout(()=>{try{win.print()}catch(e){}},350);
+  const go=()=>{try{win.print()}catch(e){}};
+  let done=false;const once=()=>{if(!done){done=true;go()}};
+  try{win.document.fonts.ready.then(()=>setTimeout(once,150))}catch(e){}
+  setTimeout(once,2500);
 });
 const cb=document.getElementById("confirmBox");
 document.getElementById("reset").addEventListener("click",()=>{cb.hidden=false});
